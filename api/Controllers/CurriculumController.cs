@@ -1,9 +1,9 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Api.Data;
 using Api.Entities;
 using Api.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers;
 
@@ -25,9 +25,12 @@ public class CurriculumController : ControllerBase
     /// Get class offerings with filtering and pagination
     /// </summary>
     [HttpGet("offerings")]
-    public async Task<ActionResult<PagedResult<ClassOfferingDto>>> GetOfferings([FromQuery] OfferingFilterRequest filter)
+    public async Task<ActionResult<PagedResult<ClassOfferingDto>>> GetOfferings(
+        [FromQuery] OfferingFilterRequest filter
+    )
     {
-        var query = _context.ClassOfferings
+        var query = _context
+            .ClassOfferings
             .Include(o => o.Class)
             .Include(o => o.Subject)
             .Include(o => o.Section)
@@ -71,17 +74,19 @@ public class CurriculumController : ControllerBase
                 StartDate = o.Timeline.StartDate,
                 EndDate = o.Timeline.EndDate,
                 InstructorId = o.InstructorId,
-                InstructorName = o.Instructor != null ? o.Instructor.FullName : null
+                InstructorName = o.Instructor != null ? o.Instructor.FullName : null,
             })
             .ToListAsync();
 
-        return Ok(new PagedResult<ClassOfferingDto>
-        {
-            Items = offerings,
-            Total = totalCount,
-            Page = filter.Page,
-            PageSize = filter.PageSize
-        });
+        return Ok(
+            new PagedResult<ClassOfferingDto>
+            {
+                Items = offerings,
+                Total = totalCount,
+                Page = filter.Page,
+                PageSize = filter.PageSize,
+            }
+        );
     }
 
     /// <summary>
@@ -90,9 +95,16 @@ public class CurriculumController : ControllerBase
     [HttpGet("classes")]
     public async Task<ActionResult<List<ClassDto>>> GetClasses()
     {
-        var classes = await _context.Classes
+        var classes = await _context
+            .Classes
             .OrderBy(c => c.Name)
-            .Select(c => new ClassDto { Id = c.Id, Name = c.Name, Description = c.Description, IsActive = c.IsActive })
+            .Select(c => new ClassDto
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Description = c.Description,
+                IsActive = c.IsActive,
+            })
             .ToListAsync();
 
         return Ok(classes);
@@ -104,9 +116,16 @@ public class CurriculumController : ControllerBase
     [HttpGet("subjects")]
     public async Task<ActionResult<List<SubjectDto>>> GetSubjects()
     {
-        var subjects = await _context.Subjects
+        var subjects = await _context
+            .Subjects
             .OrderBy(s => s.Name)
-            .Select(s => new SubjectDto { Id = s.Id, Name = s.Name, Description = s.Description, IsActive = s.IsActive })
+            .Select(s => new SubjectDto
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Description = s.Description,
+                IsActive = s.IsActive,
+            })
             .ToListAsync();
 
         return Ok(subjects);
@@ -118,9 +137,16 @@ public class CurriculumController : ControllerBase
     [HttpGet("sections")]
     public async Task<ActionResult<List<SectionDto>>> GetSections()
     {
-        var sections = await _context.Sections
+        var sections = await _context
+            .Sections
             .OrderBy(s => s.Name)
-            .Select(s => new SectionDto { Id = s.Id, Name = s.Name, Capacity = s.Capacity, IsActive = s.IsActive })
+            .Select(s => new SectionDto
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Capacity = s.Capacity,
+                IsActive = s.IsActive,
+            })
             .ToListAsync();
 
         return Ok(sections);
@@ -132,9 +158,17 @@ public class CurriculumController : ControllerBase
     [HttpGet("timelines")]
     public async Task<ActionResult<List<TimelineDto>>> GetTimelines()
     {
-        var timelines = await _context.Timelines
+        var timelines = await _context
+            .Timelines
             .OrderByDescending(t => t.StartDate)
-            .Select(t => new TimelineDto { Id = t.Id, Name = t.Name, StartDate = t.StartDate, EndDate = t.EndDate, IsActive = t.IsActive })
+            .Select(t => new TimelineDto
+            {
+                Id = t.Id,
+                Name = t.Name,
+                StartDate = t.StartDate,
+                EndDate = t.EndDate,
+                IsActive = t.IsActive,
+            })
             .ToListAsync();
 
         return Ok(timelines);
@@ -145,7 +179,9 @@ public class CurriculumController : ControllerBase
     /// </summary>
     [HttpPost("offerings")]
     [Authorize(Policy = "SupervisorOnly")]
-    public async Task<ActionResult<ClassOfferingDto>> CreateOffering([FromBody] CreateOfferingRequest request)
+    public async Task<ActionResult<ClassOfferingDto>> CreateOffering(
+        [FromBody] CreateOfferingRequest request
+    )
     {
         var offering = new ClassOffering
         {
@@ -153,13 +189,14 @@ public class CurriculumController : ControllerBase
             SubjectId = request.SubjectId,
             SectionId = request.SectionId,
             TimelineId = request.TimelineId,
-            InstructorId = request.InstructorId
+            InstructorId = request.InstructorId,
         };
 
         _context.ClassOfferings.Add(offering);
         await _context.SaveChangesAsync();
 
-        var created = await _context.ClassOfferings
+        var created = await _context
+            .ClassOfferings
             .Include(o => o.Class)
             .Include(o => o.Subject)
             .Include(o => o.Section)
@@ -167,22 +204,26 @@ public class CurriculumController : ControllerBase
             .Include(o => o.Instructor)
             .FirstAsync(o => o.Id == offering.Id);
 
-        return CreatedAtAction(nameof(GetOfferings), new { id = offering.Id }, new ClassOfferingDto
-        {
-            Id = created.Id,
-            ClassId = created.ClassId,
-            ClassName = created.Class!.Name,
-            SubjectId = created.SubjectId,
-            SubjectName = created.Subject!.Name,
-            SectionId = created.SectionId,
-            SectionName = created.Section!.Name,
-            TimelineId = created.TimelineId,
-            TimelineName = created.Timeline!.Name,
-            StartDate = created.Timeline.StartDate,
-            EndDate = created.Timeline.EndDate,
-            InstructorId = created.InstructorId,
-            InstructorName = created.Instructor?.FullName
-        });
+        return CreatedAtAction(
+            nameof(GetOfferings),
+            new { id = offering.Id },
+            new ClassOfferingDto
+            {
+                Id = created.Id,
+                ClassId = created.ClassId,
+                ClassName = created.Class!.Name,
+                SubjectId = created.SubjectId,
+                SubjectName = created.Subject!.Name,
+                SectionId = created.SectionId,
+                SectionName = created.Section!.Name,
+                TimelineId = created.TimelineId,
+                TimelineName = created.Timeline!.Name,
+                StartDate = created.Timeline.StartDate,
+                EndDate = created.Timeline.EndDate,
+                InstructorId = created.InstructorId,
+                InstructorName = created.Instructor?.FullName,
+            }
+        );
     }
 
     /// <summary>

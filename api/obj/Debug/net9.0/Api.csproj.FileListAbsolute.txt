@@ -78,7 +78,6 @@ C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\System.Composition.Ru
 C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\System.Composition.TypedParts.dll
 C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\System.Numerics.Tensors.dll
-C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\System.Text.Json.dll
 C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\mohdq\src\DataBricks-Sample1\api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -192,3 +191,5 @@ C:\Users\mohdq\src\DataBricks-Sample1\api\obj\Debug\net9.0\refint\Api.dll
 C:\Users\mohdq\src\DataBricks-Sample1\api\obj\Debug\net9.0\Api.pdb
 C:\Users\mohdq\src\DataBricks-Sample1\api\obj\Debug\net9.0\Api.genruntimeconfig.cache
 C:\Users\mohdq\src\DataBricks-Sample1\api\obj\Debug\net9.0\ref\Api.dll
+C:\Users\mohdq\src\DataBricks-Sample1\api\obj\Debug\net9.0\Api.sourcelink.json
+C:\Users\mohdq\src\DataBricks-Sample1\api\obj\Debug\net9.0\swae.build.ex.cache
