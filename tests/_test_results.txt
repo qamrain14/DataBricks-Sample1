@@ -1,0 +1,1929 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 141 items
+
+tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_registers_table_via_dlt_mock PASSED [  0%]
+tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_creates_all_15_tables PASSED [  1%]
+tests/test_bronze_pipeline.py::TestBronzeFactory::test_bronze_table_has_metadata_columns PASSED [  2%]
+tests/test_bronze_pipeline.py::TestBronzeAudit::test_audit_records_table_counts PASSED [  2%]
+tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_each_bronze_table_has_3_rows PASSED [  3%]
+tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_tables_have_metadata PASSED [  4%]
+tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_vendors_schema PASSED [  4%]
+tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_has_null_pk_rows PASSED [  5%]
+tests/test_e2e_pipeline.py::TestSequentialDependency::test_silver_fails_without_bronze PASSED [  6%]
+tests/test_e2e_pipeline.py::TestSequentialDependency::test_gold_fails_without_silver PASSED [  7%]
+tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_bronze_tables_present ERROR [  7%]
+tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_silver_tables_present ERROR [  8%]
+tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_gold_dimensions_present ERROR [  9%]
+tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_gold_facts_present ERROR [  9%]
+tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_total_table_count ERROR [ 10%]
+tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_bronze ERROR [ 11%]
+tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_silver ERROR [ 12%]
+tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_gold_dim ERROR [ 12%]
+tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_gold_fact_performance ERROR [ 13%]
+tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_null_vendor_dropped_in_silver ERROR [ 14%]
+tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_null_vendor_absent_in_gold ERROR [ 14%]
+tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_bronze ERROR [ 15%]
+tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_silver ERROR [ 16%]
+tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_gold_fact ERROR [ 17%]
+tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_line_items_aggregated_in_gold ERROR [ 17%]
+tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_bronze ERROR [ 18%]
+tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_silver ERROR [ 19%]
+tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_gold_dim ERROR [ 19%]
+tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_gold_fact ERROR [ 20%]
+tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_items_aggregated ERROR [ 21%]
+tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_null_pks_removed_at_silver ERROR [ 21%]
+tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_gold_row_counts_consistent ERROR [ 22%]
+tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_expectations_recorded ERROR [ 23%]
+tests/test_e2e_pipeline.py::TestTransformPersistence::test_trimmed_names_in_gold ERROR [ 24%]
+tests/test_e2e_pipeline.py::TestTransformPersistence::test_type_casting_persists ERROR [ 24%]
+tests/test_e2e_pipeline.py::TestTransformPersistence::test_derived_columns_in_gold ERROR [ 25%]
+tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_dimensions ERROR [ 26%]
+tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_facts ERROR [ 26%]
+tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_all_18_gold_tables_not_empty ERROR [ 27%]
+tests/test_gold_pipeline.py::TestDimDate::test_date_range_2020_to_2030 ERROR [ 28%]
+tests/test_gold_pipeline.py::TestDimDate::test_date_key_format ERROR     [ 29%]
+tests/test_gold_pipeline.py::TestDimDate::test_date_columns_present ERROR [ 29%]
+tests/test_gold_pipeline.py::TestDimDate::test_total_rows_approximately_4018 ERROR [ 30%]
+tests/test_gold_pipeline.py::TestDimVendor::test_tier_derivation ERROR   [ 31%]
+tests/test_gold_pipeline.py::TestDimVendor::test_status_derivation ERROR [ 31%]
+tests/test_gold_pipeline.py::TestDimVendor::test_gold_timestamp ERROR    [ 32%]
+tests/test_gold_pipeline.py::TestDimProject::test_region_derivation ERROR [ 33%]
+tests/test_gold_pipeline.py::TestDimProject::test_project_duration_days ERROR [ 34%]
+tests/test_gold_pipeline.py::TestDimMaterial::test_material_columns ERROR [ 34%]
+tests/test_gold_pipeline.py::TestDimEmployee::test_employee_columns ERROR [ 35%]
+tests/test_gold_pipeline.py::TestDimGeography::test_geography_key_is_sha2 ERROR [ 36%]
+tests/test_gold_pipeline.py::TestDimGeography::test_region_derivation ERROR [ 36%]
+tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct ERROR [ 37%]
+tests/test_gold_pipeline.py::TestDimCostCenter::test_cost_center_distinct ERROR [ 38%]
+tests/test_gold_pipeline.py::TestDimSector::test_sector_union ERROR      [ 39%]
+tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_line_total_aggregated ERROR [ 39%]
+tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_total_quantity_aggregated ERROR [ 40%]
+tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current ERROR [ 41%]
+tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_overdue ERROR [ 41%]
+tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_receipt_value_calculated ERROR [ 42%]
+tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_acceptance_rate_derived ERROR [ 43%]
+tests/test_gold_pipeline.py::TestFactProjectCosts::test_budget_vs_actual ERROR [ 43%]
+tests/test_gold_pipeline.py::TestFactProjectActuals::test_project_actuals_columns ERROR [ 44%]
+tests/test_gold_pipeline.py::TestFactVendorPerformance::test_score_columns ERROR [ 45%]
+tests/test_gold_pipeline.py::TestFactInventory::test_inventory_columns ERROR [ 46%]
+tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated ERROR [ 46%]
+tests/test_gold_pipeline.py::TestFactContracts::test_item_count ERROR    [ 47%]
+tests/test_gold_pipeline.py::TestFactSales::test_customer_id_is_sha2 ERROR [ 48%]
+tests/test_gold_pipeline.py::TestFactSales::test_product_name_joined ERROR [ 48%]
+tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_pipeline_creates_15_tables ERROR [ 49%]
+tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_tables_not_empty ERROR [ 50%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendors_null_pk_dropped ERROR [ 51%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_projects_null_pk_dropped ERROR [ 51%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_materials_null_pk_dropped ERROR [ 52%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_employees_null_pk_dropped ERROR [ 53%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_purchase_orders_null_pk_dropped ERROR [ 53%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_po_line_items_null_pk_dropped ERROR [ 54%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_contracts_null_pk_dropped ERROR [ 55%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_contract_items_null_pk_dropped ERROR [ 56%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_invoices_null_pk_dropped ERROR [ 56%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_goods_receipts_null_pk_dropped ERROR [ 57%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_budgets_null_pk_dropped ERROR [ 58%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_actuals_null_pk_dropped ERROR [ 58%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_sales_orders_null_pk_dropped ERROR [ 59%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_inventory_null_pk_dropped ERROR [ 60%]
+tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendor_performance_null_pk_dropped ERROR [ 60%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendors] ERROR [ 61%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_projects] ERROR [ 62%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_materials] ERROR [ 63%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_employees] ERROR [ 63%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_purchase_orders] ERROR [ 64%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_po_line_items] ERROR [ 65%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contracts] ERROR [ 65%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contract_items] ERROR [ 66%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_invoices] ERROR [ 67%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_goods_receipts] ERROR [ 68%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_budgets] ERROR [ 68%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_actuals] ERROR [ 69%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_sales_orders] ERROR [ 70%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_inventory] ERROR [ 70%]
+tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendor_performance] ERROR [ 71%]
+tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_vendor_name_trimmed ERROR [ 72%]
+tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_country_uppercased ERROR [ 73%]
+tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_performance_rating_is_double ERROR [ 73%]
+tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_payment_terms_is_integer ERROR [ 74%]
+tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_metadata_columns_dropped ERROR [ 75%]
+tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_silver_timestamp_added ERROR [ 75%]
+tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_project_name_trimmed ERROR [ 76%]
+tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_dates_cast_to_date_type ERROR [ 77%]
+tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_planned_duration_days_calculated ERROR [ 78%]
+tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_budget_variance_pct_calculated ERROR [ 78%]
+tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_category_uppercased ERROR [ 79%]
+tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_active_to_is_active_boolean ERROR [ 80%]
+tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_concatenated ERROR [ 80%]
+tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_trimmed_parts ERROR [ 81%]
+tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_department_uppercased ERROR [ 82%]
+tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_po_status_uppercased ERROR [ 82%]
+tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_dates_cast ERROR [ 83%]
+tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_order_date_alias ERROR [ 84%]
+tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_fulfillment_rate_calculated ERROR [ 85%]
+tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_acceptance_rate_calculated ERROR [ 85%]
+tests/test_silver_pipeline.py::TestSilverContractTransforms::test_contract_duration_days ERROR [ 86%]
+tests/test_silver_pipeline.py::TestSilverContractTransforms::test_status_uppercased ERROR [ 87%]
+tests/test_silver_pipeline.py::TestSilverContractTransforms::test_type_uppercased ERROR [ 87%]
+tests/test_silver_pipeline.py::TestSilverContractItemTransforms::test_quantity_cast_to_double ERROR [ 88%]
+tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_to_pay_calculated ERROR [ 89%]
+tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_overdue_for_unpaid ERROR [ 90%]
+tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_qty_delivered_renamed_to_qty_received ERROR [ 90%]
+tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_rejection_rate_calculated ERROR [ 91%]
+tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_column_renames ERROR [ 92%]
+tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_remaining_amount_calculated ERROR [ 92%]
+tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_utilization_pct_calculated ERROR [ 93%]
+tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_cost_category_derived ERROR [ 94%]
+tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_trimmed_cost_type ERROR [ 95%]
+tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_order_value_from_revenue ERROR [ 95%]
+tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_total_value_from_total_amount ERROR [ 96%]
+tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_customer_name_trimmed ERROR [ 97%]
+tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_total_cost_from_total_value ERROR [ 97%]
+tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_movement_type_uppercased ERROR [ 98%]
+tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_from_composite ERROR [ 99%]
+tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_value ERROR [100%]
+
+=================================== ERRORS ====================================
+__ ERROR at setup of TestEndToEndDataPropagation.test_bronze_tables_present ___
+tests\test_e2e_pipeline.py:38: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__ ERROR at setup of TestEndToEndDataPropagation.test_silver_tables_present ___
+tests\test_e2e_pipeline.py:38: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestEndToEndDataPropagation.test_gold_dimensions_present __
+tests\test_e2e_pipeline.py:38: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestEndToEndDataPropagation.test_gold_facts_present ____
+tests\test_e2e_pipeline.py:38: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestEndToEndDataPropagation.test_total_table_count _____
+tests\test_e2e_pipeline.py:38: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______ ERROR at setup of TestVendorDataPropagation.test_vendor_in_bronze ______
+tests\test_e2e_pipeline.py:69: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______ ERROR at setup of TestVendorDataPropagation.test_vendor_in_silver ______
+tests\test_e2e_pipeline.py:69: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____ ERROR at setup of TestVendorDataPropagation.test_vendor_in_gold_dim _____
+tests\test_e2e_pipeline.py:69: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestVendorDataPropagation.test_vendor_in_gold_fact_performance _
+tests\test_e2e_pipeline.py:69: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestVendorDataPropagation.test_null_vendor_dropped_in_silver _
+tests\test_e2e_pipeline.py:69: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestVendorDataPropagation.test_null_vendor_absent_in_gold _
+tests\test_e2e_pipeline.py:69: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______ ERROR at setup of TestPurchaseOrderPropagation.test_po_in_bronze _______
+tests\test_e2e_pipeline.py:103: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______ ERROR at setup of TestPurchaseOrderPropagation.test_po_in_silver _______
+tests\test_e2e_pipeline.py:103: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____ ERROR at setup of TestPurchaseOrderPropagation.test_po_in_gold_fact _____
+tests\test_e2e_pipeline.py:103: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestPurchaseOrderPropagation.test_po_line_items_aggregated_in_gold _
+tests\test_e2e_pipeline.py:103: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______ ERROR at setup of TestContractPropagation.test_contract_in_bronze ______
+tests\test_e2e_pipeline.py:132: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______ ERROR at setup of TestContractPropagation.test_contract_in_silver ______
+tests\test_e2e_pipeline.py:132: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____ ERROR at setup of TestContractPropagation.test_contract_in_gold_dim _____
+tests\test_e2e_pipeline.py:132: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestContractPropagation.test_contract_in_gold_fact _____
+tests\test_e2e_pipeline.py:132: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__ ERROR at setup of TestContractPropagation.test_contract_items_aggregated ___
+tests\test_e2e_pipeline.py:132: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestDataQualityPropagation.test_null_pks_removed_at_silver _
+tests\test_e2e_pipeline.py:164: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestDataQualityPropagation.test_gold_row_counts_consistent _
+tests\test_e2e_pipeline.py:164: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestDataQualityPropagation.test_expectations_recorded ___
+tests\test_e2e_pipeline.py:164: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestTransformPersistence.test_trimmed_names_in_gold ____
+tests\test_e2e_pipeline.py:209: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestTransformPersistence.test_type_casting_persists ____
+tests\test_e2e_pipeline.py:209: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestTransformPersistence.test_derived_columns_in_gold ___
+tests\test_e2e_pipeline.py:209: in _run_full_pipeline
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_dimensions __
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_facts ____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestGoldPipelineExecution.test_all_18_gold_tables_not_empty _
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_________ ERROR at setup of TestDimDate.test_date_range_2020_to_2030 __________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____________ ERROR at setup of TestDimDate.test_date_key_format ______________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___________ ERROR at setup of TestDimDate.test_date_columns_present ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______ ERROR at setup of TestDimDate.test_total_rows_approximately_4018 _______
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____________ ERROR at setup of TestDimVendor.test_tier_derivation _____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___________ ERROR at setup of TestDimVendor.test_status_derivation ____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____________ ERROR at setup of TestDimVendor.test_gold_timestamp _____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___________ ERROR at setup of TestDimProject.test_region_derivation ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_________ ERROR at setup of TestDimProject.test_project_duration_days _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___________ ERROR at setup of TestDimMaterial.test_material_columns ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___________ ERROR at setup of TestDimEmployee.test_employee_columns ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+________ ERROR at setup of TestDimGeography.test_geography_key_is_sha2 ________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__________ ERROR at setup of TestDimGeography.test_region_derivation __________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___________ ERROR at setup of TestDimContract.test_cost_growth_pct ____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+________ ERROR at setup of TestDimCostCenter.test_cost_center_distinct ________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+______________ ERROR at setup of TestDimSector.test_sector_union ______________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____ ERROR at setup of TestFactPurchaseOrders.test_line_total_aggregated _____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestFactPurchaseOrders.test_total_quantity_aggregated ___
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_current _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_overdue _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestFactGoodsReceipts.test_receipt_value_calculated ____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestFactGoodsReceipts.test_acceptance_rate_derived _____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+________ ERROR at setup of TestFactProjectCosts.test_budget_vs_actual _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestFactProjectActuals.test_project_actuals_columns ____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_______ ERROR at setup of TestFactVendorPerformance.test_score_columns ________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_________ ERROR at setup of TestFactInventory.test_inventory_columns __________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_______ ERROR at setup of TestFactContracts.test_items_total_aggregated _______
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____________ ERROR at setup of TestFactContracts.test_item_count _____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__________ ERROR at setup of TestFactSales.test_customer_id_is_sha2 ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__________ ERROR at setup of TestFactSales.test_product_name_joined ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverPipelineExecution.test_silver_pipeline_creates_15_tables _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverPipelineExecution.test_silver_tables_not_empty __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestSilverDataQuality.test_vendors_null_pk_dropped _____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestSilverDataQuality.test_projects_null_pk_dropped ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestSilverDataQuality.test_materials_null_pk_dropped ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestSilverDataQuality.test_employees_null_pk_dropped ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverDataQuality.test_purchase_orders_null_pk_dropped _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverDataQuality.test_po_line_items_null_pk_dropped __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestSilverDataQuality.test_contracts_null_pk_dropped ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverDataQuality.test_contract_items_null_pk_dropped _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestSilverDataQuality.test_invoices_null_pk_dropped ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverDataQuality.test_goods_receipts_null_pk_dropped _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverDataQuality.test_project_budgets_null_pk_dropped _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverDataQuality.test_project_actuals_null_pk_dropped _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__ ERROR at setup of TestSilverDataQuality.test_sales_orders_null_pk_dropped __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestSilverDataQuality.test_inventory_null_pk_dropped ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverDataQuality.test_vendor_performance_null_pk_dropped _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_vendors] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_projects] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_materials] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_employees] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_purchase_orders] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_po_line_items] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_contracts] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_contract_items] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_invoices] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_goods_receipts] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_project_budgets] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_project_actuals] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_sales_orders] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_inventory] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_vendor_performance] _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestSilverVendorTransforms.test_vendor_name_trimmed ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestSilverVendorTransforms.test_country_uppercased _____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverVendorTransforms.test_performance_rating_is_double _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverVendorTransforms.test_payment_terms_is_integer __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverVendorTransforms.test_metadata_columns_dropped __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__ ERROR at setup of TestSilverVendorTransforms.test_silver_timestamp_added ___
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestSilverProjectTransforms.test_project_name_trimmed ___
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverProjectTransforms.test_dates_cast_to_date_type __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverProjectTransforms.test_planned_duration_days_calculated _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverProjectTransforms.test_budget_variance_pct_calculated _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestSilverMaterialTransforms.test_category_uppercased ___
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverMaterialTransforms.test_active_to_is_active_boolean _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverEmployeeTransforms.test_full_name_concatenated __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverEmployeeTransforms.test_full_name_trimmed_parts _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__ ERROR at setup of TestSilverEmployeeTransforms.test_department_uppercased __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverPurchaseOrderTransforms.test_po_status_uppercased _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____ ERROR at setup of TestSilverPurchaseOrderTransforms.test_dates_cast _____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__ ERROR at setup of TestSilverPurchaseOrderTransforms.test_order_date_alias __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverPoLineItemTransforms.test_fulfillment_rate_calculated _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverPoLineItemTransforms.test_acceptance_rate_calculated _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverContractTransforms.test_contract_duration_days __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+____ ERROR at setup of TestSilverContractTransforms.test_status_uppercased ____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_____ ERROR at setup of TestSilverContractTransforms.test_type_uppercased _____
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverContractItemTransforms.test_quantity_cast_to_double _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+__ ERROR at setup of TestSilverInvoiceTransforms.test_days_to_pay_calculated __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverInvoiceTransforms.test_days_overdue_for_unpaid __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverGoodsReceiptTransforms.test_qty_delivered_renamed_to_qty_received _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverGoodsReceiptTransforms.test_rejection_rate_calculated _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+___ ERROR at setup of TestSilverProjectBudgetTransforms.test_column_renames ___
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverProjectBudgetTransforms.test_remaining_amount_calculated _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverProjectBudgetTransforms.test_utilization_pct_calculated _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverProjectActualTransforms.test_cost_category_derived _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverProjectActualTransforms.test_trimmed_cost_type __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverSalesOrderTransforms.test_order_value_from_revenue _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverSalesOrderTransforms.test_total_value_from_total_amount _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverSalesOrderTransforms.test_customer_name_trimmed _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverInventoryTransforms.test_total_cost_from_total_value _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverInventoryTransforms.test_movement_type_uppercased _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverVendorPerformanceTransforms.test_overall_score_from_composite _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+_ ERROR at setup of TestSilverVendorPerformanceTransforms.test_overall_score_value _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E   Errors:
+E   silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+=========================== short test summary info ===========================
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_bronze_tables_present - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_silver_tables_present - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_gold_dimensions_present - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_gold_facts_present - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_total_table_count - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_bronze - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_silver - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_gold_dim - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_gold_fact_performance - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_null_vendor_dropped_in_silver - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_null_vendor_absent_in_gold - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_bronze - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_silver - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_gold_fact - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_line_items_aggregated_in_gold - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_bronze - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_silver - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_gold_dim - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_gold_fact - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_items_aggregated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_null_pks_removed_at_silver - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_gold_row_counts_consistent - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_expectations_recorded - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestTransformPersistence::test_trimmed_names_in_gold - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestTransformPersistence::test_type_casting_persists - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_e2e_pipeline.py::TestTransformPersistence::test_derived_columns_in_gold - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_dimensions - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_facts - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_all_18_gold_tables_not_empty - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_range_2020_to_2030 - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_key_format - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_columns_present - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_total_rows_approximately_4018 - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_tier_derivation - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_status_derivation - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_gold_timestamp - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_region_derivation - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_project_duration_days - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimMaterial::test_material_columns - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimEmployee::test_employee_columns - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_geography_key_is_sha2 - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_region_derivation - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimCostCenter::test_cost_center_distinct - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestDimSector::test_sector_union - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_line_total_aggregated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_total_quantity_aggregated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_overdue - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_receipt_value_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_acceptance_rate_derived - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactProjectCosts::test_budget_vs_actual - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactProjectActuals::test_project_actuals_columns - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactVendorPerformance::test_score_columns - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactInventory::test_inventory_columns - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_item_count - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_customer_id_is_sha2 - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_product_name_joined - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_pipeline_creates_15_tables - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_tables_not_empty - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendors_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_projects_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_materials_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_employees_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_purchase_orders_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_po_line_items_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_contracts_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_contract_items_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_invoices_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_goods_receipts_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_budgets_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_actuals_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_sales_orders_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_inventory_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendor_performance_null_pk_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendors] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_projects] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_materials] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_employees] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_purchase_orders] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_po_line_items] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contracts] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contract_items] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_invoices] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_goods_receipts] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_budgets] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_actuals] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_sales_orders] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_inventory] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendor_performance] - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_vendor_name_trimmed - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_country_uppercased - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_performance_rating_is_double - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_payment_terms_is_integer - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_metadata_columns_dropped - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_silver_timestamp_added - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_project_name_trimmed - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_dates_cast_to_date_type - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_planned_duration_days_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_budget_variance_pct_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_category_uppercased - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_active_to_is_active_boolean - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_concatenated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_trimmed_parts - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_department_uppercased - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_po_status_uppercased - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_dates_cast - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_order_date_alias - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_fulfillment_rate_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_acceptance_rate_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_contract_duration_days - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_status_uppercased - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_type_uppercased - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverContractItemTransforms::test_quantity_cast_to_double - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_to_pay_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_overdue_for_unpaid - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_qty_delivered_renamed_to_qty_received - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_rejection_rate_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_column_renames - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_remaining_amount_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_utilization_pct_calculated - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_cost_category_derived - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_trimmed_cost_type - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_order_value_from_revenue - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_total_value_from_total_amount - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_customer_name_trimmed - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_total_cost_from_total_value - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_movement_type_uppercased - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_from_composite - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+ERROR tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_value - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+======================= 10 passed, 131 errors in 39.77s =======================

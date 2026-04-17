@@ -1,0 +1,965 @@
+# Databricks notebook source
+"""
+Pure-Python mock of PySpark for local testing (no JVM required).
+Supports the subset of the PySpark API used by the Bronze/Silver/Gold DLT pipelines.
+"""
+from __future__ import annotations
+import copy, hashlib, math, re, builtins as _builtins
+from datetime import datetime, date, timedelta
+from typing import Any, List, Optional, Dict, Callable
+
+_UNSET = object()
+
+# ── Types ───────────────────────────────────────────────────────────
+class _DataType:
+    def __repr__(self): return self.__class__.__name__ + "()"
+    def __eq__(self, o): return type(self) is type(o)
+    def __hash__(self): return hash(type(self).__name__)
+
+class StringType(_DataType): pass
+class IntegerType(_DataType): pass
+class LongType(_DataType): pass
+class DoubleType(_DataType): pass
+class BooleanType(_DataType): pass
+class DateType(_DataType): pass
+class TimestampType(_DataType): pass
+
+class StructField:
+    def __init__(self, name, dataType=None, nullable=True):
+        self.name = name
+        self.dataType = dataType or StringType()
+        self.nullable = nullable
+
+class StructType:
+    def __init__(self, fields=None):
+        self.fields = list(fields or [])
+    def add(self, name, dataType=None, nullable=True):
+        self.fields.append(StructField(name, dataType, nullable))
+        return self
+
+# ── Row ─────────────────────────────────────────────────────────────
+class Row:
+    def __init__(self, **kwargs):
+        self.__dict__['_data'] = dict(kwargs)
+    def __getattr__(self, name):
+        d = self.__dict__.get('_data', {})
+        if name in d: return d[name]
+        raise AttributeError(name)
+    def __getitem__(self, key):
+        if isinstance(key, int):
+            return list(self._data.values())[key]
+        return self._data[key]
+    def __contains__(self, key):
+        return key in self._data
+    def __repr__(self):
+        items = ", ".join(f"{k}={v!r}" for k, v in self._data.items())
+        return f"Row({items})"
+    def __eq__(self, o):
+        return isinstance(o, Row) and self._data == o._data
+    def asDict(self):
+        return dict(self._data)
+
+# ── Column (lazy expression tree) ──────────────────────────────────
+class Column:
+    def __init__(self, expr):
+        self._expr = expr
+
+    def __eq__(self, other): return Column(lambda r, s=self, o=other: s._eval(r) == _val(o, r))
+    def __ne__(self, other): return Column(lambda r, s=self, o=other: s._eval(r) != _val(o, r))
+    def __gt__(self, other): return Column(lambda r, s=self, o=other: _safe_cmp(s._eval(r), _val(o, r), '>'))
+    def __ge__(self, other): return Column(lambda r, s=self, o=other: _safe_cmp(s._eval(r), _val(o, r), '>='))
+    def __lt__(self, other): return Column(lambda r, s=self, o=other: _safe_cmp(s._eval(r), _val(o, r), '<'))
+    def __le__(self, other): return Column(lambda r, s=self, o=other: _safe_cmp(s._eval(r), _val(o, r), '<='))
+    def __add__(self, other): return Column(lambda r, s=self, o=other: _safe_arith(s._eval(r), _val(o, r), '+'))
+    def __radd__(self, other): return Column(lambda r, s=self, o=other: _safe_arith(_val(o, r), s._eval(r), '+'))
+    def __sub__(self, other): return Column(lambda r, s=self, o=other: _safe_arith(s._eval(r), _val(o, r), '-'))
+    def __mul__(self, other): return Column(lambda r, s=self, o=other: _safe_arith(s._eval(r), _val(o, r), '*'))
+    def __truediv__(self, other): return Column(lambda r, s=self, o=other: _safe_arith(s._eval(r), _val(o, r), '/'))
+    def __neg__(self): return Column(lambda r, s=self: _negate(s._eval(r)))
+    def __and__(self, other): return Column(lambda r, s=self, o=other: bool(s._eval(r)) and bool(_val(o, r)))
+    def __or__(self, other): return Column(lambda r, s=self, o=other: bool(s._eval(r)) or bool(_val(o, r)))
+    def __invert__(self): return Column(lambda r, s=self: not bool(s._eval(r)))
+
+    def _eval(self, row):
+        return self._expr(row)
+
+    def alias(self, name):
+        c = Column(self._expr)
+        c._alias = name
+        return c
+
+    def cast(self, dtype):
+        dt = dtype
+        def _do_cast(r, s=self):
+            v = s._eval(r)
+            if v is None: return None
+            if isinstance(dt, str):
+                dl = dt.lower()
+                if dl in ('double', 'float'): return float(v)
+                if dl in ('int', 'integer', 'long', 'bigint'): return int(float(v))
+                if dl == 'string': return str(v)
+                if dl == 'date':
+                    if isinstance(v, date): return v
+                    if isinstance(v, datetime): return v.date()
+                    return datetime.strptime(str(v)[:10], "%Y-%m-%d").date()
+                if dl == 'boolean': return bool(v)
+            if isinstance(dt, DoubleType): return float(v)
+            if isinstance(dt, IntegerType): return int(float(v))
+            if isinstance(dt, LongType): return int(float(v))
+            if isinstance(dt, DateType):
+                if isinstance(v, date): return v
+                if isinstance(v, datetime): return v.date()
+                return datetime.strptime(str(v)[:10], "%Y-%m-%d").date()
+            if isinstance(dt, BooleanType): return bool(v)
+            return v
+        return Column(_do_cast)
+
+    def isNull(self):
+        return Column(lambda r, s=self: s._eval(r) is None)
+
+    def isNotNull(self):
+        return Column(lambda r, s=self: s._eval(r) is not None)
+
+    def isin(self, *vals):
+        flat = vals[0] if len(vals) == 1 and isinstance(vals[0], (list, tuple, set)) else vals
+        return Column(lambda r, s=self, v=flat: s._eval(r) in v)
+
+    def startswith(self, prefix):
+        return Column(lambda r, s=self, p=prefix: str(s._eval(r) or '').startswith(str(p)))
+
+    def endswith(self, suffix):
+        return Column(lambda r, s=self, sf=suffix: str(s._eval(r) or '').endswith(str(sf)))
+
+    def contains(self, substr):
+        return Column(lambda r, s=self, ss=substr: str(ss) in str(s._eval(r) or ''))
+
+    def substr(self, start, length):
+        return Column(lambda r, s=self, st=start, le=length: str(s._eval(r) or '')[st-1:st-1+le])
+
+    def otherwise(self, value):
+        return Column(lambda r, s=self, v=value: (lambda x: _val(v, r) if x is _UNSET else x)(s._eval(r)))
+
+    def over(self, window):
+        return self
+
+    @property
+    def _alias_name(self):
+        return getattr(self, '_alias', None)
+
+
+def _val(x, row):
+    if isinstance(x, Column): return x._eval(row)
+    return x
+
+def _col_or_val(x):
+    """If x is a string, treat it as a column name (like Spark does)."""
+    if isinstance(x, str): return col(x)
+    return x
+
+def _safe_cmp(a, b, op):
+    if a is None or b is None: return False
+    if type(a) is not type(b):
+        try:
+            a, b = float(a), float(b)
+        except (ValueError, TypeError):
+            return False
+    if op == '>': return a > b
+    if op == '>=': return a >= b
+    if op == '<': return a < b
+    if op == '<=': return a <= b
+    return False
+
+def _safe_arith(a, b, op):
+    if a is None or b is None: return None
+    if op == '+':
+        if isinstance(a, str) or isinstance(b, str): return str(a) + str(b)
+        return a + b
+    # For -, *, / coerce strings to numbers
+    try:
+        a = float(a) if isinstance(a, str) else a
+    except (ValueError, TypeError):
+        return None
+    try:
+        b = float(b) if isinstance(b, str) else b
+    except (ValueError, TypeError):
+        return None
+    if op == '-': return a - b
+    if op == '*': return a * b
+    if op == '/': return a / b if b != 0 else None
+    return None
+
+def _negate(v):
+    return -v if v is not None else None
+
+
+# ── Functions ───────────────────────────────────────────────────────
+def col(name):
+    def _get(row, n=name):
+        if isinstance(row, Row): return row._data.get(n)
+        if isinstance(row, dict): return row.get(n)
+        return getattr(row, n, None)
+    c = Column(_get)
+    c._col_name = name
+    return c
+
+def lit(value):
+    return Column(lambda r, v=value: v)
+
+def when(condition, value):
+    def _when_eval(r, cond=condition, val=value):
+        if isinstance(cond, Column):
+            test = cond._eval(r)
+        else:
+            test = cond
+        if test:
+            return _val(val, r)
+        return _UNSET
+    c = Column(_when_eval)
+
+    def _chained_when(next_cond, next_val):
+        return _chain_when_helper(c, next_cond, next_val)
+    c.when = _chained_when
+    return c
+
+def _chain_when_helper(prev_col, next_cond, next_val):
+    def _eval(r, p=prev_col, nc=next_cond, nv=next_val):
+        res = p._eval(r)
+        if res is not _UNSET:
+            return res
+        if isinstance(nc, Column):
+            t = nc._eval(r)
+        else:
+            t = nc
+        if t:
+            return _val(nv, r)
+        return _UNSET
+    c = Column(_eval)
+    c.when = lambda nc2, nv2: _chain_when_helper(c, nc2, nv2)
+    c.otherwise = lambda v: Column(lambda r, p=c, dv=v: (lambda x: _val(dv, r) if x is _UNSET else x)(p._eval(r)))
+    return c
+
+def trim(c):
+    return Column(lambda r, cc=c: (lambda v: v.strip() if isinstance(v, str) else v)(_val(cc, r)))
+
+def upper(c):
+    return Column(lambda r, cc=c: (lambda v: v.upper() if isinstance(v, str) else v)(_val(cc, r)))
+
+def lower(c):
+    return Column(lambda r, cc=c: (lambda v: v.lower() if isinstance(v, str) else v)(_val(cc, r)))
+
+def coalesce(*cols):
+    def _coalesce(r, cs=cols):
+        for c in cs:
+            v = _val(c, r)
+            if v is not None:
+                return v
+        return None
+    return Column(_coalesce)
+
+def concat(*cols):
+    def _concat(r, cs=cols):
+        parts = [_val(c, r) for c in cs]
+        if any(p is None for p in parts):
+            return None
+        return "".join(str(p) for p in parts)
+    return Column(_concat)
+
+def sha2(c, num_bits=256):
+    def _sha2(r, cc=c):
+        v = _val(cc, r)
+        if v is None: return None
+        return hashlib.sha256(str(v).encode()).hexdigest()
+    return Column(_sha2)
+
+def lpad(c, length, pad):
+    def _lpad(r, cc=c, le=length, p=pad):
+        v = _val(cc, r)
+        if v is None: return None
+        return str(v).rjust(le, str(p))
+    return Column(_lpad)
+
+def regexp_replace(c, pattern, replacement):
+    def _rr(r, cc=c, p=pattern, rep=replacement):
+        v = _val(cc, r)
+        if v is None: return None
+        return re.sub(p, rep, str(v))
+    return Column(_rr)
+
+def current_timestamp():
+    return Column(lambda r: datetime.now())
+
+def input_file_name():
+    return Column(lambda r: "test_input.xlsx")
+
+def to_date(c, fmt=None):
+    c = _col_or_val(c)
+    def _to_date(r, cc=c, f=fmt):
+        v = _val(cc, r)
+        if v is None: return None
+        if isinstance(v, date) and not isinstance(v, datetime): return v
+        if isinstance(v, datetime): return v.date()
+        s = str(v)
+        try:
+            if f:
+                py_fmt = f.replace("yyyy", "%Y").replace("MM", "%m").replace("dd", "%d")
+                return datetime.strptime(s[:10], py_fmt).date()
+            return datetime.strptime(s[:10], "%Y-%m-%d").date()
+        except:
+            return None
+    return Column(_to_date)
+
+def datediff(end, start):
+    end, start = _col_or_val(end), _col_or_val(start)
+    def _dd(r, e=end, s=start):
+        ev, sv = _val(e, r), _val(s, r)
+        if ev is None or sv is None: return None
+        if isinstance(ev, datetime): ev = ev.date()
+        if isinstance(sv, datetime): sv = sv.date()
+        if isinstance(ev, str): ev = datetime.strptime(ev[:10], "%Y-%m-%d").date()
+        if isinstance(sv, str): sv = datetime.strptime(sv[:10], "%Y-%m-%d").date()
+        return (ev - sv).days
+    return Column(_dd)
+
+def round(c, scale=0):
+    def _round(r, cc=c, sc=scale):
+        v = _val(cc, r)
+        if v is None: return None
+        return _builtins.round(float(v), sc)
+    return Column(_round)
+def year(c):
+    c = _col_or_val(c)
+    return Column(lambda r, cc=c: _date_part(_val(cc, r), 'year'))
+
+def month(c):
+    c = _col_or_val(c)
+    return Column(lambda r, cc=c: _date_part(_val(cc, r), 'month'))
+
+def dayofmonth(c):
+    c = _col_or_val(c)
+    return Column(lambda r, cc=c: _date_part(_val(cc, r), 'day'))
+
+def dayofweek(c):
+    c = _col_or_val(c)
+    def _dow(r, cc=c):
+        v = _val(cc, r)
+        if v is None: return None
+        d = _to_date_obj(v)
+        return d.isoweekday() % 7 + 1
+    return Column(_dow)
+
+def quarter(c):
+    c = _col_or_val(c)
+    def _q(r, cc=c):
+        v = _val(cc, r)
+        if v is None: return None
+        d = _to_date_obj(v)
+        return (d.month - 1) // 3 + 1
+    return Column(_q)
+def date_format(c, fmt):
+    c = _col_or_val(c)
+    def _df(r, cc=c, f=fmt):
+        v = _val(cc, r)
+        if v is None: return None
+        if isinstance(v, str):
+            try: v = datetime.strptime(v[:10], "%Y-%m-%d")
+            except: return None
+        py_fmt = f.replace("yyyy", "%Y").replace("MM", "%m").replace("dd", "%d")
+        py_fmt = py_fmt.replace("EEEE", "%A").replace("MMMM", "%B").replace("MMM", "%b")
+        return v.strftime(py_fmt)
+    return Column(_df)
+
+def _date_part(v, part):
+    if v is None: return None
+    d = _to_date_obj(v)
+    if part == 'year': return d.year
+    if part == 'month': return d.month
+    if part == 'day': return d.day
+    return None
+
+def _to_date_obj(v):
+    if isinstance(v, datetime): return v.date()
+    if isinstance(v, date): return v
+    return datetime.strptime(str(v)[:10], "%Y-%m-%d").date()
+
+
+# ── Aggregate functions ─────────────────────────────────────────────
+class _AggColumn:
+    def __init__(self, func_name, col_expr):
+        self.func_name = func_name
+        self.col_expr = col_expr
+    def alias(self, name):
+        self._alias = name
+        return self
+    @property
+    def _alias_name(self):
+        return getattr(self, '_alias', None)
+
+def sum(c):
+    if isinstance(c, str): c = col(c)
+    return _AggColumn('sum', c)
+
+def count(c):
+    if isinstance(c, str): c = col(c)
+    return _AggColumn('count', c)
+
+def max(c):
+    if isinstance(c, str): c = col(c)
+    return _AggColumn('max', c)
+
+def countDistinct(c):
+    if isinstance(c, str): c = col(c)
+    return _AggColumn('countDistinct', c)
+
+def _compute_agg(agg, rows):
+    vals = [agg.col_expr._eval(r) for r in rows]
+    vals_nn = [v for v in vals if v is not None]
+    if agg.func_name == 'sum':
+        return _builtins.sum(vals_nn) if vals_nn else 0
+    if agg.func_name == 'count':
+        return len(vals_nn)
+    if agg.func_name == 'max':
+        return _builtins.max(vals_nn) if vals_nn else None
+    if agg.func_name == 'countDistinct':
+        return len(set(vals_nn))
+    return None
+
+# ── SQL expression evaluator ───────────────────────────────────────
+def _eval_sql_expr(expr_str, row):
+    s = expr_str.strip()
+    while s.startswith('(') and s.endswith(')'):
+        depth = 0
+        matched = True
+        for i, ch in enumerate(s):
+            if ch == '(': depth += 1
+            elif ch == ')': depth -= 1
+            if depth == 0 and i < len(s) - 1:
+                matched = False
+                break
+        if matched:
+            s = s[1:-1].strip()
+        else:
+            break
+
+    for op_word in [' OR ', ' AND ']:
+        depth = 0
+        for i in range(len(s)):
+            if s[i] == '(': depth += 1
+            elif s[i] == ')': depth -= 1
+            if depth == 0 and s[i:i+len(op_word)].upper() == op_word:
+                left = s[:i]
+                right = s[i+len(op_word):]
+                if op_word.strip() == 'AND':
+                    return _eval_sql_expr(left, row) and _eval_sql_expr(right, row)
+                else:
+                    return _eval_sql_expr(left, row) or _eval_sql_expr(right, row)
+
+    if s.upper().startswith('NOT '):
+        return not _eval_sql_expr(s[4:], row)
+
+    m = re.match(r'^(\w+)\s+IS\s+NOT\s+NULL$', s, re.IGNORECASE)
+    if m: return _get_row_val(row, m.group(1)) is not None
+
+    m = re.match(r'^(\w+)\s+IS\s+NULL$', s, re.IGNORECASE)
+    if m: return _get_row_val(row, m.group(1)) is None
+
+    for pattern, op in [(r'^(.+?)\s*>=\s*(.+)$', '>='), (r'^(.+?)\s*<=\s*(.+)$', '<='),
+                         (r'^(.+?)\s*!=\s*(.+)$', '!='), (r'^(.+?)\s*>\s*(.+)$', '>'),
+                         (r'^(.+?)\s*<\s*(.+)$', '<'), (r'^(.+?)\s*=\s*(.+)$', '==')]:
+        m = re.match(pattern, s)
+        if m:
+            lv = _resolve_sql_val(m.group(1).strip(), row)
+            rv = _resolve_sql_val(m.group(2).strip(), row)
+            if op == '!=': return lv != rv
+            if op == '==': return lv == rv
+            return _safe_cmp(lv, rv, op)
+
+    m = re.match(r"^(\w+)\s+LIKE\s+'(.+)'$", s, re.IGNORECASE)
+    if m:
+        val = _get_row_val(row, m.group(1))
+        pat = m.group(2).replace('%', '.*').replace('_', '.')
+        return bool(re.match(f'^{pat}$', str(val or ''), re.IGNORECASE))
+
+    m = re.match(r"^(\w+)\s+IN\s*\((.+)\)$", s, re.IGNORECASE)
+    if m:
+        val = _get_row_val(row, m.group(1))
+        items = [_parse_sql_literal(x.strip()) for x in m.group(2).split(',')]
+        return val in items
+
+    val = _get_row_val(row, s)
+    return bool(val)
+
+def _get_row_val(row, name):
+    if isinstance(row, Row): return row._data.get(name)
+    if isinstance(row, dict): return row.get(name)
+    return getattr(row, name, None)
+
+def _resolve_sql_val(token, row):
+    token = token.strip()
+    if (token.startswith("'") and token.endswith("'")) or (token.startswith('"') and token.endswith('"')):
+        return token[1:-1]
+    try: return int(token)
+    except: pass
+    try: return float(token)
+    except: pass
+    return _get_row_val(row, token)
+
+def _parse_sql_literal(token):
+    token = token.strip()
+    if token.startswith("'") and token.endswith("'"):
+        return token[1:-1]
+    try: return int(token)
+    except: pass
+    try: return float(token)
+    except: pass
+    return token
+
+# ── DataFrame ───────────────────────────────────────────────────────
+class DataFrame:
+    def __init__(self, rows, columns=None):
+        self._rows = list(rows)
+        self._columns = columns or (list(rows[0].keys()) if rows else [])
+        self._alias_name = None
+
+    def __getitem__(self, item):
+        return col(item)
+
+    @property
+    def columns(self):
+        return list(self._columns)
+
+    def alias(self, name):
+        # Prefix all column keys with "name." so col("name.col") resolves
+        prefixed_rows = [{f"{name}.{k}": v for k, v in row.items()} for row in self._rows]
+        prefixed_cols = [f"{name}.{c}" for c in self._columns]
+        df = DataFrame(prefixed_rows, prefixed_cols)
+        df._alias_name = name
+        return df
+
+    def select(self, *cols):
+        result_rows = []
+        col_specs = []
+        for c in cols:
+            if isinstance(c, str):
+                col_specs.append((c, col(c)))
+            elif isinstance(c, Column):
+                name = getattr(c, '_alias', None) or getattr(c, '_col_name', None) or f'col_{len(col_specs)}'
+                col_specs.append((name, c))
+            elif isinstance(c, _AggColumn):
+                name = getattr(c, '_alias', None) or f'{c.func_name}_{len(col_specs)}'
+                val = _compute_agg(c, self._rows)
+                col_specs.append((name, lit(val)))
+            else:
+                col_specs.append((str(c), col(str(c))))
+
+        for row in self._rows:
+            new_row = {}
+            for name, cc in col_specs:
+                v = cc._eval(row)
+                if v is _UNSET: v = None
+                new_row[name] = v
+            result_rows.append(new_row)
+        return DataFrame(result_rows, [n for n, _ in col_specs])
+
+    def withColumn(self, name, col_expr):
+        new_rows = []
+        for row in self._rows:
+            nr = dict(row)
+            v = col_expr._eval(row) if isinstance(col_expr, Column) else col_expr
+            if v is _UNSET: v = None
+            nr[name] = v
+            new_rows.append(nr)
+        cols = list(self._columns)
+        if name not in cols:
+            cols.append(name)
+        return DataFrame(new_rows, cols)
+
+    def withColumnRenamed(self, existing, new):
+        new_rows = [{new if k == existing else k: v for k, v in row.items()} for row in self._rows]
+        cols = [new if c == existing else c for c in self._columns]
+        return DataFrame(new_rows, cols)
+
+    def drop(self, *col_names):
+        names = set()
+        for c in col_names:
+            if isinstance(c, str): names.add(c)
+            elif isinstance(c, Column) and hasattr(c, '_col_name'): names.add(c._col_name)
+        new_rows = [{k: v for k, v in row.items() if k not in names} for row in self._rows]
+        cols = [c for c in self._columns if c not in names]
+        return DataFrame(new_rows, cols)
+
+    def filter(self, condition):
+        return self.where(condition)
+
+    def where(self, condition):
+        if isinstance(condition, str):
+            return DataFrame([r for r in self._rows if _eval_sql_expr(condition, r)], self._columns)
+        if isinstance(condition, Column):
+            return DataFrame([r for r in self._rows if condition._eval(r)], self._columns)
+        return self
+
+    def join(self, other, on=None, how="inner"):
+        if on is None: on = []
+        if isinstance(on, str): on = [on]
+        if isinstance(on, Column):
+            result = []
+            for lr in self._rows:
+                for rr in other._rows:
+                    merged = {**lr, **rr}
+                    if on._eval(merged):
+                        result.append(merged)
+            all_cols = list(dict.fromkeys(self._columns + [c for c in other._columns if c not in self._columns]))
+            if how and how.lower() in ('left', 'left_outer'):
+                left_matched = set()
+                result2 = []
+                for lr in self._rows:
+                    found = False
+                    for rr in other._rows:
+                        merged = {**lr, **rr}
+                        if on._eval(merged):
+                            result2.append(merged)
+                            found = True
+                    if not found:
+                        merged = {**lr}
+                        for c in other._columns:
+                            if c not in self._columns: merged[c] = None
+                        result2.append(merged)
+                return DataFrame(result2, all_cols)
+            return DataFrame(result, all_cols)
+
+        how = how.lower()
+        result = []
+        other_matched = set()
+        for lr in self._rows:
+            matched = False
+            for ri, rr in enumerate(other._rows):
+                if all(lr.get(k) == rr.get(k) for k in on):
+                    merged = {**lr}
+                    for k, v in rr.items():
+                        if k not in on: merged[k] = v
+                    result.append(merged)
+                    other_matched.add(ri)
+                    matched = True
+            if not matched and how in ('left', 'left_outer', 'full', 'full_outer'):
+                merged = {**lr}
+                for c in other._columns:
+                    if c not in on: merged.setdefault(c, None)
+                result.append(merged)
+
+        if how in ('right', 'right_outer', 'full', 'full_outer'):
+            for ri, rr in enumerate(other._rows):
+                if ri not in other_matched:
+                    merged = {}
+                    for c in self._columns:
+                        if c not in on: merged[c] = None
+                    merged.update(rr)
+                    result.append(merged)
+
+        all_cols = list(dict.fromkeys(self._columns + [c for c in other._columns if c not in self._columns]))
+        return DataFrame(result, all_cols)
+
+    def groupBy(self, *cols):
+        keys = []
+        for c in cols:
+            if isinstance(c, str): keys.append(c)
+            elif isinstance(c, Column) and hasattr(c, '_col_name'): keys.append(c._col_name)
+        return _GroupedData(self, keys)
+
+    def agg(self, *exprs):
+        return _GroupedData(self, []).agg(*exprs)
+
+    def union(self, other):
+        all_cols = list(dict.fromkeys(self._columns + other._columns))
+        new_rows = [{c: r.get(c) for c in all_cols} for r in self._rows + other._rows]
+        return DataFrame(new_rows, all_cols)
+
+    def unionByName(self, other, allowMissingColumns=False):
+        return self.union(other)
+
+    def distinct(self):
+        seen = set()
+        result = []
+        for r in self._rows:
+            key = tuple(sorted(r.items()))
+            if key not in seen:
+                seen.add(key)
+                result.append(r)
+        return DataFrame(result, self._columns)
+
+    def dropDuplicates(self, subset=None):
+        if subset is None: return self.distinct()
+        seen = set()
+        result = []
+        for r in self._rows:
+            key = tuple(r.get(k) for k in subset)
+            if key not in seen:
+                seen.add(key)
+                result.append(r)
+        return DataFrame(result, self._columns)
+
+    def orderBy(self, *cols, **kw): return DataFrame(list(self._rows), self._columns)
+    def sort(self, *cols, **kw): return self.orderBy(*cols, **kw)
+    def limit(self, n): return DataFrame(self._rows[:n], self._columns)
+
+    def collect(self):
+        return [Row(**r) for r in self._rows]
+
+    def count(self):
+        return len(self._rows)
+
+    def first(self):
+        return Row(**self._rows[0]) if self._rows else None
+
+    def head(self, n=1):
+        rows = [Row(**r) for r in self._rows[:n]]
+        return rows[0] if n == 1 and rows else rows
+
+    def show(self, n=20, truncate=True):
+        print(f"DataFrame[{', '.join(self._columns)}] ({len(self._rows)} rows)")
+
+    def printSchema(self):
+        for c in self._columns:
+            print(f" |-- {c}: string (nullable = true)")
+
+    def toDF(self, *names):
+        new_rows = []
+        for r in self._rows:
+            old_vals = list(r.values())
+            new_rows.append({n: old_vals[i] if i < len(old_vals) else None for i, n in enumerate(names)})
+        return DataFrame(new_rows, list(names))
+
+    @property
+    def schema(self):
+        def _infer_type(values):
+            for v in values:
+                if v is None:
+                    continue
+                if isinstance(v, bool):
+                    return BooleanType()
+                if isinstance(v, int):
+                    return IntegerType()
+                if isinstance(v, float):
+                    return DoubleType()
+                if isinstance(v, date) and not isinstance(v, datetime):
+                    return DateType()
+                if isinstance(v, datetime):
+                    return TimestampType()
+                return StringType()
+            return StringType()
+        fields = []
+        for c in self._columns:
+            vals = [r.get(c) for r in self._rows]
+            fields.append(StructField(c, _infer_type(vals)))
+        return StructType(fields)
+
+    def na(self):
+        return _NAFunctions(self)
+
+    def crossJoin(self, other):
+        result = [{**lr, **rr} for lr in self._rows for rr in other._rows]
+        return DataFrame(result, list(dict.fromkeys(self._columns + other._columns)))
+
+    def toPandas(self):
+        return self._rows
+
+    def cache(self): return self
+    def persist(self): return self
+    def unpersist(self): return self
+    def repartition(self, *a, **kw): return self
+    def coalesce(self, n): return self
+
+    @property
+    def write(self):
+        return _DataFrameWriter(self)
+
+    @property
+    def dtypes(self):
+        return [(c, 'string') for c in self._columns]
+
+class _NAFunctions:
+    def __init__(self, df): self._df = df
+    def fill(self, value, subset=None):
+        cols = subset or self._df._columns
+        new_rows = [{**r, **{c: value if r.get(c) is None else r.get(c) for c in cols}} for r in self._df._rows]
+        return DataFrame(new_rows, self._df._columns)
+    def drop(self, how='any', subset=None):
+        cols = subset or self._df._columns
+        result = []
+        for r in self._df._rows:
+            nulls = _builtins.sum(1 for c in cols if r.get(c) is None)
+            if how == 'any' and nulls == 0: result.append(r)
+            elif how == 'all' and nulls < len(cols): result.append(r)
+        return DataFrame(result, self._df._columns)
+
+class _DataFrameWriter:
+    def __init__(self, df): self._df = df; self._format = None; self._mode = None; self._opts = {}
+    def format(self, fmt): self._format = fmt; return self
+    def mode(self, m): self._mode = m; return self
+    def option(self, k, v): self._opts[k] = v; return self
+    def save(self, path=None): pass
+    def saveAsTable(self, name): pass
+    def option(self, k, v): self._opts[k] = v; return self
+
+class _GroupedData:
+    def __init__(self, df, keys):
+        self._df = df
+        self._keys = keys
+
+    def agg(self, *exprs):
+        if not self._keys:
+            result_row = {}
+            for expr in exprs:
+                if isinstance(expr, _AggColumn):
+                    name = getattr(expr, '_alias', None) or expr.func_name
+                    result_row[name] = _compute_agg(expr, self._df._rows)
+                elif isinstance(expr, dict):
+                    for c, fn in expr.items():
+                        result_row[f'{fn}({c})'] = _compute_agg(_AggColumn(fn, col(c)), self._df._rows)
+            return DataFrame([result_row], list(result_row.keys()))
+
+        groups = {}
+        for row in self._df._rows:
+            key = tuple(row.get(k) for k in self._keys)
+            groups.setdefault(key, []).append(row)
+
+        result_rows = []
+        col_names = None
+        for key_vals, rows in groups.items():
+            rr = dict(zip(self._keys, key_vals))
+            for expr in exprs:
+                if isinstance(expr, _AggColumn):
+                    name = getattr(expr, '_alias', None) or expr.func_name
+                    rr[name] = _compute_agg(expr, rows)
+                elif isinstance(expr, dict):
+                    for c, fn in expr.items():
+                        rr[f'{fn}({c})'] = _compute_agg(_AggColumn(fn, col(c)), rows)
+            if col_names is None: col_names = list(rr.keys())
+            result_rows.append(rr)
+        return DataFrame(result_rows, col_names or self._keys)
+
+    def count(self):
+        a = _AggColumn('count', Column(lambda r: 1))
+        a._alias = 'count'
+        return self.agg(a)
+        a = _AggColumn('count', Column(lambda r: 1))
+
+# ── SparkSession ────────────────────────────────────────────────────
+class _SparkConf:
+    def __init__(self):
+        self._data = {}
+    def set(self, k, v):
+        self._data[k] = v
+        return self
+    def get(self, k, default=None):
+        return self._data.get(k, default)
+        return self
+
+class SparkSession:
+    class Builder:
+        def master(self, m): return self
+        def appName(self, n): return self
+        def config(self, k=None, v=None, **kw): return self
+        def enableHiveSupport(self): return self
+        def getOrCreate(self): return SparkSession()
+
+    builder = Builder()
+
+    def __init__(self):
+        self.conf = _SparkConf()
+
+    def createDataFrame(self, data, schema=None):
+        if not data:
+            cols = []
+            if schema:
+                if isinstance(schema, StructType): cols = [f.name for f in schema.fields]
+                elif isinstance(schema, list): cols = schema
+            return DataFrame([], cols)
+
+        if isinstance(data[0], Row):
+            rows = [r._data for r in data]
+        elif isinstance(data[0], dict):
+            rows = list(data)
+        elif isinstance(data[0], (list, tuple)):
+            if schema and isinstance(schema, list): cols = schema
+            elif schema and isinstance(schema, StructType): cols = [f.name for f in schema.fields]
+            else: cols = [f'_c{i}' for i in range(len(data[0]))]
+            return DataFrame([dict(zip(cols, row)) for row in data], cols)
+        else:
+            return DataFrame([{'value': v} for v in data], ['value'])
+
+        cols = list(rows[0].keys()) if rows else []
+        return DataFrame(rows, cols)
+
+    def sql(self, query):
+        q = query.strip()
+        if 'explode' in q.lower() and 'sequence' in q.lower():
+            m = re.search(r"date'(\d{4}-\d{2}-\d{2})'.*?date'(\d{4}-\d{2}-\d{2})'", q)
+            if not m:
+                m = re.search(r"'(\d{4}-\d{2}-\d{2})'.*?'(\d{4}-\d{2}-\d{2})'", q)
+            # extract alias name (e.g. "AS full_date")
+            alias_m = re.search(r'\)\s+AS\s+(\w+)', q, re.IGNORECASE)
+            col_name = alias_m.group(1) if alias_m else 'date'
+            if m:
+                start = datetime.strptime(m.group(1), "%Y-%m-%d").date()
+                end = datetime.strptime(m.group(2), "%Y-%m-%d").date()
+                days = (end - start).days + 1
+                return DataFrame([{col_name: start + timedelta(days=i)} for i in range(days)], [col_name])
+        return DataFrame([], [])
+
+    def table(self, name):
+        return DataFrame([], [])
+
+    def read(self):
+        return _DataFrameReader()
+
+    def stop(self):
+        pass
+
+    @property
+    def catalog(self):
+        return _Catalog()
+
+class _DataFrameReader:
+    def __init__(self): self._fmt = None; self._opts = {}; self._schema = None
+    def format(self, fmt): self._fmt = fmt; return self
+    def option(self, k, v): self._opts[k] = v; return self
+    def schema(self, s): self._schema = s; return self
+    def load(self, path=None): return DataFrame([], [])
+    def csv(self, path, **kw): return DataFrame([], [])
+    def json(self, path, **kw): return DataFrame([], [])
+    def parquet(self, path, **kw): return DataFrame([], [])
+    def table(self, name): return DataFrame([], [])
+    def json(self, path, **kw): return DataFrame([], [])
+
+class _Catalog:
+    def tableExists(self, name): return False
+    def listTables(self, db=None): return []
+
+# ── Window (stub) ───────────────────────────────────────────────────
+class Window:
+    @staticmethod
+    def partitionBy(*cols): return _WindowSpec()
+    @staticmethod
+    def orderBy(*cols): return _WindowSpec()
+
+class _WindowSpec:
+    def partitionBy(self, *cols): return self
+    def orderBy(self, *cols): return self
+    def rowsBetween(self, start, end): return self
+    def rangeBetween(self, start, end): return self
+    def orderBy(self, *cols): return self
+    def rowsBetween(self, start, end): return self
+    def rangeBetween(self, start, end): return self
+
+    def rangeBetween(self, start, end): return self
+    def orderBy(self, *cols): return self
+    def rowsBetween(self, start, end): return self
+    def rangeBetween(self, start, end): return self
+
+
+
+
+
+
+
+
+

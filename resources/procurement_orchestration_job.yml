@@ -1,0 +1,50 @@
+# Orchestration job: runs Bronze → Silver → Gold sequentially
+# Ensures Silver waits for Bronze completion, Gold waits for Silver completion
+
+resources:
+  jobs:
+    procurement_end_to_end_job:
+      name: procurement_end_to_end_job
+      description: "Sequential orchestration: Bronze → Silver → Gold"
+
+      tasks:
+        # ── Stage 1: Bronze ingestion ─────────────────────────────
+        - task_key: run_bronze_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.procurement_bronze_pipeline.id}
+            full_refresh: false
+
+        # ── Stage 2: Silver (depends on Bronze) ───────────────────
+        - task_key: run_silver_pipeline
+          depends_on:
+            - task_key: run_bronze_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.procurement_silver_pipeline.id}
+            full_refresh: false
+
+        # ── Stage 3: Gold (depends on Silver) ─────────────────────
+        - task_key: run_gold_pipeline
+          depends_on:
+            - task_key: run_silver_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.procurement_gold_pipeline.id}
+            full_refresh: false
+
+      # Schedule daily at 02:00 UTC
+      schedule:
+        quartz_cron_expression: "0 0 2 * * ?"
+        timezone_id: UTC
+        pause_status: UNPAUSED
+
+      # Run-as: use bundle run principal
+      max_concurrent_runs: 1
+
+      # Failure notifications
+      email_notifications:
+        on_failure:
+          - ${workspace.current_user.userName}
+        no_alert_for_skipped_runs: true
+
+      # Retry on failure
+      queue:
+        enabled: true

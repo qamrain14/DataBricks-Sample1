@@ -1,0 +1,32 @@
+import pathlib, time
+
+p = pathlib.Path(r"tests/conftest.py")
+txt = p.read_text(encoding="utf-8")
+
+old = '    import sys as _sys'
+new = """    # -- env setup --
+    import os as _os, sys as _sys
+    _os.environ['JAVA_HOME'] = r'C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.18.8-hotspot'
+    _os.environ['PATH'] = _os.path.join(_os.environ['JAVA_HOME'], 'bin') + _os.pathsep + _os.environ['PATH']
+    _os.environ.pop('JAVA_TOOL_OPTIONS', None)
+    _sys.modules.setdefault('pandas', None)"""
+
+if old not in txt:
+    print("ERROR: old text not found")
+else:
+    txt = txt.replace(old, new, 1)
+    txt = txt.replace(
+        '.config("spark.ui.enabled", "false")',
+        '.config("spark.ui.enabled", "false")\n            .config("spark.driver.host", "127.0.0.1")'
+    )
+    txt = txt.replace(
+        '.config("spark.pyspark.python", _python)',
+        '.config("spark.sql.execution.arrow.pyspark.enabled", "false")\n            .config("spark.pyspark.python", _python)'
+    )
+    p.write_text(txt, encoding="utf-8")
+    time.sleep(0.5)
+    verify = p.read_text(encoding="utf-8")
+    if 'spark.driver.host' in verify and 'JAVA_HOME' in verify:
+        print("SUCCESS")
+    else:
+        print("REVERTED BY EXTENSION")

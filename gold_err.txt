@@ -1,0 +1,6 @@
+ImportError while loading conftest 'C:\Users\mohdq\src\DataBricks-Sample1\tests\conftest.py'.
+tests\conftest.py:13: in <module>
+    import mock_spark
+E     File "C:\Users\mohdq\src\DataBricks-Sample1\tests\mock_spark.py", line 428
+E       def _eval_sql_expr(expr_str, row):
+E   IndentationError: expected an indented block after 'if' statement on line 425

@@ -1,0 +1,17 @@
+ERROR at setup of TestSilverPipelineExecution.test_silver_pipeline_creates_15_tables _
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeline_runner.py:121: in run_pipeline
+    dlt_mock.execute_pending()
+tests\dlt_mock.py:129: in execute_pending
+    raise RuntimeError(
+E   RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts', 'silver_project_budgets']
+E   Errors:
+E   silver_goods_receipts: '>' not supported between instances of 'str' and 'int'
+E   silver_project_budgets: '>' not supported between instances of 'str' and 'int'
+_ ERROR at setup of TestSilverPipelineExecution.test_silver_tables_not_empty __
+tests\test_silver_pipeline.py:19: in silver_tables
+    tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\pipeli

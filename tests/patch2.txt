@@ -1,0 +1,12 @@
+import sys
+path = r'C:\Users\mohdq\src\DataBricks-Sample1\tests\conftest.py'
+with open(path, 'r') as f:
+    content = f.read()
+
+old = "    _os.environ.pop('JAVA_TOOL_OPTIONS', None)"
+new = "    _os.environ.pop('JAVA_TOOL_OPTIONS', None)\n    _os.environ['PYSPARK_PYTHON'] = _sys.executable\n    _os.environ['PYSPARK_DRIVER_PYTHON'] = _sys.executable"
+
+content = content.replace(old, new, 1)
+with open(path, 'w') as f:
+    f.write(content)
+print('PATCHED OK')

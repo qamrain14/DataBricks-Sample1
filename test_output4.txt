@@ -1,0 +1,136 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 1 item
+
+tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_pipeline_creates_15_tables ERROR [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestSilverPipelineExecution.test_silver_pipeline_creates_15_tables _
+
+spark = <mock_spark.SparkSession object at 0x0000021547EE6E40>
+register_all_bronze = {'bronze_contract_items': <mock_spark.DataFrame object at 0x0000021547E6BCE0>, 'bronze_contracts': <mock_spark.DataFra...Frame object at 0x0000021547E82650>, 'bronze_goods_receipts': <mock_spark.DataFrame object at 0x0000021547F09250>, ...}
+
+    @pytest.fixture
+    def silver_tables(spark, register_all_bronze):
+        """Execute silver pipeline and return all silver tables."""
+>       tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_silver_pipeline.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+notebook_path = 'C:\\Users\\mohdq\\src\\DataBricks-Sample1\\databricks\\silver\\02_silver_pipeline.py'
+spark_session = <mock_spark.SparkSession object at 0x0000021547EE6E40>
+dlt_mock = <module 'dlt_mock' from 'C:\\Users\\mohdq\\src\\DataBricks-Sample1\\tests\\dlt_mock.py'>
+skip_imports = None
+
+    def run_pipeline(notebook_path, spark_session, dlt_mock, skip_imports=None):
+        """
+        Execute a DLT pipeline notebook in test mode.
+        - Patches sys.modules so `import dlt` resolves to dlt_mock
+        - Injects `spark` as a global
+        - Calls dlt_mock.execute_pending() to run all @dlt.table functions
+        Returns dict of all registered tables.
+        """
+        # Patch dlt module
+        original_dlt = sys.modules.get("dlt")
+        sys.modules["dlt"] = dlt_mock
+    
+        # Patch pyspark modules with mock_spark so pipeline imports resolve
+        tests_dir = os.path.dirname(os.path.abspath(__file__))
+        sys.path.insert(0, tests_dir)
+        import mock_spark as _ms
+        import types
+    
+        _pyspark = types.ModuleType("pyspark")
+        _pyspark_sql = types.ModuleType("pyspark.sql")
+        _pyspark_sql_functions = types.ModuleType("pyspark.sql.functions")
+        _pyspark_sql_types = types.ModuleType("pyspark.sql.types")
+    
+        # Copy all public attrs from mock_spark into the fake pyspark.sql.functions / types
+        for name in dir(_ms):
+            if not name.startswith("_"):
+                setattr(_pyspark_sql_functions, name, getattr(_ms, name))
+                setattr(_pyspark_sql_types, name, getattr(_ms, name))
+        _pyspark_sql.functions = _pyspark_sql_functions
+        _pyspark_sql.types = _pyspark_sql_types
+        _pyspark_sql.SparkSession = _ms.SparkSession
+        _pyspark_sql.DataFrame = _ms.DataFrame
+        _pyspark_sql.Row = _ms.Row
+        _pyspark_sql.Column = _ms.Column
+    
+        pyspark_mods = {
+            "pyspark": _pyspark,
+            "pyspark.sql": _pyspark_sql,
+            "pyspark.sql.functions": _pyspark_sql_functions,
+            "pyspark.sql.types": _pyspark_sql_types,
+        }
+        originals = {k: sys.modules.get(k) for k in pyspark_mods}
+        sys.modules.update(pyspark_mods)
+    
+        try:
+            code = extract_python_cells(notebook_path)
+    
+            # Remove lines that would fail in local mode
+            filtered = []
+            for line in code.split("\n"):
+                stripped = line.strip()
+                # Skip spark.read.format("com.crealytics.spark.excel") calls
+                if "com.crealytics.spark.excel" in stripped:
+                    continue
+                if skip_imports and any(s in stripped for s in skip_imports):
+                    continue
+                filtered.append(line)
+            code = "\n".join(filtered)
+    
+            exec_globals = {
+                "spark": spark_session,
+                "__builtins__": __builtins__,
+                "__name__": "__main__",
+            }
+    
+            exec(code, exec_globals)
+>           dlt_mock.execute_pending()
+
+tests\pipeline_runner.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def execute_pending():
+        """Execute all pending @dlt.table functions, resolving dependencies."""
+        remaining = list(_pending_functions)
+        max_iter = len(remaining) + 2
+        for _ in range(max_iter):
+            if not remaining:
+                break
+            still_remaining = []
+            for tbl_name, func in remaining:
+                try:
+                    func()
+                except (KeyError, Exception) as e:
+                    still_remaining.append((tbl_name, func))
+            if len(still_remaining) == len(remaining):
+                names = [n for n, _ in still_remaining]
+                errors = []
+                for tbl_name, func in still_remaining:
+                    try:
+                        func()
+                    except Exception as e:
+                        errors.append(f"{tbl_name}: {e}")
+>               raise RuntimeError(
+                    f"Cannot resolve dependencies for: {names}\nErrors:\n" + "\n".join(errors)
+                )
+E               RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+E               Errors:
+E               silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+
+tests\dlt_mock.py:129: RuntimeError
+=========================== short test summary info ===========================
+ERROR tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_pipeline_creates_15_tables - RuntimeError: Cannot resolve dependencies for: ['silver_goods_receipts']
+Errors:
+silver_goods_receipts: unsupported operand type(s) for /: 'float' and 'str'
+============================== 1 error in 2.30s ===============================

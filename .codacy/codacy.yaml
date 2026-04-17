@@ -1,0 +1,6 @@
+runtimes:
+    - dart@3.7.2
+tools:
+    - dartanalyzer@3.7.2
+    - opengrep@1.16.4
+    - trivy@0.69.3

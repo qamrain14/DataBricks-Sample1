@@ -1,0 +1,38 @@
+{
+  "active":true,
+  "emails": [
+    {
+      "primary":true,
+      "type":"work",
+      "value":"mohd.qamrain@gmail.com"
+    }
+  ],
+  "entitlements": [
+    {
+      "value":"allow-cluster-create"
+    },
+    {
+      "value":"allow-instance-pool-create"
+    }
+  ],
+  "groups": [
+    {
+      "$ref":"Groups/86816006909294",
+      "display":"admins",
+      "type":"direct",
+      "value":"86816006909294"
+    },
+    {
+      "$ref":"Groups/82040091994399",
+      "display":"users",
+      "type":"direct",
+      "value":"82040091994399"
+    }
+  ],
+  "id":"70701985970693",
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User",
+    "urn:ietf:params:scim:schemas:extension:workspace:2.0:User"
+  ],
+  "userName":"mohd.qamrain@gmail.com"
+}

@@ -1,0 +1,122 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 72 items
+
+<Dir DataBricks-Sample1>
+  <Dir tests>
+    <Module test_silver_pipeline.py>
+      Tests for Silver Layer (02_silver_pipeline.py).
+      <Class TestSilverPipelineExecution>
+        Verify silver pipeline executes and produces all 15 tables.
+        <Function test_silver_pipeline_creates_15_tables>
+        <Function test_silver_tables_not_empty>
+      <Class TestSilverDataQuality>
+        Verify expect_or_drop removes null PK rows.
+        <Function test_vendors_null_pk_dropped>
+        <Function test_projects_null_pk_dropped>
+        <Function test_materials_null_pk_dropped>
+        <Function test_employees_null_pk_dropped>
+        <Function test_purchase_orders_null_pk_dropped>
+        <Function test_po_line_items_null_pk_dropped>
+        <Function test_contracts_null_pk_dropped>
+        <Function test_contract_items_null_pk_dropped>
+        <Function test_invoices_null_pk_dropped>
+        <Function test_goods_receipts_null_pk_dropped>
+        <Function test_project_budgets_null_pk_dropped>
+        <Function test_project_actuals_null_pk_dropped>
+        <Function test_sales_orders_null_pk_dropped>
+        <Function test_inventory_null_pk_dropped>
+        <Function test_vendor_performance_null_pk_dropped>
+      <Class TestSilverRowCounts>
+        <Function test_silver_table_has_2_rows[silver_vendors]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_projects]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_materials]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_employees]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_purchase_orders]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_po_line_items]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_contracts]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_contract_items]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_invoices]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_goods_receipts]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_project_budgets]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_project_actuals]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_sales_orders]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_inventory]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+        <Function test_silver_table_has_2_rows[silver_vendor_performance]>
+          After expect_or_drop on null PK, each table should have 2 rows.
+      <Class TestSilverVendorTransforms>
+        <Function test_vendor_name_trimmed>
+        <Function test_country_uppercased>
+        <Function test_performance_rating_is_double>
+        <Function test_payment_terms_is_integer>
+        <Function test_metadata_columns_dropped>
+        <Function test_silver_timestamp_added>
+      <Class TestSilverProjectTransforms>
+        <Function test_project_name_trimmed>
+        <Function test_dates_cast_to_date_type>
+        <Function test_planned_duration_days_calculated>
+        <Function test_budget_variance_pct_calculated>
+      <Class TestSilverMaterialTransforms>
+        <Function test_category_uppercased>
+        <Function test_active_to_is_active_boolean>
+      <Class TestSilverEmployeeTransforms>
+        <Function test_full_name_concatenated>
+        <Function test_full_name_trimmed_parts>
+        <Function test_department_uppercased>
+      <Class TestSilverPurchaseOrderTransforms>
+        <Function test_po_status_uppercased>
+        <Function test_dates_cast>
+        <Function test_order_date_alias>
+      <Class TestSilverPoLineItemTransforms>
+        <Function test_fulfillment_rate_calculated>
+        <Function test_acceptance_rate_calculated>
+      <Class TestSilverContractTransforms>
+        <Function test_contract_duration_days>
+        <Function test_status_uppercased>
+        <Function test_type_uppercased>
+      <Class TestSilverContractItemTransforms>
+        <Function test_quantity_cast_to_double>
+      <Class TestSilverInvoiceTransforms>
+        <Function test_days_to_pay_calculated>
+        <Function test_days_overdue_for_unpaid>
+      <Class TestSilverGoodsReceiptTransforms>
+        <Function test_qty_delivered_renamed_to_qty_received>
+        <Function test_rejection_rate_calculated>
+      <Class TestSilverProjectBudgetTransforms>
+        <Function test_column_renames>
+        <Function test_remaining_amount_calculated>
+        <Function test_utilization_pct_calculated>
+      <Class TestSilverProjectActualTransforms>
+        <Function test_cost_category_derived>
+        <Function test_trimmed_cost_type>
+      <Class TestSilverSalesOrderTransforms>
+        <Function test_order_value_from_revenue>
+        <Function test_total_value_from_total_amount>
+        <Function test_customer_name_trimmed>
+      <Class TestSilverInventoryTransforms>
+        <Function test_total_cost_from_total_value>
+        <Function test_movement_type_uppercased>
+      <Class TestSilverVendorPerformanceTransforms>
+        <Function test_overall_score_from_composite>
+        <Function test_overall_score_value>
+
+========================= 72 tests collected in 0.30s =========================

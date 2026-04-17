@@ -1,0 +1,343 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 33 items
+
+tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_dimensions ERROR [  3%]
+tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_facts ERROR [  6%]
+tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_all_18_gold_tables_not_empty ERROR [  9%]
+tests/test_gold_pipeline.py::TestDimDate::test_date_range_2020_to_2030 ERROR [ 12%]
+tests/test_gold_pipeline.py::TestDimDate::test_date_key_format ERROR     [ 15%]
+tests/test_gold_pipeline.py::TestDimDate::test_date_columns_present ERROR [ 18%]
+tests/test_gold_pipeline.py::TestDimDate::test_total_rows_approximately_4018 ERROR [ 21%]
+tests/test_gold_pipeline.py::TestDimVendor::test_tier_derivation ERROR   [ 24%]
+tests/test_gold_pipeline.py::TestDimVendor::test_status_derivation ERROR [ 27%]
+tests/test_gold_pipeline.py::TestDimVendor::test_gold_timestamp ERROR    [ 30%]
+tests/test_gold_pipeline.py::TestDimProject::test_region_derivation ERROR [ 33%]
+tests/test_gold_pipeline.py::TestDimProject::test_project_duration_days ERROR [ 36%]
+tests/test_gold_pipeline.py::TestDimMaterial::test_material_columns ERROR [ 39%]
+tests/test_gold_pipeline.py::TestDimEmployee::test_employee_columns ERROR [ 42%]
+tests/test_gold_pipeline.py::TestDimGeography::test_geography_key_is_sha2 ERROR [ 45%]
+tests/test_gold_pipeline.py::TestDimGeography::test_region_derivation ERROR [ 48%]
+tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct ERROR [ 51%]
+tests/test_gold_pipeline.py::TestDimCostCenter::test_cost_center_distinct ERROR [ 54%]
+tests/test_gold_pipeline.py::TestDimSector::test_sector_union ERROR      [ 57%]
+tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_line_total_aggregated ERROR [ 60%]
+tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_total_quantity_aggregated ERROR [ 63%]
+tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current ERROR [ 66%]
+tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_overdue ERROR [ 69%]
+tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_receipt_value_calculated ERROR [ 72%]
+tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_acceptance_rate_derived ERROR [ 75%]
+tests/test_gold_pipeline.py::TestFactProjectCosts::test_budget_vs_actual ERROR [ 78%]
+tests/test_gold_pipeline.py::TestFactProjectActuals::test_project_actuals_columns ERROR [ 81%]
+tests/test_gold_pipeline.py::TestFactVendorPerformance::test_score_columns ERROR [ 84%]
+tests/test_gold_pipeline.py::TestFactInventory::test_inventory_columns ERROR [ 87%]
+tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated ERROR [ 90%]
+tests/test_gold_pipeline.py::TestFactContracts::test_item_count ERROR    [ 93%]
+tests/test_gold_pipeline.py::TestFactSales::test_customer_id_is_sha2 ERROR [ 96%]
+tests/test_gold_pipeline.py::TestFactSales::test_product_name_joined ERROR [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_dimensions __
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+____ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_facts ____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_ ERROR at setup of TestGoldPipelineExecution.test_all_18_gold_tables_not_empty _
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_________ ERROR at setup of TestDimDate.test_date_range_2020_to_2030 __________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_____________ ERROR at setup of TestDimDate.test_date_key_format ______________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+___________ ERROR at setup of TestDimDate.test_date_columns_present ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+______ ERROR at setup of TestDimDate.test_total_rows_approximately_4018 _______
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+____________ ERROR at setup of TestDimVendor.test_tier_derivation _____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+___________ ERROR at setup of TestDimVendor.test_status_derivation ____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_____________ ERROR at setup of TestDimVendor.test_gold_timestamp _____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+___________ ERROR at setup of TestDimProject.test_region_derivation ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_________ ERROR at setup of TestDimProject.test_project_duration_days _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+___________ ERROR at setup of TestDimMaterial.test_material_columns ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+___________ ERROR at setup of TestDimEmployee.test_employee_columns ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+________ ERROR at setup of TestDimGeography.test_geography_key_is_sha2 ________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+__________ ERROR at setup of TestDimGeography.test_region_derivation __________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+___________ ERROR at setup of TestDimContract.test_cost_growth_pct ____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+________ ERROR at setup of TestDimCostCenter.test_cost_center_distinct ________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+______________ ERROR at setup of TestDimSector.test_sector_union ______________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_____ ERROR at setup of TestFactPurchaseOrders.test_line_total_aggregated _____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+___ ERROR at setup of TestFactPurchaseOrders.test_total_quantity_aggregated ___
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_current _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_overdue _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+____ ERROR at setup of TestFactGoodsReceipts.test_receipt_value_calculated ____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+____ ERROR at setup of TestFactGoodsReceipts.test_acceptance_rate_derived _____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+________ ERROR at setup of TestFactProjectCosts.test_budget_vs_actual _________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+____ ERROR at setup of TestFactProjectActuals.test_project_actuals_columns ____
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_______ ERROR at setup of TestFactVendorPerformance.test_score_columns ________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_________ ERROR at setup of TestFactInventory.test_inventory_columns __________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_______ ERROR at setup of TestFactContracts.test_items_total_aggregated _______
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+_____________ ERROR at setup of TestFactContracts.test_item_count _____________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+__________ ERROR at setup of TestFactSales.test_customer_id_is_sha2 ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+__________ ERROR at setup of TestFactSales.test_product_name_joined ___________
+tests\test_gold_pipeline.py:24: in gold_tables
+    pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+tests\pipeline_runner.py:120: in run_pipeline
+    exec(code, exec_globals)
+<string>:2: in <module>
+    ???
+E   ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+=========================== short test summary info ===========================
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_dimensions - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_facts - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_all_18_gold_tables_not_empty - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_range_2020_to_2030 - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_key_format - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_columns_present - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_total_rows_approximately_4018 - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_tier_derivation - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_status_derivation - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_gold_timestamp - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_region_derivation - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_project_duration_days - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimMaterial::test_material_columns - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimEmployee::test_employee_columns - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_geography_key_is_sha2 - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_region_derivation - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimCostCenter::test_cost_center_distinct - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestDimSector::test_sector_union - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_line_total_aggregated - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_total_quantity_aggregated - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_overdue - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_receipt_value_calculated - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_acceptance_rate_derived - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactProjectCosts::test_budget_vs_actual - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactProjectActuals::test_project_actuals_columns - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactVendorPerformance::test_score_columns - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactInventory::test_inventory_columns - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_item_count - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_customer_id_is_sha2 - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_product_name_joined - ImportError: cannot import name 'datediff' from 'pyspark.sql.functions' (unknown location)
+============================= 33 errors in 8.37s ==============================

@@ -1,0 +1,8 @@
+Name       Type             Comment
+workspace  MANAGED_CATALOG  
+samples    SYSTEM_CATALOG   These sample datasets are made available by third party data providers as well as open data sources. You can learn more about each data set by clicking on each one.
+
+To discover more instantly available, free data sets across a wide range of industry use cases, visit [Databricks Marketplace](/marketplace).
+
+Please note that the third party data sets represent a reduced portion of the available data attributes, volume, and data types available from providers, and are intended for educational rather than production purposes.
+system  SYSTEM_CATALOG  System catalog (auto-created)

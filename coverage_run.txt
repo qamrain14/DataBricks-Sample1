@@ -1,0 +1,25 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 141 items
+
+tests\test_bronze_pipeline.py ........                                   [  5%]
+tests\test_e2e_pipeline.py ............................                  [ 25%]
+tests\test_gold_pipeline.py .................................            [ 48%]
+tests\test_silver_pipeline.py .......................................... [ 78%]
+..............................C:\Users\mohdq\AppData\Roaming\Python\Python313\site-packages\coverage\control.py:946: CoverageWarning: No data was collected. (no-data-collected); see https://coverage.readthedocs.io/en/7.10.7/messages.html#warning-no-data-collected
+  self._warn("No data was collected.", slug="no-data-collected")
+C:\Users\mohdq\AppData\Roaming\Python\Python313\site-packages\pytest_cov\plugin.py:352: CovReportWarning: Failed to generate report: No data to report.
+
+  warnings.warn(CovReportWarning(message), stacklevel=1)
+WARNING: Failed to generate report: No data to report.
+
+                                                                         [100%]
+
+---------- coverage: platform win32, python 3.13.7-final-0 -----------
+
+
+======================= 141 passed in 280.50s (0:04:40) =======================

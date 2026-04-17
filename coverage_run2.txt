@@ -1,0 +1,43 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 141 items
+
+tests\test_bronze_pipeline.py ........                                   [  5%]
+tests\test_e2e_pipeline.py ............................                  [ 25%]
+tests\test_gold_pipeline.py .................................            [ 48%]
+tests\test_silver_pipeline.py .......................................... [ 78%]
+..............................                                           [100%]
+
+---------- coverage: platform win32, python 3.13.7-final-0 -----------
+Name                            Stmts   Miss  Cover
+---------------------------------------------------
+tests\_patch_cmp.py                 9      9     0%
+tests\_patch_conftest2.py           0      0   100%
+tests\_patch_conftest3.py          11     11     0%
+tests\_patch_conftest.py            0      0   100%
+tests\_write_mock_spark.py          0      0   100%
+tests\conftest.py                  80      1    99%
+tests\conftest_env.py               0      0   100%
+tests\dlt_mock.py                 106     17    84%
+tests\mock_spark.py               797    171    79%
+tests\patch_conftest2.py            0      0   100%
+tests\patch_conftest.py             0      0   100%
+tests\patch_mock.py                 0      0   100%
+tests\pipeline_runner.py           78      9    88%
+tests\smoke_test.py                 0      0   100%
+tests\spark_check.py                0      0   100%
+tests\spark_test.py                 0      0   100%
+tests\test_bronze_pipeline.py      77      0   100%
+tests\test_e2e_pipeline.py        141      0   100%
+tests\test_gold_pipeline.py       167      0   100%
+tests\test_silver_pipeline.py     261      0   100%
+tests\write_env.py                  0      0   100%
+---------------------------------------------------
+TOTAL                            1727    218    87%
+
+
+======================= 141 passed in 179.52s (0:02:59) =======================

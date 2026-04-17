@@ -1,0 +1,570 @@
+"""
+Generator script: Run with `python tests/generate_test_files.txt`
+to create all test .py files bypassing VS Code Databricks extension.
+"""
+import os
+
+TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
+
+files = {}
+
+# ============================================================
+# dlt_mock.py
+# ============================================================
+files["dlt_mock.py"] = r'''"""
+DLT Mock Framework for offline testing of Databricks DLT pipelines.
+Simulates dlt.table, dlt.read, dlt.expect, dlt.expect_or_drop, dlt.expect_or_fail.
+"""
+
+import functools
+
+# Internal registries
+_tables = {}
+_table_metadata = {}
+_expectation_results = {}
+
+
+def reset():
+    """Clear all registered tables and expectation results."""
+    _tables.clear()
+    _table_metadata.clear()
+    _expectation_results.clear()
+
+
+def register(name, df):
+    """Register a DataFrame as a named DLT table."""
+    _tables[name] = df
+
+
+def read(name):
+    """Read a registered DLT table by name."""
+    if name not in _tables:
+        available = list(_tables.keys())
+        raise KeyError(f"Table '{name}' not registered in dlt_mock. Available: {available}")
+    return _tables[name]
+
+
+def get_table(name):
+    """Get a registered table or None."""
+    return _tables.get(name)
+
+
+def get_all_tables():
+    """Return a copy of all registered tables."""
+    return dict(_tables)
+
+
+def get_expectations():
+    """Return all recorded expectation results."""
+    return dict(_expectation_results)
+
+
+def table(name=None, comment=None, table_properties=None, path=None):
+    """Decorator simulating @dlt.table - registers the returned DataFrame."""
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            df = func(*args, **kwargs)
+            tbl_name = name or func.__name__
+            _tables[tbl_name] = df
+            _table_metadata[tbl_name] = {
+                "comment": comment,
+                "table_properties": table_properties,
+                "path": path,
+            }
+            return df
+        return wrapper
+    return decorator
+
+
+def expect(rule_name, condition):
+    """Decorator simulating @dlt.expect - warns but keeps all rows."""
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            df = func(*args, **kwargs)
+            violations = df.where(f"NOT ({condition})").count()
+            tbl_name = _find_table_name(df, rule_name)
+            _expectation_results.setdefault(tbl_name, []).append(
+                (rule_name, condition, violations, "warn")
+            )
+            return df
+        return wrapper
+    return decorator
+
+
+def expect_or_drop(rule_name, condition):
+    """Decorator simulating @dlt.expect_or_drop - filters violating rows."""
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            df = func(*args, **kwargs)
+            before = df.count()
+            filtered = df.where(condition)
+            after = filtered.count()
+            dropped = before - after
+            tbl_name = _find_table_name(df, rule_name)
+            _expectation_results.setdefault(tbl_name, []).append(
+                (rule_name, condition, dropped, "drop")
+            )
+            # Re-register the filtered DataFrame
+            for n, d in list(_tables.items()):
+                if d is df:
+                    _tables[n] = filtered
+                    break
+            return filtered
+        return wrapper
+    return decorator
+
+
+def expect_or_fail(rule_name, condition):
+    """Decorator simulating @dlt.expect_or_fail - raises on violations."""
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            df = func(*args, **kwargs)
+            violations = df.where(f"NOT ({condition})").count()
+            if violations > 0:
+                raise ValueError(
+                    f"DLT expect_or_fail FAILED: rule='{rule_name}', "
+                    f"condition='{condition}', violations={violations}"
+                )
+            tbl_name = _find_table_name(df, rule_name)
+            _expectation_results.setdefault(tbl_name, []).append(
+                (rule_name, condition, 0, "fail")
+            )
+            return df
+        return wrapper
+    return decorator
+
+
+def _find_table_name(df, default):
+    """Find the registered table name for a DataFrame."""
+    for n, d in _tables.items():
+        if d is df:
+            return n
+    return default
+'''
+
+# ============================================================
+# conftest.py
+# ============================================================
+files["conftest.py"] = r'''"""
+Pytest fixtures for DLT pipeline testing.
+Provides SparkSession, DLT mock reset, and 15 bronze data factories.
+"""
+
+import pytest
+import sys
+import os
+from datetime import date, datetime
+from decimal import Decimal
+
+# Add tests dir to path for dlt_mock import
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import dlt_mock
+
+
+@pytest.fixture(scope="session")
+def spark():
+    """Session-scoped local SparkSession with Delta Lake support."""
+    from pyspark.sql import SparkSession
+
+    session = (
+        SparkSession.builder
+        .master("local[2]")
+        .appName("dlt-pipeline-tests")
+        .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
+        .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalogExtension")
+        .config("spark.sql.shuffle.partitions", "2")
+        .config("spark.ui.enabled", "false")
+        .config("spark.driver.bindAddress", "127.0.0.1")
+        .getOrCreate()
+    )
+    yield session
+    session.stop()
+
+
+@pytest.fixture(autouse=True)
+def _reset_dlt():
+    """Reset DLT mock state before each test."""
+    dlt_mock.reset()
+    yield
+    dlt_mock.reset()
+
+
+# ----- Bronze Data Factories -----
+
+@pytest.fixture
+def bronze_vendors(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, DoubleType, IntegerType, TimestampType
+    schema = StructType([
+        StructField("vendor_id", StringType()), StructField("vendor_name", StringType()),
+        StructField("sector", StringType()), StructField("country", StringType()),
+        StructField("city", StringType()), StructField("contact_email", StringType()),
+        StructField("phone", StringType()), StructField("credit_limit", StringType()),
+        StructField("vendor_rating", StringType()), StructField("payment_terms", StringType()),
+        StructField("annual_turnover", StringType()), StructField("certification", StringType()),
+        StructField("status", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("V001", "Acme Corp", "construction", "USA", "Houston", "acme@test.com", "555-0001",
+         "500000.0", "4.5", "30", "1000000.0", "ISO9001", "active",
+         datetime(2024,1,1), "vendors.xlsx"),
+        ("V002", " beta industries ", "Oil_Gas", "UK", "London", "beta@test.com", "555-0002",
+         "750000.0", "3.8", "45", "2000000.0", "ISO14001", "ACTIVE",
+         datetime(2024,1,1), "vendors.xlsx"),
+        (None, "NullVendor", "construction", "CA", "Toronto", "null@test.com", "555-0003",
+         "100000.0", "2.0", "60", "500000.0", None, "inactive",
+         datetime(2024,1,1), "vendors.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_projects(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, DoubleType, TimestampType
+    schema = StructType([
+        StructField("project_id", StringType()), StructField("project_name", StringType()),
+        StructField("sector", StringType()), StructField("region", StringType()),
+        StructField("country", StringType()), StructField("city", StringType()),
+        StructField("project_type", StringType()), StructField("status", StringType()),
+        StructField("start_date", StringType()), StructField("end_date", StringType()),
+        StructField("budget", StringType()), StructField("actual_cost", StringType()),
+        StructField("client_name", StringType()), StructField("project_manager", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("P001", "Highway Bridge", "construction", "North America", "USA", "Houston",
+         "infrastructure", "active", "2024-01-01", "2024-12-31",
+         "5000000.0", "4500000.0", "DOT", "John Smith",
+         datetime(2024,1,1), "projects.xlsx"),
+        ("P002", " offshore platform ", "oil_gas", "Europe", "UK", "Aberdeen",
+         "offshore", "PLANNING", "2024-03-01", "2025-06-30",
+         "15000000.0", "0.0", "BP", "Jane Doe",
+         datetime(2024,1,1), "projects.xlsx"),
+        (None, "NullProject", "construction", "Asia", "India", "Mumbai",
+         "building", "completed", "2023-01-01", "2023-12-31",
+         "2000000.0", "2100000.0", "Tata", "Raj Kumar",
+         datetime(2024,1,1), "projects.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_materials(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("material_id", StringType()), StructField("material_name", StringType()),
+        StructField("category", StringType()), StructField("unit_of_measure", StringType()),
+        StructField("unit_price", StringType()), StructField("lead_time_days", StringType()),
+        StructField("min_order_qty", StringType()), StructField("active", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("M001", "Steel Beam", "structural", "ton", "1200.50", "14", "10", "true",
+         datetime(2024,1,1), "materials.xlsx"),
+        ("M002", " concrete mix ", "foundation", "cubic_yard", "85.00", "7", "50", "TRUE",
+         datetime(2024,1,1), "materials.xlsx"),
+        (None, "NullMaterial", "piping", "meter", "45.00", "21", "100", "false",
+         datetime(2024,1,1), "materials.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_employees(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("employee_id", StringType()), StructField("first_name", StringType()),
+        StructField("last_name", StringType()), StructField("department", StringType()),
+        StructField("role", StringType()), StructField("email", StringType()),
+        StructField("hire_date", StringType()), StructField("active", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("E001", "John", "Smith", "procurement", "manager", "jsmith@test.com",
+         "2020-01-15", "true", datetime(2024,1,1), "employees.xlsx"),
+        ("E002", " jane ", " doe ", "Engineering", "engineer", "jdoe@test.com",
+         "2021-06-01", "TRUE", datetime(2024,1,1), "employees.xlsx"),
+        (None, "Null", "Employee", "HR", "analyst", "null@test.com",
+         "2022-03-10", "false", datetime(2024,1,1), "employees.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_purchase_orders(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("po_id", StringType()), StructField("vendor_id", StringType()),
+        StructField("project_id", StringType()), StructField("po_date", StringType()),
+        StructField("delivery_date", StringType()), StructField("po_status", StringType()),
+        StructField("total_amount", StringType()), StructField("currency", StringType()),
+        StructField("approved_by", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("PO001", "V001", "P001", "2024-01-15", "2024-02-15", "approved",
+         "250000.00", "USD", "E001", datetime(2024,1,1), "purchase_orders.xlsx"),
+        ("PO002", "V002", "P002", "2024-02-01", "2024-03-15", "pending",
+         "500000.00", "GBP", "E002", datetime(2024,1,1), "purchase_orders.xlsx"),
+        (None, "V001", "P001", "2024-03-01", "2024-04-01", "DRAFT",
+         "100000.00", "USD", "E001", datetime(2024,1,1), "purchase_orders.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_po_line_items(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("line_item_id", StringType()), StructField("po_id", StringType()),
+        StructField("material_id", StringType()), StructField("quantity", StringType()),
+        StructField("unit_price", StringType()), StructField("total_price", StringType()),
+        StructField("qty_received", StringType()), StructField("qty_accepted", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("LI001", "PO001", "M001", "100", "1200.50", "120050.00", "95", "90",
+         datetime(2024,1,1), "po_line_items.xlsx"),
+        ("LI002", "PO001", "M002", "500", "85.00", "42500.00", "500", "480",
+         datetime(2024,1,1), "po_line_items.xlsx"),
+        (None, "PO002", "M001", "200", "1200.50", "240100.00", "0", "0",
+         datetime(2024,1,1), "po_line_items.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_contracts(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("contract_id", StringType()), StructField("vendor_id", StringType()),
+        StructField("project_id", StringType()), StructField("contract_type", StringType()),
+        StructField("status", StringType()), StructField("start_date", StringType()),
+        StructField("end_date", StringType()), StructField("original_value", StringType()),
+        StructField("revised_value", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("C001", "V001", "P001", "fixed_price", "active", "2024-01-01", "2024-12-31",
+         "1000000.0", "1050000.0", datetime(2024,1,1), "contracts.xlsx"),
+        ("C002", "V002", "P002", " cost_plus ", "PENDING", "2024-03-01", "2025-06-30",
+         "5000000.0", "5500000.0", datetime(2024,1,1), "contracts.xlsx"),
+        (None, "V001", "P001", "time_materials", "closed", "2023-01-01", "2023-12-31",
+         "200000.0", "180000.0", datetime(2024,1,1), "contracts.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_contract_items(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("item_id", StringType()), StructField("contract_id", StringType()),
+        StructField("description", StringType()), StructField("quantity", StringType()),
+        StructField("unit_price", StringType()), StructField("total_value", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("CI001", "C001", "Foundation Work", "1", "500000.0", "500000.0",
+         datetime(2024,1,1), "contract_items.xlsx"),
+        ("CI002", "C001", "Steel Structure", "1", "350000.0", "350000.0",
+         datetime(2024,1,1), "contract_items.xlsx"),
+        (None, "C002", "Drilling Services", "1", "2000000.0", "2000000.0",
+         datetime(2024,1,1), "contract_items.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_invoices(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("invoice_id", StringType()), StructField("po_id", StringType()),
+        StructField("vendor_id", StringType()), StructField("invoice_date", StringType()),
+        StructField("due_date", StringType()), StructField("payment_date", StringType()),
+        StructField("amount", StringType()), StructField("status", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("INV001", "PO001", "V001", "2024-02-01", "2024-03-01", "2024-02-25",
+         "120050.00", "paid", datetime(2024,1,1), "invoices.xlsx"),
+        ("INV002", "PO002", "V002", "2024-03-15", "2024-04-15", None,
+         "500000.00", "OVERDUE", datetime(2024,1,1), "invoices.xlsx"),
+        (None, "PO001", "V001", "2024-04-01", "2024-05-01", "2024-04-20",
+         "42500.00", "paid", datetime(2024,1,1), "invoices.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_goods_receipts(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("receipt_id", StringType()), StructField("po_id", StringType()),
+        StructField("material_id", StringType()), StructField("receipt_date", StringType()),
+        StructField("qty_delivered", StringType()), StructField("qty_accepted", StringType()),
+        StructField("qty_rejected", StringType()), StructField("warehouse", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("GR001", "PO001", "M001", "2024-02-10", "100", "95", "5", "WH-Houston",
+         datetime(2024,1,1), "goods_receipts.xlsx"),
+        ("GR002", "PO001", "M002", "2024-02-12", "500", "480", "20", "WH-Houston",
+         datetime(2024,1,1), "goods_receipts.xlsx"),
+        (None, "PO002", "M001", "2024-03-20", "200", "190", "10", "WH-Aberdeen",
+         datetime(2024,1,1), "goods_receipts.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_project_budgets(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("budget_id", StringType()), StructField("project_id", StringType()),
+        StructField("category", StringType()), StructField("original_amount", StringType()),
+        StructField("revised_amount", StringType()), StructField("actual_spent", StringType()),
+        StructField("fiscal_year", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("B001", "P001", "materials", "2000000.0", "2200000.0", "1800000.0", "2024",
+         datetime(2024,1,1), "project_budgets.xlsx"),
+        ("B002", "P001", "labor", "1500000.0", "1600000.0", "1400000.0", "2024",
+         datetime(2024,1,1), "project_budgets.xlsx"),
+        (None, "P002", "equipment", "5000000.0", "5500000.0", "0.0", "2024",
+         datetime(2024,1,1), "project_budgets.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_project_actuals(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("actual_id", StringType()), StructField("project_id", StringType()),
+        StructField("cost_type", StringType()), StructField("actual_amount", StringType()),
+        StructField("transaction_date", StringType()), StructField("description", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("A001", "P001", "materials", "50000.0", "2024-02-15", "Steel delivery",
+         datetime(2024,1,1), "project_actuals.xlsx"),
+        ("A002", "P001", " labor ", "35000.0", "2024-02-28", "Monthly payroll",
+         datetime(2024,1,1), "project_actuals.xlsx"),
+        (None, "P002", "equipment", "0.0", "2024-03-15", "Equipment rental",
+         datetime(2024,1,1), "project_actuals.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_sales_orders(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("order_id", StringType()), StructField("customer_name", StringType()),
+        StructField("material_id", StringType()), StructField("order_date", StringType()),
+        StructField("quantity", StringType()), StructField("unit_price", StringType()),
+        StructField("revenue", StringType()), StructField("total_amount", StringType()),
+        StructField("status", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("SO001", "ClientA", "M001", "2024-01-20", "50", "1500.00", "75000.00",
+         "75000.00", "delivered", datetime(2024,1,1), "sales_orders.xlsx"),
+        ("SO002", " clientb ", "M002", "2024-02-10", "200", "90.00", "18000.00",
+         "18000.00", "SHIPPED", datetime(2024,1,1), "sales_orders.xlsx"),
+        (None, "ClientC", "M001", "2024-03-05", "100", "1500.00", "150000.00",
+         "150000.00", "pending", datetime(2024,1,1), "sales_orders.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_inventory(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("inventory_id", StringType()), StructField("material_id", StringType()),
+        StructField("warehouse", StringType()), StructField("quantity_on_hand", StringType()),
+        StructField("reorder_point", StringType()), StructField("total_value", StringType()),
+        StructField("last_updated", StringType()), StructField("movement_type", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("I001", "M001", "WH-Houston", "500", "100", "600250.00", "2024-02-15",
+         "receipt", datetime(2024,1,1), "inventory.xlsx"),
+        ("I002", "M002", "WH-Houston", "2000", "500", "170000.00", "2024-02-15",
+         "issue", datetime(2024,1,1), "inventory.xlsx"),
+        (None, "M001", "WH-Aberdeen", "100", "50", "120050.00", "2024-03-20",
+         "transfer", datetime(2024,1,1), "inventory.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def bronze_vendor_performance(spark):
+    from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+    schema = StructType([
+        StructField("performance_id", StringType()), StructField("vendor_id", StringType()),
+        StructField("evaluation_date", StringType()), StructField("quality_score", StringType()),
+        StructField("delivery_score", StringType()), StructField("price_score", StringType()),
+        StructField("composite_score", StringType()), StructField("period", StringType()),
+        StructField("_ingest_timestamp", TimestampType()), StructField("_source_file", StringType()),
+    ])
+    data = [
+        ("VP001", "V001", "2024-01-31", "4.5", "4.0", "3.8", "4.1", "2024-Q1",
+         datetime(2024,1,1), "vendor_performance.xlsx"),
+        ("VP002", "V002", "2024-01-31", "3.8", "3.5", "4.2", "3.83", "2024-Q1",
+         datetime(2024,1,1), "vendor_performance.xlsx"),
+        (None, "V001", "2024-03-31", "4.2", "4.1", "3.9", "4.07", "2024-Q1",
+         datetime(2024,1,1), "vendor_performance.xlsx"),
+    ]
+    return spark.createDataFrame(data, schema)
+
+
+@pytest.fixture
+def register_all_bronze(
+    bronze_vendors, bronze_projects, bronze_materials, bronze_employees,
+    bronze_purchase_orders, bronze_po_line_items, bronze_contracts,
+    bronze_contract_items, bronze_invoices, bronze_goods_receipts,
+    bronze_project_budgets, bronze_project_actuals, bronze_sales_orders,
+    bronze_inventory, bronze_vendor_performance,
+):
+    """Register all 15 bronze tables in dlt_mock for Silver/Gold testing."""
+    mapping = {
+        "bronze_vendors": bronze_vendors,
+        "bronze_projects": bronze_projects,
+        "bronze_materials": bronze_materials,
+        "bronze_employees": bronze_employees,
+        "bronze_purchase_orders": bronze_purchase_orders,
+        "bronze_po_line_items": bronze_po_line_items,
+        "bronze_contracts": bronze_contracts,
+        "bronze_contract_items": bronze_contract_items,
+        "bronze_invoices": bronze_invoices,
+        "bronze_goods_receipts": bronze_goods_receipts,
+        "bronze_project_budgets": bronze_project_budgets,
+        "bronze_project_actuals": bronze_project_actuals,
+        "bronze_sales_orders": bronze_sales_orders,
+        "bronze_inventory": bronze_inventory,
+        "bronze_vendor_performance": bronze_vendor_performance,
+    }
+    for name, df in mapping.items():
+        dlt_mock.register(name, df)
+    return mapping
+'''
+
+# ============================================================
+# Write all files
+# ============================================================
+for filename, content in files.items():
+    filepath = os.path.join(TESTS_DIR, filename)
+    with open(filepath, "w", encoding="utf-8", newline="\n") as f:
+        f.write(content.lstrip("\n"))
+    size = os.path.getsize(filepath)
+    print(f"  Written: {filename} ({size} bytes)")
+
+print("\nDone! Verify with: python -c \"import os; [print(f, os.path.getsize(f'tests/{f}')) for f in ['dlt_mock.py','conftest.py']]\"")

@@ -1,0 +1,2 @@
+Name   Host                                            Valid
+local  https://dbc-760a206e-c226.cloud.databricks.com  NO

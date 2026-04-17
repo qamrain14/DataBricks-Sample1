@@ -1,0 +1,1733 @@
+"""
+Master generator: Run with `python tests/generate_all_tests.txt`
+Creates all test files for the DLT pipeline test suite.
+"""
+import os, textwrap
+
+TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
+files = {}
+
+# ============================================================
+# 1. dlt_mock.py  (updated with execute_pending)
+# ============================================================
+files["dlt_mock.py"] = textwrap.dedent(r'''
+    """
+    DLT Mock Framework for offline testing of Databricks DLT pipelines.
+    Simulates dlt.table, dlt.read, dlt.expect, dlt.expect_or_drop, dlt.expect_or_fail.
+    """
+    import functools
+
+    _tables = {}
+    _table_metadata = {}
+    _expectation_results = {}
+    _pending_functions = []
+
+    def reset():
+        _tables.clear()
+        _table_metadata.clear()
+        _expectation_results.clear()
+        _pending_functions.clear()
+
+    def register(name, df):
+        _tables[name] = df
+
+    def read(name):
+        if name not in _tables:
+            raise KeyError(f"Table '{name}' not found. Available: {list(_tables.keys())}")
+        return _tables[name]
+
+    def get_table(name):
+        return _tables.get(name)
+
+    def get_all_tables():
+        return dict(_tables)
+
+    def get_expectations():
+        return dict(_expectation_results)
+
+    def table(name=None, comment=None, table_properties=None, path=None):
+        def decorator(func):
+            tbl_name = name or func.__name__
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                df = func(*args, **kwargs)
+                _tables[tbl_name] = df
+                _table_metadata[tbl_name] = {
+                    "comment": comment,
+                    "table_properties": table_properties,
+                    "path": path,
+                }
+                return df
+            _pending_functions.append((tbl_name, wrapper))
+            return wrapper
+        return decorator
+
+    def expect(rule_name, condition):
+        def decorator(func):
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                df = func(*args, **kwargs)
+                try:
+                    violations = df.where(f"NOT ({condition})").count()
+                except Exception:
+                    violations = -1
+                tbl_name = _find_table_name(df, rule_name)
+                _expectation_results.setdefault(tbl_name, []).append(
+                    (rule_name, condition, violations, "warn")
+                )
+                return df
+            return wrapper
+        return decorator
+
+    def expect_or_drop(rule_name, condition):
+        def decorator(func):
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                df = func(*args, **kwargs)
+                before = df.count()
+                filtered = df.where(condition)
+                after = filtered.count()
+                tbl_name = _find_table_name(df, rule_name)
+                _expectation_results.setdefault(tbl_name, []).append(
+                    (rule_name, condition, before - after, "drop")
+                )
+                for n, d in list(_tables.items()):
+                    if d is df:
+                        _tables[n] = filtered
+                        break
+                return filtered
+            return wrapper
+        return decorator
+
+    def expect_or_fail(rule_name, condition):
+        def decorator(func):
+            @functools.wraps(func)
+            def wrapper(*args, **kwargs):
+                df = func(*args, **kwargs)
+                violations = df.where(f"NOT ({condition})").count()
+                if violations > 0:
+                    raise ValueError(
+                        f"DLT expect_or_fail FAILED: rule='{rule_name}', "
+                        f"condition='{condition}', violations={violations}"
+                    )
+                tbl_name = _find_table_name(df, rule_name)
+                _expectation_results.setdefault(tbl_name, []).append(
+                    (rule_name, condition, 0, "fail")
+                )
+                return df
+            return wrapper
+        return decorator
+
+    def execute_pending():
+        """Execute all pending @dlt.table functions, resolving dependencies."""
+        remaining = list(_pending_functions)
+        max_iter = len(remaining) + 2
+        for _ in range(max_iter):
+            if not remaining:
+                break
+            still_remaining = []
+            for tbl_name, func in remaining:
+                try:
+                    func()
+                except (KeyError, Exception) as e:
+                    still_remaining.append((tbl_name, func))
+            if len(still_remaining) == len(remaining):
+                names = [n for n, _ in still_remaining]
+                errors = []
+                for tbl_name, func in still_remaining:
+                    try:
+                        func()
+                    except Exception as e:
+                        errors.append(f"{tbl_name}: {e}")
+                raise RuntimeError(
+                    f"Cannot resolve dependencies for: {names}\nErrors:\n" + "\n".join(errors)
+                )
+            remaining = still_remaining
+        _pending_functions.clear()
+
+    def _find_table_name(df, default):
+        for n, d in _tables.items():
+            if d is df:
+                return n
+        return default
+''')
+
+# ============================================================
+# 2. pipeline_runner.py
+# ============================================================
+files["pipeline_runner.py"] = textwrap.dedent(r'''
+    """
+    Utility to extract and execute Databricks DLT notebook code in test mode.
+    Handles the standard Databricks notebook format:
+      - # Databricks notebook source
+      - # COMMAND ----------
+      - # MAGIC %md / # MAGIC lines
+    """
+    import re
+    import sys
+    import os
+
+    def extract_python_cells(notebook_path):
+        """Extract pure Python code from a Databricks notebook file."""
+        with open(notebook_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Split into cells by separator
+        cells = re.split(r"# COMMAND ----------", content)
+        python_lines = []
+
+        for cell in cells:
+            lines = cell.strip().split("\n")
+            if not lines or not lines[0].strip():
+                lines = [l for l in lines if l.strip()]
+            if not lines:
+                continue
+
+            first = lines[0].strip()
+
+            # Skip the header line
+            if first == "# Databricks notebook source":
+                continue
+
+            # Skip markdown cells
+            if first.startswith("# MAGIC %md"):
+                continue
+
+            # Process regular Python cells - strip # MAGIC prefix if present
+            clean = []
+            for line in lines:
+                stripped = line.strip()
+                if stripped.startswith("# MAGIC "):
+                    clean.append(line.replace("# MAGIC ", "", 1))
+                elif stripped == "# MAGIC":
+                    clean.append("")
+                else:
+                    clean.append(line)
+            python_lines.extend(clean)
+            python_lines.append("")  # blank line between cells
+
+        return "\n".join(python_lines)
+
+
+    def run_pipeline(notebook_path, spark_session, dlt_mock, skip_imports=None):
+        """
+        Execute a DLT pipeline notebook in test mode.
+        - Patches sys.modules so `import dlt` resolves to dlt_mock
+        - Injects `spark` as a global
+        - Calls dlt_mock.execute_pending() to run all @dlt.table functions
+        Returns dict of all registered tables.
+        """
+        # Patch dlt module
+        original_dlt = sys.modules.get("dlt")
+        sys.modules["dlt"] = dlt_mock
+
+        try:
+            code = extract_python_cells(notebook_path)
+
+            # Remove lines that would fail in local mode
+            filtered = []
+            for line in code.split("\n"):
+                stripped = line.strip()
+                # Skip spark.read.format("com.crealytics.spark.excel") calls
+                if "com.crealytics.spark.excel" in stripped:
+                    continue
+                if skip_imports and any(s in stripped for s in skip_imports):
+                    continue
+                filtered.append(line)
+            code = "\n".join(filtered)
+
+            exec_globals = {
+                "spark": spark_session,
+                "__builtins__": __builtins__,
+                "__name__": "__main__",
+            }
+
+            exec(code, exec_globals)
+            dlt_mock.execute_pending()
+            return dlt_mock.get_all_tables()
+
+        finally:
+            if original_dlt is not None:
+                sys.modules["dlt"] = original_dlt
+            elif "dlt" in sys.modules:
+                del sys.modules["dlt"]
+''')
+
+
+# ============================================================
+# 3. conftest.py  (comprehensive fixtures)
+# ============================================================
+files["conftest.py"] = textwrap.dedent(r'''
+    """
+    Pytest fixtures for DLT pipeline testing.
+    Provides SparkSession, DLT mock reset, and 15 bronze data factories
+    with ALL columns needed by Silver and Gold pipelines.
+    """
+    import pytest
+    import sys
+    import os
+    from datetime import datetime
+
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dlt_mock
+
+    @pytest.fixture(scope="session")
+    def spark():
+        import sys as _sys
+        from pyspark.sql import SparkSession
+        _python = _sys.executable
+        session = (
+            SparkSession.builder
+            .master("local[2]")
+            .appName("dlt-pipeline-tests")
+            .config("spark.sql.shuffle.partitions", "2")
+            .config("spark.ui.enabled", "false")
+            .config("spark.driver.bindAddress", "127.0.0.1")
+            .config("spark.pyspark.python", _python)
+            .config("spark.pyspark.driver.python", _python)
+            .getOrCreate()
+        )
+        yield session
+        session.stop()
+
+    @pytest.fixture(autouse=True)
+    def _reset_dlt():
+        dlt_mock.reset()
+        yield
+        dlt_mock.reset()
+
+    # ---- Helper ----
+    def _make_bronze_df(spark, table_name, columns, rows):
+        """Create a bronze DataFrame with metadata columns."""
+        from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+        schema = StructType(
+            [StructField(c, StringType()) for c in columns]
+            + [
+                StructField("_ingest_timestamp", TimestampType()),
+                StructField("_source_file", StringType()),
+            ]
+        )
+        full_rows = [
+            tuple(r) + (datetime(2024, 1, 1), f"{table_name}.xlsx")
+            for r in rows
+        ]
+        return spark.createDataFrame(full_rows, schema)
+
+    # ================================================================
+    # Bronze Data Definitions
+    # Each table: (columns_list, rows_list)
+    #   Row 0 = clean, Row 1 = messy (needs trim/upper), Row 2 = null PK
+    # ================================================================
+
+    BRONZE_VENDORS = (
+        ["vendor_id","vendor_code","vendor_name","vendor_type","sector_specialization",
+         "country","state","city","performance_rating","credit_limit_usd",
+         "annual_turnover_usd","payment_terms_days","risk_category",
+         "prequalification_status","prequalification_expiry","iso_certified",
+         "iso_cert_number","hse_rating","minority_owned","small_business",
+         "primary_contact","contact_email","contact_phone","years_in_business"],
+        [
+            ["V001","VND-001","Acme Corp","manufacturer","CONSTRUCTION",
+             "US","TX","Houston","4.5","500000","1000000","30","LOW",
+             "APPROVED","2025-12-31","true","ISO-9001","4.2","false","false",
+             "John Smith","acme@test.com","555-0001","15"],
+            ["V002","VND-002"," Beta Industries ","distributor"," oil_gas ",
+             "GB"," LONDON ","London","3.8","750000","2000000","45","MEDIUM",
+             "PENDING","2025-06-30","true","ISO-14001","3.5","true","true",
+             "Jane Doe","beta@test.com","555-0002","8"],
+            [None,"VND-003","NullVendor","services","MINING",
+             "CA","ON","Toronto","2.0","100000","500000","60","HIGH",
+             "EXPIRED","2023-12-31","false",None,"2.8","false","true",
+             "Null Person","null@test.com","555-0003","3"],
+        ],
+    )
+
+    BRONZE_PROJECTS = (
+        ["project_id","project_code","project_name","project_type","sector","sub_sector",
+         "client_name","project_manager","country","state","city",
+         "contract_value_usd","approved_budget_usd","start_date",
+         "planned_completion_date","actual_completion_date","project_status",
+         "phase","priority","risk_level"],
+        [
+            ["P001","PRJ-001","Highway Bridge","infrastructure","CONSTRUCTION","civil",
+             "DOT","John Smith","US","TX","Houston",
+             "5000000","4500000","2024-01-01","2024-12-31",None,"ACTIVE",
+             "execution","HIGH","MEDIUM"],
+            ["P002","PRJ-002"," Offshore Platform ","offshore"," oil_gas ","upstream",
+             "BP","Jane Doe","GB","SCT","Aberdeen",
+             "15000000","14000000","2024-03-01","2025-06-30",None,"PLANNING",
+             "initiation","CRITICAL","HIGH"],
+            [None,"PRJ-003","NullProject","building","CONSTRUCTION","residential",
+             "Tata","Raj Kumar","IN","MH","Mumbai",
+             "2000000","1800000","2023-01-01","2023-12-31","2024-01-15","COMPLETED",
+             "closeout","LOW","LOW"],
+        ],
+    )
+
+    BRONZE_MATERIALS = (
+        ["material_id","material_code","material_name","category","sub_category",
+         "unit_price","weight_kg","lead_time_days","active"],
+        [
+            ["M001","MAT-001","Steel Beam","STRUCTURAL","beam","1200.50","850","14","true"],
+            ["M002","MAT-002"," Concrete Mix ","foundation"," premix ","85.00","2400","7","TRUE"],
+            [None,"MAT-003","NullMaterial","PIPING","valve","45.00","12","21","false"],
+        ],
+    )
+
+    BRONZE_EMPLOYEES = (
+        ["employee_id","employee_code","first_name","last_name","department",
+         "job_title","grade","approval_limit","active","hire_date",
+         "location","cost_center"],
+        [
+            ["E001","EMP-001","John","Smith","PROCUREMENT",
+             "Manager","G7","500000","true","2020-01-15","Houston","CC-PROC"],
+            ["E002","EMP-002"," Jane "," Doe "," engineering ",
+             "Engineer","G5","100000","TRUE","2021-06-01","London","CC-ENG"],
+            [None,"EMP-003","Null","Employee","HR",
+             "Analyst","G3","25000","false","2022-03-10","Mumbai","CC-HR"],
+        ],
+    )
+
+    BRONZE_PURCHASE_ORDERS = (
+        ["po_id","vendor_id","project_id","po_date","delivery_date","approval_date",
+         "po_value","tax_amount","total_value","po_status","po_type",
+         "priority","currency","payment_terms"],
+        [
+            ["PO001","V001","P001","2024-01-15","2024-02-15","2024-01-10",
+             "250000","12500","262500","approved","standard",
+             "HIGH","USD","NET30"],
+            ["PO002","V002","P002","2024-02-01","2024-03-15","2024-01-28",
+             "500000","25000","525000"," pending ","blanket",
+             "MEDIUM","GBP","NET45"],
+            [None,"V001","P001","2024-03-01","2024-04-01","2024-02-25",
+             "100000","5000","105000","DRAFT","standard",
+             "LOW","USD","NET30"],
+        ],
+    )
+
+    BRONZE_PO_LINE_ITEMS = (
+        ["line_id","po_id","material_id","qty_ordered","qty_received","qty_accepted",
+         "unit_price","line_value","delivery_date","actual_delivery_date"],
+        [
+            ["LI001","PO001","M001","100","95","90","1200.50","120050","2024-02-15","2024-02-12"],
+            ["LI002","PO001","M002","500","500","480","85.00","42500","2024-02-15","2024-02-18"],
+            [None,"PO002","M001","200","0","0","1200.50","240100","2024-03-15",None],
+        ],
+    )
+
+    BRONZE_CONTRACTS = (
+        ["contract_id","vendor_id","project_id","contract_value","contract_type",
+         "contract_status","start_date","end_date","change_order_value",
+         "change_order_count","payment_terms","penalty_clause","performance_bond",
+         "retention_pct","approved_by","created_date"],
+        [
+            ["C001","V001","P001","1000000","FIXED_PRICE",
+             "ACTIVE","2024-01-01","2024-12-31","50000",
+             "2","NET30","5%","100000","10","E001","2024-01-01"],
+            ["C002","V002","P002","5000000"," cost_plus ",
+             " active ","2024-03-01","2025-06-30","500000",
+             "5","NET45","3%","250000","5","E002","2024-02-15"],
+            [None,"V001","P001","200000","TIME_MATERIALS",
+             "CLOSED","2023-01-01","2023-12-31","-20000",
+             "1","NET60","2%","20000","15","E001","2023-01-01"],
+        ],
+    )
+
+    BRONZE_CONTRACT_ITEMS = (
+        ["item_id","contract_id","description","quantity","unit_price","line_value"],
+        [
+            ["CI001","C001","Foundation Work","1","500000","500000"],
+            ["CI002","C001","Steel Structure","1","350000","350000"],
+            [None,"C002","Drilling Services","1","2000000","2000000"],
+        ],
+    )
+
+    BRONZE_INVOICES = (
+        ["invoice_id","vendor_id","po_id","project_id","contract_id","invoice_number",
+         "invoice_status","invoice_type","payment_status","invoice_date","received_date",
+         "due_date","payment_date","invoice_amount","tax_amount","total_amount",
+         "paid_amount","tax_rate","three_way_match","grn_ref","currency",
+         "approved_by","notes"],
+        [
+            ["INV001","V001","PO001","P001","C001","INV-2024-001",
+             "PAID","standard","PAID","2024-02-01","2024-02-02",
+             "2024-03-01","2024-02-25","120050","6002.50","126052.50",
+             "126052.50","5","true","GR001","USD","E001","Payment on time"],
+            ["INV002","V002","PO002","P002","C002","INV-2024-002",
+             " overdue ","milestone","UNPAID","2024-03-15","2024-03-16",
+             "2024-04-15",None,"500000","25000","525000",
+             "0","5","false",None,"GBP","E002","Outstanding"],
+            [None,"V001","PO001","P001","C001","INV-2024-003",
+             "PAID","standard","PAID","2024-04-01","2024-04-02",
+             "2024-05-01","2024-04-20","42500","2125","44625",
+             "44625","5","true","GR002","USD","E001","Final payment"],
+        ],
+    )
+
+    BRONZE_GOODS_RECEIPTS = (
+        ["grn_id","po_id","line_item_id","vendor_id","material_id","receipt_date",
+         "qty_delivered","qty_accepted","qty_rejected","grn_status",
+         "storage_location","inspector","remarks","created_date"],
+        [
+            ["GR001","PO001","LI001","V001","M001","2024-02-10",
+             "100","95","5","ACCEPTED",
+             "WH-Houston","E001","Minor damage","2024-02-10"],
+            ["GR002","PO001","LI002","V001","M002","2024-02-12",
+             "500","480","20"," accepted ",
+             " WH-Houston ","E002","Some rejects","2024-02-12"],
+            [None,"PO002","LI003","V002","M001","2024-03-20",
+             "200","190","10","PENDING",
+             "WH-Aberdeen","E001","Inspection pending","2024-03-20"],
+        ],
+    )
+
+    BRONZE_PROJECT_BUDGETS = (
+        ["budget_id","project_id","wbs_code","cost_type","original_amount",
+         "revised_amount","committed_amount","actual_spent","budget_status",
+         "period_start","period_end"],
+        [
+            ["B001","P001","WBS-001","MATERIALS","2000000",
+             "2200000","1900000","1800000","APPROVED",
+             "2024-01-01","2024-06-30"],
+            ["B002","P001","WBS-001","LABOR","1500000",
+             "1600000","1400000","1400000"," approved ",
+             "2024-01-01","2024-06-30"],
+            [None,"P002","WBS-002","EQUIPMENT","5000000",
+             "5500000","0","0","DRAFT",
+             "2024-03-01","2024-12-31"],
+        ],
+    )
+
+    BRONZE_PROJECT_ACTUALS = (
+        ["transaction_id","project_id","vendor_id","po_id","contract_id","invoice_id",
+         "wbs_code","cost_type","cost_status","transaction_date","posting_date",
+         "actual_amount","budget_amount","variance","fiscal_period"],
+        [
+            ["A001","P001","V001","PO001","C001","INV001",
+             "WBS-001","MATERIALS","POSTED","2024-02-15","2024-02-28",
+             "50000","60000","10000","2024-Q1"],
+            ["A002","P001","V001","PO001","C001","INV001",
+             "WBS-001"," labor ","POSTED","2024-02-28","2024-02-28",
+             "35000","40000","5000","2024-Q1"],
+            [None,"P002","V002","PO002","C002",None,
+             "WBS-002","EQUIPMENT","DRAFT","2024-03-15","2024-03-31",
+             "0","100000","100000","2024-Q1"],
+        ],
+    )
+
+    BRONZE_SALES_ORDERS = (
+        ["sales_order_id","project_id","material_id","sales_rep_id","order_date",
+         "delivery_date","revenue","tax_amount","total_amount","order_status",
+         "payment_status","order_type","customer_name","customer_type",
+         "quantity","unit_price","cogs","gross_margin","margin_pct","currency"],
+        [
+            ["SO001","P001","M001","E001","2024-01-20",
+             "2024-02-20","75000","3750","78750","DELIVERED",
+             "PAID","standard","ClientA","CORPORATE",
+             "50","1500","60000","15000","20","USD"],
+            ["SO002","P001","M002","E002","2024-02-10",
+             "2024-03-10","18000","900","18900"," shipped ",
+             " paid ","standard"," ClientB ","SME",
+             "200","90","14400","3600","20","USD"],
+            [None,"P002","M001","E001","2024-03-05",
+             "2024-04-05","150000","7500","157500","PENDING",
+             "UNPAID","urgent","ClientC","GOVERNMENT",
+             "100","1500","120000","30000","20","USD"],
+        ],
+    )
+
+    BRONZE_INVENTORY = (
+        ["movement_id","material_id","project_id","grn_id","movement_date",
+         "quantity","unit_cost","total_value","movement_type","from_location",
+         "to_location","batch_number","unit_of_measure","reason_code",
+         "posted_by","approved_by","remarks","created_date"],
+        [
+            ["MV001","M001","P001","GR001","2024-02-15",
+             "100","1200.50","120050","receipt","SUPPLIER",
+             "WH-Houston","BATCH-001","TON","GRN",
+             "E001","E001","GR receipt","2024-02-15"],
+            ["MV002","M002","P001","GR002","2024-02-15",
+             "500","85.00","42500"," issue "," WH-Houston ",
+             "SITE-A","BATCH-002","CY","CONSUMPTION",
+             "E002","E001","Site issue","2024-02-15"],
+            [None,"M001","P002","GR003","2024-03-20",
+             "200","1200.50","240100","transfer","WH-Aberdeen",
+             "WH-Houston","BATCH-003","TON","TRANSFER",
+             "E001","E002","Inter-warehouse","2024-03-20"],
+        ],
+    )
+
+    BRONZE_VENDOR_PERFORMANCE = (
+        ["performance_id","vendor_id","project_id","evaluation_date",
+         "delivery_score","quality_score","commercial_score","hse_score",
+         "compliance_score","composite_score","recommendation","evaluation_period",
+         "evaluator_id","notes","created_date"],
+        [
+            ["VP001","V001","P001","2024-01-31",
+             "4.0","4.5","3.8","4.2",
+             "4.0","4.1","RETAIN","2024-Q1",
+             "E001","Good performance","2024-01-31"],
+            ["VP002","V002","P002","2024-01-31",
+             "3.5","3.8","4.2","3.0",
+             "3.2","3.54"," retain ","2024-Q1",
+             "E002","Average performance","2024-01-31"],
+            [None,"V001","P001","2024-03-31",
+             "4.1","4.2","3.9","4.0",
+             "4.1","4.06","RETAIN","2024-Q1",
+             "E001","Improved","2024-03-31"],
+        ],
+    )
+
+    ALL_BRONZE_DEFS = {
+        "vendors": BRONZE_VENDORS,
+        "projects": BRONZE_PROJECTS,
+        "materials": BRONZE_MATERIALS,
+        "employees": BRONZE_EMPLOYEES,
+        "purchase_orders": BRONZE_PURCHASE_ORDERS,
+        "po_line_items": BRONZE_PO_LINE_ITEMS,
+        "contracts": BRONZE_CONTRACTS,
+        "contract_items": BRONZE_CONTRACT_ITEMS,
+        "invoices": BRONZE_INVOICES,
+        "goods_receipts": BRONZE_GOODS_RECEIPTS,
+        "project_budgets": BRONZE_PROJECT_BUDGETS,
+        "project_actuals": BRONZE_PROJECT_ACTUALS,
+        "sales_orders": BRONZE_SALES_ORDERS,
+        "inventory": BRONZE_INVENTORY,
+        "vendor_performance": BRONZE_VENDOR_PERFORMANCE,
+    }
+
+    @pytest.fixture
+    def bronze_data(spark):
+        """Create all 15 bronze DataFrames."""
+        result = {}
+        for table_name, (columns, rows) in ALL_BRONZE_DEFS.items():
+            df = _make_bronze_df(spark, table_name, columns, rows)
+            result[f"bronze_{table_name}"] = df
+        return result
+
+    @pytest.fixture
+    def register_all_bronze(bronze_data):
+        """Register all 15 bronze tables in dlt_mock."""
+        for name, df in bronze_data.items():
+            dlt_mock.register(name, df)
+        return bronze_data
+
+    @pytest.fixture
+    def project_root():
+        """Return the project root directory."""
+        return os.path.dirname(TESTS_DIR)
+
+    TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
+''')
+
+
+# ============================================================
+# 4. test_bronze_pipeline.py
+# ============================================================
+files["test_bronze_pipeline.py"] = textwrap.dedent(r'''
+    """Tests for Bronze Layer (01_bronze_pipeline.py)."""
+    import os
+    import sys
+    import pytest
+
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dlt_mock
+
+    PIPELINE_DIR = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "databricks", "bronze"
+    )
+
+    # ---- Factory Pattern Tests ----
+
+    class TestBronzeFactory:
+        """Test the create_bronze_table factory pattern."""
+
+        def test_factory_registers_table_via_dlt_mock(self, spark):
+            """Simulates create_bronze_table logic with dlt_mock."""
+            from pyspark.sql.functions import current_timestamp, lit
+
+            @dlt_mock.table(name="bronze_test_table", comment="test")
+            def bronze_test_table():
+                data = [("1", "test")]
+                df = spark.createDataFrame(data, ["id", "name"])
+                return (
+                    df.withColumn("_ingest_timestamp", current_timestamp())
+                      .withColumn("_source_file", lit("test.xlsx"))
+                )
+
+            dlt_mock.execute_pending()
+            result = dlt_mock.get_table("bronze_test_table")
+            assert result is not None
+            assert result.count() == 1
+            assert "_ingest_timestamp" in result.columns
+            assert "_source_file" in result.columns
+
+        def test_factory_creates_all_15_tables(self, spark):
+            """Verify factory can create all 15 expected bronze tables."""
+            TABLES = [
+                "vendors", "projects", "materials", "employees",
+                "purchase_orders", "po_line_items", "contracts", "contract_items",
+                "invoices", "goods_receipts", "project_budgets", "project_actuals",
+                "sales_orders", "inventory", "vendor_performance",
+            ]
+            from pyspark.sql.functions import current_timestamp, lit
+
+            for t in TABLES:
+                @dlt_mock.table(
+                    name=f"bronze_{t}",
+                    comment=f"Raw {t} data",
+                    table_properties={"quality": "bronze"},
+                )
+                def make_table(table_name=t):
+                    data = [("1",)]
+                    return (
+                        spark.createDataFrame(data, ["id"])
+                        .withColumn("_ingest_timestamp", current_timestamp())
+                        .withColumn("_source_file", lit(f"{table_name}.xlsx"))
+                    )
+
+            dlt_mock.execute_pending()
+            tables = dlt_mock.get_all_tables()
+            for t in TABLES:
+                assert f"bronze_{t}" in tables, f"Missing bronze_{t}"
+                assert tables[f"bronze_{t}"].count() > 0
+
+        def test_bronze_table_has_metadata_columns(self, spark):
+            """All bronze tables should have _ingest_timestamp and _source_file."""
+            from pyspark.sql.functions import current_timestamp, lit
+
+            @dlt_mock.table(name="bronze_meta_test")
+            def bronze_meta_test():
+                return (
+                    spark.createDataFrame([("X",)], ["val"])
+                    .withColumn("_ingest_timestamp", current_timestamp())
+                    .withColumn("_source_file", lit("test.xlsx"))
+                )
+
+            dlt_mock.execute_pending()
+            df = dlt_mock.get_table("bronze_meta_test")
+            assert "_ingest_timestamp" in df.columns
+            assert "_source_file" in df.columns
+
+    # ---- Audit Table Tests ----
+
+    class TestBronzeAudit:
+        """Test the bronze_load_audit table logic."""
+
+        def test_audit_records_table_counts(self, spark, register_all_bronze):
+            """Audit table should track row counts for each bronze table."""
+            from pyspark.sql import Row
+            import datetime
+
+            TABLES = [
+                "vendors", "projects", "materials", "employees",
+                "purchase_orders", "po_line_items", "contracts", "contract_items",
+                "invoices", "goods_receipts", "project_budgets", "project_actuals",
+                "sales_orders", "inventory", "vendor_performance",
+            ]
+            rows = []
+            for t in TABLES:
+                tbl_name = f"bronze_{t}"
+                df = dlt_mock.get_table(tbl_name)
+                if df is not None:
+                    rows.append(Row(
+                        table_name=t,
+                        record_count=df.count(),
+                        load_timestamp=datetime.datetime.now(),
+                        status="SUCCESS",
+                    ))
+
+            audit_df = spark.createDataFrame(rows)
+            assert audit_df.count() == 15
+            # Each bronze table has 3 rows of test data
+            for row in audit_df.collect():
+                assert row["record_count"] == 3
+                assert row["status"] == "SUCCESS"
+
+    # ---- Data Quality Tests ----
+
+    class TestBronzeDataQuality:
+        """Verify bronze data has expected shape."""
+
+        def test_each_bronze_table_has_3_rows(self, bronze_data):
+            """Each fixture should provide 3 test rows."""
+            for name, df in bronze_data.items():
+                assert df.count() == 3, f"{name} should have 3 rows"
+
+        def test_bronze_tables_have_metadata(self, bronze_data):
+            """All should have _ingest_timestamp and _source_file."""
+            for name, df in bronze_data.items():
+                assert "_ingest_timestamp" in df.columns
+                assert "_source_file" in df.columns
+
+        def test_bronze_vendors_schema(self, bronze_data):
+            cols = bronze_data["bronze_vendors"].columns
+            assert "vendor_id" in cols
+            assert "vendor_name" in cols
+            assert "performance_rating" in cols
+
+        def test_bronze_has_null_pk_rows(self, bronze_data):
+            """Row 3 in each table has a null PK for DQ testing."""
+            pk_map = {
+                "bronze_vendors": "vendor_id",
+                "bronze_projects": "project_id",
+                "bronze_materials": "material_id",
+                "bronze_employees": "employee_id",
+                "bronze_purchase_orders": "po_id",
+                "bronze_po_line_items": "line_id",
+                "bronze_contracts": "contract_id",
+                "bronze_contract_items": "item_id",
+                "bronze_invoices": "invoice_id",
+                "bronze_goods_receipts": "grn_id",
+                "bronze_project_budgets": "budget_id",
+                "bronze_project_actuals": "transaction_id",
+                "bronze_sales_orders": "sales_order_id",
+                "bronze_inventory": "movement_id",
+                "bronze_vendor_performance": "performance_id",
+            }
+            for tbl, pk in pk_map.items():
+                df = bronze_data[tbl]
+                null_count = df.where(f"{pk} IS NULL").count()
+                assert null_count >= 1, f"{tbl} should have at least 1 null PK row"
+''')
+
+
+# ============================================================
+# 5. test_silver_pipeline.py
+# ============================================================
+files["test_silver_pipeline.py"] = textwrap.dedent(r'''
+    """Tests for Silver Layer (02_silver_pipeline.py)."""
+    import os
+    import sys
+    import pytest
+
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dlt_mock
+    import pipeline_runner
+
+    PIPELINE_PATH = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "databricks", "silver", "02_silver_pipeline.py"
+    )
+
+
+    @pytest.fixture
+    def silver_tables(spark, register_all_bronze):
+        """Execute silver pipeline and return all silver tables."""
+        tables = pipeline_runner.run_pipeline(PIPELINE_PATH, spark, dlt_mock)
+        return tables
+
+
+    # ---- Pipeline Execution Tests ----
+
+    class TestSilverPipelineExecution:
+        """Verify silver pipeline executes and produces all 15 tables."""
+
+        def test_silver_pipeline_creates_15_tables(self, silver_tables):
+            expected = [
+                "silver_vendors", "silver_projects", "silver_materials",
+                "silver_employees", "silver_purchase_orders", "silver_po_line_items",
+                "silver_contracts", "silver_contract_items", "silver_invoices",
+                "silver_goods_receipts", "silver_project_budgets",
+                "silver_project_actuals", "silver_sales_orders",
+                "silver_inventory", "silver_vendor_performance",
+            ]
+            for t in expected:
+                assert t in silver_tables, f"Missing table: {t}"
+
+        def test_silver_tables_not_empty(self, silver_tables):
+            for name, df in silver_tables.items():
+                if name.startswith("silver_"):
+                    assert df.count() > 0, f"{name} is empty"
+
+
+    # ---- DQ Expectation Tests (expect_or_drop removes null PKs) ----
+
+    class TestSilverDataQuality:
+        """Verify expect_or_drop removes null PK rows."""
+
+        def test_vendors_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_vendors"]
+            null_count = df.where("vendor_id IS NULL").count()
+            assert null_count == 0
+
+        def test_projects_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_projects"]
+            assert df.where("project_id IS NULL").count() == 0
+
+        def test_materials_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_materials"]
+            assert df.where("material_id IS NULL").count() == 0
+
+        def test_employees_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_employees"]
+            assert df.where("employee_id IS NULL").count() == 0
+
+        def test_purchase_orders_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_purchase_orders"]
+            assert df.where("po_id IS NULL").count() == 0
+
+        def test_po_line_items_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_po_line_items"]
+            assert df.where("line_id IS NULL").count() == 0
+
+        def test_contracts_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_contracts"]
+            assert df.where("contract_id IS NULL").count() == 0
+
+        def test_contract_items_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_contract_items"]
+            assert df.where("item_id IS NULL").count() == 0
+
+        def test_invoices_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_invoices"]
+            assert df.where("invoice_id IS NULL").count() == 0
+
+        def test_goods_receipts_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_goods_receipts"]
+            assert df.where("grn_id IS NULL").count() == 0
+
+        def test_project_budgets_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_project_budgets"]
+            assert df.where("budget_id IS NULL").count() == 0
+
+        def test_project_actuals_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_project_actuals"]
+            assert df.where("transaction_id IS NULL").count() == 0
+
+        def test_sales_orders_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_sales_orders"]
+            assert df.where("sales_order_id IS NULL").count() == 0
+
+        def test_inventory_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_inventory"]
+            assert df.where("movement_id IS NULL").count() == 0
+
+        def test_vendor_performance_null_pk_dropped(self, silver_tables):
+            df = silver_tables["silver_vendor_performance"]
+            assert df.where("performance_id IS NULL").count() == 0
+
+
+    # ---- Row Count Tests (3 input rows, 1 null PK → 2 valid rows) ----
+
+    class TestSilverRowCounts:
+
+        @pytest.mark.parametrize("table_name", [
+            "silver_vendors", "silver_projects", "silver_materials",
+            "silver_employees", "silver_purchase_orders", "silver_po_line_items",
+            "silver_contracts", "silver_contract_items", "silver_invoices",
+            "silver_goods_receipts", "silver_project_budgets",
+            "silver_project_actuals", "silver_sales_orders",
+            "silver_inventory", "silver_vendor_performance",
+        ])
+        def test_silver_table_has_2_rows(self, silver_tables, table_name):
+            """After expect_or_drop on null PK, each table should have 2 rows."""
+            df = silver_tables[table_name]
+            assert df.count() == 2, f"{table_name} expected 2 rows, got {df.count()}"
+
+
+    # ---- Transform Tests ----
+
+    class TestSilverVendorTransforms:
+
+        def test_vendor_name_trimmed(self, silver_tables):
+            df = silver_tables["silver_vendors"]
+            names = [r["vendor_name"] for r in df.collect()]
+            for name in names:
+                assert name == name.strip(), f"vendor_name not trimmed: '{name}'"
+
+        def test_country_uppercased(self, silver_tables):
+            df = silver_tables["silver_vendors"]
+            for row in df.collect():
+                assert row["country"] == row["country"].upper()
+
+        def test_performance_rating_is_double(self, silver_tables):
+            df = silver_tables["silver_vendors"]
+            from pyspark.sql.types import DoubleType
+            field = [f for f in df.schema.fields if f.name == "performance_rating"][0]
+            assert field.dataType == DoubleType()
+
+        def test_payment_terms_is_integer(self, silver_tables):
+            df = silver_tables["silver_vendors"]
+            from pyspark.sql.types import IntegerType
+            field = [f for f in df.schema.fields if f.name == "payment_terms_days"][0]
+            assert field.dataType == IntegerType()
+
+        def test_metadata_columns_dropped(self, silver_tables):
+            df = silver_tables["silver_vendors"]
+            assert "_ingest_timestamp" not in df.columns
+            assert "_source_file" not in df.columns
+
+        def test_silver_timestamp_added(self, silver_tables):
+            df = silver_tables["silver_vendors"]
+            assert "_silver_timestamp" in df.columns
+
+
+    class TestSilverProjectTransforms:
+
+        def test_project_name_trimmed(self, silver_tables):
+            df = silver_tables["silver_projects"]
+            for row in df.collect():
+                assert row["project_name"] == row["project_name"].strip()
+
+        def test_dates_cast_to_date_type(self, silver_tables):
+            df = silver_tables["silver_projects"]
+            from pyspark.sql.types import DateType
+            for col_name in ["start_date", "planned_completion_date"]:
+                field = [f for f in df.schema.fields if f.name == col_name][0]
+                assert field.dataType == DateType(), f"{col_name} should be DateType"
+
+        def test_planned_duration_days_calculated(self, silver_tables):
+            df = silver_tables["silver_projects"]
+            assert "planned_duration_days" in df.columns
+            row = df.where("project_id = 'P001'").collect()[0]
+            assert row["planned_duration_days"] is not None
+            assert row["planned_duration_days"] > 0
+
+        def test_budget_variance_pct_calculated(self, silver_tables):
+            df = silver_tables["silver_projects"]
+            assert "budget_variance_pct" in df.columns
+
+
+    class TestSilverMaterialTransforms:
+
+        def test_category_uppercased(self, silver_tables):
+            df = silver_tables["silver_materials"]
+            for row in df.collect():
+                assert row["category"] == row["category"].upper()
+
+        def test_active_to_is_active_boolean(self, silver_tables):
+            df = silver_tables["silver_materials"]
+            assert "is_active" in df.columns
+            assert "active" not in df.columns
+
+
+    class TestSilverEmployeeTransforms:
+
+        def test_full_name_concatenated(self, silver_tables):
+            df = silver_tables["silver_employees"]
+            assert "full_name" in df.columns
+            row = df.where("employee_id = 'E001'").collect()[0]
+            assert "John" in row["full_name"]
+            assert "Smith" in row["full_name"]
+
+        def test_full_name_trimmed_parts(self, silver_tables):
+            df = silver_tables["silver_employees"]
+            row = df.where("employee_id = 'E002'").collect()[0]
+            # " Jane " + " " + " Doe " → trim each → "Jane Doe"
+            assert row["full_name"] == "Jane Doe"
+
+        def test_department_uppercased(self, silver_tables):
+            df = silver_tables["silver_employees"]
+            for row in df.collect():
+                assert row["department"] == row["department"].upper()
+
+
+    class TestSilverPurchaseOrderTransforms:
+
+        def test_po_status_uppercased(self, silver_tables):
+            df = silver_tables["silver_purchase_orders"]
+            for row in df.collect():
+                val = row["po_status"]
+                assert val == val.strip().upper()
+
+        def test_dates_cast(self, silver_tables):
+            df = silver_tables["silver_purchase_orders"]
+            from pyspark.sql.types import DateType
+            field = [f for f in df.schema.fields if f.name == "po_date"][0]
+            assert field.dataType == DateType()
+
+        def test_order_date_alias(self, silver_tables):
+            df = silver_tables["silver_purchase_orders"]
+            assert "order_date" in df.columns
+
+
+    class TestSilverPoLineItemTransforms:
+
+        def test_fulfillment_rate_calculated(self, silver_tables):
+            df = silver_tables["silver_po_line_items"]
+            assert "fulfillment_rate" in df.columns
+            row = df.where("line_id = 'LI001'").collect()[0]
+            # 95 received / 100 ordered * 100 = 95.0
+            assert row["fulfillment_rate"] == 95.0
+
+        def test_acceptance_rate_calculated(self, silver_tables):
+            df = silver_tables["silver_po_line_items"]
+            assert "acceptance_rate" in df.columns
+            row = df.where("line_id = 'LI001'").collect()[0]
+            # 90 accepted / 95 received * 100 ≈ 94.74
+            assert abs(row["acceptance_rate"] - 94.74) < 0.1
+
+
+    class TestSilverContractTransforms:
+
+        def test_contract_duration_days(self, silver_tables):
+            df = silver_tables["silver_contracts"]
+            assert "contract_duration_days" in df.columns
+            row = df.where("contract_id = 'C001'").collect()[0]
+            assert row["contract_duration_days"] == 365
+
+        def test_status_uppercased(self, silver_tables):
+            df = silver_tables["silver_contracts"]
+            for row in df.collect():
+                assert row["contract_status"] == row["contract_status"].strip().upper()
+
+        def test_type_uppercased(self, silver_tables):
+            df = silver_tables["silver_contracts"]
+            for row in df.collect():
+                assert row["contract_type"] == row["contract_type"].strip().upper()
+
+
+    class TestSilverContractItemTransforms:
+
+        def test_quantity_cast_to_double(self, silver_tables):
+            df = silver_tables["silver_contract_items"]
+            from pyspark.sql.types import DoubleType
+            field = [f for f in df.schema.fields if f.name == "quantity"][0]
+            assert field.dataType == DoubleType()
+
+
+    class TestSilverInvoiceTransforms:
+
+        def test_days_to_pay_calculated(self, silver_tables):
+            df = silver_tables["silver_invoices"]
+            assert "days_to_pay" in df.columns
+            row = df.where("invoice_id = 'INV001'").collect()[0]
+            # 2024-02-25 minus 2024-02-01 = 24 days
+            assert row["days_to_pay"] == 24
+
+        def test_days_overdue_for_unpaid(self, silver_tables):
+            df = silver_tables["silver_invoices"]
+            row = df.where("invoice_id = 'INV002'").collect()[0]
+            assert row["days_overdue"] is not None
+            assert row["days_overdue"] > 0
+
+
+    class TestSilverGoodsReceiptTransforms:
+
+        def test_qty_delivered_renamed_to_qty_received(self, silver_tables):
+            df = silver_tables["silver_goods_receipts"]
+            assert "qty_received" in df.columns
+
+        def test_rejection_rate_calculated(self, silver_tables):
+            df = silver_tables["silver_goods_receipts"]
+            assert "rejection_rate" in df.columns
+            row = df.where("grn_id = 'GR001'").collect()[0]
+            # 5 / 100 * 100 = 5.0
+            assert row["rejection_rate"] == 5.0
+
+
+    class TestSilverProjectBudgetTransforms:
+
+        def test_column_renames(self, silver_tables):
+            df = silver_tables["silver_project_budgets"]
+            assert "budget_amount" in df.columns
+            assert "original_budget" in df.columns
+            assert "spent_amount" in df.columns
+
+        def test_remaining_amount_calculated(self, silver_tables):
+            df = silver_tables["silver_project_budgets"]
+            assert "remaining_amount" in df.columns
+
+        def test_utilization_pct_calculated(self, silver_tables):
+            df = silver_tables["silver_project_budgets"]
+            assert "utilization_pct" in df.columns
+            row = df.where("budget_id = 'B001'").collect()[0]
+            # 1800000 / 2200000 * 100 ≈ 81.82
+            assert abs(row["utilization_pct"] - 81.82) < 0.1
+
+
+    class TestSilverProjectActualTransforms:
+
+        def test_cost_category_derived(self, silver_tables):
+            df = silver_tables["silver_project_actuals"]
+            assert "cost_category" in df.columns
+            row = df.where("transaction_id = 'A001'").collect()[0]
+            assert row["cost_category"] == "MATERIALS"
+
+        def test_trimmed_cost_type(self, silver_tables):
+            df = silver_tables["silver_project_actuals"]
+            row = df.where("transaction_id = 'A002'").collect()[0]
+            assert row["cost_type"] == "LABOR"
+
+
+    class TestSilverSalesOrderTransforms:
+
+        def test_order_value_from_revenue(self, silver_tables):
+            df = silver_tables["silver_sales_orders"]
+            assert "order_value" in df.columns
+
+        def test_total_value_from_total_amount(self, silver_tables):
+            df = silver_tables["silver_sales_orders"]
+            assert "total_value" in df.columns
+
+        def test_customer_name_trimmed(self, silver_tables):
+            df = silver_tables["silver_sales_orders"]
+            for row in df.collect():
+                assert row["customer_name"] == row["customer_name"].strip()
+
+
+    class TestSilverInventoryTransforms:
+
+        def test_total_cost_from_total_value(self, silver_tables):
+            df = silver_tables["silver_inventory"]
+            assert "total_cost" in df.columns
+
+        def test_movement_type_uppercased(self, silver_tables):
+            df = silver_tables["silver_inventory"]
+            for row in df.collect():
+                assert row["movement_type"] == row["movement_type"].strip().upper()
+
+
+    class TestSilverVendorPerformanceTransforms:
+
+        def test_overall_score_from_composite(self, silver_tables):
+            df = silver_tables["silver_vendor_performance"]
+            assert "overall_score" in df.columns
+            assert "composite_score" not in df.columns
+
+        def test_overall_score_value(self, silver_tables):
+            df = silver_tables["silver_vendor_performance"]
+            from pyspark.sql.types import DoubleType
+            field = [f for f in df.schema.fields if f.name == "overall_score"][0]
+            assert field.dataType == DoubleType()
+''')
+
+
+# ============================================================
+# 6. test_gold_pipeline.py
+# ============================================================
+files["test_gold_pipeline.py"] = textwrap.dedent(r'''
+    """Tests for Gold Layer (03_gold_pipeline.py)."""
+    import os
+    import sys
+    import pytest
+
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dlt_mock
+    import pipeline_runner
+
+    SILVER_PATH = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "databricks", "silver", "02_silver_pipeline.py"
+    )
+    GOLD_PATH = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "databricks", "gold", "03_gold_pipeline.py"
+    )
+
+
+    @pytest.fixture
+    def gold_tables(spark, register_all_bronze):
+        """Execute silver then gold pipeline, return all tables."""
+        # First run silver to produce silver tables
+        pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+        # Then run gold
+        pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+        return dlt_mock.get_all_tables()
+
+
+    # ---- Pipeline Execution Tests ----
+
+    class TestGoldPipelineExecution:
+
+        DIMENSIONS = [
+            "dim_date", "dim_vendor", "dim_project", "dim_material",
+            "dim_employee", "dim_geography", "dim_contract",
+            "dim_cost_center", "dim_sector",
+        ]
+        FACTS = [
+            "fact_purchase_orders", "fact_invoices", "fact_goods_receipts",
+            "fact_project_costs", "fact_project_actuals",
+            "fact_vendor_performance", "fact_inventory",
+            "fact_contracts", "fact_sales",
+        ]
+
+        def test_gold_creates_9_dimensions(self, gold_tables):
+            for d in self.DIMENSIONS:
+                assert d in gold_tables, f"Missing dimension: {d}"
+
+        def test_gold_creates_9_facts(self, gold_tables):
+            for f in self.FACTS:
+                assert f in gold_tables, f"Missing fact: {f}"
+
+        def test_all_18_gold_tables_not_empty(self, gold_tables):
+            for t in self.DIMENSIONS + self.FACTS:
+                df = gold_tables[t]
+                assert df.count() > 0, f"{t} is empty"
+
+
+    # ---- Dimension Tests ----
+
+    class TestDimDate:
+
+        def test_date_range_2020_to_2030(self, gold_tables):
+            df = gold_tables["dim_date"]
+            years = [r["year"] for r in df.select("year").distinct().collect()]
+            assert 2020 in years
+            assert 2030 in years
+            assert len(years) == 11
+
+        def test_date_key_format(self, gold_tables):
+            df = gold_tables["dim_date"]
+            row = df.where("year = 2024 AND month = 1 AND day = 1").collect()[0]
+            assert row["date_key"] == 20240101
+
+        def test_date_columns_present(self, gold_tables):
+            df = gold_tables["dim_date"]
+            expected = [
+                "date_key", "date", "year", "quarter", "month", "day",
+                "day_of_week", "day_name", "month_name", "year_month",
+                "fiscal_period", "fiscal_year", "fiscal_quarter",
+            ]
+            for col in expected:
+                assert col in df.columns, f"Missing column: {col}"
+
+        def test_total_rows_approximately_4018(self, gold_tables):
+            df = gold_tables["dim_date"]
+            # 11 years * ~365.25 days ≈ 4018
+            assert 4015 <= df.count() <= 4020
+
+
+    class TestDimVendor:
+
+        def test_tier_derivation(self, gold_tables):
+            df = gold_tables["dim_vendor"]
+            row = df.where("vendor_id = 'V001'").collect()[0]
+            # V001 has performance_rating=4.5 → STRATEGIC
+            assert row["tier"] == "STRATEGIC"
+
+        def test_status_derivation(self, gold_tables):
+            df = gold_tables["dim_vendor"]
+            row = df.where("vendor_id = 'V001'").collect()[0]
+            # V001 has prequalification_status=APPROVED → ACTIVE
+            assert row["status"] == "ACTIVE"
+
+        def test_gold_timestamp(self, gold_tables):
+            df = gold_tables["dim_vendor"]
+            assert "_gold_timestamp" in df.columns
+
+
+    class TestDimProject:
+
+        def test_region_derivation(self, gold_tables):
+            df = gold_tables["dim_project"]
+            row = df.where("project_id = 'P001'").collect()[0]
+            assert row["region"] == "NORTH AMERICA"
+
+        def test_project_duration_days(self, gold_tables):
+            df = gold_tables["dim_project"]
+            row = df.where("project_id = 'P001'").collect()[0]
+            assert row["project_duration_days"] is not None
+
+
+    class TestDimMaterial:
+
+        def test_material_columns(self, gold_tables):
+            df = gold_tables["dim_material"]
+            assert "material_id" in df.columns
+            assert "material_category" in df.columns
+            assert "_is_current" in df.columns
+
+    class TestDimEmployee:
+
+        def test_employee_columns(self, gold_tables):
+            df = gold_tables["dim_employee"]
+            assert "full_name" in df.columns
+            assert "cost_center" in df.columns
+
+    class TestDimGeography:
+
+        def test_geography_key_is_sha2(self, gold_tables):
+            df = gold_tables["dim_geography"]
+            assert "geography_key" in df.columns
+            row = df.collect()[0]
+            assert len(row["geography_key"]) == 64  # SHA-256 hex
+
+        def test_region_derivation(self, gold_tables):
+            df = gold_tables["dim_geography"]
+            us_row = df.where("country = 'US'").collect()
+            if us_row:
+                assert us_row[0]["region"] == "NORTH AMERICA"
+
+    class TestDimContract:
+
+        def test_cost_growth_pct(self, gold_tables):
+            df = gold_tables["dim_contract"]
+            row = df.where("contract_id = 'C001'").collect()[0]
+            # change_order_value=50000, contract_value=1000000 → 5.0%
+            assert abs(row["cost_growth_pct"] - 5.0) < 0.1
+
+    class TestDimCostCenter:
+
+        def test_cost_center_distinct(self, gold_tables):
+            df = gold_tables["dim_cost_center"]
+            assert df.count() >= 1
+
+    class TestDimSector:
+
+        def test_sector_union(self, gold_tables):
+            df = gold_tables["dim_sector"]
+            sectors = [r["sector_name"] for r in df.collect()]
+            assert len(sectors) > 0
+
+
+    # ---- Fact Tests ----
+
+    class TestFactPurchaseOrders:
+
+        def test_line_total_aggregated(self, gold_tables):
+            df = gold_tables["fact_purchase_orders"]
+            row = df.where("po_id = 'PO001'").collect()[0]
+            # LI001=120050 + LI002=42500 = 162550
+            assert abs(row["line_total"] - 162550.0) < 1
+
+        def test_total_quantity_aggregated(self, gold_tables):
+            df = gold_tables["fact_purchase_orders"]
+            row = df.where("po_id = 'PO001'").collect()[0]
+            # LI001=100 + LI002=500 = 600
+            assert abs(row["total_quantity"] - 600.0) < 1
+
+
+    class TestFactInvoices:
+
+        def test_aging_bucket_current(self, gold_tables):
+            df = gold_tables["fact_invoices"]
+            row = df.where("invoice_id = 'INV001'").collect()[0]
+            # INV001 is paid, days_overdue should be 0 → CURRENT
+            assert row["aging_bucket"] == "CURRENT"
+
+        def test_aging_bucket_overdue(self, gold_tables):
+            df = gold_tables["fact_invoices"]
+            row = df.where("invoice_id = 'INV002'").collect()[0]
+            # INV002 is unpaid, due 2024-04-15, well past due → not CURRENT
+            assert row["aging_bucket"] != "CURRENT"
+
+
+    class TestFactGoodsReceipts:
+
+        def test_receipt_value_calculated(self, gold_tables):
+            df = gold_tables["fact_goods_receipts"]
+            assert "receipt_value" in df.columns
+
+        def test_acceptance_rate_derived(self, gold_tables):
+            df = gold_tables["fact_goods_receipts"]
+            assert "acceptance_rate" in df.columns
+
+
+    class TestFactProjectCosts:
+
+        def test_budget_vs_actual(self, gold_tables):
+            df = gold_tables["fact_project_costs"]
+            assert "budget_amount" in df.columns
+            assert "actual_amount" in df.columns
+            assert "variance_amount" in df.columns
+            assert "utilization_pct" in df.columns
+
+
+    class TestFactProjectActuals:
+
+        def test_project_actuals_columns(self, gold_tables):
+            df = gold_tables["fact_project_actuals"]
+            assert "transaction_id" in df.columns
+            assert "wbs_element" in df.columns
+            assert "variance_amount" in df.columns
+
+
+    class TestFactVendorPerformance:
+
+        def test_score_columns(self, gold_tables):
+            df = gold_tables["fact_vendor_performance"]
+            for col in ["delivery_score", "quality_score", "overall_score"]:
+                assert col in df.columns
+
+
+    class TestFactInventory:
+
+        def test_inventory_columns(self, gold_tables):
+            df = gold_tables["fact_inventory"]
+            assert "movement_type" in df.columns
+            assert "quantity" in df.columns
+
+
+    class TestFactContracts:
+
+        def test_items_total_aggregated(self, gold_tables):
+            df = gold_tables["fact_contracts"]
+            row = df.where("contract_id = 'C001'").collect()[0]
+            # CI001=500000 + CI002=350000 = 850000
+            assert abs(row["items_total"] - 850000.0) < 1
+
+        def test_item_count(self, gold_tables):
+            df = gold_tables["fact_contracts"]
+            row = df.where("contract_id = 'C001'").collect()[0]
+            assert row["item_count"] == 2
+
+
+    class TestFactSales:
+
+        def test_customer_id_is_sha2(self, gold_tables):
+            df = gold_tables["fact_sales"]
+            row = df.collect()[0]
+            assert len(row["customer_id"]) == 64  # SHA-256 hex
+
+        def test_product_name_joined(self, gold_tables):
+            df = gold_tables["fact_sales"]
+            assert "product_name" in df.columns
+''')
+
+
+# ============================================================
+# 7. test_e2e_pipeline.py
+# ============================================================
+files["test_e2e_pipeline.py"] = textwrap.dedent(r'''
+    """End-to-End pipeline tests: Bronze → Silver → Gold sequential flow."""
+    import os
+    import sys
+    import pytest
+
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dlt_mock
+    import pipeline_runner
+
+    PIPELINES_ROOT = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "databricks"
+    )
+    SILVER_PATH = os.path.join(PIPELINES_ROOT, "silver", "02_silver_pipeline.py")
+    GOLD_PATH = os.path.join(PIPELINES_ROOT, "gold", "03_gold_pipeline.py")
+
+
+    class TestSequentialDependency:
+        """Verify layers must execute in order: Bronze → Silver → Gold."""
+
+        def test_silver_fails_without_bronze(self, spark):
+            """Silver pipeline should fail if bronze tables are not registered."""
+            with pytest.raises((KeyError, RuntimeError)):
+                pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+
+        def test_gold_fails_without_silver(self, spark, register_all_bronze):
+            """Gold pipeline should fail if silver tables are not registered."""
+            with pytest.raises((KeyError, RuntimeError)):
+                pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+
+
+    class TestEndToEndDataPropagation:
+        """Verify data flows from Bronze through Silver to Gold."""
+
+        @pytest.fixture(autouse=True)
+        def _run_full_pipeline(self, spark, register_all_bronze):
+            """Execute the full pipeline chain."""
+            pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+            pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+            self.tables = dlt_mock.get_all_tables()
+
+        def test_bronze_tables_present(self):
+            bronze_count = sum(1 for k in self.tables if k.startswith("bronze_"))
+            assert bronze_count == 15
+
+        def test_silver_tables_present(self):
+            silver_count = sum(1 for k in self.tables if k.startswith("silver_"))
+            assert silver_count == 15
+
+        def test_gold_dimensions_present(self):
+            dims = [k for k in self.tables if k.startswith("dim_")]
+            assert len(dims) == 9
+
+        def test_gold_facts_present(self):
+            facts = [k for k in self.tables if k.startswith("fact_")]
+            assert len(facts) == 9
+
+        def test_total_table_count(self):
+            """15 bronze + 15 silver + 9 dims + 9 facts = 48 tables."""
+            total = len(self.tables)
+            assert total >= 48, f"Expected >= 48 tables, got {total}"
+
+
+    class TestVendorDataPropagation:
+        """Trace vendor V001 from bronze through to gold."""
+
+        @pytest.fixture(autouse=True)
+        def _run_full_pipeline(self, spark, register_all_bronze):
+            pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+            pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+            self.tables = dlt_mock.get_all_tables()
+
+        def test_vendor_in_bronze(self):
+            df = self.tables["bronze_vendors"]
+            assert df.where("vendor_id = 'V001'").count() == 1
+
+        def test_vendor_in_silver(self):
+            df = self.tables["silver_vendors"]
+            assert df.where("vendor_id = 'V001'").count() == 1
+
+        def test_vendor_in_gold_dim(self):
+            df = self.tables["dim_vendor"]
+            assert df.where("vendor_id = 'V001'").count() == 1
+
+        def test_vendor_in_gold_fact_performance(self):
+            df = self.tables["fact_vendor_performance"]
+            assert df.where("vendor_id = 'V001'").count() >= 1
+
+        def test_null_vendor_dropped_in_silver(self):
+            df = self.tables["silver_vendors"]
+            assert df.where("vendor_id IS NULL").count() == 0
+
+        def test_null_vendor_absent_in_gold(self):
+            df = self.tables["dim_vendor"]
+            assert df.where("vendor_id IS NULL").count() == 0
+
+
+    class TestPurchaseOrderPropagation:
+        """Trace PO001 from bronze through to gold fact."""
+
+        @pytest.fixture(autouse=True)
+        def _run_full_pipeline(self, spark, register_all_bronze):
+            pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+            pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+            self.tables = dlt_mock.get_all_tables()
+
+        def test_po_in_bronze(self):
+            df = self.tables["bronze_purchase_orders"]
+            assert df.where("po_id = 'PO001'").count() == 1
+
+        def test_po_in_silver(self):
+            df = self.tables["silver_purchase_orders"]
+            assert df.where("po_id = 'PO001'").count() == 1
+
+        def test_po_in_gold_fact(self):
+            df = self.tables["fact_purchase_orders"]
+            assert df.where("po_id = 'PO001'").count() == 1
+
+        def test_po_line_items_aggregated_in_gold(self):
+            df = self.tables["fact_purchase_orders"]
+            row = df.where("po_id = 'PO001'").collect()[0]
+            # PO001 has 2 line items in bronze
+            assert row["line_total"] > 0
+            assert row["total_quantity"] > 0
+
+
+    class TestContractPropagation:
+        """Trace contract C001 from bronze through to gold."""
+
+        @pytest.fixture(autouse=True)
+        def _run_full_pipeline(self, spark, register_all_bronze):
+            pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+            pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+            self.tables = dlt_mock.get_all_tables()
+
+        def test_contract_in_bronze(self):
+            df = self.tables["bronze_contracts"]
+            assert df.where("contract_id = 'C001'").count() == 1
+
+        def test_contract_in_silver(self):
+            df = self.tables["silver_contracts"]
+            assert df.where("contract_id = 'C001'").count() == 1
+
+        def test_contract_in_gold_dim(self):
+            df = self.tables["dim_contract"]
+            assert df.where("contract_id = 'C001'").count() == 1
+
+        def test_contract_in_gold_fact(self):
+            df = self.tables["fact_contracts"]
+            assert df.where("contract_id = 'C001'").count() == 1
+
+        def test_contract_items_aggregated(self):
+            df = self.tables["fact_contracts"]
+            row = df.where("contract_id = 'C001'").collect()[0]
+            assert row["item_count"] == 2
+            assert abs(row["items_total"] - 850000.0) < 1
+
+
+    class TestDataQualityPropagation:
+        """Verify DQ rules propagate correctly through layers."""
+
+        @pytest.fixture(autouse=True)
+        def _run_full_pipeline(self, spark, register_all_bronze):
+            pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+            pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+            self.tables = dlt_mock.get_all_tables()
+
+        def test_null_pks_removed_at_silver(self):
+            """All silver tables should have 0 null PKs."""
+            pk_map = {
+                "silver_vendors": "vendor_id",
+                "silver_projects": "project_id",
+                "silver_materials": "material_id",
+                "silver_employees": "employee_id",
+                "silver_purchase_orders": "po_id",
+                "silver_po_line_items": "line_id",
+                "silver_contracts": "contract_id",
+                "silver_contract_items": "item_id",
+                "silver_invoices": "invoice_id",
+                "silver_goods_receipts": "grn_id",
+                "silver_project_budgets": "budget_id",
+                "silver_project_actuals": "transaction_id",
+                "silver_sales_orders": "sales_order_id",
+                "silver_inventory": "movement_id",
+                "silver_vendor_performance": "performance_id",
+            }
+            for tbl, pk in pk_map.items():
+                df = self.tables[tbl]
+                assert df.where(f"{pk} IS NULL").count() == 0, \
+                    f"{tbl} has null {pk} after silver"
+
+        def test_gold_row_counts_consistent(self):
+            """Gold dimensions should have <= silver row counts."""
+            silver_vendors = self.tables["silver_vendors"].count()
+            gold_vendors = self.tables["dim_vendor"].count()
+            assert gold_vendors <= silver_vendors
+
+        def test_expectations_recorded(self):
+            """dlt_mock should have recorded expectation results."""
+            expectations = dlt_mock.get_expectations()
+            assert len(expectations) > 0
+
+
+    class TestTransformPersistence:
+        """Verify silver transforms persist through to gold."""
+
+        @pytest.fixture(autouse=True)
+        def _run_full_pipeline(self, spark, register_all_bronze):
+            pipeline_runner.run_pipeline(SILVER_PATH, spark, dlt_mock)
+            pipeline_runner.run_pipeline(GOLD_PATH, spark, dlt_mock)
+            self.tables = dlt_mock.get_all_tables()
+
+        def test_trimmed_names_in_gold(self):
+            """Vendor names trimmed in silver should remain trimmed in gold."""
+            df = self.tables["dim_vendor"]
+            for row in df.collect():
+                name = row["vendor_name"]
+                assert name == name.strip(), f"Not trimmed in gold: '{name}'"
+
+        def test_type_casting_persists(self):
+            """Double casting in silver should persist in gold."""
+            from pyspark.sql.types import DoubleType
+            df = self.tables["dim_vendor"]
+            field = [f for f in df.schema.fields if f.name == "performance_rating"][0]
+            assert field.dataType == DoubleType()
+
+        def test_derived_columns_in_gold(self):
+            """Silver-derived columns should be available in gold."""
+            df = self.tables["dim_project"]
+            assert "budget_variance_pct" in df.columns
+''')
+
+
+# ============================================================
+# Write all files
+# ============================================================
+print(f"\nWriting {len(files)} files to: {TESTS_DIR}\n")
+
+for filename, content in files.items():
+    filepath = os.path.join(TESTS_DIR, filename)
+    # Remove leading newline from dedent
+    clean = content.lstrip("\n")
+    with open(filepath, "w", encoding="utf-8", newline="\n") as f:
+        f.write(clean)
+    size = os.path.getsize(filepath)
+    print(f"  Written: {filename} ({size:,} bytes)")
+
+print(f"\nDone! {len(files)} files written.")
+print("Run tests with: python -m pytest tests/ -v")
