@@ -1,0 +1,18 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 208 items
+
+tests\test_bronze_pipeline.py ........                                   [  3%]
+tests\test_bronze_silver_handover.py ................................... [ 20%]
+.....                                                                    [ 23%]
+tests\test_e2e_pipeline.py ............................                  [ 36%]
+tests\test_gold_pipeline.py .................................            [ 52%]
+tests\test_pipeline_integrity.py ...........................             [ 65%]
+tests\test_silver_pipeline.py .......................................... [ 85%]
+..............................                                           [100%]
+
+============================ 208 passed in 59.08s =============================

@@ -1,0 +1,74 @@
+"""Same order-aware check, but for gold reading silver."""
+import csv, glob, os, re, json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+gold = (ROOT / "databricks" / "gold" / "03_gold_pipeline.py").read_text(encoding="utf-8")
+silver = (ROOT / "databricks" / "silver" / "02_silver_pipeline.py").read_text(encoding="utf-8")
+
+# Build silver schema by static analysis: bronze cols + every withColumn output + drops
+def silver_schema_for(t):
+    m = re.search(
+        r"def\s+silver_" + re.escape(t) + r"\s*\(\):(.*?)(?=\n\n@dlt\.table|\n# COMMAND|\Z)",
+        silver, re.DOTALL)
+    if not m: return set()
+    body = m.group(1)
+    # Bronze headers
+    headers = set()
+    csvp = ROOT / "data" / "raw_csv" / f"{t}.csv"
+    if csvp.exists():
+        with open(csvp, encoding="utf-8") as f:
+            headers = set(next(csv.reader(f)))
+        headers.update({"_ingest_timestamp", "_source_file"})
+    cols = set(headers)
+    # Apply withColumn outputs
+    for out in re.findall(r'\.withColumn\(\s*"(\w+)"', body):
+        cols.add(out)
+    for out in re.findall(r'\.withColumnRenamed\(\s*"\w+"\s*,\s*"(\w+)"', body):
+        cols.add(out)
+    # Apply drops
+    drop_m = re.search(r'\.drop\(([^)]*)\)', body)
+    if drop_m:
+        for d in re.findall(r'"(\w+)"', drop_m.group(1)):
+            cols.discard(d)
+    return cols
+
+SILVER_TABLES = ["vendors","projects","materials","employees","purchase_orders",
+                 "po_line_items","contracts","contract_items","invoices",
+                 "goods_receipts","project_budgets","project_actuals",
+                 "sales_orders","inventory","vendor_performance"]
+silver_schemas = {f"silver_{t}": silver_schema_for(t) for t in SILVER_TABLES}
+
+# Walk gold @dlt.table funcs, find which silver they read, validate col() refs
+problems = {}
+for fn_m in re.finditer(
+    r'def\s+(\w+)\s*\(\):(.*?)(?=\n\n@dlt\.table|\n# COMMAND|\Z)', gold, re.DOTALL
+):
+    fname = fn_m.group(1)
+    body = fn_m.group(2)
+    # Find silver tables read
+    reads = re.findall(r'procurement_silver\.(silver_\w+)', body)
+    if not reads:
+        continue
+    available = set()
+    for r in reads:
+        available |= silver_schemas.get(r, set())
+    # Walk withColumn / withColumnRenamed
+    bad = []
+    for wc in re.finditer(r'\.withColumn\(\s*"(\w+)"\s*,', body):
+        out_name = wc.group(1)
+        i = wc.end(); depth = 1
+        while i < len(body) and depth > 0:
+            if body[i] == '(': depth += 1
+            elif body[i] == ')': depth -= 1
+            i += 1
+        expr = body[wc.end():i-1]
+        for ref in re.findall(r'col\(\s*"(\w+)"\s*\)', expr):
+            if ref not in available:
+                bad.append(ref)
+        available.add(out_name)
+    bad = sorted(set(bad))
+    if bad:
+        problems[fname] = bad
+
+print(json.dumps(problems, indent=2))

@@ -1,0 +1,87 @@
+"""Apply all silver→gold column reconciliation fixes."""
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+silver_p = ROOT / "databricks" / "silver" / "02_silver_pipeline.py"
+gold_p = ROOT / "databricks" / "gold" / "03_gold_pipeline.py"
+
+s = silver_p.read_text(encoding="utf-8")
+g = gold_p.read_text(encoding="utf-8")
+
+# ---- silver_vendors: add primary_contact + prequalification_expiry aliases
+old_vendors_tail = '''        .withColumn("performance_rating", col("performance_rating").cast(DoubleType()))'''
+# find vendors block end -> need to look for actual end. Use a simpler add: after withColumn performance_rating
+new_vendors_tail = '''        .withColumn("performance_rating", col("performance_rating").cast(DoubleType()))
+        .withColumn("primary_contact", col("contact_name"))
+        .withColumn("prequalification_expiry", to_date(col("prequalification_expiry_date")))'''
+if old_vendors_tail in s and "primary_contact" not in s:
+    s = s.replace(old_vendors_tail, new_vendors_tail)
+    print("Added vendor aliases")
+
+# ---- silver_goods_receipts: alias received_by -> inspector
+old_gr = '''        .withColumn("rejection_rate",
+            when(col("qty_delivered") > 0,
+                spark_round(col("qty_rejected") / col("qty_delivered") * 100, 2))'''
+if old_gr in s and 'inspector' not in s:
+    new_gr = old_gr.replace(
+        '.withColumn("rejection_rate",',
+        '.withColumn("inspector", col("received_by"))\n        .withColumn("rejection_rate",'
+    )
+    s = s.replace(old_gr, new_gr)
+    print("Added inspector alias to silver_goods_receipts")
+
+silver_p.write_text(s, encoding="utf-8")
+print(f"silver size={silver_p.stat().st_size}")
+
+# ---- gold patches
+patches = [
+    # dim_contract: remove approved_by (silver_contracts has no approved_by)
+    ('''        ).otherwise(lit(0.0)).alias("cost_growth_pct"),
+        col("approved_by"),
+        col("created_date"),
+        lit(True).cast(BooleanType()).alias("_is_current"),''',
+     '''        ).otherwise(lit(0.0)).alias("cost_growth_pct"),
+        col("created_date"),
+        lit(True).cast(BooleanType()).alias("_is_current"),'''),
+    # dim_vendor: remove iso_cert_number
+    ('''        col("iso_certified"),
+        col("iso_cert_number"),
+        col("hse_rating"),''',
+     '''        col("iso_certified"),
+        col("hse_rating"),'''),
+    # fact_invoices: remove three_way_match, grn_ref, notes
+    ('''            .otherwise(lit("90+ DAYS")).alias("aging_bucket"),
+        col("three_way_match"),
+        col("grn_ref"),
+        col("currency"),
+        col("approved_by"),
+        col("notes"),
+        current_timestamp().alias("_gold_timestamp")''',
+     '''            .otherwise(lit("90+ DAYS")).alias("aging_bucket"),
+        col("currency"),
+        col("approved_by"),
+        current_timestamp().alias("_gold_timestamp")'''),
+    # fact_vendor_performance: remove compliance_score, alias notes->remarks
+    ('''        col("hse_score"),
+        col("compliance_score"),
+        col("overall_score"),
+        col("recommendation"),
+        col("evaluator_id"),
+        col("notes"),
+        col("created_date"),''',
+     '''        col("hse_score"),
+        col("overall_score"),
+        col("recommendation"),
+        col("evaluator_id"),
+        col("remarks").alias("notes"),
+        col("created_date"),'''),
+]
+
+for old, new in patches:
+    if old in g:
+        g = g.replace(old, new)
+        print(f"applied patch: {old[:60]!r}...")
+    else:
+        print(f"MISS: {old[:60]!r}")
+
+gold_p.write_text(g, encoding="utf-8")
+print(f"gold size={gold_p.stat().st_size}")

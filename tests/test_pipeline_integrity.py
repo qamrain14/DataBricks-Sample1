@@ -1,0 +1,233 @@
+"""Structural integrity tests for Databricks notebook source files.
+
+Guards against the recurring corruption pattern where every line of a
+notebook .py file gets prefixed with `# MAGIC `, turning the entire file
+into one giant markdown cell with zero executable Python and zero
+@dlt.table decorators -- which causes the Databricks DLT pipeline to
+fail with NO_TABLES_IN_PIPELINE.
+"""
+from __future__ import annotations
+
+import re
+from pathlib import Path
+
+import pytest
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+PIPELINES = {
+    "bronze": REPO_ROOT / "databricks" / "bronze" / "01_bronze_pipeline.py",
+    "silver": REPO_ROOT / "databricks" / "silver" / "02_silver_pipeline.py",
+    "gold":   REPO_ROOT / "databricks" / "gold"   / "03_gold_pipeline.py",
+}
+EXPECTED_MIN_TABLES = {"bronze": 2, "silver": 15, "gold": 18}
+
+
+@pytest.mark.parametrize("layer,path", list(PIPELINES.items()))
+def test_pipeline_file_exists_and_nonempty(layer, path):
+    assert path.exists(), f"{layer} pipeline file missing: {path}"
+    assert path.stat().st_size > 1024, f"{layer} pipeline file suspiciously small"
+
+
+@pytest.mark.parametrize("layer,path", list(PIPELINES.items()))
+def test_pipeline_has_databricks_header(layer, path):
+    first_line = path.read_text(encoding="utf-8").splitlines()[0].strip()
+    assert first_line == "# Databricks notebook source", (
+        f"{layer} pipeline must start with '# Databricks notebook source' "
+        f"so Databricks treats it as a notebook; got: {first_line!r}"
+    )
+
+
+@pytest.mark.parametrize("layer,path", list(PIPELINES.items()))
+def test_pipeline_not_entirely_magic_wrapped(layer, path):
+    """If every non-blank line is prefixed with '# MAGIC', the whole file is
+    interpreted as one markdown cell with zero executable code -- the exact
+    corruption that causes NO_TABLES_IN_PIPELINE."""
+    lines = [
+        l for l in path.read_text(encoding="utf-8").splitlines()
+        if l.strip() and l.strip() != "# Databricks notebook source"
+    ]
+    assert lines, f"{layer} pipeline has no non-blank content"
+    magic_lines = [l for l in lines if l.lstrip().startswith("# MAGIC")]
+    magic_ratio = len(magic_lines) / len(lines)
+    assert magic_ratio < 0.85, (
+        f"{layer} pipeline appears corrupted: {magic_ratio:.0%} of lines "
+        f"are '# MAGIC' prefixed (expected <85%%). This typically means the "
+        f"file was wrapped as a single markdown cell and DLT will report "
+        f"NO_TABLES_IN_PIPELINE."
+    )
+
+
+@pytest.mark.parametrize("layer,path", list(PIPELINES.items()))
+def test_pipeline_has_dlt_table_decorators(layer, path):
+    """Every DLT pipeline must contain real @dlt.table decorators on
+    executable (not '# MAGIC' commented) lines."""
+    text = path.read_text(encoding="utf-8")
+    executable_lines = [
+        l for l in text.splitlines()
+        if not l.lstrip().startswith("# MAGIC")
+    ]
+    executable_text = "\n".join(executable_lines)
+    matches = re.findall(r"^\s*@dlt\.table\b", executable_text, flags=re.MULTILINE)
+    assert matches, (
+        f"{layer} pipeline contains zero executable @dlt.table decorators. "
+        f"Databricks DLT will fail with NO_TABLES_IN_PIPELINE."
+    )
+
+
+@pytest.mark.parametrize("layer,path", list(PIPELINES.items()))
+def test_pipeline_meets_minimum_table_count(layer, path):
+    text = path.read_text(encoding="utf-8")
+    executable_lines = [
+        l for l in text.splitlines()
+        if not l.lstrip().startswith("# MAGIC")
+    ]
+    executable_text = "\n".join(executable_lines)
+    matches = re.findall(r"^\s*@dlt\.table\b", executable_text, flags=re.MULTILINE)
+    expected = EXPECTED_MIN_TABLES[layer]
+    assert len(matches) >= expected, (
+        f"{layer} pipeline declares {len(matches)} tables; "
+        f"expected at least {expected}."
+    )
+
+
+@pytest.mark.parametrize("layer,path", list(PIPELINES.items()))
+def test_pipeline_has_command_separators(layer, path):
+    text = path.read_text(encoding="utf-8")
+    sep_count = text.count("# COMMAND ----------")
+    assert sep_count >= 3, (
+        f"{layer} pipeline only has {sep_count} '# COMMAND ----------' "
+        f"separators; notebook structure looks broken."
+    )
+
+
+@pytest.mark.parametrize("layer,path", list(PIPELINES.items()))
+def test_pipeline_imports_dlt(layer, path):
+    text = path.read_text(encoding="utf-8")
+    executable_lines = [
+        l for l in text.splitlines()
+        if not l.lstrip().startswith("# MAGIC")
+    ]
+    executable_text = "\n".join(executable_lines)
+    assert re.search(r"^\s*import\s+dlt\b", executable_text, flags=re.MULTILINE), (
+        f"{layer} pipeline never executes 'import dlt'."
+    )
+
+
+def test_bronze_does_not_use_unsupported_path_arg():
+    """Unity Catalog managed tables forbid path= in @dlt.table."""
+    text = PIPELINES["bronze"].read_text(encoding="utf-8")
+    executable_lines = [
+        l for l in text.splitlines()
+        if not l.lstrip().startswith("# MAGIC")
+    ]
+    executable_text = "\n".join(executable_lines)
+    assert "path=" not in executable_text, (
+        "bronze pipeline must not pass path= to @dlt.table when targeting "
+        "Unity Catalog managed tables (causes deploy failure)."
+    )
+
+
+def test_bronze_uses_only_builtin_reader_formats():
+    """Serverless DLT cannot load third-party JARs like com.crealytics.spark.excel.
+    Bronze must read with a built-in format (csv/parquet/json/delta/avro/orc/text)."""
+    text = PIPELINES["bronze"].read_text(encoding="utf-8")
+    executable_lines = [
+        l for l in text.splitlines()
+        if not l.lstrip().startswith("# MAGIC")
+    ]
+    executable_text = "\n".join(executable_lines)
+    forbidden = [
+        "com.crealytics.spark.excel",
+        "spark-excel",
+    ]
+    for token in forbidden:
+        assert token not in executable_text, (
+            f"bronze pipeline references '{token}' which requires a JAR "
+            f"that is unavailable on serverless DLT. Use a built-in format."
+        )
+    builtin_formats = re.findall(
+        r'\.format\(\s*["\'](csv|parquet|json|delta|avro|orc|text|jdbc)["\']\s*\)',
+        executable_text,
+    )
+    assert builtin_formats, (
+        "bronze pipeline must use at least one built-in spark.read.format() "
+        "(csv/parquet/json/delta/avro/orc/text/jdbc)."
+    )
+
+
+def test_bronze_volume_path_matches_databricks_yml():
+    """Bronze pipeline reads from the UC volume path that the bundle config
+    points at: /Volumes/<catalog>/default/procurement_raw."""
+    yml = (REPO_ROOT / "resources" / "procurement_pipelines.yml").read_text(encoding="utf-8")
+    assert "/Volumes/${var.catalog}/default/procurement_raw" in yml, (
+        "procurement_pipelines.yml must declare the raw_data_path UC volume "
+        "so the pipeline knows where to read source CSVs."
+    )
+
+
+def test_silver_does_not_use_dlt_read_for_bronze_tables():
+    """Silver and Bronze are separate DLT pipelines, so dlt.read('bronze_X')
+    incorrectly resolves against the silver target schema and fails with
+    TABLE_OR_VIEW_NOT_FOUND. Silver must use spark.read.table(...) with a
+    fully qualified name to read bronze tables."""
+    text = PIPELINES["silver"].read_text(encoding="utf-8")
+    executable_lines = [
+        l for l in text.splitlines()
+        if not l.lstrip().startswith("# MAGIC")
+    ]
+    executable_text = "\n".join(executable_lines)
+    bad = re.findall(r'dlt\.read(?:_stream)?\(\s*["\']bronze_[^"\']+["\']\s*\)', executable_text)
+    assert not bad, (
+        f"silver pipeline must not use dlt.read('bronze_*') to read tables "
+        f"from the bronze pipeline (different DLT pipeline / different target "
+        f"schema). Use spark.read.table(f'{{CATALOG}}.procurement_bronze.bronze_X') "
+        f"instead. Found {len(bad)} offending references: {bad[:3]}"
+    )
+
+
+def test_gold_does_not_use_dlt_read_for_silver_tables():
+    """Gold and Silver are separate DLT pipelines. Same problem as above."""
+    text = PIPELINES["gold"].read_text(encoding="utf-8")
+    executable_lines = [
+        l for l in text.splitlines()
+        if not l.lstrip().startswith("# MAGIC")
+    ]
+    executable_text = "\n".join(executable_lines)
+    bad = re.findall(r'dlt\.read(?:_stream)?\(\s*["\']silver_[^"\']+["\']\s*\)', executable_text)
+    assert not bad, (
+        f"gold pipeline must not use dlt.read('silver_*') to read tables "
+        f"from the silver pipeline (different DLT pipeline). "
+        f"Use spark.read.table(f'{{CATALOG}}.procurement_silver.silver_X') instead. "
+        f"Found {len(bad)} offending references: {bad[:3]}"
+    )
+
+
+# --- Regression: DLT expect predicates must not reference renamed-away columns
+
+import re as _re_exp
+
+
+def test_silver_expect_does_not_reference_renamed_away_columns():
+    src = (Path(__file__).resolve().parent.parent / "databricks" / "silver" / "02_silver_pipeline.py").read_text()
+    blocks = _re_exp.split(r"^@dlt\.table", src, flags=_re_exp.MULTILINE)
+    failures = []
+    expect_pat = _re_exp.compile(r'@dlt\.expect(?:_or_drop|_or_fail)?\("[^"]+",\s*"([^"]+)"\)')
+    rename_pat = _re_exp.compile(r'withColumnRenamed\(\s*"([^"]+)"\s*,\s*"([^"]+)"\s*\)')
+    re_add_pat = _re_exp.compile(r'withColumn\(\s*"([^"]+)"\s*,')
+    fn_pat = _re_exp.compile(r"def\s+(silver_\w+)\(")
+    for block in blocks[1:]:
+        fn_m = fn_pat.search(block)
+        if not fn_m:
+            continue
+        fn = fn_m.group(1)
+        renames = rename_pat.findall(block)
+        re_added = set(re_add_pat.findall(block))
+        renamed_away = {s for s, d in renames if s != d and s not in re_added}
+        for predicate in expect_pat.findall(block):
+            idents = set(_re_exp.findall(r"[a-zA-Z_][a-zA-Z0-9_]*", predicate))
+            kw = {"IS", "NOT", "NULL", "AND", "OR", "BETWEEN", "TRUE", "FALSE", "IN"}
+            cols = {c for c in idents if c.upper() not in kw}
+            bad = cols & renamed_away
+            if bad:
+                failures.append(f"{fn}: '{predicate}' references renamed-away {sorted(bad)}")
+    assert not failures, "Renamed-away columns in expects:\n" + "\n".join(failures)

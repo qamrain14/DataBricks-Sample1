@@ -1,0 +1,63 @@
+"""Find every col(\"X\")/withColumn(\"X\", ...) in silver pipeline whose X
+is not in the corresponding bronze CSV header. Prints a per-table report."""
+import csv, glob, os, re, json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+silver = (ROOT / "databricks" / "silver" / "02_silver_pipeline.py").read_text(encoding="utf-8")
+
+# Build header map
+headers = {}
+for p in sorted(glob.glob(str(ROOT / "data" / "raw_csv" / "*.csv"))):
+    name = Path(p).stem
+    with open(p, encoding="utf-8") as f:
+        headers[name] = set(next(csv.reader(f)))
+    # Bronze adds these two
+    headers[name].update({"_ingest_timestamp", "_source_file"})
+
+# Split silver into per-table blocks by @dlt.table(name="silver_<x>" ... def silver_<x>:
+TABLES = ["vendors","projects","materials","employees","purchase_orders",
+          "po_line_items","contracts","contract_items","invoices",
+          "goods_receipts","project_budgets","project_actuals",
+          "sales_orders","inventory","vendor_performance"]
+
+problems = {}
+for t in TABLES:
+    # Find function body for silver_<t>
+    m = re.search(
+        r"def\s+silver_" + re.escape(t) + r"\s*\(\):(.*?)(?=\n\n@dlt\.table|\n# COMMAND|\Z)",
+        silver, re.DOTALL)
+    if not m:
+        problems.setdefault(t, []).append("FUNCTION NOT FOUND")
+        continue
+    body = m.group(1)
+    bronze_cols = set(headers.get(t, set()))
+    # Walk withColumn calls in order. For each, every col("X") inside must be
+    # present in (bronze_cols ∪ previously-output columns). Then add the
+    # output name to the available set.
+    available = set(bronze_cols)
+    bad = []
+    # Match each .withColumn("OUT", <expr>) — capture greedy then trim with paren count.
+    for wc in re.finditer(r'\.withColumn\(\s*"(\w+)"\s*,', body):
+        out_name = wc.group(1)
+        # Extract expr until matching close paren
+        i = wc.end()
+        depth = 1
+        while i < len(body) and depth > 0:
+            if body[i] == '(': depth += 1
+            elif body[i] == ')': depth -= 1
+            i += 1
+        expr = body[wc.end():i-1]
+        for ref in re.findall(r'col\(\s*"(\w+)"\s*\)', expr):
+            if ref not in available:
+                bad.append(ref)
+        available.add(out_name)
+    bad = sorted(set(bad))
+    if bad:
+        problems[t] = bad
+
+print(json.dumps(problems, indent=2))
+print()
+print("Bronze headers per table sizes:")
+for t in TABLES:
+    print(f"  {t}: {len(headers.get(t, set()))} cols")

@@ -1,0 +1,93 @@
+"""Add semantic alias columns in silver (so gold contract/invoice references resolve)
+and fix project_id ambiguity in gold_fact_goods_receipts."""
+from pathlib import Path
+
+silver_path = Path(__file__).resolve().parent / "databricks" / "silver" / "02_silver_pipeline.py"
+gold_path = Path(__file__).resolve().parent / "databricks" / "gold" / "03_gold_pipeline.py"
+
+s = silver_path.read_text(encoding="utf-8")
+g = gold_path.read_text(encoding="utf-8")
+
+# ---- silver_contracts: add change_order_*, penalty_clause, performance_bond
+old_contracts_tail = '''        .withColumn("contract_duration_days",
+            datediff(col("end_date"), col("start_date")))
+        .withColumn("_silver_timestamp", current_timestamp())
+        .drop("_ingest_timestamp", "_source_file")
+    )
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## 8. Silver Contract Items'''
+
+new_contracts_tail = '''        .withColumn("contract_duration_days",
+            datediff(col("end_date"), col("start_date")))
+        .withColumn("change_order_value",
+            coalesce(col("revised_value"), col("original_value")) - col("original_value"))
+        .withColumn("change_order_count", coalesce(col("variation_orders"), lit(0)))
+        .withColumn("penalty_clause", col("liquidated_damages_pct").cast(DoubleType()))
+        .withColumn("performance_bond", col("performance_bond_pct").cast(DoubleType()))
+        .withColumn("_silver_timestamp", current_timestamp())
+        .drop("_ingest_timestamp", "_source_file")
+    )
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## 8. Silver Contract Items'''
+
+assert old_contracts_tail in s, "silver_contracts tail not found"
+s = s.replace(old_contracts_tail, new_contracts_tail)
+
+# ---- silver_invoices: add invoice_number, payment_date, payment_status, received_date
+old_inv_tail = '''        .withColumn("days_overdue",
+            when((col("paid_date").isNull()) & (col("due_date").isNotNull()),
+                datediff(current_timestamp(), col("due_date")))
+            .otherwise(lit(0)))
+        .withColumn("_silver_timestamp", current_timestamp())
+        .drop("_ingest_timestamp", "_source_file")
+    )
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## 10. Silver Goods Receipts'''
+
+new_inv_tail = '''        .withColumn("days_overdue",
+            when((col("paid_date").isNull()) & (col("due_date").isNotNull()),
+                datediff(current_timestamp(), col("due_date")))
+            .otherwise(lit(0)))
+        .withColumn("invoice_number", col("invoice_ref"))
+        .withColumn("payment_date", col("paid_date"))
+        .withColumn("received_date", col("invoice_date"))
+        .withColumn("payment_status",
+            when(col("paid_date").isNotNull(), lit("PAID"))
+            .when(col("invoice_status") == lit("APPROVED"), lit("PENDING"))
+            .otherwise(col("invoice_status")))
+        .withColumn("_silver_timestamp", current_timestamp())
+        .drop("_ingest_timestamp", "_source_file")
+    )
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## 10. Silver Goods Receipts'''
+
+assert old_inv_tail in s, "silver_invoices tail not found"
+s = s.replace(old_inv_tail, new_inv_tail)
+
+silver_path.write_text(s, encoding="utf-8")
+print(f"Patched silver; size={silver_path.stat().st_size}")
+
+# ---- gold fact_goods_receipts: drop project_id from po select to avoid ambiguity
+old_g = '''    po = spark.read.table(f"{CATALOG}.procurement_silver.silver_purchase_orders").select(
+        col("po_id").alias("_po_id"), col("project_id")
+    )'''
+new_g = '''    po = spark.read.table(f"{CATALOG}.procurement_silver.silver_purchase_orders").select(
+        col("po_id").alias("_po_id")
+    )'''
+
+assert old_g in g, "gold po select not found"
+g = g.replace(old_g, new_g)
+gold_path.write_text(g, encoding="utf-8")
+print(f"Patched gold; size={gold_path.stat().st_size}")

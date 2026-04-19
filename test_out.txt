@@ -1,0 +1,459 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: c:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 77 items
+
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_silver_produces_all_expected_tables PASSED [  1%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_defines_expected_dims_and_facts PASSED [  2%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_contract] PASSED [  3%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_cost_center] PASSED [  5%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_date] PASSED [  6%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_employee] PASSED [  7%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_geography] PASSED [  9%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_material] PASSED [ 10%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_project] PASSED [ 11%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_sector] PASSED [ 12%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_dim_vendor] PASSED [ 14%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_contracts] PASSED [ 15%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_goods_receipts] PASSED [ 16%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_inventory] PASSED [ 18%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_invoices] PASSED [ 19%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_project_actuals] PASSED [ 20%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_project_costs] PASSED [ 22%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_purchase_orders] PASSED [ 23%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_sales] PASSED [ 24%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_uses_fully_qualified_silver_reads[gold_fact_vendor_performance] PASSED [ 25%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_contract] PASSED [ 27%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_cost_center] PASSED [ 28%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_date] SKIPPED [ 29%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_employee] PASSED [ 31%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_geography] PASSED [ 32%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_material] PASSED [ 33%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_project] PASSED [ 35%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_sector] PASSED [ 36%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_dim_vendor] PASSED [ 37%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_contracts] PASSED [ 38%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_goods_receipts] PASSED [ 40%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_inventory] PASSED [ 41%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_invoices] PASSED [ 42%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_project_actuals] PASSED [ 44%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_project_costs] PASSED [ 45%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_purchase_orders] PASSED [ 46%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_sales] PASSED [ 48%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_vendor_performance] PASSED [ 49%]
+tests/test_silver_gold_handover.py::TestSilverGoldContract::test_no_orphan_column_references PASSED [ 50%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_all_gold_tables_materialise ERROR [ 51%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_date] ERROR [ 53%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_vendor] ERROR [ 54%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_project] ERROR [ 55%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_material] ERROR [ 57%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_employee] ERROR [ 58%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_geography] ERROR [ 59%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_contract] ERROR [ 61%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_cost_center] ERROR [ 62%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_sector] ERROR [ 63%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_purchase_orders] ERROR [ 64%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_invoices] ERROR [ 66%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_goods_receipts] ERROR [ 67%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_costs] ERROR [ 68%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_actuals] ERROR [ 70%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_vendor_performance] ERROR [ 71%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_inventory] ERROR [ 72%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_contracts] ERROR [ 74%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_sales] ERROR [ 75%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_date] ERROR [ 76%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_vendor] ERROR [ 77%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_project] ERROR [ 79%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_material] ERROR [ 80%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_employee] ERROR [ 81%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_geography] ERROR [ 83%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_contract] ERROR [ 84%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_cost_center] ERROR [ 85%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_sector] ERROR [ 87%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_purchase_orders] ERROR [ 88%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_invoices] ERROR [ 89%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_goods_receipts] ERROR [ 90%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_costs] ERROR [ 92%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_actuals] ERROR [ 93%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_vendor_performance] ERROR [ 94%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_inventory] ERROR [ 96%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_contracts] ERROR [ 97%]
+tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_sales] ERROR [ 98%]
+tests/test_silver_gold_handover.py::TestSilverMissingFailsGold::test_gold_fails_when_silver_unregistered PASSED [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_all_gold_tables_materialise _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 174
+      def test_all_gold_tables_materialise(self, gold_tables):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:174
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_date] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_vendor] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_project] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_material] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_employee] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_geography] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_contract] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_cost_center] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_sector] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_purchase_orders] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_invoices] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_goods_receipts] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_project_costs] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_project_actuals] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_vendor_performance] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_inventory] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_contracts] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_sales] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 179
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_rows(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:179
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_date] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_vendor] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_project] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_material] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_employee] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_geography] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_contract] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_cost_center] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_sector] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_purchase_orders] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_invoices] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_goods_receipts] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_project_costs] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_project_actuals] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_vendor_performance] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_inventory] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_contracts] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_sales] _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py, line 184
+      @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+      def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+E       fixture 'gold_tables' not found
+>       available fixtures: _reset_dlt_mock, _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, bronze_data, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, project_root, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, register_all_bronze, spark, tests/test_silver_gold_handover.py::<event_loop>, tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_silver_gold_handover.py:184
+=========================== short test summary info ===========================
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_all_gold_tables_materialise
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_date]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_vendor]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_project]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_material]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_employee]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_geography]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_contract]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_cost_center]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_sector]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_purchase_orders]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_invoices]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_goods_receipts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_costs]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_actuals]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_vendor_performance]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_inventory]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_contracts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_sales]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_date]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_vendor]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_project]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_material]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_employee]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_geography]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_contract]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_cost_center]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_sector]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_purchase_orders]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_invoices]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_goods_receipts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_costs]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_actuals]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_vendor_performance]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_inventory]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_contracts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_sales]
+================== 39 passed, 1 skipped, 37 errors in 5.85s ===================

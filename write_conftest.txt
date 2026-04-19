@@ -1,0 +1,392 @@
+"""Write conftest.py that uses mock_spark instead of real pyspark."""
+import os, textwrap
+
+TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
+
+content = textwrap.dedent(r'''
+    """Pytest fixtures using mock_spark (no JVM required)."""
+    import os
+    import sys
+    import types
+    import pytest
+    from datetime import datetime
+
+    TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
+    sys.path.insert(0, TESTS_DIR)
+
+    import mock_spark as _mock_spark
+
+    _pyspark = types.ModuleType("pyspark")
+    _pyspark_sql = types.ModuleType("pyspark.sql")
+    _pyspark_sql_functions = types.ModuleType("pyspark.sql.functions")
+    _pyspark_sql_types = types.ModuleType("pyspark.sql.types")
+    _pyspark_sql_window = types.ModuleType("pyspark.sql.window")
+
+    for _name in ("SparkSession", "Row", "DataFrame", "Column"):
+        if hasattr(_mock_spark, _name):
+            setattr(_pyspark_sql, _name, getattr(_mock_spark, _name))
+
+    for _name in dir(_mock_spark):
+        if _name.startswith("_"):
+            continue
+        setattr(_pyspark_sql_functions, _name, getattr(_mock_spark, _name))
+
+    for _name in (
+        "StructType", "StructField", "StringType", "IntegerType", "LongType",
+        "DoubleType", "FloatType", "BooleanType", "TimestampType", "DateType",
+        "DecimalType", "ArrayType", "MapType",
+    ):
+        if hasattr(_mock_spark, _name):
+            setattr(_pyspark_sql_types, _name, getattr(_mock_spark, _name))
+
+    if hasattr(_mock_spark, "Window"):
+        _pyspark_sql_window.Window = _mock_spark.Window
+
+    sys.modules["pyspark"] = _pyspark
+    sys.modules["pyspark.sql"] = _pyspark_sql
+    sys.modules["pyspark.sql.functions"] = _pyspark_sql_functions
+    sys.modules["pyspark.sql.types"] = _pyspark_sql_types
+    sys.modules["pyspark.sql.window"] = _pyspark_sql_window
+    _pyspark.sql = _pyspark_sql
+
+    import dlt_mock
+    sys.modules["dlt"] = dlt_mock
+
+
+    @pytest.fixture(scope="session")
+    def spark():
+        from pyspark.sql import SparkSession
+        session = SparkSession.builder.master("local[2]").appName("dlt-tests").getOrCreate()
+        yield session
+        try:
+            session.stop()
+        except Exception:
+            pass
+
+
+    @pytest.fixture(autouse=True)
+    def _reset_dlt_mock():
+        dlt_mock.reset()
+        yield
+        dlt_mock.reset()
+
+
+    @pytest.fixture
+    def project_root():
+        return os.path.dirname(TESTS_DIR)
+
+
+    def _make_bronze_df(spark, table_name, columns, rows):
+        from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+        schema = StructType(
+            [StructField(c, StringType()) for c in columns]
+            + [
+                StructField("_ingest_timestamp", TimestampType()),
+                StructField("_source_file", StringType()),
+            ]
+        )
+        full_rows = [
+            tuple(r) + (datetime(2024, 1, 1), f"{table_name}.xlsx")
+            for r in rows
+        ]
+        return spark.createDataFrame(full_rows, schema)
+
+
+    BRONZE_VENDORS = (
+        ["vendor_id", "vendor_code", "vendor_name", "vendor_type", "sector_specialization",
+         "country", "state", "city", "performance_rating", "credit_limit_usd",
+         "annual_turnover_usd", "payment_terms_days", "risk_category",
+         "prequalification_status", "prequalification_expiry", "iso_certified",
+         "iso_cert_number", "hse_rating", "minority_owned", "small_business",
+         "primary_contact", "contact_email", "contact_phone", "years_in_business"],
+        [
+            ["V001", "VND-001", "Acme Corp", "manufacturer", "CONSTRUCTION",
+             "US", "TX", "Houston", "4.5", "500000", "1000000", "30", "LOW",
+             "APPROVED", "2025-12-31", "true", "ISO-9001", "4.2", "false", "false",
+             "John Smith", "acme@test.com", "555-0001", "15"],
+            ["V002", "VND-002", " Beta Industries ", "distributor", " oil_gas ",
+             "GB", " LONDON ", "London", "3.8", "750000", "2000000", "45", "MEDIUM",
+             "PENDING", "2025-06-30", "true", "ISO-14001", "3.5", "true", "true",
+             "Jane Doe", "beta@test.com", "555-0002", "8"],
+            [None, "VND-003", "NullVendor", "services", "MINING",
+             "CA", "ON", "Toronto", "2.0", "100000", "500000", "60", "HIGH",
+             "EXPIRED", "2023-12-31", "false", None, "2.8", "false", "true",
+             "Null Person", "null@test.com", "555-0003", "3"],
+        ],
+    )
+
+    BRONZE_PROJECTS = (
+        ["project_id", "project_code", "project_name", "project_type", "sector", "sub_sector",
+         "client_name", "project_manager", "country", "state", "city",
+         "contract_value_usd", "approved_budget_usd", "start_date",
+         "planned_completion_date", "actual_completion_date", "project_status",
+         "phase", "priority", "risk_level"],
+        [
+            ["P001", "PRJ-001", "Highway Bridge", "infrastructure", "CONSTRUCTION", "civil",
+             "DOT", "John Smith", "US", "TX", "Houston",
+             "5000000", "4500000", "2024-01-01", "2024-12-31", None, "ACTIVE",
+             "execution", "HIGH", "MEDIUM"],
+            ["P002", "PRJ-002", " Offshore Platform ", "offshore", " oil_gas ", "upstream",
+             "BP", "Jane Doe", "GB", "SCT", "Aberdeen",
+             "15000000", "14000000", "2024-03-01", "2025-06-30", None, "PLANNING",
+             "initiation", "CRITICAL", "HIGH"],
+            [None, "PRJ-003", "NullProject", "building", "CONSTRUCTION", "residential",
+             "Tata", "Raj Kumar", "IN", "MH", "Mumbai",
+             "2000000", "1800000", "2023-01-01", "2023-12-31", "2024-01-15", "COMPLETED",
+             "closeout", "LOW", "LOW"],
+        ],
+    )
+
+    BRONZE_MATERIALS = (
+        ["material_id", "material_code", "material_name", "category", "sub_category",
+         "unit_price", "weight_kg", "lead_time_days", "active"],
+        [
+            ["M001", "MAT-001", "Steel Beam", "STRUCTURAL", "beam", "1200.50", "850", "14", "true"],
+            ["M002", "MAT-002", " Concrete Mix ", "foundation", " premix ", "85.00", "2400", "7", "TRUE"],
+            [None, "MAT-003", "NullMaterial", "PIPING", "valve", "45.00", "12", "21", "false"],
+        ],
+    )
+
+    BRONZE_EMPLOYEES = (
+        ["employee_id", "employee_code", "first_name", "last_name", "department",
+         "job_title", "grade", "approval_limit", "active", "hire_date",
+         "location", "cost_center"],
+        [
+            ["E001", "EMP-001", "John", "Smith", "PROCUREMENT",
+             "Manager", "G7", "500000", "true", "2020-01-15", "Houston", "CC-PROC"],
+            ["E002", "EMP-002", " Jane ", " Doe ", " engineering ",
+             "Engineer", "G5", "100000", "TRUE", "2021-06-01", "London", "CC-ENG"],
+            [None, "EMP-003", "Null", "Employee", "HR",
+             "Analyst", "G3", "25000", "false", "2022-03-10", "Mumbai", "CC-HR"],
+        ],
+    )
+
+    BRONZE_PURCHASE_ORDERS = (
+        ["po_id", "vendor_id", "project_id", "po_date", "delivery_date", "approval_date",
+         "po_value", "tax_amount", "total_value", "po_status", "po_type",
+         "priority", "currency", "payment_terms"],
+        [
+            ["PO001", "V001", "P001", "2024-01-15", "2024-02-15", "2024-01-10",
+             "250000", "12500", "262500", "approved", "standard",
+             "HIGH", "USD", "NET30"],
+            ["PO002", "V002", "P002", "2024-02-01", "2024-03-15", "2024-01-28",
+             "500000", "25000", "525000", " pending ", "blanket",
+             "MEDIUM", "GBP", "NET45"],
+            [None, "V001", "P001", "2024-03-01", "2024-04-01", "2024-02-25",
+             "100000", "5000", "105000", "DRAFT", "standard",
+             "LOW", "USD", "NET30"],
+        ],
+    )
+
+    BRONZE_PO_LINE_ITEMS = (
+        ["line_id", "po_id", "material_id", "qty_ordered", "qty_received", "qty_accepted",
+         "unit_price", "line_value", "delivery_date", "actual_delivery_date"],
+        [
+            ["LI001", "PO001", "M001", "100", "95", "90", "1200.50", "120050", "2024-02-15", "2024-02-12"],
+            ["LI002", "PO001", "M002", "500", "500", "480", "85.00", "42500", "2024-02-15", "2024-02-18"],
+            [None, "PO002", "M001", "200", "0", "0", "1200.50", "240100", "2024-03-15", None],
+        ],
+    )
+
+    BRONZE_CONTRACTS = (
+        ["contract_id", "vendor_id", "project_id", "contract_value", "contract_type",
+         "contract_status", "start_date", "end_date", "change_order_value",
+         "change_order_count", "payment_terms", "penalty_clause", "performance_bond",
+         "retention_pct", "approved_by", "created_date"],
+        [
+            ["C001", "V001", "P001", "1000000", "FIXED_PRICE",
+             "ACTIVE", "2024-01-01", "2024-12-31", "50000",
+             "2", "NET30", "5%", "100000", "10", "E001", "2024-01-01"],
+            ["C002", "V002", "P002", "5000000", " cost_plus ",
+             " active ", "2024-03-01", "2025-06-30", "500000",
+             "5", "NET45", "3%", "250000", "5", "E002", "2024-02-15"],
+            [None, "V001", "P001", "200000", "TIME_MATERIALS",
+             "CLOSED", "2023-01-01", "2023-12-31", "-20000",
+             "1", "NET60", "2%", "20000", "15", "E001", "2023-01-01"],
+        ],
+    )
+
+    BRONZE_CONTRACT_ITEMS = (
+        ["item_id", "contract_id", "description", "quantity", "unit_price", "line_value"],
+        [
+            ["CI001", "C001", "Foundation Work", "1", "500000", "500000"],
+            ["CI002", "C001", "Steel Structure", "1", "350000", "350000"],
+            [None, "C002", "Drilling Services", "1", "2000000", "2000000"],
+        ],
+    )
+
+    BRONZE_INVOICES = (
+        ["invoice_id", "vendor_id", "po_id", "project_id", "contract_id", "invoice_number",
+         "invoice_status", "invoice_type", "payment_status", "invoice_date", "received_date",
+         "due_date", "payment_date", "invoice_amount", "tax_amount", "total_amount",
+         "paid_amount", "tax_rate", "three_way_match", "grn_ref", "currency",
+         "approved_by", "notes"],
+        [
+            ["INV001", "V001", "PO001", "P001", "C001", "INV-2024-001",
+             "PAID", "standard", "PAID", "2024-02-01", "2024-02-02",
+             "2024-03-01", "2024-02-25", "120050", "6002.50", "126052.50",
+             "126052.50", "5", "true", "GR001", "USD", "E001", "Payment on time"],
+            ["INV002", "V002", "PO002", "P002", "C002", "INV-2024-002",
+             " overdue ", "milestone", "UNPAID", "2024-03-15", "2024-03-16",
+             "2024-04-15", None, "500000", "25000", "525000",
+             "0", "5", "false", None, "GBP", "E002", "Outstanding"],
+            [None, "V001", "PO001", "P001", "C001", "INV-2024-003",
+             "PAID", "standard", "PAID", "2024-04-01", "2024-04-02",
+             "2024-05-01", "2024-04-20", "42500", "2125", "44625",
+             "44625", "5", "true", "GR002", "USD", "E001", "Final payment"],
+        ],
+    )
+
+    BRONZE_GOODS_RECEIPTS = (
+        ["grn_id", "po_id", "line_item_id", "vendor_id", "material_id", "receipt_date",
+         "qty_delivered", "qty_accepted", "qty_rejected", "grn_status",
+         "storage_location", "inspector", "remarks", "created_date"],
+        [
+            ["GR001", "PO001", "LI001", "V001", "M001", "2024-02-10",
+             "100", "95", "5", "ACCEPTED",
+             "WH-Houston", "E001", "Minor damage", "2024-02-10"],
+            ["GR002", "PO001", "LI002", "V001", "M002", "2024-02-12",
+             "500", "480", "20", " accepted ",
+             " WH-Houston ", "E002", "Some rejects", "2024-02-12"],
+            [None, "PO002", "LI003", "V002", "M001", "2024-03-20",
+             "200", "190", "10", "PENDING",
+             "WH-Aberdeen", "E001", "Inspection pending", "2024-03-20"],
+        ],
+    )
+
+    BRONZE_PROJECT_BUDGETS = (
+        ["budget_id", "project_id", "wbs_code", "cost_type", "original_amount",
+         "revised_amount", "committed_amount", "actual_spent", "budget_status",
+         "period_start", "period_end"],
+        [
+            ["B001", "P001", "WBS-001", "MATERIALS", "2000000",
+             "2200000", "1900000", "1800000", "APPROVED",
+             "2024-01-01", "2024-06-30"],
+            ["B002", "P001", "WBS-001", "LABOR", "1500000",
+             "1600000", "1400000", "1400000", " approved ",
+             "2024-01-01", "2024-06-30"],
+            [None, "P002", "WBS-002", "EQUIPMENT", "5000000",
+             "5500000", "0", "0", "DRAFT",
+             "2024-03-01", "2024-12-31"],
+        ],
+    )
+
+    BRONZE_PROJECT_ACTUALS = (
+        ["transaction_id", "project_id", "vendor_id", "po_id", "contract_id", "invoice_id",
+         "wbs_code", "cost_type", "cost_status", "transaction_date", "posting_date",
+         "actual_amount", "budget_amount", "variance", "fiscal_period"],
+        [
+            ["A001", "P001", "V001", "PO001", "C001", "INV001",
+             "WBS-001", "MATERIALS", "POSTED", "2024-02-15", "2024-02-28",
+             "50000", "60000", "10000", "2024-Q1"],
+            ["A002", "P001", "V001", "PO001", "C001", "INV001",
+             "WBS-001", " labor ", "POSTED", "2024-02-28", "2024-02-28",
+             "35000", "40000", "5000", "2024-Q1"],
+            [None, "P002", "V002", "PO002", "C002", None,
+             "WBS-002", "EQUIPMENT", "DRAFT", "2024-03-15", "2024-03-31",
+             "0", "100000", "100000", "2024-Q1"],
+        ],
+    )
+
+    BRONZE_SALES_ORDERS = (
+        ["sales_order_id", "project_id", "material_id", "sales_rep_id", "order_date",
+         "delivery_date", "revenue", "tax_amount", "total_amount", "order_status",
+         "payment_status", "order_type", "customer_name", "customer_type",
+         "quantity", "unit_price", "cogs", "gross_margin", "margin_pct", "currency"],
+        [
+            ["SO001", "P001", "M001", "E001", "2024-01-20",
+             "2024-02-20", "75000", "3750", "78750", "DELIVERED",
+             "PAID", "standard", "ClientA", "CORPORATE",
+             "50", "1500", "60000", "15000", "20", "USD"],
+            ["SO002", "P001", "M002", "E002", "2024-02-10",
+             "2024-03-10", "18000", "900", "18900", " shipped ",
+             " paid ", "standard", " ClientB ", "SME",
+             "200", "90", "14400", "3600", "20", "USD"],
+            [None, "P002", "M001", "E001", "2024-03-05",
+             "2024-04-05", "150000", "7500", "157500", "PENDING",
+             "UNPAID", "urgent", "ClientC", "GOVERNMENT",
+             "100", "1500", "120000", "30000", "20", "USD"],
+        ],
+    )
+
+    BRONZE_INVENTORY = (
+        ["movement_id", "material_id", "project_id", "grn_id", "movement_date",
+         "quantity", "unit_cost", "total_value", "movement_type", "from_location",
+         "to_location", "batch_number", "unit_of_measure", "reason_code",
+         "posted_by", "approved_by", "remarks", "created_date"],
+        [
+            ["MV001", "M001", "P001", "GR001", "2024-02-15",
+             "100", "1200.50", "120050", "receipt", "SUPPLIER",
+             "WH-Houston", "BATCH-001", "TON", "GRN",
+             "E001", "E001", "GR receipt", "2024-02-15"],
+            ["MV002", "M002", "P001", "GR002", "2024-02-15",
+             "500", "85.00", "42500", " issue ", " WH-Houston ",
+             "SITE-A", "BATCH-002", "CY", "CONSUMPTION",
+             "E002", "E001", "Site issue", "2024-02-15"],
+            [None, "M001", "P002", "GR003", "2024-03-20",
+             "200", "1200.50", "240100", "transfer", "WH-Aberdeen",
+             "WH-Houston", "BATCH-003", "TON", "TRANSFER",
+             "E001", "E002", "Inter-warehouse", "2024-03-20"],
+        ],
+    )
+
+    BRONZE_VENDOR_PERFORMANCE = (
+        ["performance_id", "vendor_id", "project_id", "evaluation_date",
+         "delivery_score", "quality_score", "commercial_score", "hse_score",
+         "compliance_score", "composite_score", "recommendation", "evaluation_period",
+         "evaluator_id", "notes", "created_date"],
+        [
+            ["VP001", "V001", "P001", "2024-01-31",
+             "4.0", "4.5", "3.8", "4.2",
+             "4.0", "4.1", "RETAIN", "2024-Q1",
+             "E001", "Good performance", "2024-01-31"],
+            ["VP002", "V002", "P002", "2024-01-31",
+             "3.5", "3.8", "4.2", "3.0",
+             "3.2", "3.54", " retain ", "2024-Q1",
+             "E002", "Average performance", "2024-01-31"],
+            [None, "V001", "P001", "2024-03-31",
+             "4.1", "4.2", "3.9", "4.0",
+             "4.1", "4.06", "RETAIN", "2024-Q1",
+             "E001", "Improved", "2024-03-31"],
+        ],
+    )
+
+    ALL_BRONZE_DEFS = {
+        "vendors": BRONZE_VENDORS,
+        "projects": BRONZE_PROJECTS,
+        "materials": BRONZE_MATERIALS,
+        "employees": BRONZE_EMPLOYEES,
+        "purchase_orders": BRONZE_PURCHASE_ORDERS,
+        "po_line_items": BRONZE_PO_LINE_ITEMS,
+        "contracts": BRONZE_CONTRACTS,
+        "contract_items": BRONZE_CONTRACT_ITEMS,
+        "invoices": BRONZE_INVOICES,
+        "goods_receipts": BRONZE_GOODS_RECEIPTS,
+        "project_budgets": BRONZE_PROJECT_BUDGETS,
+        "project_actuals": BRONZE_PROJECT_ACTUALS,
+        "sales_orders": BRONZE_SALES_ORDERS,
+        "inventory": BRONZE_INVENTORY,
+        "vendor_performance": BRONZE_VENDOR_PERFORMANCE,
+    }
+
+
+    @pytest.fixture
+    def bronze_data(spark):
+        result = {}
+        for table_name, (columns, rows) in ALL_BRONZE_DEFS.items():
+            df = _make_bronze_df(spark, table_name, columns, rows)
+            result[f"bronze_{table_name}"] = df
+        return result
+
+
+    @pytest.fixture
+    def register_all_bronze(bronze_data):
+        for name, df in bronze_data.items():
+            dlt_mock.register(name, df)
+        return bronze_data
+''').lstrip("\n")
+
+filepath = os.path.join(TESTS_DIR, "tests", "conftest.py")
+with open(filepath, "w", encoding="utf-8", newline="\n") as f:
+    f.write(content)
+print(f"Written: {filepath} ({os.path.getsize(filepath)} bytes)")

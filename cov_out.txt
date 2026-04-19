@@ -1,0 +1,26 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 141 items
+
+tests\test_bronze_pipeline.py ........                                   [  5%]
+tests\test_e2e_pipeline.py ............................                  [ 25%]
+tests\test_gold_pipeline.py .................................            [ 48%]
+tests\test_silver_pipeline.py .......................................... [ 78%]
+..............................WARNING: Failed to generate report: No data to report.
+
+                                                                         [100%]
+
+============================== warnings summary ===============================
+..\..\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:475
+  C:\Users\mohdq\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:475: PytestCacheWarning: could not create cache path C:\Users\mohdq\src\DataBricks-Sample1\.pytest_cache\v\cache\nodeids: [WinError 5] Access is denied: 'C:\\Users\\mohdq\\src\\DataBricks-Sample1\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform win32, python 3.13.7-final-0 -----------
+
+================== 141 passed, 1 warning in 88.58s (0:01:28) ==================

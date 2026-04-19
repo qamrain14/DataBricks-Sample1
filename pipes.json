@@ -1,0 +1,72 @@
+[
+  {
+    "creator_user_name": "mohd.qamrain@gmail.com",
+    "name": "[dev mohd_qamrain] procurement_gold_pipeline",
+    "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+    "run_as_user_name": "mohd.qamrain@gmail.com",
+    "state": "IDLE"
+  },
+  {
+    "creator_user_name": "mohd.qamrain@gmail.com",
+    "latest_updates": [
+      {
+        "creation_time": "2026-04-19T02:09:40.005Z",
+        "state": "WAITING_FOR_RESOURCES",
+        "update_id": "929adb51-36ba-4292-b527-fe453f189dd0"
+      },
+      {
+        "creation_time": "2026-04-19T02:02:28.070Z",
+        "state": "FAILED",
+        "update_id": "a75c4722-1209-409a-b704-f55cf40ed653"
+      },
+      {
+        "creation_time": "2026-04-19T00:55:23.256Z",
+        "state": "FAILED",
+        "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+      },
+      {
+        "creation_time": "2026-04-19T00:15:10.826Z",
+        "state": "FAILED",
+        "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+      }
+    ],
+    "name": "[dev mohd_qamrain] procurement_silver_pipeline",
+    "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+    "run_as_user_name": "mohd.qamrain@gmail.com",
+    "state": "RUNNING"
+  },
+  {
+    "creator_user_name": "mohd.qamrain@gmail.com",
+    "latest_updates": [
+      {
+        "creation_time": "2026-04-19T02:07:27.952Z",
+        "state": "COMPLETED",
+        "update_id": "012d1c68-764b-43d4-8e28-35becbcd94ce"
+      },
+      {
+        "creation_time": "2026-04-19T02:00:05.471Z",
+        "state": "COMPLETED",
+        "update_id": "0a4fb22c-2719-411c-a9ba-c3c30d736215"
+      },
+      {
+        "creation_time": "2026-04-19T00:53:10.808Z",
+        "state": "COMPLETED",
+        "update_id": "2a3e1a57-b6e7-4e12-9344-e4c15d58ca93"
+      },
+      {
+        "creation_time": "2026-04-19T00:12:38.429Z",
+        "state": "COMPLETED",
+        "update_id": "8d1ef0ac-60fa-42c5-b90e-650ae17219df"
+      },
+      {
+        "creation_time": "2026-04-18T23:45:59.075Z",
+        "state": "FAILED",
+        "update_id": "f4ab8c22-386d-4242-b531-93c1ce44443e"
+      }
+    ],
+    "name": "[dev mohd_qamrain] procurement_bronze_pipeline",
+    "pipeline_id": "a786a620-8a77-49f1-b715-89717b539288",
+    "run_as_user_name": "mohd.qamrain@gmail.com",
+    "state": "IDLE"
+  }
+]

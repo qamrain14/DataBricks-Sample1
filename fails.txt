@@ -1,0 +1,49 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 5 items
+
+tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_to_pay_calculated FAILED [ 20%]
+tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct FAILED [ 40%]
+tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current FAILED [ 60%]
+tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated FAILED [ 80%]
+tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_items_aggregated FAILED [100%]
+
+================================== FAILURES ===================================
+___________ TestSilverInvoiceTransforms.test_days_to_pay_calculated ___________
+tests\test_silver_pipeline.py:299: in test_days_to_pay_calculated
+    assert row["days_to_pay"] == 24
+E   assert None == 24
+____________________ TestDimContract.test_cost_growth_pct _____________________
+tests\test_gold_pipeline.py:159: in test_cost_growth_pct
+    assert abs(row["cost_growth_pct"] - 5.0) < 0.1
+E   assert 5.0 < 0.1
+E    +  where 5.0 = abs((0.0 - 5.0))
+_________________ TestFactInvoices.test_aging_bucket_current __________________
+tests\test_gold_pipeline.py:198: in test_aging_bucket_current
+    assert row["aging_bucket"] == "CURRENT"
+E   AssertionError: assert '90+ DAYS' == 'CURRENT'
+E     
+E     - CURRENT
+E     + 90+ DAYS
+________________ TestFactContracts.test_items_total_aggregated ________________
+tests\test_gold_pipeline.py:259: in test_items_total_aggregated
+    assert abs(row["items_total"] - 850000.0) < 1
+E   assert 850000.0 < 1
+E    +  where 850000.0 = abs((0 - 850000.0))
+___________ TestContractPropagation.test_contract_items_aggregated ____________
+tests\test_e2e_pipeline.py:156: in test_contract_items_aggregated
+    assert abs(row["items_total"] - 850000.0) < 1
+E   assert 850000.0 < 1
+E    +  where 850000.0 = abs((0 - 850000.0))
+=========================== short test summary info ===========================
+FAILED tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_to_pay_calculated
+FAILED tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct - a...
+FAILED tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current
+FAILED tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated
+FAILED tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_items_aggregated
+============================== 5 failed in 7.92s ==============================

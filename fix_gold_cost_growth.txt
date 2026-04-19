@@ -1,0 +1,18 @@
+"""Patch gold dim_contract cost_growth_pct to use revised_value/original_value
+which now flow from real bronze schema."""
+from pathlib import Path
+
+p = Path(__file__).resolve().parent / "databricks" / "gold" / "03_gold_pipeline.py"
+text = p.read_text(encoding="utf-8")
+
+old = '''        when(col("contract_value") > 0,
+            spark_round(coalesce(col("change_order_value"), lit(0)) / col("contract_value") * 100, 2)
+        ).otherwise(lit(0.0)).alias("cost_growth_pct"),'''
+new = '''        when(col("original_value") > 0,
+            spark_round((coalesce(col("revised_value"), col("original_value")) - col("original_value")) / col("original_value") * 100, 2)
+        ).otherwise(lit(0.0)).alias("cost_growth_pct"),'''
+
+assert old in text, "old block not found"
+text = text.replace(old, new)
+p.write_text(text, encoding="utf-8")
+print(f"Patched gold cost_growth_pct; size={p.stat().st_size}")

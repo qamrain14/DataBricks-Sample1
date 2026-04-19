@@ -1,0 +1,47 @@
+"""Replace the heuristic expect test with a precise renamed-away check."""
+from pathlib import Path
+import re
+
+p = Path(__file__).resolve().parent / "tests" / "test_pipeline_integrity.py"
+text = p.read_text(encoding="utf-8")
+
+marker = "# --- Regression: DLT expect predicates"
+idx = text.find(marker)
+if idx > 0:
+    text = text[:idx].rstrip() + "\n"
+
+addition = '''
+
+# --- Regression: DLT expect predicates must not reference renamed-away columns
+
+import re as _re_exp
+
+
+def test_silver_expect_does_not_reference_renamed_away_columns():
+    src = (Path(__file__).resolve().parent.parent / "databricks" / "silver" / "02_silver_pipeline.py").read_text()
+    blocks = _re_exp.split(r"^@dlt\\.table", src, flags=_re_exp.MULTILINE)
+    failures = []
+    expect_pat = _re_exp.compile(r'@dlt\\.expect(?:_or_drop|_or_fail)?\\("[^"]+",\\s*"([^"]+)"\\)')
+    rename_pat = _re_exp.compile(r'withColumnRenamed\\(\\s*"([^"]+)"\\s*,\\s*"([^"]+)"\\s*\\)')
+    re_add_pat = _re_exp.compile(r'withColumn\\(\\s*"([^"]+)"\\s*,')
+    fn_pat = _re_exp.compile(r"def\\s+(silver_\\w+)\\(")
+    for block in blocks[1:]:
+        fn_m = fn_pat.search(block)
+        if not fn_m:
+            continue
+        fn = fn_m.group(1)
+        renames = rename_pat.findall(block)
+        re_added = set(re_add_pat.findall(block))
+        renamed_away = {s for s, d in renames if s != d and s not in re_added}
+        for predicate in expect_pat.findall(block):
+            idents = set(_re_exp.findall(r"[a-zA-Z_][a-zA-Z0-9_]*", predicate))
+            kw = {"IS", "NOT", "NULL", "AND", "OR", "BETWEEN", "TRUE", "FALSE", "IN"}
+            cols = {c for c in idents if c.upper() not in kw}
+            bad = cols & renamed_away
+            if bad:
+                failures.append(f"{fn}: '{predicate}' references renamed-away {sorted(bad)}")
+    assert not failures, "Renamed-away columns in expects:\\n" + "\\n".join(failures)
+'''
+
+p.write_text(text + addition, encoding="utf-8")
+print(f"Rewritten; size={p.stat().st_size}")

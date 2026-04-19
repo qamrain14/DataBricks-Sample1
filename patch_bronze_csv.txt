@@ -1,0 +1,41 @@
+"""Patch bronze pipeline: spark-excel -> built-in CSV reader."""
+from pathlib import Path
+
+p = Path("databricks/bronze/01_bronze_pipeline.py")
+text = p.read_text(encoding="utf-8")
+
+old = '''        comment=f"Raw {table_name} data ingested from Excel",
+        table_properties={"quality": "bronze", "pipelines.autoOptimize.managed": "true"}
+    )
+    def bronze_table():
+        return (
+            spark.read.format("com.crealytics.spark.excel")
+            .option("header", "true")
+            .option("inferSchema", "true")
+            .option("dataAddress", f"'{table_name}'!A1")
+            .load(f"{RAW_PATH}/{table_name}.xlsx")
+            .withColumn("_ingest_timestamp", current_timestamp())
+            .withColumn("_source_file", lit(f"{table_name}.xlsx"))
+        )
+    return bronze_table'''
+
+new = '''        comment=f"Raw {table_name} data ingested from CSV in UC volume",
+        table_properties={"quality": "bronze", "pipelines.autoOptimize.managed": "true"}
+    )
+    def bronze_table():
+        return (
+            spark.read.format("csv")
+            .option("header", "true")
+            .option("inferSchema", "true")
+            .load(f"{RAW_PATH}/{table_name}.csv")
+            .withColumn("_ingest_timestamp", current_timestamp())
+            .withColumn("_source_file", lit(f"{table_name}.csv"))
+        )
+    return bronze_table'''
+
+assert old in text, "old block not found verbatim"
+text = text.replace(old, new)
+p.write_text(text, encoding="utf-8", newline="")
+print(f"Patched {p}; size={len(text)}")
+print("excel refs:", text.count("spark.excel"))
+print("csv refs:  ", text.count('format("csv")'))

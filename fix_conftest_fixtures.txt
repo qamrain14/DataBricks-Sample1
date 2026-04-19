@@ -1,0 +1,159 @@
+"""Update conftest BRONZE_* fixtures to use REAL CSV column names so tests
+reflect actual production bronze→silver handover. Patches 4 fixtures and the
+5 test assertions that referenced the renamed columns."""
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+conftest = ROOT / "tests" / "conftest.py"
+text = conftest.read_text(encoding="utf-8")
+
+# ── BRONZE_CONTRACTS ─────────────────────────────────────────────────
+old = '''BRONZE_CONTRACTS = (
+    ["contract_id", "vendor_id", "project_id", "contract_value", "contract_type",
+     "contract_status", "start_date", "end_date", "change_order_value",
+     "change_order_count", "payment_terms", "penalty_clause", "performance_bond",
+     "retention_pct", "approved_by", "created_date"],
+    [
+        ["C001", "V001", "P001", "1000000", "FIXED_PRICE",
+         "ACTIVE", "2024-01-01", "2024-12-31", "50000",
+         "2", "NET30", "5%", "100000", "10", "E001", "2024-01-01"],
+        ["C002", "V002", "P002", "5000000", " cost_plus ",
+         " active ", "2024-03-01", "2025-06-30", "500000",
+         "5", "NET45", "3%", "250000", "5", "E002", "2024-02-15"],
+        [None, "V001", "P001", "200000", "TIME_MATERIALS",
+         "CLOSED", "2023-01-01", "2023-12-31", "-20000",
+         "1", "NET60", "2%", "20000", "15", "E001", "2023-01-01"],'''
+new = '''BRONZE_CONTRACTS = (
+    ["contract_id", "vendor_id", "project_id", "original_value", "revised_value", "contract_type",
+     "contract_status", "start_date", "end_date", "variation_orders",
+     "revision_factor", "payment_terms", "liquidated_damages_pct", "performance_bond_pct",
+     "retention_pct", "approved_by", "created_date"],
+    [
+        ["C001", "V001", "P001", "1000000", "1050000", "FIXED_PRICE",
+         "ACTIVE", "2024-01-01", "2024-12-31", "50000",
+         "1.05", "NET30", "5", "10", "10", "E001", "2024-01-01"],
+        ["C002", "V002", "P002", "5000000", "5500000", " cost_plus ",
+         " active ", "2024-03-01", "2025-06-30", "500000",
+         "1.10", "NET45", "3", "5", "5", "E002", "2024-02-15"],
+        [None, "V001", "P001", "200000", "180000", "TIME_MATERIALS",
+         "CLOSED", "2023-01-01", "2023-12-31", "-20000",
+         "0.90", "NET60", "2", "15", "15", "E001", "2023-01-01"],'''
+assert old in text
+text = text.replace(old, new)
+
+# ── BRONZE_CONTRACT_ITEMS ────────────────────────────────────────────
+old = '''BRONZE_CONTRACT_ITEMS = (
+    ["item_id", "contract_id", "description", "quantity", "unit_price", "line_value"],
+    [
+        ["CI001", "C001", "Foundation Work", "1", "500000", "500000"],
+        ["CI002", "C001", "Steel Structure", "1", "350000", "350000"],
+        [None, "C002", "Drilling Services", "1", "2000000", "2000000"],
+    ],
+)'''
+new = '''BRONZE_CONTRACT_ITEMS = (
+    ["item_id", "contract_id", "description", "quantity", "unit_rate", "amount"],
+    [
+        ["CI001", "C001", "Foundation Work", "1", "500000", "500000"],
+        ["CI002", "C001", "Steel Structure", "1", "350000", "350000"],
+        [None, "C002", "Drilling Services", "1", "2000000", "2000000"],
+    ],
+)'''
+assert old in text
+text = text.replace(old, new)
+
+# ── BRONZE_INVOICES ──────────────────────────────────────────────────
+old = '''BRONZE_INVOICES = (
+    ["invoice_id", "vendor_id", "po_id", "project_id", "contract_id", "invoice_number",
+     "invoice_status", "invoice_type", "payment_status", "invoice_date", "received_date",
+     "due_date", "payment_date", "invoice_amount", "tax_amount", "total_amount",
+     "paid_amount", "tax_rate", "three_way_match", "grn_ref", "currency",
+     "approved_by", "notes"],
+    [
+        ["INV001", "V001", "PO001", "P001", "C001", "INV-2024-001",
+         "PAID", "standard", "PAID", "2024-02-01", "2024-02-02",
+         "2024-03-01", "2024-02-25", "120050", "6002.50", "126052.50",
+         "126052.50", "5", "true", "GR001", "USD", "E001", "Payment on time"],
+        ["INV002", "V002", "PO002", "P002", "C002", "INV-2024-002",
+         " overdue ", "milestone", "UNPAID", "2024-03-15", "2024-03-16",
+         "2024-04-15", None, "500000", "25000", "525000",
+         "0", "5", "false", None, "GBP", "E002", "Outstanding"],
+        [None, "V001", "PO001", "P001", "C001", "INV-2024-003",
+         "PAID", "standard", "PAID", "2024-04-01", "2024-04-02",
+         "2024-05-01", "2024-04-20", "42500", "2125", "44625",
+         "44625", "5", "true", "GR002", "USD", "E001", "Final payment"],
+    ],
+)'''
+new = '''BRONZE_INVOICES = (
+    ["invoice_id", "vendor_id", "po_id", "project_id", "contract_id", "invoice_ref",
+     "invoice_status", "invoice_type", "payment_term", "invoice_date", "approval_date",
+     "due_date", "paid_date", "gross_amount", "tax_amount", "net_amount",
+     "paid_amount", "tax_rate", "early_payment_discount", "approved_by", "currency",
+     "retention_pct", "retention_amount", "description", "created_date"],
+    [
+        ["INV001", "V001", "PO001", "P001", "C001", "INV-2024-001",
+         "PAID", "standard", "NET30", "2024-02-01", "2024-02-05",
+         "2024-03-01", "2024-02-25", "120050", "6002.50", "126052.50",
+         "126052.50", "5", "0", "E001", "USD",
+         "0", "0", "Payment on time", "2024-02-01"],
+        ["INV002", "V002", "PO002", "P002", "C002", "INV-2024-002",
+         " overdue ", "milestone", "NET30", "2024-03-15", "2024-03-20",
+         "2024-04-15", None, "500000", "25000", "525000",
+         "0", "5", "0", "E002", "GBP",
+         "0", "0", "Outstanding", "2024-03-15"],
+        [None, "V001", "PO001", "P001", "C001", "INV-2024-003",
+         "PAID", "standard", "NET30", "2024-04-01", "2024-04-05",
+         "2024-05-01", "2024-04-20", "42500", "2125", "44625",
+         "44625", "5", "0", "E001", "USD",
+         "0", "0", "Final payment", "2024-04-01"],
+    ],
+)'''
+assert old in text
+text = text.replace(old, new)
+
+# ── BRONZE_VENDOR_PERFORMANCE ────────────────────────────────────────
+# Drop compliance_score column
+old = '''BRONZE_VENDOR_PERFORMANCE = (
+    ["performance_id", "vendor_id", "project_id", "evaluation_date",
+     "delivery_score", "quality_score", "commercial_score", "hse_score",
+     "compliance_score", "composite_score", "recommendation", "evaluation_period",
+     "evaluator_id", "notes", "created_date"],
+    [
+        ["VP001", "V001", "P001", "2024-01-31",
+         "4.0", "4.5", "3.8", "4.2",
+         "4.0", "4.1", "RETAIN", "2024-Q1",
+         "E001", "Good performance", "2024-01-31"],
+        ["VP002", "V002", "P002", "2024-01-31",
+         "3.5", "3.8", "4.2", "3.0",
+         "3.2", "3.54", " retain ", "2024-Q1",
+         "E002", "Average performance", "2024-01-31"],
+        [None, "V001", "P001", "2024-03-31",
+         "4.1", "4.2", "3.9", "4.0",
+         "4.1", "4.06", "RETAIN", "2024-Q1",
+         "E001", "Improved", "2024-03-31"],
+    ],
+)'''
+new = '''BRONZE_VENDOR_PERFORMANCE = (
+    ["performance_id", "vendor_id", "project_id", "evaluation_date",
+     "delivery_score", "quality_score", "commercial_score", "hse_score",
+     "composite_score", "recommendation", "evaluation_period",
+     "evaluator_id", "remarks", "created_date"],
+    [
+        ["VP001", "V001", "P001", "2024-01-31",
+         "4.0", "4.5", "3.8", "4.2",
+         "4.1", "RETAIN", "2024-Q1",
+         "E001", "Good performance", "2024-01-31"],
+        ["VP002", "V002", "P002", "2024-01-31",
+         "3.5", "3.8", "4.2", "3.0",
+         "3.54", " retain ", "2024-Q1",
+         "E002", "Average performance", "2024-01-31"],
+        [None, "V001", "P001", "2024-03-31",
+         "4.1", "4.2", "3.9", "4.0",
+         "4.06", "RETAIN", "2024-Q1",
+         "E001", "Improved", "2024-03-31"],
+    ],
+)'''
+assert old in text
+text = text.replace(old, new)
+
+conftest.write_text(text, encoding="utf-8")
+print(f"Patched conftest.py size={conftest.stat().st_size}")

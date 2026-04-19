@@ -1,0 +1,1001 @@
+employee_id,employee_code,first_name,last_name,email,phone,department,job_title,grade,approval_limit,hire_date,active,location,certification,nationality,years_experience,cost_center,created_date
+EMP-000001,PRJ00001,Clayton,Wagner,prj00001@company.com,804-233-2181,PROJECTS,Project Coordinator,L1,10000.0,2016-03-03,True,Head Office,PMP,Bangladeshi,28,CC-PRJ-132,2016-03-03
+EMP-000002,PRO00002,Ricky,Lewis,pro00002@company.com,+1-438-863-7940,PROCUREMENT,Buyer,L1,10000.0,2021-05-02,True,Site Office B,,Sudanese,27,CC-PRO-325,2021-05-02
+EMP-000003,ENG00003,Leigh,آل محمد بن علي بن جماز,eng00003@company.com,01154960161,ENGINEERING,Engineer,L1,10000.0,2010-02-23,True,Head Office,,Filipino,10,CC-ENG-320,2010-02-23
+EMP-000004,CTR00004,Jason,Delacruz,ctr00004@company.com,001-278-516-1849x5931,CONTRACTS,Contract Specialist,L2,50000.0,2012-01-30,True,Site Office A,,British,17,CC-CTR-926,2012-01-30
+EMP-000005,PRO00005,Owen,Santiago,pro00005@company.com,+44(0)1184960752,PROCUREMENT,Senior Buyer,L2,50000.0,2012-10-19,False,Site Office A,,Bangladeshi,24,CC-PRO-691,2012-10-19
+EMP-000006,PRO00006,Joanne,Collins,pro00006@company.com,+1-519-228-3276x48350,PROCUREMENT,Buyer,L1,10000.0,2015-02-10,True,Field Camp,,Indian,25,CC-PRO-384,2015-02-10
+EMP-000007,FIN00007,لؤي,Lloyd,fin00007@company.com,001-653-876-7242x388,FINANCE,Cost Controller,L4,1000000.0,2013-08-25,True,Head Office,CPA,Bangladeshi,11,CC-FIN-646,2013-08-25
+EMP-000008,PRJ00008,ناردين,Maldonado,prj00008@company.com,671.201.2269x16697,PROJECTS,Project Coordinator,L1,10000.0,2018-07-06,True,Field Camp,,Egyptian,21,CC-PRJ-963,2018-07-06
+EMP-000009,HSE00009,Nathaniel,Ryan,hse00009@company.com,001-645-514-6270x48281,HSE,HSE Officer,L1,10000.0,2010-09-20,True,Site Office A,ISO 45001 Lead Auditor,British,14,CC-HSE-771,2010-09-20
+EMP-000010,FIN00010,ذريع,Dennis,fin00010@company.com,2955701543,FINANCE,Finance Manager,L5,10000000.0,2020-04-16,True,Head Office,,Sudanese,17,CC-FIN-864,2020-04-16
+EMP-000011,PRJ00011,جودي,Williams,prj00011@company.com,001-682-827-8248x96383,PROJECTS,PMO Lead,L5,10000000.0,2018-12-16,True,Field Camp,PMI-SP,Indian,4,CC-PRJ-981,2018-12-16
+EMP-000012,PRO00012,بوران,Perez,pro00012@company.com,213.331.5098x393,PROCUREMENT,Procurement Specialist,L3,200000.0,2019-06-21,True,Site Office A,,Jordanian,34,CC-PRO-357,2019-06-21
+EMP-000013,CTR00013,Collin,Nixon,ctr00013@company.com,818-534-7382x99737,CONTRACTS,Claims Analyst,L4,1000000.0,2010-04-05,True,Head Office,,Sudanese,18,CC-CTR-887,2010-04-05
+EMP-000014,PRJ00014,Declan,Wright,prj00014@company.com,+44(0)1514960010,PROJECTS,Project Coordinator,L1,10000.0,2019-10-02,True,Head Office,,Filipino,33,CC-PRJ-880,2019-10-02
+EMP-000015,PRO00015,Denise,آل الشيخ,pro00015@company.com,+1-972-362-4731,PROCUREMENT,Procurement Lead,L5,10000000.0,2016-09-10,True,Site Office B,CPM,Pakistani,35,CC-PRO-897,2016-09-10
+EMP-000016,CTR00016,Bethan,المهيدب,ctr00016@company.com,001-932-667-7360x26064,CONTRACTS,Contracts Manager,L5,10000000.0,2023-06-08,True,Head Office,,British,20,CC-CTR-345,2023-06-08
+EMP-000017,PRO00017,نظام,Brown,pro00017@company.com,001-272-934-3098x050,PROCUREMENT,Procurement Lead,L5,10000000.0,2011-10-08,True,Site Office A,CSCP,Pakistani,31,CC-PRO-662,2011-10-08
+EMP-000018,PRO00018,رؤوف,Moss,pro00018@company.com,521-291-3619,PROCUREMENT,Senior Buyer,L2,50000.0,2023-08-10,True,Head Office,,Egyptian,20,CC-PRO-508,2023-08-10
+EMP-000019,CTR00019,Amanda,آل محمد بن علي بن جماز,ctr00019@company.com,954.335.3462x47510,CONTRACTS,Contract Engineer,L3,200000.0,2019-10-29,True,Site Office A,,Egyptian,15,CC-CTR-165,2019-10-29
+EMP-000020,ENG00020,Joseph,Newton,eng00020@company.com,(613)354-2784x980,ENGINEERING,Lead Engineer,L3,200000.0,2015-03-01,True,Head Office,,Saudi,15,CC-ENG-169,2015-03-01
+EMP-000021,CTR00021,Adam,Walsh,ctr00021@company.com,849-635-3487x401,CONTRACTS,Claims Analyst,L4,1000000.0,2011-08-04,True,Head Office,,Jordanian,14,CC-CTR-652,2011-08-04
+EMP-000022,PRO00022,تمّام,Jones,pro00022@company.com,(0116)4960786,PROCUREMENT,Procurement Lead,L5,10000000.0,2022-10-22,True,Head Office,,American,13,CC-PRO-196,2022-10-22
+EMP-000023,PRO00023,Simon,Kelly,pro00023@company.com,(280)659-8262,PROCUREMENT,Senior Buyer,L2,50000.0,2019-07-02,True,Regional Office,CIPS,Saudi,26,CC-PRO-845,2019-07-02
+EMP-000024,ENG00024,Sam,آل خضير,eng00024@company.com,+1-815-586-9232x26025,ENGINEERING,Design Engineer,L4,1000000.0,2015-07-30,True,Site Office B,PMP,Filipino,30,CC-ENG-355,2015-07-30
+EMP-000025,LEG00025,Lisa,Stone,leg00025@company.com,+44909 8790073,LEGAL,Legal Officer,L1,10000.0,2022-05-06,True,Warehouse,,Sudanese,1,CC-LEG-195,2022-05-06
+EMP-000026,CTR00026,Darrell,Carpenter,ctr00026@company.com,803.765.4145,CONTRACTS,Claims Analyst,L4,1000000.0,2013-09-24,True,Site Office A,,American,4,CC-CTR-268,2013-09-24
+EMP-000027,ENG00027,Terry,Butler,eng00027@company.com,+44(0)113 496 0196,ENGINEERING,Engineering Manager,L6,,2015-12-13,False,Regional Office,LEED AP,Pakistani,13,CC-ENG-403,2015-12-13
+EMP-000028,PRO00028,Brian,الجابر,pro00028@company.com,569-734-0608,PROCUREMENT,Buyer,L1,10000.0,2022-02-28,True,Site Office A,CPSM,Sudanese,34,CC-PRO-261,2022-02-28
+EMP-000029,PRO00029,Lorraine,Torres,pro00029@company.com,414-684-6564x82366,PROCUREMENT,Senior Buyer,L2,50000.0,2014-03-03,True,Head Office,,American,8,CC-PRO-683,2014-03-03
+EMP-000030,PRO00030,Emily,Drake,pro00030@company.com,(799)357-7738x72148,PROCUREMENT,Procurement Specialist,L3,200000.0,2023-11-22,True,Warehouse,,British,17,CC-PRO-309,2023-11-22
+EMP-000031,PRJ00031,Tracey,Hernandez,prj00031@company.com,5038791769,PROJECTS,Planner,L2,50000.0,2015-12-16,True,Warehouse,PMI-ACP,Indian,1,CC-PRJ-569,2015-12-16
+EMP-000032,PRJ00032,Aaron,King,prj00032@company.com,5163328708,PROJECTS,Scheduler,L3,200000.0,2012-03-30,True,Head Office,PMI-ACP,Indian,16,CC-PRJ-478,2012-03-30
+EMP-000033,ENG00033,مُتوكّل,آل قصير,eng00033@company.com,+1-557-698-6872x774,ENGINEERING,Senior Engineer,L2,50000.0,2022-03-09,True,Site Office B,,Sudanese,1,CC-ENG-783,2022-03-09
+EMP-000034,HSE00034,Albert,Lawrence,hse00034@company.com,(0151) 4960143,HSE,HSE Officer,L1,10000.0,2012-04-28,False,Head Office,NEBOSH,Sudanese,10,CC-HSE-378,2012-04-28
+EMP-000035,ENG00035,Benjamin,Wall,eng00035@company.com,(723)962-3166,ENGINEERING,Engineer,L1,10000.0,2017-09-09,True,Site Office B,LEED AP,Filipino,4,CC-ENG-194,2017-09-09
+EMP-000036,PRJ00036,Lesley,Bender,prj00036@company.com,(0306)9990909,PROJECTS,Project Manager,L4,1000000.0,2010-12-28,True,Regional Office,,Filipino,11,CC-PRJ-859,2010-12-28
+EMP-000037,ENG00037,هيام,حجار,eng00037@company.com,0306 999 0668,ENGINEERING,Lead Engineer,L3,200000.0,2022-07-31,True,Head Office,,Pakistani,35,CC-ENG-136,2022-07-31
+EMP-000038,HSE00038,ودود,آل العسكري,hse00038@company.com,234.867.0656x2729,HSE,Environmental Specialist,L3,200000.0,2013-04-28,True,Head Office,NEBOSH,British,14,CC-HSE-798,2013-04-28
+EMP-000039,PRO00039,Howard,Ruiz,pro00039@company.com,+1-862-672-0465x3755,PROCUREMENT,Buyer,L1,10000.0,2022-07-23,True,Site Office A,,Pakistani,16,CC-PRO-985,2022-07-23
+EMP-000040,PRO00040,David,آل رفيع,pro00040@company.com,+1-205-431-0033,PROCUREMENT,Category Manager,L4,1000000.0,2013-12-21,True,Head Office,,British,27,CC-PRO-921,2013-12-21
+EMP-000041,PRJ00041,جلال,Allen,prj00041@company.com,674.352.9912,PROJECTS,Scheduler,L3,200000.0,2015-07-26,True,Regional Office,PMP,Jordanian,15,CC-PRJ-304,2015-07-26
+EMP-000042,HSE00042,بنفسج,Garcia,hse00042@company.com,(0141)4960319,HSE,Safety Inspector,L2,50000.0,2016-11-05,True,Regional Office,OSHA 30,American,22,CC-HSE-385,2016-11-05
+EMP-000043,LEG00043,Michael,Adams,leg00043@company.com,0909 8790919,LEGAL,General Counsel,L6,,2016-04-05,True,Site Office B,,Sudanese,22,CC-LEG-128,2016-04-05
+EMP-000044,PRO00044,Jenna,Stanley,pro00044@company.com,950.967.1657x26284,PROCUREMENT,Procurement Manager,L6,,2014-01-02,True,Field Camp,CPSM,British,21,CC-PRO-546,2014-01-02
+EMP-000045,PRJ00045,Justin,Kelly,prj00045@company.com,247-937-9965,PROJECTS,Planner,L2,50000.0,2018-08-22,True,Head Office,PMI-SP,Saudi,34,CC-PRJ-925,2018-08-22
+EMP-000046,FIN00046,توفيق,آل عطفة,fin00046@company.com,(0131) 496 0494,FINANCE,AP Specialist,L3,200000.0,2014-06-03,True,Head Office,,British,21,CC-FIN-779,2014-06-03
+EMP-000047,HSE00047,Richard,Torres,hse00047@company.com,367.683.7770,HSE,Environmental Specialist,L3,200000.0,2016-09-26,True,Warehouse,IOSH,Sudanese,9,CC-HSE-296,2016-09-26
+EMP-000048,ENG00048,Jennifer,Baldwin,eng00048@company.com,(678)585-6855x744,ENGINEERING,Project Engineer,L5,10000000.0,2013-11-26,True,Site Office A,,Saudi,20,CC-ENG-393,2013-11-26
+EMP-000049,PRO00049,Stephen,المهنا,pro00049@company.com,001-723-437-4989x41343,PROCUREMENT,Category Manager,L4,1000000.0,2023-08-10,True,Site Office A,,Egyptian,33,CC-PRO-584,2023-08-10
+EMP-000050,HSE00050,Jeffrey,King,hse00050@company.com,900-984-2710x947,HSE,Chief Safety Officer,L6,,2013-10-22,True,Head Office,,Bangladeshi,22,CC-HSE-195,2013-10-22
+EMP-000051,HSE00051,Barbara,آل بن لافي,hse00051@company.com,(0115)4960167,HSE,HSE Manager,L4,1000000.0,2016-12-17,True,Head Office,OSHA 30,Jordanian,5,CC-HSE-566,2016-12-17
+EMP-000052,ENG00052,Angela,Taylor,eng00052@company.com,(594)813-1869,ENGINEERING,Lead Engineer,L3,200000.0,2014-05-12,True,Site Office A,,Pakistani,1,CC-ENG-868,2014-05-12
+EMP-000053,LEG00053,يسرى,Meza,leg00053@company.com,+44121 496 0990,LEGAL,Legal Manager,L5,10000000.0,2019-07-15,True,Regional Office,,Sudanese,30,CC-LEG-151,2019-07-15
+EMP-000054,PRJ00054,Jesse,آل مقطة,prj00054@company.com,+1-934-612-3281x2067,PROJECTS,PMO Lead,L5,10000000.0,2012-09-21,True,Regional Office,,Sudanese,21,CC-PRJ-873,2012-09-21
+EMP-000055,LEG00055,Gabriel,Wright,leg00055@company.com,413.349.3618x324,LEGAL,Legal Counsel,L3,200000.0,2021-04-28,True,Field Camp,,Jordanian,11,CC-LEG-861,2021-04-28
+EMP-000056,LEG00056,علّام,آل محمد بن علي بن جماز,leg00056@company.com,271-874-6488x7719,LEGAL,Contract Analyst,L2,50000.0,2015-07-19,True,Head Office,,Sudanese,32,CC-LEG-741,2015-07-19
+EMP-000057,PRO00057,Jeremy,الراشد,pro00057@company.com,939-990-4902,PROCUREMENT,Senior Buyer,L2,50000.0,2016-05-29,True,Site Office A,,Indian,9,CC-PRO-254,2016-05-29
+EMP-000058,PRO00058,Craig,Smith,pro00058@company.com,817.256.5512x5674,PROCUREMENT,Procurement Specialist,L3,200000.0,2014-10-19,True,Site Office A,,American,4,CC-PRO-311,2014-10-19
+EMP-000059,HSE00059,Georgina,Pennington,hse00059@company.com,001-268-508-7603x85977,HSE,Safety Inspector,L2,50000.0,2023-02-06,False,Head Office,,Bangladeshi,25,CC-HSE-588,2023-02-06
+EMP-000060,PRO00060,ابتهال,Mckinney,pro00060@company.com,+44(0)909 879 0710,PROCUREMENT,Senior Buyer,L2,50000.0,2018-09-30,True,Field Camp,,Sudanese,15,CC-PRO-599,2018-09-30
+EMP-000061,PRO00061,Jeffrey,Murray,pro00061@company.com,+44(0)191 496 0086,PROCUREMENT,Senior Buyer,L2,50000.0,2010-08-26,True,Warehouse,,Pakistani,30,CC-PRO-230,2010-08-26
+EMP-000062,CTR00062,نافذ,آل سعود,ctr00062@company.com,+1-827-548-4677x3782,CONTRACTS,Contract Specialist,L2,50000.0,2018-11-02,True,Warehouse,,Indian,28,CC-CTR-238,2018-11-02
+EMP-000063,LEG00063,Brett,المهنا,leg00063@company.com,965-984-0449x972,LEGAL,Legal Officer,L1,10000.0,2015-11-02,True,Head Office,,British,22,CC-LEG-879,2015-11-02
+EMP-000064,LEG00064,كاسر,Chase,leg00064@company.com,+441514960533,LEGAL,Legal Officer,L1,10000.0,2019-06-16,True,Head Office,,Saudi,35,CC-LEG-153,2019-06-16
+EMP-000065,CTR00065,Cheryl,آل سلطان,ctr00065@company.com,+44(0)1134960576,CONTRACTS,Contract Specialist,L2,50000.0,2011-07-17,True,Warehouse,,Saudi,16,CC-CTR-304,2011-07-17
+EMP-000066,HSE00066,Oliver,Spencer,hse00066@company.com,+44(0)113 496 0289,HSE,Environmental Specialist,L3,200000.0,2015-05-09,True,Warehouse,OSHA 30,Jordanian,17,CC-HSE-885,2015-05-09
+EMP-000067,ENG00067,Terrance,Cook,eng00067@company.com,(0113) 496 0262,ENGINEERING,Lead Engineer,L3,200000.0,2012-07-27,True,Head Office,,Bangladeshi,2,CC-ENG-419,2012-07-27
+EMP-000068,PRJ00068,Nigel,آل خضير,prj00068@company.com,(515)386-5780x9134,PROJECTS,PMO Lead,L5,10000000.0,2018-06-02,True,Warehouse,PRINCE2,Indian,20,CC-PRJ-970,2018-06-02
+EMP-000069,PRJ00069,William,Evans,prj00069@company.com,+44116 496 0400,PROJECTS,Project Manager,L4,1000000.0,2022-09-11,True,Site Office A,PMI-ACP,Indian,33,CC-PRJ-763,2022-09-11
+EMP-000070,ENG00070,سجى,Jackson,eng00070@company.com,0116 4960386,ENGINEERING,Design Engineer,L4,1000000.0,2020-12-29,True,Field Camp,,Jordanian,10,CC-ENG-545,2020-12-29
+EMP-000071,PRO00071,Sian,آل صفوان,pro00071@company.com,+1-269-937-9237x474,PROCUREMENT,Senior Buyer,L2,50000.0,2016-01-22,True,Field Camp,,Jordanian,28,CC-PRO-945,2016-01-22
+EMP-000072,PRJ00072,فرزدق,آل مقطة,prj00072@company.com,559.846.4743x671,PROJECTS,Project Coordinator,L1,10000.0,2015-07-05,True,Head Office,,Egyptian,30,CC-PRJ-683,2015-07-05
+EMP-000073,PRJ00073,عارف,كانو,prj00073@company.com,506-540-9097x4395,PROJECTS,Planner,L2,50000.0,2010-08-24,True,Site Office A,PMI-ACP,Filipino,22,CC-PRJ-386,2010-08-24
+EMP-000074,LEG00074,Elizabeth,Gonzalez,leg00074@company.com,(310)647-0952,LEGAL,Legal Counsel,L3,200000.0,2016-03-13,True,Site Office B,,Egyptian,6,CC-LEG-347,2016-03-13
+EMP-000075,PRJ00075,نغم,الخرافي,prj00075@company.com,(488)542-4745x171,PROJECTS,Planner,L2,50000.0,2015-05-23,True,Site Office B,PMP,Indian,19,CC-PRJ-326,2015-05-23
+EMP-000076,ENG00076,طريف,Jennings,eng00076@company.com,(716)304-8175x496,ENGINEERING,Engineer,L1,10000.0,2023-01-17,True,Site Office B,,Sudanese,22,CC-ENG-460,2023-01-17
+EMP-000077,PRJ00077,زيدان,Price,prj00077@company.com,393-517-4612x00471,PROJECTS,Project Coordinator,L1,10000.0,2015-08-22,True,Warehouse,PRINCE2,Egyptian,14,CC-PRJ-856,2015-08-22
+EMP-000078,FIN00078,Damian,Gibson,fin00078@company.com,001-586-992-6179x6405,FINANCE,AP Specialist,L3,200000.0,2021-10-07,True,Field Camp,,Filipino,15,CC-FIN-469,2021-10-07
+EMP-000079,PRO00079,Norman,Buchanan,pro00079@company.com,(285)206-4317x139,PROCUREMENT,Buyer,L1,10000.0,2021-12-24,True,Head Office,CPM,Pakistani,32,CC-PRO-205,2021-12-24
+EMP-000080,LEG00080,Vanessa,آل محمد بن علي بن جماز,leg00080@company.com,283-693-3529,LEGAL,Legal Counsel,L3,200000.0,2020-07-12,True,Site Office A,,Saudi,17,CC-LEG-982,2020-07-12
+EMP-000081,FIN00081,David,Carey,fin00081@company.com,402-605-3950,FINANCE,Cost Controller,L4,1000000.0,2018-12-27,True,Site Office B,,Pakistani,10,CC-FIN-930,2018-12-27
+EMP-000082,PRJ00082,دانة,أبا الخيل,prj00082@company.com,577-258-9178,PROJECTS,Planner,L2,50000.0,2015-07-27,True,Regional Office,,Bangladeshi,15,CC-PRJ-894,2015-07-27
+EMP-000083,FIN00083,Rachel,آل خضير,fin00083@company.com,+44289018007,FINANCE,Financial Analyst,L2,50000.0,2019-12-06,True,Site Office B,,Bangladeshi,4,CC-FIN-724,2019-12-06
+EMP-000084,CTR00084,Tina,Jones,ctr00084@company.com,01632960711,CONTRACTS,Contract Admin,L1,10000.0,2014-08-30,True,Head Office,,Indian,11,CC-CTR-345,2014-08-30
+EMP-000085,PRO00085,Jodie,آل مقطة,pro00085@company.com,(028) 9018 0985,PROCUREMENT,Buyer,L1,10000.0,2010-01-22,True,Warehouse,,Saudi,15,CC-PRO-395,2010-01-22
+EMP-000086,PRJ00086,رفيق,فصيل,prj00086@company.com,+44(0)161 496 0961,PROJECTS,Scheduler,L3,200000.0,2020-03-08,True,Head Office,PRINCE2,American,8,CC-PRJ-657,2020-03-08
+EMP-000087,PRO00087,Carl,العقيل,pro00087@company.com,001-736-673-6576x6156,PROCUREMENT,Buyer,L1,10000.0,2015-12-17,True,Head Office,CPM,Bangladeshi,19,CC-PRO-549,2015-12-17
+EMP-000088,PRO00088,Owen,الراشد,pro00088@company.com,711-361-5280,PROCUREMENT,Procurement Specialist,L3,200000.0,2019-01-11,False,Site Office B,,Indian,3,CC-PRO-542,2019-01-11
+EMP-000089,PRJ00089,Melanie,Brady,prj00089@company.com,4499451983,PROJECTS,Scheduler,L3,200000.0,2010-07-31,True,Field Camp,,Bangladeshi,2,CC-PRJ-883,2010-07-31
+EMP-000090,PRJ00090,Chelsea,حنبولي,prj00090@company.com,(0115)4960493,PROJECTS,Project Coordinator,L1,10000.0,2010-11-26,True,Head Office,,Jordanian,18,CC-PRJ-285,2010-11-26
+EMP-000091,CTR00091,Donald,آل العسكري,ctr00091@company.com,+1-480-894-0244x5502,CONTRACTS,Contract Specialist,L2,50000.0,2021-01-11,False,Site Office A,,American,22,CC-CTR-428,2021-01-11
+EMP-000092,PRJ00092,Eric,آل بن لافي,prj00092@company.com,001-383-266-7525x4599,PROJECTS,Project Manager,L4,1000000.0,2017-05-25,True,Site Office A,,American,3,CC-PRJ-565,2017-05-25
+EMP-000093,PRO00093,Sharon,Campbell,pro00093@company.com,547-367-9764,PROCUREMENT,Buyer,L1,10000.0,2012-08-07,False,Site Office A,,Saudi,35,CC-PRO-573,2012-08-07
+EMP-000094,ENG00094,Phillip,Duran,eng00094@company.com,001-278-540-3690,ENGINEERING,Engineer,L1,10000.0,2018-02-11,True,Site Office A,,Saudi,14,CC-ENG-373,2018-02-11
+EMP-000095,FIN00095,مرتجي,Anderson,fin00095@company.com,+44(0)1214960107,FINANCE,Finance Manager,L5,10000000.0,2019-10-30,True,Site Office A,CMA,Pakistani,20,CC-FIN-664,2019-10-30
+EMP-000096,PRO00096,لقاء,شربتلي,pro00096@company.com,001-738-885-1606x071,PROCUREMENT,Senior Buyer,L2,50000.0,2015-01-15,False,Field Camp,,Indian,10,CC-PRO-610,2015-01-15
+EMP-000097,CTR00097,Ronald,العجلان,ctr00097@company.com,01214960160,CONTRACTS,Contract Admin,L1,10000.0,2016-02-18,True,Site Office A,,Jordanian,16,CC-CTR-567,2016-02-18
+EMP-000098,PRJ00098,Leslie,Dixon,prj00098@company.com,(716)513-6968x164,PROJECTS,Planner,L2,50000.0,2023-06-12,True,Regional Office,,Filipino,27,CC-PRJ-448,2023-06-12
+EMP-000099,CTR00099,مُناضل,Mitchell,ctr00099@company.com,383.455.2312x43292,CONTRACTS,Contract Specialist,L2,50000.0,2010-01-22,True,Head Office,,Bangladeshi,32,CC-CTR-986,2010-01-22
+EMP-000100,PRO00100,داوود,Hall,pro00100@company.com,299.755.2717x744,PROCUREMENT,Senior Buyer,L2,50000.0,2017-09-28,True,Regional Office,CPM,Egyptian,16,CC-PRO-685,2017-09-28
+EMP-000101,ENG00101,Alexandra,آل عطفة,eng00101@company.com,9542119986,ENGINEERING,Design Engineer,L4,1000000.0,2019-03-20,True,Warehouse,,American,25,CC-ENG-779,2019-03-20
+EMP-000102,HSE00102,Shannon,Robinson,hse00102@company.com,+44(0)20 74960782,HSE,Environmental Specialist,L3,200000.0,2013-05-31,True,Head Office,ISO 45001 Lead Auditor,British,7,CC-HSE-995,2013-05-31
+EMP-000103,HSE00103,أغاريد,Mccormick,hse00103@company.com,820.737.7889x25546,HSE,HSE Officer,L1,10000.0,2020-04-01,True,Head Office,,Pakistani,5,CC-HSE-580,2020-04-01
+EMP-000104,HSE00104,كوثر,الخرافي,hse00104@company.com,715-618-6449x25192,HSE,HSE Officer,L1,10000.0,2023-12-24,True,Site Office B,,Sudanese,25,CC-HSE-424,2023-12-24
+EMP-000105,PRJ00105,Jeremy,Peterson,prj00105@company.com,+1-214-786-5281x685,PROJECTS,PMO Lead,L5,10000000.0,2020-12-11,True,Head Office,PMI-ACP,Egyptian,6,CC-PRJ-544,2020-12-11
+EMP-000106,CTR00106,Kenneth,Romero,ctr00106@company.com,0117 4960322,CONTRACTS,Claims Analyst,L4,1000000.0,2012-04-03,True,Warehouse,,Saudi,3,CC-CTR-432,2012-04-03
+EMP-000107,HSE00107,Julie,آل قصير,hse00107@company.com,001-980-259-2962x2292,HSE,HSE Officer,L1,10000.0,2018-05-29,True,Head Office,OSHA 30,Pakistani,12,CC-HSE-180,2018-05-29
+EMP-000108,PRJ00108,طيّب,Morgan,prj00108@company.com,028 9018 0473,PROJECTS,Planner,L2,50000.0,2015-05-27,True,Site Office B,PMI-ACP,Jordanian,17,CC-PRJ-782,2015-05-27
+EMP-000109,PRO00109,Bethany,Marsh,pro00109@company.com,+44(0)808 157 0359,PROCUREMENT,Category Manager,L4,1000000.0,2016-06-14,True,Head Office,,British,20,CC-PRO-754,2016-06-14
+EMP-000110,CTR00110,Joshua,آل سلطان,ctr00110@company.com,662.339.2407x58181,CONTRACTS,Contract Engineer,L3,200000.0,2020-03-31,True,Head Office,,American,31,CC-CTR-209,2020-03-31
+EMP-000111,PRO00111,Robert,Knight,pro00111@company.com,+44(0)1144960375,PROCUREMENT,Procurement Specialist,L3,200000.0,2022-11-22,True,Warehouse,CPSM,Filipino,1,CC-PRO-679,2022-11-22
+EMP-000112,LEG00112,Amber,Bullock,leg00112@company.com,(415)930-5152x2047,LEGAL,Senior Counsel,L4,1000000.0,2011-02-06,False,Warehouse,,Filipino,15,CC-LEG-721,2011-02-06
+EMP-000113,HSE00113,Ruth,العجلان,hse00113@company.com,232-589-8614x341,HSE,HSE Officer,L1,10000.0,2014-04-07,True,Warehouse,,Pakistani,7,CC-HSE-742,2014-04-07
+EMP-000114,PRJ00114,Christina,Duncan,prj00114@company.com,679-880-8932,PROJECTS,Planner,L2,50000.0,2019-11-21,True,Site Office A,PMI-ACP,British,27,CC-PRJ-279,2019-11-21
+EMP-000115,PRO00115,Andrew,Pearson,pro00115@company.com,+1-818-751-8888x80670,PROCUREMENT,Category Manager,L4,1000000.0,2018-03-17,True,Field Camp,,Filipino,31,CC-PRO-925,2018-03-17
+EMP-000116,ENG00116,Bradley,الجابر,eng00116@company.com,0118 4960195,ENGINEERING,Project Engineer,L5,10000000.0,2012-08-01,True,Head Office,,Egyptian,26,CC-ENG-966,2012-08-01
+EMP-000117,HSE00117,Nina,McDonald,hse00117@company.com,(577)222-1704,HSE,Safety Inspector,L2,50000.0,2018-11-07,True,Site Office B,IOSH,Bangladeshi,25,CC-HSE-942,2018-11-07
+EMP-000118,PRJ00118,مسعود,Cook,prj00118@company.com,(887)840-3450x5415,PROJECTS,Planner,L2,50000.0,2015-03-31,True,Site Office B,,British,15,CC-PRJ-763,2015-03-31
+EMP-000119,PRO00119,Mark,Rogers,pro00119@company.com,775.384.1616x9284,PROCUREMENT,Category Manager,L4,1000000.0,2016-10-11,True,Head Office,CIPS,Filipino,32,CC-PRO-218,2016-10-11
+EMP-000120,PRO00120,Sally,مهنا,pro00120@company.com,001-362-875-7059x640,PROCUREMENT,Procurement Lead,L5,10000000.0,2013-01-16,True,Site Office A,,Sudanese,27,CC-PRO-701,2013-01-16
+EMP-000121,PRJ00121,حاتم,آل سلطان,prj00121@company.com,7298702135,PROJECTS,Project Coordinator,L1,10000.0,2019-04-22,True,Regional Office,,Filipino,3,CC-PRJ-806,2019-04-22
+EMP-000122,ENG00122,Jill,Weston,eng00122@company.com,555.371.9285x654,ENGINEERING,Senior Engineer,L2,50000.0,2015-04-19,True,Head Office,,Sudanese,23,CC-ENG-162,2015-04-19
+EMP-000123,ENG00123,Shannon,الشايع,eng00123@company.com,344-473-9473,ENGINEERING,Engineer,L1,10000.0,2012-09-27,False,Regional Office,PMP,Bangladeshi,2,CC-ENG-151,2012-09-27
+EMP-000124,HSE00124,Kristy,Ward,hse00124@company.com,+1-555-418-8442x25831,HSE,HSE Officer,L1,10000.0,2012-10-28,True,Head Office,,Sudanese,14,CC-HSE-700,2012-10-28
+EMP-000125,PRO00125,Teresa,آل جعفر,pro00125@company.com,(878)329-1146x786,PROCUREMENT,Category Manager,L4,1000000.0,2017-05-15,True,Regional Office,,Filipino,10,CC-PRO-233,2017-05-15
+EMP-000126,FIN00126,جالا,آل عايض,fin00126@company.com,+44(0)1514960852,FINANCE,Cost Controller,L4,1000000.0,2012-06-19,True,Head Office,CMA,Bangladeshi,21,CC-FIN-116,2012-06-19
+EMP-000127,PRO00127,Cynthia,آل معيض,pro00127@company.com,(380)618-2422x53584,PROCUREMENT,Buyer,L1,10000.0,2019-06-11,True,Warehouse,,British,33,CC-PRO-707,2019-06-11
+EMP-000128,PRO00128,Christopher,بقشان,pro00128@company.com,+1-749-281-8299x2299,PROCUREMENT,Senior Buyer,L2,50000.0,2023-10-18,True,Regional Office,,Sudanese,20,CC-PRO-569,2023-10-18
+EMP-000129,PRJ00129,تولين,Jimenez,prj00129@company.com,+44(0)28 9018396,PROJECTS,Project Coordinator,L1,10000.0,2020-09-28,True,Site Office A,PMI-SP,Indian,6,CC-PRJ-429,2020-09-28
+EMP-000130,PRJ00130,Elizabeth,Hall,prj00130@company.com,+1-244-473-6471,PROJECTS,Project Coordinator,L1,10000.0,2016-03-02,True,Site Office B,,American,34,CC-PRJ-401,2016-03-02
+EMP-000131,FIN00131,فاروق,Clarke,fin00131@company.com,+44(0)2074960255,FINANCE,AP Specialist,L3,200000.0,2012-03-23,True,Head Office,,Sudanese,14,CC-FIN-540,2012-03-23
+EMP-000132,FIN00132,Steven,Power,fin00132@company.com,+44(0)1614960815,FINANCE,Accountant,L1,10000.0,2017-08-08,True,Site Office A,,British,28,CC-FIN-420,2017-08-08
+EMP-000133,PRJ00133,Tyrone,العجلان,prj00133@company.com,704-569-6325,PROJECTS,Planner,L2,50000.0,2013-06-04,True,Site Office A,PMP,Indian,28,CC-PRJ-198,2013-06-04
+EMP-000134,PRJ00134,Sierra,العجلان,prj00134@company.com,+44(0)909 879 0470,PROJECTS,Planner,L2,50000.0,2012-12-01,True,Site Office B,,British,8,CC-PRJ-520,2012-12-01
+EMP-000135,ENG00135,Ryan,Wood,eng00135@company.com,695.200.4797,ENGINEERING,Lead Engineer,L3,200000.0,2019-06-27,True,Warehouse,,Bangladeshi,20,CC-ENG-460,2019-06-27
+EMP-000136,PRO00136,وجيه,Cox,pro00136@company.com,+44(0)131 496 0060,PROCUREMENT,Senior Buyer,L2,50000.0,2013-06-21,True,Head Office,CPM,Indian,18,CC-PRO-687,2013-06-21
+EMP-000137,PRO00137,عبد الغفور,مهنا,pro00137@company.com,+44114 496 0687,PROCUREMENT,Senior Buyer,L2,50000.0,2022-08-01,False,Regional Office,,Sudanese,2,CC-PRO-723,2022-08-01
+EMP-000138,CTR00138,حسني,Williams,ctr00138@company.com,521-865-5852,CONTRACTS,Claims Analyst,L4,1000000.0,2015-12-31,True,Head Office,,Filipino,22,CC-CTR-459,2015-12-31
+EMP-000139,PRO00139,نافع,العليان,pro00139@company.com,678-772-9825x95269,PROCUREMENT,Category Manager,L4,1000000.0,2022-09-14,True,Head Office,,Saudi,6,CC-PRO-864,2022-09-14
+EMP-000140,FIN00140,مهيب,Morgan,fin00140@company.com,001-647-205-5169,FINANCE,Financial Analyst,L2,50000.0,2020-03-05,True,Site Office A,,Bangladeshi,6,CC-FIN-153,2020-03-05
+EMP-000141,PRO00141,Ashley,آل رفيع,pro00141@company.com,001-430-597-2896,PROCUREMENT,Category Manager,L4,1000000.0,2011-02-12,True,Head Office,,Jordanian,29,CC-PRO-524,2011-02-12
+EMP-000142,ENG00142,ساجد,آل علي,eng00142@company.com,9752626368,ENGINEERING,Design Engineer,L4,1000000.0,2012-07-21,True,Head Office,,Bangladeshi,32,CC-ENG-639,2012-07-21
+EMP-000143,PRJ00143,Nicole,Wilson,prj00143@company.com,578-565-2785x85497,PROJECTS,Project Coordinator,L1,10000.0,2018-11-12,False,Head Office,PRINCE2,Pakistani,17,CC-PRJ-396,2018-11-12
+EMP-000144,ENG00144,Catherine,Moore,eng00144@company.com,(0306)9990437,ENGINEERING,Engineer,L1,10000.0,2019-08-29,True,Site Office A,,Sudanese,23,CC-ENG-173,2019-08-29
+EMP-000145,ENG00145,Abbie,Morris,eng00145@company.com,341-798-6652x404,ENGINEERING,Lead Engineer,L3,200000.0,2019-10-14,True,Field Camp,,Bangladeshi,28,CC-ENG-687,2019-10-14
+EMP-000146,ENG00146,Elizabeth,آل عواض,eng00146@company.com,584.584.2199,ENGINEERING,Lead Engineer,L3,200000.0,2016-06-29,True,Head Office,,Bangladeshi,30,CC-ENG-951,2016-06-29
+EMP-000147,PRJ00147,موفّق,Horton,prj00147@company.com,401.865.7120,PROJECTS,Planner,L2,50000.0,2019-10-18,True,Head Office,,Sudanese,6,CC-PRJ-505,2019-10-18
+EMP-000148,LEG00148,وليد,Nichols,leg00148@company.com,+44(0)121 4960401,LEGAL,Legal Counsel,L3,200000.0,2014-12-21,True,Head Office,,Sudanese,8,CC-LEG-643,2014-12-21
+EMP-000149,FIN00149,Kirsty,آل خضير,fin00149@company.com,2262206724,FINANCE,Finance Manager,L5,10000000.0,2017-11-02,True,Field Camp,,Pakistani,16,CC-FIN-205,2017-11-02
+EMP-000150,PRO00150,Aaron,العجلان,pro00150@company.com,0121 496 0788,PROCUREMENT,Buyer,L1,10000.0,2023-07-06,True,Regional Office,CPSM,Jordanian,29,CC-PRO-797,2023-07-06
+EMP-000151,CTR00151,مقدام,آل محمد بن علي بن جماز,ctr00151@company.com,0117 4960152,CONTRACTS,Contract Engineer,L3,200000.0,2017-04-01,True,Site Office B,,Pakistani,29,CC-CTR-169,2017-04-01
+EMP-000152,FIN00152,Richard,Lopez,fin00152@company.com,(805)749-3296,FINANCE,AP Specialist,L3,200000.0,2016-02-29,True,Site Office A,CFA,Jordanian,3,CC-FIN-158,2016-02-29
+EMP-000153,ENG00153,فضل,آل قصير,eng00153@company.com,253.604.6374x5499,ENGINEERING,Engineer,L1,10000.0,2012-01-10,True,Site Office B,,Sudanese,3,CC-ENG-560,2012-01-10
+EMP-000154,CTR00154,Spencer,الحجار,ctr00154@company.com,+1-417-942-6841x45933,CONTRACTS,Contract Engineer,L3,200000.0,2014-03-23,True,Site Office A,,Pakistani,4,CC-CTR-561,2014-03-23
+EMP-000155,PRO00155,صهيب,Becker,pro00155@company.com,+44(0)292018878,PROCUREMENT,Procurement Lead,L5,10000000.0,2017-09-14,False,Head Office,,Saudi,16,CC-PRO-824,2017-09-14
+EMP-000156,ENG00156,Mark,الشايع,eng00156@company.com,587-485-1910,ENGINEERING,Senior Engineer,L2,50000.0,2021-09-22,True,Site Office A,,American,27,CC-ENG-893,2021-09-22
+EMP-000157,ENG00157,عزاز,آل العسكري,eng00157@company.com,+1-239-971-8707x28679,ENGINEERING,Lead Engineer,L3,200000.0,2017-07-04,True,Head Office,,Filipino,17,CC-ENG-841,2017-07-04
+EMP-000158,LEG00158,Brandon,Harrison,leg00158@company.com,(0118)4960039,LEGAL,General Counsel,L6,,2023-07-09,True,Site Office A,,Bangladeshi,10,CC-LEG-458,2023-07-09
+EMP-000159,ENG00159,Gemma,Francis,eng00159@company.com,7178046226,ENGINEERING,Lead Engineer,L3,200000.0,2018-10-16,True,Warehouse,LEED AP,British,9,CC-ENG-786,2018-10-16
+EMP-000160,PRJ00160,Tiffany,Davies,prj00160@company.com,+1-525-212-8682,PROJECTS,PMO Lead,L5,10000000.0,2021-10-22,True,Warehouse,,Saudi,24,CC-PRJ-416,2021-10-22
+EMP-000161,PRO00161,Carlos,آل بن ظافر,pro00161@company.com,(286)533-7524x31069,PROCUREMENT,Buyer,L1,10000.0,2020-11-27,True,Field Camp,CPM,Indian,33,CC-PRO-889,2020-11-27
+EMP-000162,FIN00162,Jennifer,Fernandez,fin00162@company.com,+44(0)20 7496 0030,FINANCE,AP Specialist,L3,200000.0,2021-10-23,True,Site Office A,,Pakistani,25,CC-FIN-257,2021-10-23
+EMP-000163,PRO00163,Valerie,آل عواض,pro00163@company.com,(584)639-5995,PROCUREMENT,Category Manager,L4,1000000.0,2013-09-18,True,Head Office,CSCP,Jordanian,19,CC-PRO-870,2013-09-18
+EMP-000164,PRJ00164,هيام,Garrett,prj00164@company.com,(0121) 4960408,PROJECTS,Planner,L2,50000.0,2021-12-23,True,Field Camp,,Egyptian,24,CC-PRJ-794,2021-12-23
+EMP-000165,CTR00165,ريتال,Thornton,ctr00165@company.com,+44(0)191 4960705,CONTRACTS,Contracts Director,L6,,2020-05-10,True,Regional Office,,Sudanese,34,CC-CTR-528,2020-05-10
+EMP-000166,CTR00166,Nicola,Webster,ctr00166@company.com,+44(0)29 2018662,CONTRACTS,Claims Analyst,L4,1000000.0,2023-07-25,True,Head Office,,Jordanian,24,CC-CTR-667,2023-07-25
+EMP-000167,CTR00167,Kevin,الدباغ,ctr00167@company.com,0118 4960342,CONTRACTS,Contract Engineer,L3,200000.0,2021-07-28,True,Head Office,,Pakistani,18,CC-CTR-560,2021-07-28
+EMP-000168,CTR00168,Jonathan,Willis,ctr00168@company.com,+44(0)191 4960826,CONTRACTS,Contract Admin,L1,10000.0,2019-10-24,True,Field Camp,,Jordanian,23,CC-CTR-127,2019-10-24
+EMP-000169,ENG00169,شهم,Adams,eng00169@company.com,0909 879 0518,ENGINEERING,Senior Engineer,L2,50000.0,2018-05-22,True,Field Camp,,Saudi,21,CC-ENG-201,2018-05-22
+EMP-000170,HSE00170,Suzanne,Burgess,hse00170@company.com,+1-290-513-9837x354,HSE,Environmental Specialist,L3,200000.0,2013-04-11,True,Head Office,,Pakistani,31,CC-HSE-559,2013-04-11
+EMP-000171,PRJ00171,Andrea,Palmer,prj00171@company.com,01184960936,PROJECTS,PMO Lead,L5,10000000.0,2010-06-05,True,Regional Office,,Bangladeshi,34,CC-PRJ-533,2010-06-05
+EMP-000172,PRO00172,Anna,Figueroa,pro00172@company.com,+1-754-845-8771x7535,PROCUREMENT,Buyer,L1,10000.0,2016-10-03,True,Head Office,,Bangladeshi,30,CC-PRO-164,2016-10-03
+EMP-000173,PRO00173,حلا,الجابر,pro00173@company.com,589-996-4235x369,PROCUREMENT,Procurement Lead,L5,10000000.0,2023-05-21,True,Site Office B,,Pakistani,19,CC-PRO-539,2023-05-21
+EMP-000174,PRO00174,Jessica,Thompson,pro00174@company.com,(0306) 999 0777,PROCUREMENT,Senior Buyer,L2,50000.0,2022-10-19,True,Warehouse,CPM,Indian,34,CC-PRO-657,2022-10-19
+EMP-000175,FIN00175,Megan,Jones,fin00175@company.com,+1-272-880-8010,FINANCE,CFO,L6,,2022-06-06,True,Regional Office,CFA,British,17,CC-FIN-865,2022-06-06
+EMP-000176,PRO00176,Amanda,Brown,pro00176@company.com,9382750997,PROCUREMENT,Category Manager,L4,1000000.0,2017-09-25,True,Warehouse,CPM,Pakistani,3,CC-PRO-460,2017-09-25
+EMP-000177,FIN00177,Vincent,Hooper,fin00177@company.com,001-548-640-8621x1823,FINANCE,Cost Controller,L4,1000000.0,2013-12-05,True,Warehouse,,Jordanian,12,CC-FIN-930,2013-12-05
+EMP-000178,PRO00178,Lydia,Valdez,pro00178@company.com,+44(0)151 496 0933,PROCUREMENT,Procurement Specialist,L3,200000.0,2020-04-07,True,Head Office,,Saudi,21,CC-PRO-417,2020-04-07
+EMP-000179,FIN00179,حسيب,Lewis,fin00179@company.com,001-701-366-6870x02176,FINANCE,CFO,L6,,2022-03-07,True,Head Office,,Filipino,23,CC-FIN-982,2022-03-07
+EMP-000180,HSE00180,Suzanne,آل سلطان,hse00180@company.com,001-474-701-4890,HSE,HSE Manager,L4,1000000.0,2017-06-12,True,Regional Office,CSP,Jordanian,25,CC-HSE-447,2017-06-12
+EMP-000181,CTR00181,Samuel,Peterson,ctr00181@company.com,(714)229-3968x5621,CONTRACTS,Contract Specialist,L2,50000.0,2021-02-27,True,Regional Office,,Filipino,6,CC-CTR-844,2021-02-27
+EMP-000182,ENG00182,Kelsey,Roberts,eng00182@company.com,+1-465-804-7735x866,ENGINEERING,Senior Engineer,L2,50000.0,2014-01-18,True,Site Office A,CEng,Filipino,29,CC-ENG-717,2014-01-18
+EMP-000183,PRJ00183,Sherry,Evans,prj00183@company.com,314-326-2655,PROJECTS,Project Coordinator,L1,10000.0,2019-12-16,True,Head Office,,British,28,CC-PRJ-381,2019-12-16
+EMP-000184,PRJ00184,Lucy,المهيدب,prj00184@company.com,01154960212,PROJECTS,Project Manager,L4,1000000.0,2011-04-15,True,Site Office B,PRINCE2,Saudi,10,CC-PRJ-969,2011-04-15
+EMP-000185,PRJ00185,واصل,Armstrong,prj00185@company.com,(810)315-8199x56046,PROJECTS,Project Manager,L4,1000000.0,2010-10-13,True,Head Office,,British,25,CC-PRJ-680,2010-10-13
+EMP-000186,PRO00186,Michael,Le,pro00186@company.com,+1-662-924-4472x12646,PROCUREMENT,Buyer,L1,10000.0,2020-02-03,False,Site Office A,,Bangladeshi,9,CC-PRO-642,2020-02-03
+EMP-000187,ENG00187,Derek,Rush,eng00187@company.com,+442074960937,ENGINEERING,Senior Engineer,L2,50000.0,2016-04-02,True,Head Office,,Jordanian,34,CC-ENG-496,2016-04-02
+EMP-000188,CTR00188,Albert,Sharp,ctr00188@company.com,+44(0)8081570965,CONTRACTS,Contract Admin,L1,10000.0,2015-11-03,True,Head Office,,Bangladeshi,19,CC-CTR-810,2015-11-03
+EMP-000189,CTR00189,Nicola,Warren,ctr00189@company.com,+1-924-559-3752x654,CONTRACTS,Contract Specialist,L2,50000.0,2012-10-01,True,Head Office,,Pakistani,29,CC-CTR-189,2012-10-01
+EMP-000190,HSE00190,هاشم,Maldonado,hse00190@company.com,+44(0)131 496 0193,HSE,Chief Safety Officer,L6,,2017-03-03,True,Warehouse,IOSH,Filipino,11,CC-HSE-828,2017-03-03
+EMP-000191,PRJ00191,Katy,Espinoza,prj00191@company.com,6735741672,PROJECTS,Scheduler,L3,200000.0,2013-11-27,True,Site Office B,PRINCE2,Pakistani,16,CC-PRJ-909,2013-11-27
+EMP-000192,FIN00192,لبيد,المشاولة,fin00192@company.com,+44114 496 0797,FINANCE,Financial Analyst,L2,50000.0,2022-11-02,True,Regional Office,,Bangladeshi,6,CC-FIN-167,2022-11-02
+EMP-000193,ENG00193,Kenneth,Garcia,eng00193@company.com,(880)758-9113x52909,ENGINEERING,Engineering Manager,L6,,2020-09-26,True,Regional Office,,Indian,9,CC-ENG-424,2020-09-26
+EMP-000194,PRJ00194,Kenneth,Wilson,prj00194@company.com,288.999.3756x79825,PROJECTS,Planner,L2,50000.0,2021-08-09,True,Regional Office,,Bangladeshi,12,CC-PRJ-886,2021-08-09
+EMP-000195,CTR00195,Bethan,Newton,ctr00195@company.com,(954)357-3875,CONTRACTS,Contract Specialist,L2,50000.0,2011-03-30,True,Site Office B,,Filipino,11,CC-CTR-265,2011-03-30
+EMP-000196,ENG00196,رسمي,آل صفوان,eng00196@company.com,+44(0)1134960105,ENGINEERING,Lead Engineer,L3,200000.0,2017-10-05,False,Site Office B,PE,Filipino,13,CC-ENG-750,2017-10-05
+EMP-000197,CTR00197,شعلان,Davidson,ctr00197@company.com,582.882.5867,CONTRACTS,Contract Admin,L1,10000.0,2016-10-16,True,Head Office,,Pakistani,10,CC-CTR-275,2016-10-16
+EMP-000198,PRJ00198,Jenna,McCarthy,prj00198@company.com,(0141)4960093,PROJECTS,Scheduler,L3,200000.0,2023-07-29,True,Field Camp,PMP,Indian,3,CC-PRJ-756,2023-07-29
+EMP-000199,HSE00199,Geoffrey,Davies,hse00199@company.com,734.519.1825,HSE,HSE Officer,L1,10000.0,2014-09-23,True,Site Office A,,Jordanian,35,CC-HSE-396,2014-09-23
+EMP-000200,PRJ00200,كريم,آل رفيع,prj00200@company.com,(0191) 496 0596,PROJECTS,Planner,L2,50000.0,2015-06-30,True,Warehouse,PMP,Saudi,11,CC-PRJ-550,2015-06-30
+EMP-000201,ENG00201,لورين,Bell,eng00201@company.com,+44131 496 0792,ENGINEERING,Senior Engineer,L2,50000.0,2017-08-18,True,Site Office A,,British,26,CC-ENG-233,2017-08-18
+EMP-000202,HSE00202,Jodie,Andrews,hse00202@company.com,425-813-4125,HSE,Safety Inspector,L2,50000.0,2012-05-19,True,Site Office A,OSHA 30,Pakistani,7,CC-HSE-151,2012-05-19
+EMP-000203,ENG00203,سنان,Barber,eng00203@company.com,+44(0)1164960782,ENGINEERING,Senior Engineer,L2,50000.0,2023-10-21,True,Field Camp,,British,21,CC-ENG-294,2023-10-21
+EMP-000204,HSE00204,مشرق,Thompson,hse00204@company.com,979-805-0723x68876,HSE,Safety Inspector,L2,50000.0,2021-07-18,True,Regional Office,NEBOSH,American,33,CC-HSE-568,2021-07-18
+EMP-000205,CTR00205,نبهان,Armstrong,ctr00205@company.com,9349043842,CONTRACTS,Contract Admin,L1,10000.0,2017-11-30,True,Head Office,,Bangladeshi,31,CC-CTR-392,2017-11-30
+EMP-000206,FIN00206,Kathleen,Kaur,fin00206@company.com,+44306 999 0858,FINANCE,Cost Controller,L4,1000000.0,2019-09-01,True,Head Office,,American,24,CC-FIN-146,2019-09-01
+EMP-000207,ENG00207,Marcus,Taylor,eng00207@company.com,01154960340,ENGINEERING,Lead Engineer,L3,200000.0,2014-05-14,True,Head Office,,Jordanian,18,CC-ENG-945,2014-05-14
+EMP-000208,CTR00208,فخر,آل معيض,ctr00208@company.com,513.239.5962x923,CONTRACTS,Contract Engineer,L3,200000.0,2012-08-31,True,Head Office,,British,22,CC-CTR-671,2012-08-31
+EMP-000209,CTR00209,Victoria,آل سعود,ctr00209@company.com,+1-425-844-9481,CONTRACTS,Claims Analyst,L4,1000000.0,2014-06-19,True,Site Office A,,Saudi,3,CC-CTR-139,2014-06-19
+EMP-000210,PRO00210,Alison,Schultz,pro00210@company.com,(632)853-6729,PROCUREMENT,Senior Buyer,L2,50000.0,2020-08-16,True,Head Office,,Pakistani,21,CC-PRO-727,2020-08-16
+EMP-000211,ENG00211,Phillip,Phillips,eng00211@company.com,(884)557-7590x1751,ENGINEERING,Senior Engineer,L2,50000.0,2023-10-30,True,Head Office,,Sudanese,35,CC-ENG-601,2023-10-30
+EMP-000212,PRJ00212,مُتوكّل,Lawrence,prj00212@company.com,01314960892,PROJECTS,Project Coordinator,L1,10000.0,2010-05-17,True,Warehouse,,Bangladeshi,20,CC-PRJ-915,2010-05-17
+EMP-000213,LEG00213,زهير,أبا الخيل,leg00213@company.com,8175012770,LEGAL,Legal Manager,L5,10000000.0,2010-08-07,True,Head Office,,Bangladeshi,15,CC-LEG-838,2010-08-07
+EMP-000214,PRO00214,Jason,Anderson,pro00214@company.com,315-341-5206x436,PROCUREMENT,Senior Buyer,L2,50000.0,2021-10-04,True,Site Office B,,Pakistani,16,CC-PRO-132,2021-10-04
+EMP-000215,PRJ00215,Clifford,Reyes,prj00215@company.com,370.705.1627x13611,PROJECTS,Scheduler,L3,200000.0,2014-04-12,True,Site Office A,PRINCE2,American,33,CC-PRJ-893,2014-04-12
+EMP-000216,PRJ00216,Peggy,Goodwin,prj00216@company.com,+1-921-589-0927x5326,PROJECTS,Planner,L2,50000.0,2011-05-26,True,Site Office B,,Jordanian,34,CC-PRJ-485,2011-05-26
+EMP-000217,ENG00217,عدنان,Holmes,eng00217@company.com,001-665-265-2341x3899,ENGINEERING,Engineer,L1,10000.0,2021-12-16,True,Site Office A,,Filipino,31,CC-ENG-296,2021-12-16
+EMP-000218,CTR00218,ثابت,McDonald,ctr00218@company.com,964.303.7613,CONTRACTS,Contract Admin,L1,10000.0,2016-09-11,True,Field Camp,,Filipino,19,CC-CTR-821,2016-09-11
+EMP-000219,PRO00219,Stacy,O'Sullivan,pro00219@company.com,(596)258-2710x9104,PROCUREMENT,Procurement Specialist,L3,200000.0,2017-02-10,True,Site Office B,,Filipino,19,CC-PRO-224,2017-02-10
+EMP-000220,PRJ00220,صباح,Herrera,prj00220@company.com,001-686-366-1889x241,PROJECTS,Planner,L2,50000.0,2018-11-07,True,Field Camp,,Filipino,3,CC-PRJ-394,2018-11-07
+EMP-000221,CTR00221,طيّب,Sanchez,ctr00221@company.com,+4420 7496 0146,CONTRACTS,Contract Admin,L1,10000.0,2019-12-03,True,Warehouse,,Egyptian,13,CC-CTR-947,2019-12-03
+EMP-000222,FIN00222,Kyle,كانو,fin00222@company.com,(0115)4960799,FINANCE,Finance Manager,L5,10000000.0,2016-02-04,True,Site Office B,,Egyptian,4,CC-FIN-785,2016-02-04
+EMP-000223,CTR00223,Malcolm,آل معيض,ctr00223@company.com,(610)420-2758,CONTRACTS,Contract Admin,L1,10000.0,2015-03-23,True,Site Office A,,Jordanian,7,CC-CTR-797,2015-03-23
+EMP-000224,HSE00224,Denise,Hartley,hse00224@company.com,305-964-8149,HSE,HSE Officer,L1,10000.0,2022-05-06,False,Head Office,,Jordanian,31,CC-HSE-766,2022-05-06
+EMP-000225,PRO00225,John,Evans,pro00225@company.com,(252)241-9138,PROCUREMENT,Procurement Manager,L6,,2017-03-16,True,Head Office,,Bangladeshi,15,CC-PRO-647,2017-03-16
+EMP-000226,PRJ00226,قانت,Shaw,prj00226@company.com,(608)363-5365,PROJECTS,Project Manager,L4,1000000.0,2010-11-02,False,Head Office,,Pakistani,3,CC-PRJ-956,2010-11-02
+EMP-000227,ENG00227,مفيد,Wood,eng00227@company.com,(738)306-1744,ENGINEERING,Senior Engineer,L2,50000.0,2016-06-29,True,Head Office,,Indian,22,CC-ENG-391,2016-06-29
+EMP-000228,FIN00228,Laura,العليان,fin00228@company.com,020 7946 0493,FINANCE,AP Specialist,L3,200000.0,2021-10-05,True,Field Camp,,Jordanian,18,CC-FIN-297,2021-10-05
+EMP-000229,HSE00229,Jamie,Barnes,hse00229@company.com,001-883-620-6038x5050,HSE,Safety Inspector,L2,50000.0,2020-04-17,True,Warehouse,IOSH,Filipino,13,CC-HSE-279,2020-04-17
+EMP-000230,PRJ00230,زياد,الخرافي,prj00230@company.com,(341)303-8657,PROJECTS,Scheduler,L3,200000.0,2019-02-04,True,Site Office B,PMP,Pakistani,9,CC-PRJ-588,2019-02-04
+EMP-000231,ENG00231,Alison,Barnes,eng00231@company.com,001-890-762-3445,ENGINEERING,Engineer,L1,10000.0,2015-11-07,True,Site Office A,CEng,Filipino,1,CC-ENG-367,2015-11-07
+EMP-000232,PRJ00232,فرحان,Hayes,prj00232@company.com,(891)321-2775,PROJECTS,Scheduler,L3,200000.0,2011-05-24,True,Site Office A,PMI-ACP,Indian,19,CC-PRJ-476,2011-05-24
+EMP-000233,PRJ00233,عربي,حجار,prj00233@company.com,+44118 4960112,PROJECTS,Project Coordinator,L1,10000.0,2012-12-30,True,Site Office A,,British,27,CC-PRJ-818,2012-12-30
+EMP-000234,FIN00234,Anthony,Davis,fin00234@company.com,652.613.5680,FINANCE,Financial Analyst,L2,50000.0,2022-01-21,True,Regional Office,,Bangladeshi,6,CC-FIN-638,2022-01-21
+EMP-000235,ENG00235,بهية,آل حسين,eng00235@company.com,001-883-717-1210x0323,ENGINEERING,Lead Engineer,L3,200000.0,2011-10-02,False,Head Office,,Sudanese,13,CC-ENG-686,2011-10-02
+EMP-000236,FIN00236,Sheri,Jackson,fin00236@company.com,001-741-301-3721,FINANCE,Accountant,L1,10000.0,2021-09-02,True,Warehouse,,Jordanian,6,CC-FIN-622,2021-09-02
+EMP-000237,ENG00237,عبّود,Ali,eng00237@company.com,(267)506-6253x24472,ENGINEERING,Engineer,L1,10000.0,2012-12-16,True,Site Office A,LEED AP,Filipino,2,CC-ENG-505,2012-12-16
+EMP-000238,ENG00238,مُتوكّل,Walker,eng00238@company.com,701.946.2638x3806,ENGINEERING,Engineer,L1,10000.0,2014-11-21,True,Head Office,,Indian,35,CC-ENG-161,2014-11-21
+EMP-000239,CTR00239,John,Adams,ctr00239@company.com,564-420-5930x40785,CONTRACTS,Contract Admin,L1,10000.0,2020-08-03,True,Site Office A,,Pakistani,27,CC-CTR-483,2020-08-03
+EMP-000240,CTR00240,جليل,الجفالي,ctr00240@company.com,7397652239,CONTRACTS,Contract Specialist,L2,50000.0,2018-06-20,True,Warehouse,,Sudanese,9,CC-CTR-769,2018-06-20
+EMP-000241,LEG00241,Jesse,Smith,leg00241@company.com,001-229-337-8427,LEGAL,Legal Officer,L1,10000.0,2022-01-19,True,Head Office,,Egyptian,1,CC-LEG-874,2022-01-19
+EMP-000242,PRO00242,Matthew,Sellers,pro00242@company.com,0113 496 0593,PROCUREMENT,Buyer,L1,10000.0,2022-03-19,True,Site Office A,CPSM,British,10,CC-PRO-382,2022-03-19
+EMP-000243,PRO00243,سامح,Mathis,pro00243@company.com,(0114) 496 0029,PROCUREMENT,Procurement Lead,L5,10000000.0,2012-07-13,True,Warehouse,,Saudi,16,CC-PRO-311,2012-07-13
+EMP-000244,PRO00244,Matthew,Khan,pro00244@company.com,+44114 496 0569,PROCUREMENT,Procurement Specialist,L3,200000.0,2020-01-06,True,Warehouse,CIPS,American,29,CC-PRO-339,2020-01-06
+EMP-000245,FIN00245,Jessica,بقشان,fin00245@company.com,001-667-452-8953x9264,FINANCE,Cost Controller,L4,1000000.0,2011-04-08,True,Field Camp,ACCA,Bangladeshi,21,CC-FIN-342,2011-04-08
+EMP-000246,ENG00246,علاء,آل عواض,eng00246@company.com,0909 8790902,ENGINEERING,Engineer,L1,10000.0,2021-09-10,True,Site Office A,PMP,American,32,CC-ENG-148,2021-09-10
+EMP-000247,CTR00247,ريتاج,الجابر,ctr00247@company.com,001-417-325-1355,CONTRACTS,Contracts Manager,L5,10000000.0,2018-07-20,True,Site Office A,,American,27,CC-CTR-252,2018-07-20
+EMP-000248,ENG00248,خليل,Smith,eng00248@company.com,01134960433,ENGINEERING,Engineer,L1,10000.0,2022-01-24,True,Regional Office,,Pakistani,30,CC-ENG-159,2022-01-24
+EMP-000249,PRJ00249,جوريّة,آل عواض,prj00249@company.com,001-300-967-6267x6586,PROJECTS,Program Director,L6,,2022-07-02,True,Site Office A,PMI-ACP,Indian,29,CC-PRJ-967,2022-07-02
+EMP-000250,ENG00250,راغب,Wright,eng00250@company.com,410.340.5411x526,ENGINEERING,Senior Engineer,L2,50000.0,2014-04-10,True,Site Office A,,Saudi,5,CC-ENG-292,2014-04-10
+EMP-000251,HSE00251,Frank,Williams,hse00251@company.com,606.629.6201x5336,HSE,Environmental Specialist,L3,200000.0,2022-07-15,True,Head Office,,Filipino,1,CC-HSE-316,2022-07-15
+EMP-000252,CTR00252,Anthony,Little,ctr00252@company.com,+1-972-505-0614,CONTRACTS,Contracts Director,L6,,2012-08-19,True,Regional Office,,Egyptian,14,CC-CTR-506,2012-08-19
+EMP-000253,CTR00253,Samuel,Williams,ctr00253@company.com,714.467.7418x6256,CONTRACTS,Contract Engineer,L3,200000.0,2016-05-07,True,Site Office B,,British,20,CC-CTR-367,2016-05-07
+EMP-000254,ENG00254,Karen,آل خضير,eng00254@company.com,+44(0)117 496 0490,ENGINEERING,Project Engineer,L5,10000000.0,2020-06-14,True,Field Camp,,British,14,CC-ENG-479,2020-06-14
+EMP-000255,ENG00255,Jason,Poole,eng00255@company.com,+1-558-969-3806x86879,ENGINEERING,Engineer,L1,10000.0,2014-12-18,True,Head Office,,Bangladeshi,27,CC-ENG-402,2014-12-18
+EMP-000256,PRO00256,Lindsey,Williams,pro00256@company.com,4894899217,PROCUREMENT,Senior Buyer,L2,50000.0,2018-07-09,True,Head Office,,British,17,CC-PRO-881,2018-07-09
+EMP-000257,HSE00257,Kristin,بن لادن,hse00257@company.com,+1-663-929-4511x68685,HSE,Chief Safety Officer,L6,,2021-01-01,True,Warehouse,OSHA 30,Sudanese,32,CC-HSE-288,2021-01-01
+EMP-000258,CTR00258,Jacqueline,العليان,ctr00258@company.com,(716)822-9991x19148,CONTRACTS,Contract Specialist,L2,50000.0,2011-04-27,True,Regional Office,,Indian,4,CC-CTR-882,2011-04-27
+EMP-000259,PRO00259,Julie,Bartlett,pro00259@company.com,+1-770-524-6299x606,PROCUREMENT,Buyer,L1,10000.0,2015-03-11,True,Head Office,CPSM,British,4,CC-PRO-732,2015-03-11
+EMP-000260,PRJ00260,Phillip,Cox,prj00260@company.com,344-547-1324x75469,PROJECTS,PMO Lead,L5,10000000.0,2020-11-02,True,Head Office,,American,1,CC-PRJ-117,2020-11-02
+EMP-000261,FIN00261,Mary,Johnson,fin00261@company.com,(408)521-4862x890,FINANCE,Accountant,L1,10000.0,2016-06-06,True,Regional Office,,Pakistani,7,CC-FIN-198,2016-06-06
+EMP-000262,FIN00262,Kate,الجفالي,fin00262@company.com,(934)457-8610x357,FINANCE,Accountant,L1,10000.0,2023-11-26,True,Regional Office,CFA,Indian,24,CC-FIN-515,2023-11-26
+EMP-000263,FIN00263,Paul,Nash,fin00263@company.com,(0116)4960414,FINANCE,Accountant,L1,10000.0,2015-01-25,True,Regional Office,CPA,Indian,26,CC-FIN-488,2015-01-25
+EMP-000264,ENG00264,تميم,King,eng00264@company.com,433.446.8007,ENGINEERING,Senior Engineer,L2,50000.0,2010-03-19,True,Head Office,,British,7,CC-ENG-640,2010-03-19
+EMP-000265,CTR00265,Kelly,Lloyd,ctr00265@company.com,01632960466,CONTRACTS,Contract Admin,L1,10000.0,2022-09-18,True,Head Office,,Indian,18,CC-CTR-656,2022-09-18
+EMP-000266,PRJ00266,رجاء,Hunt,prj00266@company.com,(029)2018896,PROJECTS,Project Coordinator,L1,10000.0,2017-01-20,True,Head Office,PMI-SP,Indian,20,CC-PRJ-266,2017-01-20
+EMP-000267,PRJ00267,مادلين,أبا الخيل,prj00267@company.com,(689)694-4171x545,PROJECTS,Scheduler,L3,200000.0,2018-09-23,True,Site Office B,PRINCE2,Indian,33,CC-PRJ-863,2018-09-23
+EMP-000268,CTR00268,Samantha,McCarthy,ctr00268@company.com,(983)609-6520,CONTRACTS,Contract Admin,L1,10000.0,2019-10-21,True,Head Office,,Bangladeshi,26,CC-CTR-892,2019-10-21
+EMP-000269,ENG00269,واصف,Carter,eng00269@company.com,001-693-453-8758,ENGINEERING,Lead Engineer,L3,200000.0,2020-02-08,True,Site Office A,,American,12,CC-ENG-796,2020-02-08
+EMP-000270,PRJ00270,غزير,آل حسين,prj00270@company.com,+441154960482,PROJECTS,Planner,L2,50000.0,2023-11-16,True,Head Office,PMI-ACP,Pakistani,25,CC-PRJ-828,2023-11-16
+EMP-000271,HSE00271,Gordon,آل رفيع,hse00271@company.com,(234)365-5494x717,HSE,HSE Officer,L1,10000.0,2018-09-27,True,Head Office,IOSH,Jordanian,24,CC-HSE-879,2018-09-27
+EMP-000272,ENG00272,Tony,آل عايض,eng00272@company.com,(784)460-2235x6972,ENGINEERING,Engineer,L1,10000.0,2014-03-16,True,Site Office B,,Indian,2,CC-ENG-191,2014-03-16
+EMP-000273,ENG00273,Rhys,Johnston,eng00273@company.com,+4428 9018 0007,ENGINEERING,Engineer,L1,10000.0,2023-06-01,True,Regional Office,LEED AP,American,6,CC-ENG-842,2023-06-01
+EMP-000274,CTR00274,Patricia,آل عطفة,ctr00274@company.com,512.796.6667x6008,CONTRACTS,Contracts Manager,L5,10000000.0,2015-06-12,True,Head Office,,American,11,CC-CTR-242,2015-06-12
+EMP-000275,ENG00275,Caroline,المغاولة,eng00275@company.com,+1-203-635-4216x89421,ENGINEERING,Engineer,L1,10000.0,2013-04-10,True,Site Office A,,Jordanian,5,CC-ENG-469,2013-04-10
+EMP-000276,ENG00276,ناصيف,Martinez,eng00276@company.com,556.225.7532x60332,ENGINEERING,Engineer,L1,10000.0,2021-02-13,True,Head Office,CEng,Saudi,26,CC-ENG-440,2021-02-13
+EMP-000277,HSE00277,Harry,آل محمد بن علي بن جماز,hse00277@company.com,+1-806-948-9090x1001,HSE,Safety Inspector,L2,50000.0,2017-05-23,True,Site Office A,,Bangladeshi,9,CC-HSE-407,2017-05-23
+EMP-000278,ENG00278,Emily,آل خضير,eng00278@company.com,+44(0)292018230,ENGINEERING,Project Engineer,L5,10000000.0,2014-07-04,True,Head Office,,British,19,CC-ENG-852,2014-07-04
+EMP-000279,PRJ00279,Zoe,Howard,prj00279@company.com,549.592.6189x14117,PROJECTS,Planner,L2,50000.0,2022-12-01,True,Site Office A,PMI-SP,British,8,CC-PRJ-677,2022-12-01
+EMP-000280,PRO00280,Gavin,العقيل,pro00280@company.com,(0121) 496 0208,PROCUREMENT,Procurement Manager,L6,,2014-01-13,True,Site Office B,,Jordanian,14,CC-PRO-548,2014-01-13
+EMP-000281,HSE00281,Mary,العليان,hse00281@company.com,0118 496 0001,HSE,HSE Manager,L4,1000000.0,2011-07-21,True,Regional Office,CSP,Pakistani,20,CC-HSE-347,2011-07-21
+EMP-000282,ENG00282,Lisa,Phelps,eng00282@company.com,981-214-3744,ENGINEERING,Engineer,L1,10000.0,2019-06-29,True,Head Office,,Jordanian,26,CC-ENG-647,2019-06-29
+EMP-000283,FIN00283,Melissa,Smith,fin00283@company.com,0808 1570561,FINANCE,Finance Manager,L5,10000000.0,2019-05-20,True,Regional Office,,Sudanese,6,CC-FIN-211,2019-05-20
+EMP-000284,HSE00284,Hollie,Roberts,hse00284@company.com,+1-925-657-9415x52166,HSE,Environmental Specialist,L3,200000.0,2017-12-18,True,Site Office B,CSP,British,28,CC-HSE-208,2017-12-18
+EMP-000285,PRO00285,قطز,Talbot,pro00285@company.com,(912)402-1697,PROCUREMENT,Buyer,L1,10000.0,2021-06-15,True,Site Office B,,Egyptian,29,CC-PRO-483,2021-06-15
+EMP-000286,ENG00286,نشأت,حنبولي,eng00286@company.com,001-527-771-6701x4508,ENGINEERING,Design Engineer,L4,1000000.0,2023-03-15,True,Head Office,,Jordanian,7,CC-ENG-402,2023-03-15
+EMP-000287,ENG00287,Danny,Rivera,eng00287@company.com,(437)356-2890x02877,ENGINEERING,Engineering Manager,L6,,2012-08-08,True,Warehouse,,British,30,CC-ENG-903,2012-08-08
+EMP-000288,PRO00288,قطب,Warren,pro00288@company.com,0114 496 0838,PROCUREMENT,Senior Buyer,L2,50000.0,2020-09-05,True,Warehouse,,Indian,20,CC-PRO-145,2020-09-05
+EMP-000289,HSE00289,Angela,Petersen,hse00289@company.com,879.871.7751x701,HSE,HSE Officer,L1,10000.0,2017-09-11,True,Warehouse,OSHA 30,Sudanese,12,CC-HSE-665,2017-09-11
+EMP-000290,PRO00290,معزّ,Davis,pro00290@company.com,+1-948-783-7550x375,PROCUREMENT,Procurement Specialist,L3,200000.0,2020-05-13,True,Site Office A,CPSM,American,2,CC-PRO-855,2020-05-13
+EMP-000291,PRJ00291,Bradley,الدباغ,prj00291@company.com,205.454.8851,PROJECTS,Project Coordinator,L1,10000.0,2023-04-14,True,Head Office,PMI-ACP,Indian,7,CC-PRJ-918,2023-04-14
+EMP-000292,LEG00292,Clare,بن لادن,leg00292@company.com,293-331-6373x516,LEGAL,Legal Officer,L1,10000.0,2017-04-24,True,Head Office,,Jordanian,34,CC-LEG-754,2017-04-24
+EMP-000293,ENG00293,زكريا,Hughes,eng00293@company.com,(470)480-8697,ENGINEERING,Senior Engineer,L2,50000.0,2018-10-21,True,Site Office A,,Bangladeshi,12,CC-ENG-933,2018-10-21
+EMP-000294,PRJ00294,Mandy,المشاولة,prj00294@company.com,+1-458-466-9346x547,PROJECTS,Project Manager,L4,1000000.0,2023-10-13,True,Warehouse,PRINCE2,Filipino,8,CC-PRJ-287,2023-10-13
+EMP-000295,ENG00295,صنديد,Clark,eng00295@company.com,+44(0)8081570858,ENGINEERING,Engineer,L1,10000.0,2018-09-18,True,Head Office,,Pakistani,32,CC-ENG-750,2018-09-18
+EMP-000296,FIN00296,James,آل خضير,fin00296@company.com,852-628-8515x8799,FINANCE,Finance Manager,L5,10000000.0,2013-11-20,True,Site Office A,ACCA,Jordanian,4,CC-FIN-986,2013-11-20
+EMP-000297,ENG00297,Timothy,مهنا,eng00297@company.com,(220)703-4244x2043,ENGINEERING,Engineer,L1,10000.0,2013-01-23,True,Site Office A,,Jordanian,27,CC-ENG-801,2013-01-23
+EMP-000298,FIN00298,عصام,آل بن لافي,fin00298@company.com,+1-838-863-8406,FINANCE,AP Specialist,L3,200000.0,2019-12-16,True,Head Office,CMA,Filipino,3,CC-FIN-381,2019-12-16
+EMP-000299,PRO00299,دريد,Rivers,pro00299@company.com,001-943-497-3598x9334,PROCUREMENT,Buyer,L1,10000.0,2020-04-04,True,Regional Office,,Sudanese,8,CC-PRO-686,2020-04-04
+EMP-000300,PRO00300,Eric,Anderson,pro00300@company.com,916.406.4842x29405,PROCUREMENT,Category Manager,L4,1000000.0,2018-03-25,True,Regional Office,,Jordanian,35,CC-PRO-323,2018-03-25
+EMP-000301,CTR00301,Paige,الخرافي,ctr00301@company.com,+1-347-498-5158x328,CONTRACTS,Contract Admin,L1,10000.0,2015-07-21,True,Field Camp,,Jordanian,17,CC-CTR-456,2015-07-21
+EMP-000302,LEG00302,فاضل,Smith,leg00302@company.com,(233)355-5439x878,LEGAL,Legal Officer,L1,10000.0,2012-08-19,True,Head Office,,Bangladeshi,23,CC-LEG-981,2012-08-19
+EMP-000303,PRJ00303,Samuel,Sutton,prj00303@company.com,+1-793-905-6164x840,PROJECTS,Scheduler,L3,200000.0,2013-09-21,True,Regional Office,,Saudi,23,CC-PRJ-645,2013-09-21
+EMP-000304,ENG00304,شادن,Johnson,eng00304@company.com,881-312-8801x33613,ENGINEERING,Senior Engineer,L2,50000.0,2017-04-05,False,Head Office,,Sudanese,7,CC-ENG-238,2017-04-05
+EMP-000305,CTR00305,Guy,Price,ctr00305@company.com,901-810-2481x93466,CONTRACTS,Claims Analyst,L4,1000000.0,2011-05-01,False,Regional Office,,Pakistani,9,CC-CTR-355,2011-05-01
+EMP-000306,PRO00306,عدنان,آل حسين,pro00306@company.com,+1-309-619-0158,PROCUREMENT,Senior Buyer,L2,50000.0,2015-07-21,True,Warehouse,,Bangladeshi,18,CC-PRO-742,2015-07-21
+EMP-000307,ENG00307,جميل,Pope,eng00307@company.com,(0306) 999 0766,ENGINEERING,Senior Engineer,L2,50000.0,2012-02-02,True,Warehouse,,British,30,CC-ENG-599,2012-02-02
+EMP-000308,ENG00308,Adam,الخرافي,eng00308@company.com,(468)342-4508,ENGINEERING,Engineer,L1,10000.0,2012-02-03,True,Site Office A,,British,5,CC-ENG-914,2012-02-03
+EMP-000309,FIN00309,Christina,Chamberlain,fin00309@company.com,+1-414-435-3682,FINANCE,Accountant,L1,10000.0,2019-08-21,True,Site Office A,ACCA,British,9,CC-FIN-679,2019-08-21
+EMP-000310,LEG00310,Emily,Garcia,leg00310@company.com,+1-790-787-8141x41397,LEGAL,Senior Counsel,L4,1000000.0,2011-02-01,True,Site Office B,,Jordanian,2,CC-LEG-227,2011-02-01
+EMP-000311,CTR00311,Anne,Smith,ctr00311@company.com,435-777-5949,CONTRACTS,Contract Admin,L1,10000.0,2020-03-28,True,Field Camp,,Egyptian,9,CC-CTR-765,2020-03-28
+EMP-000312,ENG00312,Lynn,Thompson,eng00312@company.com,764.652.5777,ENGINEERING,Project Engineer,L5,10000000.0,2016-02-23,True,Site Office A,PMP,Saudi,26,CC-ENG-740,2016-02-23
+EMP-000313,ENG00313,صدّام,Arnold,eng00313@company.com,242-883-4110,ENGINEERING,Lead Engineer,L3,200000.0,2015-04-03,True,Head Office,PMP,Jordanian,5,CC-ENG-235,2015-04-03
+EMP-000314,PRJ00314,Julie,آل الشيخ,prj00314@company.com,+1-972-356-3942,PROJECTS,Planner,L2,50000.0,2019-12-25,True,Warehouse,,American,9,CC-PRJ-589,2019-12-25
+EMP-000315,PRO00315,Simon,Juarez,pro00315@company.com,492.982.7229,PROCUREMENT,Senior Buyer,L2,50000.0,2012-04-19,True,Site Office A,CPSM,Pakistani,10,CC-PRO-170,2012-04-19
+EMP-000316,FIN00316,Bill,أبو داوود,fin00316@company.com,945-930-3856,FINANCE,Accountant,L1,10000.0,2013-09-06,True,Warehouse,,Pakistani,27,CC-FIN-730,2013-09-06
+EMP-000317,PRJ00317,Francis,الخرافي,prj00317@company.com,001-384-649-8926x659,PROJECTS,Project Manager,L4,1000000.0,2011-12-12,True,Head Office,PMI-SP,British,28,CC-PRJ-422,2011-12-12
+EMP-000318,HSE00318,تقي,آل سعود,hse00318@company.com,(0808)1570577,HSE,HSE Officer,L1,10000.0,2011-11-22,True,Site Office B,,Filipino,2,CC-HSE-968,2011-11-22
+EMP-000319,HSE00319,عبد الغفّار,Hernandez,hse00319@company.com,+44116 496 0318,HSE,HSE Director,L5,10000000.0,2014-08-11,True,Site Office B,,Filipino,4,CC-HSE-902,2014-08-11
+EMP-000320,LEG00320,John,Berry,leg00320@company.com,(491)836-5177x739,LEGAL,General Counsel,L6,,2021-02-06,True,Head Office,,Bangladeshi,5,CC-LEG-640,2021-02-06
+EMP-000321,LEG00321,هاجر,آل مقطة,leg00321@company.com,(880)292-0242,LEGAL,Legal Officer,L1,10000.0,2018-02-06,False,Head Office,,Bangladeshi,27,CC-LEG-474,2018-02-06
+EMP-000322,FIN00322,دانية,آل محمد بن علي بن جماز,fin00322@company.com,479.477.2369,FINANCE,Accountant,L1,10000.0,2020-07-25,False,Regional Office,CPA,Saudi,17,CC-FIN-320,2020-07-25
+EMP-000323,PRO00323,رامز,Alvarez,pro00323@company.com,001-857-499-1366x2103,PROCUREMENT,Buyer,L1,10000.0,2018-12-05,True,Site Office B,,American,28,CC-PRO-818,2018-12-05
+EMP-000324,ENG00324,Heidi,Wilson,eng00324@company.com,+1-808-781-1729x806,ENGINEERING,Lead Engineer,L3,200000.0,2022-01-22,True,Head Office,,Sudanese,14,CC-ENG-927,2022-01-22
+EMP-000325,PRO00325,كاملة,آل خضير,pro00325@company.com,+44(0)306 9990659,PROCUREMENT,Senior Buyer,L2,50000.0,2023-02-26,True,Regional Office,,Indian,20,CC-PRO-815,2023-02-26
+EMP-000326,ENG00326,Justin,الدباغ,eng00326@company.com,+44(0)115 4960473,ENGINEERING,Engineering Manager,L6,,2015-05-09,True,Head Office,,Jordanian,4,CC-ENG-416,2015-05-09
+EMP-000327,PRJ00327,رمضان,آل الشيخ,prj00327@company.com,0117 496 0009,PROJECTS,Scheduler,L3,200000.0,2013-12-09,True,Warehouse,,Pakistani,32,CC-PRJ-455,2013-12-09
+EMP-000328,FIN00328,Kenneth,Simmons,fin00328@company.com,+44(0)289018356,FINANCE,Cost Controller,L4,1000000.0,2015-10-25,True,Head Office,,Filipino,8,CC-FIN-889,2015-10-25
+EMP-000329,LEG00329,Yvonne,العقيل,leg00329@company.com,948-469-5946x368,LEGAL,Contract Analyst,L2,50000.0,2019-08-19,True,Head Office,,Bangladeshi,5,CC-LEG-608,2019-08-19
+EMP-000330,FIN00330,ساجد,آل رفيع,fin00330@company.com,+44121 496 0956,FINANCE,Financial Analyst,L2,50000.0,2021-03-16,True,Head Office,CPA,Bangladeshi,8,CC-FIN-333,2021-03-16
+EMP-000331,PRJ00331,Heather,Brock,prj00331@company.com,272.413.8658,PROJECTS,Project Coordinator,L1,10000.0,2010-04-11,True,Site Office A,PRINCE2,Pakistani,3,CC-PRJ-666,2010-04-11
+EMP-000332,HSE00332,Danielle,Boyle,hse00332@company.com,696.211.4351x9066,HSE,Environmental Specialist,L3,200000.0,2019-05-29,True,Head Office,,British,18,CC-HSE-945,2019-05-29
+EMP-000333,PRO00333,Tracey,Davies,pro00333@company.com,443.309.8839x20530,PROCUREMENT,Senior Buyer,L2,50000.0,2021-04-05,True,Head Office,CIPS,American,5,CC-PRO-998,2021-04-05
+EMP-000334,FIN00334,لوجين,Calhoun,fin00334@company.com,+4420 7496 0380,FINANCE,Accountant,L1,10000.0,2016-12-20,True,Site Office B,CMA,Filipino,20,CC-FIN-857,2016-12-20
+EMP-000335,PRJ00335,Kathleen,Hansen,prj00335@company.com,689-455-4393x7690,PROJECTS,Planner,L2,50000.0,2023-04-10,False,Field Camp,,Sudanese,16,CC-PRJ-254,2023-04-10
+EMP-000336,PRO00336,مكّي,آل العسكري,pro00336@company.com,751-984-8947x6973,PROCUREMENT,Senior Buyer,L2,50000.0,2015-03-24,True,Site Office B,,Saudi,22,CC-PRO-101,2015-03-24
+EMP-000337,HSE00337,ضاحي,آل عواض,hse00337@company.com,(0115)4960416,HSE,Safety Inspector,L2,50000.0,2016-11-24,True,Site Office B,CSP,Saudi,10,CC-HSE-828,2016-11-24
+EMP-000338,ENG00338,Jaclyn,Smith,eng00338@company.com,+44(0)141 496 0588,ENGINEERING,Engineer,L1,10000.0,2015-03-12,True,Site Office B,,British,30,CC-ENG-865,2015-03-12
+EMP-000339,PRO00339,Jill,Martin,pro00339@company.com,(951)582-7553x9423,PROCUREMENT,Buyer,L1,10000.0,2012-12-29,True,Site Office A,,Saudi,28,CC-PRO-778,2012-12-29
+EMP-000340,CTR00340,Christine,أبو داوود,ctr00340@company.com,295.221.1179,CONTRACTS,Contract Admin,L1,10000.0,2015-11-09,True,Field Camp,,American,21,CC-CTR-425,2015-11-09
+EMP-000341,FIN00341,Tracey,آل معيض,fin00341@company.com,+44(0)909 879 0947,FINANCE,Accountant,L1,10000.0,2014-07-19,True,Regional Office,CPA,Pakistani,29,CC-FIN-577,2014-07-19
+EMP-000342,ENG00342,محمّد,Singh,eng00342@company.com,+441174960920,ENGINEERING,Engineer,L1,10000.0,2018-01-14,False,Head Office,,Filipino,8,CC-ENG-192,2018-01-14
+EMP-000343,PRO00343,Molly,Birch,pro00343@company.com,356.727.1875x00369,PROCUREMENT,Procurement Specialist,L3,200000.0,2023-07-14,True,Regional Office,CIPS,Egyptian,23,CC-PRO-505,2023-07-14
+EMP-000344,FIN00344,Claire,Jimenez,fin00344@company.com,0118 496 0479,FINANCE,AP Specialist,L3,200000.0,2015-11-02,True,Head Office,,Jordanian,16,CC-FIN-196,2015-11-02
+EMP-000345,FIN00345,Dustin,آل سلطان,fin00345@company.com,(855)864-7292x93143,FINANCE,Cost Controller,L4,1000000.0,2013-02-19,True,Head Office,,Egyptian,9,CC-FIN-302,2013-02-19
+EMP-000346,HSE00346,Aaron,المغاولة,hse00346@company.com,08081570026,HSE,Safety Inspector,L2,50000.0,2011-11-20,True,Head Office,,Saudi,5,CC-HSE-302,2011-11-20
+EMP-000347,CTR00347,رامز,Morris,ctr00347@company.com,001-657-944-8906x1203,CONTRACTS,Contract Specialist,L2,50000.0,2012-11-21,True,Regional Office,,British,8,CC-CTR-143,2012-11-21
+EMP-000348,CTR00348,Leigh,Jenkins,ctr00348@company.com,+441314960588,CONTRACTS,Contract Admin,L1,10000.0,2022-11-15,True,Warehouse,,Jordanian,2,CC-CTR-491,2022-11-15
+EMP-000349,PRJ00349,جودي,المهنا,prj00349@company.com,+44909 879 0939,PROJECTS,Project Coordinator,L1,10000.0,2014-10-25,False,Head Office,PRINCE2,Saudi,16,CC-PRJ-762,2014-10-25
+EMP-000350,ENG00350,افتكار,الخرافي,eng00350@company.com,001-745-858-7716x94722,ENGINEERING,Senior Engineer,L2,50000.0,2022-05-09,True,Head Office,,American,13,CC-ENG-758,2022-05-09
+EMP-000351,LEG00351,Linda,بن لادن,leg00351@company.com,825-635-5449,LEGAL,Contract Analyst,L2,50000.0,2022-03-12,True,Field Camp,,British,31,CC-LEG-657,2022-03-12
+EMP-000352,HSE00352,Sharon,Parry,hse00352@company.com,362.320.2341x326,HSE,Safety Inspector,L2,50000.0,2022-09-08,True,Site Office A,IOSH,Bangladeshi,15,CC-HSE-130,2022-09-08
+EMP-000353,LEG00353,Alison,Johnson,leg00353@company.com,001-968-411-4921x64334,LEGAL,Senior Counsel,L4,1000000.0,2011-04-25,True,Site Office A,,British,15,CC-LEG-263,2011-04-25
+EMP-000354,PRO00354,جالا,المهنا,pro00354@company.com,(957)878-4872x829,PROCUREMENT,Procurement Specialist,L3,200000.0,2015-12-24,True,Regional Office,,Egyptian,25,CC-PRO-463,2015-12-24
+EMP-000355,CTR00355,Scott,Ali,ctr00355@company.com,(0131) 4960783,CONTRACTS,Contracts Director,L6,,2013-11-24,True,Site Office B,,British,2,CC-CTR-820,2013-11-24
+EMP-000356,PRJ00356,Jodie,Robles,prj00356@company.com,200-882-5478x0774,PROJECTS,PMO Lead,L5,10000000.0,2022-08-23,True,Field Camp,,Jordanian,35,CC-PRJ-416,2022-08-23
+EMP-000357,PRO00357,طيّع,حنبولي,pro00357@company.com,(336)886-6326x634,PROCUREMENT,Buyer,L1,10000.0,2011-04-06,True,Head Office,,Saudi,22,CC-PRO-728,2011-04-06
+EMP-000358,PRO00358,بلسم,Kay,pro00358@company.com,+1-944-684-6312x24179,PROCUREMENT,Buyer,L1,10000.0,2013-12-24,False,Regional Office,CIPS,Pakistani,10,CC-PRO-892,2013-12-24
+EMP-000359,PRO00359,Christopher,Snyder,pro00359@company.com,(908)202-1442,PROCUREMENT,Senior Buyer,L2,50000.0,2018-03-09,False,Site Office A,,American,7,CC-PRO-444,2018-03-09
+EMP-000360,ENG00360,Bethan,Rivera,eng00360@company.com,+44(0)1414960475,ENGINEERING,Engineer,L1,10000.0,2013-07-14,True,Site Office A,,Jordanian,21,CC-ENG-278,2013-07-14
+EMP-000361,PRJ00361,Theresa,آل قصير,prj00361@company.com,8462187234,PROJECTS,Scheduler,L3,200000.0,2023-10-07,True,Head Office,,Pakistani,25,CC-PRJ-414,2023-10-07
+EMP-000362,PRJ00362,Steven,Boyd,prj00362@company.com,(0306)9990730,PROJECTS,Project Coordinator,L1,10000.0,2013-12-26,True,Field Camp,,American,3,CC-PRJ-286,2013-12-26
+EMP-000363,PRJ00363,صهيب,Young,prj00363@company.com,764.252.0881x4743,PROJECTS,PMO Lead,L5,10000000.0,2023-09-18,True,Site Office B,,Pakistani,22,CC-PRJ-863,2023-09-18
+EMP-000364,PRO00364,روحي,Pearson,pro00364@company.com,+44(0)1214960024,PROCUREMENT,Senior Buyer,L2,50000.0,2017-03-02,True,Regional Office,CPM,Jordanian,1,CC-PRO-371,2017-03-02
+EMP-000365,PRO00365,بتول,Begum,pro00365@company.com,9973925132,PROCUREMENT,Procurement Specialist,L3,200000.0,2017-11-11,True,Head Office,CPSM,Jordanian,27,CC-PRO-270,2017-11-11
+EMP-000366,LEG00366,Alex,Norris,leg00366@company.com,7057281273,LEGAL,Contract Analyst,L2,50000.0,2018-06-30,True,Site Office A,,Jordanian,15,CC-LEG-266,2018-06-30
+EMP-000367,FIN00367,Diana,Moore,fin00367@company.com,(01632)960240,FINANCE,Cost Controller,L4,1000000.0,2010-10-01,True,Site Office A,,Indian,22,CC-FIN-274,2010-10-01
+EMP-000368,LEG00368,سعود,Doyle,leg00368@company.com,001-473-392-8557x498,LEGAL,Legal Officer,L1,10000.0,2011-09-07,True,Regional Office,,Indian,22,CC-LEG-708,2011-09-07
+EMP-000369,CTR00369,ناظم,Hunter,ctr00369@company.com,+44191 496 0570,CONTRACTS,Contracts Manager,L5,10000000.0,2010-09-11,True,Warehouse,,Bangladeshi,28,CC-CTR-260,2010-09-11
+EMP-000370,PRO00370,Michelle,أبو داوود,pro00370@company.com,+1-459-635-1863x878,PROCUREMENT,Senior Buyer,L2,50000.0,2014-04-06,True,Site Office B,,Sudanese,17,CC-PRO-776,2014-04-06
+EMP-000371,ENG00371,Anthony,الحكير,eng00371@company.com,981-502-2031,ENGINEERING,Engineer,L1,10000.0,2011-02-11,True,Site Office B,,Saudi,24,CC-ENG-103,2011-02-11
+EMP-000372,ENG00372,خالدي,Bevan,eng00372@company.com,389.994.0539x1037,ENGINEERING,Engineer,L1,10000.0,2023-06-18,True,Head Office,CEng,Indian,31,CC-ENG-964,2023-06-18
+EMP-000373,PRO00373,Debra,Navarro,pro00373@company.com,+44808 157 0509,PROCUREMENT,Category Manager,L4,1000000.0,2020-07-24,True,Warehouse,CPSM,Pakistani,24,CC-PRO-490,2020-07-24
+EMP-000374,ENG00374,Jessica,الحكير,eng00374@company.com,+44114 4960381,ENGINEERING,Senior Engineer,L2,50000.0,2015-11-27,True,Head Office,,Bangladeshi,4,CC-ENG-254,2015-11-27
+EMP-000375,HSE00375,روبا,Young,hse00375@company.com,783.992.8861,HSE,Environmental Specialist,L3,200000.0,2011-12-04,True,Regional Office,ISO 45001 Lead Auditor,Egyptian,4,CC-HSE-960,2011-12-04
+EMP-000376,ENG00376,عمر,Ali,eng00376@company.com,(786)785-2897,ENGINEERING,Senior Engineer,L2,50000.0,2022-01-04,True,Field Camp,,Egyptian,31,CC-ENG-406,2022-01-04
+EMP-000377,PRO00377,Jodie,Holmes,pro00377@company.com,(259)239-8368x45776,PROCUREMENT,Procurement Lead,L5,10000000.0,2010-10-12,True,Field Camp,,Bangladeshi,10,CC-PRO-223,2010-10-12
+EMP-000378,CTR00378,Daniel,آل معيض,ctr00378@company.com,0113 4960433,CONTRACTS,Contract Specialist,L2,50000.0,2013-10-01,False,Regional Office,,Pakistani,3,CC-CTR-533,2013-10-01
+EMP-000379,PRO00379,Clifford,Duncan,pro00379@company.com,589.592.1075x22459,PROCUREMENT,Procurement Specialist,L3,200000.0,2014-07-13,False,Site Office B,,Filipino,21,CC-PRO-844,2014-07-13
+EMP-000380,CTR00380,يافع,Ferguson,ctr00380@company.com,615.272.7919,CONTRACTS,Contract Admin,L1,10000.0,2018-09-15,True,Site Office B,,Filipino,34,CC-CTR-569,2018-09-15
+EMP-000381,CTR00381,Stephanie,آل عواض,ctr00381@company.com,001-755-466-1390x60480,CONTRACTS,Contract Admin,L1,10000.0,2023-12-23,True,Regional Office,,Indian,27,CC-CTR-253,2023-12-23
+EMP-000382,PRO00382,David,Alvarez,pro00382@company.com,6678998136,PROCUREMENT,Procurement Specialist,L3,200000.0,2012-03-31,False,Site Office B,CPM,Sudanese,23,CC-PRO-998,2012-03-31
+EMP-000383,ENG00383,صادح,Byrne,eng00383@company.com,4869416862,ENGINEERING,Senior Engineer,L2,50000.0,2020-11-21,True,Site Office A,LEED AP,Pakistani,26,CC-ENG-139,2020-11-21
+EMP-000384,ENG00384,Emily,Owen,eng00384@company.com,789.383.3146,ENGINEERING,Project Engineer,L5,10000000.0,2015-05-01,True,Site Office A,CEng,Saudi,22,CC-ENG-937,2015-05-01
+EMP-000385,HSE00385,Katherine,Rodriguez,hse00385@company.com,559-704-2597x92703,HSE,Safety Inspector,L2,50000.0,2021-01-10,True,Warehouse,,Egyptian,9,CC-HSE-407,2021-01-10
+EMP-000386,CTR00386,Rhys,المهنا,ctr00386@company.com,992.240.5147,CONTRACTS,Contract Specialist,L2,50000.0,2017-03-13,True,Site Office A,,Indian,13,CC-CTR-552,2017-03-13
+EMP-000387,PRO00387,Ronald,Campbell,pro00387@company.com,888.248.7920,PROCUREMENT,Category Manager,L4,1000000.0,2020-11-12,True,Regional Office,,Sudanese,11,CC-PRO-167,2020-11-12
+EMP-000388,ENG00388,Natasha,آل خضير,eng00388@company.com,+1-840-570-1645x104,ENGINEERING,Senior Engineer,L2,50000.0,2013-01-16,True,Site Office B,,Pakistani,13,CC-ENG-996,2013-01-16
+EMP-000389,HSE00389,James,Moore,hse00389@company.com,(0161) 4960981,HSE,HSE Manager,L4,1000000.0,2015-08-06,True,Head Office,OSHA 30,Filipino,24,CC-HSE-943,2015-08-06
+EMP-000390,FIN00390,فخر الدّين,Johnson,fin00390@company.com,2037845762,FINANCE,Financial Analyst,L2,50000.0,2012-10-11,True,Head Office,,Jordanian,12,CC-FIN-991,2012-10-11
+EMP-000391,FIN00391,Cameron,آل سلطان,fin00391@company.com,840.546.0843x25621,FINANCE,AP Specialist,L3,200000.0,2017-09-21,True,Regional Office,,Indian,19,CC-FIN-128,2017-09-21
+EMP-000392,ENG00392,زهران,Delgado,eng00392@company.com,+44121 4960957,ENGINEERING,Engineer,L1,10000.0,2022-11-01,True,Head Office,PMP,Egyptian,18,CC-ENG-767,2022-11-01
+EMP-000393,ENG00393,Angela,آل رفيع,eng00393@company.com,+1-432-748-2629,ENGINEERING,Engineer,L1,10000.0,2010-03-14,True,Head Office,PE,Egyptian,17,CC-ENG-722,2010-03-14
+EMP-000394,HSE00394,وسام,آل عواض,hse00394@company.com,220-656-6474x23122,HSE,Safety Inspector,L2,50000.0,2016-03-05,True,Site Office A,IOSH,Egyptian,30,CC-HSE-409,2016-03-05
+EMP-000395,PRJ00395,Melissa,Jones,prj00395@company.com,930.751.7289,PROJECTS,Project Manager,L4,1000000.0,2018-11-28,True,Head Office,,British,19,CC-PRJ-405,2018-11-28
+EMP-000396,PRJ00396,Sara,Taylor,prj00396@company.com,530.360.4633,PROJECTS,Planner,L2,50000.0,2017-07-17,False,Site Office B,,Filipino,20,CC-PRJ-292,2017-07-17
+EMP-000397,PRO00397,Carol,Franklin,pro00397@company.com,+44292018573,PROCUREMENT,Category Manager,L4,1000000.0,2011-04-11,True,Regional Office,,British,9,CC-PRO-838,2011-04-11
+EMP-000398,PRO00398,وفائي,المهنا,pro00398@company.com,(01632) 960569,PROCUREMENT,Senior Buyer,L2,50000.0,2016-08-18,True,Site Office A,CIPS,Bangladeshi,13,CC-PRO-451,2016-08-18
+EMP-000399,PRJ00399,Kelly,Young,prj00399@company.com,+1-808-217-7038x8608,PROJECTS,Project Coordinator,L1,10000.0,2021-12-28,True,Site Office A,,British,33,CC-PRJ-407,2021-12-28
+EMP-000400,HSE00400,حنبل,المغاولة,hse00400@company.com,+44(0)151 4960264,HSE,HSE Manager,L4,1000000.0,2022-07-10,True,Head Office,IOSH,Sudanese,12,CC-HSE-796,2022-07-10
+EMP-000401,LEG00401,Shawn,آل عطفة,leg00401@company.com,971.281.2982x665,LEGAL,Legal Counsel,L3,200000.0,2014-12-26,True,Warehouse,,Filipino,27,CC-LEG-907,2014-12-26
+EMP-000402,LEG00402,هند,Davis,leg00402@company.com,+44(0)1144960452,LEGAL,Contract Analyst,L2,50000.0,2023-02-18,True,Regional Office,,Jordanian,4,CC-LEG-987,2023-02-18
+EMP-000403,PRJ00403,دانية,Martin,prj00403@company.com,451.786.8926x860,PROJECTS,Scheduler,L3,200000.0,2023-12-03,True,Regional Office,,American,34,CC-PRJ-405,2023-12-03
+EMP-000404,ENG00404,Cindy,Brown,eng00404@company.com,(406)544-7421,ENGINEERING,Project Engineer,L5,10000000.0,2013-05-20,True,Head Office,,Bangladeshi,30,CC-ENG-246,2013-05-20
+EMP-000405,ENG00405,مُناضل,Robinson,eng00405@company.com,09098790780,ENGINEERING,Lead Engineer,L3,200000.0,2011-10-25,True,Site Office B,PE,Saudi,29,CC-ENG-380,2011-10-25
+EMP-000406,PRO00406,Eddie,الجفالي,pro00406@company.com,576.271.9903x8498,PROCUREMENT,Category Manager,L4,1000000.0,2022-12-04,True,Site Office A,,Indian,9,CC-PRO-729,2022-12-04
+EMP-000407,ENG00407,Emily,كانو,eng00407@company.com,(809)494-5101,ENGINEERING,Senior Engineer,L2,50000.0,2019-08-16,False,Site Office A,PMP,British,1,CC-ENG-429,2019-08-16
+EMP-000408,HSE00408,Katherine,آل جعفر,hse00408@company.com,001-799-882-7950x145,HSE,Safety Inspector,L2,50000.0,2010-05-27,True,Site Office B,IOSH,Filipino,9,CC-HSE-205,2010-05-27
+EMP-000409,ENG00409,Kerry,Whittaker,eng00409@company.com,0161 496 0214,ENGINEERING,Lead Engineer,L3,200000.0,2013-09-30,True,Head Office,,Jordanian,34,CC-ENG-710,2013-09-30
+EMP-000410,FIN00410,عقيل,Whittaker,fin00410@company.com,690.819.8179,FINANCE,Financial Analyst,L2,50000.0,2013-01-01,True,Field Camp,,Egyptian,11,CC-FIN-931,2013-01-01
+EMP-000411,ENG00411,Andrew,آل رفيع,eng00411@company.com,(529)297-8772x934,ENGINEERING,Engineer,L1,10000.0,2012-12-10,True,Head Office,,Indian,24,CC-ENG-828,2012-12-10
+EMP-000412,PRJ00412,عبد الغني,Pearson,prj00412@company.com,296.560.5583,PROJECTS,Project Coordinator,L1,10000.0,2015-09-27,True,Site Office B,,Saudi,7,CC-PRJ-769,2015-09-27
+EMP-000413,HSE00413,Daniel,Cook,hse00413@company.com,(0121) 4960885,HSE,HSE Officer,L1,10000.0,2012-08-06,True,Site Office A,CSP,Pakistani,14,CC-HSE-811,2012-08-06
+EMP-000414,PRJ00414,Dean,العجلان,prj00414@company.com,001-290-423-5577,PROJECTS,Project Coordinator,L1,10000.0,2019-06-10,True,Warehouse,PRINCE2,American,7,CC-PRJ-623,2019-06-10
+EMP-000415,PRJ00415,Juan,Morgan,prj00415@company.com,776-308-4958x80395,PROJECTS,Project Coordinator,L1,10000.0,2012-07-22,True,Site Office A,,Filipino,34,CC-PRJ-306,2012-07-22
+EMP-000416,ENG00416,كبير,Larson,eng00416@company.com,(028) 9018829,ENGINEERING,Senior Engineer,L2,50000.0,2013-08-06,True,Site Office A,LEED AP,British,16,CC-ENG-102,2013-08-06
+EMP-000417,PRO00417,Nicholas,Shaw,pro00417@company.com,01632 960 504,PROCUREMENT,Buyer,L1,10000.0,2012-06-23,True,Warehouse,CIPS,Sudanese,5,CC-PRO-840,2012-06-23
+EMP-000418,PRJ00418,Clive,Brooks,prj00418@company.com,+44151 4960438,PROJECTS,PMO Lead,L5,10000000.0,2015-03-09,True,Field Camp,PMP,Indian,12,CC-PRJ-995,2015-03-09
+EMP-000419,PRO00419,Lynn,مهنا,pro00419@company.com,001-731-478-0782x35784,PROCUREMENT,Buyer,L1,10000.0,2017-01-05,True,Head Office,,Saudi,1,CC-PRO-972,2017-01-05
+EMP-000420,PRO00420,Jordan,Meyer,pro00420@company.com,307.768.1040,PROCUREMENT,Procurement Specialist,L3,200000.0,2017-05-16,True,Site Office A,,Indian,24,CC-PRO-934,2017-05-16
+EMP-000421,ENG00421,Kieran,Hill,eng00421@company.com,001-940-394-3533x4485,ENGINEERING,Engineer,L1,10000.0,2018-12-23,False,Head Office,,Jordanian,27,CC-ENG-764,2018-12-23
+EMP-000422,LEG00422,Larry,Henderson,leg00422@company.com,+1-588-413-8585x424,LEGAL,Legal Officer,L1,10000.0,2012-12-21,True,Head Office,,Pakistani,7,CC-LEG-526,2012-12-21
+EMP-000423,CTR00423,أسرار,شربتلي,ctr00423@company.com,(807)401-6016,CONTRACTS,Contract Specialist,L2,50000.0,2022-10-05,True,Head Office,,American,23,CC-CTR-726,2022-10-05
+EMP-000424,PRO00424,Stanley,فصيل,pro00424@company.com,001-379-954-5381x792,PROCUREMENT,Procurement Specialist,L3,200000.0,2012-12-06,True,Site Office A,,Jordanian,3,CC-PRO-164,2012-12-06
+EMP-000425,ENG00425,Thomas,Jones,eng00425@company.com,001-977-233-2945x62557,ENGINEERING,Senior Engineer,L2,50000.0,2021-10-09,True,Site Office B,,British,34,CC-ENG-635,2021-10-09
+EMP-000426,PRJ00426,ماجد,Oliver,prj00426@company.com,959-892-8161x5814,PROJECTS,Scheduler,L3,200000.0,2019-09-16,True,Head Office,PMI-SP,Pakistani,4,CC-PRJ-111,2019-09-16
+EMP-000427,PRJ00427,Elaine,Stevenson,prj00427@company.com,(776)515-3966,PROJECTS,Project Coordinator,L1,10000.0,2020-07-11,True,Regional Office,PMI-SP,British,16,CC-PRJ-438,2020-07-11
+EMP-000428,CTR00428,Carol,George,ctr00428@company.com,001-971-499-7581,CONTRACTS,Contract Admin,L1,10000.0,2014-12-30,True,Site Office A,,Egyptian,6,CC-CTR-570,2014-12-30
+EMP-000429,ENG00429,Amber,الشايع,eng00429@company.com,+1-965-670-1329x022,ENGINEERING,Lead Engineer,L3,200000.0,2011-12-23,True,Site Office A,LEED AP,Saudi,7,CC-ENG-513,2011-12-23
+EMP-000430,ENG00430,Melissa,Wood,eng00430@company.com,254.894.6519,ENGINEERING,Lead Engineer,L3,200000.0,2010-01-02,True,Regional Office,,Filipino,33,CC-ENG-675,2010-01-02
+EMP-000431,PRO00431,كارم,Palmer,pro00431@company.com,8087514036,PROCUREMENT,Procurement Specialist,L3,200000.0,2017-08-24,True,Head Office,CPSM,British,31,CC-PRO-833,2017-08-24
+EMP-000432,PRJ00432,زايد,Smith,prj00432@company.com,427.623.8656,PROJECTS,Scheduler,L3,200000.0,2012-07-23,True,Warehouse,PMI-ACP,Filipino,34,CC-PRJ-482,2012-07-23
+EMP-000433,PRJ00433,Natasha,Fisher,prj00433@company.com,8274621267,PROJECTS,Project Coordinator,L1,10000.0,2013-09-06,True,Regional Office,,American,7,CC-PRJ-360,2013-09-06
+EMP-000434,PRJ00434,Rachael,Lane,prj00434@company.com,01414960532,PROJECTS,Project Coordinator,L1,10000.0,2018-10-24,True,Regional Office,PMI-ACP,Indian,27,CC-PRJ-147,2018-10-24
+EMP-000435,CTR00435,Betty,آل حسين,ctr00435@company.com,984.768.9500,CONTRACTS,Claims Analyst,L4,1000000.0,2023-03-17,True,Regional Office,,Jordanian,33,CC-CTR-237,2023-03-17
+EMP-000436,CTR00436,Eleanor,Harrison,ctr00436@company.com,001-684-278-1891x3718,CONTRACTS,Contract Admin,L1,10000.0,2011-02-02,True,Site Office A,,Bangladeshi,31,CC-CTR-620,2011-02-02
+EMP-000437,HSE00437,سهيل,آل بن لافي,hse00437@company.com,295.965.4420x9494,HSE,HSE Director,L5,10000000.0,2022-12-23,True,Regional Office,ISO 45001 Lead Auditor,Bangladeshi,21,CC-HSE-616,2022-12-23
+EMP-000438,LEG00438,Stephen,آل رفيع,leg00438@company.com,690-647-1281x4429,LEGAL,Contract Analyst,L2,50000.0,2023-08-29,False,Regional Office,,Filipino,26,CC-LEG-451,2023-08-29
+EMP-000439,CTR00439,Graham,Larson,ctr00439@company.com,(492)275-2437,CONTRACTS,Contract Specialist,L2,50000.0,2012-12-28,True,Site Office B,,Sudanese,20,CC-CTR-963,2012-12-28
+EMP-000440,PRJ00440,Alice,Jones,prj00440@company.com,466.937.2395x0410,PROJECTS,Project Manager,L4,1000000.0,2022-06-01,True,Head Office,,Filipino,23,CC-PRJ-788,2022-06-01
+EMP-000441,PRO00441,Josephine,Hunt,pro00441@company.com,666.974.2860,PROCUREMENT,Procurement Specialist,L3,200000.0,2013-12-27,True,Warehouse,CIPS,British,31,CC-PRO-696,2013-12-27
+EMP-000442,PRJ00442,Abbie,الخرافي,prj00442@company.com,6183569454,PROJECTS,Scheduler,L3,200000.0,2019-05-13,True,Regional Office,,American,1,CC-PRJ-635,2019-05-13
+EMP-000443,PRO00443,غطفان,آل عايض,pro00443@company.com,(0306)9990393,PROCUREMENT,Senior Buyer,L2,50000.0,2011-03-11,True,Head Office,,Pakistani,19,CC-PRO-799,2011-03-11
+EMP-000444,ENG00444,Robert,آل خضير,eng00444@company.com,+441914960001,ENGINEERING,Design Engineer,L4,1000000.0,2016-08-14,True,Site Office B,,Jordanian,7,CC-ENG-730,2016-08-14
+EMP-000445,LEG00445,روحي,Gates,leg00445@company.com,553.344.3009x109,LEGAL,Legal Counsel,L3,200000.0,2015-01-12,True,Site Office B,,Egyptian,33,CC-LEG-903,2015-01-12
+EMP-000446,HSE00446,Joshua,Reyes,hse00446@company.com,(692)412-4471x7465,HSE,Environmental Specialist,L3,200000.0,2011-01-20,False,Site Office A,,British,4,CC-HSE-113,2011-01-20
+EMP-000447,PRJ00447,Brian,Robinson,prj00447@company.com,(0114) 496 0442,PROJECTS,Project Coordinator,L1,10000.0,2019-12-09,True,Field Camp,,British,35,CC-PRJ-856,2019-12-09
+EMP-000448,PRJ00448,Charles,آل محمد بن علي بن جماز,prj00448@company.com,+1-662-371-2863x917,PROJECTS,Project Manager,L4,1000000.0,2014-05-05,True,Head Office,,Pakistani,12,CC-PRJ-852,2014-05-05
+EMP-000449,FIN00449,Elizabeth,Hayes,fin00449@company.com,(0113) 4960720,FINANCE,Financial Analyst,L2,50000.0,2019-08-12,True,Head Office,ACCA,Saudi,22,CC-FIN-577,2019-08-12
+EMP-000450,PRJ00450,مُسعف,Williams,prj00450@company.com,(0141) 4960908,PROJECTS,Project Coordinator,L1,10000.0,2013-06-13,False,Site Office B,,Bangladeshi,20,CC-PRJ-602,2013-06-13
+EMP-000451,HSE00451,Eleanor,Francis,hse00451@company.com,001-218-330-6719x85546,HSE,Environmental Specialist,L3,200000.0,2011-08-21,True,Site Office A,OSHA 30,Sudanese,5,CC-HSE-905,2011-08-21
+EMP-000452,FIN00452,حسن,Benson,fin00452@company.com,03069990432,FINANCE,Financial Analyst,L2,50000.0,2022-01-17,True,Site Office A,,British,22,CC-FIN-469,2022-01-17
+EMP-000453,ENG00453,Graham,الشايع,eng00453@company.com,+44(0)29 2018615,ENGINEERING,Engineering Manager,L6,,2023-11-13,True,Field Camp,,Saudi,8,CC-ENG-784,2023-11-13
+EMP-000454,ENG00454,Eleanor,Morgan,eng00454@company.com,320.630.9376,ENGINEERING,Engineer,L1,10000.0,2023-10-07,False,Head Office,CEng,American,8,CC-ENG-495,2023-10-07
+EMP-000455,ENG00455,يحيى,Buckley,eng00455@company.com,9504506138,ENGINEERING,Lead Engineer,L3,200000.0,2010-07-22,False,Regional Office,,Sudanese,29,CC-ENG-598,2010-07-22
+EMP-000456,PRO00456,سيف الدّين,آل جعفر,pro00456@company.com,001-327-907-9032x0204,PROCUREMENT,Procurement Lead,L5,10000000.0,2014-04-27,True,Head Office,CIPS,Indian,14,CC-PRO-786,2014-04-27
+EMP-000457,PRJ00457,Theresa,المهنا,prj00457@company.com,879-793-1365,PROJECTS,Project Coordinator,L1,10000.0,2019-07-08,True,Head Office,,American,5,CC-PRJ-864,2019-07-08
+EMP-000458,PRJ00458,Sara,Anderson,prj00458@company.com,430-992-5114x26258,PROJECTS,Project Coordinator,L1,10000.0,2017-06-10,True,Head Office,PMI-ACP,Sudanese,5,CC-PRJ-688,2017-06-10
+EMP-000459,HSE00459,زبير,Thomas,hse00459@company.com,+1-862-907-1002x194,HSE,HSE Director,L5,10000000.0,2019-02-22,True,Site Office B,NEBOSH,American,8,CC-HSE-647,2019-02-22
+EMP-000460,PRO00460,Cheryl,Carlson,pro00460@company.com,0191 4960763,PROCUREMENT,Procurement Specialist,L3,200000.0,2011-06-03,True,Site Office B,,Indian,23,CC-PRO-614,2011-06-03
+EMP-000461,PRO00461,Kayleigh,آل علي,pro00461@company.com,791.545.6083x3181,PROCUREMENT,Category Manager,L4,1000000.0,2016-10-04,True,Head Office,,American,26,CC-PRO-941,2016-10-04
+EMP-000462,PRJ00462,مهيب,Noble,prj00462@company.com,0114 4960312,PROJECTS,Planner,L2,50000.0,2021-12-19,True,Warehouse,,Sudanese,19,CC-PRJ-749,2021-12-19
+EMP-000463,PRO00463,Joy,آل عايض,pro00463@company.com,9052436459,PROCUREMENT,Procurement Specialist,L3,200000.0,2018-05-15,False,Head Office,,Pakistani,8,CC-PRO-142,2018-05-15
+EMP-000464,PRO00464,Julie,Wilson,pro00464@company.com,7788113799,PROCUREMENT,Procurement Specialist,L3,200000.0,2022-01-18,True,Head Office,CPM,Egyptian,27,CC-PRO-761,2022-01-18
+EMP-000465,LEG00465,معن,Hughes,leg00465@company.com,431-536-3631x79706,LEGAL,Legal Officer,L1,10000.0,2014-02-16,True,Regional Office,,Egyptian,8,CC-LEG-285,2014-02-16
+EMP-000466,PRJ00466,Samantha,Wolf,prj00466@company.com,335.943.5209x042,PROJECTS,Scheduler,L3,200000.0,2011-03-22,True,Field Camp,,Jordanian,5,CC-PRJ-397,2011-03-22
+EMP-000467,PRJ00467,Stephen,الراشد,prj00467@company.com,992-992-9831x6873,PROJECTS,Project Coordinator,L1,10000.0,2014-06-06,True,Site Office A,PRINCE2,Egyptian,7,CC-PRJ-391,2014-06-06
+EMP-000468,PRJ00468,Billy,Hunter,prj00468@company.com,235.869.3929,PROJECTS,PMO Lead,L5,10000000.0,2017-02-16,True,Site Office A,,Bangladeshi,10,CC-PRJ-679,2017-02-16
+EMP-000469,PRJ00469,هنادي,Giles,prj00469@company.com,3682671773,PROJECTS,Project Manager,L4,1000000.0,2019-08-10,True,Site Office A,,American,18,CC-PRJ-960,2019-08-10
+EMP-000470,ENG00470,Morgan,Gallagher,eng00470@company.com,(943)910-7427x990,ENGINEERING,Lead Engineer,L3,200000.0,2017-06-09,True,Site Office A,,Filipino,32,CC-ENG-664,2017-06-09
+EMP-000471,PRO00471,Hollie,Hill,pro00471@company.com,(028) 9018701,PROCUREMENT,Procurement Specialist,L3,200000.0,2011-11-03,True,Regional Office,CSCP,Filipino,5,CC-PRO-844,2011-11-03
+EMP-000472,PRO00472,صبيح,آل حسين,pro00472@company.com,0151 4960498,PROCUREMENT,Buyer,L1,10000.0,2021-05-17,True,Regional Office,,Bangladeshi,14,CC-PRO-137,2021-05-17
+EMP-000473,PRJ00473,Tina,Fernandez,prj00473@company.com,308-550-1657x90552,PROJECTS,Planner,L2,50000.0,2022-02-08,True,Regional Office,PRINCE2,Bangladeshi,19,CC-PRJ-237,2022-02-08
+EMP-000474,FIN00474,Donna,آل رفيع,fin00474@company.com,793.935.5486x4015,FINANCE,Financial Analyst,L2,50000.0,2018-11-25,True,Head Office,CMA,Sudanese,9,CC-FIN-556,2018-11-25
+EMP-000475,PRO00475,Jasmine,Roberts,pro00475@company.com,01632 960884,PROCUREMENT,Procurement Specialist,L3,200000.0,2022-09-10,True,Field Camp,,Jordanian,23,CC-PRO-141,2022-09-10
+EMP-000476,PRO00476,Nathan,آل سلطان,pro00476@company.com,337-411-6241,PROCUREMENT,Senior Buyer,L2,50000.0,2011-05-30,True,Head Office,,Sudanese,24,CC-PRO-497,2011-05-30
+EMP-000477,FIN00477,Helen,المهنا,fin00477@company.com,01164960380,FINANCE,Financial Analyst,L2,50000.0,2011-01-16,True,Site Office B,ACCA,Filipino,35,CC-FIN-683,2011-01-16
+EMP-000478,PRO00478,Jenna,المغاولة,pro00478@company.com,756.770.4310x3856,PROCUREMENT,Procurement Specialist,L3,200000.0,2018-03-12,True,Regional Office,CPM,American,15,CC-PRO-628,2018-03-12
+EMP-000479,ENG00479,Glen,Andrews,eng00479@company.com,274.492.4243x754,ENGINEERING,Design Engineer,L4,1000000.0,2017-09-27,True,Site Office A,,Sudanese,9,CC-ENG-550,2017-09-27
+EMP-000480,PRO00480,زبير,Smith,pro00480@company.com,(284)722-2231,PROCUREMENT,Buyer,L1,10000.0,2016-04-19,True,Head Office,CIPS,Egyptian,27,CC-PRO-930,2016-04-19
+EMP-000481,ENG00481,Samantha,Begum,eng00481@company.com,480.655.2578,ENGINEERING,Engineer,L1,10000.0,2020-09-27,True,Site Office B,,American,2,CC-ENG-349,2020-09-27
+EMP-000482,PRO00482,رضوان,العقيل,pro00482@company.com,952.708.8547x492,PROCUREMENT,Procurement Specialist,L3,200000.0,2013-08-12,True,Site Office B,,Pakistani,4,CC-PRO-270,2013-08-12
+EMP-000483,ENG00483,William,فصيل,eng00483@company.com,(781)340-6937,ENGINEERING,Engineer,L1,10000.0,2019-02-04,True,Site Office B,CEng,Indian,14,CC-ENG-559,2019-02-04
+EMP-000484,PRJ00484,Tracy,حجار,prj00484@company.com,001-383-843-0187,PROJECTS,Planner,L2,50000.0,2020-10-20,True,Regional Office,,Bangladeshi,12,CC-PRJ-738,2020-10-20
+EMP-000485,PRJ00485,Mohammad,Cameron,prj00485@company.com,6567265650,PROJECTS,Project Coordinator,L1,10000.0,2017-09-08,False,Site Office B,PMI-SP,American,9,CC-PRJ-211,2017-09-08
+EMP-000486,PRO00486,Kevin,الجابر,pro00486@company.com,376.474.2662,PROCUREMENT,Senior Buyer,L2,50000.0,2021-04-24,True,Regional Office,,Pakistani,31,CC-PRO-729,2021-04-24
+EMP-000487,PRJ00487,Jacob,Harris,prj00487@company.com,001-961-406-4628,PROJECTS,PMO Lead,L5,10000000.0,2021-12-02,True,Head Office,PRINCE2,Bangladeshi,35,CC-PRJ-947,2021-12-02
+EMP-000488,PRO00488,Yvonne,العجلان,pro00488@company.com,+44(0)113 4960494,PROCUREMENT,Procurement Lead,L5,10000000.0,2019-09-05,True,Site Office A,CPSM,Egyptian,31,CC-PRO-908,2019-09-05
+EMP-000489,HSE00489,جهراء,Johnson,hse00489@company.com,4029447146,HSE,Safety Inspector,L2,50000.0,2022-12-03,True,Head Office,OSHA 30,Indian,19,CC-HSE-712,2022-12-03
+EMP-000490,LEG00490,ميّاد,الراشد,leg00490@company.com,+44161 496 0195,LEGAL,Contract Analyst,L2,50000.0,2014-03-29,True,Warehouse,,Saudi,34,CC-LEG-220,2014-03-29
+EMP-000491,FIN00491,هند,آل العسكري,fin00491@company.com,(028) 9018715,FINANCE,Financial Analyst,L2,50000.0,2014-08-10,True,Site Office A,,Pakistani,28,CC-FIN-767,2014-08-10
+EMP-000492,PRJ00492,Bethany,آل سعود,prj00492@company.com,(0116)4960902,PROJECTS,Project Coordinator,L1,10000.0,2022-01-09,True,Site Office A,PMI-SP,Egyptian,27,CC-PRJ-665,2022-01-09
+EMP-000493,HSE00493,Heather,Parker,hse00493@company.com,(0116)4960045,HSE,Safety Inspector,L2,50000.0,2018-04-21,True,Site Office A,,Bangladeshi,23,CC-HSE-892,2018-04-21
+EMP-000494,PRJ00494,شعبان,George,prj00494@company.com,(0191) 496 0183,PROJECTS,Scheduler,L3,200000.0,2012-09-02,True,Site Office A,,Pakistani,7,CC-PRJ-319,2012-09-02
+EMP-000495,FIN00495,Derrick,Patel,fin00495@company.com,+1-755-444-5189,FINANCE,Cost Controller,L4,1000000.0,2022-05-08,True,Warehouse,CFA,Saudi,6,CC-FIN-943,2022-05-08
+EMP-000496,PRO00496,Eric,Decker,pro00496@company.com,+44(0)141 496 0521,PROCUREMENT,Procurement Lead,L5,10000000.0,2019-10-07,True,Head Office,CIPS,American,26,CC-PRO-728,2019-10-07
+EMP-000497,PRJ00497,فلاح,Montoya,prj00497@company.com,+1-788-681-6711x207,PROJECTS,Project Coordinator,L1,10000.0,2023-05-27,True,Regional Office,PMI-SP,Jordanian,1,CC-PRJ-306,2023-05-27
+EMP-000498,LEG00498,رشيد,Smith,leg00498@company.com,352.840.1322x34232,LEGAL,Legal Manager,L5,10000000.0,2021-08-15,True,Head Office,,Bangladeshi,33,CC-LEG-628,2021-08-15
+EMP-000499,PRJ00499,Antonio,المشاولة,prj00499@company.com,0306 9990603,PROJECTS,Scheduler,L3,200000.0,2010-10-23,True,Warehouse,,Indian,18,CC-PRJ-898,2010-10-23
+EMP-000500,ENG00500,صارم,Lambert,eng00500@company.com,3715401401,ENGINEERING,Lead Engineer,L3,200000.0,2019-02-04,True,Site Office B,,Indian,6,CC-ENG-662,2019-02-04
+EMP-000501,ENG00501,Lori,Rice,eng00501@company.com,524-395-5289,ENGINEERING,Design Engineer,L4,1000000.0,2023-01-28,True,Field Camp,PMP,Jordanian,26,CC-ENG-688,2023-01-28
+EMP-000502,PRO00502,Ellie,White,pro00502@company.com,742.480.1387,PROCUREMENT,Buyer,L1,10000.0,2021-05-10,True,Head Office,CIPS,Sudanese,17,CC-PRO-997,2021-05-10
+EMP-000503,FIN00503,Rick,Harvey,fin00503@company.com,0141 4960638,FINANCE,Cost Controller,L4,1000000.0,2015-08-12,True,Field Camp,,Egyptian,22,CC-FIN-894,2015-08-12
+EMP-000504,FIN00504,Angela,Robinson,fin00504@company.com,627.954.8015x71647,FINANCE,Financial Analyst,L2,50000.0,2023-03-01,True,Site Office A,CFA,Egyptian,15,CC-FIN-919,2023-03-01
+EMP-000505,ENG00505,Alexander,العليان,eng00505@company.com,0117 496 0175,ENGINEERING,Engineering Manager,L6,,2021-08-02,True,Warehouse,CEng,Indian,26,CC-ENG-789,2021-08-02
+EMP-000506,PRJ00506,Michael,Morgan,prj00506@company.com,367-481-1266,PROJECTS,Planner,L2,50000.0,2022-06-09,False,Site Office A,PMI-ACP,Pakistani,13,CC-PRJ-610,2022-06-09
+EMP-000507,PRJ00507,عبد العليم,Tate,prj00507@company.com,(813)967-4994x6579,PROJECTS,Project Coordinator,L1,10000.0,2015-06-06,True,Head Office,PRINCE2,Bangladeshi,23,CC-PRJ-259,2015-06-06
+EMP-000508,HSE00508,جلال الدّين,Reyes,hse00508@company.com,347-973-2010,HSE,HSE Officer,L1,10000.0,2011-10-05,True,Warehouse,,Sudanese,3,CC-HSE-968,2011-10-05
+EMP-000509,FIN00509,هاني,Cisneros,fin00509@company.com,624-799-1187x73477,FINANCE,AP Specialist,L3,200000.0,2021-01-16,True,Regional Office,,Filipino,32,CC-FIN-287,2021-01-16
+EMP-000510,CTR00510,Larry,Jones,ctr00510@company.com,(916)875-6770x02842,CONTRACTS,Contracts Manager,L5,10000000.0,2016-04-14,True,Regional Office,,Pakistani,4,CC-CTR-638,2016-04-14
+EMP-000511,HSE00511,Olivia,الحكير,hse00511@company.com,001-278-889-7782,HSE,Safety Inspector,L2,50000.0,2022-02-16,True,Site Office A,,Pakistani,30,CC-HSE-223,2022-02-16
+EMP-000512,PRJ00512,Leigh,Ali,prj00512@company.com,+1-854-350-0902x55905,PROJECTS,Planner,L2,50000.0,2010-03-10,True,Head Office,,British,24,CC-PRJ-727,2010-03-10
+EMP-000513,LEG00513,Sylvia,Pearce,leg00513@company.com,+1-733-234-9114x15208,LEGAL,Legal Officer,L1,10000.0,2015-11-24,True,Site Office A,,Bangladeshi,22,CC-LEG-474,2015-11-24
+EMP-000514,PRO00514,Valerie,Tyler,pro00514@company.com,+441184960079,PROCUREMENT,Senior Buyer,L2,50000.0,2019-05-27,True,Site Office A,,Filipino,29,CC-PRO-284,2019-05-27
+EMP-000515,PRJ00515,ريما,Rogers,prj00515@company.com,02074960171,PROJECTS,Program Director,L6,,2015-02-16,True,Warehouse,,Sudanese,28,CC-PRJ-976,2015-02-16
+EMP-000516,ENG00516,لطفي,Weber,eng00516@company.com,001-252-694-5637x18344,ENGINEERING,Engineer,L1,10000.0,2013-05-10,True,Head Office,,Pakistani,34,CC-ENG-646,2013-05-10
+EMP-000517,PRJ00517,عدوي,أبا الخيل,prj00517@company.com,001-791-395-4198x763,PROJECTS,Project Manager,L4,1000000.0,2016-09-23,True,Regional Office,PMP,Pakistani,4,CC-PRJ-320,2016-09-23
+EMP-000518,HSE00518,Joanne,Johnson,hse00518@company.com,029 2018853,HSE,Safety Inspector,L2,50000.0,2012-02-28,True,Site Office A,ISO 45001 Lead Auditor,Sudanese,17,CC-HSE-452,2012-02-28
+EMP-000519,PRO00519,لوجين,آل عايض,pro00519@company.com,(029) 2018 0820,PROCUREMENT,Buyer,L1,10000.0,2023-08-01,True,Site Office B,,Pakistani,19,CC-PRO-463,2023-08-01
+EMP-000520,ENG00520,Julie,Watts,eng00520@company.com,437.548.9690x8357,ENGINEERING,Senior Engineer,L2,50000.0,2020-01-10,True,Site Office A,PMP,Pakistani,22,CC-ENG-531,2020-01-10
+EMP-000521,PRJ00521,Mitchell,آل صفوان,prj00521@company.com,+44(0)121 496 0136,PROJECTS,Scheduler,L3,200000.0,2011-08-08,True,Site Office A,PMI-ACP,Filipino,26,CC-PRJ-377,2011-08-08
+EMP-000522,LEG00522,Daniel,Johnson,leg00522@company.com,+4429 2018936,LEGAL,Senior Counsel,L4,1000000.0,2018-02-23,True,Site Office B,,Jordanian,27,CC-LEG-271,2018-02-23
+EMP-000523,PRO00523,Eileen,Harris,pro00523@company.com,+44(0)151 4960786,PROCUREMENT,Buyer,L1,10000.0,2015-04-07,True,Field Camp,,Indian,14,CC-PRO-270,2015-04-07
+EMP-000524,ENG00524,هلالي,Newman,eng00524@company.com,+44(0)115 4960044,ENGINEERING,Engineer,L1,10000.0,2020-08-12,True,Head Office,,Indian,7,CC-ENG-368,2020-08-12
+EMP-000525,PRJ00525,Ashley,آل رفيع,prj00525@company.com,001-470-501-5941x6516,PROJECTS,Project Coordinator,L1,10000.0,2018-09-29,True,Head Office,PRINCE2,Pakistani,34,CC-PRJ-958,2018-09-29
+EMP-000526,PRO00526,Daniel,Booker,pro00526@company.com,+1-898-547-1391x55963,PROCUREMENT,Buyer,L1,10000.0,2018-01-02,True,Site Office A,,Sudanese,18,CC-PRO-661,2018-01-02
+EMP-000527,ENG00527,Eleanor,Harrison,eng00527@company.com,+441414960490,ENGINEERING,Engineering Manager,L6,,2022-02-04,True,Site Office B,,Bangladeshi,28,CC-ENG-636,2022-02-04
+EMP-000528,PRJ00528,Lynn,Gordon,prj00528@company.com,286-573-4257x54090,PROJECTS,Planner,L2,50000.0,2017-10-15,True,Head Office,PMI-ACP,British,27,CC-PRJ-366,2017-10-15
+EMP-000529,PRO00529,Ruth,أبو داوود,pro00529@company.com,(618)537-6064x413,PROCUREMENT,Buyer,L1,10000.0,2021-09-27,True,Regional Office,CPSM,Sudanese,1,CC-PRO-804,2021-09-27
+EMP-000530,CTR00530,هايدي,أبو داوود,ctr00530@company.com,(704)817-7656x12481,CONTRACTS,Contracts Manager,L5,10000000.0,2020-09-13,True,Regional Office,,Filipino,15,CC-CTR-915,2020-09-13
+EMP-000531,PRO00531,مشرق,آل سعود,pro00531@company.com,+44(0)29 2018 0002,PROCUREMENT,Senior Buyer,L2,50000.0,2019-03-27,True,Site Office A,CPSM,American,15,CC-PRO-369,2019-03-27
+EMP-000532,PRO00532,Aaron,Coleman,pro00532@company.com,(734)959-1123x8296,PROCUREMENT,Procurement Specialist,L3,200000.0,2021-08-03,True,Field Camp,,Filipino,19,CC-PRO-764,2021-08-03
+EMP-000533,PRJ00533,Joe,Harrison,prj00533@company.com,543-316-5266x93008,PROJECTS,Project Manager,L4,1000000.0,2019-04-06,True,Head Office,PMP,Jordanian,29,CC-PRJ-378,2019-04-06
+EMP-000534,PRJ00534,Jennifer,Griffin,prj00534@company.com,4693694215,PROJECTS,Planner,L2,50000.0,2017-03-11,True,Head Office,,Pakistani,7,CC-PRJ-388,2017-03-11
+EMP-000535,ENG00535,صباح,Shah,eng00535@company.com,+44808 1570713,ENGINEERING,Lead Engineer,L3,200000.0,2010-03-09,True,Head Office,,British,27,CC-ENG-419,2010-03-09
+EMP-000536,HSE00536,Russell,آل علي,hse00536@company.com,0121 4960762,HSE,Safety Inspector,L2,50000.0,2018-05-01,True,Regional Office,OSHA 30,Saudi,18,CC-HSE-894,2018-05-01
+EMP-000537,ENG00537,Jacob,Roberts,eng00537@company.com,+441632 960 362,ENGINEERING,Senior Engineer,L2,50000.0,2014-01-27,True,Regional Office,,Saudi,8,CC-ENG-886,2014-01-27
+EMP-000538,PRJ00538,Carole,فصيل,prj00538@company.com,0118 496 0973,PROJECTS,Planner,L2,50000.0,2019-12-08,True,Field Camp,PMP,Sudanese,14,CC-PRJ-584,2019-12-08
+EMP-000539,ENG00539,Hazel,Holmes,eng00539@company.com,+44(0)114 496 0072,ENGINEERING,Engineering Manager,L6,,2017-03-31,True,Warehouse,,Sudanese,34,CC-ENG-225,2017-03-31
+EMP-000540,ENG00540,Leanne,الحكير,eng00540@company.com,(269)241-1800x5375,ENGINEERING,Lead Engineer,L3,200000.0,2014-06-16,True,Head Office,,Indian,16,CC-ENG-748,2014-06-16
+EMP-000541,ENG00541,Beverly,Thompson,eng00541@company.com,(0141)4960528,ENGINEERING,Engineer,L1,10000.0,2016-03-11,True,Site Office A,PE,Bangladeshi,31,CC-ENG-804,2016-03-11
+EMP-000542,PRJ00542,Carolyn,الراشد,prj00542@company.com,01314960721,PROJECTS,Planner,L2,50000.0,2012-01-04,True,Site Office A,,British,4,CC-PRJ-161,2012-01-04
+EMP-000543,ENG00543,Roger,Pratt,eng00543@company.com,615-702-7456x449,ENGINEERING,Engineer,L1,10000.0,2022-01-11,True,Head Office,CEng,Jordanian,13,CC-ENG-121,2022-01-11
+EMP-000544,PRJ00544,Jacob,Hall,prj00544@company.com,(0306) 999 0287,PROJECTS,Planner,L2,50000.0,2013-01-08,True,Head Office,,Sudanese,19,CC-PRJ-655,2013-01-08
+EMP-000545,PRJ00545,سراج,Bailey,prj00545@company.com,942.376.1707x5877,PROJECTS,Project Coordinator,L1,10000.0,2014-03-09,True,Site Office A,PRINCE2,Indian,34,CC-PRJ-258,2014-03-09
+EMP-000546,ENG00546,Kayla,آل خضير,eng00546@company.com,822-384-9939x0892,ENGINEERING,Design Engineer,L4,1000000.0,2022-02-23,True,Head Office,,American,12,CC-ENG-119,2022-02-23
+EMP-000547,PRJ00547,Marie,Hood,prj00547@company.com,+44113 496 0416,PROJECTS,Planner,L2,50000.0,2023-11-29,True,Warehouse,,Sudanese,25,CC-PRJ-294,2023-11-29
+EMP-000548,FIN00548,Shirley,Lewis,fin00548@company.com,2179774905,FINANCE,Financial Analyst,L2,50000.0,2022-05-15,True,Head Office,,British,8,CC-FIN-198,2022-05-15
+EMP-000549,FIN00549,Melissa,Price,fin00549@company.com,+1-845-301-8961x6423,FINANCE,Accountant,L1,10000.0,2012-11-29,True,Head Office,CMA,Indian,3,CC-FIN-684,2012-11-29
+EMP-000550,PRJ00550,Ann,أبا الخيل,prj00550@company.com,0121 496 0214,PROJECTS,Planner,L2,50000.0,2020-12-27,True,Warehouse,PMI-ACP,Egyptian,5,CC-PRJ-113,2020-12-27
+EMP-000551,CTR00551,Laura,آل عايض,ctr00551@company.com,+1-825-315-8377x674,CONTRACTS,Contract Admin,L1,10000.0,2021-01-08,False,Regional Office,,Jordanian,4,CC-CTR-469,2021-01-08
+EMP-000552,PRJ00552,فاخر,Davies,prj00552@company.com,(028)9018610,PROJECTS,PMO Lead,L5,10000000.0,2019-05-01,True,Regional Office,PMI-ACP,Sudanese,3,CC-PRJ-851,2019-05-01
+EMP-000553,PRO00553,مدحت,Pearce,pro00553@company.com,+1-627-588-1476x17422,PROCUREMENT,Senior Buyer,L2,50000.0,2014-11-04,False,Head Office,,Sudanese,25,CC-PRO-294,2014-11-04
+EMP-000554,PRO00554,Fiona,Mack,pro00554@company.com,608-718-6617,PROCUREMENT,Procurement Specialist,L3,200000.0,2022-10-14,True,Head Office,,American,7,CC-PRO-884,2022-10-14
+EMP-000555,PRJ00555,مظهر,آل محمد بن علي بن جماز,prj00555@company.com,772-926-0164,PROJECTS,Planner,L2,50000.0,2020-04-15,True,Site Office A,PRINCE2,Sudanese,26,CC-PRJ-616,2020-04-15
+EMP-000556,ENG00556,Julie,آل محمد بن علي بن جماز,eng00556@company.com,+44909 8790232,ENGINEERING,Engineer,L1,10000.0,2023-06-16,True,Site Office A,,British,24,CC-ENG-522,2023-06-16
+EMP-000557,HSE00557,لقاء,حجار,hse00557@company.com,968-900-6102,HSE,Safety Inspector,L2,50000.0,2017-04-03,True,Site Office B,ISO 45001 Lead Auditor,Filipino,24,CC-HSE-563,2017-04-03
+EMP-000558,ENG00558,Jason,آل سلطان,eng00558@company.com,249.595.6412x2031,ENGINEERING,Senior Engineer,L2,50000.0,2010-10-11,False,Site Office B,,Filipino,1,CC-ENG-407,2010-10-11
+EMP-000559,CTR00559,Gabriel,Rodgers,ctr00559@company.com,868.231.4727,CONTRACTS,Contract Admin,L1,10000.0,2017-01-23,True,Regional Office,,Filipino,33,CC-CTR-669,2017-01-23
+EMP-000560,PRJ00560,ظاهر,Phillips,prj00560@company.com,(0161) 4960707,PROJECTS,Scheduler,L3,200000.0,2012-02-12,True,Site Office A,PMI-ACP,Bangladeshi,16,CC-PRJ-338,2012-02-12
+EMP-000561,ENG00561,مايا,Robinson,eng00561@company.com,0114 4960501,ENGINEERING,Senior Engineer,L2,50000.0,2022-10-18,True,Field Camp,,British,31,CC-ENG-277,2022-10-18
+EMP-000562,FIN00562,Alan,Matthews,fin00562@company.com,+441632960998,FINANCE,Finance Manager,L5,10000000.0,2022-12-04,True,Head Office,,Saudi,25,CC-FIN-180,2022-12-04
+EMP-000563,HSE00563,Eileen,Gregory,hse00563@company.com,001-797-330-8069,HSE,HSE Director,L5,10000000.0,2017-07-02,True,Regional Office,NEBOSH,Egyptian,1,CC-HSE-749,2017-07-02
+EMP-000564,HSE00564,ميار,العجلان,hse00564@company.com,595.776.0243x7573,HSE,Safety Inspector,L2,50000.0,2016-11-01,True,Site Office A,IOSH,Sudanese,15,CC-HSE-256,2016-11-01
+EMP-000565,PRO00565,مُصلح,Leon,pro00565@company.com,566-457-2934x1722,PROCUREMENT,Procurement Specialist,L3,200000.0,2018-10-24,False,Regional Office,,Indian,15,CC-PRO-542,2018-10-24
+EMP-000566,ENG00566,Yvette,Wallace,eng00566@company.com,(0121)4960338,ENGINEERING,Senior Engineer,L2,50000.0,2012-12-18,True,Site Office A,,Sudanese,26,CC-ENG-368,2012-12-18
+EMP-000567,PRO00567,Lindsay,Crawford,pro00567@company.com,(029)2018228,PROCUREMENT,Senior Buyer,L2,50000.0,2012-12-04,True,Site Office A,CPSM,Bangladeshi,13,CC-PRO-674,2012-12-04
+EMP-000568,PRJ00568,نجم الدّين,كانو,prj00568@company.com,618.437.4550,PROJECTS,Scheduler,L3,200000.0,2015-07-11,True,Head Office,PMP,Indian,27,CC-PRJ-533,2015-07-11
+EMP-000569,ENG00569,رمضان,Bartlett,eng00569@company.com,001-307-471-1991x808,ENGINEERING,Engineer,L1,10000.0,2017-09-23,True,Head Office,,British,29,CC-ENG-738,2017-09-23
+EMP-000570,PRO00570,Mary,Cook,pro00570@company.com,001-847-287-1255x2137,PROCUREMENT,Buyer,L1,10000.0,2015-03-28,True,Site Office A,,Indian,8,CC-PRO-857,2015-03-28
+EMP-000571,PRO00571,Laurie,Bell,pro00571@company.com,(814)556-5328,PROCUREMENT,Procurement Lead,L5,10000000.0,2013-04-24,True,Regional Office,CIPS,Filipino,29,CC-PRO-582,2013-04-24
+EMP-000572,PRO00572,Jacob,Robbins,pro00572@company.com,09098790850,PROCUREMENT,Buyer,L1,10000.0,2022-01-25,True,Site Office B,,Sudanese,31,CC-PRO-737,2022-01-25
+EMP-000573,PRJ00573,خاطر,كانو,prj00573@company.com,215-456-2606,PROJECTS,Project Coordinator,L1,10000.0,2010-05-31,True,Field Camp,,Filipino,11,CC-PRJ-161,2010-05-31
+EMP-000574,ENG00574,بلماء,فصيل,eng00574@company.com,966-584-5504x8926,ENGINEERING,Design Engineer,L4,1000000.0,2023-11-11,True,Site Office A,,Indian,25,CC-ENG-776,2023-11-11
+EMP-000575,ENG00575,Graham,Medina,eng00575@company.com,+44(0)29 2018563,ENGINEERING,Design Engineer,L4,1000000.0,2018-01-29,True,Head Office,,American,15,CC-ENG-489,2018-01-29
+EMP-000576,FIN00576,Allan,Hunt,fin00576@company.com,(01632)960288,FINANCE,AP Specialist,L3,200000.0,2017-01-28,True,Site Office B,CMA,Sudanese,30,CC-FIN-674,2017-01-28
+EMP-000577,CTR00577,Pamela,بن لادن,ctr00577@company.com,0191 4960520,CONTRACTS,Contract Admin,L1,10000.0,2015-07-20,False,Site Office A,,Jordanian,26,CC-CTR-862,2015-07-20
+EMP-000578,PRO00578,Jessica,Smith,pro00578@company.com,0118 4960468,PROCUREMENT,Senior Buyer,L2,50000.0,2017-11-22,True,Site Office A,,Sudanese,18,CC-PRO-931,2017-11-22
+EMP-000579,PRO00579,Glen,بقشان,pro00579@company.com,(510)717-4907x539,PROCUREMENT,Buyer,L1,10000.0,2018-09-07,True,Regional Office,CPM,Egyptian,10,CC-PRO-449,2018-09-07
+EMP-000580,LEG00580,Dwayne,Finch,leg00580@company.com,(768)931-5893,LEGAL,Legal Counsel,L3,200000.0,2011-12-21,True,Site Office B,,Bangladeshi,15,CC-LEG-527,2011-12-21
+EMP-000581,PRO00581,Fiona,Woods,pro00581@company.com,806-827-3715,PROCUREMENT,Buyer,L1,10000.0,2017-01-03,False,Site Office A,,Egyptian,9,CC-PRO-694,2017-01-03
+EMP-000582,FIN00582,William,Ellis,fin00582@company.com,+44292018762,FINANCE,Cost Controller,L4,1000000.0,2013-02-05,True,Warehouse,,Pakistani,28,CC-FIN-888,2013-02-05
+EMP-000583,PRO00583,Mike,Thomas,pro00583@company.com,001-888-313-7702x851,PROCUREMENT,Procurement Lead,L5,10000000.0,2013-07-18,True,Site Office B,,Indian,12,CC-PRO-425,2013-07-18
+EMP-000584,HSE00584,Sharon,Gregory,hse00584@company.com,454-854-4702,HSE,HSE Officer,L1,10000.0,2010-08-30,True,Regional Office,CSP,Filipino,29,CC-HSE-863,2010-08-30
+EMP-000585,CTR00585,معزّ,Porter,ctr00585@company.com,(970)618-5106,CONTRACTS,Contracts Manager,L5,10000000.0,2016-02-21,True,Head Office,,Pakistani,12,CC-CTR-126,2016-02-21
+EMP-000586,HSE00586,ترانيم,Carter,hse00586@company.com,+44(0)808 157 0922,HSE,Environmental Specialist,L3,200000.0,2015-12-27,True,Site Office B,OSHA 30,Saudi,23,CC-HSE-181,2015-12-27
+EMP-000587,PRJ00587,عبد العزيز,آل حسين,prj00587@company.com,225.919.9663x658,PROJECTS,Planner,L2,50000.0,2021-04-08,True,Site Office A,,Pakistani,25,CC-PRJ-603,2021-04-08
+EMP-000588,FIN00588,Stephanie,Martinez,fin00588@company.com,001-209-548-1813x989,FINANCE,Accountant,L1,10000.0,2015-01-28,True,Regional Office,ACCA,American,15,CC-FIN-860,2015-01-28
+EMP-000589,PRJ00589,حقّي,Taylor,prj00589@company.com,(704)833-9718,PROJECTS,Project Coordinator,L1,10000.0,2014-08-03,True,Field Camp,,Bangladeshi,32,CC-PRJ-804,2014-08-03
+EMP-000590,ENG00590,Jonathan,Moore,eng00590@company.com,662-460-8564x11182,ENGINEERING,Senior Engineer,L2,50000.0,2015-07-15,True,Regional Office,,American,21,CC-ENG-503,2015-07-15
+EMP-000591,PRJ00591,Jeremy,Reeves,prj00591@company.com,(029)2018209,PROJECTS,Scheduler,L3,200000.0,2023-04-27,True,Site Office B,,Saudi,34,CC-PRJ-211,2023-04-27
+EMP-000592,FIN00592,Brandon,Patel,fin00592@company.com,(0141) 496 0152,FINANCE,Cost Controller,L4,1000000.0,2010-12-14,True,Head Office,,Saudi,25,CC-FIN-628,2010-12-14
+EMP-000593,HSE00593,Benjamin,Hall,hse00593@company.com,8333993788,HSE,Chief Safety Officer,L6,,2014-04-05,True,Site Office A,IOSH,Jordanian,11,CC-HSE-532,2014-04-05
+EMP-000594,ENG00594,طريف,Adams,eng00594@company.com,(0114) 4960706,ENGINEERING,Project Engineer,L5,10000000.0,2021-08-06,False,Site Office A,,Indian,33,CC-ENG-215,2021-08-06
+EMP-000595,PRO00595,محمّد,الشايع,pro00595@company.com,+1-413-582-4967x18325,PROCUREMENT,Procurement Specialist,L3,200000.0,2022-04-04,True,Site Office A,,Pakistani,30,CC-PRO-704,2022-04-04
+EMP-000596,LEG00596,Julia,Richards,leg00596@company.com,6798420074,LEGAL,Legal Manager,L5,10000000.0,2020-03-13,True,Site Office A,,Pakistani,8,CC-LEG-193,2020-03-13
+EMP-000597,PRO00597,ناصيف,Young,pro00597@company.com,802-589-1416x1284,PROCUREMENT,Senior Buyer,L2,50000.0,2018-02-21,True,Warehouse,,Sudanese,11,CC-PRO-487,2018-02-21
+EMP-000598,PRJ00598,Eileen,Cook,prj00598@company.com,+4428 9018 0474,PROJECTS,Project Coordinator,L1,10000.0,2013-10-31,False,Site Office B,,Pakistani,11,CC-PRJ-989,2013-10-31
+EMP-000599,PRO00599,تاج الدّين,العقيل,pro00599@company.com,+44(0)20 7496 0502,PROCUREMENT,Category Manager,L4,1000000.0,2011-02-25,True,Site Office A,,Jordanian,19,CC-PRO-741,2011-02-25
+EMP-000600,PRO00600,زاهر,Page,pro00600@company.com,2269876811,PROCUREMENT,Procurement Lead,L5,10000000.0,2014-07-20,True,Regional Office,CPSM,Jordanian,35,CC-PRO-926,2014-07-20
+EMP-000601,PRO00601,Mary,آل الشيخ,pro00601@company.com,+44808 1570956,PROCUREMENT,Procurement Lead,L5,10000000.0,2015-05-03,True,Warehouse,,Jordanian,6,CC-PRO-715,2015-05-03
+EMP-000602,PRJ00602,Tina,Sims,prj00602@company.com,653.570.3045x319,PROJECTS,Project Coordinator,L1,10000.0,2022-04-11,True,Site Office B,,Egyptian,4,CC-PRJ-289,2022-04-11
+EMP-000603,PRO00603,Tracey,الخرافي,pro00603@company.com,01632 960 930,PROCUREMENT,Procurement Specialist,L3,200000.0,2010-10-28,True,Head Office,,Bangladeshi,20,CC-PRO-439,2010-10-28
+EMP-000604,CTR00604,Jordan,آل عواض,ctr00604@company.com,498-372-8399x921,CONTRACTS,Contract Admin,L1,10000.0,2019-05-09,False,Head Office,,Filipino,12,CC-CTR-566,2019-05-09
+EMP-000605,PRJ00605,Adrian,المغاولة,prj00605@company.com,001-843-808-9487x0605,PROJECTS,Planner,L2,50000.0,2010-10-21,True,Head Office,PMI-SP,Indian,28,CC-PRJ-963,2010-10-21
+EMP-000606,PRJ00606,ضياء الدّين,Ramirez,prj00606@company.com,+44161 496 0580,PROJECTS,Project Coordinator,L1,10000.0,2013-01-07,True,Regional Office,PMI-SP,Sudanese,14,CC-PRJ-812,2013-01-07
+EMP-000607,PRO00607,Gordon,Reeves,pro00607@company.com,(0191) 4960750,PROCUREMENT,Buyer,L1,10000.0,2022-10-25,True,Site Office B,,Jordanian,19,CC-PRO-537,2022-10-25
+EMP-000608,PRJ00608,Timothy,Watkins,prj00608@company.com,3363133254,PROJECTS,Planner,L2,50000.0,2021-10-14,True,Site Office B,,Bangladeshi,32,CC-PRJ-632,2021-10-14
+EMP-000609,PRJ00609,مصطفى,آل رفيع,prj00609@company.com,943-317-3505x83199,PROJECTS,Planner,L2,50000.0,2014-01-13,True,Head Office,PRINCE2,Saudi,8,CC-PRJ-124,2014-01-13
+EMP-000610,FIN00610,Curtis,Hansen,fin00610@company.com,6068512070,FINANCE,Cost Controller,L4,1000000.0,2014-08-26,True,Field Camp,,British,23,CC-FIN-673,2014-08-26
+EMP-000611,HSE00611,مؤمن,Hancock,hse00611@company.com,0909 8790661,HSE,HSE Officer,L1,10000.0,2014-07-07,True,Head Office,IOSH,Sudanese,21,CC-HSE-885,2014-07-07
+EMP-000612,PRO00612,Curtis,آل جعفر,pro00612@company.com,+1-707-567-6991x507,PROCUREMENT,Procurement Specialist,L3,200000.0,2017-08-28,True,Site Office B,,Pakistani,13,CC-PRO-438,2017-08-28
+EMP-000613,HSE00613,Devin,Brown,hse00613@company.com,992.484.5679,HSE,HSE Director,L5,10000000.0,2020-09-29,False,Regional Office,,Jordanian,10,CC-HSE-742,2020-09-29
+EMP-000614,FIN00614,Carole,آل سلطان,fin00614@company.com,(020)74960685,FINANCE,Cost Controller,L4,1000000.0,2017-07-08,True,Regional Office,,Saudi,34,CC-FIN-406,2017-07-08
+EMP-000615,PRJ00615,Dominic,Davidson,prj00615@company.com,249.854.5089x2038,PROJECTS,Scheduler,L3,200000.0,2022-06-15,True,Head Office,,British,5,CC-PRJ-252,2022-06-15
+EMP-000616,ENG00616,Hugh,Garcia,eng00616@company.com,753-677-9599,ENGINEERING,Engineer,L1,10000.0,2018-06-01,True,Regional Office,,American,12,CC-ENG-709,2018-06-01
+EMP-000617,PRO00617,Michael,Howard,pro00617@company.com,830.433.7933x7563,PROCUREMENT,Category Manager,L4,1000000.0,2016-11-30,True,Site Office A,CPSM,Indian,32,CC-PRO-998,2016-11-30
+EMP-000618,PRO00618,Clive,Mcclure,pro00618@company.com,524-573-9500,PROCUREMENT,Senior Buyer,L2,50000.0,2016-10-15,True,Site Office A,CIPS,Egyptian,6,CC-PRO-554,2016-10-15
+EMP-000619,FIN00619,سائد,Waters,fin00619@company.com,(358)232-3024,FINANCE,Cost Controller,L4,1000000.0,2021-03-20,True,Site Office A,,Sudanese,20,CC-FIN-894,2021-03-20
+EMP-000620,ENG00620,Amanda,الحجار,eng00620@company.com,434-573-5528x96112,ENGINEERING,Design Engineer,L4,1000000.0,2012-03-15,True,Field Camp,,Pakistani,14,CC-ENG-841,2012-03-15
+EMP-000621,PRO00621,يوسف,Dickerson,pro00621@company.com,+44(0)20 7496 0630,PROCUREMENT,Senior Buyer,L2,50000.0,2021-09-19,True,Site Office A,CIPS,British,30,CC-PRO-147,2021-09-19
+EMP-000622,PRO00622,Crystal,Wong,pro00622@company.com,+44(0)306 9990253,PROCUREMENT,Category Manager,L4,1000000.0,2017-01-03,True,Regional Office,,Egyptian,21,CC-PRO-305,2017-01-03
+EMP-000623,PRO00623,Maureen,Gardner,pro00623@company.com,001-873-717-9128,PROCUREMENT,Buyer,L1,10000.0,2017-02-27,True,Warehouse,CSCP,Filipino,8,CC-PRO-115,2017-02-27
+EMP-000624,CTR00624,Randy,Field,ctr00624@company.com,(587)977-4969x033,CONTRACTS,Contract Engineer,L3,200000.0,2012-04-18,True,Site Office A,,British,18,CC-CTR-244,2012-04-18
+EMP-000625,CTR00625,رائف,Walton,ctr00625@company.com,02074960254,CONTRACTS,Claims Analyst,L4,1000000.0,2022-11-16,True,Head Office,,Bangladeshi,22,CC-CTR-653,2022-11-16
+EMP-000626,ENG00626,حسنين,Lewis,eng00626@company.com,(0151)4960853,ENGINEERING,Engineer,L1,10000.0,2020-07-23,False,Head Office,,Indian,28,CC-ENG-501,2020-07-23
+EMP-000627,PRO00627,Laura,Saunders,pro00627@company.com,0151 4960776,PROCUREMENT,Procurement Specialist,L3,200000.0,2023-04-18,True,Warehouse,,British,20,CC-PRO-440,2023-04-18
+EMP-000628,HSE00628,Leah,Howard,hse00628@company.com,+44113 496 0273,HSE,Environmental Specialist,L3,200000.0,2021-12-19,True,Field Camp,,Bangladeshi,9,CC-HSE-195,2021-12-19
+EMP-000629,HSE00629,Emily,Stokes,hse00629@company.com,588-781-4311x1508,HSE,HSE Director,L5,10000000.0,2020-07-03,True,Site Office A,,Jordanian,31,CC-HSE-337,2020-07-03
+EMP-000630,CTR00630,نبيل,Grimes,ctr00630@company.com,239-928-4044x566,CONTRACTS,Contract Admin,L1,10000.0,2023-11-02,True,Site Office A,,Pakistani,22,CC-CTR-907,2023-11-02
+EMP-000631,LEG00631,Roy,Moran,leg00631@company.com,737.338.9877,LEGAL,Contract Analyst,L2,50000.0,2020-12-07,True,Site Office A,,British,31,CC-LEG-572,2020-12-07
+EMP-000632,HSE00632,Diane,الخرافي,hse00632@company.com,(737)578-0529x24075,HSE,HSE Officer,L1,10000.0,2017-10-26,True,Head Office,NEBOSH,British,5,CC-HSE-911,2017-10-26
+EMP-000633,ENG00633,Dennis,Collins,eng00633@company.com,+1-745-890-9022,ENGINEERING,Senior Engineer,L2,50000.0,2023-03-31,True,Site Office B,,Jordanian,25,CC-ENG-167,2023-03-31
+EMP-000634,ENG00634,معتوق,أبا الخيل,eng00634@company.com,0117 496 0715,ENGINEERING,Design Engineer,L4,1000000.0,2023-04-04,True,Field Camp,,British,35,CC-ENG-810,2023-04-04
+EMP-000635,PRO00635,Glen,Hall,pro00635@company.com,(518)320-9702,PROCUREMENT,Procurement Specialist,L3,200000.0,2011-10-01,True,Warehouse,,Indian,30,CC-PRO-433,2011-10-01
+EMP-000636,PRJ00636,خميس,Nolan,prj00636@company.com,817.905.8025x66212,PROJECTS,Project Manager,L4,1000000.0,2013-12-14,True,Site Office A,,Bangladeshi,25,CC-PRJ-435,2013-12-14
+EMP-000637,FIN00637,Reece,Ritter,fin00637@company.com,(534)967-2994,FINANCE,AP Specialist,L3,200000.0,2012-01-12,True,Head Office,,Saudi,10,CC-FIN-776,2012-01-12
+EMP-000638,PRO00638,عمّار,العليان,pro00638@company.com,(0114) 4960693,PROCUREMENT,Senior Buyer,L2,50000.0,2018-09-30,True,Site Office A,CPM,Filipino,20,CC-PRO-545,2018-09-30
+EMP-000639,PRJ00639,Leah,Ward,prj00639@company.com,+44(0)151 4960901,PROJECTS,PMO Lead,L5,10000000.0,2012-01-02,True,Site Office B,,Pakistani,19,CC-PRJ-163,2012-01-02
+EMP-000640,ENG00640,حسين,Mcclure,eng00640@company.com,369-826-3296x7629,ENGINEERING,Senior Engineer,L2,50000.0,2011-03-12,True,Site Office B,,Indian,19,CC-ENG-986,2011-03-12
+EMP-000641,PRO00641,Roger,Martin,pro00641@company.com,784-813-7681x511,PROCUREMENT,Senior Buyer,L2,50000.0,2023-03-28,True,Site Office A,CPSM,American,35,CC-PRO-316,2023-03-28
+EMP-000642,PRJ00642,Vanessa,العجلان,prj00642@company.com,301.476.5636x004,PROJECTS,Planner,L2,50000.0,2014-03-22,True,Regional Office,PMI-SP,Pakistani,19,CC-PRJ-993,2014-03-22
+EMP-000643,PRJ00643,ظاهر,الشايع,prj00643@company.com,+44(0)151 4960118,PROJECTS,Project Coordinator,L1,10000.0,2011-08-11,True,Head Office,,American,9,CC-PRJ-186,2011-08-11
+EMP-000644,PRO00644,عبد الرّشيد,Alexander,pro00644@company.com,342.220.9124x1862,PROCUREMENT,Category Manager,L4,1000000.0,2020-03-24,True,Warehouse,,Bangladeshi,12,CC-PRO-565,2020-03-24
+EMP-000645,FIN00645,Carly,Barton,fin00645@company.com,608.937.0816,FINANCE,AP Specialist,L3,200000.0,2020-02-04,True,Head Office,,Saudi,32,CC-FIN-967,2020-02-04
+EMP-000646,PRJ00646,ريان,Walker,prj00646@company.com,753.531.0600,PROJECTS,Scheduler,L3,200000.0,2016-01-15,True,Site Office B,PMP,Bangladeshi,31,CC-PRJ-821,2016-01-15
+EMP-000647,ENG00647,Jesse,Kelly,eng00647@company.com,+1-822-806-8155x83938,ENGINEERING,Lead Engineer,L3,200000.0,2011-10-18,True,Warehouse,,Filipino,30,CC-ENG-629,2011-10-18
+EMP-000648,PRO00648,Carlos,Jenkins,pro00648@company.com,6657063731,PROCUREMENT,Procurement Lead,L5,10000000.0,2011-12-26,True,Site Office B,,Indian,35,CC-PRO-917,2011-12-26
+EMP-000649,PRJ00649,Matthew,بن لادن,prj00649@company.com,718.992.4195x6252,PROJECTS,Scheduler,L3,200000.0,2017-09-15,True,Head Office,PMI-SP,Bangladeshi,22,CC-PRJ-531,2017-09-15
+EMP-000650,ENG00650,لورا,Hall,eng00650@company.com,0141 4960838,ENGINEERING,Engineering Manager,L6,,2016-08-10,True,Head Office,,Filipino,17,CC-ENG-162,2016-08-10
+EMP-000651,PRJ00651,Dawn,Mclean,prj00651@company.com,001-414-836-3910x25743,PROJECTS,Scheduler,L3,200000.0,2022-11-06,True,Field Camp,,Bangladeshi,2,CC-PRJ-393,2022-11-06
+EMP-000652,FIN00652,Amber,آل قصير,fin00652@company.com,752.545.0864x035,FINANCE,Accountant,L1,10000.0,2011-09-22,True,Head Office,ACCA,Filipino,17,CC-FIN-114,2011-09-22
+EMP-000653,PRJ00653,سالم,Martinez,prj00653@company.com,001-539-268-5270x171,PROJECTS,Scheduler,L3,200000.0,2023-04-10,True,Warehouse,PRINCE2,Filipino,16,CC-PRJ-596,2023-04-10
+EMP-000654,PRO00654,Roger,آل قصير,pro00654@company.com,001-483-538-1674,PROCUREMENT,Senior Buyer,L2,50000.0,2010-09-29,True,Head Office,CSCP,Jordanian,27,CC-PRO-888,2010-09-29
+EMP-000655,ENG00655,Hayley,Tapia,eng00655@company.com,0121 4960973,ENGINEERING,Lead Engineer,L3,200000.0,2013-10-02,True,Warehouse,,Filipino,8,CC-ENG-153,2013-10-02
+EMP-000656,PRO00656,Mary,حنبولي,pro00656@company.com,(0141)4960627,PROCUREMENT,Senior Buyer,L2,50000.0,2016-10-04,True,Field Camp,,Egyptian,25,CC-PRO-799,2016-10-04
+EMP-000657,PRJ00657,Sandra,Patel,prj00657@company.com,(827)906-6149x82824,PROJECTS,Planner,L2,50000.0,2013-04-04,True,Site Office A,PMI-SP,American,21,CC-PRJ-642,2013-04-04
+EMP-000658,PRJ00658,Karen,Jones,prj00658@company.com,815.827.3230x0857,PROJECTS,Project Coordinator,L1,10000.0,2021-12-01,True,Field Camp,PMI-ACP,British,18,CC-PRJ-373,2021-12-01
+EMP-000659,HSE00659,فايد,العليان,hse00659@company.com,001-816-601-6923,HSE,HSE Officer,L1,10000.0,2023-02-07,True,Regional Office,,Bangladeshi,13,CC-HSE-632,2023-02-07
+EMP-000660,ENG00660,سخاء,Smith,eng00660@company.com,001-650-966-3370x502,ENGINEERING,Lead Engineer,L3,200000.0,2014-01-13,True,Head Office,PE,Saudi,27,CC-ENG-200,2014-01-13
+EMP-000661,FIN00661,نعمان,الحكير,fin00661@company.com,+1-620-611-6691x83626,FINANCE,AP Specialist,L3,200000.0,2017-11-19,True,Head Office,CPA,Bangladeshi,6,CC-FIN-158,2017-11-19
+EMP-000662,CTR00662,Chad,الدباغ,ctr00662@company.com,961-219-5243x6402,CONTRACTS,Contract Engineer,L3,200000.0,2014-11-12,False,Site Office B,,Indian,6,CC-CTR-976,2014-11-12
+EMP-000663,PRJ00663,Brian,Lamb,prj00663@company.com,(546)422-5223x72817,PROJECTS,Planner,L2,50000.0,2022-09-12,True,Head Office,PRINCE2,Filipino,19,CC-PRJ-578,2022-09-12
+EMP-000664,PRJ00664,Brenda,Jones,prj00664@company.com,367-791-2141x614,PROJECTS,Project Coordinator,L1,10000.0,2020-03-03,False,Head Office,PMI-ACP,Filipino,11,CC-PRJ-899,2020-03-03
+EMP-000665,PRO00665,نزار,Begum,pro00665@company.com,2048090138,PROCUREMENT,Category Manager,L4,1000000.0,2018-08-02,True,Field Camp,CPM,Pakistani,29,CC-PRO-171,2018-08-02
+EMP-000666,FIN00666,Lauren,الجابر,fin00666@company.com,0306 9990596,FINANCE,Finance Manager,L5,10000000.0,2023-09-09,True,Site Office B,CFA,Egyptian,7,CC-FIN-552,2023-09-09
+EMP-000667,PRJ00667,Kathryn,Hester,prj00667@company.com,(0808)1570356,PROJECTS,Project Coordinator,L1,10000.0,2011-08-21,True,Warehouse,,Saudi,32,CC-PRJ-252,2011-08-21
+EMP-000668,PRJ00668,لطفي,آل سعود,prj00668@company.com,08081570107,PROJECTS,Project Coordinator,L1,10000.0,2010-11-06,True,Head Office,,American,1,CC-PRJ-627,2010-11-06
+EMP-000669,PRJ00669,Cynthia,Montes,prj00669@company.com,+1-218-743-5797x863,PROJECTS,Project Manager,L4,1000000.0,2020-09-21,True,Regional Office,,Indian,35,CC-PRJ-331,2020-09-21
+EMP-000670,PRO00670,وفائي,المشاولة,pro00670@company.com,573-497-6915x67164,PROCUREMENT,Procurement Manager,L6,,2020-10-24,True,Site Office B,,British,20,CC-PRO-510,2020-10-24
+EMP-000671,PRO00671,Jason,آل حسين,pro00671@company.com,(971)548-7271,PROCUREMENT,Procurement Manager,L6,,2012-01-13,True,Regional Office,CPSM,Filipino,13,CC-PRO-280,2012-01-13
+EMP-000672,PRJ00672,ألين,Schneider,prj00672@company.com,(702)556-4347x12871,PROJECTS,Program Director,L6,,2014-04-14,True,Site Office A,PMI-ACP,Jordanian,6,CC-PRJ-747,2014-04-14
+EMP-000673,ENG00673,Jeffrey,Carter,eng00673@company.com,(01632) 960 686,ENGINEERING,Engineer,L1,10000.0,2010-10-20,True,Warehouse,,Jordanian,25,CC-ENG-164,2010-10-20
+EMP-000674,HSE00674,Benjamin,المهنا,hse00674@company.com,859-231-9525,HSE,Environmental Specialist,L3,200000.0,2021-03-17,True,Regional Office,NEBOSH,Saudi,22,CC-HSE-157,2021-03-17
+EMP-000675,ENG00675,Lisa,Smart,eng00675@company.com,(965)752-8993x1608,ENGINEERING,Lead Engineer,L3,200000.0,2019-02-04,True,Regional Office,,Jordanian,35,CC-ENG-252,2019-02-04
+EMP-000676,PRJ00676,Jacob,كانو,prj00676@company.com,+4429 2018 0729,PROJECTS,Project Coordinator,L1,10000.0,2011-08-14,True,Head Office,,Jordanian,3,CC-PRJ-348,2011-08-14
+EMP-000677,PRJ00677,Geraldine,Howard,prj00677@company.com,5959481497,PROJECTS,Project Coordinator,L1,10000.0,2013-11-12,True,Field Camp,,Indian,30,CC-PRJ-725,2013-11-12
+EMP-000678,PRO00678,Melissa,الخرافي,pro00678@company.com,(0116) 496 0330,PROCUREMENT,Procurement Specialist,L3,200000.0,2012-05-21,True,Site Office B,,Indian,13,CC-PRO-536,2012-05-21
+EMP-000679,ENG00679,Tom,Davies,eng00679@company.com,(0808) 1570208,ENGINEERING,Design Engineer,L4,1000000.0,2019-01-07,True,Field Camp,,Pakistani,21,CC-ENG-956,2019-01-07
+EMP-000680,CTR00680,نوف,Bird,ctr00680@company.com,0306 9990661,CONTRACTS,Contract Admin,L1,10000.0,2011-01-09,True,Site Office A,,Indian,18,CC-CTR-244,2011-01-09
+EMP-000681,HSE00681,مَسعد,Bartlett,hse00681@company.com,001-486-912-5904x729,HSE,HSE Officer,L1,10000.0,2018-04-19,True,Site Office A,,Saudi,9,CC-HSE-202,2018-04-19
+EMP-000682,HSE00682,Michael,Gardner,hse00682@company.com,430.259.1266,HSE,Environmental Specialist,L3,200000.0,2018-06-09,True,Head Office,NEBOSH,Saudi,12,CC-HSE-191,2018-06-09
+EMP-000683,PRJ00683,Wendy,Holmes,prj00683@company.com,385-596-2630,PROJECTS,Scheduler,L3,200000.0,2016-05-13,True,Regional Office,,Pakistani,14,CC-PRJ-246,2016-05-13
+EMP-000684,PRJ00684,Brenda,العقيل,prj00684@company.com,+1-961-576-4750x1111,PROJECTS,Planner,L2,50000.0,2019-03-30,True,Head Office,,Bangladeshi,12,CC-PRJ-834,2019-03-30
+EMP-000685,FIN00685,Pamela,الراشد,fin00685@company.com,+44(0)29 2018 0192,FINANCE,CFO,L6,,2016-10-03,True,Head Office,CPA,Sudanese,7,CC-FIN-733,2016-10-03
+EMP-000686,ENG00686,Jennifer,آل عايض,eng00686@company.com,02074960215,ENGINEERING,Design Engineer,L4,1000000.0,2022-02-08,True,Site Office A,,Egyptian,18,CC-ENG-154,2022-02-08
+EMP-000687,PRO00687,نضال,Collins,pro00687@company.com,(0808) 1570068,PROCUREMENT,Category Manager,L4,1000000.0,2020-08-22,True,Head Office,,Saudi,24,CC-PRO-391,2020-08-22
+EMP-000688,PRO00688,Benjamin,آل علي,pro00688@company.com,+1-913-712-9208,PROCUREMENT,Buyer,L1,10000.0,2023-11-01,True,Regional Office,CIPS,Sudanese,12,CC-PRO-261,2023-11-01
+EMP-000689,HSE00689,Sylvia,Wright,hse00689@company.com,(718)440-1184,HSE,Safety Inspector,L2,50000.0,2012-08-08,True,Head Office,ISO 45001 Lead Auditor,British,27,CC-HSE-303,2012-08-08
+EMP-000690,PRJ00690,Benjamin,Evans,prj00690@company.com,348.272.9758x59883,PROJECTS,PMO Lead,L5,10000000.0,2015-02-28,True,Site Office A,PMI-SP,Egyptian,25,CC-PRJ-325,2015-02-28
+EMP-000691,PRO00691,عالم,Palmer,pro00691@company.com,(898)339-5429,PROCUREMENT,Procurement Specialist,L3,200000.0,2011-03-22,True,Head Office,,Jordanian,12,CC-PRO-496,2011-03-22
+EMP-000692,ENG00692,Leslie,Lamb,eng00692@company.com,(471)846-2831x4359,ENGINEERING,Senior Engineer,L2,50000.0,2014-05-10,True,Field Camp,PMP,Saudi,4,CC-ENG-387,2014-05-10
+EMP-000693,PRO00693,Brett,Lane,pro00693@company.com,714.318.1861,PROCUREMENT,Category Manager,L4,1000000.0,2020-04-14,True,Regional Office,CPM,Bangladeshi,11,CC-PRO-908,2020-04-14
+EMP-000694,HSE00694,فتحي,بقشان,hse00694@company.com,901-363-6112x849,HSE,Chief Safety Officer,L6,,2013-10-24,True,Site Office B,CSP,Sudanese,32,CC-HSE-982,2013-10-24
+EMP-000695,CTR00695,George,Farrell,ctr00695@company.com,+44(0)191 496 0491,CONTRACTS,Contract Engineer,L3,200000.0,2020-05-18,True,Warehouse,,Egyptian,16,CC-CTR-435,2020-05-18
+EMP-000696,ENG00696,Samantha,الحجار,eng00696@company.com,+1-888-696-7924x08222,ENGINEERING,Engineer,L1,10000.0,2023-04-10,False,Field Camp,,American,3,CC-ENG-141,2023-04-10
+EMP-000697,CTR00697,راجح,Rowley,ctr00697@company.com,001-539-667-2757x84468,CONTRACTS,Contract Engineer,L3,200000.0,2021-04-23,True,Site Office B,,Jordanian,7,CC-CTR-563,2021-04-23
+EMP-000698,FIN00698,طيّع,Martin,fin00698@company.com,0909 879 0111,FINANCE,Accountant,L1,10000.0,2010-04-12,True,Site Office A,ACCA,Filipino,16,CC-FIN-763,2010-04-12
+EMP-000699,CTR00699,Stephen,آل عطفة,ctr00699@company.com,948-370-6827,CONTRACTS,Contract Admin,L1,10000.0,2016-11-02,True,Site Office A,,Bangladeshi,2,CC-CTR-565,2016-11-02
+EMP-000700,FIN00700,نشوان,Thompson,fin00700@company.com,9684538909,FINANCE,Accountant,L1,10000.0,2019-02-03,True,Regional Office,,Saudi,5,CC-FIN-494,2019-02-03
+EMP-000701,LEG00701,Roberto,Thompson,leg00701@company.com,+44(0)808 1570285,LEGAL,Contract Analyst,L2,50000.0,2010-09-25,True,Regional Office,,Bangladeshi,35,CC-LEG-689,2010-09-25
+EMP-000702,HSE00702,Marian,Tomlinson,hse00702@company.com,638-214-4744x30963,HSE,HSE Manager,L4,1000000.0,2011-10-26,True,Site Office A,,Sudanese,24,CC-HSE-152,2011-10-26
+EMP-000703,PRO00703,Joe,Rice,pro00703@company.com,+1-375-845-1052x650,PROCUREMENT,Senior Buyer,L2,50000.0,2023-11-20,True,Site Office A,,Indian,14,CC-PRO-241,2023-11-20
+EMP-000704,CTR00704,Sylvia,Wade,ctr00704@company.com,(617)302-4376x54562,CONTRACTS,Contract Admin,L1,10000.0,2012-07-19,True,Warehouse,,Bangladeshi,14,CC-CTR-871,2012-07-19
+EMP-000705,PRJ00705,صادق,Lopez,prj00705@company.com,+44(0)1632960605,PROJECTS,Project Coordinator,L1,10000.0,2017-11-29,True,Site Office B,PMP,Indian,24,CC-PRJ-453,2017-11-29
+EMP-000706,FIN00706,Georgina,Roberts,fin00706@company.com,(366)850-2374,FINANCE,Financial Analyst,L2,50000.0,2012-10-02,True,Site Office B,,Filipino,29,CC-FIN-735,2012-10-02
+EMP-000707,ENG00707,Donna,Saunders,eng00707@company.com,(456)486-2110,ENGINEERING,Lead Engineer,L3,200000.0,2011-06-22,True,Regional Office,LEED AP,Pakistani,19,CC-ENG-178,2011-06-22
+EMP-000708,PRO00708,Louis,آل سلطان,pro00708@company.com,9563906744,PROCUREMENT,Buyer,L1,10000.0,2013-04-27,True,Regional Office,,Saudi,19,CC-PRO-526,2013-04-27
+EMP-000709,CTR00709,David,Thomas,ctr00709@company.com,523.441.4363x71892,CONTRACTS,Contract Specialist,L2,50000.0,2012-12-17,True,Site Office A,,Saudi,19,CC-CTR-293,2012-12-17
+EMP-000710,PRO00710,Matthew,Long,pro00710@company.com,(660)593-1066,PROCUREMENT,Procurement Lead,L5,10000000.0,2015-03-19,True,Site Office B,CPM,British,32,CC-PRO-707,2015-03-19
+EMP-000711,PRJ00711,Julie,Hewitt,prj00711@company.com,+44289018041,PROJECTS,Planner,L2,50000.0,2022-04-21,True,Site Office A,PMI-ACP,Pakistani,17,CC-PRJ-332,2022-04-21
+EMP-000712,FIN00712,Johnny,Evans,fin00712@company.com,(335)802-0005x34749,FINANCE,CFO,L6,,2011-01-23,True,Head Office,,Bangladeshi,11,CC-FIN-828,2011-01-23
+EMP-000713,FIN00713,Mark,الحجار,fin00713@company.com,(0115) 4960108,FINANCE,Accountant,L1,10000.0,2013-12-07,True,Warehouse,,Pakistani,11,CC-FIN-343,2013-12-07
+EMP-000714,PRO00714,حلا,Lee,pro00714@company.com,001-398-295-3439x61129,PROCUREMENT,Procurement Manager,L6,,2022-11-20,True,Head Office,CIPS,British,23,CC-PRO-251,2022-11-20
+EMP-000715,ENG00715,Josh,العقيل,eng00715@company.com,0115 4960189,ENGINEERING,Senior Engineer,L2,50000.0,2013-08-24,True,Head Office,LEED AP,Pakistani,30,CC-ENG-427,2013-08-24
+EMP-000716,PRO00716,Harriet,آل رفيع,pro00716@company.com,+1-720-723-6848,PROCUREMENT,Procurement Manager,L6,,2022-04-02,False,Site Office A,,Jordanian,19,CC-PRO-872,2022-04-02
+EMP-000717,CTR00717,جرّاح,Greene,ctr00717@company.com,(0114)4960768,CONTRACTS,Contract Engineer,L3,200000.0,2013-04-19,True,Warehouse,,Jordanian,22,CC-CTR-805,2013-04-19
+EMP-000718,PRO00718,Natasha,Moore,pro00718@company.com,(340)490-3678,PROCUREMENT,Senior Buyer,L2,50000.0,2010-11-25,True,Site Office B,CPSM,Bangladeshi,15,CC-PRO-556,2010-11-25
+EMP-000719,ENG00719,Adam,آل علي,eng00719@company.com,+44141 496 0943,ENGINEERING,Senior Engineer,L2,50000.0,2023-08-22,True,Site Office B,CEng,Egyptian,2,CC-ENG-185,2023-08-22
+EMP-000720,FIN00720,Brandon,Carter,fin00720@company.com,001-308-478-8443x448,FINANCE,Financial Analyst,L2,50000.0,2011-12-17,False,Site Office A,,Bangladeshi,33,CC-FIN-157,2011-12-17
+EMP-000721,CTR00721,إلينا,Duncan,ctr00721@company.com,(242)740-3381,CONTRACTS,Contract Specialist,L2,50000.0,2013-04-26,True,Site Office A,,American,24,CC-CTR-112,2013-04-26
+EMP-000722,ENG00722,عبد الغفور,Scott,eng00722@company.com,+1-742-569-4500,ENGINEERING,Senior Engineer,L2,50000.0,2019-12-30,True,Head Office,,Jordanian,27,CC-ENG-922,2019-12-30
+EMP-000723,ENG00723,Dennis,شربتلي,eng00723@company.com,+1-591-764-9837,ENGINEERING,Engineer,L1,10000.0,2019-07-05,True,Site Office A,,Bangladeshi,6,CC-ENG-247,2019-07-05
+EMP-000724,PRO00724,Sean,Green,pro00724@company.com,(0116) 496 0736,PROCUREMENT,Senior Buyer,L2,50000.0,2021-10-13,False,Head Office,,American,6,CC-PRO-106,2021-10-13
+EMP-000725,ENG00725,Douglas,Smith,eng00725@company.com,822.539.7240x422,ENGINEERING,Project Engineer,L5,10000000.0,2019-04-19,True,Site Office A,,Pakistani,13,CC-ENG-290,2019-04-19
+EMP-000726,HSE00726,Joseph,حجار,hse00726@company.com,(418)520-9166x0100,HSE,HSE Officer,L1,10000.0,2021-01-01,True,Regional Office,,Filipino,32,CC-HSE-672,2021-01-01
+EMP-000727,PRJ00727,Mohamed,Nash,prj00727@company.com,9184513279,PROJECTS,Project Coordinator,L1,10000.0,2010-01-21,True,Site Office A,,Jordanian,8,CC-PRJ-769,2010-01-21
+EMP-000728,PRJ00728,Aaron,Johnson,prj00728@company.com,+1-348-810-0184,PROJECTS,Project Coordinator,L1,10000.0,2014-01-09,True,Warehouse,PMP,Filipino,32,CC-PRJ-168,2014-01-09
+EMP-000729,PRJ00729,Sandra,الحكير,prj00729@company.com,01414960254,PROJECTS,Planner,L2,50000.0,2020-10-11,True,Regional Office,,Jordanian,8,CC-PRJ-482,2020-10-11
+EMP-000730,FIN00730,Paula,آل سلطان,fin00730@company.com,001-317-721-3145x195,FINANCE,AP Specialist,L3,200000.0,2015-10-28,True,Head Office,CMA,British,11,CC-FIN-154,2015-10-28
+EMP-000731,ENG00731,دهمان,Hensley,eng00731@company.com,(785)692-6249x45147,ENGINEERING,Senior Engineer,L2,50000.0,2017-12-26,True,Head Office,,Indian,33,CC-ENG-298,2017-12-26
+EMP-000732,HSE00732,Katrina,Newton,hse00732@company.com,001-725-426-7711x96421,HSE,HSE Officer,L1,10000.0,2012-02-14,True,Head Office,IOSH,Filipino,18,CC-HSE-801,2012-02-14
+EMP-000733,PRJ00733,Leah,آل قصير,prj00733@company.com,(0161) 496 0695,PROJECTS,Planner,L2,50000.0,2021-12-26,True,Regional Office,PMI-ACP,British,32,CC-PRJ-521,2021-12-26
+EMP-000734,ENG00734,مُعتز,المهنا,eng00734@company.com,+44(0)1414960878,ENGINEERING,Project Engineer,L5,10000000.0,2012-04-19,True,Site Office B,,Sudanese,34,CC-ENG-966,2012-04-19
+EMP-000735,FIN00735,Samantha,Pruitt,fin00735@company.com,(719)968-9313x5030,FINANCE,AP Specialist,L3,200000.0,2012-07-22,True,Field Camp,CMA,Saudi,31,CC-FIN-456,2012-07-22
+EMP-000736,ENG00736,Mary,الدباغ,eng00736@company.com,0909 8790247,ENGINEERING,Senior Engineer,L2,50000.0,2019-11-30,True,Site Office B,,British,12,CC-ENG-826,2019-11-30
+EMP-000737,ENG00737,رخاء,بن لادن,eng00737@company.com,730.221.2606,ENGINEERING,Lead Engineer,L3,200000.0,2012-08-29,True,Regional Office,PMP,Filipino,9,CC-ENG-314,2012-08-29
+EMP-000738,PRO00738,Bradley,المغاولة,pro00738@company.com,492.402.5213x1096,PROCUREMENT,Buyer,L1,10000.0,2012-07-04,True,Regional Office,,Saudi,13,CC-PRO-210,2012-07-04
+EMP-000739,PRO00739,Mary,العجلان,pro00739@company.com,476-257-0412x0092,PROCUREMENT,Procurement Specialist,L3,200000.0,2023-04-22,True,Head Office,CIPS,Filipino,1,CC-PRO-872,2023-04-22
+EMP-000740,PRO00740,Marian,Robinson,pro00740@company.com,001-449-584-3624x186,PROCUREMENT,Buyer,L1,10000.0,2023-07-01,True,Field Camp,CPM,Saudi,6,CC-PRO-249,2023-07-01
+EMP-000741,HSE00741,Dan,Gibbs,hse00741@company.com,001-589-617-7566x2056,HSE,HSE Director,L5,10000000.0,2023-01-02,True,Head Office,ISO 45001 Lead Auditor,Egyptian,33,CC-HSE-683,2023-01-02
+EMP-000742,PRO00742,رزين,Lewis,pro00742@company.com,+44113 4960342,PROCUREMENT,Category Manager,L4,1000000.0,2010-04-25,True,Warehouse,,Pakistani,35,CC-PRO-104,2010-04-25
+EMP-000743,CTR00743,Colin,Bailey,ctr00743@company.com,001-243-283-0341x99097,CONTRACTS,Contract Admin,L1,10000.0,2014-10-20,False,Regional Office,,Jordanian,24,CC-CTR-814,2014-10-20
+EMP-000744,PRJ00744,Leonard,Wood,prj00744@company.com,0306 999 0468,PROJECTS,Planner,L2,50000.0,2012-05-29,True,Site Office A,PRINCE2,Sudanese,15,CC-PRJ-517,2012-05-29
+EMP-000745,PRO00745,Edward,Ferguson,pro00745@company.com,001-215-668-1820x967,PROCUREMENT,Procurement Manager,L6,,2012-10-09,True,Site Office B,,British,19,CC-PRO-670,2012-10-09
+EMP-000746,PRJ00746,Matthew,Johnson,prj00746@company.com,733-922-8898,PROJECTS,Project Coordinator,L1,10000.0,2021-01-27,True,Head Office,,Filipino,29,CC-PRJ-331,2021-01-27
+EMP-000747,PRJ00747,ابتكار,Rubio,prj00747@company.com,+44(0)113 4960633,PROJECTS,Project Coordinator,L1,10000.0,2019-08-07,True,Head Office,,Jordanian,24,CC-PRJ-283,2019-08-07
+EMP-000748,PRO00748,Joshua,Ingram,pro00748@company.com,+1-671-402-4817x1752,PROCUREMENT,Procurement Specialist,L3,200000.0,2012-05-11,True,Site Office B,,Indian,10,CC-PRO-504,2012-05-11
+EMP-000749,ENG00749,Mitchell,Hanson,eng00749@company.com,(974)274-7219,ENGINEERING,Lead Engineer,L3,200000.0,2012-04-13,True,Regional Office,CEng,Egyptian,22,CC-ENG-305,2012-04-13
+EMP-000750,PRJ00750,وجدي,Moore,prj00750@company.com,+1-227-558-9551x68740,PROJECTS,Program Director,L6,,2012-10-02,True,Site Office A,PMI-ACP,American,23,CC-PRJ-587,2012-10-02
+EMP-000751,PRJ00751,Henry,Lowery,prj00751@company.com,962-396-1367x1577,PROJECTS,Program Director,L6,,2020-11-13,True,Head Office,PMP,Filipino,32,CC-PRJ-609,2020-11-13
+EMP-000752,PRO00752,Gary,Ward,pro00752@company.com,(0306) 9990636,PROCUREMENT,Procurement Lead,L5,10000000.0,2010-09-01,True,Head Office,CIPS,Pakistani,25,CC-PRO-719,2010-09-01
+EMP-000753,PRJ00753,Sharon,Pearson,prj00753@company.com,237.814.7082x7235,PROJECTS,Project Coordinator,L1,10000.0,2023-12-14,True,Regional Office,,Sudanese,32,CC-PRJ-911,2023-12-14
+EMP-000754,FIN00754,محمّد,Smith,fin00754@company.com,+44117 496 0030,FINANCE,Accountant,L1,10000.0,2021-03-02,True,Head Office,CPA,Saudi,28,CC-FIN-221,2021-03-02
+EMP-000755,ENG00755,Maria,Jacobson,eng00755@company.com,521-646-1476,ENGINEERING,Senior Engineer,L2,50000.0,2018-06-10,True,Head Office,CEng,Pakistani,32,CC-ENG-541,2018-06-10
+EMP-000756,PRO00756,Samantha,Jones,pro00756@company.com,(0131) 496 0423,PROCUREMENT,Procurement Specialist,L3,200000.0,2020-12-07,True,Site Office B,,Sudanese,35,CC-PRO-685,2020-12-07
+EMP-000757,FIN00757,Rosie,أبو داوود,fin00757@company.com,(365)496-0893,FINANCE,AP Specialist,L3,200000.0,2013-07-04,True,Site Office A,,American,23,CC-FIN-884,2013-07-04
+EMP-000758,CTR00758,Cynthia,بن لادن,ctr00758@company.com,(272)975-1648,CONTRACTS,Contract Specialist,L2,50000.0,2010-08-19,True,Head Office,,British,23,CC-CTR-928,2010-08-19
+EMP-000759,PRJ00759,Teresa,آل الشيخ,prj00759@company.com,7335682963,PROJECTS,Project Coordinator,L1,10000.0,2017-08-27,True,Site Office A,,American,23,CC-PRJ-157,2017-08-27
+EMP-000760,PRJ00760,Stephanie,Lyons,prj00760@company.com,(0808) 1570504,PROJECTS,Project Coordinator,L1,10000.0,2016-12-31,True,Field Camp,PMI-ACP,Indian,22,CC-PRJ-273,2016-12-31
+EMP-000761,PRO00761,Angela,Daniels,pro00761@company.com,866.755.8685x127,PROCUREMENT,Senior Buyer,L2,50000.0,2020-05-03,True,Site Office A,,American,18,CC-PRO-120,2020-05-03
+EMP-000762,PRJ00762,Wanda,Davis,prj00762@company.com,0121 496 0649,PROJECTS,Scheduler,L3,200000.0,2017-02-05,True,Site Office A,,Jordanian,7,CC-PRJ-807,2017-02-05
+EMP-000763,PRJ00763,Kimberly,الحكير,prj00763@company.com,+1-861-579-8178x904,PROJECTS,Planner,L2,50000.0,2021-04-11,True,Warehouse,PMI-ACP,British,28,CC-PRJ-306,2021-04-11
+EMP-000764,FIN00764,Katy,Brookes,fin00764@company.com,571.657.6605,FINANCE,Cost Controller,L4,1000000.0,2011-09-10,True,Site Office B,CPA,Filipino,26,CC-FIN-923,2011-09-10
+EMP-000765,PRO00765,Alexis,Gibbs,pro00765@company.com,(029) 2018306,PROCUREMENT,Procurement Specialist,L3,200000.0,2012-01-24,True,Site Office B,,Filipino,5,CC-PRO-680,2012-01-24
+EMP-000766,HSE00766,Sheila,Stewart,hse00766@company.com,001-295-852-9638x6396,HSE,Safety Inspector,L2,50000.0,2014-09-15,True,Head Office,,Sudanese,20,CC-HSE-543,2014-09-15
+EMP-000767,PRJ00767,Christopher,Kim,prj00767@company.com,(458)726-3128x1964,PROJECTS,Planner,L2,50000.0,2019-04-18,True,Site Office B,PRINCE2,Saudi,34,CC-PRJ-983,2019-04-18
+EMP-000768,PRO00768,Gordon,آل قصير,pro00768@company.com,001-592-509-8196x02752,PROCUREMENT,Senior Buyer,L2,50000.0,2020-06-25,True,Site Office B,,American,4,CC-PRO-634,2020-06-25
+EMP-000769,PRO00769,Marcus,Davis,pro00769@company.com,001-364-404-1209x11791,PROCUREMENT,Senior Buyer,L2,50000.0,2015-05-24,True,Warehouse,CPSM,American,21,CC-PRO-980,2015-05-24
+EMP-000770,HSE00770,Travis,Gutierrez,hse00770@company.com,0909 879 0536,HSE,HSE Officer,L1,10000.0,2014-07-26,True,Head Office,OSHA 30,Filipino,16,CC-HSE-515,2014-07-26
+EMP-000771,PRO00771,Terry,الشايع,pro00771@company.com,(028) 9018136,PROCUREMENT,Buyer,L1,10000.0,2010-08-15,True,Regional Office,,Sudanese,28,CC-PRO-532,2010-08-15
+EMP-000772,PRJ00772,أفنان,آل الشيخ,prj00772@company.com,(740)929-9015,PROJECTS,Project Coordinator,L1,10000.0,2013-07-29,True,Head Office,,Filipino,12,CC-PRJ-759,2013-07-29
+EMP-000773,LEG00773,Ashley,Miller,leg00773@company.com,541.239.0808x82351,LEGAL,General Counsel,L6,,2020-11-24,True,Head Office,,Indian,21,CC-LEG-716,2020-11-24
+EMP-000774,ENG00774,Sally,Preston,eng00774@company.com,(944)973-1584,ENGINEERING,Engineer,L1,10000.0,2019-02-17,True,Warehouse,,American,9,CC-ENG-341,2019-02-17
+EMP-000775,PRO00775,Brandy,أبا الخيل,pro00775@company.com,+441164960346,PROCUREMENT,Procurement Specialist,L3,200000.0,2012-09-15,True,Regional Office,,Sudanese,17,CC-PRO-608,2012-09-15
+EMP-000776,LEG00776,Marc,الجفالي,leg00776@company.com,376.876.9459,LEGAL,Legal Officer,L1,10000.0,2012-09-28,True,Site Office A,,Bangladeshi,25,CC-LEG-925,2012-09-28
+EMP-000777,PRJ00777,Susan,Fox,prj00777@company.com,(028)9018172,PROJECTS,Project Coordinator,L1,10000.0,2019-06-27,True,Head Office,PMI-ACP,Jordanian,27,CC-PRJ-360,2019-06-27
+EMP-000778,LEG00778,Danny,Mahmood,leg00778@company.com,+44(0)20 74960856,LEGAL,Legal Officer,L1,10000.0,2021-12-19,True,Field Camp,,British,35,CC-LEG-533,2021-12-19
+EMP-000779,FIN00779,Kirsty,Sutton,fin00779@company.com,(731)535-5251x050,FINANCE,Accountant,L1,10000.0,2016-03-25,True,Field Camp,,British,20,CC-FIN-121,2016-03-25
+EMP-000780,PRJ00780,جوان,Richardson,prj00780@company.com,664-393-8318,PROJECTS,PMO Lead,L5,10000000.0,2010-10-13,True,Warehouse,,Egyptian,17,CC-PRJ-665,2010-10-13
+EMP-000781,ENG00781,Leah,Parker,eng00781@company.com,+44(0)121 496 0533,ENGINEERING,Lead Engineer,L3,200000.0,2018-02-20,False,Warehouse,,Egyptian,29,CC-ENG-497,2018-02-20
+EMP-000782,PRO00782,Carolyn,الحكير,pro00782@company.com,+44(0)1414960117,PROCUREMENT,Procurement Manager,L6,,2015-09-25,True,Field Camp,,Filipino,14,CC-PRO-980,2015-09-25
+EMP-000783,LEG00783,نصوح,Rogers,leg00783@company.com,001-804-209-0742,LEGAL,Legal Manager,L5,10000000.0,2017-02-11,True,Regional Office,,American,3,CC-LEG-380,2017-02-11
+EMP-000784,LEG00784,Molly,Long,leg00784@company.com,371-764-4556,LEGAL,Senior Counsel,L4,1000000.0,2021-01-10,True,Site Office A,,British,28,CC-LEG-997,2021-01-10
+EMP-000785,CTR00785,George,Ramsey,ctr00785@company.com,771.859.1030x021,CONTRACTS,Contract Admin,L1,10000.0,2013-08-06,True,Site Office B,,British,27,CC-CTR-716,2013-08-06
+EMP-000786,PRJ00786,Samuel,Williams,prj00786@company.com,(0808) 1570800,PROJECTS,Planner,L2,50000.0,2017-04-30,True,Head Office,PRINCE2,Jordanian,9,CC-PRJ-103,2017-04-30
+EMP-000787,ENG00787,Mathew,آل صفوان,eng00787@company.com,+44114 4960459,ENGINEERING,Lead Engineer,L3,200000.0,2017-01-14,True,Head Office,PMP,Bangladeshi,27,CC-ENG-911,2017-01-14
+EMP-000788,CTR00788,ميثاق,العليان,ctr00788@company.com,001-371-525-2967,CONTRACTS,Contract Specialist,L2,50000.0,2012-12-29,True,Warehouse,,British,19,CC-CTR-303,2012-12-29
+EMP-000789,PRO00789,Bryan,آل حسين,pro00789@company.com,+44(0)121 4960731,PROCUREMENT,Senior Buyer,L2,50000.0,2018-10-29,True,Field Camp,,Egyptian,2,CC-PRO-123,2018-10-29
+EMP-000790,CTR00790,Teresa,Lewis,ctr00790@company.com,+44(0)191 4960331,CONTRACTS,Contract Engineer,L3,200000.0,2015-02-17,False,Field Camp,,Egyptian,17,CC-CTR-818,2015-02-17
+EMP-000791,LEG00791,معمّر,آل سلطان,leg00791@company.com,776.637.1539,LEGAL,Legal Officer,L1,10000.0,2023-11-11,True,Head Office,,Indian,24,CC-LEG-274,2023-11-11
+EMP-000792,CTR00792,Joshua,Parks,ctr00792@company.com,823-556-7983,CONTRACTS,Contract Admin,L1,10000.0,2021-10-17,True,Field Camp,,Jordanian,32,CC-CTR-221,2021-10-17
+EMP-000793,PRO00793,Terence,آل حسين,pro00793@company.com,+1-912-771-1307x2407,PROCUREMENT,Buyer,L1,10000.0,2015-12-21,True,Site Office A,CSCP,Bangladeshi,14,CC-PRO-943,2015-12-21
+EMP-000794,ENG00794,مرتضي,الجابر,eng00794@company.com,01514960326,ENGINEERING,Lead Engineer,L3,200000.0,2019-05-20,True,Regional Office,CEng,Egyptian,29,CC-ENG-354,2019-05-20
+EMP-000795,ENG00795,مرزوق,Maldonado,eng00795@company.com,645.910.6634x362,ENGINEERING,Lead Engineer,L3,200000.0,2020-04-11,True,Site Office A,,American,14,CC-ENG-830,2020-04-11
+EMP-000796,ENG00796,Eric,الخرافي,eng00796@company.com,313.310.0943,ENGINEERING,Senior Engineer,L2,50000.0,2023-05-25,True,Head Office,CEng,Egyptian,31,CC-ENG-462,2023-05-25
+EMP-000797,CTR00797,Russell,Floyd,ctr00797@company.com,(0141) 4960134,CONTRACTS,Contracts Manager,L5,10000000.0,2023-06-02,True,Regional Office,,Saudi,17,CC-CTR-616,2023-06-02
+EMP-000798,PRJ00798,تامر,Lopez,prj00798@company.com,+4428 9018494,PROJECTS,Planner,L2,50000.0,2018-11-08,True,Head Office,,Saudi,12,CC-PRJ-366,2018-11-08
+EMP-000799,PRO00799,Albert,Thompson,pro00799@company.com,+1-274-932-5122x572,PROCUREMENT,Senior Buyer,L2,50000.0,2017-08-10,True,Head Office,CPSM,Pakistani,17,CC-PRO-219,2017-08-10
+EMP-000800,ENG00800,فخر الدّين,Jackson,eng00800@company.com,+44(0)909 879 0120,ENGINEERING,Engineering Manager,L6,,2021-03-13,True,Regional Office,,American,19,CC-ENG-997,2021-03-13
+EMP-000801,ENG00801,Lori,مهنا,eng00801@company.com,+44909 8790371,ENGINEERING,Design Engineer,L4,1000000.0,2015-12-01,True,Site Office A,LEED AP,Pakistani,29,CC-ENG-154,2015-12-01
+EMP-000802,PRO00802,Kari,Garcia,pro00802@company.com,+44(0)808 157 0388,PROCUREMENT,Buyer,L1,10000.0,2014-02-09,True,Head Office,,American,8,CC-PRO-606,2014-02-09
+EMP-000803,PRO00803,Joyce,شربتلي,pro00803@company.com,977-358-4745x70545,PROCUREMENT,Senior Buyer,L2,50000.0,2022-07-31,True,Site Office A,,Pakistani,8,CC-PRO-457,2022-07-31
+EMP-000804,PRO00804,Julie,Knapp,pro00804@company.com,(863)725-7039,PROCUREMENT,Category Manager,L4,1000000.0,2014-01-19,True,Warehouse,,Bangladeshi,14,CC-PRO-697,2014-01-19
+EMP-000805,CTR00805,Kerry,Baker,ctr00805@company.com,+4428 9018148,CONTRACTS,Contract Admin,L1,10000.0,2022-10-20,True,Field Camp,,Egyptian,32,CC-CTR-793,2022-10-20
+EMP-000806,PRO00806,Kirsty,Barber,pro00806@company.com,(356)896-4430x985,PROCUREMENT,Senior Buyer,L2,50000.0,2016-05-17,True,Warehouse,CIPS,British,10,CC-PRO-129,2016-05-17
+EMP-000807,PRO00807,Simon,Campbell,pro00807@company.com,627.228.4982x4741,PROCUREMENT,Category Manager,L4,1000000.0,2020-10-05,True,Field Camp,,Saudi,22,CC-PRO-144,2020-10-05
+EMP-000808,PRJ00808,Glen,كانو,prj00808@company.com,607-440-6500,PROJECTS,Program Director,L6,,2017-04-15,False,Field Camp,,Bangladeshi,9,CC-PRJ-316,2017-04-15
+EMP-000809,LEG00809,Owen,Cain,leg00809@company.com,(514)223-6914,LEGAL,Senior Counsel,L4,1000000.0,2016-05-06,True,Head Office,,Indian,25,CC-LEG-194,2016-05-06
+EMP-000810,ENG00810,Barry,Naylor,eng00810@company.com,(466)514-4942x9659,ENGINEERING,Engineer,L1,10000.0,2018-12-12,True,Regional Office,LEED AP,Filipino,10,CC-ENG-223,2018-12-12
+EMP-000811,ENG00811,ملهم,آل عايض,eng00811@company.com,+44121 496 0149,ENGINEERING,Design Engineer,L4,1000000.0,2016-12-15,False,Site Office B,,Indian,24,CC-ENG-624,2016-12-15
+EMP-000812,PRO00812,مشاري,أبو داوود,pro00812@company.com,+443069990612,PROCUREMENT,Senior Buyer,L2,50000.0,2018-09-15,True,Site Office B,,American,24,CC-PRO-728,2018-09-15
+EMP-000813,PRO00813,Betty,Clarke,pro00813@company.com,+1-457-656-7667x08061,PROCUREMENT,Procurement Specialist,L3,200000.0,2012-02-01,True,Site Office A,,Egyptian,10,CC-PRO-607,2012-02-01
+EMP-000814,FIN00814,Brian,آل خضير,fin00814@company.com,001-940-262-6078,FINANCE,AP Specialist,L3,200000.0,2011-11-19,True,Site Office A,,Jordanian,20,CC-FIN-252,2011-11-19
+EMP-000815,CTR00815,Hollie,Taylor,ctr00815@company.com,+442074960149,CONTRACTS,Contract Engineer,L3,200000.0,2016-09-26,True,Site Office B,,Filipino,4,CC-CTR-664,2016-09-26
+EMP-000816,PRO00816,Sara,آل عطفة,pro00816@company.com,001-698-203-8287x2324,PROCUREMENT,Buyer,L1,10000.0,2012-05-31,True,Site Office A,,Bangladeshi,17,CC-PRO-463,2012-05-31
+EMP-000817,ENG00817,Marissa,Dickinson,eng00817@company.com,302-991-8133,ENGINEERING,Engineer,L1,10000.0,2021-04-17,True,Warehouse,,Pakistani,26,CC-ENG-146,2021-04-17
+EMP-000818,PRO00818,Lori,آل قصير,pro00818@company.com,267-423-8497x9162,PROCUREMENT,Procurement Lead,L5,10000000.0,2016-09-04,True,Warehouse,,Jordanian,17,CC-PRO-449,2016-09-04
+EMP-000819,CTR00819,Diane,Johnson,ctr00819@company.com,383.977.4419x75466,CONTRACTS,Contracts Manager,L5,10000000.0,2014-03-14,True,Head Office,,Bangladeshi,17,CC-CTR-992,2014-03-14
+EMP-000820,PRJ00820,عذب,Brewer,prj00820@company.com,+44115 496 0960,PROJECTS,Planner,L2,50000.0,2010-05-27,True,Head Office,PMI-SP,Jordanian,26,CC-PRJ-989,2010-05-27
+EMP-000821,PRJ00821,نصر,Lewis,prj00821@company.com,+1-570-752-7740x258,PROJECTS,Scheduler,L3,200000.0,2020-12-01,True,Regional Office,,American,20,CC-PRJ-189,2020-12-01
+EMP-000822,PRO00822,ليساء,كانو,pro00822@company.com,+1-925-495-7244x6176,PROCUREMENT,Buyer,L1,10000.0,2012-07-05,True,Warehouse,CIPS,Egyptian,31,CC-PRO-764,2012-07-05
+EMP-000823,PRO00823,Elizabeth,McDonald,pro00823@company.com,425-599-5996x100,PROCUREMENT,Buyer,L1,10000.0,2022-01-30,True,Site Office A,,Jordanian,28,CC-PRO-122,2022-01-30
+EMP-000824,PRO00824,Jessica,Davey,pro00824@company.com,+44(0)121 4960331,PROCUREMENT,Procurement Lead,L5,10000000.0,2019-12-27,False,Site Office A,,Bangladeshi,16,CC-PRO-306,2019-12-27
+EMP-000825,ENG00825,Benjamin,آل جعفر,eng00825@company.com,(0114) 4960094,ENGINEERING,Design Engineer,L4,1000000.0,2018-10-15,True,Head Office,,American,27,CC-ENG-968,2018-10-15
+EMP-000826,FIN00826,Manuel,الشايع,fin00826@company.com,(0306) 999 0590,FINANCE,AP Specialist,L3,200000.0,2022-06-07,False,Head Office,,Sudanese,32,CC-FIN-337,2022-06-07
+EMP-000827,PRJ00827,Johnny,Davies,prj00827@company.com,+44(0)115 4960983,PROJECTS,Planner,L2,50000.0,2019-06-20,True,Site Office B,PMI-SP,Jordanian,8,CC-PRJ-606,2019-06-20
+EMP-000828,PRJ00828,Patricia,Russell,prj00828@company.com,526.283.1901,PROJECTS,Scheduler,L3,200000.0,2020-01-21,True,Head Office,PRINCE2,Jordanian,23,CC-PRJ-548,2020-01-21
+EMP-000829,PRO00829,Marian,آل سعود,pro00829@company.com,+1-915-728-7339,PROCUREMENT,Buyer,L1,10000.0,2017-08-10,False,Regional Office,,Jordanian,9,CC-PRO-400,2017-08-10
+EMP-000830,PRJ00830,نوري,Brown,prj00830@company.com,566.219.1284x117,PROJECTS,Planner,L2,50000.0,2019-05-08,True,Warehouse,,Jordanian,11,CC-PRJ-736,2019-05-08
+EMP-000831,PRO00831,Monique,Donaldson,pro00831@company.com,+448081570465,PROCUREMENT,Procurement Specialist,L3,200000.0,2011-12-08,True,Head Office,CPSM,Indian,27,CC-PRO-605,2011-12-08
+EMP-000832,ENG00832,مهدي,Lambert,eng00832@company.com,+1-293-389-8469,ENGINEERING,Engineer,L1,10000.0,2011-01-21,False,Site Office A,PMP,Pakistani,33,CC-ENG-132,2011-01-21
+EMP-000833,HSE00833,Stephanie,حنبولي,hse00833@company.com,264-735-0238x50371,HSE,Safety Inspector,L2,50000.0,2012-07-22,True,Head Office,IOSH,British,23,CC-HSE-887,2012-07-22
+EMP-000834,PRO00834,Lesley,Porter,pro00834@company.com,+1-572-740-1078,PROCUREMENT,Procurement Lead,L5,10000000.0,2016-01-01,True,Regional Office,,Bangladeshi,7,CC-PRO-823,2016-01-01
+EMP-000835,PRO00835,Gemma,آل سعود,pro00835@company.com,9002389608,PROCUREMENT,Procurement Lead,L5,10000000.0,2020-04-02,False,Regional Office,,Bangladeshi,7,CC-PRO-943,2020-04-02
+EMP-000836,PRJ00836,Samuel,الحجار,prj00836@company.com,+44(0)292018682,PROJECTS,Planner,L2,50000.0,2013-09-30,True,Regional Office,,Pakistani,19,CC-PRJ-825,2013-09-30
+EMP-000837,ENG00837,Jesse,آل الشيخ,eng00837@company.com,0117 4960560,ENGINEERING,Senior Engineer,L2,50000.0,2012-03-24,True,Site Office A,,Indian,13,CC-ENG-549,2012-03-24
+EMP-000838,CTR00838,حلا,Bolton,ctr00838@company.com,(789)700-3010x27240,CONTRACTS,Claims Analyst,L4,1000000.0,2010-02-23,True,Regional Office,,British,19,CC-CTR-617,2010-02-23
+EMP-000839,PRO00839,Lynn,Taylor,pro00839@company.com,+1-967-611-1483x753,PROCUREMENT,Buyer,L1,10000.0,2019-04-23,True,Warehouse,CPSM,Egyptian,9,CC-PRO-921,2019-04-23
+EMP-000840,ENG00840,Andrea,Martinez,eng00840@company.com,445.588.1056x97413,ENGINEERING,Project Engineer,L5,10000000.0,2020-04-16,False,Site Office B,,Saudi,29,CC-ENG-249,2020-04-16
+EMP-000841,HSE00841,كاشف,Mason,hse00841@company.com,(603)677-1070,HSE,Environmental Specialist,L3,200000.0,2021-08-09,False,Head Office,OSHA 30,American,4,CC-HSE-502,2021-08-09
+EMP-000842,HSE00842,Nicolas,الراشد,hse00842@company.com,2495670667,HSE,Environmental Specialist,L3,200000.0,2013-05-21,False,Head Office,,Sudanese,19,CC-HSE-529,2013-05-21
+EMP-000843,ENG00843,Brenda,Taylor,eng00843@company.com,5402850954,ENGINEERING,Lead Engineer,L3,200000.0,2022-06-02,True,Warehouse,,British,1,CC-ENG-946,2022-06-02
+EMP-000844,ENG00844,Frank,Velez,eng00844@company.com,001-401-886-4876x9984,ENGINEERING,Senior Engineer,L2,50000.0,2013-04-18,True,Site Office A,LEED AP,British,26,CC-ENG-894,2013-04-18
+EMP-000845,PRO00845,عبّود,Bradshaw,pro00845@company.com,0808 157 0413,PROCUREMENT,Senior Buyer,L2,50000.0,2010-10-30,True,Site Office A,,Pakistani,34,CC-PRO-653,2010-10-30
+EMP-000846,ENG00846,Andrew,Bailey,eng00846@company.com,+1-445-944-9014x954,ENGINEERING,Engineer,L1,10000.0,2022-05-18,True,Site Office A,,Saudi,2,CC-ENG-915,2022-05-18
+EMP-000847,FIN00847,Jonathan,Smith,fin00847@company.com,(378)936-0914x985,FINANCE,Accountant,L1,10000.0,2016-10-25,True,Field Camp,CPA,British,17,CC-FIN-742,2016-10-25
+EMP-000848,FIN00848,حياة,Hall,fin00848@company.com,+441154960322,FINANCE,Accountant,L1,10000.0,2012-10-18,True,Site Office B,ACCA,Egyptian,35,CC-FIN-964,2012-10-18
+EMP-000849,PRJ00849,Andrew,الجفالي,prj00849@company.com,2286795083,PROJECTS,Planner,L2,50000.0,2016-05-19,True,Regional Office,,Pakistani,25,CC-PRJ-632,2016-05-19
+EMP-000850,PRJ00850,Alexandra,Norton,prj00850@company.com,001-509-535-1187x181,PROJECTS,Project Coordinator,L1,10000.0,2021-08-01,True,Regional Office,PMP,Pakistani,28,CC-PRJ-948,2021-08-01
+EMP-000851,ENG00851,Samuel,Begum,eng00851@company.com,(216)442-0595x56574,ENGINEERING,Engineer,L1,10000.0,2019-07-13,True,Site Office A,,British,34,CC-ENG-512,2019-07-13
+EMP-000852,PRJ00852,حاتم,آل سلطان,prj00852@company.com,5198358895,PROJECTS,Planner,L2,50000.0,2018-11-09,True,Site Office B,,Jordanian,32,CC-PRJ-849,2018-11-09
+EMP-000853,CTR00853,ناصر الدّين,شربتلي,ctr00853@company.com,(0306) 999 0113,CONTRACTS,Claims Analyst,L4,1000000.0,2013-03-28,True,Site Office A,,Jordanian,9,CC-CTR-821,2013-03-28
+EMP-000854,FIN00854,Mark,Wilson,fin00854@company.com,001-568-618-0978x8754,FINANCE,Financial Analyst,L2,50000.0,2014-10-08,True,Head Office,ACCA,Indian,27,CC-FIN-212,2014-10-08
+EMP-000855,PRO00855,مأمون,Hooper,pro00855@company.com,+44(0)1632960137,PROCUREMENT,Procurement Specialist,L3,200000.0,2010-11-26,True,Head Office,CPM,Filipino,19,CC-PRO-597,2010-11-26
+EMP-000856,PRO00856,Maurice,Hardy,pro00856@company.com,415.679.3763x92836,PROCUREMENT,Buyer,L1,10000.0,2023-03-24,True,Field Camp,CPM,Egyptian,12,CC-PRO-938,2023-03-24
+EMP-000857,PRJ00857,Julia,Yoder,prj00857@company.com,+44(0)1414960829,PROJECTS,Project Coordinator,L1,10000.0,2022-04-13,True,Regional Office,PMI-ACP,Bangladeshi,29,CC-PRJ-445,2022-04-13
+EMP-000858,HSE00858,Andrea,العقيل,hse00858@company.com,(0113) 496 0216,HSE,Safety Inspector,L2,50000.0,2023-08-02,True,Head Office,,Jordanian,29,CC-HSE-252,2023-08-02
+EMP-000859,LEG00859,Scott,Harrison,leg00859@company.com,820-860-2128,LEGAL,Contract Analyst,L2,50000.0,2023-12-27,True,Head Office,,American,22,CC-LEG-653,2023-12-27
+EMP-000860,PRO00860,مظهر,الراشد,pro00860@company.com,001-941-855-9991x015,PROCUREMENT,Procurement Specialist,L3,200000.0,2019-12-09,True,Site Office B,,Saudi,20,CC-PRO-674,2019-12-09
+EMP-000861,PRJ00861,آلاء,آل حسين,prj00861@company.com,0306 9990722,PROJECTS,Scheduler,L3,200000.0,2011-11-29,True,Site Office B,,Saudi,34,CC-PRJ-293,2011-11-29
+EMP-000862,HSE00862,Kenneth,Parker,hse00862@company.com,6993576572,HSE,Safety Inspector,L2,50000.0,2010-06-02,True,Field Camp,NEBOSH,Filipino,14,CC-HSE-351,2010-06-02
+EMP-000863,HSE00863,Michael,Wilson,hse00863@company.com,698.764.5652x20368,HSE,HSE Manager,L4,1000000.0,2022-12-31,True,Regional Office,,American,3,CC-HSE-603,2022-12-31
+EMP-000864,LEG00864,Garry,آل خضير,leg00864@company.com,(0161) 4960732,LEGAL,Legal Officer,L1,10000.0,2019-10-21,True,Head Office,,Sudanese,21,CC-LEG-491,2019-10-21
+EMP-000865,ENG00865,Mike,Howarth,eng00865@company.com,+1-242-913-8820x90883,ENGINEERING,Engineer,L1,10000.0,2012-03-24,True,Head Office,PE,Pakistani,20,CC-ENG-517,2012-03-24
+EMP-000866,PRJ00866,Jason,آل عواض,prj00866@company.com,(678)327-4117x67412,PROJECTS,Project Coordinator,L1,10000.0,2017-04-18,True,Warehouse,PMP,British,10,CC-PRJ-522,2017-04-18
+EMP-000867,LEG00867,Oliver,المغاولة,leg00867@company.com,752-285-4781,LEGAL,Legal Officer,L1,10000.0,2012-09-17,True,Head Office,,Bangladeshi,16,CC-LEG-604,2012-09-17
+EMP-000868,FIN00868,Derrick,Carr,fin00868@company.com,0117 496 0800,FINANCE,Financial Analyst,L2,50000.0,2012-07-31,True,Site Office A,,Indian,31,CC-FIN-129,2012-07-31
+EMP-000869,ENG00869,Travis,آل علي,eng00869@company.com,+1-234-872-7274x23183,ENGINEERING,Engineer,L1,10000.0,2010-06-02,True,Field Camp,,Egyptian,9,CC-ENG-411,2010-06-02
+EMP-000870,PRJ00870,Dale,King,prj00870@company.com,(906)449-6935,PROJECTS,Planner,L2,50000.0,2021-03-23,True,Field Camp,PRINCE2,Egyptian,35,CC-PRJ-533,2021-03-23
+EMP-000871,CTR00871,ميّاد,Glover,ctr00871@company.com,+44(0)3069990695,CONTRACTS,Contract Engineer,L3,200000.0,2010-12-09,True,Site Office A,,Bangladeshi,19,CC-CTR-768,2010-12-09
+EMP-000872,CTR00872,Grace,Holmes,ctr00872@company.com,001-446-975-3612x75156,CONTRACTS,Contract Admin,L1,10000.0,2020-10-25,True,Head Office,,American,23,CC-CTR-962,2020-10-25
+EMP-000873,PRJ00873,Alexander,Jones,prj00873@company.com,848-836-0854x5667,PROJECTS,Scheduler,L3,200000.0,2021-06-12,True,Head Office,,Indian,20,CC-PRJ-191,2021-06-12
+EMP-000874,ENG00874,جرير,Green,eng00874@company.com,404-276-3928x31995,ENGINEERING,Engineer,L1,10000.0,2013-02-18,True,Field Camp,,Egyptian,33,CC-ENG-921,2013-02-18
+EMP-000875,ENG00875,Mohamed,Stevens,eng00875@company.com,658-410-8358x32863,ENGINEERING,Lead Engineer,L3,200000.0,2017-09-07,True,Field Camp,,Filipino,16,CC-ENG-778,2017-09-07
+EMP-000876,CTR00876,Josh,Hall,ctr00876@company.com,200.408.1867,CONTRACTS,Contract Specialist,L2,50000.0,2020-04-24,False,Site Office A,,Pakistani,1,CC-CTR-723,2020-04-24
+EMP-000877,FIN00877,ناهد,الدباغ,fin00877@company.com,304.316.6241,FINANCE,Finance Manager,L5,10000000.0,2013-11-22,True,Regional Office,,American,35,CC-FIN-183,2013-11-22
+EMP-000878,HSE00878,Sally,آل العسكري,hse00878@company.com,6897219639,HSE,Environmental Specialist,L3,200000.0,2011-09-28,True,Regional Office,,Jordanian,8,CC-HSE-461,2011-09-28
+EMP-000879,CTR00879,Abbie,العقيل,ctr00879@company.com,+44(0)118 4960731,CONTRACTS,Contract Specialist,L2,50000.0,2023-06-27,True,Head Office,,Saudi,8,CC-CTR-573,2023-06-27
+EMP-000880,ENG00880,Chelsea,Jones,eng00880@company.com,01214960613,ENGINEERING,Engineer,L1,10000.0,2010-03-18,True,Head Office,CEng,Egyptian,6,CC-ENG-935,2010-03-18
+EMP-000881,PRJ00881,Becky,Sanders,prj00881@company.com,+1-383-960-7658,PROJECTS,Planner,L2,50000.0,2014-12-17,True,Site Office A,PMI-ACP,Jordanian,14,CC-PRJ-107,2014-12-17
+EMP-000882,PRO00882,عادل,Thomas,pro00882@company.com,557.991.4521x182,PROCUREMENT,Category Manager,L4,1000000.0,2018-11-19,True,Head Office,,Pakistani,13,CC-PRO-775,2018-11-19
+EMP-000883,PRJ00883,Hollie,Fischer,prj00883@company.com,889.230.7464x5205,PROJECTS,Scheduler,L3,200000.0,2023-07-11,True,Head Office,PMP,Pakistani,17,CC-PRJ-683,2023-07-11
+EMP-000884,LEG00884,Bethany,العقيل,leg00884@company.com,+44191 4960753,LEGAL,Legal Manager,L5,10000000.0,2016-02-26,True,Warehouse,,Sudanese,17,CC-LEG-797,2016-02-26
+EMP-000885,PRJ00885,Samuel,Williams,prj00885@company.com,+1-311-461-6202,PROJECTS,Planner,L2,50000.0,2019-07-31,True,Field Camp,PMI-ACP,American,27,CC-PRJ-380,2019-07-31
+EMP-000886,PRO00886,Kaitlyn,الدباغ,pro00886@company.com,+44161 496 0287,PROCUREMENT,Senior Buyer,L2,50000.0,2021-02-11,True,Regional Office,,Egyptian,4,CC-PRO-384,2021-02-11
+EMP-000887,CTR00887,Sian,Bishop,ctr00887@company.com,01134960416,CONTRACTS,Contract Specialist,L2,50000.0,2017-02-03,True,Head Office,,Indian,2,CC-CTR-855,2017-02-03
+EMP-000888,PRO00888,Sharon,آل سعود,pro00888@company.com,(992)924-8395x894,PROCUREMENT,Procurement Specialist,L3,200000.0,2011-09-02,False,Head Office,CIPS,Indian,2,CC-PRO-591,2011-09-02
+EMP-000889,ENG00889,Bruce,Wright,eng00889@company.com,970.756.2271x04331,ENGINEERING,Engineer,L1,10000.0,2017-07-01,True,Head Office,,British,4,CC-ENG-941,2017-07-01
+EMP-000890,ENG00890,نوّار,كانو,eng00890@company.com,(883)650-3446x945,ENGINEERING,Design Engineer,L4,1000000.0,2011-08-21,True,Site Office B,,Jordanian,8,CC-ENG-187,2011-08-21
+EMP-000891,CTR00891,يوسف,الحكير,ctr00891@company.com,392-413-4249,CONTRACTS,Contracts Manager,L5,10000000.0,2018-06-19,True,Regional Office,,Indian,9,CC-CTR-163,2018-06-19
+EMP-000892,CTR00892,باسمة,العقيل,ctr00892@company.com,(020) 7496 0994,CONTRACTS,Contract Specialist,L2,50000.0,2016-10-05,True,Site Office A,,Indian,4,CC-CTR-672,2016-10-05
+EMP-000893,PRO00893,Martin,Taylor,pro00893@company.com,(903)231-9222,PROCUREMENT,Category Manager,L4,1000000.0,2019-01-04,True,Regional Office,CIPS,Jordanian,25,CC-PRO-575,2019-01-04
+EMP-000894,HSE00894,رمضان,Castro,hse00894@company.com,0151 496 0754,HSE,HSE Director,L5,10000000.0,2023-11-21,True,Warehouse,,Saudi,30,CC-HSE-629,2023-11-21
+EMP-000895,ENG00895,Zoe,Hill,eng00895@company.com,+44306 999 0675,ENGINEERING,Engineer,L1,10000.0,2012-04-21,True,Warehouse,,Egyptian,9,CC-ENG-752,2012-04-21
+EMP-000896,FIN00896,فايد,Johnson,fin00896@company.com,324.826.8774,FINANCE,Financial Analyst,L2,50000.0,2020-10-18,True,Site Office A,CPA,Saudi,9,CC-FIN-419,2020-10-18
+EMP-000897,PRJ00897,Christina,Reyes,prj00897@company.com,09098790756,PROJECTS,Planner,L2,50000.0,2018-01-09,True,Regional Office,,Pakistani,31,CC-PRJ-416,2018-01-09
+EMP-000898,PRJ00898,عبد الرّشيد,Holland,prj00898@company.com,001-603-275-8309x4515,PROJECTS,Project Coordinator,L1,10000.0,2010-03-08,True,Warehouse,PRINCE2,Sudanese,4,CC-PRJ-532,2010-03-08
+EMP-000899,ENG00899,Mike,آل سلطان,eng00899@company.com,960.344.0907x9772,ENGINEERING,Engineering Manager,L6,,2014-07-07,True,Site Office A,,Jordanian,22,CC-ENG-972,2014-07-07
+EMP-000900,PRJ00900,Ellie,Bartlett,prj00900@company.com,001-522-216-1070x5184,PROJECTS,Program Director,L6,,2023-10-27,True,Site Office A,PMP,Jordanian,15,CC-PRJ-103,2023-10-27
+EMP-000901,PRJ00901,Gerald,Hill,prj00901@company.com,001-458-606-6013,PROJECTS,Scheduler,L3,200000.0,2020-06-18,True,Head Office,,British,25,CC-PRJ-310,2020-06-18
+EMP-000902,ENG00902,Darren,White,eng00902@company.com,001-386-920-4485x157,ENGINEERING,Design Engineer,L4,1000000.0,2010-02-25,True,Head Office,PE,Pakistani,19,CC-ENG-550,2010-02-25
+EMP-000903,PRO00903,Gail,آل عطفة,pro00903@company.com,(359)502-0357,PROCUREMENT,Procurement Specialist,L3,200000.0,2018-01-27,True,Head Office,CSCP,Egyptian,17,CC-PRO-836,2018-01-27
+EMP-000904,PRO00904,Tiffany,Harrison,pro00904@company.com,001-624-506-4242x95633,PROCUREMENT,Category Manager,L4,1000000.0,2015-07-08,True,Head Office,,Indian,2,CC-PRO-951,2015-07-08
+EMP-000905,PRJ00905,Damien,المغاولة,prj00905@company.com,+44(0)1144960759,PROJECTS,Planner,L2,50000.0,2012-06-28,True,Head Office,PMI-ACP,British,11,CC-PRJ-639,2012-06-28
+EMP-000906,CTR00906,Dean,بقشان,ctr00906@company.com,+448081570209,CONTRACTS,Contracts Director,L6,,2019-09-24,True,Head Office,,Pakistani,9,CC-CTR-913,2019-09-24
+EMP-000907,PRO00907,Elliot,Weeks,pro00907@company.com,001-665-543-5884x183,PROCUREMENT,Senior Buyer,L2,50000.0,2018-05-24,True,Site Office A,,Saudi,13,CC-PRO-974,2018-05-24
+EMP-000908,FIN00908,Robert,Holt,fin00908@company.com,+1-727-227-9559x69051,FINANCE,Cost Controller,L4,1000000.0,2017-05-08,True,Site Office B,CMA,Sudanese,32,CC-FIN-314,2017-05-08
+EMP-000909,PRJ00909,لؤي,Lee,prj00909@company.com,(954)827-8207,PROJECTS,Project Manager,L4,1000000.0,2023-10-17,True,Site Office B,,Sudanese,24,CC-PRJ-610,2023-10-17
+EMP-000910,FIN00910,Josephine,Hodgson,fin00910@company.com,(01632)960595,FINANCE,Accountant,L1,10000.0,2018-05-21,True,Site Office A,,Jordanian,18,CC-FIN-695,2018-05-21
+EMP-000911,ENG00911,Elizabeth,Waller,eng00911@company.com,001-581-466-4969x02824,ENGINEERING,Project Engineer,L5,10000000.0,2023-02-05,True,Head Office,,Jordanian,16,CC-ENG-505,2023-02-05
+EMP-000912,PRO00912,Roger,Savage,pro00912@company.com,+44(0)306 9990257,PROCUREMENT,Senior Buyer,L2,50000.0,2018-06-17,True,Field Camp,CIPS,Pakistani,6,CC-PRO-402,2018-06-17
+EMP-000913,ENG00913,Gail,Burgess,eng00913@company.com,324.541.2336,ENGINEERING,Senior Engineer,L2,50000.0,2023-02-05,True,Site Office B,,Jordanian,30,CC-ENG-542,2023-02-05
+EMP-000914,ENG00914,Ricardo,Sutton,eng00914@company.com,(417)786-3767x316,ENGINEERING,Design Engineer,L4,1000000.0,2017-02-10,True,Head Office,,Filipino,5,CC-ENG-467,2017-02-10
+EMP-000915,CTR00915,Maurice,آل الشيخ,ctr00915@company.com,001-569-768-1579x0392,CONTRACTS,Contract Admin,L1,10000.0,2021-04-03,True,Site Office B,,Filipino,15,CC-CTR-200,2021-04-03
+EMP-000916,PRO00916,شجاع,Hayes,pro00916@company.com,+1-761-832-7303x461,PROCUREMENT,Senior Buyer,L2,50000.0,2022-04-01,True,Head Office,CPM,Filipino,13,CC-PRO-822,2022-04-01
+EMP-000917,PRJ00917,Antony,Sanders,prj00917@company.com,(0141) 496 0704,PROJECTS,Project Coordinator,L1,10000.0,2022-03-08,False,Head Office,PMI-ACP,American,26,CC-PRJ-941,2022-03-08
+EMP-000918,PRJ00918,معن,Tucker,prj00918@company.com,471-851-6025,PROJECTS,Scheduler,L3,200000.0,2020-08-02,True,Field Camp,,American,15,CC-PRJ-332,2020-08-02
+EMP-000919,PRJ00919,Tina,الحكير,prj00919@company.com,(760)346-4197x8575,PROJECTS,Project Coordinator,L1,10000.0,2015-03-30,True,Regional Office,,Jordanian,22,CC-PRJ-910,2015-03-30
+EMP-000920,PRO00920,Steven,Martinez,pro00920@company.com,920-859-4389,PROCUREMENT,Category Manager,L4,1000000.0,2019-08-14,True,Warehouse,CPSM,Sudanese,2,CC-PRO-483,2019-08-14
+EMP-000921,PRO00921,قائد,Field,pro00921@company.com,+44(0)151 496 0509,PROCUREMENT,Procurement Lead,L5,10000000.0,2016-11-08,False,Head Office,,British,22,CC-PRO-330,2016-11-08
+EMP-000922,ENG00922,حامد,الخرافي,eng00922@company.com,308-742-4560x7540,ENGINEERING,Lead Engineer,L3,200000.0,2019-01-18,True,Warehouse,PE,Bangladeshi,3,CC-ENG-242,2019-01-18
+EMP-000923,PRO00923,بتلاء,Sellers,pro00923@company.com,(718)912-2764,PROCUREMENT,Procurement Manager,L6,,2017-05-29,True,Regional Office,,Bangladeshi,26,CC-PRO-490,2017-05-29
+EMP-000924,PRO00924,Joanne,White,pro00924@company.com,797.601.5502x91681,PROCUREMENT,Senior Buyer,L2,50000.0,2021-12-27,True,Site Office A,CPSM,Filipino,6,CC-PRO-275,2021-12-27
+EMP-000925,PRO00925,مهنّد,Hodges,pro00925@company.com,216-713-9449x883,PROCUREMENT,Procurement Specialist,L3,200000.0,2010-09-20,True,Site Office B,CSCP,Indian,25,CC-PRO-390,2010-09-20
+EMP-000926,PRO00926,حقّي,الخرافي,pro00926@company.com,+44(0)118 4960248,PROCUREMENT,Buyer,L1,10000.0,2021-10-05,True,Head Office,,Pakistani,21,CC-PRO-980,2021-10-05
+EMP-000927,CTR00927,Andrew,Quinn,ctr00927@company.com,+1-344-506-3062x44795,CONTRACTS,Contract Specialist,L2,50000.0,2012-06-26,True,Site Office A,,Indian,25,CC-CTR-986,2012-06-26
+EMP-000928,PRO00928,Louise,Murray,pro00928@company.com,797-796-9586x7805,PROCUREMENT,Procurement Lead,L5,10000000.0,2016-12-12,True,Warehouse,,Bangladeshi,20,CC-PRO-701,2016-12-12
+EMP-000929,PRO00929,نضال,Rogers,pro00929@company.com,338.526.4609x1785,PROCUREMENT,Procurement Specialist,L3,200000.0,2020-04-17,True,Head Office,CIPS,American,16,CC-PRO-638,2020-04-17
+EMP-000930,ENG00930,يعقوب,Weber,eng00930@company.com,+44151 4960702,ENGINEERING,Lead Engineer,L3,200000.0,2021-01-04,True,Site Office B,,Filipino,30,CC-ENG-455,2021-01-04
+EMP-000931,PRJ00931,Victoria,آل مقطة,prj00931@company.com,(860)548-7368x26911,PROJECTS,Scheduler,L3,200000.0,2016-09-02,True,Regional Office,,American,16,CC-PRJ-283,2016-09-02
+EMP-000932,LEG00932,رخاء,مهنا,leg00932@company.com,(768)765-3694,LEGAL,Legal Counsel,L3,200000.0,2020-04-08,True,Warehouse,,Bangladeshi,7,CC-LEG-502,2020-04-08
+EMP-000933,PRJ00933,Amanda,Miller,prj00933@company.com,001-858-688-6367x74722,PROJECTS,Project Coordinator,L1,10000.0,2013-07-17,True,Site Office B,PMP,Egyptian,32,CC-PRJ-521,2013-07-17
+EMP-000934,CTR00934,بثينة,آل حسين,ctr00934@company.com,(516)496-6630,CONTRACTS,Contract Engineer,L3,200000.0,2018-04-09,True,Head Office,,British,27,CC-CTR-561,2018-04-09
+EMP-000935,PRO00935,Julia,الحكير,pro00935@company.com,001-360-759-3297,PROCUREMENT,Buyer,L1,10000.0,2011-01-01,True,Head Office,,Jordanian,25,CC-PRO-451,2011-01-01
+EMP-000936,PRJ00936,Duncan,حجار,prj00936@company.com,532.975.3273x52410,PROJECTS,Project Manager,L4,1000000.0,2018-11-24,True,Head Office,,Pakistani,21,CC-PRJ-786,2018-11-24
+EMP-000937,PRJ00937,رشدي,الجابر,prj00937@company.com,0118 4960278,PROJECTS,Planner,L2,50000.0,2011-07-13,True,Warehouse,,Jordanian,9,CC-PRJ-582,2011-07-13
+EMP-000938,HSE00938,Shannon,Baldwin,hse00938@company.com,371.800.6876,HSE,HSE Manager,L4,1000000.0,2013-10-29,True,Site Office B,NEBOSH,Sudanese,26,CC-HSE-272,2013-10-29
+EMP-000939,PRO00939,Dustin,Reed,pro00939@company.com,+1-880-377-0460x5687,PROCUREMENT,Category Manager,L4,1000000.0,2016-02-17,True,Site Office A,CIPS,Sudanese,14,CC-PRO-552,2016-02-17
+EMP-000940,PRJ00940,Katherine,Harris,prj00940@company.com,001-912-956-5237x34151,PROJECTS,Project Manager,L4,1000000.0,2021-09-23,True,Warehouse,,American,20,CC-PRJ-554,2021-09-23
+EMP-000941,PRO00941,Marilyn,Juarez,pro00941@company.com,0131 496 0749,PROCUREMENT,Buyer,L1,10000.0,2018-06-19,True,Field Camp,CSCP,Egyptian,6,CC-PRO-116,2018-06-19
+EMP-000942,ENG00942,فرات,Thomas,eng00942@company.com,640.435.9544x29477,ENGINEERING,Engineering Manager,L6,,2017-07-24,True,Warehouse,PE,Pakistani,11,CC-ENG-145,2017-07-24
+EMP-000943,ENG00943,Melissa,أبا الخيل,eng00943@company.com,(0909) 879 0643,ENGINEERING,Engineer,L1,10000.0,2017-05-03,True,Site Office B,,Sudanese,26,CC-ENG-538,2017-05-03
+EMP-000944,PRO00944,سعيد,المشاولة,pro00944@company.com,001-404-758-8679,PROCUREMENT,Buyer,L1,10000.0,2017-12-31,True,Head Office,,Saudi,25,CC-PRO-317,2017-12-31
+EMP-000945,FIN00945,سهيل,العقيل,fin00945@company.com,0191 4960567,FINANCE,Accountant,L1,10000.0,2016-03-31,True,Site Office A,CMA,American,20,CC-FIN-885,2016-03-31
+EMP-000946,PRJ00946,Kelly,شربتلي,prj00946@company.com,560.715.3433x2491,PROJECTS,Program Director,L6,,2012-04-14,True,Regional Office,,Bangladeshi,11,CC-PRJ-357,2012-04-14
+EMP-000947,CTR00947,Kirsty,آل قصير,ctr00947@company.com,001-383-235-0615x8148,CONTRACTS,Contract Engineer,L3,200000.0,2018-09-19,True,Field Camp,,Pakistani,22,CC-CTR-279,2018-09-19
+EMP-000948,PRJ00948,Alexandra,Clark,prj00948@company.com,523-337-2094x841,PROJECTS,PMO Lead,L5,10000000.0,2017-02-17,False,Warehouse,PMP,Bangladeshi,29,CC-PRJ-491,2017-02-17
+EMP-000949,FIN00949,Scott,Chapman,fin00949@company.com,001-597-971-8051,FINANCE,AP Specialist,L3,200000.0,2021-04-17,True,Field Camp,CPA,Filipino,16,CC-FIN-855,2021-04-17
+EMP-000950,ENG00950,صائب,شربتلي,eng00950@company.com,001-339-974-9096,ENGINEERING,Engineer,L1,10000.0,2011-10-13,True,Site Office A,PMP,American,14,CC-ENG-757,2011-10-13
+EMP-000951,PRO00951,عاتب,White,pro00951@company.com,001-670-646-9472x58784,PROCUREMENT,Procurement Lead,L5,10000000.0,2023-06-01,False,Site Office A,,Pakistani,18,CC-PRO-425,2023-06-01
+EMP-000952,PRJ00952,Sara,Ward,prj00952@company.com,847.612.7058x77221,PROJECTS,Project Manager,L4,1000000.0,2021-09-06,True,Site Office A,,Saudi,15,CC-PRJ-967,2021-09-06
+EMP-000953,PRJ00953,Gail,آل علي,prj00953@company.com,+1-723-913-3484,PROJECTS,Planner,L2,50000.0,2014-08-14,True,Field Camp,,Egyptian,15,CC-PRJ-722,2014-08-14
+EMP-000954,LEG00954,Sarah,McDonald,leg00954@company.com,+1-825-623-6229x25879,LEGAL,Contract Analyst,L2,50000.0,2014-02-12,True,Head Office,,Jordanian,5,CC-LEG-297,2014-02-12
+EMP-000955,PRO00955,فداء,أبو داوود,pro00955@company.com,+44(0)131 4960245,PROCUREMENT,Procurement Manager,L6,,2014-07-31,True,Head Office,,Egyptian,16,CC-PRO-619,2014-07-31
+EMP-000956,PRO00956,Christopher,Hartley,pro00956@company.com,+44121 496 0696,PROCUREMENT,Procurement Specialist,L3,200000.0,2016-12-26,True,Head Office,,Bangladeshi,16,CC-PRO-410,2016-12-26
+EMP-000957,ENG00957,Lori,Clark,eng00957@company.com,+44131 496 0274,ENGINEERING,Senior Engineer,L2,50000.0,2014-07-08,True,Regional Office,CEng,American,25,CC-ENG-271,2014-07-08
+EMP-000958,FIN00958,Charles,Nguyen,fin00958@company.com,945-605-6658x833,FINANCE,Financial Analyst,L2,50000.0,2023-09-02,True,Regional Office,,Jordanian,2,CC-FIN-880,2023-09-02
+EMP-000959,ENG00959,كتوم,العليان,eng00959@company.com,(01632) 960970,ENGINEERING,Design Engineer,L4,1000000.0,2016-09-25,True,Head Office,,Filipino,25,CC-ENG-574,2016-09-25
+EMP-000960,ENG00960,Aaron,آل جعفر,eng00960@company.com,699-360-1054x857,ENGINEERING,Engineer,L1,10000.0,2022-08-11,True,Head Office,LEED AP,Egyptian,10,CC-ENG-294,2022-08-11
+EMP-000961,PRO00961,عثمان,آل عطفة,pro00961@company.com,+44306 999 0622,PROCUREMENT,Category Manager,L4,1000000.0,2018-05-24,True,Field Camp,,British,25,CC-PRO-601,2018-05-24
+EMP-000962,ENG00962,Kelsey,Harrell,eng00962@company.com,673-259-8488,ENGINEERING,Engineering Manager,L6,,2011-08-07,True,Head Office,,American,11,CC-ENG-298,2011-08-07
+EMP-000963,HSE00963,Rachael,آل العسكري,hse00963@company.com,001-555-673-2573x755,HSE,Chief Safety Officer,L6,,2017-10-26,True,Site Office A,,Saudi,25,CC-HSE-534,2017-10-26
+EMP-000964,PRJ00964,مروان,Moyer,prj00964@company.com,766-267-0808,PROJECTS,Project Coordinator,L1,10000.0,2010-10-10,False,Site Office A,,Saudi,10,CC-PRJ-367,2010-10-10
+EMP-000965,PRJ00965,غانم,آل جعفر,prj00965@company.com,+44(0)306 9990874,PROJECTS,PMO Lead,L5,10000000.0,2013-04-22,True,Site Office B,,Pakistani,1,CC-PRJ-219,2013-04-22
+EMP-000966,HSE00966,Katie,Warren,hse00966@company.com,991-581-8281,HSE,Environmental Specialist,L3,200000.0,2018-08-15,True,Site Office B,,Sudanese,13,CC-HSE-997,2018-08-15
+EMP-000967,ENG00967,Deborah,Price,eng00967@company.com,+44151 4960251,ENGINEERING,Design Engineer,L4,1000000.0,2015-09-03,True,Site Office B,,American,20,CC-ENG-851,2015-09-03
+EMP-000968,ENG00968,Francis,مهنا,eng00968@company.com,001-860-469-4096x0035,ENGINEERING,Project Engineer,L5,10000000.0,2011-12-30,True,Site Office B,,Pakistani,18,CC-ENG-866,2011-12-30
+EMP-000969,PRO00969,Melissa,Lopez,pro00969@company.com,(0191) 4960739,PROCUREMENT,Procurement Specialist,L3,200000.0,2016-11-28,True,Head Office,,Indian,5,CC-PRO-892,2016-11-28
+EMP-000970,PRJ00970,Guy,Barrett,prj00970@company.com,742.310.8902,PROJECTS,Planner,L2,50000.0,2016-06-20,True,Head Office,PRINCE2,Egyptian,32,CC-PRJ-286,2016-06-20
+EMP-000971,FIN00971,Adam,Williams,fin00971@company.com,926-543-3502x7160,FINANCE,Accountant,L1,10000.0,2022-09-20,True,Head Office,CMA,Egyptian,17,CC-FIN-992,2022-09-20
+EMP-000972,ENG00972,David,Cox,eng00972@company.com,369.411.2898,ENGINEERING,Lead Engineer,L3,200000.0,2012-06-13,True,Head Office,LEED AP,Indian,18,CC-ENG-165,2012-06-13
+EMP-000973,ENG00973,Tracie,الحجار,eng00973@company.com,+44(0)1632960563,ENGINEERING,Lead Engineer,L3,200000.0,2020-09-19,True,Regional Office,CEng,Saudi,3,CC-ENG-199,2020-09-19
+EMP-000974,PRO00974,Adrian,Matthews,pro00974@company.com,(0118)4960817,PROCUREMENT,Category Manager,L4,1000000.0,2018-06-05,True,Field Camp,,Jordanian,31,CC-PRO-875,2018-06-05
+EMP-000975,ENG00975,Melanie,Cunningham,eng00975@company.com,(754)216-4316x704,ENGINEERING,Senior Engineer,L2,50000.0,2018-04-26,True,Site Office A,,Egyptian,24,CC-ENG-781,2018-04-26
+EMP-000976,ENG00976,سعد,كانو,eng00976@company.com,422.470.0934x59626,ENGINEERING,Lead Engineer,L3,200000.0,2017-12-26,True,Regional Office,LEED AP,Pakistani,2,CC-ENG-716,2017-12-26
+EMP-000977,PRO00977,Matthew,Hancock,pro00977@company.com,(212)207-3465x495,PROCUREMENT,Senior Buyer,L2,50000.0,2015-07-30,True,Site Office B,,Jordanian,33,CC-PRO-523,2015-07-30
+EMP-000978,PRJ00978,Gillian,Davis,prj00978@company.com,(308)369-8221x05316,PROJECTS,Project Coordinator,L1,10000.0,2017-03-24,True,Site Office A,PMI-ACP,Jordanian,15,CC-PRJ-721,2017-03-24
+EMP-000979,FIN00979,Alexandra,Martinez,fin00979@company.com,329.904.7742x585,FINANCE,AP Specialist,L3,200000.0,2011-10-29,True,Field Camp,,Jordanian,7,CC-FIN-851,2011-10-29
+EMP-000980,ENG00980,Jeffrey,كانو,eng00980@company.com,(523)511-6491,ENGINEERING,Lead Engineer,L3,200000.0,2013-03-18,True,Regional Office,,Sudanese,3,CC-ENG-230,2013-03-18
+EMP-000981,FIN00981,ياقوت,Carter,fin00981@company.com,0131 496 0798,FINANCE,Accountant,L1,10000.0,2022-04-23,False,Site Office A,,Indian,31,CC-FIN-778,2022-04-23
+EMP-000982,FIN00982,Mark,العقيل,fin00982@company.com,465-829-0603x20203,FINANCE,Accountant,L1,10000.0,2013-10-28,True,Warehouse,CFA,Saudi,11,CC-FIN-434,2013-10-28
+EMP-000983,CTR00983,Alison,Chavez,ctr00983@company.com,(0909) 879 0539,CONTRACTS,Claims Analyst,L4,1000000.0,2014-12-11,True,Warehouse,,Indian,9,CC-CTR-647,2014-12-11
+EMP-000984,PRJ00984,نجدت,Holt,prj00984@company.com,+44191 4960714,PROJECTS,Planner,L2,50000.0,2017-06-19,True,Field Camp,,Bangladeshi,5,CC-PRJ-759,2017-06-19
+EMP-000985,ENG00985,Jeremy,Burke,eng00985@company.com,257-487-1584x156,ENGINEERING,Project Engineer,L5,10000000.0,2018-07-24,True,Regional Office,,American,15,CC-ENG-328,2018-07-24
+EMP-000986,ENG00986,صائب,Larsen,eng00986@company.com,+1-442-854-7681,ENGINEERING,Engineer,L1,10000.0,2012-07-01,True,Warehouse,,Indian,24,CC-ENG-230,2012-07-01
+EMP-000987,LEG00987,Sam,Becker,leg00987@company.com,001-503-458-9298x80858,LEGAL,General Counsel,L6,,2022-12-10,True,Site Office A,,Bangladeshi,35,CC-LEG-294,2022-12-10
+EMP-000988,HSE00988,Danny,Griffith,hse00988@company.com,+1-893-928-9634x0646,HSE,Chief Safety Officer,L6,,2017-03-03,True,Regional Office,,Pakistani,34,CC-HSE-779,2017-03-03
+EMP-000989,PRJ00989,عزّت,Leblanc,prj00989@company.com,0113 496 0148,PROJECTS,Project Coordinator,L1,10000.0,2018-11-13,True,Regional Office,PMI-ACP,Egyptian,32,CC-PRJ-796,2018-11-13
+EMP-000990,FIN00990,Mary,Perez,fin00990@company.com,+1-810-562-2723x626,FINANCE,AP Specialist,L3,200000.0,2013-04-09,True,Regional Office,,Saudi,21,CC-FIN-416,2013-04-09
+EMP-000991,FIN00991,سعد,Ramos,fin00991@company.com,+44(0)1154960619,FINANCE,AP Specialist,L3,200000.0,2016-02-19,False,Warehouse,,Egyptian,32,CC-FIN-398,2016-02-19
+EMP-000992,PRJ00992,اصيل,Dyer,prj00992@company.com,650-318-4819x737,PROJECTS,Planner,L2,50000.0,2017-06-22,True,Warehouse,,Egyptian,4,CC-PRJ-986,2017-06-22
+EMP-000993,HSE00993,إباء,الحجار,hse00993@company.com,340-364-1769x27438,HSE,HSE Manager,L4,1000000.0,2018-10-15,True,Regional Office,,Pakistani,2,CC-HSE-661,2018-10-15
+EMP-000994,ENG00994,Jennifer,Smith,eng00994@company.com,+1-376-260-1444x85645,ENGINEERING,Senior Engineer,L2,50000.0,2020-08-14,False,Regional Office,,Sudanese,19,CC-ENG-389,2020-08-14
+EMP-000995,PRJ00995,Wendy,العليان,prj00995@company.com,+441174960964,PROJECTS,Project Coordinator,L1,10000.0,2022-04-17,True,Head Office,,Bangladeshi,4,CC-PRJ-970,2022-04-17
+EMP-000996,CTR00996,Michael,حجار,ctr00996@company.com,+1-396-398-6091x919,CONTRACTS,Contract Specialist,L2,50000.0,2013-09-02,True,Site Office A,,Jordanian,19,CC-CTR-248,2013-09-02
+EMP-000997,PRO00997,مسعود,Allen,pro00997@company.com,(0808) 1570605,PROCUREMENT,Category Manager,L4,1000000.0,2014-05-22,True,Head Office,,Bangladeshi,7,CC-PRO-794,2014-05-22
+EMP-000998,HSE00998,Matthew,العجلان,hse00998@company.com,3666039205,HSE,HSE Manager,L4,1000000.0,2018-06-12,False,Site Office A,,Saudi,7,CC-HSE-464,2018-06-12
+EMP-000999,CTR00999,Katie,Nguyen,ctr00999@company.com,+44131 4960553,CONTRACTS,Contract Admin,L1,10000.0,2011-03-06,True,Site Office B,,British,28,CC-CTR-252,2011-03-06
+EMP-001000,PRJ01000,Stewart,Sloan,prj01000@company.com,+1-742-538-8565x2715,PROJECTS,Planner,L2,50000.0,2010-10-06,True,Site Office A,PRINCE2,American,6,CC-PRJ-896,2010-10-06

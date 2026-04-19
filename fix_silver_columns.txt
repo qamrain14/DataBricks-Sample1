@@ -1,0 +1,67 @@
+"""Patch silver pipeline to use actual bronze CSV column names."""
+from pathlib import Path
+import re
+
+p = Path(__file__).resolve().parent / "databricks" / "silver" / "02_silver_pipeline.py"
+text = p.read_text(encoding="utf-8")
+orig = text
+
+# ── silver_contracts ─────────────────────────────────────
+# expect uses contract_value -> original_value
+text = text.replace(
+    '@dlt.expect("valid_value", "contract_value > 0")',
+    '@dlt.expect("valid_value", "original_value > 0")',
+)
+# self-cast contract_value -> original_value
+text = text.replace(
+    '.withColumn("contract_value", col("contract_value").cast(DoubleType()))',
+    '.withColumn("original_value", col("original_value").cast(DoubleType()))\n        .withColumn("revised_value", col("revised_value").cast(DoubleType()))\n        .withColumn("contract_value", coalesce(col("revised_value"), col("original_value")))',
+)
+
+# ── silver_contract_items ────────────────────────────────
+# Locate the silver_contract_items block to scope replacements
+m = re.search(r'def\s+silver_contract_items\s*\(\):.*?\.drop\("_ingest_timestamp", "_source_file"\)\s*\)', text, re.DOTALL)
+assert m, "silver_contract_items block not found"
+ci = m.group(0)
+ci2 = (
+    ci
+    .replace('.withColumn("unit_price", col("unit_price").cast(DoubleType()))',
+             '.withColumn("unit_rate", col("unit_rate").cast(DoubleType()))\n        .withColumnRenamed("unit_rate", "unit_price")')
+    .replace('.withColumn("line_value", col("line_value").cast(DoubleType()))',
+             '.withColumn("amount", col("amount").cast(DoubleType()))\n        .withColumnRenamed("amount", "line_value")')
+)
+text = text.replace(ci, ci2)
+
+# ── silver_invoices ──────────────────────────────────────
+m = re.search(r'def\s+silver_invoices\s*\(\):.*?\.drop\("_ingest_timestamp", "_source_file"\)\s*\)', text, re.DOTALL)
+assert m, "silver_invoices block not found"
+inv = m.group(0)
+inv2 = (
+    inv
+    .replace('col("payment_date")', 'col("paid_date")')
+    .replace('.withColumn("payment_date", to_date(col("paid_date")))',
+             '.withColumn("paid_date", to_date(col("paid_date")))')
+    .replace('.withColumn("invoice_amount", col("invoice_amount").cast(DoubleType()))',
+             '.withColumn("gross_amount", col("gross_amount").cast(DoubleType()))\n        .withColumnRenamed("gross_amount", "invoice_amount")')
+    .replace('.withColumn("total_amount", col("total_amount").cast(DoubleType()))',
+             '.withColumn("net_amount", col("net_amount").cast(DoubleType()))\n        .withColumnRenamed("net_amount", "total_amount")')
+)
+text = text.replace(inv, inv2)
+# Fix the expect predicate too
+text = text.replace(
+    '@dlt.expect("valid_amount", "invoice_amount > 0")',
+    '@dlt.expect("valid_amount", "gross_amount > 0")',
+)
+
+# ── silver_vendor_performance ────────────────────────────
+text = text.replace(
+    '        .withColumn("compliance_score", col("compliance_score").cast(DoubleType()))\n',
+    '',
+)
+
+if text == orig:
+    print("NO-OP — patches did not match. Aborting.")
+    raise SystemExit(1)
+
+p.write_text(text, encoding="utf-8")
+print(f"Patched {p}; size={p.stat().st_size}")

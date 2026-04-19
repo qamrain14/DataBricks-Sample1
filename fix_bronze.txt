@@ -1,0 +1,70 @@
+"""Restore bronze pipeline from git and apply UC-managed-table fix."""
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+TARGET = ROOT / "databricks" / "bronze" / "01_bronze_pipeline.py"
+
+# Restore canonical source from git
+r = subprocess.run(
+    ["git", "checkout", "HEAD", "--", str(TARGET.relative_to(ROOT))],
+    cwd=ROOT, capture_output=True, text=True,
+)
+if r.returncode != 0:
+    print(r.stderr); sys.exit(1)
+
+text = TARGET.read_text(encoding="utf-8")
+print(f"Restored: {len(text)} bytes")
+
+# Remove the unsupported path= argument (UC managed tables disallow it)
+import re
+new = re.sub(
+    r',\s*\r?\n\s*path=f"\{RAW_PATH\}/bronze/\{table_name\}"',
+    "",
+    text,
+)
+
+# Replace spark-excel reader (not available on serverless) with built-in CSV
+old_excel = '''        comment=f"Raw {table_name} data ingested from Excel",
+        table_properties={"quality": "bronze", "pipelines.autoOptimize.managed": "true"}
+    )
+    def bronze_table():
+        return (
+            spark.read.format("com.crealytics.spark.excel")
+            .option("header", "true")
+            .option("inferSchema", "true")
+            .option("dataAddress", f"'{table_name}'!A1")
+            .load(f"{RAW_PATH}/{table_name}.xlsx")
+            .withColumn("_ingest_timestamp", current_timestamp())
+            .withColumn("_source_file", lit(f"{table_name}.xlsx"))
+        )
+    return bronze_table'''
+new_csv = '''        comment=f"Raw {table_name} data ingested from CSV in UC volume",
+        table_properties={"quality": "bronze", "pipelines.autoOptimize.managed": "true"}
+    )
+    def bronze_table():
+        return (
+            spark.read.format("csv")
+            .option("header", "true")
+            .option("inferSchema", "true")
+            .load(f"{RAW_PATH}/{table_name}.csv")
+            .withColumn("_ingest_timestamp", current_timestamp())
+            .withColumn("_source_file", lit(f"{table_name}.csv"))
+        )
+    return bronze_table'''
+if old_excel in new:
+    new = new.replace(old_excel, new_csv)
+TARGET.write_text(new, encoding="utf-8", newline="")
+print(f"After patch: {len(new)} bytes; path= occurrences: {new.count('path=')}")
+
+# Sanity dump
+lines = new.splitlines()
+print("--- first 8 lines ---")
+for i, l in enumerate(lines[:8], 1):
+    print(f"{i:>2}: {l}")
+
+dlt_count = len(re.findall(r"^\s*@dlt\.table\b", new, flags=re.MULTILINE))
+magic_pct = sum(1 for l in lines if l.lstrip().startswith("# MAGIC")) / max(len(lines), 1)
+print(f"@dlt.table decorators: {dlt_count}")
+print(f"# MAGIC line ratio:    {magic_pct:.0%}")

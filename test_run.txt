@@ -1,0 +1,90 @@
+============================= test session starts =============================
+collected 8 items
+
+tests\test_bronze_pipeline.py EEEEEEEE                                   [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestBronzeFactory.test_factory_registers_table_via_dlt_mock _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 19
+      def test_factory_registers_table_via_dlt_mock(self, spark):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeFactory::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:19
+___ ERROR at setup of TestBronzeFactory.test_factory_creates_all_15_tables ____
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 39
+      def test_factory_creates_all_15_tables(self, spark):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeFactory::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:39
+_ ERROR at setup of TestBronzeFactory.test_bronze_table_has_metadata_columns __
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 69
+      def test_bronze_table_has_metadata_columns(self, spark):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeFactory::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:69
+______ ERROR at setup of TestBronzeAudit.test_audit_records_table_counts ______
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 91
+      def test_audit_records_table_counts(self, spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeAudit::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:91
+__ ERROR at setup of TestBronzeDataQuality.test_each_bronze_table_has_3_rows __
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 126
+      def test_each_bronze_table_has_3_rows(self, bronze_data):
+E       fixture 'bronze_data' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeDataQuality::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:126
+__ ERROR at setup of TestBronzeDataQuality.test_bronze_tables_have_metadata ___
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 131
+      def test_bronze_tables_have_metadata(self, bronze_data):
+E       fixture 'bronze_data' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeDataQuality::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:131
+_____ ERROR at setup of TestBronzeDataQuality.test_bronze_vendors_schema ______
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 137
+      def test_bronze_vendors_schema(self, bronze_data):
+E       fixture 'bronze_data' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeDataQuality::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:137
+____ ERROR at setup of TestBronzeDataQuality.test_bronze_has_null_pk_rows _____
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 143
+      def test_bronze_has_null_pk_rows(self, bronze_data):
+E       fixture 'bronze_data' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_bronze_pipeline.py::<event_loop>, tests/test_bronze_pipeline.py::TestBronzeDataQuality::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:143
+============================== warnings summary ===============================
+..\..\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:475
+  C:\Users\mohdq\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:475: PytestCacheWarning: could not create cache path c:\Users\mohdq\src\DataBricks-Sample1\.pytest_cache\v\cache\nodeids: [WinError 5] Access is denied: 'c:\\Users\\mohdq\\src\\DataBricks-Sample1\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+..\..\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:429
+  C:\Users\mohdq\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:429: PytestCacheWarning: could not create cache path c:\Users\mohdq\src\DataBricks-Sample1\.pytest_cache\v\cache\lastfailed: [WinError 5] Access is denied: 'c:\\Users\\mohdq\\src\\DataBricks-Sample1\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/lastfailed", self.lastfailed)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_registers_table_via_dlt_mock
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_creates_all_15_tables
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_bronze_table_has_metadata_columns
+ERROR tests/test_bronze_pipeline.py::TestBronzeAudit::test_audit_records_table_counts
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_each_bronze_table_has_3_rows
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_tables_have_metadata
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_vendors_schema
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_has_null_pk_rows
+======================== 2 warnings, 8 errors in 0.78s ========================

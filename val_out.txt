@@ -1,0 +1,11 @@
+Warning: Pattern .pytest_cache does not match any files
+  at sync.exclude[13]
+  in databricks.yml:27:7
+
+Name: DataBricks-Sample1
+Target: local
+Workspace:
+  User: mohd.qamrain@gmail.com
+  Path: /Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local
+
+Found 1 warning

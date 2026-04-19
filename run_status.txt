@@ -1,0 +1,111 @@
+{
+  "cleanup_duration":0,
+  "creator_user_name":"mohd.qamrain@gmail.com",
+  "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+  "end_time":0,
+  "execution_duration":0,
+  "job_id":487504729785962,
+  "job_run_id":637979002725111,
+  "number_in_job":637979002725111,
+  "original_attempt_run_id":637979002725111,
+  "run_duration":9530,
+  "run_id":637979002725111,
+  "run_name":"[dev mohd_qamrain] procurement_end_to_end_job",
+  "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/637979002725111",
+  "run_type":"JOB_RUN",
+  "setup_duration":0,
+  "start_time":1776555957747,
+  "state": {
+    "life_cycle_state":"RUNNING",
+    "state_message":"",
+    "user_cancelled_or_timedout":false
+  },
+  "status": {
+    "state":"RUNNING"
+  },
+  "tasks": [
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_silver_pipeline"
+        }
+      ],
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":0,
+      "execution_duration":0,
+      "pipeline_task": {
+        "pipeline_id":"4aadd27b-4dfc-43ef-9206-b3cf6d060c2f"
+      },
+      "run_id":591508007268855,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/591508007268855",
+      "setup_duration":0,
+      "start_time":0,
+      "state": {
+        "life_cycle_state":"BLOCKED",
+        "state_message":"",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"BLOCKED"
+      },
+      "task_key":"run_gold_pipeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_bronze_pipeline"
+        }
+      ],
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":0,
+      "execution_duration":0,
+      "pipeline_task": {
+        "pipeline_id":"7e4dfdca-ed85-4a25-8b31-40fb2a40e06a"
+      },
+      "run_id":235668025190816,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/235668025190816",
+      "setup_duration":0,
+      "start_time":0,
+      "state": {
+        "life_cycle_state":"BLOCKED",
+        "state_message":"",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"BLOCKED"
+      },
+      "task_key":"run_silver_pipeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":0,
+      "execution_duration":0,
+      "pipeline_task": {
+        "pipeline_id":"a786a620-8a77-49f1-b715-89717b539288"
+      },
+      "run_id":424970115703321,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/424970115703321",
+      "setup_duration":0,
+      "start_time":1776555957780,
+      "state": {
+        "life_cycle_state":"RUNNING",
+        "state_message":"Performing live table update...",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"RUNNING"
+      },
+      "task_key":"run_bronze_pipeline"
+    }
+  ],
+  "trigger":"ONE_TIME"
+}

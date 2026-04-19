@@ -1,0 +1,15 @@
+data/raw_csv/contracts.csv -> dbfs:/Volumes/workspace/default/procurement_raw/contracts.csv
+data/raw_csv/goods_receipts.csv -> dbfs:/Volumes/workspace/default/procurement_raw/goods_receipts.csv
+data/raw_csv/po_line_items.csv -> dbfs:/Volumes/workspace/default/procurement_raw/po_line_items.csv
+data/raw_csv/invoices.csv -> dbfs:/Volumes/workspace/default/procurement_raw/invoices.csv
+data/raw_csv/employees.csv -> dbfs:/Volumes/workspace/default/procurement_raw/employees.csv
+data/raw_csv/inventory.csv -> dbfs:/Volumes/workspace/default/procurement_raw/inventory.csv
+data/raw_csv/contract_items.csv -> dbfs:/Volumes/workspace/default/procurement_raw/contract_items.csv
+data/raw_csv/materials.csv -> dbfs:/Volumes/workspace/default/procurement_raw/materials.csv
+data/raw_csv/vendor_performance.csv -> dbfs:/Volumes/workspace/default/procurement_raw/vendor_performance.csv
+data/raw_csv/project_budgets.csv -> dbfs:/Volumes/workspace/default/procurement_raw/project_budgets.csv
+data/raw_csv/projects.csv -> dbfs:/Volumes/workspace/default/procurement_raw/projects.csv
+data/raw_csv/purchase_orders.csv -> dbfs:/Volumes/workspace/default/procurement_raw/purchase_orders.csv
+data/raw_csv/vendors.csv -> dbfs:/Volumes/workspace/default/procurement_raw/vendors.csv
+data/raw_csv/project_actuals.csv -> dbfs:/Volumes/workspace/default/procurement_raw/project_actuals.csv
+data/raw_csv/sales_orders.csv -> dbfs:/Volumes/workspace/default/procurement_raw/sales_orders.csv

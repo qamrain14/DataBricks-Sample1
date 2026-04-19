@@ -1,0 +1,18 @@
+"""Insert CATALOG declaration into gold pipeline (mirrors silver/bronze)."""
+from pathlib import Path
+
+p = Path(__file__).resolve().parent / "databricks" / "gold" / "03_gold_pipeline.py"
+text = p.read_text(encoding="utf-8")
+
+if "CATALOG = spark.conf" in text:
+    print("Already present, no change.")
+else:
+    needle = "from pyspark.sql.types import BooleanType"
+    insertion = (
+        needle
+        + "\n\n# COMMAND ----------\n\n"
+        + 'CATALOG = spark.conf.get("catalog", "procurement_lakehouse")\n'
+    )
+    new_text = text.replace(needle, insertion, 1)
+    p.write_text(new_text, encoding="utf-8")
+    print(f"Inserted CATALOG; size={p.stat().st_size}")

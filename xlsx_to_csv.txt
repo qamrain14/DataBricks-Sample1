@@ -1,0 +1,38 @@
+"""Convert all xlsx in data/raw/ to CSV in data/raw_csv/."""
+import sys
+from pathlib import Path
+
+try:
+    import openpyxl  # noqa
+    import pandas as pd
+except ImportError:
+    import subprocess
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", "openpyxl", "pandas"])
+    import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+SRC = ROOT / "data" / "raw"
+DST = ROOT / "data" / "raw_csv"
+DST.mkdir(parents=True, exist_ok=True)
+
+EXPECTED = [
+    "vendors", "projects", "materials", "employees",
+    "purchase_orders", "po_line_items", "contracts", "contract_items",
+    "invoices", "goods_receipts", "project_budgets", "project_actuals",
+    "sales_orders", "inventory", "vendor_performance",
+]
+
+for name in EXPECTED:
+    xlsx = SRC / f"{name}.xlsx"
+    csv_out = DST / f"{name}.csv"
+    if not xlsx.exists():
+        print(f"MISSING: {xlsx}")
+        continue
+    # Read first (or only) sheet — bronze pipeline used dataAddress 'name'!A1
+    xls = pd.ExcelFile(xlsx)
+    sheet = name if name in xls.sheet_names else xls.sheet_names[0]
+    df = pd.read_excel(xlsx, sheet_name=sheet)
+    df.to_csv(csv_out, index=False)
+    print(f"{name:>22}: {len(df):>6} rows -> {csv_out.name}")
+
+print(f"\nTotal CSVs: {len(list(DST.glob('*.csv')))}")

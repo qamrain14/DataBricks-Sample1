@@ -1,0 +1,41 @@
+"""Fix cross-DLT-pipeline reads.
+
+Silver and Gold are separate DLT pipelines from Bronze/Silver respectively,
+so dlt.read("bronze_X") inside silver actually resolves against the silver
+target schema and fails with TABLE_OR_VIEW_NOT_FOUND.
+
+Replace with spark.read.table("<catalog>.<source_schema>.<table>") using the
+CATALOG variable already declared in each notebook.
+"""
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+silver_path = ROOT / "databricks" / "silver" / "02_silver_pipeline.py"
+gold_path = ROOT / "databricks" / "gold" / "03_gold_pipeline.py"
+
+
+def patch(path: Path, table_pattern: str, source_schema: str) -> int:
+    text = path.read_text(encoding="utf-8")
+    pattern = re.compile(r'dlt\.read\(\s*"(' + table_pattern + r'_[a-z_]+)"\s*\)')
+    new_text, n = pattern.subn(
+        lambda m: f'spark.read.table(f"{{CATALOG}}.{source_schema}.{m.group(1)}")',
+        text,
+    )
+    if n:
+        path.write_text(new_text, encoding="utf-8")
+    return n
+
+
+s = patch(silver_path, "bronze", "procurement_bronze")
+g = patch(gold_path, "silver", "procurement_silver")
+
+print(f"silver: {s} dlt.read(bronze_*) -> spark.read.table(...)")
+print(f"gold:   {g} dlt.read(silver_*) -> spark.read.table(...)")
+
+# Verify
+remaining_silver = re.findall(r'dlt\.read\("bronze_[^"]+"\)', silver_path.read_text(encoding="utf-8"))
+remaining_gold = re.findall(r'dlt\.read\("silver_[^"]+"\)', gold_path.read_text(encoding="utf-8"))
+print(f"silver remaining bronze dlt.reads: {len(remaining_silver)}")
+print(f"gold   remaining silver dlt.reads: {len(remaining_gold)}")

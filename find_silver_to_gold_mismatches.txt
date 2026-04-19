@@ -1,0 +1,82 @@
+"""Compute silver output schemas heuristically and find every col() in gold
+that references an unknown column from silver_X. Reports all mismatches."""
+from pathlib import Path
+import re, json
+
+ROOT = Path(__file__).resolve().parent
+silver = (ROOT / "databricks" / "silver" / "02_silver_pipeline.py").read_text()
+gold = (ROOT / "databricks" / "gold" / "03_gold_pipeline.py").read_text()
+
+# Real bronze CSV headers
+csv_headers = json.loads((ROOT / "csv_headers.json").read_text())
+bronze_cols = {f"bronze_{k}": v + ["_ingest_timestamp", "_source_file"] for k, v in csv_headers.items()}
+
+# Walk each silver_X function and compute output columns
+silver_blocks = re.split(r"^@dlt\.table", silver, flags=re.MULTILINE)
+silver_schema = {}
+for block in silver_blocks[1:]:
+    fn_m = re.search(r"def (silver_\w+)\(\)", block)
+    if not fn_m:
+        continue
+    fn = fn_m.group(1)
+    src_m = re.search(r'spark\.read\.table\(f"\{CATALOG\}\.procurement_bronze\.(\w+)"\)', block)
+    if not src_m:
+        # union/etc, skip
+        continue
+    src_table = src_m.group(1)
+    cols = list(bronze_cols.get(src_table, []))
+    # apply ops in order
+    body_end = block.find("# COMMAND") if "# COMMAND" in block else len(block)
+    body = block[:body_end]
+    # parse ops in order: withColumn, withColumnRenamed, drop, alias-via-select(<unused for now>)
+    op_pat = re.compile(r'\.(withColumn|withColumnRenamed|drop)\(([^)]*)\)')
+    for op, args in op_pat.findall(body):
+        # split args by commas at top level
+        parts = [p.strip() for p in args.split(",")]
+        if op == "withColumn":
+            name_m = re.match(r'"([^"]+)"', parts[0])
+            if name_m and name_m.group(1) not in cols:
+                cols.append(name_m.group(1))
+        elif op == "withColumnRenamed":
+            if len(parts) >= 2:
+                a = re.match(r'"([^"]+)"', parts[0]); b = re.match(r'"([^"]+)"', parts[1])
+                if a and b and a.group(1) in cols:
+                    cols[cols.index(a.group(1))] = b.group(1)
+        elif op == "drop":
+            for p in parts:
+                m = re.match(r'"([^"]+)"', p)
+                if m and m.group(1) in cols:
+                    cols.remove(m.group(1))
+    cols.append("_silver_timestamp")
+    silver_schema[fn.replace("silver_", "")] = cols
+
+# Now scan gold for references to silver_X
+gold_blocks = re.split(r"^@dlt\.table", gold, flags=re.MULTILINE)
+mismatches = {}
+for block in gold_blocks[1:]:
+    fn_m = re.search(r"def (gold_\w+)\(\)", block)
+    if not fn_m:
+        continue
+    fn = fn_m.group(1)
+    # find all silver tables read
+    reads = re.findall(r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.silver_(\w+)"\)', block)
+    if not reads:
+        continue
+    # Available cols = union of read silver tables, plus aliases created in this gold fn
+    avail = set()
+    for r in reads:
+        avail.update(silver_schema.get(r, []))
+    # Track aliased names (.alias("X")) and withColumn names in this gold body
+    avail.update(re.findall(r'\.alias\("([^"]+)"\)', block))
+    avail.update(re.findall(r'withColumn\("([^"]+)"', block))
+    avail.update(re.findall(r'withColumnRenamed\("[^"]+",\s*"([^"]+)"\)', block))
+    # Account for `groupBy().agg(... .alias("X"))` and aliased select expressions
+    refs = re.findall(r'col\("([^"]+)"\)', block)
+    bad = sorted({c for c in refs if c not in avail})
+    if bad:
+        mismatches[fn] = {"reads": reads, "bad_cols": bad, "avail_sample": sorted(avail)[:20]}
+
+print(json.dumps(mismatches, indent=2))
+print("---SILVER SCHEMA SUMMARY---")
+for t, c in silver_schema.items():
+    print(f"  silver_{t}: {len(c)} cols")

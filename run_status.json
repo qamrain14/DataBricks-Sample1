@@ -1,0 +1,135 @@
+{
+  "cleanup_duration":0,
+  "creator_user_name":"mohd.qamrain@gmail.com",
+  "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+  "end_time":1776566456825,
+  "execution_duration":0,
+  "job_id":487504729785962,
+  "job_run_id":592801019867582,
+  "number_in_job":592801019867582,
+  "original_attempt_run_id":592801019867582,
+  "run_duration":386628,
+  "run_id":592801019867582,
+  "run_name":"[dev mohd_qamrain] procurement_end_to_end_job",
+  "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/592801019867582",
+  "run_type":"JOB_RUN",
+  "setup_duration":0,
+  "start_time":1776566070197,
+  "state": {
+    "life_cycle_state":"INTERNAL_ERROR",
+    "result_state":"FAILED",
+    "state_message":"Task run_gold_pipeline failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.",
+    "user_cancelled_or_timedout":false
+  },
+  "status": {
+    "state":"TERMINATED",
+    "termination_details": {
+      "code":"RUN_EXECUTION_ERROR",
+      "message":"Task run_gold_pipeline failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.",
+      "type":"CLIENT_ERROR"
+    }
+  },
+  "tasks": [
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_silver_pipeline"
+        }
+      ],
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":1776566456484,
+      "execution_duration":91000,
+      "pipeline_task": {
+        "pipeline_id":"4aadd27b-4dfc-43ef-9206-b3cf6d060c2f"
+      },
+      "run_id":1105798826948878,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/1105798826948878",
+      "setup_duration":0,
+      "start_time":1776566364721,
+      "state": {
+        "life_cycle_state":"TERMINATED",
+        "result_state":"FAILED",
+        "state_message":"Workload failed, see run output for details",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"RUN_EXECUTION_ERROR",
+          "message":"Workload failed, see run output for details",
+          "type":"CLIENT_ERROR"
+        }
+      },
+      "task_key":"run_gold_pipeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_bronze_pipeline"
+        }
+      ],
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":1776566364412,
+      "execution_duration":151000,
+      "pipeline_task": {
+        "pipeline_id":"7e4dfdca-ed85-4a25-8b31-40fb2a40e06a"
+      },
+      "run_id":34188138426246,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/34188138426246",
+      "setup_duration":0,
+      "start_time":1776566212532,
+      "state": {
+        "life_cycle_state":"TERMINATED",
+        "result_state":"SUCCESS",
+        "state_message":"",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SUCCESS",
+          "message":"",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_silver_pipeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":1776566212269,
+      "execution_duration":141000,
+      "pipeline_task": {
+        "pipeline_id":"a786a620-8a77-49f1-b715-89717b539288"
+      },
+      "run_id":501693024181646,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/501693024181646",
+      "setup_duration":0,
+      "start_time":1776566070225,
+      "state": {
+        "life_cycle_state":"TERMINATED",
+        "result_state":"SUCCESS",
+        "state_message":"",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SUCCESS",
+          "message":"",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_bronze_pipeline"
+    }
+  ],
+  "trigger":"ONE_TIME"
+}

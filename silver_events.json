@@ -1,0 +1,983 @@
+[
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 17, line 11, in silver_contracts\n    .withColumn(\"contract_value\", col(\"contract_value\").cast(DoubleType()))\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `contract_value` cannot be resolved. Did you mean one of the following? [`contract_id`, `contract_status`, `contract_type`, `original_value`, `revised_value`]. SQLSTATE: 42703;\n'Project [contract_id#13178, contract_type#13179, contract_status#13180, vendor_id#13181, project_id#13182, contract_manager_id#13183, scope_of_work#13184, original_value#13185, revised_value#13186, revision_factor#13187, variation_orders#13188, currency#13189, start_date#13190, end_date#13191, duration_months#13192, retention_pct#13193, performance_bond_pct#13194, advance_payment_pct#13195, liquidated_damages_pct#13196, payment_terms#13197, insurance_required#13198, description#13199, created_date#13200, _ingest_timestamp#13201, _source_file#13202, ... 1 more fields]\n+- SubqueryAlias workspace.procurement_bronze.bronze_contracts\n   +- View (`workspace`.`procurement_bronze`.`bronze_contracts`, [contract_id#13178, contract_type#13179, contract_status#13180, vendor_id#13181, project_id#13182, contract_manager_id#13183, scope_of_work#13184, original_value#13185, revised_value#13186, revision_factor#13187, variation_orders#13188, currency#13189, start_date#13190, end_date#13191, duration_months#13192, retention_pct#13193, performance_bond_pct#13194, advance_payment_pct#13195, liquidated_damages_pct#13196, payment_terms#13197, insurance_required#13198, description#13199, created_date#13200, _ingest_timestamp#13201, _source_file#13202])\n      +- Project [cast(contract_id#13228 as string) AS contract_id#13178, cast(contract_type#13229 as string) AS contract_type#13179, cast(contract_status#13230 as string) AS contract_status#13180, cast(vendor_id#13231 as string) AS vendor_id#13181, cast(project_id#13232 as string) AS project_id#13182, cast(contract_manager_id#13233 as string) AS contract_manager_id#13183, cast(scope_of_work#13234 as string) AS scope_of_work#13184, cast(original_value#13235 as double) AS original_value#13185, cast(revised_value#13236 as double) AS revised_value#13186, cast(revision_factor#13237 as double) AS revision_factor#13187, cast(variation_orders#13238 as int) AS variation_orders#13188, cast(currency#13239 as string) AS currency#13189, cast(start_date#13240 as date) AS start_date#13190, cast(end_date#13241 as date) AS end_date#13191, cast(duration_months#13242 as int) AS duration_months#13192, cast(retention_pct#13243 as int) AS retention_pct#13193, cast(performance_bond_pct#13244 as int) AS performance_bond_pct#13194, cast(advance_payment_pct#13245 as int) AS advance_payment_pct#13195, cast(liquidated_damages_pct#13246 as double) AS liquidated_damages_pct#13196, cast(payment_terms#13247 as string) AS payment_terms#13197, cast(insurance_required#13248 as boolean) AS insurance_required#13198, cast(description#13249 as string) AS description#13199, cast(created_date#13250 as date) AS created_date#13200, cast(_ingest_timestamp#13251 as timestamp) AS _ingest_timestamp#13201, cast(_source_file#13252 as string) AS _source_file#13202]\n         +- Project [contract_id#13228, contract_type#13229, contract_status#13230, vendor_id#13231, project_id#13232, contract_manager_id#13233, scope_of_work#13234, original_value#13235, revised_value#13236, revision_factor#13237, variation_orders#13238, currency#13239, start_date#13240, end_date#13241, duration_months#13242, retention_pct#13243, performance_bond_pct#13244, advance_payment_pct#13245, liquidated_damages_pct#13246, payment_terms#13247, insurance_required#13248, description#13249, created_date#13250, _ingest_timestamp#13251, _source_file#13252]\n            +- Relation workspace.procurement_bronze.__materialization_mat_a786a620_8a77_49f1_b715_89717b539288_bronze_contracts_1[contract_id#13228,contract_type#13229,contract_status#13230,vendor_id#13231,project_id#13232,contract_manager_id#13233,scope_of_work#13234,original_value#13235,revised_value#13236,revision_factor#13237,variation_orders#13238,currency#13239,start_date#13240,end_date#13241,duration_months#13242,retention_pct#13243,performance_bond_pct#13244,advance_payment_pct#13245,liquidated_damages_pct#13246,payment_terms#13247,insurance_required#13248,description#13249,created_date#13250,_ingest_timestamp#13251,_source_file#13252] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "a151bc10-3b8a-11f1-99ba-069deb91e21c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update c6218b has failed. Failed to analyze flow 'workspace.procurement_silver.silver_contracts' and 3 other flow(s)..",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-005524-dvz5jat3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560204882001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776560139584018
+      }
+    },
+    "timestamp": "2026-04-19T00:56:42.321Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 33, line 16, in silver_vendor_performance\n    .withColumn(\"compliance_score\", col(\"compliance_score\").cast(DoubleType()))\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `compliance_score` cannot be resolved. Did you mean one of the following? [`commercial_score`, `delivery_score`, `quality_score`, `hse_score`, `evaluation_date`]. SQLSTATE: 42703;\n'Project [performance_id#14385, vendor_id#14386, project_id#14387, evaluation_period#14388, evaluator_id#14389, delivery_score#14459, quality_score#14460, commercial_score#14461, hse_score#14462, composite_score#14394, recommendation#14395, delivery_metric_focus#14396, quality_metric_focus#14397, commercial_metric_focus#14398, hse_metric_focus#14399, po_count_evaluated#14400, total_value_evaluated#14401, corrective_actions#14402, improvement_trend#14403, evaluation_date#14458, remarks#14405, created_date#14406, _ingest_timestamp#14407, _source_file#14408, cast('compliance_score as double) AS compliance_score#14463]\n+- Project [performance_id#14385, vendor_id#14386, project_id#14387, evaluation_period#14388, evaluator_id#14389, delivery_score#14459, quality_score#14460, commercial_score#14461, cast(hse_score#14393 as double) AS hse_score#14462, composite_score#14394, recommendation#14395, delivery_metric_focus#14396, quality_metric_focus#14397, commercial_metric_focus#14398, hse_metric_focus#14399, po_count_evaluated#14400, total_value_evaluated#14401, corrective_actions#14402, improvement_trend#14403, evaluation_date#14458, remarks#14405, created_date#14406, _ingest_timestamp#14407, _source_file#14408]\n   +- Project [performance_id#14385, vendor_id#14386, project_id#14387, evaluation_period#14388, evaluator_id#14389, delivery_score#14459, quality_score#14460, cast(commercial_score#14392 as double) AS commercial_score#14461, hse_score#14393, composite_score#14394, recommendation#14395, delivery_metric_focus#14396, quality_metric_focus#14397, commercial_metric_focus#14398, hse_metric_focus#14399, po_count_evaluated#14400, total_value_evaluated#14401, corrective_actions#14402, improvement_trend#14403, evaluation_date#14458, remarks#14405, created_date#14406, _ingest_timestamp#14407, _source_file#14408]\n      +- Project [performance_id#14385, vendor_id#14386, project_id#14387, evaluation_period#14388, evaluator_id#14389, delivery_score#14459, cast(quality_score#14391 as double) AS quality_score#14460, commercial_score#14392, hse_score#14393, composite_score#14394, recommendation#14395, delivery_metric_focus#14396, quality_metric_focus#14397, commercial_metric_focus#14398, hse_metric_focus#14399, po_count_evaluated#14400, total_value_evaluated#14401, corrective_actions#14402, improvement_trend#14403, evaluation_date#14458, remarks#14405, created_date#14406, _ingest_timestamp#14407, _source_file#14408]\n         +- Project [performance_id#14385, vendor_id#14386, project_id#14387, evaluation_period#14388, evaluator_id#14389, cast(delivery_score#14390 as double) AS delivery_score#14459, quality_score#14391, commercial_score#14392, hse_score#14393, composite_score#14394, recommendation#14395, delivery_metric_focus#14396, quality_metric_focus#14397, commercial_metric_focus#14398, hse_metric_focus#14399, po_count_evaluated#14400, total_value_evaluated#14401, corrective_actions#14402, improvement_trend#14403, evaluation_date#14458, remarks#14405, created_date#14406, _ingest_timestamp#14407, _source_file#14408]\n            +- Project [performance_id#14385, vendor_id#14386, project_id#14387, evaluation_period#14388, evaluator_id#14389, delivery_score#14390, quality_score#14391, commercial_score#14392, hse_score#14393, composite_score#14394, recommendation#14395, delivery_metric_focus#14396, quality_metric_focus#14397, commercial_metric_focus#14398, hse_metric_focus#14399, po_count_evaluated#14400, total_value_evaluated#14401, corrective_actions#14402, improvement_trend#14403, to_date(evaluation_date#14404, None, Some(Etc/UTC), false) AS evaluation_date#14458, remarks#14405, created_date#14406, _ingest_timestamp#14407, _source_file#14408]\n               +- SubqueryAlias workspace.procurement_bronze.bronze_vendor_performance\n                  +- View (`workspace`.`procurement_bronze`.`bronze_vendor_performance`, [performance_id#14385, vendor_id#14386, project_id#14387, evaluation_period#14388, evaluator_id#14389, delivery_score#14390, quality_score#14391, commercial_score#14392, hse_score#14393, composite_score#14394, recommendation#14395, delivery_metric_focus#14396, quality_metric_focus#14397, commercial_metric_focus#14398, hse_metric_focus#14399, po_count_evaluated#14400, total_value_evaluated#14401, corrective_actions#14402, improvement_trend#14403, evaluation_date#14404, remarks#14405, created_date#14406, _ingest_timestamp#14407, _source_file#14408])\n                     +- Project [cast(performance_id#14433 as string) AS performance_id#14385, cast(vendor_id#14434 as string) AS vendor_id#14386, cast(project_id#14435 as string) AS project_id#14387, cast(evaluation_period#14436 as int) AS evaluation_period#14388, cast(evaluator_id#14437 as string) AS evaluator_id#14389, cast(delivery_score#14438 as double) AS delivery_score#14390, cast(quality_score#14439 as double) AS quality_score#14391, cast(commercial_score#14440 as double) AS commercial_score#14392, cast(hse_score#14441 as double) AS hse_score#14393, cast(composite_score#14442 as double) AS composite_score#14394, cast(recommendation#14443 as string) AS recommendation#14395, cast(delivery_metric_focus#14444 as string) AS delivery_metric_focus#14396, cast(quality_metric_focus#14445 as string) AS quality_metric_focus#14397, cast(commercial_metric_focus#14446 as string) AS commercial_metric_focus#14398, cast(hse_metric_focus#14447 as string) AS hse_metric_focus#14399, cast(po_count_evaluated#14448 as int) AS po_count_evaluated#14400, cast(total_value_evaluated#14449 as double) AS total_value_evaluated#14401, cast(corrective_actions#14450 as int) AS corrective_actions#14402, cast(improvement_trend#14451 as string) AS improvement_trend#14403, cast(evaluation_date#14452 as date) AS evaluation_date#14404, cast(remarks#14453 as string) AS remarks#14405, cast(created_date#14454 as date) AS created_date#14406, cast(_ingest_timestamp#14455 as timestamp) AS _ingest_timestamp#14407, cast(_source_file#14456 as string) AS _source_file#14408]\n                        +- Project [performance_id#14433, vendor_id#14434, project_id#14435, evaluation_period#14436, evaluator_id#14437, delivery_score#14438, quality_score#14439, commercial_score#14440, hse_score#14441, composite_score#14442, recommendation#14443, delivery_metric_focus#14444, quality_metric_focus#14445, commercial_metric_focus#14446, hse_metric_focus#14447, po_count_evaluated#14448, total_value_evaluated#14449, corrective_actions#14450, improvement_trend#14451, evaluation_date#14452, remarks#14453, created_date#14454, _ingest_timestamp#14455, _source_file#14456]\n                           +- Relation workspace.procurement_bronze.__materialization_mat_a786a620_8a77_49f1_b715_89717b539288_bronze_vendor_performance_1[performance_id#14433,vendor_id#14434,project_id#14435,evaluation_period#14436,evaluator_id#14437,delivery_score#14438,quality_score#14439,commercial_score#14440,hse_score#14441,composite_score#14442,recommendation#14443,delivery_metric_focus#14444,quality_metric_focus#14445,commercial_metric_focus#14446,hse_metric_focus#14447,po_count_evaluated#14448,total_value_evaluated#14449,corrective_actions#14450,improvement_trend#14451,evaluation_date#14452,remarks#14453,created_date#14454,_ingest_timestamp#14455,_source_file#14456] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "a13dbee0-3b8a-11f1-99ba-069deb91e21c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_vendor_performance'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-005524-dvz5jat3-v2n",
+      "flow_name": "workspace.procurement_silver.silver_vendor_performance",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560204878001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776560139584012
+      }
+    },
+    "timestamp": "2026-04-19T00:56:42.190Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 21, line 13, in silver_invoices\n    .withColumn(\"payment_date\", to_date(col(\"payment_date\")))\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `payment_date` cannot be resolved. Did you mean one of the following? [`due_date`, `invoice_date`, `workspace`.`procurement_bronze`.`bronze_invoices`.`po_id`, `workspace`.`procurement_bronze`.`bronze_invoices`.`paid_date`, `workspace`.`procurement_bronze`.`bronze_invoices`.`tax_rate`]. SQLSTATE: 42703;\n'Project [invoice_id#13324, vendor_id#13325, po_id#13326, contract_id#13327, project_id#13328, invoice_type#13329, invoice_status#13330, invoice_date#13406, due_date#13407, gross_amount#13333, tax_rate#13334, tax_amount#13335, retention_pct#13336, retention_amount#13337, net_amount#13338, currency#13339, payment_term#13340, early_payment_discount#13341, paid_date#13342, paid_amount#13343, approved_by#13344, approval_date#13345, invoice_ref#13346, description#13347, created_date#13348, ... 3 more fields]\n+- Project [invoice_id#13324, vendor_id#13325, po_id#13326, contract_id#13327, project_id#13328, invoice_type#13329, invoice_status#13330, invoice_date#13406, to_date(due_date#13332, None, Some(Etc/UTC), false) AS due_date#13407, gross_amount#13333, tax_rate#13334, tax_amount#13335, retention_pct#13336, retention_amount#13337, net_amount#13338, currency#13339, payment_term#13340, early_payment_discount#13341, paid_date#13342, paid_amount#13343, approved_by#13344, approval_date#13345, invoice_ref#13346, description#13347, created_date#13348, ... 2 more fields]\n   +- Project [invoice_id#13324, vendor_id#13325, po_id#13326, contract_id#13327, project_id#13328, invoice_type#13329, invoice_status#13330, to_date(invoice_date#13331, None, Some(Etc/UTC), false) AS invoice_date#13406, due_date#13332, gross_amount#13333, tax_rate#13334, tax_amount#13335, retention_pct#13336, retention_amount#13337, net_amount#13338, currency#13339, payment_term#13340, early_payment_discount#13341, paid_date#13342, paid_amount#13343, approved_by#13344, approval_date#13345, invoice_ref#13346, description#13347, created_date#13348, ... 2 more fields]\n      +- SubqueryAlias workspace.procurement_bronze.bronze_invoices\n         +- View (`workspace`.`procurement_bronze`.`bronze_invoices`, [invoice_id#13324, vendor_id#13325, po_id#13326, contract_id#13327, project_id#13328, invoice_type#13329, invoice_status#13330, invoice_date#13331, due_date#13332, gross_amount#13333, tax_rate#13334, tax_amount#13335, retention_pct#13336, retention_amount#13337, net_amount#13338, currency#13339, payment_term#13340, early_payment_discount#13341, paid_date#13342, paid_amount#13343, approved_by#13344, approval_date#13345, invoice_ref#13346, description#13347, created_date#13348, ... 2 more fields])\n            +- Project [cast(invoice_id#13378 as string) AS invoice_id#13324, cast(vendor_id#13379 as string) AS vendor_id#13325, cast(po_id#13380 as string) AS po_id#13326, cast(contract_id#13381 as string) AS contract_id#13327, cast(project_id#13382 as string) AS project_id#13328, cast(invoice_type#13383 as string) AS invoice_type#13329, cast(invoice_status#13384 as string) AS invoice_status#13330, cast(invoice_date#13385 as date) AS invoice_date#13331, cast(due_date#13386 as date) AS due_date#13332, cast(gross_amount#13387 as double) AS gross_amount#13333, cast(tax_rate#13388 as double) AS tax_rate#13334, cast(tax_amount#13389 as double) AS tax_amount#13335, cast(retention_pct#13390 as double) AS retention_pct#13336, cast(retention_amount#13391 as double) AS retention_amount#13337, cast(net_amount#13392 as double) AS net_amount#13338, cast(currency#13393 as string) AS currency#13339, cast(payment_term#13394 as string) AS payment_term#13340, cast(early_payment_discount#13395 as double) AS early_payment_discount#13341, cast(paid_date#13396 as date) AS paid_date#13342, cast(paid_amount#13397 as double) AS paid_amount#13343, cast(approved_by#13398 as string) AS approved_by#13344, cast(approval_date#13399 as date) AS approval_date#13345, cast(invoice_ref#13400 as string) AS invoice_ref#13346, cast(description#13401 as string) AS description#13347, cast(created_date#13402 as date) AS created_date#13348, ... 2 more fields]\n               +- Project [invoice_id#13378, vendor_id#13379, po_id#13380, contract_id#13381, project_id#13382, invoice_type#13383, invoice_status#13384, invoice_date#13385, due_date#13386, gross_amount#13387, tax_rate#13388, tax_amount#13389, retention_pct#13390, retention_amount#13391, net_amount#13392, currency#13393, payment_term#13394, early_payment_discount#13395, paid_date#13396, paid_amount#13397, approved_by#13398, approval_date#13399, invoice_ref#13400, description#13401, created_date#13402, ... 2 more fields]\n                  +- Relation workspace.procurement_bronze.__materialization_mat_a786a620_8a77_49f1_b715_89717b539288_bronze_invoices_1[invoice_id#13378,vendor_id#13379,po_id#13380,contract_id#13381,project_id#13382,invoice_type#13383,invoice_status#13384,invoice_date#13385,due_date#13386,gross_amount#13387,tax_rate#13388,tax_amount#13389,retention_pct#13390,retention_amount#13391,net_amount#13392,currency#13393,payment_term#13394,early_payment_discount#13395,paid_date#13396,paid_amount#13397,approved_by#13398,approval_date#13399,invoice_ref#13400,description#13401,created_date#13402,... 2 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "a13d22a0-3b8a-11f1-99ba-069deb91e21c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_invoices'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-005524-dvz5jat3-v2n",
+      "flow_name": "workspace.procurement_silver.silver_invoices",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560204877001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776560139584011
+      }
+    },
+    "timestamp": "2026-04-19T00:56:42.186Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 19, line 12, in silver_contract_items\n    .withColumn(\"unit_price\", col(\"unit_price\").cast(DoubleType()))\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `unit_price` cannot be resolved. Did you mean one of the following? [`quantity`, `workspace`.`procurement_bronze`.`bronze_contract_items`.`notes`, `workspace`.`procurement_bronze`.`bronze_contract_items`.`amount`, `workspace`.`procurement_bronze`.`bronze_contract_items`.`item_id`, `workspace`.`procurement_bronze`.`bronze_contract_items`.`unit_rate`]. SQLSTATE: 42703;\n'Project [item_id#13255, contract_id#13256, boq_reference#13257, boq_section#13258, line_number#13259, material_id#13260, description#13261, unit_of_measure#13262, quantity#13322, unit_rate#13264, amount#13265, qty_executed#13266, executed_pct#13267, milestone_flag#13268, milestone_description#13269, item_status#13270, variation_ref#13271, retention_applicable#13272, notes#13273, created_date#13274, _ingest_timestamp#13275, _source_file#13276, cast('unit_price as double) AS unit_price#13323]\n+- Project [item_id#13255, contract_id#13256, boq_reference#13257, boq_section#13258, line_number#13259, material_id#13260, description#13261, unit_of_measure#13262, cast(quantity#13263 as double) AS quantity#13322, unit_rate#13264, amount#13265, qty_executed#13266, executed_pct#13267, milestone_flag#13268, milestone_description#13269, item_status#13270, variation_ref#13271, retention_applicable#13272, notes#13273, created_date#13274, _ingest_timestamp#13275, _source_file#13276]\n   +- SubqueryAlias workspace.procurement_bronze.bronze_contract_items\n      +- View (`workspace`.`procurement_bronze`.`bronze_contract_items`, [item_id#13255, contract_id#13256, boq_reference#13257, boq_section#13258, line_number#13259, material_id#13260, description#13261, unit_of_measure#13262, quantity#13263, unit_rate#13264, amount#13265, qty_executed#13266, executed_pct#13267, milestone_flag#13268, milestone_description#13269, item_status#13270, variation_ref#13271, retention_applicable#13272, notes#13273, created_date#13274, _ingest_timestamp#13275, _source_file#13276])\n         +- Project [cast(item_id#13299 as string) AS item_id#13255, cast(contract_id#13300 as string) AS contract_id#13256, cast(boq_reference#13301 as string) AS boq_reference#13257, cast(boq_section#13302 as string) AS boq_section#13258, cast(line_number#13303 as int) AS line_number#13259, cast(material_id#13304 as string) AS material_id#13260, cast(description#13305 as string) AS description#13261, cast(unit_of_measure#13306 as string) AS unit_of_measure#13262, cast(quantity#13307 as int) AS quantity#13263, cast(unit_rate#13308 as double) AS unit_rate#13264, cast(amount#13309 as double) AS amount#13265, cast(qty_executed#13310 as int) AS qty_executed#13266, cast(executed_pct#13311 as double) AS executed_pct#13267, cast(milestone_flag#13312 as boolean) AS milestone_flag#13268, cast(milestone_description#13313 as string) AS milestone_description#13269, cast(item_status#13314 as string) AS item_status#13270, cast(variation_ref#13315 as string) AS variation_ref#13271, cast(retention_applicable#13316 as boolean) AS retention_applicable#13272, cast(notes#13317 as string) AS notes#13273, cast(created_date#13318 as date) AS created_date#13274, cast(_ingest_timestamp#13319 as timestamp) AS _ingest_timestamp#13275, cast(_source_file#13320 as string) AS _source_file#13276]\n            +- Project [item_id#13299, contract_id#13300, boq_reference#13301, boq_section#13302, line_number#13303, material_id#13304, description#13305, unit_of_measure#13306, quantity#13307, unit_rate#13308, amount#13309, qty_executed#13310, executed_pct#13311, milestone_flag#13312, milestone_description#13313, item_status#13314, variation_ref#13315, retention_applicable#13316, notes#13317, created_date#13318, _ingest_timestamp#13319, _source_file#13320]\n               +- Relation workspace.procurement_bronze.__materialization_mat_a786a620_8a77_49f1_b715_89717b539288_bronze_contract_items_1[item_id#13299,contract_id#13300,boq_reference#13301,boq_section#13302,line_number#13303,material_id#13304,description#13305,unit_of_measure#13306,quantity#13307,unit_rate#13308,amount#13309,qty_executed#13310,executed_pct#13311,milestone_flag#13312,milestone_description#13313,item_status#13314,variation_ref#13315,retention_applicable#13316,notes#13317,created_date#13318,_ingest_timestamp#13319,_source_file#13320] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "a13c8660-3b8a-11f1-99ba-069deb91e21c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_contract_items'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-005524-dvz5jat3-v2n",
+      "flow_name": "workspace.procurement_silver.silver_contract_items",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560204876001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776560139584010
+      }
+    },
+    "timestamp": "2026-04-19T00:56:42.182Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 17, line 11, in silver_contracts\n    .withColumn(\"contract_value\", col(\"contract_value\").cast(DoubleType()))\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `contract_value` cannot be resolved. Did you mean one of the following? [`contract_id`, `contract_status`, `contract_type`, `original_value`, `revised_value`]. SQLSTATE: 42703;\n'Project [contract_id#13178, contract_type#13179, contract_status#13180, vendor_id#13181, project_id#13182, contract_manager_id#13183, scope_of_work#13184, original_value#13185, revised_value#13186, revision_factor#13187, variation_orders#13188, currency#13189, start_date#13190, end_date#13191, duration_months#13192, retention_pct#13193, performance_bond_pct#13194, advance_payment_pct#13195, liquidated_damages_pct#13196, payment_terms#13197, insurance_required#13198, description#13199, created_date#13200, _ingest_timestamp#13201, _source_file#13202, ... 1 more fields]\n+- SubqueryAlias workspace.procurement_bronze.bronze_contracts\n   +- View (`workspace`.`procurement_bronze`.`bronze_contracts`, [contract_id#13178, contract_type#13179, contract_status#13180, vendor_id#13181, project_id#13182, contract_manager_id#13183, scope_of_work#13184, original_value#13185, revised_value#13186, revision_factor#13187, variation_orders#13188, currency#13189, start_date#13190, end_date#13191, duration_months#13192, retention_pct#13193, performance_bond_pct#13194, advance_payment_pct#13195, liquidated_damages_pct#13196, payment_terms#13197, insurance_required#13198, description#13199, created_date#13200, _ingest_timestamp#13201, _source_file#13202])\n      +- Project [cast(contract_id#13228 as string) AS contract_id#13178, cast(contract_type#13229 as string) AS contract_type#13179, cast(contract_status#13230 as string) AS contract_status#13180, cast(vendor_id#13231 as string) AS vendor_id#13181, cast(project_id#13232 as string) AS project_id#13182, cast(contract_manager_id#13233 as string) AS contract_manager_id#13183, cast(scope_of_work#13234 as string) AS scope_of_work#13184, cast(original_value#13235 as double) AS original_value#13185, cast(revised_value#13236 as double) AS revised_value#13186, cast(revision_factor#13237 as double) AS revision_factor#13187, cast(variation_orders#13238 as int) AS variation_orders#13188, cast(currency#13239 as string) AS currency#13189, cast(start_date#13240 as date) AS start_date#13190, cast(end_date#13241 as date) AS end_date#13191, cast(duration_months#13242 as int) AS duration_months#13192, cast(retention_pct#13243 as int) AS retention_pct#13193, cast(performance_bond_pct#13244 as int) AS performance_bond_pct#13194, cast(advance_payment_pct#13245 as int) AS advance_payment_pct#13195, cast(liquidated_damages_pct#13246 as double) AS liquidated_damages_pct#13196, cast(payment_terms#13247 as string) AS payment_terms#13197, cast(insurance_required#13248 as boolean) AS insurance_required#13198, cast(description#13249 as string) AS description#13199, cast(created_date#13250 as date) AS created_date#13200, cast(_ingest_timestamp#13251 as timestamp) AS _ingest_timestamp#13201, cast(_source_file#13252 as string) AS _source_file#13202]\n         +- Project [contract_id#13228, contract_type#13229, contract_status#13230, vendor_id#13231, project_id#13232, contract_manager_id#13233, scope_of_work#13234, original_value#13235, revised_value#13236, revision_factor#13237, variation_orders#13238, currency#13239, start_date#13240, end_date#13241, duration_months#13242, retention_pct#13243, performance_bond_pct#13244, advance_payment_pct#13245, liquidated_damages_pct#13246, payment_terms#13247, insurance_required#13248, description#13249, created_date#13250, _ingest_timestamp#13251, _source_file#13252]\n            +- Relation workspace.procurement_bronze.__materialization_mat_a786a620_8a77_49f1_b715_89717b539288_bronze_contracts_1[contract_id#13228,contract_type#13229,contract_status#13230,vendor_id#13231,project_id#13232,contract_manager_id#13233,scope_of_work#13234,original_value#13235,revised_value#13236,revision_factor#13237,variation_orders#13238,currency#13239,start_date#13240,end_date#13241,duration_months#13242,retention_pct#13243,performance_bond_pct#13244,advance_payment_pct#13245,liquidated_damages_pct#13246,payment_terms#13247,insurance_required#13248,description#13249,created_date#13250,_ingest_timestamp#13251,_source_file#13252] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "a12ecac0-3b8a-11f1-99ba-069deb91e21c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_contracts'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-005524-dvz5jat3-v2n",
+      "flow_name": "workspace.procurement_silver.silver_contracts",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560204875001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776560139584009
+      }
+    },
+    "timestamp": "2026-04-19T00:56:42.092Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "828fbde0-3b8a-11f1-99ba-069deb91e21c",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update c6218b is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-005524-dvz5jat3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560156147001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776560139584001
+      }
+    },
+    "timestamp": "2026-04-19T00:55:50.718Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "7725d610-3b8a-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update c6218b.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560131570001
+    },
+    "timestamp": "2026-04-19T00:55:31.569Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "72bfe3e0-3b8a-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update c6218b is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-005524-dvz5jat3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560124190001
+    },
+    "timestamp": "2026-04-19T00:55:24.190Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "72338260-3b8a-11f1-b144-9675a5a1797b",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update c6218b started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560123272001
+    },
+    "timestamp": "2026-04-19T00:55:23.256Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "722f1590-3b8a-11f1-b144-9675a5a1797b",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "c6218b6b-0c08-4785-b09c-14c069b6975b",
+      "update_id": "c6218b6b-0c08-4785-b09c-14c069b6975b"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776560123243001
+    },
+    "timestamp": "2026-04-19T00:55:23.241Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 7, line 10, in silver_projects\n    dlt.read(\"bronze_projects\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_projects` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_projects], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "fabe3f90-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update f4da45 has failed. Failed to analyze flow 'workspace.procurement_silver.silver_projects' and 14 other flow(s)..",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776712001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203030
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.369Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 13, line 11, in silver_purchase_orders\n    dlt.read(\"bronze_purchase_orders\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_purchase_orders` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_purchase_orders], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa9c1190-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_purchase_orders'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_purchase_orders",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776708001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203024
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.145Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 31, line 9, in silver_inventory\n    dlt.read(\"bronze_inventory\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_inventory` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_inventory], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa9b9c60-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_inventory'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_inventory",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776706001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203023
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.142Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 25, line 10, in silver_project_budgets\n    dlt.read(\"bronze_project_budgets\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_project_budgets` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_project_budgets], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa9ad910-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_project_budgets'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_project_budgets",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776705001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203022
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.137Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 29, line 10, in silver_sales_orders\n    dlt.read(\"bronze_sales_orders\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_sales_orders` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_sales_orders], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa9a3cd0-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_sales_orders'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_sales_orders",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776703002,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203021
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.133Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 9, line 10, in silver_materials\n    dlt.read(\"bronze_materials\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_materials` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_materials], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa99a090-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_materials'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_materials",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776703001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203020
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.129Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 19, line 10, in silver_contract_items\n    dlt.read(\"bronze_contract_items\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_contract_items` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_contract_items], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa98dd40-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_contract_items'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_contract_items",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776702001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203019
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.124Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 17, line 10, in silver_contracts\n    dlt.read(\"bronze_contracts\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_contracts` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_contracts], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa9819f0-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_contracts'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_contracts",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776701001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203018
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.119Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 11, line 9, in silver_employees\n    dlt.read(\"bronze_employees\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_employees` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_employees], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa972f90-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_employees'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_employees",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776700001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203017
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.113Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 23, line 10, in silver_goods_receipts\n    dlt.read(\"bronze_goods_receipts\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_goods_receipts` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_goods_receipts], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa969350-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_goods_receipts'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_goods_receipts",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776699001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203016
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.109Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 27, line 10, in silver_project_actuals\n    dlt.read(\"bronze_project_actuals\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_project_actuals` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_project_actuals], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa95f710-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_project_actuals'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_project_actuals",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776698001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203015
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.105Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 33, line 10, in silver_vendor_performance\n    dlt.read(\"bronze_vendor_performance\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_vendor_performance` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_vendor_performance], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa94be90-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_vendor_performance'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_vendor_performance",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776697001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203014
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.097Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 5, line 11, in silver_vendors\n    dlt.read(\"bronze_vendors\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_vendors` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_vendors], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa93d430-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_vendors'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_vendors",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776695001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203013
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.091Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 21, line 10, in silver_invoices\n    dlt.read(\"bronze_invoices\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_invoices` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_invoices], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa935f00-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_invoices'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_invoices",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776694001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203012
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.088Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 15, line 10, in silver_po_line_items\n    dlt.read(\"bronze_po_line_items\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_po_line_items` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_po_line_items], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa916330-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_po_line_items'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_po_line_items",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776692001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203011
+      }
+    },
+    "timestamp": "2026-04-19T00:16:15.075Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/silver/02_silver_pipeline\", cell 7, line 10, in silver_projects\n    dlt.read(\"bronze_projects\")\n\npyspark.errors.exceptions.captured.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `workspace`.`procurement_silver`.`bronze_projects` cannot be found. Verify the spelling and correctness of the schema and catalog.\nIf you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.\nTo tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01;\n'UnresolvedRelation [workspace, procurement_silver, bronze_projects], [], false"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "fa7835e0-3b84-11f1-918a-5e5649aba9e5",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_silver.silver_projects'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "flow_name": "workspace.procurement_silver.silver_projects",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557776691001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203010
+      }
+    },
+    "timestamp": "2026-04-19T00:16:14.910Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "e7fbd980-3b84-11f1-918a-5e5649aba9e5",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update f4da45 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557748564001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776557742203001
+      }
+    },
+    "timestamp": "2026-04-19T00:15:43.896Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "d8d18e50-3b84-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update f4da45.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557718454001
+    },
+    "timestamp": "2026-04-19T00:15:18.453Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "d4cecac0-3b84-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update f4da45 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-001511-rt0idx1c-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557711725001
+    },
+    "timestamp": "2026-04-19T00:15:11.724Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "d4477250-3b84-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update f4da45 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557710838001
+    },
+    "timestamp": "2026-04-19T00:15:10.826Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "d44416f0-3b84-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2",
+      "request_id": "f4da4513-9ef1-423e-a580-af3e412300b4",
+      "update_id": "f4da4513-9ef1-423e-a580-af3e412300b4"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776557710816001
+    },
+    "timestamp": "2026-04-19T00:15:10.815Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "88cd73c0-3b7e-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com edited pipeline settings.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776555007274001
+    },
+    "timestamp": "2026-04-18T23:30:07.228Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "b21305d0-3a28-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com created pipeline.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7e4dfdca-ed85-4a25-8b31-40fb2a40e06a",
+      "pipeline_name": "[dev mohd_qamrain] procurement_silver_pipeline",
+      "region": "us-east-2"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776408188599001
+    },
+    "timestamp": "2026-04-17T06:43:08.589Z"
+  }
+]

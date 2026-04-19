@@ -1,0 +1,703 @@
+[
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 11, line 8, in gold_dim_contract\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `approved_by` cannot be resolved. Did you mean one of the following? [`project_id`, `currency`, `created_date`, `end_date`, `start_date`]. SQLSTATE: 42703;\n'Project [contract_id#12943, vendor_id#12946, project_id#12947, contract_type#12944, contract_status#12945, contract_status#12945 AS status#13039, contract_value#12966, contract_value#12966 AS original_value#13040, (contract_value#12966 + coalesce(change_order_value#12968, cast(0 as double))) AS revised_value#13041, start_date#12955, end_date#12956, contract_duration_days#12967, payment_terms#12962, penalty_clause#12970, performance_bond#12971, retention_pct#12958, change_order_count#12969, change_order_value#12968, CASE WHEN (original_value#12950 \u003e cast(0 as double)) THEN round((((coalesce(revised_value#12951, original_value#12950) - original_value#12950) / original_value#12950) * cast(100 as double)), 2) ELSE 0.0 END AS cost_growth_pct#13042, 'approved_by, created_date#12965, cast(true as boolean) AS _is_current#13043, current_timestamp() AS _gold_timestamp#13044]\n+- SubqueryAlias workspace.procurement_silver.silver_contracts\n   +- View (`workspace`.`procurement_silver`.`silver_contracts`, [contract_id#12943, contract_type#12944, contract_status#12945, vendor_id#12946, project_id#12947, contract_manager_id#12948, scope_of_work#12949, original_value#12950, revised_value#12951, revision_factor#12952, variation_orders#12953, currency#12954, start_date#12955, end_date#12956, duration_months#12957, retention_pct#12958, performance_bond_pct#12959, advance_payment_pct#12960, liquidated_damages_pct#12961, payment_terms#12962, insurance_required#12963, description#12964, created_date#12965, contract_value#12966, contract_duration_days#12967, ... 5 more fields])\n      +- Project [cast(contract_id#13006 as string) AS contract_id#12943, cast(contract_type#13007 as string) AS contract_type#12944, cast(contract_status#13008 as string) AS contract_status#12945, cast(vendor_id#13009 as string) AS vendor_id#12946, cast(project_id#13010 as string) AS project_id#12947, cast(contract_manager_id#13011 as string) AS contract_manager_id#12948, cast(scope_of_work#13012 as string) AS scope_of_work#12949, cast(original_value#13013 as double) AS original_value#12950, cast(revised_value#13014 as double) AS revised_value#12951, cast(revision_factor#13015 as double) AS revision_factor#12952, cast(variation_orders#13016 as int) AS variation_orders#12953, cast(currency#13017 as string) AS currency#12954, cast(start_date#13018 as date) AS start_date#12955, cast(end_date#13019 as date) AS end_date#12956, cast(duration_months#13020 as int) AS duration_months#12957, cast(retention_pct#13021 as int) AS retention_pct#12958, cast(performance_bond_pct#13022 as int) AS performance_bond_pct#12959, cast(advance_payment_pct#13023 as int) AS advance_payment_pct#12960, cast(liquidated_damages_pct#13024 as double) AS liquidated_damages_pct#12961, cast(payment_terms#13025 as string) AS payment_terms#12962, cast(insurance_required#13026 as boolean) AS insurance_required#12963, cast(description#13027 as string) AS description#12964, cast(created_date#13028 as date) AS created_date#12965, cast(contract_value#13029 as double) AS contract_value#12966, cast(contract_duration_days#13030 as int) AS contract_duration_days#12967, ... 5 more fields]\n         +- Project [contract_id#13006, contract_type#13007, contract_status#13008, vendor_id#13009, project_id#13010, contract_manager_id#13011, scope_of_work#13012, original_value#13013, revised_value#13014, revision_factor#13015, variation_orders#13016, currency#13017, start_date#13018, end_date#13019, duration_months#13020, retention_pct#13021, performance_bond_pct#13022, advance_payment_pct#13023, liquidated_damages_pct#13024, payment_terms#13025, insurance_required#13026, description#13027, created_date#13028, contract_value#13029, contract_duration_days#13030, ... 5 more fields]\n            +- Filter (__mv__expectations#13036.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_contracts_1[__enzyme__row__id__#13005,contract_id#13006,contract_type#13007,contract_status#13008,vendor_id#13009,project_id#13010,contract_manager_id#13011,scope_of_work#13012,original_value#13013,revised_value#13014,revision_factor#13015,variation_orders#13016,currency#13017,start_date#13018,end_date#13019,duration_months#13020,retention_pct#13021,performance_bond_pct#13022,advance_payment_pct#13023,liquidated_damages_pct#13024,payment_terms#13025,insurance_required#13026,description#13027,created_date#13028,contract_value#13029,... 7 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "2ce70a10-3b99-11f1-88df-928379eeb67c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update 1a10df has failed. Failed to analyze flow 'workspace.procurement_gold.dim_contract' and 4 other flow(s)..",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566450302001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776566387042019
+      }
+    },
+    "timestamp": "2026-04-19T02:40:49.457Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 16, line 8, in gold_fact_invoices\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `three_way_match` cannot be resolved. Did you mean one of the following? [`created_date`, `received_date`, `approval_date`, `due_date`, `tax_rate`]. SQLSTATE: 42703;\n'Project [invoice_id#13734, vendor_id#13735, po_id#13736, project_id#13738, contract_id#13737, invoice_number#13761, invoice_status#13740, invoice_type#13739, payment_status#13764, invoice_date#13741, received_date#13763, due_date#13742, payment_date#13762, invoice_amount#13743, invoice_amount#13743 AS net_amount#13836, tax_rate#13744, tax_amount#13745, total_amount#13748, total_amount#13748 AS gross_amount#13837, paid_amount#13753, retention_amount#13747, days_to_pay#13759, days_overdue#13760, days_overdue#13760 AS days_outstanding#13838, CASE WHEN (days_overdue#13760 \u003c= 0) THEN CURRENT WHEN (days_overdue#13760 \u003c= 30) THEN 1-30 DAYS WHEN (days_overdue#13760 \u003c= 60) THEN 31-60 DAYS WHEN (days_overdue#13760 \u003c= 90) THEN 61-90 DAYS ELSE 90+ DAYS END AS aging_bucket#13839, ... 6 more fields]\n+- SubqueryAlias workspace.procurement_silver.silver_invoices\n   +- View (`workspace`.`procurement_silver`.`silver_invoices`, [invoice_id#13734, vendor_id#13735, po_id#13736, contract_id#13737, project_id#13738, invoice_type#13739, invoice_status#13740, invoice_date#13741, due_date#13742, invoice_amount#13743, tax_rate#13744, tax_amount#13745, retention_pct#13746, retention_amount#13747, total_amount#13748, currency#13749, payment_term#13750, early_payment_discount#13751, paid_date#13752, paid_amount#13753, approved_by#13754, approval_date#13755, invoice_ref#13756, description#13757, created_date#13758, ... 7 more fields])\n      +- Project [cast(invoice_id#13801 as string) AS invoice_id#13734, cast(vendor_id#13802 as string) AS vendor_id#13735, cast(po_id#13803 as string) AS po_id#13736, cast(contract_id#13804 as string) AS contract_id#13737, cast(project_id#13805 as string) AS project_id#13738, cast(invoice_type#13806 as string) AS invoice_type#13739, cast(invoice_status#13807 as string) AS invoice_status#13740, cast(invoice_date#13808 as date) AS invoice_date#13741, cast(due_date#13809 as date) AS due_date#13742, cast(invoice_amount#13810 as double) AS invoice_amount#13743, cast(tax_rate#13811 as double) AS tax_rate#13744, cast(tax_amount#13812 as double) AS tax_amount#13745, cast(retention_pct#13813 as double) AS retention_pct#13746, cast(retention_amount#13814 as double) AS retention_amount#13747, cast(total_amount#13815 as double) AS total_amount#13748, cast(currency#13816 as string) AS currency#13749, cast(payment_term#13817 as string) AS payment_term#13750, cast(early_payment_discount#13818 as double) AS early_payment_discount#13751, cast(paid_date#13819 as date) AS paid_date#13752, cast(paid_amount#13820 as double) AS paid_amount#13753, cast(approved_by#13821 as string) AS approved_by#13754, cast(approval_date#13822 as date) AS approval_date#13755, cast(invoice_ref#13823 as string) AS invoice_ref#13756, cast(description#13824 as string) AS description#13757, cast(created_date#13825 as date) AS created_date#13758, ... 7 more fields]\n         +- Project [invoice_id#13801, vendor_id#13802, po_id#13803, contract_id#13804, project_id#13805, invoice_type#13806, invoice_status#13807, invoice_date#13808, due_date#13809, invoice_amount#13810, tax_rate#13811, tax_amount#13812, retention_pct#13813, retention_amount#13814, total_amount#13815, currency#13816, payment_term#13817, early_payment_discount#13818, paid_date#13819, paid_amount#13820, approved_by#13821, approval_date#13822, invoice_ref#13823, description#13824, created_date#13825, ... 7 more fields]\n            +- Filter (__mv__expectations#13833.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_invoices_1[__enzyme__row__id__#13800,invoice_id#13801,vendor_id#13802,po_id#13803,contract_id#13804,project_id#13805,invoice_type#13806,invoice_status#13807,invoice_date#13808,due_date#13809,invoice_amount#13810,tax_rate#13811,tax_amount#13812,retention_pct#13813,retention_amount#13814,total_amount#13815,currency#13816,payment_term#13817,early_payment_discount#13818,paid_date#13819,paid_amount#13820,approved_by#13821,approval_date#13822,invoice_ref#13823,description#13824,... 9 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "2cd270a0-3b99-11f1-88df-928379eeb67c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.fact_invoices'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "flow_name": "workspace.procurement_gold.fact_invoices",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566450298001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776566387042013
+      }
+    },
+    "timestamp": "2026-04-19T02:40:49.322Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 17, line 21, in gold_fact_goods_receipts\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `inspector` cannot be resolved. Did you mean one of the following? [`_poli_unit_price`, `workspace`.`procurement_silver`.`silver_goods_receipts`.`po_id`, `workspace`.`procurement_silver`.`silver_goods_receipts`.`grn_id`, `workspace`.`procurement_silver`.`silver_goods_receipts`.`remarks`, `workspace`.`procurement_silver`.`silver_goods_receipts`.`vendor_id`]. SQLSTATE: 42703;\n'Project [grn_id#13841, po_id#13842, line_item_id#13843, vendor_id#13844, material_id#13846, project_id#13845, receipt_date#13847, qty_received#13861 AS quantity_received#14069, qty_accepted#13849 AS quantity_accepted#14070, qty_rejected#13850 AS quantity_rejected#14071, rejection_rate#13862, (cast(100 as double) - rejection_rate#13862) AS acceptance_rate#14072, (qty_accepted#13849 * coalesce(_poli_unit_price#14068, cast(0 as double))) AS receipt_value#14073, grn_status#13851, storage_location#13855, 'inspector, remarks#13857, created_date#13860, current_timestamp() AS _gold_timestamp#14074]\n+- Project [grn_id#13841, po_id#13842, line_item_id#13843, vendor_id#13844, project_id#13845, material_id#13846, receipt_date#13847, qty_delivered#13848, qty_accepted#13849, qty_rejected#13850, grn_status#13851, inspection_result#13852, inspection_certificate#13853, delivery_note_ref#13854, storage_location#13855, received_by#13856, remarks#13857, damage_flag#13858, temperature_check#13859, created_date#13860, qty_received#13861, rejection_rate#13862, _silver_timestamp#13863, _poli_unit_price#14068]\n   +- Join LeftOuter, (line_item_id#13843 = _poli_line_id#14067)\n      :- Project [grn_id#13841, po_id#13842, line_item_id#13843, vendor_id#13844, project_id#13845, material_id#13846, receipt_date#13847, qty_delivered#13848, qty_accepted#13849, qty_rejected#13850, grn_status#13851, inspection_result#13852, inspection_certificate#13853, delivery_note_ref#13854, storage_location#13855, received_by#13856, remarks#13857, damage_flag#13858, temperature_check#13859, created_date#13860, qty_received#13861, rejection_rate#13862, _silver_timestamp#13863]\n      :  +- Join LeftOuter, (po_id#13842 = _po_id#13994)\n      :     :- SubqueryAlias workspace.procurement_silver.silver_goods_receipts\n      :     :  +- View (`workspace`.`procurement_silver`.`silver_goods_receipts`, [grn_id#13841, po_id#13842, line_item_id#13843, vendor_id#13844, project_id#13845, material_id#13846, receipt_date#13847, qty_delivered#13848, qty_accepted#13849, qty_rejected#13850, grn_status#13851, inspection_result#13852, inspection_certificate#13853, delivery_note_ref#13854, storage_location#13855, received_by#13856, remarks#13857, damage_flag#13858, temperature_check#13859, created_date#13860, qty_received#13861, rejection_rate#13862, _silver_timestamp#13863])\n      :     :     +- Project [cast(grn_id#13890 as string) AS grn_id#13841, cast(po_id#13891 as string) AS po_id#13842, cast(line_item_id#13892 as string) AS line_item_id#13843, cast(vendor_id#13893 as string) AS vendor_id#13844, cast(project_id#13894 as string) AS project_id#13845, cast(material_id#13895 as string) AS material_id#13846, cast(receipt_date#13896 as date) AS receipt_date#13847, cast(qty_delivered#13897 as int) AS qty_delivered#13848, cast(qty_accepted#13898 as double) AS qty_accepted#13849, cast(qty_rejected#13899 as double) AS qty_rejected#13850, cast(grn_status#13900 as string) AS grn_status#13851, cast(inspection_result#13901 as string) AS inspection_result#13852, cast(inspection_certificate#13902 as string) AS inspection_certificate#13853, cast(delivery_note_ref#13903 as string) AS delivery_note_ref#13854, cast(storage_location#13904 as string) AS storage_location#13855, cast(received_by#13905 as string) AS received_by#13856, cast(remarks#13906 as string) AS remarks#13857, cast(damage_flag#13907 as boolean) AS damage_flag#13858, cast(temperature_check#13908 as boolean) AS temperature_check#13859, cast(created_date#13909 as date) AS created_date#13860, cast(qty_received#13910 as double) AS qty_received#13861, cast(rejection_rate#13911 as double) AS rejection_rate#13862, cast(_silver_timestamp#13912 as timestamp) AS _silver_timestamp#13863]\n      :     :        +- Project [grn_id#13890, po_id#13891, line_item_id#13892, vendor_id#13893, project_id#13894, material_id#13895, receipt_date#13896, qty_delivered#13897, qty_accepted#13898, qty_rejected#13899, grn_status#13900, inspection_result#13901, inspection_certificate#13902, delivery_note_ref#13903, storage_location#13904, received_by#13905, remarks#13906, damage_flag#13907, temperature_check#13908, created_date#13909, qty_received#13910, rejection_rate#13911, _silver_timestamp#13912]\n      :     :           +- Filter (__mv__expectations#13913.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n      :     :              +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_goods_receipts_1[__enzyme__row__id__#13889,grn_id#13890,po_id#13891,line_item_id#13892,vendor_id#13893,project_id#13894,material_id#13895,receipt_date#13896,qty_delivered#13897,qty_accepted#13898,qty_rejected#13899,grn_status#13900,inspection_result#13901,inspection_certificate#13902,delivery_note_ref#13903,storage_location#13904,received_by#13905,remarks#13906,damage_flag#13907,temperature_check#13908,created_date#13909,qty_received#13910,rejection_rate#13911,_silver_timestamp#13912,__mv__expectations#13913] parquet\n      :     +- Project [po_id#13916 AS _po_id#13994]\n      :        +- SubqueryAlias workspace.procurement_silver.silver_purchase_orders\n      :           +- View (`workspace`.`procurement_silver`.`silver_purchase_orders`, [po_id#13916, po_type#13917, po_status#13918, priority#13919, vendor_id#13920, project_id#13921, po_date#13922, delivery_date#13923, approval_date#13924, po_value#13925, tax_rate#13926, tax_amount#13927, total_value#13928, currency#13929, payment_terms#13930, delivery_terms#13931, description#13932, buyer_name#13933, requisition_ref#13934, ship_to_address#13935, notes#13936, created_date#13937, order_date#13938, _silver_timestamp#13939])\n      :              +- Project [cast(po_id#13967 as string) AS po_id#13916, cast(po_type#13968 as string) AS po_type#13917, cast(po_status#13969 as string) AS po_status#13918, cast(priority#13970 as string) AS priority#13919, cast(vendor_id#13971 as string) AS vendor_id#13920, cast(project_id#13972 as string) AS project_id#13921, cast(po_date#13973 as date) AS po_date#13922, cast(delivery_date#13974 as date) AS delivery_date#13923, cast(approval_date#13975 as date) AS approval_date#13924, cast(po_value#13976 as double) AS po_value#13925, cast(tax_rate#13977 as double) AS tax_rate#13926, cast(tax_amount#13978 as double) AS tax_amount#13927, cast(total_value#13979 as double) AS total_value#13928, cast(currency#13980 as string) AS currency#13929, cast(payment_terms#13981 as string) AS payment_terms#13930, cast(delivery_terms#13982 as string) AS delivery_terms#13931, cast(description#13983 as string) AS description#13932, cast(buyer_name#13984 as string) AS buyer_name#13933, cast(requisition_ref#13985 as string) AS requisition_ref#13934, cast(ship_to_address#13986 as string) AS ship_to_address#13935, cast(notes#13987 as string) AS notes#13936, cast(created_date#13988 as date) AS created_date#13937, cast(order_date#13989 as date) AS order_date#13938, cast(_silver_timestamp#13990 as timestamp) AS _silver_timestamp#13939]\n      :                 +- Project [po_id#13967, po_type#13968, po_status#13969, priority#13970, vendor_id#13971, project_id#13972, po_date#13973, delivery_date#13974, approval_date#13975, po_value#13976, tax_rate#13977, tax_amount#13978, total_value#13979, currency#13980, payment_terms#13981, delivery_terms#13982, description#13983, buyer_name#13984, requisition_ref#13985, ship_to_address#13986, notes#13987, created_date#13988, order_date#13989, _silver_timestamp#13990]\n      :                    +- Filter (__mv__expectations#13991.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n      :                       +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_purchase_orders_1[__enzyme__row__id__#13966,po_id#13967,po_type#13968,po_status#13969,priority#13970,vendor_id#13971,project_id#13972,po_date#13973,delivery_date#13974,approval_date#13975,po_value#13976,tax_rate#13977,tax_amount#13978,total_value#13979,currency#13980,payment_terms#13981,delivery_terms#13982,description#13983,buyer_name#13984,requisition_ref#13985,ship_to_address#13986,notes#13987,created_date#13988,order_date#13989,_silver_timestamp#13990,... 1 more fields] parquet\n      +- Project [line_id#13995 AS _poli_line_id#14067, unit_price#14004 AS _poli_unit_price#14068]\n         +- SubqueryAlias workspace.procurement_silver.silver_po_line_items\n            +- View (`workspace`.`procurement_silver`.`silver_po_line_items`, [line_id#13995, po_id#13996, line_number#13997, material_id#13998, description#13999, unit_of_measure#14000, qty_ordered#14001, qty_received#14002, qty_accepted#14003, unit_price#14004, line_value#14005, discount_pct#14006, tax_rate#14007, delivery_date#14008, actual_delivery_date#14009, inspection_passed#14010, warehouse_location#14011, notes#14012, created_date#14013, fulfillment_rate#14014, acceptance_rate#14015, _silver_timestamp#14016])\n               +- Project [cast(line_id#14042 as string) AS line_id#13995, cast(po_id#14043 as string) AS po_id#13996, cast(line_number#14044 as int) AS line_number#13997, cast(material_id#14045 as string) AS material_id#13998, cast(description#14046 as string) AS description#13999, cast(unit_of_measure#14047 as string) AS unit_of_measure#14000, cast(qty_ordered#14048 as double) AS qty_ordered#14001, cast(qty_received#14049 as double) AS qty_received#14002, cast(qty_accepted#14050 as double) AS qty_accepted#14003, cast(unit_price#14051 as double) AS unit_price#14004, cast(line_value#14052 as double) AS line_value#14005, cast(discount_pct#14053 as int) AS discount_pct#14006, cast(tax_rate#14054 as double) AS tax_rate#14007, cast(delivery_date#14055 as date) AS delivery_date#14008, cast(actual_delivery_date#14056 as date) AS actual_delivery_date#14009, cast(inspection_passed#14057 as double) AS inspection_passed#14010, cast(warehouse_location#14058 as string) AS warehouse_location#14011, cast(notes#14059 as string) AS notes#14012, cast(created_date#14060 as date) AS created_date#14013, cast(fulfillment_rate#14061 as double) AS fulfillment_rate#14014, cast(acceptance_rate#14062 as double) AS acceptance_rate#14015, cast(_silver_timestamp#14063 as timestamp) AS _silver_timestamp#14016]\n                  +- Project [line_id#14042, po_id#14043, line_number#14044, material_id#14045, description#14046, unit_of_measure#14047, qty_ordered#14048, qty_received#14049, qty_accepted#14050, unit_price#14051, line_value#14052, discount_pct#14053, tax_rate#14054, delivery_date#14055, actual_delivery_date#14056, inspection_passed#14057, warehouse_location#14058, notes#14059, created_date#14060, fulfillment_rate#14061, acceptance_rate#14062, _silver_timestamp#14063]\n                     +- Filter (__mv__expectations#14064.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n                        +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_po_line_items_1[__enzyme__row__id__#14041,line_id#14042,po_id#14043,line_number#14044,material_id#14045,description#14046,unit_of_measure#14047,qty_ordered#14048,qty_received#14049,qty_accepted#14050,unit_price#14051,line_value#14052,discount_pct#14053,tax_rate#14054,delivery_date#14055,actual_delivery_date#14056,inspection_passed#14057,warehouse_location#14058,notes#14059,created_date#14060,fulfillment_rate#14061,acceptance_rate#14062,_silver_timestamp#14063,__mv__expectations#14064] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "2cd18640-3b99-11f1-88df-928379eeb67c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.fact_goods_receipts'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "flow_name": "workspace.procurement_gold.fact_goods_receipts",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566450297001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776566387042012
+      }
+    },
+    "timestamp": "2026-04-19T02:40:49.316Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 20, line 8, in gold_fact_vendor_performance\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `compliance_score` cannot be resolved. Did you mean one of the following? [`commercial_score`, `delivery_score`, `overall_score`, `quality_score`, `hse_score`]. SQLSTATE: 42703;\n'Project [performance_id#14507, vendor_id#14508, project_id#14509, evaluation_date#14525, evaluation_period#14510, delivery_score#14512, quality_score#14513, commercial_score#14514, hse_score#14515, 'compliance_score, overall_score#14528, recommendation#14516, evaluator_id#14511, 'notes, created_date#14527, current_timestamp() AS _gold_timestamp#14582]\n+- SubqueryAlias workspace.procurement_silver.silver_vendor_performance\n   +- View (`workspace`.`procurement_silver`.`silver_vendor_performance`, [performance_id#14507, vendor_id#14508, project_id#14509, evaluation_period#14510, evaluator_id#14511, delivery_score#14512, quality_score#14513, commercial_score#14514, hse_score#14515, recommendation#14516, delivery_metric_focus#14517, quality_metric_focus#14518, commercial_metric_focus#14519, hse_metric_focus#14520, po_count_evaluated#14521, total_value_evaluated#14522, corrective_actions#14523, improvement_trend#14524, evaluation_date#14525, remarks#14526, created_date#14527, overall_score#14528, _silver_timestamp#14529])\n      +- Project [cast(performance_id#14556 as string) AS performance_id#14507, cast(vendor_id#14557 as string) AS vendor_id#14508, cast(project_id#14558 as string) AS project_id#14509, cast(evaluation_period#14559 as string) AS evaluation_period#14510, cast(evaluator_id#14560 as string) AS evaluator_id#14511, cast(delivery_score#14561 as double) AS delivery_score#14512, cast(quality_score#14562 as double) AS quality_score#14513, cast(commercial_score#14563 as double) AS commercial_score#14514, cast(hse_score#14564 as double) AS hse_score#14515, cast(recommendation#14565 as string) AS recommendation#14516, cast(delivery_metric_focus#14566 as string) AS delivery_metric_focus#14517, cast(quality_metric_focus#14567 as string) AS quality_metric_focus#14518, cast(commercial_metric_focus#14568 as string) AS commercial_metric_focus#14519, cast(hse_metric_focus#14569 as string) AS hse_metric_focus#14520, cast(po_count_evaluated#14570 as int) AS po_count_evaluated#14521, cast(total_value_evaluated#14571 as double) AS total_value_evaluated#14522, cast(corrective_actions#14572 as int) AS corrective_actions#14523, cast(improvement_trend#14573 as string) AS improvement_trend#14524, cast(evaluation_date#14574 as date) AS evaluation_date#14525, cast(remarks#14575 as string) AS remarks#14526, cast(created_date#14576 as date) AS created_date#14527, cast(overall_score#14577 as double) AS overall_score#14528, cast(_silver_timestamp#14578 as timestamp) AS _silver_timestamp#14529]\n         +- Project [performance_id#14556, vendor_id#14557, project_id#14558, evaluation_period#14559, evaluator_id#14560, delivery_score#14561, quality_score#14562, commercial_score#14563, hse_score#14564, recommendation#14565, delivery_metric_focus#14566, quality_metric_focus#14567, commercial_metric_focus#14568, hse_metric_focus#14569, po_count_evaluated#14570, total_value_evaluated#14571, corrective_actions#14572, improvement_trend#14573, evaluation_date#14574, remarks#14575, created_date#14576, overall_score#14577, _silver_timestamp#14578]\n            +- Filter (__mv__expectations#14579.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_vendor_performance_1[__enzyme__row__id__#14555,performance_id#14556,vendor_id#14557,project_id#14558,evaluation_period#14559,evaluator_id#14560,delivery_score#14561,quality_score#14562,commercial_score#14563,hse_score#14564,recommendation#14565,delivery_metric_focus#14566,quality_metric_focus#14567,commercial_metric_focus#14568,hse_metric_focus#14569,po_count_evaluated#14570,total_value_evaluated#14571,corrective_actions#14572,improvement_trend#14573,evaluation_date#14574,remarks#14575,created_date#14576,overall_score#14577,_silver_timestamp#14578,__mv__expectations#14579] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "2cd11110-3b99-11f1-88df-928379eeb67c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.fact_vendor_performance'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "flow_name": "workspace.procurement_gold.fact_vendor_performance",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566450296001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776566387042011
+      }
+    },
+    "timestamp": "2026-04-19T02:40:49.313Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 6, line 8, in gold_dim_vendor\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `prequalification_expiry` cannot be resolved. Did you mean one of the following? [`prequalification_expiry_date`, `prequalification_status`, `registration_number`, `contact_email`, `risk_category`]. SQLSTATE: 42703;\n'Project [vendor_id#11507, vendor_code#11508, vendor_name#11509, vendor_type#11511, sector_specialization#11512 AS vendor_sector#11621, upper(sector_specialization#11512) AS sector#11622, country#11513, state#11514, city#11515, country#11513 AS vendor_country#11623, state#11514 AS vendor_state#11624, city#11515 AS vendor_city#11625, payment_terms_days#11525, credit_limit_usd#11526, performance_rating#11527, risk_category#11528, prequalification_status#11529, 'prequalification_expiry, iso_certified#11531, 'iso_cert_number, hse_rating#11532, minority_owned#11533, small_business#11534, 'primary_contact, contact_email#11536, ... 7 more fields]\n+- SubqueryAlias workspace.procurement_silver.silver_vendors\n   +- View (`workspace`.`procurement_silver`.`silver_vendors`, [vendor_id#11507, vendor_code#11508, vendor_name#11509, vendor_legal_name#11510, vendor_type#11511, sector_specialization#11512, country#11513, state#11514, city#11515, postal_code#11516, address_line1#11517, address_line2#11518, registration_number#11519, vat_number#11520, tax_id#11521, bank_name#11522, bank_account#11523, swift_code#11524, payment_terms_days#11525, credit_limit_usd#11526, performance_rating#11527, risk_category#11528, prequalification_status#11529, prequalification_expiry_date#11530, iso_certified#11531, ... 11 more fields])\n      +- Project [cast(vendor_id#11582 as string) AS vendor_id#11507, cast(vendor_code#11583 as string) AS vendor_code#11508, cast(vendor_name#11584 as string) AS vendor_name#11509, cast(vendor_legal_name#11585 as string) AS vendor_legal_name#11510, cast(vendor_type#11586 as string) AS vendor_type#11511, cast(sector_specialization#11587 as string) AS sector_specialization#11512, cast(country#11588 as string) AS country#11513, cast(state#11589 as string) AS state#11514, cast(city#11590 as string) AS city#11515, cast(postal_code#11591 as string) AS postal_code#11516, cast(address_line1#11592 as string) AS address_line1#11517, cast(address_line2#11593 as string) AS address_line2#11518, cast(registration_number#11594 as string) AS registration_number#11519, cast(vat_number#11595 as string) AS vat_number#11520, cast(tax_id#11596 as string) AS tax_id#11521, cast(bank_name#11597 as string) AS bank_name#11522, cast(bank_account#11598 as string) AS bank_account#11523, cast(swift_code#11599 as string) AS swift_code#11524, cast(payment_terms_days#11600 as int) AS payment_terms_days#11525, cast(credit_limit_usd#11601 as double) AS credit_limit_usd#11526, cast(performance_rating#11602 as double) AS performance_rating#11527, cast(risk_category#11603 as string) AS risk_category#11528, cast(prequalification_status#11604 as string) AS prequalification_status#11529, cast(prequalification_expiry_date#11605 as date) AS prequalification_expiry_date#11530, cast(iso_certified#11606 as string) AS iso_certified#11531, ... 11 more fields]\n         +- Project [vendor_id#11582, vendor_code#11583, vendor_name#11584, vendor_legal_name#11585, vendor_type#11586, sector_specialization#11587, country#11588, state#11589, city#11590, postal_code#11591, address_line1#11592, address_line2#11593, registration_number#11594, vat_number#11595, tax_id#11596, bank_name#11597, bank_account#11598, swift_code#11599, payment_terms_days#11600, credit_limit_usd#11601, performance_rating#11602, risk_category#11603, prequalification_status#11604, prequalification_expiry_date#11605, iso_certified#11606, ... 11 more fields]\n            +- Filter (__mv__expectations#11618.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_vendors_1[__enzyme__row__id__#11581,vendor_id#11582,vendor_code#11583,vendor_name#11584,vendor_legal_name#11585,vendor_type#11586,sector_specialization#11587,country#11588,state#11589,city#11590,postal_code#11591,address_line1#11592,address_line2#11593,registration_number#11594,vat_number#11595,tax_id#11596,bank_name#11597,bank_account#11598,swift_code#11599,payment_terms_days#11600,credit_limit_usd#11601,performance_rating#11602,risk_category#11603,prequalification_status#11604,prequalification_expiry_date#11605,... 13 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "2cd074d0-3b99-11f1-88df-928379eeb67c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.dim_vendor'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "flow_name": "workspace.procurement_gold.dim_vendor",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566450295001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776566387042010
+      }
+    },
+    "timestamp": "2026-04-19T02:40:49.309Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 11, line 8, in gold_dim_contract\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `approved_by` cannot be resolved. Did you mean one of the following? [`project_id`, `currency`, `created_date`, `end_date`, `start_date`]. SQLSTATE: 42703;\n'Project [contract_id#12943, vendor_id#12946, project_id#12947, contract_type#12944, contract_status#12945, contract_status#12945 AS status#13039, contract_value#12966, contract_value#12966 AS original_value#13040, (contract_value#12966 + coalesce(change_order_value#12968, cast(0 as double))) AS revised_value#13041, start_date#12955, end_date#12956, contract_duration_days#12967, payment_terms#12962, penalty_clause#12970, performance_bond#12971, retention_pct#12958, change_order_count#12969, change_order_value#12968, CASE WHEN (original_value#12950 \u003e cast(0 as double)) THEN round((((coalesce(revised_value#12951, original_value#12950) - original_value#12950) / original_value#12950) * cast(100 as double)), 2) ELSE 0.0 END AS cost_growth_pct#13042, 'approved_by, created_date#12965, cast(true as boolean) AS _is_current#13043, current_timestamp() AS _gold_timestamp#13044]\n+- SubqueryAlias workspace.procurement_silver.silver_contracts\n   +- View (`workspace`.`procurement_silver`.`silver_contracts`, [contract_id#12943, contract_type#12944, contract_status#12945, vendor_id#12946, project_id#12947, contract_manager_id#12948, scope_of_work#12949, original_value#12950, revised_value#12951, revision_factor#12952, variation_orders#12953, currency#12954, start_date#12955, end_date#12956, duration_months#12957, retention_pct#12958, performance_bond_pct#12959, advance_payment_pct#12960, liquidated_damages_pct#12961, payment_terms#12962, insurance_required#12963, description#12964, created_date#12965, contract_value#12966, contract_duration_days#12967, ... 5 more fields])\n      +- Project [cast(contract_id#13006 as string) AS contract_id#12943, cast(contract_type#13007 as string) AS contract_type#12944, cast(contract_status#13008 as string) AS contract_status#12945, cast(vendor_id#13009 as string) AS vendor_id#12946, cast(project_id#13010 as string) AS project_id#12947, cast(contract_manager_id#13011 as string) AS contract_manager_id#12948, cast(scope_of_work#13012 as string) AS scope_of_work#12949, cast(original_value#13013 as double) AS original_value#12950, cast(revised_value#13014 as double) AS revised_value#12951, cast(revision_factor#13015 as double) AS revision_factor#12952, cast(variation_orders#13016 as int) AS variation_orders#12953, cast(currency#13017 as string) AS currency#12954, cast(start_date#13018 as date) AS start_date#12955, cast(end_date#13019 as date) AS end_date#12956, cast(duration_months#13020 as int) AS duration_months#12957, cast(retention_pct#13021 as int) AS retention_pct#12958, cast(performance_bond_pct#13022 as int) AS performance_bond_pct#12959, cast(advance_payment_pct#13023 as int) AS advance_payment_pct#12960, cast(liquidated_damages_pct#13024 as double) AS liquidated_damages_pct#12961, cast(payment_terms#13025 as string) AS payment_terms#12962, cast(insurance_required#13026 as boolean) AS insurance_required#12963, cast(description#13027 as string) AS description#12964, cast(created_date#13028 as date) AS created_date#12965, cast(contract_value#13029 as double) AS contract_value#12966, cast(contract_duration_days#13030 as int) AS contract_duration_days#12967, ... 5 more fields]\n         +- Project [contract_id#13006, contract_type#13007, contract_status#13008, vendor_id#13009, project_id#13010, contract_manager_id#13011, scope_of_work#13012, original_value#13013, revised_value#13014, revision_factor#13015, variation_orders#13016, currency#13017, start_date#13018, end_date#13019, duration_months#13020, retention_pct#13021, performance_bond_pct#13022, advance_payment_pct#13023, liquidated_damages_pct#13024, payment_terms#13025, insurance_required#13026, description#13027, created_date#13028, contract_value#13029, contract_duration_days#13030, ... 5 more fields]\n            +- Filter (__mv__expectations#13036.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_contracts_1[__enzyme__row__id__#13005,contract_id#13006,contract_type#13007,contract_status#13008,vendor_id#13009,project_id#13010,contract_manager_id#13011,scope_of_work#13012,original_value#13013,revised_value#13014,revision_factor#13015,variation_orders#13016,currency#13017,start_date#13018,end_date#13019,duration_months#13020,retention_pct#13021,performance_bond_pct#13022,advance_payment_pct#13023,liquidated_damages_pct#13024,payment_terms#13025,insurance_required#13026,description#13027,created_date#13028,contract_value#13029,... 7 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "2cc2e040-3b99-11f1-88df-928379eeb67c",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.dim_contract'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "flow_name": "workspace.procurement_gold.dim_contract",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566450293001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776566387042009
+      }
+    },
+    "timestamp": "2026-04-19T02:40:49.220Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "0d3ccec0-3b99-11f1-88df-928379eeb67c",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 1a10df is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566401670001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776566387042001
+      }
+    },
+    "timestamp": "2026-04-19T02:39:56.332Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "015c0940-3b99-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 1a10df.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566376405001
+    },
+    "timestamp": "2026-04-19T02:39:36.404Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "fb6983a0-3b98-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 1a10df is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-023926-odivup9n-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566366427001
+    },
+    "timestamp": "2026-04-19T02:39:26.426Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "fafa4710-3b98-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 1a10df started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566365698001
+    },
+    "timestamp": "2026-04-19T02:39:25.685Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "faf6c4a0-3b98-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e",
+      "update_id": "1a10dfb0-da5f-41c4-ab8c-656321436a2e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776566365674001
+    },
+    "timestamp": "2026-04-19T02:39:25.674Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 11, line 8, in gold_dim_contract\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `change_order_value` cannot be resolved. Did you mean one of the following? [`contract_value`, `revised_value`, `original_value`, `created_date`, `end_date`]. SQLSTATE: 42703;\n'Project [contract_id#12892, vendor_id#12895, project_id#12896, contract_type#12893, contract_status#12894, contract_status#12894 AS status#12976, contract_value#12915, contract_value#12915 AS original_value#12977, '`+`(contract_value#12915, 'coalesce('change_order_value, 0)) AS revised_value#12978, start_date#12904, end_date#12905, contract_duration_days#12916, payment_terms#12911, 'penalty_clause, 'performance_bond, retention_pct#12907, 'change_order_count, 'change_order_value, CASE WHEN (original_value#12899 \u003e cast(0 as double)) THEN round((((coalesce(revised_value#12900, original_value#12899) - original_value#12899) / original_value#12899) * cast(100 as double)), 2) ELSE 0.0 END AS cost_growth_pct#12979, 'approved_by, created_date#12914, cast(true as boolean) AS _is_current#12980, current_timestamp() AS _gold_timestamp#12981]\n+- SubqueryAlias workspace.procurement_silver.silver_contracts\n   +- View (`workspace`.`procurement_silver`.`silver_contracts`, [contract_id#12892, contract_type#12893, contract_status#12894, vendor_id#12895, project_id#12896, contract_manager_id#12897, scope_of_work#12898, original_value#12899, revised_value#12900, revision_factor#12901, variation_orders#12902, currency#12903, start_date#12904, end_date#12905, duration_months#12906, retention_pct#12907, performance_bond_pct#12908, advance_payment_pct#12909, liquidated_damages_pct#12910, payment_terms#12911, insurance_required#12912, description#12913, created_date#12914, contract_value#12915, contract_duration_days#12916, ... 1 more fields])\n      +- Project [cast(contract_id#12947 as string) AS contract_id#12892, cast(contract_type#12948 as string) AS contract_type#12893, cast(contract_status#12949 as string) AS contract_status#12894, cast(vendor_id#12950 as string) AS vendor_id#12895, cast(project_id#12951 as string) AS project_id#12896, cast(contract_manager_id#12952 as string) AS contract_manager_id#12897, cast(scope_of_work#12953 as string) AS scope_of_work#12898, cast(original_value#12954 as double) AS original_value#12899, cast(revised_value#12955 as double) AS revised_value#12900, cast(revision_factor#12956 as double) AS revision_factor#12901, cast(variation_orders#12957 as int) AS variation_orders#12902, cast(currency#12958 as string) AS currency#12903, cast(start_date#12959 as date) AS start_date#12904, cast(end_date#12960 as date) AS end_date#12905, cast(duration_months#12961 as int) AS duration_months#12906, cast(retention_pct#12962 as int) AS retention_pct#12907, cast(performance_bond_pct#12963 as int) AS performance_bond_pct#12908, cast(advance_payment_pct#12964 as int) AS advance_payment_pct#12909, cast(liquidated_damages_pct#12965 as double) AS liquidated_damages_pct#12910, cast(payment_terms#12966 as string) AS payment_terms#12911, cast(insurance_required#12967 as boolean) AS insurance_required#12912, cast(description#12968 as string) AS description#12913, cast(created_date#12969 as date) AS created_date#12914, cast(contract_value#12970 as double) AS contract_value#12915, cast(contract_duration_days#12971 as int) AS contract_duration_days#12916, ... 1 more fields]\n         +- Project [contract_id#12947, contract_type#12948, contract_status#12949, vendor_id#12950, project_id#12951, contract_manager_id#12952, scope_of_work#12953, original_value#12954, revised_value#12955, revision_factor#12956, variation_orders#12957, currency#12958, start_date#12959, end_date#12960, duration_months#12961, retention_pct#12962, performance_bond_pct#12963, advance_payment_pct#12964, liquidated_damages_pct#12965, payment_terms#12966, insurance_required#12967, description#12968, created_date#12969, contract_value#12970, contract_duration_days#12971, ... 1 more fields]\n            +- Filter (__mv__expectations#12973.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_contracts_1[__enzyme__row__id__#12946,contract_id#12947,contract_type#12948,contract_status#12949,vendor_id#12950,project_id#12951,contract_manager_id#12952,scope_of_work#12953,original_value#12954,revised_value#12955,revision_factor#12956,variation_orders#12957,currency#12958,start_date#12959,end_date#12960,duration_months#12961,retention_pct#12962,performance_bond_pct#12963,advance_payment_pct#12964,liquidated_damages_pct#12965,payment_terms#12966,insurance_required#12967,description#12968,created_date#12969,contract_value#12970,... 3 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "4cd11f70-3b97-11f1-af24-9232c61548ea",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update d802a7 has failed. Failed to analyze flow 'workspace.procurement_gold.dim_contract' and 5 other flow(s)..",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565646781001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940022
+      }
+    },
+    "timestamp": "2026-04-19T02:27:24.007Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 16, line 8, in gold_fact_invoices\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `invoice_number` cannot be resolved. Did you mean one of the following? [`invoice_date`, `invoice_type`, `invoice_id`, `invoice_ref`, `invoice_amount`]. SQLSTATE: 42703;\n'Project [invoice_id#13671, vendor_id#13672, po_id#13673, project_id#13675, contract_id#13674, 'invoice_number, invoice_status#13677, invoice_type#13676, 'payment_status, invoice_date#13678, 'received_date, due_date#13679, 'payment_date, invoice_amount#13680, invoice_amount#13680 AS net_amount#13761, tax_rate#13681, tax_amount#13682, total_amount#13685, total_amount#13685 AS gross_amount#13762, paid_amount#13690, retention_amount#13684, days_to_pay#13696, days_overdue#13697, days_overdue#13697 AS days_outstanding#13763, CASE WHEN (days_overdue#13697 \u003c= 0) THEN CURRENT WHEN (days_overdue#13697 \u003c= 30) THEN 1-30 DAYS WHEN (days_overdue#13697 \u003c= 60) THEN 31-60 DAYS WHEN (days_overdue#13697 \u003c= 90) THEN 61-90 DAYS ELSE 90+ DAYS END AS aging_bucket#13764, ... 6 more fields]\n+- SubqueryAlias workspace.procurement_silver.silver_invoices\n   +- View (`workspace`.`procurement_silver`.`silver_invoices`, [invoice_id#13671, vendor_id#13672, po_id#13673, contract_id#13674, project_id#13675, invoice_type#13676, invoice_status#13677, invoice_date#13678, due_date#13679, invoice_amount#13680, tax_rate#13681, tax_amount#13682, retention_pct#13683, retention_amount#13684, total_amount#13685, currency#13686, payment_term#13687, early_payment_discount#13688, paid_date#13689, paid_amount#13690, approved_by#13691, approval_date#13692, invoice_ref#13693, description#13694, created_date#13695, ... 3 more fields])\n      +- Project [cast(invoice_id#13730 as string) AS invoice_id#13671, cast(vendor_id#13731 as string) AS vendor_id#13672, cast(po_id#13732 as string) AS po_id#13673, cast(contract_id#13733 as string) AS contract_id#13674, cast(project_id#13734 as string) AS project_id#13675, cast(invoice_type#13735 as string) AS invoice_type#13676, cast(invoice_status#13736 as string) AS invoice_status#13677, cast(invoice_date#13737 as date) AS invoice_date#13678, cast(due_date#13738 as date) AS due_date#13679, cast(invoice_amount#13739 as double) AS invoice_amount#13680, cast(tax_rate#13740 as double) AS tax_rate#13681, cast(tax_amount#13741 as double) AS tax_amount#13682, cast(retention_pct#13742 as double) AS retention_pct#13683, cast(retention_amount#13743 as double) AS retention_amount#13684, cast(total_amount#13744 as double) AS total_amount#13685, cast(currency#13745 as string) AS currency#13686, cast(payment_term#13746 as string) AS payment_term#13687, cast(early_payment_discount#13747 as double) AS early_payment_discount#13688, cast(paid_date#13748 as date) AS paid_date#13689, cast(paid_amount#13749 as double) AS paid_amount#13690, cast(approved_by#13750 as string) AS approved_by#13691, cast(approval_date#13751 as date) AS approval_date#13692, cast(invoice_ref#13752 as string) AS invoice_ref#13693, cast(description#13753 as string) AS description#13694, cast(created_date#13754 as date) AS created_date#13695, ... 3 more fields]\n         +- Project [invoice_id#13730, vendor_id#13731, po_id#13732, contract_id#13733, project_id#13734, invoice_type#13735, invoice_status#13736, invoice_date#13737, due_date#13738, invoice_amount#13739, tax_rate#13740, tax_amount#13741, retention_pct#13742, retention_amount#13743, total_amount#13744, currency#13745, payment_term#13746, early_payment_discount#13747, paid_date#13748, paid_amount#13749, approved_by#13750, approval_date#13751, invoice_ref#13752, description#13753, created_date#13754, ... 3 more fields]\n            +- Filter (__mv__expectations#13758.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_invoices_1[__enzyme__row__id__#13729,invoice_id#13730,vendor_id#13731,po_id#13732,contract_id#13733,project_id#13734,invoice_type#13735,invoice_status#13736,invoice_date#13737,due_date#13738,invoice_amount#13739,tax_rate#13740,tax_amount#13741,retention_pct#13742,retention_amount#13743,total_amount#13744,currency#13745,payment_term#13746,early_payment_discount#13747,paid_date#13748,paid_amount#13749,approved_by#13750,approval_date#13751,invoice_ref#13752,description#13753,... 5 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "4ca888d0-3b97-11f1-af24-9232c61548ea",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.fact_invoices'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "flow_name": "workspace.procurement_gold.fact_invoices",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565646778001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940016
+      }
+    },
+    "timestamp": "2026-04-19T02:27:23.741Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 17, line 21, in gold_fact_goods_receipts\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [AMBIGUOUS_REFERENCE] Reference `project_id` is ambiguous, could be: [`workspace`.`procurement_silver`.`silver_goods_receipts`.`project_id`, `workspace`.`procurement_silver`.`silver_purchase_orders`.`project_id`]. SQLSTATE: 42704"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "4ca813a0-3b97-11f1-af24-9232c61548ea",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.fact_goods_receipts'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "flow_name": "workspace.procurement_gold.fact_goods_receipts",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565646777001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940015
+      }
+    },
+    "timestamp": "2026-04-19T02:27:23.738Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 22, line 17, in gold_fact_contracts\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `change_order_value` cannot be resolved. Did you mean one of the following? [`items_total`, `item_count`, `workspace`.`procurement_silver`.`silver_contracts`.`currency`, `workspace`.`procurement_silver`.`silver_contracts`.`end_date`, `workspace`.`procurement_silver`.`silver_contracts`.`revised_value`]. SQLSTATE: 42703;\n'Project [contract_id#14670, vendor_id#14673, project_id#14674, contract_type#14671, contract_status#14672, contract_value#14693, '`+`(contract_value#14693, 'coalesce('change_order_value, 0)) AS revised_value#14848, start_date#14682, end_date#14683, contract_duration_days#14694, 'change_order_count, 'change_order_value, coalesce(items_total#14823, cast(0 as double)) AS items_total#14849, coalesce(item_count#14824L, cast(0 as bigint)) AS item_count#14850L, CASE WHEN (contract_value#14693 \u003e cast(0 as double)) THEN round(((coalesce(items_total#14823, cast(0 as double)) / contract_value#14693) * cast(100 as double)), 2) ELSE 0.0 END AS value_utilisation_pct#14851, payment_terms#14689, 'penalty_clause, 'performance_bond, retention_pct#14685, current_timestamp() AS _gold_timestamp#14852]\n+- Project [contract_id#14670, contract_type#14671, contract_status#14672, vendor_id#14673, project_id#14674, contract_manager_id#14675, scope_of_work#14676, original_value#14677, revised_value#14678, revision_factor#14679, variation_orders#14680, currency#14681, start_date#14682, end_date#14683, duration_months#14684, retention_pct#14685, performance_bond_pct#14686, advance_payment_pct#14687, liquidated_damages_pct#14688, payment_terms#14689, insurance_required#14690, description#14691, created_date#14692, contract_value#14693, contract_duration_days#14694, ... 3 more fields]\n   +- Join LeftOuter, (contract_id#14670 = contract_id#14755)\n      :- SubqueryAlias workspace.procurement_silver.silver_contracts\n      :  +- View (`workspace`.`procurement_silver`.`silver_contracts`, [contract_id#14670, contract_type#14671, contract_status#14672, vendor_id#14673, project_id#14674, contract_manager_id#14675, scope_of_work#14676, original_value#14677, revised_value#14678, revision_factor#14679, variation_orders#14680, currency#14681, start_date#14682, end_date#14683, duration_months#14684, retention_pct#14685, performance_bond_pct#14686, advance_payment_pct#14687, liquidated_damages_pct#14688, payment_terms#14689, insurance_required#14690, description#14691, created_date#14692, contract_value#14693, contract_duration_days#14694, ... 1 more fields])\n      :     +- Project [cast(contract_id#14725 as string) AS contract_id#14670, cast(contract_type#14726 as string) AS contract_type#14671, cast(contract_status#14727 as string) AS contract_status#14672, cast(vendor_id#14728 as string) AS vendor_id#14673, cast(project_id#14729 as string) AS project_id#14674, cast(contract_manager_id#14730 as string) AS contract_manager_id#14675, cast(scope_of_work#14731 as string) AS scope_of_work#14676, cast(original_value#14732 as double) AS original_value#14677, cast(revised_value#14733 as double) AS revised_value#14678, cast(revision_factor#14734 as double) AS revision_factor#14679, cast(variation_orders#14735 as int) AS variation_orders#14680, cast(currency#14736 as string) AS currency#14681, cast(start_date#14737 as date) AS start_date#14682, cast(end_date#14738 as date) AS end_date#14683, cast(duration_months#14739 as int) AS duration_months#14684, cast(retention_pct#14740 as int) AS retention_pct#14685, cast(performance_bond_pct#14741 as int) AS performance_bond_pct#14686, cast(advance_payment_pct#14742 as int) AS advance_payment_pct#14687, cast(liquidated_damages_pct#14743 as double) AS liquidated_damages_pct#14688, cast(payment_terms#14744 as string) AS payment_terms#14689, cast(insurance_required#14745 as boolean) AS insurance_required#14690, cast(description#14746 as string) AS description#14691, cast(created_date#14747 as date) AS created_date#14692, cast(contract_value#14748 as double) AS contract_value#14693, cast(contract_duration_days#14749 as int) AS contract_duration_days#14694, ... 1 more fields]\n      :        +- Project [contract_id#14725, contract_type#14726, contract_status#14727, vendor_id#14728, project_id#14729, contract_manager_id#14730, scope_of_work#14731, original_value#14732, revised_value#14733, revision_factor#14734, variation_orders#14735, currency#14736, start_date#14737, end_date#14738, duration_months#14739, retention_pct#14740, performance_bond_pct#14741, advance_payment_pct#14742, liquidated_damages_pct#14743, payment_terms#14744, insurance_required#14745, description#14746, created_date#14747, contract_value#14748, contract_duration_days#14749, ... 1 more fields]\n      :           +- Filter (__mv__expectations#14751.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n      :              +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_contracts_1[__enzyme__row__id__#14724,contract_id#14725,contract_type#14726,contract_status#14727,vendor_id#14728,project_id#14729,contract_manager_id#14730,scope_of_work#14731,original_value#14732,revised_value#14733,revision_factor#14734,variation_orders#14735,currency#14736,start_date#14737,end_date#14738,duration_months#14739,retention_pct#14740,performance_bond_pct#14741,advance_payment_pct#14742,liquidated_damages_pct#14743,payment_terms#14744,insurance_required#14745,description#14746,created_date#14747,contract_value#14748,... 3 more fields] parquet\n      +- Aggregate [contract_id#14755], [contract_id#14755, sum(line_value#14764) AS items_total#14823, count(item_id#14754) AS item_count#14824L]\n         +- SubqueryAlias workspace.procurement_silver.silver_contract_items\n            +- View (`workspace`.`procurement_silver`.`silver_contract_items`, [item_id#14754, contract_id#14755, boq_reference#14756, boq_section#14757, line_number#14758, material_id#14759, description#14760, unit_of_measure#14761, quantity#14762, unit_price#14763, line_value#14764, qty_executed#14765, executed_pct#14766, milestone_flag#14767, milestone_description#14768, item_status#14769, variation_ref#14770, retention_applicable#14771, notes#14772, created_date#14773, _silver_timestamp#14774])\n               +- Project [cast(item_id#14799 as string) AS item_id#14754, cast(contract_id#14800 as string) AS contract_id#14755, cast(boq_reference#14801 as string) AS boq_reference#14756, cast(boq_section#14802 as string) AS boq_section#14757, cast(line_number#14803 as int) AS line_number#14758, cast(material_id#14804 as string) AS material_id#14759, cast(description#14805 as string) AS description#14760, cast(unit_of_measure#14806 as string) AS unit_of_measure#14761, cast(quantity#14807 as double) AS quantity#14762, cast(unit_price#14808 as double) AS unit_price#14763, cast(line_value#14809 as double) AS line_value#14764, cast(qty_executed#14810 as int) AS qty_executed#14765, cast(executed_pct#14811 as double) AS executed_pct#14766, cast(milestone_flag#14812 as boolean) AS milestone_flag#14767, cast(milestone_description#14813 as string) AS milestone_description#14768, cast(item_status#14814 as string) AS item_status#14769, cast(variation_ref#14815 as string) AS variation_ref#14770, cast(retention_applicable#14816 as boolean) AS retention_applicable#14771, cast(notes#14817 as string) AS notes#14772, cast(created_date#14818 as date) AS created_date#14773, cast(_silver_timestamp#14819 as timestamp) AS _silver_timestamp#14774]\n                  +- Project [item_id#14799, contract_id#14800, boq_reference#14801, boq_section#14802, line_number#14803, material_id#14804, description#14805, unit_of_measure#14806, quantity#14807, unit_price#14808, line_value#14809, qty_executed#14810, executed_pct#14811, milestone_flag#14812, milestone_description#14813, item_status#14814, variation_ref#14815, retention_applicable#14816, notes#14817, created_date#14818, _silver_timestamp#14819]\n                     +- Filter (__mv__expectations#14820.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n                        +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_contract_items_1[__enzyme__row__id__#14798,item_id#14799,contract_id#14800,boq_reference#14801,boq_section#14802,line_number#14803,material_id#14804,description#14805,unit_of_measure#14806,quantity#14807,unit_price#14808,line_value#14809,qty_executed#14810,executed_pct#14811,milestone_flag#14812,milestone_description#14813,item_status#14814,variation_ref#14815,retention_applicable#14816,notes#14817,created_date#14818,_silver_timestamp#14819,__mv__expectations#14820] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "4ca6b410-3b97-11f1-af24-9232c61548ea",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.fact_contracts'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "flow_name": "workspace.procurement_gold.fact_contracts",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565646776001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940014
+      }
+    },
+    "timestamp": "2026-04-19T02:27:23.729Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 20, line 8, in gold_fact_vendor_performance\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `compliance_score` cannot be resolved. Did you mean one of the following? [`commercial_score`, `delivery_score`, `overall_score`, `quality_score`, `hse_score`]. SQLSTATE: 42703;\n'Project [performance_id#14432, vendor_id#14433, project_id#14434, evaluation_date#14450, evaluation_period#14435, delivery_score#14437, quality_score#14438, commercial_score#14439, hse_score#14440, 'compliance_score, overall_score#14453, recommendation#14441, evaluator_id#14436, 'notes, created_date#14452, current_timestamp() AS _gold_timestamp#14507]\n+- SubqueryAlias workspace.procurement_silver.silver_vendor_performance\n   +- View (`workspace`.`procurement_silver`.`silver_vendor_performance`, [performance_id#14432, vendor_id#14433, project_id#14434, evaluation_period#14435, evaluator_id#14436, delivery_score#14437, quality_score#14438, commercial_score#14439, hse_score#14440, recommendation#14441, delivery_metric_focus#14442, quality_metric_focus#14443, commercial_metric_focus#14444, hse_metric_focus#14445, po_count_evaluated#14446, total_value_evaluated#14447, corrective_actions#14448, improvement_trend#14449, evaluation_date#14450, remarks#14451, created_date#14452, overall_score#14453, _silver_timestamp#14454])\n      +- Project [cast(performance_id#14481 as string) AS performance_id#14432, cast(vendor_id#14482 as string) AS vendor_id#14433, cast(project_id#14483 as string) AS project_id#14434, cast(evaluation_period#14484 as string) AS evaluation_period#14435, cast(evaluator_id#14485 as string) AS evaluator_id#14436, cast(delivery_score#14486 as double) AS delivery_score#14437, cast(quality_score#14487 as double) AS quality_score#14438, cast(commercial_score#14488 as double) AS commercial_score#14439, cast(hse_score#14489 as double) AS hse_score#14440, cast(recommendation#14490 as string) AS recommendation#14441, cast(delivery_metric_focus#14491 as string) AS delivery_metric_focus#14442, cast(quality_metric_focus#14492 as string) AS quality_metric_focus#14443, cast(commercial_metric_focus#14493 as string) AS commercial_metric_focus#14444, cast(hse_metric_focus#14494 as string) AS hse_metric_focus#14445, cast(po_count_evaluated#14495 as int) AS po_count_evaluated#14446, cast(total_value_evaluated#14496 as double) AS total_value_evaluated#14447, cast(corrective_actions#14497 as int) AS corrective_actions#14448, cast(improvement_trend#14498 as string) AS improvement_trend#14449, cast(evaluation_date#14499 as date) AS evaluation_date#14450, cast(remarks#14500 as string) AS remarks#14451, cast(created_date#14501 as date) AS created_date#14452, cast(overall_score#14502 as double) AS overall_score#14453, cast(_silver_timestamp#14503 as timestamp) AS _silver_timestamp#14454]\n         +- Project [performance_id#14481, vendor_id#14482, project_id#14483, evaluation_period#14484, evaluator_id#14485, delivery_score#14486, quality_score#14487, commercial_score#14488, hse_score#14489, recommendation#14490, delivery_metric_focus#14491, quality_metric_focus#14492, commercial_metric_focus#14493, hse_metric_focus#14494, po_count_evaluated#14495, total_value_evaluated#14496, corrective_actions#14497, improvement_trend#14498, evaluation_date#14499, remarks#14500, created_date#14501, overall_score#14502, _silver_timestamp#14503]\n            +- Filter (__mv__expectations#14504.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_vendor_performance_1[__enzyme__row__id__#14480,performance_id#14481,vendor_id#14482,project_id#14483,evaluation_period#14484,evaluator_id#14485,delivery_score#14486,quality_score#14487,commercial_score#14488,hse_score#14489,recommendation#14490,delivery_metric_focus#14491,quality_metric_focus#14492,commercial_metric_focus#14493,hse_metric_focus#14494,po_count_evaluated#14495,total_value_evaluated#14496,corrective_actions#14497,improvement_trend#14498,evaluation_date#14499,remarks#14500,created_date#14501,overall_score#14502,_silver_timestamp#14503,__mv__expectations#14504] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "4ca5f0c0-3b97-11f1-af24-9232c61548ea",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.fact_vendor_performance'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "flow_name": "workspace.procurement_gold.fact_vendor_performance",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565646775002,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940013
+      }
+    },
+    "timestamp": "2026-04-19T02:27:23.724Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 6, line 8, in gold_dim_vendor\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `prequalification_expiry` cannot be resolved. Did you mean one of the following? [`prequalification_expiry_date`, `prequalification_status`, `registration_number`, `contact_email`, `risk_category`]. SQLSTATE: 42703;\n'Project [vendor_id#11456, vendor_code#11457, vendor_name#11458, vendor_type#11460, sector_specialization#11461 AS vendor_sector#11570, upper(sector_specialization#11461) AS sector#11571, country#11462, state#11463, city#11464, country#11462 AS vendor_country#11572, state#11463 AS vendor_state#11573, city#11464 AS vendor_city#11574, payment_terms_days#11474, credit_limit_usd#11475, performance_rating#11476, risk_category#11477, prequalification_status#11478, 'prequalification_expiry, iso_certified#11480, 'iso_cert_number, hse_rating#11481, minority_owned#11482, small_business#11483, 'primary_contact, contact_email#11485, ... 7 more fields]\n+- SubqueryAlias workspace.procurement_silver.silver_vendors\n   +- View (`workspace`.`procurement_silver`.`silver_vendors`, [vendor_id#11456, vendor_code#11457, vendor_name#11458, vendor_legal_name#11459, vendor_type#11460, sector_specialization#11461, country#11462, state#11463, city#11464, postal_code#11465, address_line1#11466, address_line2#11467, registration_number#11468, vat_number#11469, tax_id#11470, bank_name#11471, bank_account#11472, swift_code#11473, payment_terms_days#11474, credit_limit_usd#11475, performance_rating#11476, risk_category#11477, prequalification_status#11478, prequalification_expiry_date#11479, iso_certified#11480, ... 11 more fields])\n      +- Project [cast(vendor_id#11531 as string) AS vendor_id#11456, cast(vendor_code#11532 as string) AS vendor_code#11457, cast(vendor_name#11533 as string) AS vendor_name#11458, cast(vendor_legal_name#11534 as string) AS vendor_legal_name#11459, cast(vendor_type#11535 as string) AS vendor_type#11460, cast(sector_specialization#11536 as string) AS sector_specialization#11461, cast(country#11537 as string) AS country#11462, cast(state#11538 as string) AS state#11463, cast(city#11539 as string) AS city#11464, cast(postal_code#11540 as string) AS postal_code#11465, cast(address_line1#11541 as string) AS address_line1#11466, cast(address_line2#11542 as string) AS address_line2#11467, cast(registration_number#11543 as string) AS registration_number#11468, cast(vat_number#11544 as string) AS vat_number#11469, cast(tax_id#11545 as string) AS tax_id#11470, cast(bank_name#11546 as string) AS bank_name#11471, cast(bank_account#11547 as string) AS bank_account#11472, cast(swift_code#11548 as string) AS swift_code#11473, cast(payment_terms_days#11549 as int) AS payment_terms_days#11474, cast(credit_limit_usd#11550 as double) AS credit_limit_usd#11475, cast(performance_rating#11551 as double) AS performance_rating#11476, cast(risk_category#11552 as string) AS risk_category#11477, cast(prequalification_status#11553 as string) AS prequalification_status#11478, cast(prequalification_expiry_date#11554 as date) AS prequalification_expiry_date#11479, cast(iso_certified#11555 as string) AS iso_certified#11480, ... 11 more fields]\n         +- Project [vendor_id#11531, vendor_code#11532, vendor_name#11533, vendor_legal_name#11534, vendor_type#11535, sector_specialization#11536, country#11537, state#11538, city#11539, postal_code#11540, address_line1#11541, address_line2#11542, registration_number#11543, vat_number#11544, tax_id#11545, bank_name#11546, bank_account#11547, swift_code#11548, payment_terms_days#11549, credit_limit_usd#11550, performance_rating#11551, risk_category#11552, prequalification_status#11553, prequalification_expiry_date#11554, iso_certified#11555, ... 11 more fields]\n            +- Filter (__mv__expectations#11567.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_vendors_1[__enzyme__row__id__#11530,vendor_id#11531,vendor_code#11532,vendor_name#11533,vendor_legal_name#11534,vendor_type#11535,sector_specialization#11536,country#11537,state#11538,city#11539,postal_code#11540,address_line1#11541,address_line2#11542,registration_number#11543,vat_number#11544,tax_id#11545,bank_name#11546,bank_account#11547,swift_code#11548,payment_terms_days#11549,credit_limit_usd#11550,performance_rating#11551,risk_category#11552,prequalification_status#11553,prequalification_expiry_date#11554,... 13 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "4ca4df50-3b97-11f1-af24-9232c61548ea",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.dim_vendor'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "flow_name": "workspace.procurement_gold.dim_vendor",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565646775001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940012
+      }
+    },
+    "timestamp": "2026-04-19T02:27:23.717Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "pyspark.errors.exceptions.captured.AnalysisException",
+          "message": "Traceback (most recent call last):\n  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/local/files/databricks/gold/03_gold_pipeline\", cell 11, line 8, in gold_dim_contract\n    return df.select(\n           ^^^^^^^^^^\n\npyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `change_order_value` cannot be resolved. Did you mean one of the following? [`contract_value`, `revised_value`, `original_value`, `created_date`, `end_date`]. SQLSTATE: 42703;\n'Project [contract_id#12892, vendor_id#12895, project_id#12896, contract_type#12893, contract_status#12894, contract_status#12894 AS status#12976, contract_value#12915, contract_value#12915 AS original_value#12977, '`+`(contract_value#12915, 'coalesce('change_order_value, 0)) AS revised_value#12978, start_date#12904, end_date#12905, contract_duration_days#12916, payment_terms#12911, 'penalty_clause, 'performance_bond, retention_pct#12907, 'change_order_count, 'change_order_value, CASE WHEN (original_value#12899 \u003e cast(0 as double)) THEN round((((coalesce(revised_value#12900, original_value#12899) - original_value#12899) / original_value#12899) * cast(100 as double)), 2) ELSE 0.0 END AS cost_growth_pct#12979, 'approved_by, created_date#12914, cast(true as boolean) AS _is_current#12980, current_timestamp() AS _gold_timestamp#12981]\n+- SubqueryAlias workspace.procurement_silver.silver_contracts\n   +- View (`workspace`.`procurement_silver`.`silver_contracts`, [contract_id#12892, contract_type#12893, contract_status#12894, vendor_id#12895, project_id#12896, contract_manager_id#12897, scope_of_work#12898, original_value#12899, revised_value#12900, revision_factor#12901, variation_orders#12902, currency#12903, start_date#12904, end_date#12905, duration_months#12906, retention_pct#12907, performance_bond_pct#12908, advance_payment_pct#12909, liquidated_damages_pct#12910, payment_terms#12911, insurance_required#12912, description#12913, created_date#12914, contract_value#12915, contract_duration_days#12916, ... 1 more fields])\n      +- Project [cast(contract_id#12947 as string) AS contract_id#12892, cast(contract_type#12948 as string) AS contract_type#12893, cast(contract_status#12949 as string) AS contract_status#12894, cast(vendor_id#12950 as string) AS vendor_id#12895, cast(project_id#12951 as string) AS project_id#12896, cast(contract_manager_id#12952 as string) AS contract_manager_id#12897, cast(scope_of_work#12953 as string) AS scope_of_work#12898, cast(original_value#12954 as double) AS original_value#12899, cast(revised_value#12955 as double) AS revised_value#12900, cast(revision_factor#12956 as double) AS revision_factor#12901, cast(variation_orders#12957 as int) AS variation_orders#12902, cast(currency#12958 as string) AS currency#12903, cast(start_date#12959 as date) AS start_date#12904, cast(end_date#12960 as date) AS end_date#12905, cast(duration_months#12961 as int) AS duration_months#12906, cast(retention_pct#12962 as int) AS retention_pct#12907, cast(performance_bond_pct#12963 as int) AS performance_bond_pct#12908, cast(advance_payment_pct#12964 as int) AS advance_payment_pct#12909, cast(liquidated_damages_pct#12965 as double) AS liquidated_damages_pct#12910, cast(payment_terms#12966 as string) AS payment_terms#12911, cast(insurance_required#12967 as boolean) AS insurance_required#12912, cast(description#12968 as string) AS description#12913, cast(created_date#12969 as date) AS created_date#12914, cast(contract_value#12970 as double) AS contract_value#12915, cast(contract_duration_days#12971 as int) AS contract_duration_days#12916, ... 1 more fields]\n         +- Project [contract_id#12947, contract_type#12948, contract_status#12949, vendor_id#12950, project_id#12951, contract_manager_id#12952, scope_of_work#12953, original_value#12954, revised_value#12955, revision_factor#12956, variation_orders#12957, currency#12958, start_date#12959, end_date#12960, duration_months#12961, retention_pct#12962, performance_bond_pct#12963, advance_payment_pct#12964, liquidated_damages_pct#12965, payment_terms#12966, insurance_required#12967, description#12968, created_date#12969, contract_value#12970, contract_duration_days#12971, ... 1 more fields]\n            +- Filter (__mv__expectations#12973.__MEETS_EXPECTATIONS_FOR_DROP_ACTION_COL = true)\n               +- Relation workspace.procurement_silver.__materialization_mat_7e4dfdca_ed85_4a25_8b31_40fb2a40e06a_silver_contracts_1[__enzyme__row__id__#12946,contract_id#12947,contract_type#12948,contract_status#12949,vendor_id#12950,project_id#12951,contract_manager_id#12952,scope_of_work#12953,original_value#12954,revised_value#12955,revision_factor#12956,variation_orders#12957,currency#12958,start_date#12959,end_date#12960,duration_months#12961,retention_pct#12962,performance_bond_pct#12963,advance_payment_pct#12964,liquidated_damages_pct#12965,payment_terms#12966,insurance_required#12967,description#12968,created_date#12969,contract_value#12970,... 3 more fields] parquet"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "flow_progress",
+    "id": "4c913040-3b97-11f1-af24-9232c61548ea",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Failed to resolve flow: 'workspace.procurement_gold.dim_contract'.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "flow_name": "workspace.procurement_gold.dim_contract",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565646773001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940011
+      }
+    },
+    "timestamp": "2026-04-19T02:27:23.588Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "2e5a3400-3b97-11f1-af24-9232c61548ea",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update d802a7 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565593264001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776565591940001
+      }
+    },
+    "timestamp": "2026-04-19T02:26:32.896Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "21ba8b50-3b97-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update d802a7.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565571720001
+    },
+    "timestamp": "2026-04-19T02:26:11.717Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "1d934fd0-3b97-11f1-9ff4-5655745d43d6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update d802a7 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0419-022604-nb9f4ycz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565564750001
+    },
+    "timestamp": "2026-04-19T02:26:04.749Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "ab7dfd50-3b96-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update d802a7 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565373351001
+    },
+    "timestamp": "2026-04-19T02:22:53.338Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "ab7a05b0-3b96-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5",
+      "update_id": "d802a70c-4bf3-4fbc-8afd-f978ac4fbeb5"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776565373324001
+    },
+    "timestamp": "2026-04-19T02:22:53.323Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "88cc8960-3b7e-11f1-b144-9675a5a1797b",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com edited pipeline settings.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776555007237001
+    },
+    "timestamp": "2026-04-18T23:30:07.222Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "b221abd0-3a28-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com created pipeline.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "4aadd27b-4dfc-43ef-9206-b3cf6d060c2f",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776408188695001
+    },
+    "timestamp": "2026-04-17T06:43:08.685Z"
+  }
+]

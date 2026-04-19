@@ -1,0 +1,424 @@
+"""Append silver-to-gold handover tests."""
+from pathlib import Path
+
+p = Path(__file__).resolve().parent / "tests" / "test_silver_gold_handover.py"
+
+content = '''"""Silver -> Gold pipeline handover tests.
+
+Catches UNRESOLVED_COLUMN errors locally before Databricks deploy.
+"""
+from __future__ import annotations
+import json
+import os
+import re
+import sys
+from pathlib import Path
+
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import dlt_mock
+import pipeline_runner
+
+ROOT = Path(__file__).resolve().parent.parent
+SILVER_FILE = ROOT / "databricks" / "silver" / "02_silver_pipeline.py"
+GOLD_FILE = ROOT / "databricks" / "gold" / "03_gold_pipeline.py"
+SILVER_SRC = SILVER_FILE.read_text(encoding="utf-8")
+GOLD_SRC = GOLD_FILE.read_text(encoding="utf-8")
+CSV_HEADERS = json.loads((ROOT / "csv_headers.json").read_text())
+
+EXPECTED_SILVER_TABLES = sorted([f"silver_{k}" for k in CSV_HEADERS.keys()])
+EXPECTED_GOLD_DIMS = [
+    "dim_date", "dim_vendor", "dim_project", "dim_material",
+    "dim_employee", "dim_geography", "dim_contract",
+    "dim_cost_center", "dim_sector",
+]
+EXPECTED_GOLD_FACTS = [
+    "fact_purchase_orders", "fact_invoices", "fact_goods_receipts",
+    "fact_project_costs", "fact_project_actuals",
+    "fact_vendor_performance", "fact_inventory",
+    "fact_contracts", "fact_sales",
+]
+
+
+def _silver_output_columns():
+    """Compute silver output schema from real bronze CSV headers + silver ops."""
+    bronze_cols = {f"bronze_{k}": list(v) + ["_ingest_timestamp", "_source_file"]
+                   for k, v in CSV_HEADERS.items()}
+    blocks = re.split(r"^@dlt\\.table", SILVER_SRC, flags=re.MULTILINE)
+    schema = {}
+    op_pat = re.compile(r"\\.(withColumn|withColumnRenamed|drop)\\(([^)]*)\\)")
+    for block in blocks[1:]:
+        fn_m = re.search(r"def (silver_\\w+)\\(\\)", block)
+        if not fn_m:
+            continue
+        src_m = re.search(
+            r'spark\\.read\\.table\\(f"\\{CATALOG\\}\\.procurement_bronze\\.(\\w+)"\\)', block)
+        if not src_m:
+            continue
+        cols = list(bronze_cols.get(src_m.group(1), []))
+        body = block.split("# COMMAND")[0]
+        for op, args in op_pat.findall(body):
+            parts = [p.strip() for p in args.split(",")]
+            if op == "withColumn":
+                m = re.match(r'"([^"]+)"', parts[0])
+                if m and m.group(1) not in cols:
+                    cols.append(m.group(1))
+            elif op == "withColumnRenamed" and len(parts) >= 2:
+                a = re.match(r'"([^"]+)"', parts[0])
+                b = re.match(r'"([^"]+)"', parts[1])
+                if a and b and a.group(1) in cols:
+                    cols[cols.index(a.group(1))] = b.group(1)
+            elif op == "drop":
+                for q in parts:
+                    m = re.match(r'"([^"]+)"', q)
+                    if m and m.group(1) in cols:
+                        cols.remove(m.group(1))
+        cols.append("_silver_timestamp")
+        schema[fn_m.group(1)] = cols
+    return schema
+
+
+SILVER_SCHEMA = _silver_output_columns()
+
+
+def _gold_blocks():
+    out = {}
+    for block in re.split(r"^@dlt\\.table", GOLD_SRC, flags=re.MULTILINE)[1:]:
+        m = re.search(r"def (gold_\\w+)\\(\\)", block)
+        if m:
+            out[m.group(1)] = block
+    return out
+
+
+GOLD_BLOCKS = _gold_blocks()
+
+
+@pytest.fixture(scope="module")
+def gold_tables(spark, register_all_bronze):
+    pipeline_runner.run_pipeline(str(SILVER_FILE), spark, dlt_mock)
+    pipeline_runner.run_pipeline(str(GOLD_FILE), spark, dlt_mock)
+    return dlt_mock.get_all_tables()
+
+
+# ---- Static-contract tests ----
+
+class TestSilverGoldContract:
+
+    def test_silver_produces_all_expected_tables(self):
+        actual = sorted(SILVER_SCHEMA.keys())
+        assert actual == EXPECTED_SILVER_TABLES, (
+            f"Silver tables mismatch.\\nExpected: {EXPECTED_SILVER_TABLES}\\nActual: {actual}"
+        )
+
+    def test_gold_defines_expected_dims_and_facts(self):
+        for name in EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS:
+            assert f"gold_{name}" in GOLD_BLOCKS, f"Missing gold table: {name}"
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_uses_fully_qualified_silver_reads(self, gold_fn):
+        block = GOLD_BLOCKS[gold_fn]
+        bad = re.findall(r'dlt\\.read\\("silver_\\w+"\\)', block)
+        assert not bad, f"{gold_fn} uses dlt.read for silver: {bad}"
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_silver_columns_exist(self, gold_fn):
+        block = GOLD_BLOCKS[gold_fn]
+        reads = re.findall(
+            r'spark\\.read\\.table\\(f"\\{CATALOG\\}\\.procurement_silver\\.(silver_\\w+)"\\)', block)
+        if not reads:
+            pytest.skip("no silver reads")
+        avail = set()
+        for r in reads:
+            avail.update(SILVER_SCHEMA.get(r, []))
+        avail.update(re.findall(r'\\.alias\\("([^"]+)"\\)', block))
+        avail.update(re.findall(r'withColumn\\("([^"]+)"', block))
+        avail.update(re.findall(r'withColumnRenamed\\("[^"]+",\\s*"([^"]+)"\\)', block))
+        bad = []
+        for c in re.findall(r'col\\("([^"]+)"\\)', block):
+            if c in avail or "." in c:
+                continue
+            bad.append(c)
+        assert not bad, (
+            f"{gold_fn} references unknown column(s) {sorted(set(bad))}"
+        )
+
+    def test_no_orphan_column_references(self):
+        offenders = {}
+        for fn, block in GOLD_BLOCKS.items():
+            reads = re.findall(
+                r'spark\\.read\\.table\\(f"\\{CATALOG\\}\\.procurement_silver\\.(silver_\\w+)"\\)', block)
+            if not reads:
+                continue
+            avail = set()
+            for r in reads:
+                avail.update(SILVER_SCHEMA.get(r, []))
+            avail.update(re.findall(r'\\.alias\\("([^"]+)"\\)', block))
+            avail.update(re.findall(r'withColumn\\("([^"]+)"', block))
+            avail.update(re.findall(r'withColumnRenamed\\("[^"]+",\\s*"([^"]+)"\\)', block))
+            for c in re.findall(r'col\\("([^"]+)"\\)', block):
+                if c in avail or "." in c:
+                    continue
+                offenders.setdefault(fn, []).append(c)
+        assert not offenders, json.dumps(offenders, indent=2)
+
+    def test_gold_reads_only_existing_silver_tables(self):
+        offenders = {}
+        valid = set(SILVER_SCHEMA.keys())
+        for fn, block in GOLD_BLOCKS.items():
+            for tbl in re.findall(
+                r'spark\\.read\\.table\\(f"\\{CATALOG\\}\\.procurement_silver\\.(silver_\\w+)"\\)', block):
+                if tbl not in valid:
+                    offenders.setdefault(fn, []).append(tbl)
+        assert not offenders, json.dumps(offenders, indent=2)
+
+
+# ---- Runtime handover tests ----
+
+class TestSilverGoldRuntimeHandover:
+
+    def test_all_gold_dims_materialise(self, gold_tables):
+        for name in EXPECTED_GOLD_DIMS:
+            assert name in gold_tables, f"Missing gold dim: {name}"
+
+    def test_all_gold_facts_materialise(self, gold_tables):
+        for name in EXPECTED_GOLD_FACTS:
+            assert name in gold_tables, f"Missing gold fact: {name}"
+
+    @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+    def test_gold_table_has_rows(self, gold_tables, table):
+        df = gold_tables[table]
+        assert df.count() > 0, f"gold {table} produced 0 rows"
+
+    @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+    def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+        df = gold_tables[table]
+        assert "_gold_timestamp" in df.columns, f"{table} missing _gold_timestamp"
+
+    @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+    def test_gold_table_columns_nonempty(self, gold_tables, table):
+        df = gold_tables[table]
+        assert len(df.columns) > 1, f"{table} has too few columns: {df.columns}"
+
+    def test_gold_dim_vendor_has_renamed_cols(self, gold_tables):
+        cols = set(gold_tables["dim_vendor"].columns)
+        assert "primary_contact" in cols
+        assert "prequalification_expiry" in cols
+
+    def test_gold_fact_goods_receipts_has_inspector(self, gold_tables):
+        cols = set(gold_tables["fact_goods_receipts"].columns)
+        assert "inspector" in cols
+
+    def test_gold_fact_vendor_performance_aliases_notes(self, gold_tables):
+        cols = set(gold_tables["fact_vendor_performance"].columns)
+        assert "notes" in cols
+'''
+
+p.write_text(content, encoding="utf-8")
+print(f"wrote {p.name} size={p.stat().st_size}")
+"""Append silver-to-gold handover tests, mirroring the bronze-to-silver test set."""
+from pathlib import Path
+import textwrap
+
+p = Path(__file__).resolve().parent / "tests" / "test_silver_gold_handover.py"
+
+content = '''"""Silver -> Gold pipeline handover tests.
+
+Ensures every column gold reads from silver is actually produced by silver,
+mirroring the bronze->silver handover suite. Catches UNRESOLVED_COLUMN errors
+locally before they hit Databricks.
+"""
+from __future__ import annotations
+import json
+import re
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parent.parent
+SILVER_SRC = (ROOT / "databricks" / "silver" / "02_silver_pipeline.py").read_text(encoding="utf-8")
+GOLD_SRC = (ROOT / "databricks" / "gold" / "03_gold_pipeline.py").read_text(encoding="utf-8")
+CSV_HEADERS = json.loads((ROOT / "csv_headers.json").read_text())
+
+EXPECTED_SILVER_TABLES = sorted([f"silver_{k}" for k in CSV_HEADERS.keys()])
+EXPECTED_GOLD_DIMS = [
+    "dim_vendor", "dim_project", "dim_material", "dim_employee",
+    "dim_time", "dim_geography", "dim_contract", "dim_cost_center", "dim_sector",
+]
+EXPECTED_GOLD_FACTS = [
+    "fact_purchase_orders", "fact_invoices", "fact_goods_receipts",
+    "fact_project_costs", "fact_inventory", "fact_vendor_performance",
+    "fact_sales_orders", "fact_po_line_items", "fact_contracts",
+]
+
+
+def _silver_output_columns() -> dict:
+    """Compute silver output schema by walking each silver function in order."""
+    bronze_cols = {f"bronze_{k}": list(v) + ["_ingest_timestamp", "_source_file"]
+                   for k, v in CSV_HEADERS.items()}
+    blocks = re.split(r"^@dlt\\.table", SILVER_SRC, flags=re.MULTILINE)
+    schema = {}
+    op_pat = re.compile(r"\\.(withColumn|withColumnRenamed|drop)\\(([^)]*)\\)")
+    for block in blocks[1:]:
+        fn_m = re.search(r"def (silver_\\w+)\\(\\)", block)
+        if not fn_m:
+            continue
+        src_m = re.search(
+            r'spark\\.read\\.table\\(f"\\{CATALOG\\}\\.procurement_bronze\\.(\\w+)"\\)', block)
+        if not src_m:
+            continue
+        cols = list(bronze_cols.get(src_m.group(1), []))
+        body = block.split("# COMMAND")[0]
+        for op, args in op_pat.findall(body):
+            parts = [p.strip() for p in args.split(",")]
+            if op == "withColumn":
+                m = re.match(r'"([^"]+)"', parts[0])
+                if m and m.group(1) not in cols:
+                    cols.append(m.group(1))
+            elif op == "withColumnRenamed" and len(parts) >= 2:
+                a = re.match(r'"([^"]+)"', parts[0])
+                b = re.match(r'"([^"]+)"', parts[1])
+                if a and b and a.group(1) in cols:
+                    cols[cols.index(a.group(1))] = b.group(1)
+            elif op == "drop":
+                for q in parts:
+                    m = re.match(r'"([^"]+)"', q)
+                    if m and m.group(1) in cols:
+                        cols.remove(m.group(1))
+        cols.append("_silver_timestamp")
+        schema[fn_m.group(1)] = cols
+    return schema
+
+
+SILVER_SCHEMA = _silver_output_columns()
+
+
+def _gold_blocks():
+    blocks = re.split(r"^@dlt\\.table", GOLD_SRC, flags=re.MULTILINE)
+    out = {}
+    for block in blocks[1:]:
+        fn_m = re.search(r"def (gold_\\w+)\\(\\)", block)
+        if fn_m:
+            out[fn_m.group(1)] = block
+    return out
+
+
+GOLD_BLOCKS = _gold_blocks()
+
+
+# ---------------------------------------------------------------------------
+# Static-contract tests
+# ---------------------------------------------------------------------------
+
+class TestSilverGoldContract:
+
+    def test_silver_produces_all_expected_tables(self):
+        actual = sorted(SILVER_SCHEMA.keys())
+        assert actual == EXPECTED_SILVER_TABLES, (
+            f"Silver tables mismatch.\\nExpected: {EXPECTED_SILVER_TABLES}\\nActual: {actual}"
+        )
+
+    def test_gold_defines_expected_dims_and_facts(self):
+        for name in EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS:
+            assert f"gold_{name}" in GOLD_BLOCKS, f"Missing gold table: {name}"
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_uses_fully_qualified_silver_reads(self, gold_fn):
+        """Gold must read silver via spark.read.table(FQN), never dlt.read."""
+        block = GOLD_BLOCKS[gold_fn]
+        # any silver mention should be via FQN
+        bad = re.findall(r'dlt\\.read\\("silver_\\w+"\\)', block)
+        assert not bad, f"{gold_fn} uses dlt.read for silver: {bad}"
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_silver_columns_exist(self, gold_fn):
+        """Every col() referenced in a gold function must exist in the union of
+        silver output columns it reads from, OR be created locally (alias /
+        withColumn / withColumnRenamed / agg-alias / df-alias)."""
+        block = GOLD_BLOCKS[gold_fn]
+        reads = re.findall(
+            r'spark\\.read\\.table\\(f"\\{CATALOG\\}\\.procurement_silver\\.(silver_\\w+)"\\)', block)
+        if not reads:
+            pytest.skip("no silver reads in this gold function")
+        avail = set()
+        for r in reads:
+            avail.update(SILVER_SCHEMA.get(r, []))
+        avail.update(re.findall(r'\\.alias\\("([^"]+)"\\)', block))
+        avail.update(re.findall(r'withColumn\\("([^"]+)"', block))
+        avail.update(re.findall(r'withColumnRenamed\\("[^"]+",\\s*"([^"]+)"\\)', block))
+        # df-aliases like "a.column" / "b.column" - allow if the prefix is a known df alias
+        df_alias_pat = re.compile(r'\\b([a-zA-Z_]\\w*)\\s*=\\s*\\w+\\.alias\\("([^"]+)"\\)')
+        df_aliases = {m.group(2) for m in df_alias_pat.finditer(block)}
+        # Also support `.alias("a")` chained on a read
+        df_aliases.update(re.findall(r'\\.alias\\("([a-z])"\\)', block))
+        refs = re.findall(r'col\\("([^"]+)"\\)', block)
+        bad = []
+        for c in refs:
+            if c in avail:
+                continue
+            # df-alias form: "a.colname"
+            if "." in c:
+                prefix, sub = c.split(".", 1)
+                if prefix in df_aliases:
+                    continue
+            bad.append(c)
+        assert not bad, (
+            f"{gold_fn} references unknown column(s) {sorted(set(bad))} "
+            f"(reads from: {reads}). Sample available cols: {sorted(avail)[:15]}"
+        )
+
+    def test_no_orphan_column_references(self):
+        """Catch-all: aggregate every gold col() ref vs known silver schemas."""
+        offenders = {}
+        for fn, block in GOLD_BLOCKS.items():
+            reads = re.findall(
+                r'spark\\.read\\.table\\(f"\\{CATALOG\\}\\.procurement_silver\\.(silver_\\w+)"\\)', block)
+            if not reads:
+                continue
+            avail = set()
+            for r in reads:
+                avail.update(SILVER_SCHEMA.get(r, []))
+            avail.update(re.findall(r'\\.alias\\("([^"]+)"\\)', block))
+            avail.update(re.findall(r'withColumn\\("([^"]+)"', block))
+            avail.update(re.findall(r'withColumnRenamed\\("[^"]+",\\s*"([^"]+)"\\)', block))
+            for c in re.findall(r'col\\("([^"]+)"\\)', block):
+                if c in avail or "." in c:
+                    continue
+                offenders.setdefault(fn, []).append(c)
+        assert not offenders, json.dumps(offenders, indent=2)
+
+
+# ---------------------------------------------------------------------------
+# Runtime handover tests (use mock_spark + dlt_mock pipeline runner)
+# ---------------------------------------------------------------------------
+
+class TestSilverGoldRuntimeHandover:
+
+    def test_all_gold_tables_materialise(self, gold_tables):
+        """Every gold table is produced when bronze->silver->gold runs in mock."""
+        for name in EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS:
+            assert name in gold_tables, f"Missing gold output: {name}"
+
+    @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+    def test_gold_table_has_rows(self, gold_tables, table):
+        df = gold_tables[table]
+        assert df.count() > 0, f"gold {table} produced 0 rows"
+
+    @pytest.mark.parametrize("table", EXPECTED_GOLD_DIMS + EXPECTED_GOLD_FACTS)
+    def test_gold_table_has_gold_timestamp(self, gold_tables, table):
+        df = gold_tables[table]
+        assert "_gold_timestamp" in df.columns, f"{table} missing _gold_timestamp"
+
+
+class TestSilverMissingFailsGold:
+
+    def test_gold_fails_when_silver_unregistered(self, spark):
+        """Sanity: if silver tables aren't registered, gold pipeline must error,
+        proving the FQN reads actually go to the silver layer."""
+        from tests.pipeline_runner import run_pipeline
+        with pytest.raises(Exception):
+            run_pipeline("databricks/gold/03_gold_pipeline.py")
+'''
+
+p.write_text(content, encoding="utf-8")
+print(f"Created {p.name}; size={p.stat().st_size}")

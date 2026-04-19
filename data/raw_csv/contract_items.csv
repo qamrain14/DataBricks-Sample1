@@ -1,0 +1,1001 @@
+item_id,contract_id,boq_reference,boq_section,line_number,material_id,description,unit_of_measure,quantity,unit_rate,amount,qty_executed,executed_pct,milestone_flag,milestone_description,item_status,variation_ref,retention_applicable,notes,created_date
+CTR-2024-000655-BOQ-0001,CTR-2024-000655,12.4.1,General Requirements,1,MAT-00000282,Agent every development say.,NOS,229,89229.48,20433550.92,26,11.4,False,,DELETED,VO-028,True,Beautiful instead ahead despite measure ago current.,2021-08-10
+CTR-2024-000655-BOQ-0002,CTR-2024-000655,12.10.2,General Requirements,2,MAT-00000518,Information last everything thank serve civil institution.,DRUM,28,4066.91,113873.48,22,78.6,False,,ACTIVE,,True,,2019-01-27
+CTR-2024-000778-BOQ-0003,CTR-2024-000778,12.6.1,Concrete Works,1,MAT-00000433,Grow gas enough analysis.,NOS,285,13265.04,3780536.4,172,60.4,True,Choice whatever from behavior.,ACTIVE,,True,,2019-06-27
+CTR-2024-000778-BOQ-0004,CTR-2024-000778,12.8.2,Concrete Works,2,MAT-00000748,Those gun court attorney product significant world talk.,MONTH,550,12083.21,6645765.5,387,70.4,True,Movie win her need stop.,ACTIVE,,False,,2021-02-26
+CTR-2024-000778-BOQ-0005,CTR-2024-000778,12.2.3,Concrete Works,3,MAT-00000722,Herself law street class.,DAY,47,77365.89,3636196.83,18,38.3,False,,DELETED,,True,,2023-02-03
+CTR-2024-000778-BOQ-0006,CTR-2024-000778,12.6.4,Concrete Works,4,MAT-00000167,Decide environment view possible participant commercial.,NOS,364,32995.22,12010260.08,136,37.4,False,,ACTIVE,VO-041,True,,2020-10-31
+CTR-2024-000778-BOQ-0007,CTR-2024-000778,12.7.5,Concrete Works,5,MAT-00000474,Clear here writer policy news.,BBL,277,28.13,7792.01,112,40.4,False,,REVISED,,True,Successful simply director allow firm environment.,2022-07-16
+CTR-2024-000778-BOQ-0008,CTR-2024-000778,12.5.6,Concrete Works,6,MAT-00000411,Tree note responsibility defense material.,MT,68,1932.86,131434.48,40,58.8,False,,ACTIVE,,True,,2020-07-25
+CTR-2024-000778-BOQ-0009,CTR-2024-000778,12.9.7,Concrete Works,7,MAT-00000253,Central cause seat much section investment on.,JOINT,552,414.85,228997.2,438,79.3,False,,ACTIVE,,False,,2020-01-08
+CTR-2024-000778-BOQ-0010,CTR-2024-000778,12.1.8,Concrete Works,8,MAT-00000774,Despite young meeting before another body.,SET,882,10446.79,9214068.78,642,72.8,False,,ACTIVE,,True,,2024-04-01
+CTR-2024-000778-BOQ-0011,CTR-2024-000778,12.5.9,Concrete Works,9,MAT-00000542,Team activity result race Mr environment political.,KG,995,2383.64,2371721.8,965,97.0,True,Civil quite others his other life edge.,ACTIVE,,True,,2022-10-25
+CTR-2024-000778-BOQ-0012,CTR-2024-000778,12.5.10,Concrete Works,10,MAT-00000115,Fall citizen about reveal.,SET,446,469.74,209504.04,1,0.2,False,,DELETED,,True,,2020-03-11
+CTR-2024-000778-BOQ-0013,CTR-2024-000778,12.5.11,Concrete Works,11,MAT-00000892,Will seven medical blood personal.,CUM,862,278.08,239704.96,623,72.3,False,,ACTIVE,,False,,2019-01-03
+CTR-2024-000778-BOQ-0014,CTR-2024-000778,12.6.12,Concrete Works,12,MAT-00000614,Participant check several much single morning a.,SET,501,29240.11,14649295.11,475,94.8,False,,ON_HOLD,,True,,2019-11-19
+CTR-2024-000778-BOQ-0015,CTR-2024-000778,12.8.13,Concrete Works,13,MAT-00000088,Major born guy world southern dream.,NOS,836,346577.92,289739141.12,778,93.1,False,,ACTIVE,,False,,2024-12-01
+CTR-2023-000894-BOQ-0016,CTR-2023-000894,4.9.1,Instrumentation,1,MAT-00000952,There water beat magazine attorney.,NOS,774,50627.08,39185359.92,205,26.5,False,,ACTIVE,,True,,2024-01-24
+CTR-2023-000894-BOQ-0017,CTR-2023-000894,4.4.2,Instrumentation,2,MAT-00000124,She campaign little near enter their institution.,NOS,231,46463.42,10733050.02,5,2.2,False,,ACTIVE,,True,,2021-07-26
+CTR-2023-000894-BOQ-0018,CTR-2023-000894,4.1.3,Instrumentation,3,MAT-00000070,Up sense ready require human.,NOS,881,18362.99,16177794.19,526,59.7,False,,ACTIVE,,True,,2024-04-20
+CTR-2023-000894-BOQ-0019,CTR-2023-000894,4.8.4,Instrumentation,4,MAT-00000249,Network open according remain arrive attack all form.,SET,827,1416.69,1171602.63,96,11.6,True,Just military building different full.,ACTIVE,,True,,2020-02-08
+CTR-2023-000894-BOQ-0020,CTR-2023-000894,4.7.5,Instrumentation,5,MAT-00000063,Draw protect Democrat car very number line.,JOINT,746,839.96,626610.16,111,14.9,False,,ACTIVE,,True,,2021-10-20
+CTR-2023-000894-BOQ-0021,CTR-2023-000894,4.2.6,Instrumentation,6,MAT-00000896,Space couple best issue interest level rock.,CUM,454,143.02,64931.08,438,96.5,False,,ACTIVE,,False,,2021-08-26
+CTR-2023-000894-BOQ-0022,CTR-2023-000894,4.7.7,Instrumentation,7,MAT-00000171,Art rock song body.,NOS,498,200.84,100018.32,442,88.8,False,,ACTIVE,,False,,2024-02-07
+CTR-2023-000894-BOQ-0023,CTR-2023-000894,4.7.8,Instrumentation,8,MAT-00000293,Couple large instead everything economic.,SET,714,44583.82,31832847.48,569,79.7,False,,ACTIVE,,True,Kitchen technology nearly anything.,2019-09-07
+CTR-2023-000894-BOQ-0024,CTR-2023-000894,4.6.9,Instrumentation,9,MAT-00000766,Structure why unit support coach magazine degree.,NOS,59,24438.65,1441880.35,30,50.8,False,,DELETED,,False,Total clearly able hospital unit size.,2021-01-31
+CTR-2023-000894-BOQ-0025,CTR-2023-000894,4.10.10,Instrumentation,10,MAT-00000071,Institution whatever yet new responsibility.,NOS,70,2483.44,173840.8,30,42.9,False,,ON_HOLD,,True,Couple design around save.,2019-12-02
+CTR-2022-000430-BOQ-0026,CTR-2022-000430,10.6.1,Insulation,1,MAT-00000536,Security arm once me.,NOS,958,33157.89,31765258.62,685,71.5,False,,ACTIVE,,True,,2022-07-19
+CTR-2022-000430-BOQ-0027,CTR-2022-000430,10.2.2,Insulation,2,MAT-00000952,Church whether bag control organization push dog.,NOS,10,44459.8,444598.0,9,90.0,False,,ACTIVE,,True,,2019-10-09
+CTR-2022-000430-BOQ-0028,CTR-2022-000430,10.4.3,Insulation,3,MAT-00000901,Walk now often always.,CUM,379,178.9,67803.1,224,59.1,False,,ACTIVE,,False,,2019-02-02
+CTR-2022-000430-BOQ-0029,CTR-2022-000430,10.9.4,Insulation,4,MAT-00000684,Information on mission various.,RM,307,833.51,255887.57,53,17.3,False,,ACTIVE,,True,,2022-01-20
+CTR-2022-000430-BOQ-0030,CTR-2022-000430,10.10.5,Insulation,5,MAT-00000289,Prove fire enter capital population.,SET,216,2832.51,611822.16,52,24.1,False,,DELETED,,True,,2019-07-28
+CTR-2022-000430-BOQ-0031,CTR-2022-000430,10.7.6,Insulation,6,MAT-00000095,First sell authority leader your you available.,CUM,850,128.62,109327.0,3,0.4,False,,ACTIVE,,True,,2023-10-18
+CTR-2022-000430-BOQ-0032,CTR-2022-000430,10.1.7,Insulation,7,MAT-00000575,Media car give attention each.,SQM,115,96.89,11142.35,113,98.3,False,,ACTIVE,VO-024,True,,2020-06-06
+CTR-2022-000430-BOQ-0033,CTR-2022-000430,10.5.8,Insulation,8,MAT-00000043,Citizen street region particularly would.,PKT,374,240.84,90074.16,20,5.3,False,,ACTIVE,,True,,2023-07-23
+CTR-2022-000430-BOQ-0034,CTR-2022-000430,10.10.9,Insulation,9,MAT-00000998,Account stage federal professional voice care break.,KG,768,1726.57,1326005.76,242,31.5,False,,ON_HOLD,,False,Score choice example decision.,2022-09-22
+CTR-2022-000430-BOQ-0035,CTR-2022-000430,10.7.10,Insulation,10,MAT-00000802,Data plant enough major town suffer.,NOS,822,2485.16,2042801.52,752,91.5,False,,ACTIVE,,True,,2024-04-11
+CTR-2022-000430-BOQ-0036,CTR-2022-000430,10.4.11,Insulation,11,MAT-00000228,Plant stop analysis four.,CUM,837,150.16,125683.92,358,42.8,False,,REVISED,,True,,2022-09-06
+CTR-2021-000286-BOQ-0037,CTR-2021-000286,5.9.1,Earthworks,1,MAT-00000360,Pm energy scientist necessary.,KG,410,3390.03,1389912.3,274,66.8,False,,ACTIVE,,True,,2021-12-23
+CTR-2021-000286-BOQ-0038,CTR-2021-000286,5.2.2,Earthworks,2,MAT-00000040,Night born war real chance along.,MT,611,1887.66,1153360.26,321,52.5,False,,ON_HOLD,,False,,2019-07-01
+CTR-2021-000286-BOQ-0039,CTR-2021-000286,5.7.3,Earthworks,3,MAT-00000726,Old challenge camera final together someone.,JOINT,2,956.27,1912.54,2,100.0,False,,ON_HOLD,,True,,2022-09-14
+CTR-2021-000286-BOQ-0040,CTR-2021-000286,5.6.4,Earthworks,4,MAT-00000639,Together decide economic.,KG,680,2802.76,1905876.8,307,45.1,False,,ACTIVE,,True,,2021-02-24
+CTR-2021-000286-BOQ-0041,CTR-2021-000286,5.7.5,Earthworks,5,MAT-00000431,Government nice themselves wind.,SET,694,62829.11,43603402.34,178,25.6,False,,ACTIVE,,True,,2023-10-27
+CTR-2021-000286-BOQ-0042,CTR-2021-000286,5.10.6,Earthworks,6,MAT-00000805,Understand door class son.,MONTH,622,584663.88,363660933.36,476,76.5,False,,ACTIVE,,False,,2020-11-26
+CTR-2021-000286-BOQ-0043,CTR-2021-000286,5.2.7,Earthworks,7,MAT-00000675,Soon ten specific environment skin blue.,CUM,291,167.96,48876.36,171,58.8,True,Thing agent say forward.,ON_HOLD,,True,,2020-08-26
+CTR-2021-000286-BOQ-0044,CTR-2021-000286,5.1.8,Earthworks,8,MAT-00000026,Teach develop staff.,BAG,251,713.91,179191.41,156,62.2,False,,ACTIVE,,True,,2023-04-22
+CTR-2021-000286-BOQ-0045,CTR-2021-000286,5.7.9,Earthworks,9,MAT-00000507,Foreign ten whom evidence political hundred.,NOS,250,8882.63,2220657.5,176,70.4,True,Glass star the development process.,REVISED,,True,,2020-12-21
+CTR-2021-000286-BOQ-0046,CTR-2021-000286,5.9.10,Earthworks,10,MAT-00000824,Former agree theory end oil worker although.,BBL,476,143.4,68258.4,127,26.7,False,,ACTIVE,,True,,2022-07-23
+CTR-2021-000286-BOQ-0047,CTR-2021-000286,5.8.11,Earthworks,11,MAT-00000973,Its rock finish paper memory history office effort.,SET,628,5036.56,3162959.68,516,82.2,False,,ON_HOLD,,True,,2024-01-18
+CTR-2021-000286-BOQ-0048,CTR-2021-000286,5.4.12,Earthworks,12,MAT-00000266,Ability understand Mrs rest score provide.,NOS,861,61627.86,53061587.46,784,91.1,False,,ACTIVE,,True,,2021-08-18
+CTR-2021-000286-BOQ-0049,CTR-2021-000286,5.6.13,Earthworks,13,MAT-00000279,Rest feel finally impact.,RM,328,4641.46,1522398.88,41,12.5,True,Issue we TV perhaps professional.,ACTIVE,,False,Recent never court professor here security.,2023-07-28
+CTR-2021-000286-BOQ-0050,CTR-2021-000286,5.9.14,Earthworks,14,MAT-00000339,Past feeling nature a.,SET,478,56212.64,26869641.92,105,22.0,False,,ACTIVE,,False,Decision size parent focus kid.,2023-04-08
+CTR-2021-000489-BOQ-0051,CTR-2021-000489,5.7.1,Electrical Works,1,MAT-00000772,Memory soldier where save probably.,CUM,874,185.44,162074.56,855,97.8,False,,ACTIVE,,True,,2021-06-17
+CTR-2021-000280-BOQ-0052,CTR-2021-000280,1.6.1,Piping,1,MAT-00000399,Middle plan friend stand seem.,MT,685,8.55,5856.75,414,60.4,False,,REVISED,,False,,2023-06-02
+CTR-2021-000280-BOQ-0053,CTR-2021-000280,1.10.2,Piping,2,MAT-00000607,Different current agency each little.,NOS,679,25373.34,17228497.86,658,96.9,False,,DELETED,,True,,2024-02-06
+CTR-2021-000280-BOQ-0054,CTR-2021-000280,1.6.3,Piping,3,MAT-00000335,Lay though offer responsibility.,SET,780,4487.04,3499891.2,284,36.4,False,,REVISED,,True,Manager during prevent accept seem show.,2019-08-02
+CTR-2021-000280-BOQ-0055,CTR-2021-000280,1.6.4,Piping,4,MAT-00000975,Sing despite sound receive.,HR,230,1456.42,334976.6,199,86.5,False,,ACTIVE,VO-016,True,Anyone eat summer lead soon property write.,2020-09-16
+CTR-2021-000280-BOQ-0056,CTR-2021-000280,1.3.5,Piping,5,MAT-00000245,Fish sense kind spring throughout interview trade knowledge.,BOX,485,511.4,248029.0,288,59.4,False,,ACTIVE,,True,,2020-04-14
+CTR-2021-000280-BOQ-0057,CTR-2021-000280,1.3.6,Piping,6,MAT-00000797,She miss phone ever back.,LTR,988,943.03,931713.64,592,59.9,True,Season listen else easy.,ACTIVE,,False,,2021-03-23
+CTR-2021-000280-BOQ-0058,CTR-2021-000280,1.10.7,Piping,7,MAT-00000078,Discuss really relationship ask.,JOINT,708,2703.29,1913929.32,248,35.0,True,Doctor from throw ball.,REVISED,,True,,2019-06-18
+CTR-2022-000356-BOQ-0059,CTR-2022-000356,11.2.1,Instrumentation,1,MAT-00000380,Former letter artist strategy hope show.,SET,519,60198.14,31242834.66,12,2.3,False,,REVISED,,False,,2024-02-27
+CTR-2022-000356-BOQ-0060,CTR-2022-000356,11.3.2,Instrumentation,2,MAT-00000725,Task she herself.,NOS,446,26629.99,11876975.54,267,59.9,False,,ACTIVE,,True,,2023-11-20
+CTR-2022-000356-BOQ-0061,CTR-2022-000356,11.10.3,Instrumentation,3,MAT-00000846,Wall fear hope.,RM,275,66313.2,18236130.0,125,45.5,False,,ACTIVE,,True,,2023-04-02
+CTR-2022-000356-BOQ-0062,CTR-2022-000356,11.1.4,Instrumentation,4,MAT-00000345,Mrs same son today major event.,CUM,507,14.43,7316.01,93,18.3,False,,ACTIVE,,True,,2022-02-05
+CTR-2022-000356-BOQ-0063,CTR-2022-000356,11.1.5,Instrumentation,5,MAT-00000570,Ahead from quickly identify close level camera.,DRUM,530,3893.74,2063682.2,87,16.4,False,,ACTIVE,,True,,2024-07-03
+CTR-2022-000356-BOQ-0064,CTR-2022-000356,11.1.6,Instrumentation,6,MAT-00000459,Move trade option production base investment term consider.,NOS,96,5013.54,481299.84,51,53.1,False,,ACTIVE,,True,,2023-10-09
+CTR-2022-000356-BOQ-0065,CTR-2022-000356,11.9.7,Instrumentation,7,MAT-00000764,Here deep force seven here.,KG,339,2660.62,901950.18,232,68.4,False,,ACTIVE,,True,,2021-01-28
+CTR-2022-000356-BOQ-0066,CTR-2022-000356,11.4.8,Instrumentation,8,MAT-00000197,Edge bank affect much yourself glass.,NOS,757,64045.55,48482481.35,741,97.9,False,,REVISED,,False,,2022-04-28
+CTR-2022-000356-BOQ-0067,CTR-2022-000356,11.6.9,Instrumentation,9,MAT-00000233,Sit prepare senior wear.,DAY,184,3329.3,612591.2,181,98.4,False,,ACTIVE,,True,,2020-06-01
+CTR-2024-000654-BOQ-0068,CTR-2024-000654,2.1.1,Piping,1,MAT-00000894,Stuff perform draw list boy.,DRUM,588,452.92,266316.96,490,83.3,False,,ACTIVE,VO-031,True,Let eight hard paper white.,2024-07-07
+CTR-2024-000654-BOQ-0069,CTR-2024-000654,2.10.2,Piping,2,MAT-00000076,Agent find quality when however resource away real.,CUM,645,229.77,148201.65,155,24.0,True,Sing clearly find.,ACTIVE,,False,,2023-09-01
+CTR-2024-000654-BOQ-0070,CTR-2024-000654,2.10.3,Piping,3,MAT-00000621,Drug recent feeling range south someone not American.,KG,810,653.37,529229.7,794,98.0,False,,ACTIVE,,False,,2022-06-04
+CTR-2024-000654-BOQ-0071,CTR-2024-000654,2.10.4,Piping,4,MAT-00000583,Item gun through least.,SET,62,94921.33,5885122.46,47,75.8,True,Into have media game support state.,REVISED,,True,Itself safe whole establish.,2021-09-09
+CTR-2024-000654-BOQ-0072,CTR-2024-000654,2.9.5,Piping,5,MAT-00000178,Simple let stay or focus early various.,SET,77,1627.76,125337.52,52,67.5,False,,ACTIVE,,True,,2024-02-03
+CTR-2024-000654-BOQ-0073,CTR-2024-000654,2.4.6,Piping,6,MAT-00000073,Think during let particular her.,DRUM,947,3469.04,3285180.88,810,85.5,False,,ACTIVE,,True,,2020-09-02
+CTR-2024-000654-BOQ-0074,CTR-2024-000654,2.5.7,Piping,7,MAT-00000931,Management foot maintain.,DAY,847,290066.8,245686579.6,61,7.2,False,,ACTIVE,,True,,2020-05-24
+CTR-2024-000654-BOQ-0075,CTR-2024-000654,2.5.8,Piping,8,MAT-00000480,Something future they red everybody act.,NOS,717,240199.56,172223084.52,278,38.8,False,,ACTIVE,VO-003,False,,2021-10-22
+CTR-2024-000654-BOQ-0076,CTR-2024-000654,2.2.9,Piping,9,MAT-00000027,Beat result major serve real.,RM,235,832.67,195677.45,214,91.1,False,,ACTIVE,VO-049,True,,2019-06-14
+CTR-2024-000654-BOQ-0077,CTR-2024-000654,2.3.10,Piping,10,MAT-00000782,Large admit family identify during professional hard.,SQM,482,117.14,56461.48,226,46.9,False,,ACTIVE,,True,,2020-01-09
+CTR-2024-000654-BOQ-0078,CTR-2024-000654,2.6.11,Piping,11,MAT-00000482,Discover return firm sea week.,MT,419,208.52,87369.88,343,81.9,True,Most international second former reflect even.,ACTIVE,,True,,2023-06-29
+CTR-2024-000654-BOQ-0079,CTR-2024-000654,2.9.12,Piping,12,MAT-00000834,Course school everybody operation.,SET,38,51610.7,1961206.6,20,52.6,False,,ACTIVE,,False,,2019-01-05
+CTR-2024-000654-BOQ-0080,CTR-2024-000654,2.9.13,Piping,13,MAT-00000674,Others wonder strategy fast guess few remain.,KG,474,1591.86,754541.64,96,20.3,False,,ACTIVE,,True,Ever window network recently.,2021-12-29
+CTR-2024-000654-BOQ-0081,CTR-2024-000654,2.3.14,Piping,14,MAT-00000563,Point sell bill activity.,MT,950,31.71,30124.5,901,94.8,False,,ACTIVE,,True,,2020-10-10
+CTR-2023-000319-BOQ-0082,CTR-2023-000319,9.2.1,General Requirements,1,MAT-00000418,Light key continue anything wait.,HR,231,6349.2,1466665.2,29,12.6,False,,ACTIVE,,True,,2024-09-15
+CTR-2023-000319-BOQ-0083,CTR-2023-000319,9.5.2,General Requirements,2,MAT-00000723,Box assume man officer rather charge specific.,SET,426,65214.46,27781359.96,241,56.6,False,,ACTIVE,,False,,2020-07-13
+CTR-2023-000319-BOQ-0084,CTR-2023-000319,9.2.3,General Requirements,3,MAT-00000885,Be easy newspaper indicate other.,JOINT,283,1113.17,315027.11,212,74.9,False,,REVISED,,True,,2024-06-28
+CTR-2023-000319-BOQ-0085,CTR-2023-000319,9.3.4,General Requirements,4,MAT-00000887,Difficult mission late kind team wrong figure perform.,NOS,458,938.17,429681.86,176,38.4,False,,REVISED,,False,,2021-09-05
+CTR-2023-000319-BOQ-0086,CTR-2023-000319,9.7.5,General Requirements,5,MAT-00000586,Community avoid able late order.,RM,240,65943.8,15826512.0,105,43.8,True,Whether between several personal enough ball.,ACTIVE,,False,,2020-09-15
+CTR-2023-000319-BOQ-0087,CTR-2023-000319,9.1.6,General Requirements,6,MAT-00000508,Allow explain executive teacher author.,NOS,130,4698.74,610836.2,84,64.6,False,,DELETED,,True,,2020-08-13
+CTR-2023-000319-BOQ-0088,CTR-2023-000319,9.3.7,General Requirements,7,MAT-00000420,Under skin person product value.,KG,77,1563.45,120385.65,33,42.9,False,,ACTIVE,,False,,2024-12-25
+CTR-2023-000319-BOQ-0089,CTR-2023-000319,9.6.8,General Requirements,8,MAT-00000390,Boy different chance enter central arrive.,DAY,642,314182.17,201704953.14,499,77.7,False,,ACTIVE,VO-041,True,,2021-07-20
+CTR-2023-000319-BOQ-0090,CTR-2023-000319,9.2.9,General Requirements,9,MAT-00000765,Organization station TV keep light.,BAG,445,531.07,236326.15,389,87.4,False,,DELETED,,True,,2019-07-08
+CTR-2023-000333-BOQ-0091,CTR-2023-000333,5.6.1,General Requirements,1,MAT-00000368,Record wall matter management ball.,SET,442,39312.79,17376253.18,271,61.3,False,,ACTIVE,,True,,2023-04-16
+CTR-2023-000333-BOQ-0092,CTR-2023-000333,5.4.2,General Requirements,2,MAT-00000635,Threat same page.,CUM,510,322.3,164373.0,73,14.3,False,,ACTIVE,,True,,2024-03-20
+CTR-2023-000333-BOQ-0093,CTR-2023-000333,5.5.3,General Requirements,3,MAT-00000923,Before while structure.,NOS,694,205052.92,142306726.48,75,10.8,False,,ACTIVE,,True,,2021-10-21
+CTR-2023-000333-BOQ-0094,CTR-2023-000333,5.5.4,General Requirements,4,MAT-00000468,Like prepare trouble consider.,MT,204,4326.67,882640.68,123,60.3,True,Onto again share start office several.,ACTIVE,,True,,2019-03-31
+CTR-2023-000333-BOQ-0095,CTR-2023-000333,5.7.5,General Requirements,5,MAT-00000850,Job sport why like impact fly bit claim.,KG,282,838.35,236414.7,25,8.9,False,,ACTIVE,,False,,2021-07-31
+CTR-2023-000333-BOQ-0096,CTR-2023-000333,5.6.6,General Requirements,6,MAT-00000622,Really explain war spend nearly lawyer.,SQM,225,238.29,53615.25,158,70.2,False,,REVISED,,True,,2020-02-02
+CTR-2023-000333-BOQ-0097,CTR-2023-000333,5.1.7,General Requirements,7,MAT-00000926,Education break significant ten stay ability.,RM,317,2720.76,862480.92,17,5.4,False,,ACTIVE,VO-019,True,,2021-04-02
+CTR-2023-000333-BOQ-0098,CTR-2023-000333,5.9.8,General Requirements,8,MAT-00000136,Left approach million performance material kind appear.,NOS,898,220.09,197640.82,543,60.5,False,,ACTIVE,,False,,2022-04-23
+CTR-2023-000333-BOQ-0099,CTR-2023-000333,5.6.9,General Requirements,9,MAT-00000765,Ahead picture son report.,BAG,824,346.11,285194.64,77,9.3,True,Near until just recognize.,ON_HOLD,,False,,2023-02-07
+CTR-2023-000333-BOQ-0100,CTR-2023-000333,5.7.10,General Requirements,10,MAT-00000093,Nearly need behavior yeah tree.,CUM,15,451.63,6774.45,3,20.0,False,,ACTIVE,,True,,2023-03-02
+CTR-2023-000333-BOQ-0101,CTR-2023-000333,5.4.11,General Requirements,11,MAT-00000111,Water positive child usually factor relate indeed.,NOS,483,33291.81,16079944.23,452,93.6,False,,ACTIVE,,True,,2024-03-16
+CTR-2023-000333-BOQ-0102,CTR-2023-000333,5.5.12,General Requirements,12,MAT-00000932,Tell everybody so increase.,LTR,665,2746.43,1826375.95,143,21.5,True,Woman during necessary himself two meet.,ACTIVE,,True,,2020-07-09
+CTR-2023-000333-BOQ-0103,CTR-2023-000333,5.8.13,General Requirements,13,MAT-00000398,Environment able rise study oil process tend.,NOS,380,885.45,336471.0,380,100.0,False,,ACTIVE,,False,,2020-02-10
+CTR-2021-000854-BOQ-0104,CTR-2021-000854,7.5.1,Insulation,1,MAT-00000962,Mrs generation necessary myself lay focus country.,NOS,34,1416.79,48170.86,13,38.2,False,,ON_HOLD,,True,,2023-01-09
+CTR-2021-000854-BOQ-0105,CTR-2021-000854,7.7.2,Insulation,2,MAT-00000063,Occur do simply analysis seat.,JOINT,283,771.69,218388.27,62,21.9,False,,REVISED,VO-014,True,,2019-03-29
+CTR-2021-000854-BOQ-0106,CTR-2021-000854,7.6.3,Insulation,3,MAT-00000052,History professional star wonder manager already.,JOINT,250,1380.59,345147.5,201,80.4,False,,ACTIVE,,True,,2021-08-12
+CTR-2021-000854-BOQ-0107,CTR-2021-000854,7.3.4,Insulation,4,MAT-00000337,Whole forward beyond suddenly between treat address.,SET,808,35084.43,28348219.44,2,0.2,False,,ON_HOLD,,True,,2020-03-26
+CTR-2021-000854-BOQ-0108,CTR-2021-000854,7.1.5,Insulation,5,MAT-00000677,Improve pressure child light.,MONTH,135,328482.4,44345124.0,60,44.4,False,,ACTIVE,,True,,2020-04-10
+CTR-2021-000854-BOQ-0109,CTR-2021-000854,7.2.6,Insulation,6,MAT-00000764,Full realize power system system.,KG,488,2799.22,1366019.36,185,37.9,False,,ACTIVE,,False,Here first responsibility service their along attention.,2024-11-05
+CTR-2021-000854-BOQ-0110,CTR-2021-000854,7.8.7,Insulation,7,MAT-00000309,Range explain dinner bed within set region beyond.,BAG,659,274.78,181080.02,62,9.4,False,,REVISED,,True,,2023-12-22
+CTR-2021-000854-BOQ-0111,CTR-2021-000854,7.2.8,Insulation,8,MAT-00000076,Grow issue each include radio.,CUM,330,221.56,73114.8,33,10.0,True,Really tough animal someone.,ACTIVE,,False,,2024-12-13
+CTR-2023-000302-BOQ-0112,CTR-2023-000302,10.2.1,Painting & Coatings,1,MAT-00000441,Color bad that people.,SET,813,108782.96,88440546.48,670,82.4,False,,REVISED,,True,,2021-07-24
+CTR-2023-000302-BOQ-0113,CTR-2023-000302,10.6.2,Painting & Coatings,2,MAT-00000424,Marriage on discussion point least.,CUM,848,156.63,132822.24,425,50.1,False,,ACTIVE,,True,,2024-04-26
+CTR-2023-000302-BOQ-0114,CTR-2023-000302,10.2.3,Painting & Coatings,3,MAT-00000069,Citizen kid generation onto police interesting economic.,JOINT,852,1355.31,1154724.12,442,51.9,True,Together let explain.,ACTIVE,,True,,2022-09-12
+CTR-2023-000302-BOQ-0115,CTR-2023-000302,10.2.4,Painting & Coatings,4,MAT-00000687,Current his low down occur.,RM,421,177.28,74634.88,340,80.8,False,,ACTIVE,,True,,2022-07-03
+CTR-2023-000302-BOQ-0116,CTR-2023-000302,10.2.5,Painting & Coatings,5,MAT-00000361,Fast recognize against stop how account ten.,CUM,592,85.31,50503.52,158,26.7,False,,ACTIVE,,False,,2022-02-15
+CTR-2023-000302-BOQ-0117,CTR-2023-000302,10.4.6,Painting & Coatings,6,MAT-00000588,Treat seat strategy.,JOINT,827,1261.72,1043442.44,574,69.4,False,,REVISED,,True,Simply discover soon despite couple.,2021-12-31
+CTR-2023-000302-BOQ-0118,CTR-2023-000302,10.3.7,Painting & Coatings,7,MAT-00000030,Question return process stuff pick.,SET,280,16769.17,4695367.6,158,56.4,False,,ACTIVE,,True,,2019-10-13
+CTR-2023-000302-BOQ-0119,CTR-2023-000302,10.1.8,Painting & Coatings,8,MAT-00000146,Position final kid often run bed far section.,MT,94,3014.41,283354.54,27,28.7,False,,ACTIVE,,True,,2019-12-14
+CTR-2022-000905-BOQ-0120,CTR-2022-000905,3.10.1,Concrete Works,1,MAT-00000773,Customer skill theory hand.,SET,51,8229.37,419697.87,17,33.3,False,,ACTIVE,,True,,2024-09-29
+CTR-2020-000117-BOQ-0121,CTR-2020-000117,2.10.1,Instrumentation,1,MAT-00000291,Sound life away senior difficult put.,SET,499,90284.88,45052155.12,157,31.5,True,Tree store either station loss southern.,ACTIVE,,True,,2021-05-15
+CTR-2020-000117-BOQ-0122,CTR-2020-000117,2.3.2,Instrumentation,2,MAT-00000786,Buy happy see energy herself police he.,MT,783,830.89,650586.87,335,42.8,True,Whose source hand so add.,ACTIVE,,True,,2021-07-31
+CTR-2020-000117-BOQ-0123,CTR-2020-000117,2.9.3,Instrumentation,3,MAT-00000513,Determine as statement travel few impact cause watch.,MONTH,854,488709.58,417357981.32,362,42.4,True,Likely people wall foreign.,DELETED,VO-002,True,You break doctor Mr home.,2022-07-06
+CTR-2020-000117-BOQ-0124,CTR-2020-000117,2.7.4,Instrumentation,4,MAT-00000590,Provide sea watch industry score choice.,DRUM,588,4089.05,2404361.4,427,72.6,False,,ACTIVE,,True,,2024-02-28
+CTR-2020-000117-BOQ-0125,CTR-2020-000117,2.6.5,Instrumentation,5,MAT-00000852,Pressure street past voice evidence real.,NOS,91,2193.88,199643.08,13,14.3,False,,ACTIVE,,True,,2022-10-22
+CTR-2020-000117-BOQ-0126,CTR-2020-000117,2.6.6,Instrumentation,6,MAT-00000227,Kitchen wear talk between rate.,RM,798,737.85,588804.3,522,65.4,False,,ACTIVE,,False,,2020-08-27
+CTR-2019-000242-BOQ-0127,CTR-2019-000242,5.3.1,Concrete Works,1,MAT-00000203,Top population art every why we station.,SET,617,64799.87,39981519.79,77,12.5,False,,REVISED,,False,,2024-01-13
+CTR-2019-000242-BOQ-0128,CTR-2019-000242,5.10.2,Concrete Works,2,MAT-00000698,Production politics others again.,JOINT,659,1286.71,847941.89,639,97.0,False,,ON_HOLD,,True,,2022-05-25
+CTR-2023-000816-BOQ-0129,CTR-2023-000816,1.9.1,Insulation,1,MAT-00000361,Only spend do similar small.,CUM,76,76.94,5847.44,57,75.0,True,During call north attention share.,ACTIVE,,True,,2020-01-05
+CTR-2023-000816-BOQ-0130,CTR-2023-000816,1.10.2,Insulation,2,MAT-00000630,Able teach certain candidate economy company produce ago.,CUM,520,298.93,155443.6,42,8.1,False,,REVISED,,True,,2020-09-09
+CTR-2023-000816-BOQ-0131,CTR-2023-000816,1.1.3,Insulation,3,MAT-00000981,Group small open.,SQM,462,145.45,67197.9,460,99.6,False,,ON_HOLD,VO-042,True,,2023-11-29
+CTR-2023-000816-BOQ-0132,CTR-2023-000816,1.9.4,Insulation,4,MAT-00000450,Company appear score.,RM,536,1578.73,846199.28,372,69.4,False,,ACTIVE,,True,,2022-10-02
+CTR-2023-000816-BOQ-0133,CTR-2023-000816,1.6.5,Insulation,5,MAT-00000068,Box as large gun order later develop.,BAG,97,161.0,15617.0,49,50.5,False,,ACTIVE,,False,,2022-09-27
+CTR-2019-000084-BOQ-0134,CTR-2019-000084,3.6.1,Civil Works,1,MAT-00000939,Your suggest international blue.,NOS,318,541155.45,172087433.1,200,62.9,True,Analysis situation term miss leader who.,ACTIVE,VO-036,True,,2020-06-07
+CTR-2019-000084-BOQ-0135,CTR-2019-000084,3.9.2,Civil Works,2,MAT-00000687,Available ball part assume every plan.,RM,96,205.25,19704.0,54,56.2,False,,ACTIVE,,False,,2024-06-14
+CTR-2019-000084-BOQ-0136,CTR-2019-000084,3.4.3,Civil Works,3,MAT-00000197,Republican herself our far measure involve soldier.,NOS,141,53417.98,7531935.18,75,53.2,False,,ACTIVE,,False,,2019-06-04
+CTR-2019-000084-BOQ-0137,CTR-2019-000084,3.6.4,Civil Works,4,MAT-00000678,Table prepare shoulder result.,RM,898,43913.45,39434278.1,134,14.9,False,,ACTIVE,,True,,2020-11-09
+CTR-2019-000084-BOQ-0138,CTR-2019-000084,3.8.5,Civil Works,5,MAT-00000739,Involve thousand including still human.,NOS,45,40842.68,1837920.6,43,95.6,False,,ON_HOLD,,False,,2021-08-16
+CTR-2019-000084-BOQ-0139,CTR-2019-000084,3.4.6,Civil Works,6,MAT-00000547,Fine fine effort well.,SET,317,26955.8,8544988.6,240,75.7,False,,ACTIVE,,True,,2022-02-28
+CTR-2019-000084-BOQ-0140,CTR-2019-000084,3.7.7,Civil Works,7,MAT-00000797,Attack story behavior benefit school speech news.,LTR,515,1055.72,543695.8,165,32.0,False,,REVISED,,True,,2023-03-01
+CTR-2019-000084-BOQ-0141,CTR-2019-000084,3.2.8,Civil Works,8,MAT-00000568,What no prove improve them wait institution trouble.,SET,729,2534.65,1847759.85,127,17.4,False,,REVISED,,False,,2023-11-27
+CTR-2019-000084-BOQ-0142,CTR-2019-000084,3.4.9,Civil Works,9,MAT-00000094,Why outside goal.,NOS,837,403436.49,337676342.13,357,42.7,False,,ACTIVE,,True,,2019-12-01
+CTR-2019-000084-BOQ-0143,CTR-2019-000084,3.4.10,Civil Works,10,MAT-00000384,Medical choice lot suggest glass news boy.,SET,29,3667.61,106360.69,3,10.3,False,,ACTIVE,,True,,2024-04-19
+CTR-2022-000713-BOQ-0144,CTR-2022-000713,12.8.1,Concrete Works,1,MAT-00000481,Party poor ago upon stop environment Congress reflect.,NOS,631,523.77,330498.87,81,12.8,True,Off southern suddenly window.,ACTIVE,,False,,2023-09-30
+CTR-2022-000713-BOQ-0145,CTR-2022-000713,12.5.2,Concrete Works,2,MAT-00000114,Tv go consider century price.,JOINT,244,1337.41,326328.04,12,4.9,False,,ACTIVE,,True,,2024-08-09
+CTR-2022-000713-BOQ-0146,CTR-2022-000713,12.9.3,Concrete Works,3,MAT-00000612,Center plan air second.,SET,17,75845.73,1289377.41,7,41.2,False,,ACTIVE,VO-023,True,,2019-12-17
+CTR-2022-000713-BOQ-0147,CTR-2022-000713,12.6.4,Concrete Works,4,MAT-00000537,Heavy law church find food.,CUM,70,190.23,13316.1,69,98.6,False,,ON_HOLD,,True,,2023-05-04
+CTR-2022-000713-BOQ-0148,CTR-2022-000713,12.5.5,Concrete Works,5,MAT-00000383,Other third choose senior anyone bank kitchen.,SET,766,503.54,385711.64,69,9.0,False,,ACTIVE,,False,,2022-09-23
+CTR-2022-000713-BOQ-0149,CTR-2022-000713,12.1.6,Concrete Works,6,MAT-00000137,Magazine kind event sense box involve.,RM,361,79.45,28681.45,329,91.1,False,,REVISED,,True,,2020-07-06
+CTR-2022-000713-BOQ-0150,CTR-2022-000713,12.8.7,Concrete Works,7,MAT-00000065,Question or money final determine.,MONTH,38,3477.16,132132.08,2,5.3,False,,DELETED,,True,,2024-04-23
+CTR-2022-000713-BOQ-0151,CTR-2022-000713,12.1.8,Concrete Works,8,MAT-00000260,Area daughter war should share face build market.,SET,772,23909.91,18458450.52,292,37.8,False,,REVISED,,True,,2023-02-16
+CTR-2022-000713-BOQ-0152,CTR-2022-000713,12.7.9,Concrete Works,9,MAT-00000448,Compare herself region matter street south.,SET,762,26681.69,20331447.78,395,51.8,False,,ACTIVE,,True,,2021-12-28
+CTR-2022-000713-BOQ-0153,CTR-2022-000713,12.2.10,Concrete Works,10,MAT-00000821,However score job least.,RM,745,86411.9,64376865.5,440,59.1,False,,REVISED,,True,Television office of remember.,2022-04-25
+CTR-2022-000713-BOQ-0154,CTR-2022-000713,12.8.11,Concrete Works,11,MAT-00000314,Face if whom commercial way least.,CUM,618,125.48,77546.64,170,27.5,False,,ACTIVE,VO-023,True,,2019-08-23
+CTR-2022-000713-BOQ-0155,CTR-2022-000713,12.7.12,Concrete Works,12,MAT-00000077,Because such during open model how.,LTR,373,4372.25,1630849.25,347,93.0,False,,ACTIVE,,True,,2020-06-01
+CTR-2022-000713-BOQ-0156,CTR-2022-000713,12.4.13,Concrete Works,13,MAT-00000069,Second develop single baby plan.,JOINT,798,1833.87,1463428.26,370,46.4,False,,ACTIVE,,True,,2023-03-04
+CTR-2022-000713-BOQ-0157,CTR-2022-000713,12.2.14,Concrete Works,14,MAT-00000455,Member town glass road standard spring door.,NOS,588,7684.8,4518662.4,375,63.8,False,,ACTIVE,,True,,2024-08-06
+CTR-2020-000531-BOQ-0158,CTR-2020-000531,2.5.1,Painting & Coatings,1,MAT-00000269,Eight community check service.,NOS,721,30669.18,22112478.78,626,86.8,False,,ON_HOLD,,True,,2024-01-26
+CTR-2020-000531-BOQ-0159,CTR-2020-000531,2.8.2,Painting & Coatings,2,MAT-00000177,Concern significant management senior.,RM,90,1046.14,94152.6,40,44.4,False,,ACTIVE,,True,,2020-10-07
+CTR-2020-000531-BOQ-0160,CTR-2020-000531,2.3.3,Painting & Coatings,3,MAT-00000729,Firm key light place someone option goal avoid.,JOINT,813,730.9,594221.7,229,28.2,True,Large under north play person ten.,ACTIVE,,False,Later arm story baby ten talk past.,2023-02-20
+CTR-2020-000531-BOQ-0161,CTR-2020-000531,2.9.4,Painting & Coatings,4,MAT-00000479,Prepare focus little character artist billion tonight.,NOS,133,48386.1,6435351.3,22,16.5,True,His oil west school American training.,ACTIVE,,True,,2023-08-05
+CTR-2020-000531-BOQ-0162,CTR-2020-000531,2.10.5,Painting & Coatings,5,MAT-00000844,Word base position always remain yard.,RM,76,1510.22,114776.72,40,52.6,False,,ACTIVE,,True,,2021-01-15
+CTR-2020-000531-BOQ-0163,CTR-2020-000531,2.3.6,Painting & Coatings,6,MAT-00000787,Appear piece free form newspaper hit edge surface.,NOS,444,86542.16,38424719.04,444,100.0,True,Mission city health executive impact full.,ACTIVE,,True,,2021-07-12
+CTR-2020-000531-BOQ-0164,CTR-2020-000531,2.9.7,Painting & Coatings,7,MAT-00000355,Their four old center glass whose recognize hot.,MT,917,1707.49,1565768.33,80,8.7,False,,ACTIVE,,True,,2024-12-25
+CTR-2020-000096-BOQ-0165,CTR-2020-000096,3.10.1,Civil Works,1,MAT-00000607,Remember be next poor foreign campaign reflect water.,NOS,158,27767.59,4387279.22,154,97.5,False,,ON_HOLD,VO-002,True,,2021-12-20
+CTR-2020-000096-BOQ-0166,CTR-2020-000096,3.4.2,Civil Works,2,MAT-00000667,Behavior provide meet adult final week game.,SET,786,1167.83,917914.38,632,80.4,False,,ACTIVE,,True,,2024-06-01
+CTR-2020-000096-BOQ-0167,CTR-2020-000096,3.7.3,Civil Works,3,MAT-00000251,Court yourself choice fast small medical music.,MT,305,1347.38,410950.9,30,9.8,False,,ACTIVE,,True,,2022-07-31
+CTR-2020-000096-BOQ-0168,CTR-2020-000096,3.6.4,Civil Works,4,MAT-00000752,Also from short capital heavy class story.,MT,999,163.4,163236.6,778,77.9,False,,ACTIVE,,True,,2021-10-12
+CTR-2020-000096-BOQ-0169,CTR-2020-000096,3.2.5,Civil Works,5,MAT-00000145,Speak close join improve put down know expect.,HR,52,1381.22,71823.44,24,46.2,False,,ACTIVE,,False,,2022-07-04
+CTR-2020-000096-BOQ-0170,CTR-2020-000096,3.3.6,Civil Works,6,MAT-00000195,Doctor dream whole six tough create question.,KG,511,3331.18,1702232.98,478,93.5,False,,ACTIVE,VO-026,True,,2021-05-31
+CTR-2020-000096-BOQ-0171,CTR-2020-000096,3.6.7,Civil Works,7,MAT-00000598,Worker left example high month whom stage.,CUM,50,435.67,21783.5,31,62.0,False,,REVISED,,True,Catch economic political them never bill suffer surface.,2020-03-16
+CTR-2020-000096-BOQ-0172,CTR-2020-000096,3.3.8,Civil Works,8,MAT-00000442,Base civil last message store.,RM,904,1484.41,1341906.64,374,41.4,False,,ACTIVE,,True,,2022-03-28
+CTR-2020-000096-BOQ-0173,CTR-2020-000096,3.7.9,Civil Works,9,MAT-00000076,Watch develop later glass.,CUM,517,204.96,105964.32,286,55.3,False,,ACTIVE,,True,Increase how hear.,2023-03-09
+CTR-2021-000814-BOQ-0174,CTR-2021-000814,6.3.1,Painting & Coatings,1,MAT-00000774,Yes heart agreement us stuff practice.,SET,204,13645.2,2783620.8,102,50.0,False,,ACTIVE,,True,,2024-02-15
+CTR-2021-000814-BOQ-0175,CTR-2021-000814,6.10.2,Painting & Coatings,2,MAT-00000153,Case expert stop receive.,MT,915,1003.67,918358.05,335,36.6,False,,ACTIVE,,True,,2022-10-09
+CTR-2021-000814-BOQ-0176,CTR-2021-000814,6.9.3,Painting & Coatings,3,MAT-00000520,Serve light past town.,JOINT,546,234.81,128206.26,306,56.0,False,,ACTIVE,,True,,2022-06-14
+CTR-2021-000814-BOQ-0177,CTR-2021-000814,6.1.4,Painting & Coatings,4,MAT-00000816,Eight strong nature.,LTR,612,211.35,129346.2,592,96.7,False,,ACTIVE,,True,,2023-04-07
+CTR-2021-000814-BOQ-0178,CTR-2021-000814,6.4.5,Painting & Coatings,5,MAT-00000152,Month book explain feeling answer information soldier lead.,DRUM,33,227.29,7500.57,7,21.2,False,,ACTIVE,,True,,2024-08-17
+CTR-2021-000814-BOQ-0179,CTR-2021-000814,6.10.6,Painting & Coatings,6,MAT-00000794,Student matter movie place.,MONTH,943,215080.42,202820836.06,868,92.0,False,,ACTIVE,,True,,2024-05-13
+CTR-2019-000539-BOQ-0180,CTR-2019-000539,3.9.1,Electrical Works,1,MAT-00000471,Drop century investment pass drive indicate professor.,SET,351,46544.46,16337105.46,346,98.6,False,,ACTIVE,,True,,2021-02-26
+CTR-2019-000539-BOQ-0181,CTR-2019-000539,3.4.2,Electrical Works,2,MAT-00000981,Model guess well name.,SQM,286,186.68,53390.48,115,40.2,False,,ON_HOLD,,False,,2024-06-25
+CTR-2019-000539-BOQ-0182,CTR-2019-000539,3.8.3,Electrical Works,3,MAT-00000325,Never hospital like player wonder effect administration.,RM,358,1539.75,551230.5,140,39.1,False,,ACTIVE,,False,,2022-11-14
+CTR-2019-000539-BOQ-0183,CTR-2019-000539,3.3.4,Electrical Works,4,MAT-00000978,General run pick sign.,MT,298,60.86,18136.28,40,13.4,False,,ACTIVE,,True,,2022-01-15
+CTR-2019-000539-BOQ-0184,CTR-2019-000539,3.9.5,Electrical Works,5,MAT-00000956,Card good full poor store range.,KG,713,500.05,356535.65,111,15.6,False,,ACTIVE,,True,,2021-08-11
+CTR-2019-000539-BOQ-0185,CTR-2019-000539,3.2.6,Electrical Works,6,MAT-00000054,Social though firm.,MT,424,1031.3,437271.2,241,56.8,True,Place specific as simply leader fall.,REVISED,VO-036,False,,2024-05-02
+CTR-2019-000539-BOQ-0186,CTR-2019-000539,3.4.7,Electrical Works,7,MAT-00000489,Middle writer myself education send.,JOINT,775,347.74,269498.5,328,42.3,False,,ACTIVE,,True,,2019-06-02
+CTR-2024-000936-BOQ-0187,CTR-2024-000936,7.3.1,Concrete Works,1,MAT-00000904,Experience television answer pretty event.,MT,957,4335.63,4149197.91,856,89.4,False,,ACTIVE,,False,,2019-06-03
+CTR-2024-000936-BOQ-0188,CTR-2024-000936,7.5.2,Concrete Works,2,MAT-00000010,Join hundred keep what fund cost.,CUM,582,23.77,13834.14,343,58.9,False,,ON_HOLD,,True,,2024-08-27
+CTR-2024-000936-BOQ-0189,CTR-2024-000936,7.5.3,Concrete Works,3,MAT-00000480,Happen something entire bar interesting issue yet.,NOS,198,291497.29,57716463.42,84,42.4,False,,ACTIVE,,True,,2022-04-23
+CTR-2024-000936-BOQ-0190,CTR-2024-000936,7.4.4,Concrete Works,4,MAT-00000582,Nation fly bag produce.,DAY,180,3751.32,675237.6,163,90.6,False,,REVISED,,True,,2021-01-26
+CTR-2024-000936-BOQ-0191,CTR-2024-000936,7.8.5,Concrete Works,5,MAT-00000144,Knowledge response coach know language.,CUM,332,611.33,202961.56,3,0.9,False,,ACTIVE,,False,,2019-02-16
+CTR-2024-000936-BOQ-0192,CTR-2024-000936,7.6.6,Concrete Works,6,MAT-00000268,Guy song quickly well central parent.,NOS,710,167038.16,118597093.6,683,96.2,True,Past itself police social arm.,ACTIVE,,True,,2022-06-27
+CTR-2024-000936-BOQ-0193,CTR-2024-000936,7.2.7,Concrete Works,7,MAT-00000707,Alone attack sing hand him note.,NOS,655,22047.72,14441256.6,302,46.1,False,,ACTIVE,,True,,2023-03-11
+CTR-2024-000936-BOQ-0194,CTR-2024-000936,7.9.8,Concrete Works,8,MAT-00000426,Check last he know baby case happen fire.,SET,935,9693.84,9063740.4,550,58.8,False,,REVISED,,True,,2019-12-02
+CTR-2024-000936-BOQ-0195,CTR-2024-000936,7.8.9,Concrete Works,9,MAT-00000539,Economic box save material hit.,CUM,541,429.91,232581.31,79,14.6,False,,ACTIVE,,False,,2020-09-05
+CTR-2024-000936-BOQ-0196,CTR-2024-000936,7.6.10,Concrete Works,10,MAT-00000169,Brother simple region Democrat partner really your.,CUM,875,47.69,41728.75,119,13.6,False,,ACTIVE,,False,,2019-08-16
+CTR-2024-000936-BOQ-0197,CTR-2024-000936,7.3.11,Concrete Works,11,MAT-00000465,But table later together knowledge.,NOS,526,1147.37,603516.62,59,11.2,False,,ACTIVE,,True,,2019-01-13
+CTR-2024-000936-BOQ-0198,CTR-2024-000936,7.4.12,Concrete Works,12,MAT-00000764,Specific whose worry property.,KG,593,2260.08,1340227.44,433,73.0,False,,ACTIVE,,False,Nearly face feel church.,2024-04-17
+CTR-2024-000936-BOQ-0199,CTR-2024-000936,7.5.13,Concrete Works,13,MAT-00000033,Soldier meeting building cut.,KG,419,220.05,92200.95,69,16.5,False,,ON_HOLD,,True,,2023-04-16
+CTR-2024-000936-BOQ-0200,CTR-2024-000936,7.7.14,Concrete Works,14,MAT-00000460,Door management guess occur.,LTR,385,2406.35,926444.75,338,87.8,False,,ACTIVE,,True,,2023-05-29
+CTR-2024-000936-BOQ-0201,CTR-2024-000936,7.3.15,Concrete Works,15,MAT-00000542,Sound necessary partner beat finally yourself rest.,KG,746,2877.61,2146697.06,3,0.4,False,,ON_HOLD,,False,,2023-04-03
+CTR-2022-000844-BOQ-0202,CTR-2022-000844,8.3.1,Steel Structures,1,MAT-00000355,Quite general there sister policy consider whom.,MT,283,1616.03,457336.49,57,20.1,True,Improve important offer by first avoid.,ACTIVE,,False,,2021-09-12
+CTR-2022-000844-BOQ-0203,CTR-2022-000844,8.2.2,Steel Structures,2,MAT-00000212,Me than story million fight class.,CUM,104,299.54,31152.16,57,54.8,False,,ACTIVE,VO-048,True,,2021-06-08
+CTR-2022-000844-BOQ-0204,CTR-2022-000844,8.1.3,Steel Structures,3,MAT-00000773,Generation wait thus suffer economy.,SET,144,7585.57,1092322.08,74,51.4,False,,ON_HOLD,,True,,2022-08-06
+CTR-2022-000844-BOQ-0205,CTR-2022-000844,8.5.4,Steel Structures,4,MAT-00000243,Ever person pass behavior political option oil.,SQM,898,170.63,153225.74,676,75.3,False,,ACTIVE,,True,,2020-12-18
+CTR-2024-000642-BOQ-0206,CTR-2024-000642,9.1.1,Instrumentation,1,MAT-00000508,Probably result painting successful.,NOS,996,4328.26,4310946.96,658,66.1,False,,REVISED,,True,,2023-03-22
+CTR-2024-000642-BOQ-0207,CTR-2024-000642,9.9.2,Instrumentation,2,MAT-00000189,American tell ball we side enough decision.,CUM,485,408.63,198185.55,115,23.7,False,,ACTIVE,,False,,2023-09-03
+CTR-2024-000642-BOQ-0208,CTR-2024-000642,9.9.3,Instrumentation,3,MAT-00000571,Indicate police marriage phone face what lot.,NOS,138,1651.64,227926.32,65,47.1,False,,ACTIVE,,False,Father authority art keep machine daughter.,2021-02-19
+CTR-2024-000642-BOQ-0209,CTR-2024-000642,9.5.4,Instrumentation,4,MAT-00000053,Middle blood drop business last cell.,PKT,387,543.32,210264.84,308,79.6,True,Century technology floor write generation human.,ACTIVE,,True,,2021-06-07
+CTR-2024-000642-BOQ-0210,CTR-2024-000642,9.4.5,Instrumentation,5,MAT-00000491,Face his past.,MT,891,2273.43,2025626.13,310,34.8,False,,ACTIVE,,False,,2024-05-15
+CTR-2024-000642-BOQ-0211,CTR-2024-000642,9.4.6,Instrumentation,6,MAT-00000937,While total spend value return.,RM,713,49268.82,35128668.66,209,29.3,False,,ACTIVE,,True,,2023-01-11
+CTR-2024-000642-BOQ-0212,CTR-2024-000642,9.5.7,Instrumentation,7,MAT-00000316,Several marriage method material final.,MT,369,813.38,300137.22,254,68.8,False,,REVISED,,False,,2021-04-12
+CTR-2024-000642-BOQ-0213,CTR-2024-000642,9.6.8,Instrumentation,8,MAT-00000380,Bed hotel lead.,SET,424,43328.21,18371161.04,113,26.7,False,,ACTIVE,,True,,2022-04-24
+CTR-2024-000642-BOQ-0214,CTR-2024-000642,9.4.9,Instrumentation,9,MAT-00000157,Democrat good anything manager think.,NOS,338,30664.39,10364563.82,291,86.1,False,,ACTIVE,,True,,2024-06-24
+CTR-2024-000642-BOQ-0215,CTR-2024-000642,9.8.10,Instrumentation,10,MAT-00000990,Experience account blue care enough hand idea.,CUM,472,30.28,14292.16,407,86.2,False,,ACTIVE,,True,,2019-08-29
+CTR-2024-000642-BOQ-0216,CTR-2024-000642,9.1.11,Instrumentation,11,MAT-00000537,Hundred now crime.,CUM,860,181.96,156485.6,837,97.3,False,,REVISED,,False,,2020-09-10
+CTR-2020-000010-BOQ-0217,CTR-2020-000010,8.1.1,Painting & Coatings,1,MAT-00000383,Eye hit late near stay perhaps particularly.,SET,633,709.94,449392.02,631,99.7,False,,ACTIVE,VO-035,True,Window hour some fund.,2024-12-08
+CTR-2020-000010-BOQ-0218,CTR-2020-000010,8.5.2,Painting & Coatings,2,MAT-00000740,Sense current meeting matter and case.,NOS,549,5908.02,3243502.98,17,3.1,False,,ACTIVE,,False,,2020-01-30
+CTR-2020-000010-BOQ-0219,CTR-2020-000010,8.3.3,Painting & Coatings,3,MAT-00000537,Sound mind chance throw cause use.,CUM,247,131.19,32403.93,134,54.3,False,,ACTIVE,,True,,2024-02-24
+CTR-2020-000010-BOQ-0220,CTR-2020-000010,8.4.4,Painting & Coatings,4,MAT-00000579,Class wrong school federal from stock.,KG,714,3083.09,2201326.26,700,98.0,False,,ACTIVE,,True,Majority none little admit former body indicate.,2023-07-19
+CTR-2020-000389-BOQ-0221,CTR-2020-000389,8.1.1,Painting & Coatings,1,MAT-00000058,Someone rise read ago listen.,SET,720,22278.21,16040311.2,511,71.0,False,,ACTIVE,,False,,2024-12-03
+CTR-2020-000389-BOQ-0222,CTR-2020-000389,8.1.2,Painting & Coatings,2,MAT-00000942,Officer return on color pick people subject challenge.,RM,236,82.97,19580.92,222,94.1,False,,ACTIVE,,False,,2022-02-22
+CTR-2020-000389-BOQ-0223,CTR-2020-000389,8.9.3,Painting & Coatings,3,MAT-00000921,All way body affect finish.,SET,578,365347.76,211171005.28,183,31.7,False,,ACTIVE,,True,,2023-06-20
+CTR-2020-000389-BOQ-0224,CTR-2020-000389,8.2.4,Painting & Coatings,4,MAT-00000952,Include data maybe particularly.,NOS,307,37743.32,11587199.24,123,40.1,False,,REVISED,,True,,2020-07-27
+CTR-2020-000389-BOQ-0225,CTR-2020-000389,8.2.5,Painting & Coatings,5,MAT-00000810,Moment finish community treatment garden great sign.,NOS,513,3294.87,1690268.31,354,69.0,True,Their save artist catch debate foot.,ACTIVE,,True,,2023-06-13
+CTR-2020-000389-BOQ-0226,CTR-2020-000389,8.6.6,Painting & Coatings,6,MAT-00000993,Particular court east newspaper different.,RM,31,222.23,6889.13,28,90.3,False,,ACTIVE,,True,,2023-04-06
+CTR-2020-000389-BOQ-0227,CTR-2020-000389,8.10.7,Painting & Coatings,7,MAT-00000088,Give value somebody event business quality here.,NOS,303,507550.88,153787916.64,37,12.2,True,Side relate real major.,ACTIVE,,True,,2022-07-21
+CTR-2022-000370-BOQ-0228,CTR-2022-000370,1.5.1,Earthworks,1,MAT-00000966,Get kind either look.,SET,456,2331.08,1062972.48,138,30.3,True,Stand west source fact explain.,ACTIVE,,True,,2020-02-28
+CTR-2022-000370-BOQ-0229,CTR-2022-000370,1.2.2,Earthworks,2,MAT-00000027,Still even no even body.,RM,363,694.78,252205.14,305,84.0,False,,ACTIVE,,True,,2019-12-13
+CTR-2021-000743-BOQ-0230,CTR-2021-000743,4.9.1,Painting & Coatings,1,MAT-00000586,Response beyond side accept nearly upon.,RM,174,61166.06,10642894.44,43,24.7,True,Dream anything toward difficult do beyond.,ACTIVE,,True,,2023-09-21
+CTR-2021-000743-BOQ-0231,CTR-2021-000743,4.8.2,Painting & Coatings,2,MAT-00000307,Present thing little practice sense expert.,NOS,802,223755.26,179451718.52,257,32.0,False,,ACTIVE,,True,,2020-07-08
+CTR-2021-000743-BOQ-0232,CTR-2021-000743,4.1.3,Painting & Coatings,3,MAT-00000312,Position traditional become off movement.,GAL,972,154.71,150378.12,861,88.6,False,,REVISED,,True,,2020-07-11
+CTR-2021-000743-BOQ-0233,CTR-2021-000743,4.6.4,Painting & Coatings,4,MAT-00000308,Tree company think.,KG,618,2175.5,1344459.0,205,33.2,False,,ACTIVE,,True,,2024-07-04
+CTR-2021-000743-BOQ-0234,CTR-2021-000743,4.10.5,Painting & Coatings,5,MAT-00000991,Value already structure small.,NOS,801,35536.02,28464352.02,385,48.1,False,,REVISED,,False,,2021-01-06
+CTR-2021-000743-BOQ-0235,CTR-2021-000743,4.9.6,Painting & Coatings,6,MAT-00000699,View while unit theory.,KG,28,5204.12,145715.36,14,50.0,False,,ACTIVE,,False,Fear owner up.,2023-08-03
+CTR-2021-000743-BOQ-0236,CTR-2021-000743,4.8.7,Painting & Coatings,7,MAT-00000690,Expect writer myself management voice surface.,LTR,143,247.53,35396.79,61,42.7,False,,ACTIVE,,True,,2024-05-16
+CTR-2021-000743-BOQ-0237,CTR-2021-000743,4.7.8,Painting & Coatings,8,MAT-00000597,Evening speak former room possible responsibility add.,NOS,548,57405.57,31458252.36,428,78.1,False,,REVISED,,False,,2019-12-15
+CTR-2021-000743-BOQ-0238,CTR-2021-000743,4.4.9,Painting & Coatings,9,MAT-00000112,So nothing serious compare task today.,NOS,674,60701.06,40912514.44,170,25.2,False,,ACTIVE,,True,,2022-09-20
+CTR-2021-000743-BOQ-0239,CTR-2021-000743,4.7.10,Painting & Coatings,10,MAT-00000989,Middle beautiful protect continue cell food.,SET,109,35312.62,3849075.58,33,30.3,False,,ACTIVE,,True,,2023-03-13
+CTR-2021-000743-BOQ-0240,CTR-2021-000743,4.8.11,Painting & Coatings,11,MAT-00000401,According himself land environment form.,MT,791,2703.7,2138626.7,707,89.4,False,,ACTIVE,VO-007,True,,2019-12-18
+CTR-2021-000743-BOQ-0241,CTR-2021-000743,4.3.12,Painting & Coatings,12,MAT-00000119,Reveal activity president realize artist brother fill if.,DAY,357,497478.78,177599924.46,233,65.3,False,,ACTIVE,,True,,2024-01-28
+CTR-2021-000743-BOQ-0242,CTR-2021-000743,4.2.13,Painting & Coatings,13,MAT-00000327,Pass despite card check security paper.,NOS,308,18427.9,5675793.2,58,18.8,True,Type thousand show real police wait.,ACTIVE,,False,,2021-09-26
+CTR-2021-000743-BOQ-0243,CTR-2021-000743,4.3.14,Painting & Coatings,14,MAT-00000529,Reduce tree serious soon stay seven.,SET,566,18645.41,10553302.06,436,77.0,False,,ACTIVE,,True,,2023-11-06
+CTR-2021-000743-BOQ-0244,CTR-2021-000743,4.1.15,Painting & Coatings,15,MAT-00000406,Their bank land region back nor article natural.,MT,756,2428.36,1835840.16,202,26.7,False,,ACTIVE,VO-014,True,,2019-09-14
+CTR-2023-000592-BOQ-0245,CTR-2023-000592,3.6.1,Painting & Coatings,1,MAT-00000375,Dark Mr clearly take kind quite response.,MT,202,44.83,9055.66,67,33.2,False,,ACTIVE,,True,,2023-05-27
+CTR-2023-000592-BOQ-0246,CTR-2023-000592,3.2.2,Painting & Coatings,2,MAT-00000602,Before member speak law message lead around.,MONTH,357,416528.01,148700499.57,234,65.5,False,,REVISED,,True,,2019-12-14
+CTR-2022-000689-BOQ-0247,CTR-2022-000689,2.5.1,Electrical Works,1,MAT-00000245,Official and general as yes.,BOX,120,396.74,47608.8,88,73.3,True,Pull final against effort able.,ACTIVE,,True,,2024-06-16
+CTR-2022-000689-BOQ-0248,CTR-2022-000689,2.9.2,Electrical Works,2,MAT-00000651,Worry line expert conference.,NOS,711,319070.94,226859438.34,177,24.9,False,,ACTIVE,,True,,2019-08-08
+CTR-2022-000689-BOQ-0249,CTR-2022-000689,2.6.3,Electrical Works,3,MAT-00000887,She within position inside.,NOS,975,694.72,677352.0,139,14.3,False,,ACTIVE,,True,,2024-07-07
+CTR-2021-000426-BOQ-0250,CTR-2021-000426,8.2.1,Piping,1,MAT-00000172,Large true help bag who themselves.,LTR,579,3359.67,1945248.93,225,38.9,False,,ACTIVE,,True,,2024-07-21
+CTR-2021-000426-BOQ-0251,CTR-2021-000426,8.9.2,Piping,2,MAT-00000563,President girl condition Mr.,MT,116,36.76,4264.16,34,29.3,False,,REVISED,,False,Camera without strong series without leg rest.,2023-12-13
+CTR-2021-000426-BOQ-0252,CTR-2021-000426,8.4.3,Piping,3,MAT-00000560,Mother statement easy get every visit.,JOINT,436,492.72,214825.92,424,97.2,False,,ACTIVE,,True,,2019-12-23
+CTR-2021-000426-BOQ-0253,CTR-2021-000426,8.2.4,Piping,4,MAT-00000450,Allow produce past view.,RM,795,1729.95,1375310.25,214,26.9,False,,ACTIVE,,False,,2020-11-10
+CTR-2021-000426-BOQ-0254,CTR-2021-000426,8.3.5,Piping,5,MAT-00000631,Drive attack order.,DAY,804,218345.78,175550007.12,211,26.2,False,,ACTIVE,,True,,2022-04-13
+CTR-2021-000426-BOQ-0255,CTR-2021-000426,8.10.6,Piping,6,MAT-00000297,Our reflect any scientist I doctor describe.,KG,274,2304.51,631435.74,263,96.0,False,,ACTIVE,VO-049,False,,2022-02-09
+CTR-2021-000426-BOQ-0256,CTR-2021-000426,8.3.7,Piping,7,MAT-00000888,Five our pull fly few century produce.,MT,719,2415.27,1736579.13,255,35.5,True,Cell year doctor.,ACTIVE,,False,,2020-08-05
+CTR-2021-000426-BOQ-0257,CTR-2021-000426,8.5.8,Piping,8,MAT-00000592,Personal interview many win.,LTR,643,81.59,52462.37,462,71.9,True,Including every news option.,REVISED,,True,,2023-02-20
+CTR-2021-000426-BOQ-0258,CTR-2021-000426,8.8.9,Piping,9,MAT-00000466,Skill five indicate chance heavy senior.,MT,336,1312.81,441104.16,47,14.0,False,,ACTIVE,,True,Drive different tax certain leg arm include.,2024-12-29
+CTR-2021-000426-BOQ-0259,CTR-2021-000426,8.4.10,Piping,10,MAT-00000408,Newspaper care drug data position two.,NOS,992,69576.64,69020026.88,216,21.8,False,,ACTIVE,,True,,2024-06-10
+CTR-2021-000426-BOQ-0260,CTR-2021-000426,8.6.11,Piping,11,MAT-00000808,Always authority source onto provide describe decade trade.,RM,916,223.84,205037.44,49,5.3,True,Begin right couple environmental purpose.,ACTIVE,,True,,2020-10-09
+CTR-2021-000426-BOQ-0261,CTR-2021-000426,8.8.12,Piping,12,MAT-00000452,Whatever address view while bring.,NOS,1,75984.84,75984.84,1,100.0,False,,ACTIVE,,True,,2022-01-27
+CTR-2020-000096-BOQ-0262,CTR-2020-000096,5.6.1,Electrical Works,1,MAT-00000085,Herself move grow end mention.,DRUM,681,1976.31,1345867.11,169,24.8,True,Trial receive region however dream focus.,ACTIVE,,False,,2020-01-09
+CTR-2020-000096-BOQ-0263,CTR-2020-000096,5.2.2,Electrical Works,2,MAT-00000721,Including none determine certainly end various.,SET,2,10517.03,21034.06,0,0.0,True,Letter sort reveal seven floor data.,ACTIVE,,True,,2020-05-08
+CTR-2020-000096-BOQ-0264,CTR-2020-000096,5.7.3,Electrical Works,3,MAT-00000881,Result far cultural discover now early nearly want.,JOINT,711,735.54,522968.94,72,10.1,False,,ACTIVE,,True,,2022-05-10
+CTR-2020-000096-BOQ-0265,CTR-2020-000096,5.7.4,Electrical Works,4,MAT-00000141,Either start whom politics make collection.,MT,793,43.89,34804.77,136,17.2,False,,ACTIVE,VO-037,True,,2023-12-08
+CTR-2020-000096-BOQ-0266,CTR-2020-000096,5.4.5,Electrical Works,5,MAT-00000360,College result major true my politics.,KG,644,3496.97,2252048.68,421,65.4,False,,ACTIVE,,False,,2020-05-19
+CTR-2020-000096-BOQ-0267,CTR-2020-000096,5.7.6,Electrical Works,6,MAT-00000604,Model stuff avoid stand.,KG,360,3597.62,1295143.2,161,44.7,False,,ACTIVE,,True,,2022-03-13
+CTR-2020-000096-BOQ-0268,CTR-2020-000096,5.1.7,Electrical Works,7,MAT-00000798,Share include successful.,HR,869,3293.27,2861851.63,308,35.4,False,,ACTIVE,,True,,2021-09-07
+CTR-2020-000096-BOQ-0269,CTR-2020-000096,5.7.8,Electrical Works,8,MAT-00000507,Attack character despite lay art.,NOS,116,9386.78,1088866.48,81,69.8,False,,ACTIVE,,False,,2020-06-24
+CTR-2020-000096-BOQ-0270,CTR-2020-000096,5.10.9,Electrical Works,9,MAT-00000397,Tree process administration mother in admit reveal movie.,MT,431,2320.87,1000294.97,349,81.0,False,,ACTIVE,,True,,2019-02-26
+CTR-2020-000096-BOQ-0271,CTR-2020-000096,5.4.10,Electrical Works,10,MAT-00000269,Admit spend purpose south travel.,NOS,41,38174.77,1565165.57,25,61.0,False,,ACTIVE,,True,,2019-12-04
+CTR-2020-000096-BOQ-0272,CTR-2020-000096,5.9.11,Electrical Works,11,MAT-00000656,Money spring environment however health image north wrong.,MT,551,2092.73,1153094.23,284,51.5,True,Truth modern drive.,ACTIVE,,False,,2022-08-31
+CTR-2024-000401-BOQ-0273,CTR-2024-000401,11.2.1,Civil Works,1,MAT-00000698,Behavior here need.,JOINT,318,1324.9,421318.2,122,38.4,True,Feel stock ball yard.,ACTIVE,,True,,2022-06-20
+CTR-2024-000401-BOQ-0274,CTR-2024-000401,11.3.2,Civil Works,2,MAT-00000683,Pm reflect bar suddenly.,JOINT,123,962.64,118404.72,17,13.8,False,,ACTIVE,,True,,2021-11-27
+CTR-2024-000401-BOQ-0275,CTR-2024-000401,11.6.3,Civil Works,3,MAT-00000171,Not teach believe month amount deep.,NOS,130,228.05,29646.5,68,52.3,False,,ACTIVE,,True,,2024-11-15
+CTR-2024-000401-BOQ-0276,CTR-2024-000401,11.5.4,Civil Works,4,MAT-00000066,Conference sure administration.,MT,730,2301.17,1679854.1,642,87.9,True,Little another avoid understand tonight nor.,ACTIVE,,True,,2023-02-15
+CTR-2024-000401-BOQ-0277,CTR-2024-000401,11.5.5,Civil Works,5,MAT-00000162,Onto sell require huge baby.,NOS,792,25107.72,19885314.24,587,74.1,False,,ACTIVE,,True,,2019-02-20
+CTR-2024-000401-BOQ-0278,CTR-2024-000401,11.1.6,Civil Works,6,MAT-00000251,Nor note support quality.,MT,484,1285.61,622235.24,471,97.3,False,,ON_HOLD,,True,,2023-09-14
+CTR-2024-000401-BOQ-0279,CTR-2024-000401,11.6.7,Civil Works,7,MAT-00000230,Forward sense cause write right may window.,BAG,255,491.11,125233.05,163,63.9,False,,ACTIVE,,True,,2021-01-04
+CTR-2024-000401-BOQ-0280,CTR-2024-000401,11.9.8,Civil Works,8,MAT-00000229,Best discussion away.,HR,48,5865.27,281532.96,4,8.3,False,,DELETED,,True,Shoulder western however similar ahead event yeah make.,2024-02-14
+CTR-2024-000401-BOQ-0281,CTR-2024-000401,11.6.9,Civil Works,9,MAT-00000009,Need heart control one herself sign.,BAG,206,324.23,66791.38,200,97.1,False,,ACTIVE,,True,,2021-03-11
+CTR-2024-000401-BOQ-0282,CTR-2024-000401,11.9.10,Civil Works,10,MAT-00000751,Science first blood accept.,NOS,779,37214.03,28989729.37,154,19.8,True,Something require bank child.,ACTIVE,,True,,2019-02-09
+CTR-2024-000974-BOQ-0283,CTR-2024-000974,11.5.1,General Requirements,1,MAT-00000386,Know seven bill beautiful issue.,RM,107,1878.71,201021.97,30,28.0,False,,ON_HOLD,,True,,2019-06-29
+CTR-2024-000974-BOQ-0284,CTR-2024-000974,11.4.2,General Requirements,2,MAT-00000944,Never impact ago government behavior our foot.,MONTH,919,551.89,507186.91,422,45.9,False,,ACTIVE,,True,Activity including single right nice yeah.,2020-06-30
+CTR-2024-000974-BOQ-0285,CTR-2024-000974,11.7.3,General Requirements,3,MAT-00000653,Occur college herself catch feeling.,SET,77,35714.61,2750024.97,7,9.1,False,,ON_HOLD,,True,,2023-05-29
+CTR-2024-000974-BOQ-0286,CTR-2024-000974,11.6.4,General Requirements,4,MAT-00000718,Result many pattern leader career.,SET,326,39018.6,12720063.6,119,36.5,True,Certainly cold every feel site guess.,ACTIVE,,True,,2020-11-04
+CTR-2024-000974-BOQ-0287,CTR-2024-000974,11.8.5,General Requirements,5,MAT-00000461,We forward per.,SET,322,27809.76,8954742.72,274,85.1,False,,REVISED,,True,,2020-01-06
+CTR-2024-000974-BOQ-0288,CTR-2024-000974,11.5.6,General Requirements,6,MAT-00000162,Fly water cut fire who.,NOS,847,34534.25,29250509.75,617,72.8,True,Key issue statement prepare organization.,REVISED,,True,,2022-12-28
+CTR-2022-000406-BOQ-0289,CTR-2022-000406,11.5.1,General Requirements,1,MAT-00000307,Fact reason make office drug heavy.,NOS,840,353411.41,296865584.4,31,3.7,False,,DELETED,,True,Half usually customer young conference should.,2020-02-22
+CTR-2022-000406-BOQ-0290,CTR-2022-000406,11.3.2,General Requirements,2,MAT-00000824,Well left remain.,BBL,125,139.86,17482.5,106,84.8,False,,ACTIVE,,True,,2019-12-11
+CTR-2022-000406-BOQ-0291,CTR-2022-000406,11.10.3,General Requirements,3,MAT-00000597,Cause field education child institution help last.,NOS,266,69158.28,18396102.48,38,14.3,True,Something story attorney summer some.,ACTIVE,,True,,2022-09-20
+CTR-2022-000406-BOQ-0292,CTR-2022-000406,11.1.4,General Requirements,4,MAT-00000126,Look husband media turn reality myself so growth.,KG,965,2315.06,2234032.9,172,17.8,False,,ACTIVE,,True,,2023-10-14
+CTR-2022-000406-BOQ-0293,CTR-2022-000406,11.6.5,General Requirements,5,MAT-00000177,Order trial body eat professor coach partner.,RM,220,1090.41,239890.2,70,31.8,False,,DELETED,VO-040,True,,2024-08-05
+CTR-2022-000406-BOQ-0294,CTR-2022-000406,11.9.6,General Requirements,6,MAT-00000422,Worker quality hundred sell whole involve action.,KG,491,706.72,346999.52,143,29.1,False,,ACTIVE,,False,,2019-03-21
+CTR-2022-000406-BOQ-0295,CTR-2022-000406,11.6.7,General Requirements,7,MAT-00000392,Develop section newspaper reach determine.,RM,492,35339.33,17386950.36,248,50.4,False,,ACTIVE,,True,Hospital sign open matter general agency.,2021-06-16
+CTR-2022-000406-BOQ-0296,CTR-2022-000406,11.5.8,General Requirements,8,MAT-00000031,Far turn beat story.,RM,60,1303.15,78189.0,30,50.0,False,,REVISED,,False,,2021-09-14
+CTR-2022-000406-BOQ-0297,CTR-2022-000406,11.9.9,General Requirements,9,MAT-00000273,Lot live just recent five feel special.,BBL,836,75.6,63201.6,754,90.2,True,Give gas six.,ON_HOLD,,False,,2022-12-24
+CTR-2020-000958-BOQ-0298,CTR-2020-000958,3.10.1,Concrete Works,1,MAT-00000243,Against gas body son.,SQM,326,239.47,78067.22,183,56.1,False,,ACTIVE,,False,,2021-02-10
+CTR-2020-000958-BOQ-0299,CTR-2020-000958,3.8.2,Concrete Works,2,MAT-00000857,Discussion if continue policy it ahead pass.,NOS,556,180015.13,100088412.28,502,90.3,True,Might necessary former interview.,ACTIVE,,True,,2022-09-20
+CTR-2020-000958-BOQ-0300,CTR-2020-000958,3.10.3,Concrete Works,3,MAT-00000940,Last involve above Democrat everything.,BOX,207,656.02,135796.14,87,42.0,False,,ON_HOLD,,True,Officer son Mr hand.,2020-08-03
+CTR-2020-000958-BOQ-0301,CTR-2020-000958,3.2.4,Concrete Works,4,MAT-00000793,Leader energy television month police.,JOINT,867,679.53,589152.51,373,43.0,False,,ACTIVE,,True,,2022-05-21
+CTR-2020-000958-BOQ-0302,CTR-2020-000958,3.3.5,Concrete Works,5,MAT-00000331,Home hotel box goal leader common purpose song.,KG,1000,1233.71,1233710.0,971,97.1,False,,ACTIVE,,True,,2023-01-01
+CTR-2020-000958-BOQ-0303,CTR-2020-000958,3.10.6,Concrete Works,6,MAT-00000229,Opportunity public finish draw bring health center home.,HR,835,4004.11,3343431.85,314,37.6,False,,ACTIVE,,True,,2023-05-23
+CTR-2020-000958-BOQ-0304,CTR-2020-000958,3.10.7,Concrete Works,7,MAT-00000872,Case himself control player really population yourself never.,NOS,34,1960.94,66671.96,20,58.8,False,,ON_HOLD,,True,,2020-07-30
+CTR-2020-000958-BOQ-0305,CTR-2020-000958,3.2.8,Concrete Works,8,MAT-00000340,Eye cost success people tend weight machine.,PKT,244,496.52,121150.88,81,33.2,False,,DELETED,VO-046,True,,2022-10-07
+CTR-2020-000958-BOQ-0306,CTR-2020-000958,3.1.9,Concrete Works,9,MAT-00000458,Spring white measure manager range.,NOS,272,44943.54,12224642.88,34,12.5,False,,REVISED,,True,,2023-09-15
+CTR-2020-000958-BOQ-0307,CTR-2020-000958,3.3.10,Concrete Works,10,MAT-00000993,Report kitchen cold not somebody determine.,RM,906,199.31,180574.86,902,99.6,False,,ACTIVE,,True,,2021-07-12
+CTR-2020-000958-BOQ-0308,CTR-2020-000958,3.8.11,Concrete Works,11,MAT-00000167,Ever Mrs collection.,NOS,76,44376.79,3372636.04,4,5.3,False,,ACTIVE,,True,,2023-03-18
+CTR-2020-000958-BOQ-0309,CTR-2020-000958,3.2.12,Concrete Works,12,MAT-00000165,Not significant manager member of environmental myself.,CUM,561,239.13,134151.93,95,16.9,False,,ON_HOLD,,False,,2020-11-06
+CTR-2020-000958-BOQ-0310,CTR-2020-000958,3.7.13,Concrete Works,13,MAT-00000622,My series service kid despite interesting.,SQM,161,173.26,27894.86,84,52.2,False,,ACTIVE,,False,,2021-12-22
+CTR-2020-000958-BOQ-0311,CTR-2020-000958,3.5.14,Concrete Works,14,MAT-00000677,Fear yourself last give stage.,MONTH,305,376770.07,114914871.35,25,8.2,False,,ACTIVE,,True,Tend bring speech decide scene ready.,2019-12-25
+CTR-2023-000302-BOQ-0312,CTR-2023-000302,11.8.1,Civil Works,1,MAT-00000615,Plan coach cause deal deal arrive go exactly.,SQM,205,51.73,10604.65,52,25.4,False,,ACTIVE,VO-008,True,,2024-06-26
+CTR-2023-000302-BOQ-0313,CTR-2023-000302,11.5.2,Civil Works,2,MAT-00000917,Collection without fall of weight method too.,JOINT,94,491.39,46190.66,49,52.1,False,,DELETED,,True,,2024-03-19
+CTR-2023-000302-BOQ-0314,CTR-2023-000302,11.4.3,Civil Works,3,MAT-00000270,Career seek in arrive.,JOINT,858,700.73,601226.34,63,7.3,False,,ACTIVE,VO-043,True,,2021-07-20
+CTR-2023-000302-BOQ-0315,CTR-2023-000302,11.1.4,Civil Works,4,MAT-00000567,Term camera tend economic represent.,SET,861,26379.51,22712758.11,535,62.1,False,,ACTIVE,,True,,2024-05-04
+CTR-2023-000302-BOQ-0316,CTR-2023-000302,11.2.5,Civil Works,5,MAT-00000307,Physical heart away some shoulder.,NOS,405,340939.03,138080307.15,365,90.1,True,Seven put majority officer.,ACTIVE,,True,,2020-08-26
+CTR-2023-000302-BOQ-0317,CTR-2023-000302,11.8.6,Civil Works,6,MAT-00000124,Middle everything view hard wear force.,NOS,178,72755.69,12950512.82,42,23.6,False,,REVISED,,True,,2023-11-19
+CTR-2023-000302-BOQ-0318,CTR-2023-000302,11.3.7,Civil Works,7,MAT-00000207,Than suggest behavior.,MT,855,2212.72,1891875.6,327,38.2,False,,ON_HOLD,VO-025,True,,2022-02-05
+CTR-2023-000302-BOQ-0319,CTR-2023-000302,11.8.8,Civil Works,8,MAT-00000533,Play recently sure somebody huge why station.,NOS,940,311847.96,293137082.4,805,85.6,False,,ACTIVE,,True,,2020-02-15
+CTR-2023-000302-BOQ-0320,CTR-2023-000302,11.2.9,Civil Works,9,MAT-00000948,Environmental stock front official not magazine gas.,NOS,577,107606.93,62089198.61,292,50.6,False,,DELETED,,True,,2024-04-21
+CTR-2023-000302-BOQ-0321,CTR-2023-000302,11.3.10,Civil Works,10,MAT-00000039,Buy tax kid.,SQM,283,90.4,25583.2,205,72.4,True,Animal phone student.,DELETED,,True,,2022-01-05
+CTR-2023-000302-BOQ-0322,CTR-2023-000302,11.6.11,Civil Works,11,MAT-00000919,Yeah into yet.,JOINT,21,1988.92,41767.32,9,42.9,False,,REVISED,,True,,2021-07-22
+CTR-2023-000302-BOQ-0323,CTR-2023-000302,11.5.12,Civil Works,12,MAT-00000138,Think few themselves theory.,CUM,998,524.63,523580.74,792,79.4,False,,ACTIVE,,True,,2021-05-15
+CTR-2023-000302-BOQ-0324,CTR-2023-000302,11.7.13,Civil Works,13,MAT-00000936,Pressure economy head tough.,JOINT,759,1446.95,1098235.05,528,69.6,False,,REVISED,,True,,2024-09-06
+CTR-2023-000302-BOQ-0325,CTR-2023-000302,11.3.14,Civil Works,14,MAT-00000414,Pretty region ability live car difficult.,DRUM,800,6935.32,5548256.0,582,72.8,True,Appear personal rise sense.,ACTIVE,,False,,2024-02-13
+CTR-2023-000052-BOQ-0326,CTR-2023-000052,12.5.1,Electrical Works,1,MAT-00000204,Act receive stage write institution car.,MT,378,2649.33,1001446.74,258,68.3,False,,ON_HOLD,,True,,2024-01-02
+CTR-2023-000052-BOQ-0327,CTR-2023-000052,12.8.2,Electrical Works,2,MAT-00000182,Director become south billion.,JOINT,601,2016.57,1211958.57,352,58.6,False,,DELETED,,True,,2023-05-03
+CTR-2023-000052-BOQ-0328,CTR-2023-000052,12.3.3,Electrical Works,3,MAT-00000051,Thing case similar send card year.,BAG,875,423.09,370203.75,219,25.0,False,,ACTIVE,,True,,2019-03-24
+CTR-2023-000052-BOQ-0329,CTR-2023-000052,12.1.4,Electrical Works,4,MAT-00000886,Attention none particular clearly.,BAG,486,713.21,346620.06,331,68.1,False,,REVISED,,True,,2022-02-01
+CTR-2023-000052-BOQ-0330,CTR-2023-000052,12.7.5,Electrical Works,5,MAT-00000434,Reveal physical character in rather team.,BAG,873,435.91,380549.43,258,29.6,False,,ACTIVE,,True,,2019-01-31
+CTR-2023-000052-BOQ-0331,CTR-2023-000052,12.6.6,Electrical Works,6,MAT-00000524,To cause but role.,SET,575,13849.97,7963732.75,289,50.3,False,,ACTIVE,VO-018,True,,2021-12-05
+CTR-2023-000052-BOQ-0332,CTR-2023-000052,12.5.7,Electrical Works,7,MAT-00000672,White fire cause everybody base network.,KG,193,382.52,73826.36,61,31.6,False,,REVISED,,True,,2020-07-27
+CTR-2023-000052-BOQ-0333,CTR-2023-000052,12.1.8,Electrical Works,8,MAT-00000739,Return expect wait agree suggest then day parent.,NOS,672,42691.83,28688909.76,302,44.9,False,,ACTIVE,,True,,2021-02-16
+CTR-2023-000052-BOQ-0334,CTR-2023-000052,12.4.9,Electrical Works,9,MAT-00000352,Security far approach today west.,BOX,703,1394.89,980607.67,487,69.3,False,,ACTIVE,,False,,2021-01-11
+CTR-2023-000052-BOQ-0335,CTR-2023-000052,12.2.10,Electrical Works,10,MAT-00000301,History drop point audience thousand activity guess.,KG,483,601.59,290567.97,132,27.3,False,,ACTIVE,,False,,2020-01-01
+CTR-2023-000052-BOQ-0336,CTR-2023-000052,12.6.11,Electrical Works,11,MAT-00000228,Car team nothing half raise several.,CUM,229,139.34,31908.86,78,34.1,False,,DELETED,,True,,2020-04-27
+CTR-2023-000052-BOQ-0337,CTR-2023-000052,12.1.12,Electrical Works,12,MAT-00000482,Admit attack energy always.,MT,888,242.77,215579.76,594,66.9,False,,ACTIVE,,True,,2023-04-13
+CTR-2023-000052-BOQ-0338,CTR-2023-000052,12.5.13,Electrical Works,13,MAT-00000543,Short interest I policy Mrs check base.,SET,424,923.14,391411.36,77,18.2,True,We huge expert.,ACTIVE,,True,,2024-02-18
+CTR-2023-000052-BOQ-0339,CTR-2023-000052,12.6.14,Electrical Works,14,MAT-00000147,Force only shake power poor financial join.,BOX,884,215.51,190510.84,797,90.2,True,Memory data space.,ACTIVE,,True,Around beat its law participant.,2024-01-26
+CTR-2023-000052-BOQ-0340,CTR-2023-000052,12.4.15,Electrical Works,15,MAT-00000281,Program price compare actually case.,SET,780,56456.93,44036405.4,590,75.6,False,,ACTIVE,,True,,2023-10-25
+CTR-2024-000414-BOQ-0341,CTR-2024-000414,7.1.1,Piping,1,MAT-00000005,Clearly well mission.,MT,547,1051.84,575356.48,382,69.8,False,,DELETED,,True,Cold camera sit environmental though.,2019-01-17
+CTR-2024-000414-BOQ-0342,CTR-2024-000414,7.4.2,Piping,2,MAT-00000642,Friend investment model.,CUM,232,439.5,101964.0,88,37.9,False,,ACTIVE,,True,Republican office baby lawyer growth.,2019-07-07
+CTR-2024-000414-BOQ-0343,CTR-2024-000414,7.5.3,Piping,3,MAT-00000306,Teacher cold church significant thus purpose boy.,KG,467,3048.1,1423462.7,305,65.3,False,,ACTIVE,,True,,2024-06-30
+CTR-2024-000414-BOQ-0344,CTR-2024-000414,7.4.4,Piping,4,MAT-00000368,Use tax need trial.,SET,169,58484.93,9883953.17,103,60.9,True,Able teach activity animal hair turn.,ACTIVE,,True,Different eat trouble floor step number.,2024-08-28
+CTR-2024-000414-BOQ-0345,CTR-2024-000414,7.2.5,Piping,5,MAT-00000174,Maybe top conference source.,NOS,376,3066.34,1152943.84,19,5.1,False,,ACTIVE,,True,,2019-07-16
+CTR-2024-000414-BOQ-0346,CTR-2024-000414,7.2.6,Piping,6,MAT-00000678,West attention let.,RM,670,45266.18,30328340.6,49,7.3,False,,ACTIVE,,True,,2020-09-19
+CTR-2024-000414-BOQ-0347,CTR-2024-000414,7.1.7,Piping,7,MAT-00000211,Similar financial beat lead hard.,BOX,309,2003.5,619081.5,51,16.5,False,,ACTIVE,,True,,2020-03-05
+CTR-2020-000524-BOQ-0348,CTR-2020-000524,2.2.1,Insulation,1,MAT-00000290,Nor fight performance less option.,SET,804,349337.22,280867124.88,203,25.2,False,,REVISED,,False,,2023-08-06
+CTR-2020-000524-BOQ-0349,CTR-2020-000524,2.3.2,Insulation,2,MAT-00000303,Young simply run national somebody character usually.,NOS,41,7681.05,314923.05,13,31.7,False,,ACTIVE,,True,Do get style.,2020-03-28
+CTR-2020-000524-BOQ-0350,CTR-2020-000524,2.10.3,Insulation,3,MAT-00000856,Week ability price.,SQM,686,194.51,133433.86,92,13.4,False,,ACTIVE,,False,,2024-02-14
+CTR-2020-000524-BOQ-0351,CTR-2020-000524,2.5.4,Insulation,4,MAT-00000304,Billion morning draw man art.,NOS,476,30838.66,14679202.16,416,87.4,False,,ACTIVE,,False,,2020-04-19
+CTR-2020-000524-BOQ-0352,CTR-2020-000524,2.1.5,Insulation,5,MAT-00000098,Republican behavior TV today.,BAG,10,409.29,4092.9,10,100.0,False,,ACTIVE,,False,,2020-01-16
+CTR-2020-000524-BOQ-0353,CTR-2020-000524,2.6.6,Insulation,6,MAT-00000382,Including time learn security oil measure PM.,BAG,188,140.01,26321.88,102,54.3,False,,ACTIVE,,False,,2020-11-14
+CTR-2020-000524-BOQ-0354,CTR-2020-000524,2.3.7,Insulation,7,MAT-00000116,Surface unit hotel story for.,MONTH,713,285719.82,203718231.66,163,22.9,True,Avoid nothing itself who door.,ON_HOLD,,True,,2023-04-05
+CTR-2020-000524-BOQ-0355,CTR-2020-000524,2.6.8,Insulation,8,MAT-00000798,Evening avoid dark sister once choice clearly.,HR,627,2145.15,1345009.05,133,21.2,False,,ACTIVE,,True,Finish building group show later leg system.,2022-07-11
+CTR-2020-000524-BOQ-0356,CTR-2020-000524,2.9.9,Insulation,9,MAT-00000013,Citizen rather step recent.,NOS,786,663208.61,521281967.46,741,94.3,False,,ON_HOLD,,True,,2020-01-26
+CTR-2020-000524-BOQ-0357,CTR-2020-000524,2.4.10,Insulation,10,MAT-00000444,Democrat task chance.,JOINT,494,1821.13,899638.22,346,70.0,False,,ACTIVE,,False,,2019-02-17
+CTR-2020-000524-BOQ-0358,CTR-2020-000524,2.3.11,Insulation,11,MAT-00000659,Why how any federal star.,MT,518,1761.49,912451.82,507,97.9,False,,ACTIVE,,True,,2019-07-26
+CTR-2020-000524-BOQ-0359,CTR-2020-000524,2.4.12,Insulation,12,MAT-00000520,All identify laugh security.,JOINT,564,252.92,142646.88,412,73.0,False,,ACTIVE,,True,Behind big soldier building article.,2024-08-03
+CTR-2019-000458-BOQ-0360,CTR-2019-000458,8.1.1,Earthworks,1,MAT-00000764,Candidate statement head piece popular.,KG,106,2734.8,289888.8,4,3.8,False,,ACTIVE,VO-039,False,,2024-09-13
+CTR-2019-000458-BOQ-0361,CTR-2019-000458,8.4.2,Earthworks,2,MAT-00000576,Only true avoid young cup position speak begin.,BAG,671,609.95,409276.45,349,52.0,False,,ACTIVE,,True,,2024-04-21
+CTR-2019-000458-BOQ-0362,CTR-2019-000458,8.6.3,Earthworks,3,MAT-00000734,Business walk anything under item right.,BAG,734,167.48,122930.32,99,13.5,False,,ACTIVE,,False,,2022-04-10
+CTR-2019-000458-BOQ-0363,CTR-2019-000458,8.9.4,Earthworks,4,MAT-00000561,Ahead raise common Democrat cost evidence third.,NOS,383,1103.96,422816.68,23,6.0,False,,ACTIVE,,False,,2021-11-07
+CTR-2019-000458-BOQ-0364,CTR-2019-000458,8.4.5,Earthworks,5,MAT-00000626,Pass pay positive.,BOX,193,731.47,141173.71,100,51.8,False,,REVISED,,True,,2019-07-10
+CTR-2019-000458-BOQ-0365,CTR-2019-000458,8.10.6,Earthworks,6,MAT-00000949,Include nearly article evidence case current this.,MT,127,2160.71,274410.17,115,90.6,False,,ACTIVE,,False,Eat yes myself affect him require look.,2019-07-18
+CTR-2022-000567-BOQ-0366,CTR-2022-000567,10.9.1,Instrumentation,1,MAT-00000495,General not focus establish ago others ahead.,SET,800,2155.63,1724504.0,181,22.6,False,,ACTIVE,,True,,2022-08-11
+CTR-2022-000567-BOQ-0367,CTR-2022-000567,10.7.2,Instrumentation,2,MAT-00000517,Around yard morning short yourself.,KG,429,6676.4,2864175.6,354,82.5,False,,ACTIVE,,False,,2020-06-30
+CTR-2022-000567-BOQ-0368,CTR-2022-000567,10.7.3,Instrumentation,3,MAT-00000142,Beyond prevent entire staff.,MT,617,1215.09,749710.53,524,84.9,False,,ACTIVE,,False,,2021-06-09
+CTR-2022-000567-BOQ-0369,CTR-2022-000567,10.4.4,Instrumentation,4,MAT-00000206,Shake way offer work.,SET,640,437876.68,280241075.2,353,55.2,False,,ACTIVE,,False,,2022-08-13
+CTR-2022-000567-BOQ-0370,CTR-2022-000567,10.2.5,Instrumentation,5,MAT-00000728,Great stuff suddenly compare or south.,MONTH,780,348128.24,271540027.2,491,62.9,False,,ON_HOLD,,True,,2024-12-26
+CTR-2022-000567-BOQ-0371,CTR-2022-000567,10.7.6,Instrumentation,6,MAT-00000293,Way student special wife my compare also.,SET,828,27446.63,22725809.64,109,13.2,True,Trial agreement red way nor.,ACTIVE,,True,,2020-10-21
+CTR-2022-000567-BOQ-0372,CTR-2022-000567,10.5.7,Instrumentation,7,MAT-00000294,Discussion despite money a.,NOS,150,2309.21,346381.5,75,50.0,False,,ACTIVE,,True,,2021-07-07
+CTR-2022-000567-BOQ-0373,CTR-2022-000567,10.9.8,Instrumentation,8,MAT-00000761,Cut candidate response try such food against only.,MT,399,19.26,7684.74,356,89.2,False,,ACTIVE,,True,,2022-07-04
+CTR-2022-000567-BOQ-0374,CTR-2022-000567,10.9.9,Instrumentation,9,MAT-00000990,Similar suffer team whether.,CUM,56,27.46,1537.76,16,28.6,False,,DELETED,,True,,2023-02-15
+CTR-2022-000567-BOQ-0375,CTR-2022-000567,10.10.10,Instrumentation,10,MAT-00000774,Relate product only from follow wish.,SET,560,14527.77,8135551.2,201,35.9,False,,ON_HOLD,,True,,2021-02-04
+CTR-2022-000567-BOQ-0376,CTR-2022-000567,10.3.11,Instrumentation,11,MAT-00000986,Skin development open compare fill read camera rock.,SET,753,27670.51,20835894.03,386,51.3,True,Social whether power company why.,ACTIVE,,True,,2019-01-24
+CTR-2022-000567-BOQ-0377,CTR-2022-000567,10.8.12,Instrumentation,12,MAT-00000339,Hot yes whole allow own TV whose.,SET,727,71520.96,51995737.92,40,5.5,False,,ACTIVE,VO-041,True,,2024-07-02
+CTR-2022-000567-BOQ-0378,CTR-2022-000567,10.10.13,Instrumentation,13,MAT-00000809,Policy bit many former back.,SET,564,68496.98,38632296.72,325,57.6,False,,ON_HOLD,,False,,2023-07-11
+CTR-2022-000567-BOQ-0379,CTR-2022-000567,10.6.14,Instrumentation,14,MAT-00000095,Word collection those become remember police.,CUM,227,172.55,39168.85,169,74.4,False,,ACTIVE,,False,,2019-02-06
+CTR-2022-000567-BOQ-0380,CTR-2022-000567,10.6.15,Instrumentation,15,MAT-00000118,Land enter economic attack either blue.,CUM,457,169.07,77264.99,328,71.8,False,,ACTIVE,,True,,2020-04-09
+CTR-2019-000396-BOQ-0381,CTR-2019-000396,12.1.1,Painting & Coatings,1,MAT-00000290,Answer just information.,SET,934,438637.19,409687135.46,788,84.4,False,,REVISED,,True,,2021-02-27
+CTR-2019-000396-BOQ-0382,CTR-2019-000396,12.9.2,Painting & Coatings,2,MAT-00000329,This manage her national.,NOS,85,88675.54,7537420.9,21,24.7,False,,REVISED,,True,,2021-05-23
+CTR-2019-000396-BOQ-0383,CTR-2019-000396,12.7.3,Painting & Coatings,3,MAT-00000886,Stock small official serve.,BAG,856,474.36,406052.16,550,64.3,False,,DELETED,,True,,2019-10-23
+CTR-2019-000396-BOQ-0384,CTR-2019-000396,12.3.4,Painting & Coatings,4,MAT-00000765,End bit game thousand claim avoid.,BAG,25,419.83,10495.75,10,40.0,True,Class available suffer far.,ACTIVE,,True,Full world throw relate.,2021-07-21
+CTR-2019-000396-BOQ-0385,CTR-2019-000396,12.5.5,Painting & Coatings,5,MAT-00000933,Wall close threat church big day.,SET,418,27557.94,11519218.92,322,77.0,False,,ACTIVE,,True,Important never understand music produce.,2019-09-17
+CTR-2024-000775-BOQ-0386,CTR-2024-000775,1.2.1,Insulation,1,MAT-00000718,Down anyone occur style child.,SET,367,48515.5,17805188.5,54,14.7,False,,ACTIVE,,True,,2023-04-12
+CTR-2024-000775-BOQ-0387,CTR-2024-000775,1.1.2,Insulation,2,MAT-00000405,Agent color factor bank.,JOINT,486,598.34,290793.24,112,23.0,True,About because station person lose.,ACTIVE,,True,,2020-08-13
+CTR-2024-000775-BOQ-0388,CTR-2024-000775,1.6.3,Insulation,3,MAT-00000306,Final however major produce.,KG,981,3351.34,3287664.54,566,57.7,False,,ACTIVE,VO-037,True,,2019-12-15
+CTR-2024-000775-BOQ-0389,CTR-2024-000775,1.4.4,Insulation,4,MAT-00000313,Politics hold he high.,BOX,767,1586.26,1216661.42,743,96.9,False,,ACTIVE,,True,,2021-06-23
+CTR-2024-000775-BOQ-0390,CTR-2024-000775,1.5.5,Insulation,5,MAT-00000632,Knowledge enjoy let difficult.,MT,199,1595.36,317476.64,171,85.9,False,,DELETED,,False,,2024-03-04
+CTR-2024-000775-BOQ-0391,CTR-2024-000775,1.9.6,Insulation,6,MAT-00000661,Nor character recent benefit property.,SET,75,57913.47,4343510.25,8,10.7,False,,ACTIVE,,False,,2021-08-18
+CTR-2024-000775-BOQ-0392,CTR-2024-000775,1.5.7,Insulation,7,MAT-00000103,Including series dinner article hit mission whole.,NOS,635,22019.51,13982388.85,198,31.2,False,,ACTIVE,,True,,2023-02-01
+CTR-2024-000775-BOQ-0393,CTR-2024-000775,1.6.8,Insulation,8,MAT-00000828,Of dog federal house take alone number.,RM,982,58283.1,57234004.2,4,0.4,False,,REVISED,,True,,2023-01-12
+CTR-2024-000775-BOQ-0394,CTR-2024-000775,1.6.9,Insulation,9,MAT-00000138,Song quality per build serious common worker.,CUM,899,462.95,416192.05,456,50.7,False,,ACTIVE,,True,,2022-02-23
+CTR-2024-000775-BOQ-0395,CTR-2024-000775,1.3.10,Insulation,10,MAT-00000880,Speak call interest write itself.,DAY,913,441991.81,403538522.53,269,29.5,False,,ACTIVE,,False,,2019-05-08
+CTR-2024-000775-BOQ-0396,CTR-2024-000775,1.10.11,Insulation,11,MAT-00000833,Challenge organization floor road southern beautiful news need.,SET,593,84318.03,50000591.79,217,36.6,False,,ACTIVE,,False,,2020-08-31
+CTR-2024-000775-BOQ-0397,CTR-2024-000775,1.7.12,Insulation,12,MAT-00000375,Mind true actually red onto.,MT,229,54.77,12542.33,150,65.5,False,,ACTIVE,,True,,2024-08-18
+CTR-2021-000011-BOQ-0398,CTR-2021-000011,10.3.1,Steel Structures,1,MAT-00000701,Both change note old who beyond.,NOS,776,5137.98,3987072.48,456,58.8,False,,ACTIVE,,False,,2024-06-03
+CTR-2021-000011-BOQ-0399,CTR-2021-000011,10.6.2,Steel Structures,2,MAT-00000962,None big experience movie.,NOS,42,1111.83,46696.86,31,73.8,False,,ACTIVE,,True,,2023-01-19
+CTR-2021-000011-BOQ-0400,CTR-2021-000011,10.8.3,Steel Structures,3,MAT-00000398,Every century participant really.,NOS,940,797.4,749556.0,47,5.0,True,There enough pressure occur list.,ACTIVE,,False,,2022-01-25
+CTR-2021-000011-BOQ-0401,CTR-2021-000011,10.5.4,Steel Structures,4,MAT-00000855,How these real.,MT,593,2732.61,1620437.73,178,30.0,False,,ACTIVE,,False,Second TV today.,2021-10-27
+CTR-2021-000011-BOQ-0402,CTR-2021-000011,10.4.5,Steel Structures,5,MAT-00000386,Full soldier financial.,RM,529,2099.77,1110778.33,353,66.7,False,,ACTIVE,,True,,2020-11-09
+CTR-2021-000011-BOQ-0403,CTR-2021-000011,10.2.6,Steel Structures,6,MAT-00000236,Teach range win direction feel season similar.,NOS,527,22855.13,12044653.51,216,41.0,False,,ACTIVE,,False,,2023-08-26
+CTR-2021-000011-BOQ-0404,CTR-2021-000011,10.6.7,Steel Structures,7,MAT-00000831,Especially indicate population could deep station.,JOINT,738,1387.26,1023797.88,691,93.6,False,,ACTIVE,,False,Service test start middle city find medical.,2019-06-26
+CTR-2021-000011-BOQ-0405,CTR-2021-000011,10.10.8,Steel Structures,8,MAT-00000131,Cover strategy student economic.,SET,607,8707.36,5285367.52,524,86.3,True,Sister modern notice.,ACTIVE,VO-017,False,,2023-07-19
+CTR-2021-000011-BOQ-0406,CTR-2021-000011,10.10.9,Steel Structures,9,MAT-00000614,Anything growth current happy less however type.,SET,653,29223.63,19083030.39,290,44.4,False,,ACTIVE,,True,,2021-06-17
+CTR-2021-000011-BOQ-0407,CTR-2021-000011,10.7.10,Steel Structures,10,MAT-00000851,Drop major land.,JOINT,616,1855.46,1142963.36,596,96.8,False,,ACTIVE,,True,,2022-11-04
+CTR-2021-000011-BOQ-0408,CTR-2021-000011,10.8.11,Steel Structures,11,MAT-00000945,Only glass clear thus see read expect.,SET,611,4356.8,2662004.8,235,38.5,False,,ACTIVE,VO-034,False,,2023-09-16
+CTR-2024-000847-BOQ-0409,CTR-2024-000847,2.8.1,Insulation,1,MAT-00000182,Anyone take sister Democrat determine different.,JOINT,924,2078.91,1920912.84,39,4.2,False,,ACTIVE,,True,,2019-01-05
+CTR-2024-000847-BOQ-0410,CTR-2024-000847,2.7.2,Insulation,2,MAT-00000919,Especially important after sister should.,JOINT,535,2078.55,1112024.25,44,8.2,False,,ACTIVE,,True,,2022-12-06
+CTR-2024-000847-BOQ-0411,CTR-2024-000847,2.10.3,Insulation,3,MAT-00000604,Listen car community.,KG,101,2812.22,284034.22,32,31.7,False,,ACTIVE,,True,,2023-08-01
+CTR-2024-000264-BOQ-0412,CTR-2024-000264,12.1.1,General Requirements,1,MAT-00000762,Interest heavy give edge level.,JOINT,592,1468.63,869428.96,532,89.9,True,Difference part wall.,ACTIVE,,True,,2020-09-25
+CTR-2024-000264-BOQ-0413,CTR-2024-000264,12.10.2,General Requirements,2,MAT-00000437,Station however bill memory production successful hear.,NOS,260,62032.71,16128504.6,216,83.1,False,,ACTIVE,,True,,2024-05-30
+CTR-2024-000264-BOQ-0414,CTR-2024-000264,12.6.3,General Requirements,3,MAT-00000184,Participant fear blue as write political technology end.,KG,573,3446.18,1974661.14,259,45.2,False,,ACTIVE,,True,,2020-05-02
+CTR-2024-000264-BOQ-0415,CTR-2024-000264,12.4.4,General Requirements,4,MAT-00000766,Identify floor cause agent market fast trade identify.,NOS,458,35994.18,16485334.44,82,17.9,True,Could military drive arm.,ACTIVE,,False,,2019-08-02
+CTR-2020-000165-BOQ-0416,CTR-2020-000165,1.2.1,Civil Works,1,MAT-00000824,On yes staff.,BBL,844,152.2,128456.8,614,72.7,False,,ACTIVE,,True,Risk develop movement size trade public.,2023-04-24
+CTR-2020-000165-BOQ-0417,CTR-2020-000165,1.7.2,Civil Works,2,MAT-00000954,Feel color price next family likely scientist.,NOS,629,49036.31,30843838.99,293,46.6,False,,ACTIVE,,False,,2023-12-04
+CTR-2020-000165-BOQ-0418,CTR-2020-000165,1.4.3,Civil Works,3,MAT-00000011,Several consumer quite friend become great season.,RM,871,12555.8,10936101.8,823,94.5,False,,ACTIVE,,True,,2020-11-25
+CTR-2020-000165-BOQ-0419,CTR-2020-000165,1.1.4,Civil Works,4,MAT-00000691,Inside thought he one less.,SQM,369,197.71,72954.99,0,0.0,False,,ACTIVE,,True,,2023-07-19
+CTR-2020-000165-BOQ-0420,CTR-2020-000165,1.4.5,Civil Works,5,MAT-00000601,Like term on want.,RM,531,1726.95,917010.45,70,13.2,False,,ACTIVE,,True,,2022-11-24
+CTR-2020-000165-BOQ-0421,CTR-2020-000165,1.5.6,Civil Works,6,MAT-00000987,Line create build quite.,SQM,232,241.87,56113.84,49,21.1,False,,ACTIVE,VO-012,True,,2019-10-24
+CTR-2020-000165-BOQ-0422,CTR-2020-000165,1.5.7,Civil Works,7,MAT-00000516,Fear approach take case customer important notice.,RM,349,1668.18,582194.82,262,75.1,False,,DELETED,,True,,2023-03-25
+CTR-2019-000577-BOQ-0423,CTR-2019-000577,6.8.1,Steel Structures,1,MAT-00000985,Century television Congress ball forward would finish.,NOS,698,14423.75,10067777.5,600,86.0,False,,ACTIVE,,True,,2021-06-21
+CTR-2019-000577-BOQ-0424,CTR-2019-000577,6.4.2,Steel Structures,2,MAT-00000694,Above event seven collection.,LTR,820,3892.28,3191669.6,361,44.0,False,,ACTIVE,,True,Majority shake because pass.,2022-11-01
+CTR-2019-000577-BOQ-0425,CTR-2019-000577,6.9.3,Steel Structures,3,MAT-00000078,Idea whole himself also current health.,JOINT,954,1946.92,1857361.68,321,33.6,False,,DELETED,,False,,2021-02-17
+CTR-2019-000577-BOQ-0426,CTR-2019-000577,6.4.4,Steel Structures,4,MAT-00000511,Throughout series most.,HR,241,1466.2,353354.2,223,92.5,False,,ACTIVE,,False,,2020-03-12
+CTR-2019-000577-BOQ-0427,CTR-2019-000577,6.2.5,Steel Structures,5,MAT-00000123,Quality phone eat.,SET,693,2310.37,1601086.41,504,72.7,False,,REVISED,,True,,2022-07-15
+CTR-2019-000577-BOQ-0428,CTR-2019-000577,6.10.6,Steel Structures,6,MAT-00000505,Fine bill me fill assume animal.,SET,890,912.7,812303.0,187,21.0,False,,ON_HOLD,,True,,2019-08-10
+CTR-2019-000577-BOQ-0429,CTR-2019-000577,6.7.7,Steel Structures,7,MAT-00000539,Lay minute model its rather.,CUM,490,475.92,233200.8,16,3.3,False,,ACTIVE,,True,,2024-10-23
+CTR-2019-000577-BOQ-0430,CTR-2019-000577,6.6.8,Steel Structures,8,MAT-00000472,Garden top grow could.,GAL,706,118.81,83879.86,690,97.7,False,,ACTIVE,,True,,2021-12-12
+CTR-2022-000243-BOQ-0431,CTR-2022-000243,10.6.1,Piping,1,MAT-00000352,Affect difference world deep against mean.,BOX,189,1370.3,258986.7,53,28.0,False,,REVISED,,True,,2020-06-21
+CTR-2022-000243-BOQ-0432,CTR-2022-000243,10.4.2,Piping,2,MAT-00000590,Hand practice also theory.,DRUM,834,3435.14,2864906.76,276,33.1,False,,ACTIVE,,True,,2020-09-04
+CTR-2022-000243-BOQ-0433,CTR-2022-000243,10.1.3,Piping,3,MAT-00000485,Side perhaps order answer blue.,MONTH,181,537550.58,97296654.98,34,18.8,False,,REVISED,,False,,2022-05-13
+CTR-2022-000243-BOQ-0434,CTR-2022-000243,10.9.4,Piping,4,MAT-00000257,Natural listen check receive.,NOS,880,72548.53,63842706.4,407,46.2,True,Answer break know.,ACTIVE,,True,,2020-01-30
+CTR-2022-000243-BOQ-0435,CTR-2022-000243,10.6.5,Piping,5,MAT-00000461,Act inside big minute performance red industry together.,SET,267,27145.33,7247803.11,131,49.1,False,,ACTIVE,,True,,2020-12-15
+CTR-2022-000800-BOQ-0436,CTR-2022-000800,6.9.1,Electrical Works,1,MAT-00000690,Responsibility brother box blood cup current enjoy.,LTR,500,263.93,131965.0,228,45.6,False,,ACTIVE,,True,,2020-11-17
+CTR-2022-000800-BOQ-0437,CTR-2022-000800,6.6.2,Electrical Works,2,MAT-00000656,Win group important civil nature travel read.,MT,432,2107.79,910565.28,292,67.6,False,,ON_HOLD,VO-022,True,,2022-04-08
+CTR-2022-000800-BOQ-0438,CTR-2022-000800,6.5.3,Electrical Works,3,MAT-00000728,Former able public trade structure protect chance.,MONTH,620,403086.06,249913357.2,277,44.7,False,,REVISED,,False,,2024-01-19
+CTR-2022-000800-BOQ-0439,CTR-2022-000800,6.3.4,Electrical Works,4,MAT-00000424,Single avoid rich toward.,CUM,189,188.76,35675.64,32,16.9,False,,ACTIVE,,False,Lead with enough anyone spend.,2020-11-14
+CTR-2022-000800-BOQ-0440,CTR-2022-000800,6.2.5,Electrical Works,5,MAT-00000407,System growth quality.,SET,98,159656.89,15646375.22,60,61.2,False,,ACTIVE,,False,School believe serve animal system professional.,2021-12-11
+CTR-2019-000633-BOQ-0441,CTR-2019-000633,11.7.1,Earthworks,1,MAT-00000954,Forget thus western environmental.,NOS,317,39329.48,12467445.16,145,45.7,False,,ACTIVE,,True,Head garden box hundred.,2023-01-01
+CTR-2019-000633-BOQ-0442,CTR-2019-000633,11.6.2,Earthworks,2,MAT-00000882,Even history surface son power someone both.,KG,885,3338.67,2954722.95,553,62.5,False,,ACTIVE,,False,,2024-02-14
+CTR-2019-000633-BOQ-0443,CTR-2019-000633,11.10.3,Earthworks,3,MAT-00000647,Word such billion treat.,NOS,446,2501.32,1115588.72,327,73.3,False,,ON_HOLD,,True,Soon question consider here grow agreement range.,2022-06-15
+CTR-2022-000375-BOQ-0444,CTR-2022-000375,3.1.1,Mechanical Works,1,MAT-00000311,Low maintain thought key.,NOS,1,3303.16,3303.16,0,0.0,False,,ACTIVE,VO-032,False,,2019-02-07
+CTR-2022-000375-BOQ-0445,CTR-2022-000375,3.7.2,Mechanical Works,2,MAT-00000785,Energy fire relate question.,SET,818,82807.17,67736265.06,236,28.9,False,,ACTIVE,,False,,2021-10-20
+CTR-2022-000375-BOQ-0446,CTR-2022-000375,3.7.3,Mechanical Works,3,MAT-00000168,Believe product eat generation put his stuff next.,CUM,849,514.17,436530.33,269,31.7,True,Rich difference what their mind read.,ACTIVE,,False,,2022-01-18
+CTR-2022-000375-BOQ-0447,CTR-2022-000375,3.9.4,Mechanical Works,4,MAT-00000292,Approach poor church support system thank avoid man.,DAY,829,3344.38,2772491.02,192,23.2,False,,ACTIVE,,True,,2022-01-19
+CTR-2022-000375-BOQ-0448,CTR-2022-000375,3.10.5,Mechanical Works,5,MAT-00000718,Former everything medical nearly her.,SET,504,33724.19,16996991.76,9,1.8,False,,ON_HOLD,VO-007,True,,2023-12-01
+CTR-2022-000375-BOQ-0449,CTR-2022-000375,3.1.6,Mechanical Works,6,MAT-00000745,Bad know of because material.,SET,239,235305.96,56238124.44,3,1.3,False,,ACTIVE,,False,,2024-03-14
+CTR-2022-000375-BOQ-0450,CTR-2022-000375,3.1.7,Mechanical Works,7,MAT-00000714,Near stay social white point three none.,JOINT,339,66.47,22533.33,74,21.8,True,Budget market president bill include.,REVISED,VO-031,True,,2021-10-21
+CTR-2019-000837-BOQ-0451,CTR-2019-000837,2.4.1,General Requirements,1,MAT-00000998,Wear guy approach development lawyer nice people.,KG,395,2370.08,936181.6,226,57.2,False,,ON_HOLD,,False,Respond guy laugh best probably able great.,2021-05-03
+CTR-2019-000837-BOQ-0452,CTR-2019-000837,2.7.2,General Requirements,2,MAT-00000485,Natural hear blood to manage.,MONTH,698,688531.22,480594791.56,330,47.3,False,,ACTIVE,,True,,2024-05-25
+CTR-2019-000837-BOQ-0453,CTR-2019-000837,2.5.3,General Requirements,3,MAT-00000654,Blood particularly could us hotel lead.,JOINT,204,1921.2,391924.8,13,6.4,False,,ACTIVE,,True,,2020-11-16
+CTR-2019-000837-BOQ-0454,CTR-2019-000837,2.5.4,General Requirements,4,MAT-00000814,But through leader operation mean white above save.,MONTH,599,4144.95,2482825.05,248,41.4,True,Response blue increase unit.,ACTIVE,,True,,2023-03-02
+CTR-2019-000837-BOQ-0455,CTR-2019-000837,2.2.5,General Requirements,5,MAT-00000790,Very stuff lot meet TV concern official.,NOS,255,1327.13,338418.15,46,18.0,False,,ACTIVE,,False,Billion price paper focus.,2022-12-27
+CTR-2019-000837-BOQ-0456,CTR-2019-000837,2.3.6,General Requirements,6,MAT-00000661,Wife laugh card include record security.,SET,719,65859.94,47353296.86,109,15.2,True,Industry participant realize eat huge.,ACTIVE,,False,,2023-12-02
+CTR-2019-000837-BOQ-0457,CTR-2019-000837,2.4.7,General Requirements,7,MAT-00000751,Successful natural finish say network.,NOS,22,35484.21,780652.62,11,50.0,False,,ACTIVE,VO-046,True,,2024-06-30
+CTR-2023-000195-BOQ-0458,CTR-2023-000195,9.6.1,Concrete Works,1,MAT-00000357,Cut person fact generation public.,HR,750,2295.97,1721977.5,613,81.7,False,,ACTIVE,VO-010,True,,2023-02-12
+CTR-2023-000195-BOQ-0459,CTR-2023-000195,9.1.2,Concrete Works,2,MAT-00000465,Mean reason follow break.,NOS,795,1280.71,1018164.45,388,48.8,False,,DELETED,,True,,2022-08-06
+CTR-2023-000195-BOQ-0460,CTR-2023-000195,9.2.3,Concrete Works,3,MAT-00000739,No old wall report purpose throw.,NOS,675,52733.13,35594862.75,396,58.7,False,,ACTIVE,,True,,2023-08-06
+CTR-2023-000195-BOQ-0461,CTR-2023-000195,9.6.4,Concrete Works,4,MAT-00000657,Customer seek claim expert.,RM,114,1859.45,211977.3,84,73.7,True,Experience suggest space mission agent certainly.,REVISED,,False,,2024-06-11
+CTR-2023-000195-BOQ-0462,CTR-2023-000195,9.2.5,Concrete Works,5,MAT-00000197,Chair artist six daughter must.,NOS,33,66847.7,2205974.1,24,72.7,False,,ACTIVE,,True,,2019-10-18
+CTR-2023-000195-BOQ-0463,CTR-2023-000195,9.4.6,Concrete Works,6,MAT-00000014,Sport bill test science ten score.,BOX,672,1142.5,767760.0,81,12.1,False,,ACTIVE,,False,,2023-02-20
+CTR-2023-000195-BOQ-0464,CTR-2023-000195,9.1.7,Concrete Works,7,MAT-00000814,Hold what wish fine need actually.,MONTH,844,5417.58,4572437.52,541,64.1,True,Home memory someone receive realize another.,ACTIVE,,False,,2020-02-02
+CTR-2023-000195-BOQ-0465,CTR-2023-000195,9.4.8,Concrete Works,8,MAT-00000104,Data than team kitchen difficult.,SQM,545,205.32,111899.4,197,36.1,False,,ACTIVE,,True,,2023-08-28
+CTR-2023-000195-BOQ-0466,CTR-2023-000195,9.2.9,Concrete Works,9,MAT-00000765,Sense national owner simply who family.,BAG,785,458.27,359741.95,366,46.6,False,,ACTIVE,,True,,2023-07-03
+CTR-2023-000195-BOQ-0467,CTR-2023-000195,9.6.10,Concrete Works,10,MAT-00000517,Work avoid while same.,KG,674,4464.87,3009322.38,614,91.1,False,,ACTIVE,,False,,2023-03-03
+CTR-2022-000423-BOQ-0468,CTR-2022-000423,7.6.1,Civil Works,1,MAT-00000846,Help investment news candidate.,RM,624,63344.46,39526943.04,558,89.4,False,,REVISED,,True,,2024-01-07
+CTR-2022-000423-BOQ-0469,CTR-2022-000423,7.7.2,Civil Works,2,MAT-00000983,Suffer accept letter visit always up others similar.,MT,1,146.47,146.47,1,100.0,False,,ACTIVE,,True,,2021-06-27
+CTR-2022-000423-BOQ-0470,CTR-2022-000423,7.6.3,Civil Works,3,MAT-00000220,Past product make of group six fish detail.,SET,23,4441.61,102157.03,22,95.7,False,,ON_HOLD,,True,,2020-01-22
+CTR-2022-000423-BOQ-0471,CTR-2022-000423,7.8.4,Civil Works,4,MAT-00000039,Minute skill city myself.,SQM,365,78.67,28714.55,135,37.0,False,,ACTIVE,,False,Begin determine degree forward guess despite.,2023-06-26
+CTR-2022-000423-BOQ-0472,CTR-2022-000423,7.4.5,Civil Works,5,MAT-00000583,Most you statement wonder across protect knowledge toward.,SET,752,70965.05,53365717.6,332,44.1,False,,ACTIVE,,True,,2020-01-26
+CTR-2022-000423-BOQ-0473,CTR-2022-000423,7.5.6,Civil Works,6,MAT-00000610,Truth during always those high someone box either.,NOS,39,41112.81,1603399.59,36,92.3,False,,REVISED,,True,,2023-11-14
+CTR-2022-000423-BOQ-0474,CTR-2022-000423,7.2.7,Civil Works,7,MAT-00000427,Agency might side method meet.,RM,891,10056.53,8960368.23,765,85.9,False,,ACTIVE,VO-050,True,Analysis together court message way cold what.,2024-11-17
+CTR-2022-000423-BOQ-0475,CTR-2022-000423,7.6.8,Civil Works,8,MAT-00000043,Mouth phone decision picture defense rate structure.,PKT,553,207.3,114636.9,334,60.4,False,,ACTIVE,VO-047,False,,2024-08-29
+CTR-2022-000423-BOQ-0476,CTR-2022-000423,7.4.9,Civil Works,9,MAT-00000093,Section child learn forward.,CUM,443,458.11,202942.73,201,45.4,True,Mrs reflect wish simple.,ACTIVE,,False,,2021-12-11
+CTR-2022-000423-BOQ-0477,CTR-2022-000423,7.7.10,Civil Works,10,MAT-00000088,Available concern edge audience.,NOS,514,427253.74,219608422.36,133,25.9,False,,ACTIVE,,True,,2024-11-17
+CTR-2022-000423-BOQ-0478,CTR-2022-000423,7.4.11,Civil Works,11,MAT-00000253,Treat imagine later identify first.,JOINT,74,415.68,30760.32,55,74.3,False,,ON_HOLD,VO-043,True,,2021-02-19
+CTR-2022-000423-BOQ-0479,CTR-2022-000423,7.6.12,Civil Works,12,MAT-00000329,Pull movement political peace series one.,NOS,609,78070.1,47544690.9,312,51.2,False,,ACTIVE,,False,,2023-12-10
+CTR-2022-000423-BOQ-0480,CTR-2022-000423,7.4.13,Civil Works,13,MAT-00000046,Group me face rate.,DAY,205,3643.55,746927.75,39,19.0,False,,DELETED,,True,,2020-08-27
+CTR-2022-000890-BOQ-0481,CTR-2022-000890,1.2.1,Mechanical Works,1,MAT-00000352,Beat she join house produce listen mouth carry.,BOX,313,1336.91,418452.83,11,3.5,False,,ACTIVE,,True,,2024-06-01
+CTR-2022-000890-BOQ-0482,CTR-2022-000890,1.3.2,Mechanical Works,2,MAT-00000638,Someone support far plant fear thought.,CUM,712,126.16,89825.92,18,2.5,False,,ON_HOLD,,True,Whatever action themselves center among of.,2021-04-02
+CTR-2022-000890-BOQ-0483,CTR-2022-000890,1.10.3,Mechanical Works,3,MAT-00000809,Deep town surface central contain pattern.,SET,278,57253.36,15916434.08,4,1.4,True,Mr water fight security tough.,ACTIVE,,False,,2020-03-17
+CTR-2022-000890-BOQ-0484,CTR-2022-000890,1.5.4,Mechanical Works,4,MAT-00000020,Create consider son system surface.,NOS,889,143271.03,127367945.67,395,44.4,False,,ACTIVE,,True,,2024-12-17
+CTR-2022-000890-BOQ-0485,CTR-2022-000890,1.3.5,Mechanical Works,5,MAT-00000091,Leave near fact attack better rise maintain.,PKT,204,280.23,57166.92,117,57.4,False,,ACTIVE,VO-034,True,,2020-10-05
+CTR-2022-000890-BOQ-0486,CTR-2022-000890,1.6.6,Mechanical Works,6,MAT-00000019,Ground provide doctor expect attorney cover.,JOINT,701,2164.74,1517482.74,640,91.3,False,,ON_HOLD,,True,Late pattern figure once not hair first.,2021-11-21
+CTR-2022-000890-BOQ-0487,CTR-2022-000890,1.7.7,Mechanical Works,7,MAT-00000900,Collection finish size Republican political everybody.,MT,912,3201.52,2919786.24,30,3.3,False,,ON_HOLD,,True,,2020-07-16
+CTR-2022-000890-BOQ-0488,CTR-2022-000890,1.7.8,Mechanical Works,8,MAT-00000090,Care run there leg grow figure.,CUM,534,608.2,324778.8,232,43.4,False,,ACTIVE,,True,,2024-01-14
+CTR-2022-000890-BOQ-0489,CTR-2022-000890,1.3.9,Mechanical Works,9,MAT-00000556,Board population bank exactly step through cultural.,SET,212,88505.36,18763136.32,148,69.8,False,,REVISED,,True,,2024-11-15
+CTR-2022-000890-BOQ-0490,CTR-2022-000890,1.3.10,Mechanical Works,10,MAT-00000932,Defense already end thus music president chance hotel.,LTR,441,3591.81,1583988.21,394,89.3,True,Baby away affect medical all old if.,ON_HOLD,,True,,2020-04-29
+CTR-2022-000890-BOQ-0491,CTR-2022-000890,1.6.11,Mechanical Works,11,MAT-00000189,Summer southern pass coach method.,CUM,860,558.53,480335.8,744,86.5,True,Run fact let member however maybe.,ACTIVE,,False,,2022-01-26
+CTR-2022-000890-BOQ-0492,CTR-2022-000890,1.4.12,Mechanical Works,12,MAT-00000156,City not not the certainly rule voice.,SET,110,10111.4,1112254.0,3,2.7,False,,ACTIVE,,True,,2021-08-09
+CTR-2022-000890-BOQ-0493,CTR-2022-000890,1.1.13,Mechanical Works,13,MAT-00000237,Doctor protect military social hold truth.,MT,368,2194.22,807472.96,244,66.3,True,Despite maintain as.,REVISED,,True,,2023-05-07
+CTR-2022-000890-BOQ-0494,CTR-2022-000890,1.8.14,Mechanical Works,14,MAT-00000504,Plant event score official now heavy her.,NOS,141,1538.72,216959.52,57,40.4,True,Always possible billion.,REVISED,VO-018,False,,2021-04-10
+CTR-2024-000776-BOQ-0495,CTR-2024-000776,3.8.1,Earthworks,1,MAT-00000950,President structure might heavy trade might good test.,MT,888,3583.83,3182441.04,704,79.3,False,,ACTIVE,,True,Society thought according think key discover method.,2023-04-08
+CTR-2024-000776-BOQ-0496,CTR-2024-000776,3.6.2,Earthworks,2,MAT-00000738,Deep cost gun response brother.,SET,404,76096.97,30743175.88,380,94.1,False,,ACTIVE,,False,Increase form box push look.,2020-03-23
+CTR-2024-000776-BOQ-0497,CTR-2024-000776,3.8.3,Earthworks,3,MAT-00000463,Claim street against amount of claim picture always.,KG,847,2860.13,2422530.11,251,29.6,False,,ACTIVE,,True,,2019-07-21
+CTR-2024-000776-BOQ-0498,CTR-2024-000776,3.5.4,Earthworks,4,MAT-00000195,Chair coach two might if wide point.,KG,451,2533.17,1142459.67,155,34.4,False,,ACTIVE,,True,,2024-10-18
+CTR-2024-000926-BOQ-0499,CTR-2024-000926,11.2.1,Piping,1,MAT-00000463,Water describe paper likely loss.,KG,740,2406.52,1780824.8,184,24.9,False,,ON_HOLD,,True,,2024-01-21
+CTR-2024-000926-BOQ-0500,CTR-2024-000926,11.3.2,Piping,2,MAT-00000026,Store over some star consider.,BAG,465,600.78,279362.7,364,78.3,False,,DELETED,VO-021,True,,2020-11-02
+CTR-2024-000926-BOQ-0501,CTR-2024-000926,11.2.3,Piping,3,MAT-00000736,Enough right garden law opportunity discover history.,RM,94,1168.25,109815.5,57,60.6,False,,ACTIVE,,False,,2020-10-16
+CTR-2024-000388-BOQ-0502,CTR-2024-000388,1.3.1,Instrumentation,1,MAT-00000787,Admit mission training range.,NOS,935,79297.25,74142928.75,892,95.4,False,,ACTIVE,,True,,2023-09-15
+CTR-2024-000388-BOQ-0503,CTR-2024-000388,1.5.2,Instrumentation,2,MAT-00000316,Painting concern top outside.,MT,748,916.75,685729.0,456,61.0,False,,ACTIVE,,False,Me brother lot candidate owner still to.,2021-11-02
+CTR-2024-000388-BOQ-0504,CTR-2024-000388,1.8.3,Instrumentation,3,MAT-00000013,Miss have analysis morning director sort.,NOS,510,696252.59,355088820.9,278,54.5,False,,ACTIVE,,True,,2024-02-02
+CTR-2024-000388-BOQ-0505,CTR-2024-000388,1.8.4,Instrumentation,4,MAT-00000420,Go source traditional student office international.,KG,82,1668.02,136777.64,0,0.0,False,,ACTIVE,,True,,2019-07-20
+CTR-2024-000388-BOQ-0506,CTR-2024-000388,1.3.5,Instrumentation,5,MAT-00000190,Impact country remember smile official brother according.,RM,57,111936.81,6380398.17,2,3.5,True,Local discussion teacher exist.,ACTIVE,,True,,2019-12-26
+CTR-2024-000388-BOQ-0507,CTR-2024-000388,1.2.6,Instrumentation,6,MAT-00000051,Reach firm gun choice prepare.,BAG,427,509.14,217402.78,82,19.2,False,,ACTIVE,,True,,2020-12-27
+CTR-2024-000388-BOQ-0508,CTR-2024-000388,1.8.7,Instrumentation,7,MAT-00000990,Sense including six lot have never.,CUM,768,37.73,28976.64,36,4.7,True,End movie north partner.,ACTIVE,,True,Write officer similar huge catch.,2023-10-17
+CTR-2024-000388-BOQ-0509,CTR-2024-000388,1.9.8,Instrumentation,8,MAT-00000864,Beyond meet skill song.,NOS,67,343270.75,22999140.25,17,25.4,True,Security land record.,DELETED,,True,,2021-05-06
+CTR-2024-000388-BOQ-0510,CTR-2024-000388,1.1.9,Instrumentation,9,MAT-00000627,Recent religious claim who accept before certainly unit.,RM,112,696.15,77968.8,80,71.4,False,,ACTIVE,,True,,2022-03-22
+CTR-2024-000438-BOQ-0511,CTR-2024-000438,5.10.1,Electrical Works,1,MAT-00000539,Because enjoy he participant right us.,CUM,639,361.65,231094.35,132,20.7,False,,ACTIVE,,True,,2021-08-11
+CTR-2024-000438-BOQ-0512,CTR-2024-000438,5.5.2,Electrical Works,2,MAT-00000726,Pass minute represent our watch star.,JOINT,199,710.88,141465.12,6,3.0,False,,REVISED,,True,,2023-08-26
+CTR-2024-000438-BOQ-0513,CTR-2024-000438,5.1.3,Electrical Works,3,MAT-00000424,Keep cut prevent sound experience almost outside.,CUM,342,148.3,50718.6,326,95.3,False,,ACTIVE,,True,Recognize past purpose growth pretty wish beautiful.,2022-05-14
+CTR-2024-000438-BOQ-0514,CTR-2024-000438,5.9.4,Electrical Works,4,MAT-00000519,Sister good house only military.,KG,332,4070.48,1351399.36,58,17.5,False,,ACTIVE,,True,Try near risk next.,2020-12-20
+CTR-2024-000438-BOQ-0515,CTR-2024-000438,5.6.5,Electrical Works,5,MAT-00000199,Give white everybody paper create upon offer end.,NOS,854,2275.89,1943610.06,688,80.6,False,,ACTIVE,VO-009,True,,2022-10-04
+CTR-2024-000438-BOQ-0516,CTR-2024-000438,5.7.6,Electrical Works,6,MAT-00000474,Media next me future bring message.,BBL,951,25.34,24098.34,855,89.9,False,,ACTIVE,,True,Then spend offer reason whom.,2022-09-20
+CTR-2024-000438-BOQ-0517,CTR-2024-000438,5.6.7,Electrical Works,7,MAT-00000819,Low during fund simply race to television.,CUM,68,582.11,39583.48,35,51.5,False,,ACTIVE,,True,,2023-05-15
+CTR-2024-000438-BOQ-0518,CTR-2024-000438,5.10.8,Electrical Works,8,MAT-00000192,Break attack plant yes quality discover firm.,NOS,120,1746.33,209559.6,96,80.0,False,,DELETED,,True,Might act strategy eat behavior purpose.,2021-08-31
+CTR-2024-000438-BOQ-0519,CTR-2024-000438,5.8.9,Electrical Works,9,MAT-00000381,Away use live government thus especially.,BAG,850,465.48,395658.0,221,26.0,False,,ACTIVE,,True,,2020-01-15
+CTR-2024-000438-BOQ-0520,CTR-2024-000438,5.9.10,Electrical Works,10,MAT-00000455,Material current save their deal.,NOS,26,10788.06,280489.56,16,61.5,False,,ACTIVE,,False,,2022-09-02
+CTR-2023-000147-BOQ-0521,CTR-2023-000147,9.3.1,Earthworks,1,MAT-00000693,Strong student green single build.,SET,211,23484.31,4955189.41,117,55.5,False,,DELETED,,True,Put professional pass share.,2019-12-23
+CTR-2023-000147-BOQ-0522,CTR-2023-000147,9.8.2,Earthworks,2,MAT-00000342,When summer he firm together thing off.,NOS,911,67437.12,61435216.32,533,58.5,False,,ACTIVE,VO-049,True,,2022-08-07
+CTR-2023-000147-BOQ-0523,CTR-2023-000147,9.4.3,Earthworks,3,MAT-00000206,Make worker trouble exactly develop.,SET,294,351318.12,103287527.28,163,55.4,False,,ACTIVE,,True,,2024-10-06
+CTR-2023-000147-BOQ-0524,CTR-2023-000147,9.4.4,Earthworks,4,MAT-00000105,Campaign moment institution vote allow girl team.,BOX,556,358.92,199559.52,326,58.6,False,,ON_HOLD,,True,,2022-06-29
+CTR-2023-000147-BOQ-0525,CTR-2023-000147,9.6.5,Earthworks,5,MAT-00000628,Activity decision ok.,BAG,554,194.91,107980.14,133,24.0,True,Lead build million firm.,ON_HOLD,VO-025,True,,2021-01-03
+CTR-2023-000147-BOQ-0526,CTR-2023-000147,9.10.6,Earthworks,6,MAT-00000722,Gun technology cost enjoy especially when.,DAY,913,74913.57,68396089.41,856,93.8,False,,ACTIVE,,True,,2024-12-25
+CTR-2023-000147-BOQ-0527,CTR-2023-000147,9.8.7,Earthworks,7,MAT-00000081,Evidence conference capital office direction between.,BAG,582,104.15,60615.3,479,82.3,True,Hand material decision red head.,ACTIVE,,False,,2021-07-05
+CTR-2023-000147-BOQ-0528,CTR-2023-000147,9.10.8,Earthworks,8,MAT-00000148,Sound new task cultural son.,BBL,265,263.44,69811.6,200,75.5,False,,ON_HOLD,,False,,2024-06-19
+CTR-2023-000147-BOQ-0529,CTR-2023-000147,9.2.9,Earthworks,9,MAT-00000031,List act instead care.,RM,487,910.41,443369.67,245,50.3,False,,ACTIVE,,True,,2020-02-26
+CTR-2023-000147-BOQ-0530,CTR-2023-000147,9.2.10,Earthworks,10,MAT-00000416,Military result size feel no nothing huge real.,MT,334,2715.83,907087.22,36,10.8,False,,ACTIVE,,True,,2020-10-13
+CTR-2023-000147-BOQ-0531,CTR-2023-000147,9.8.11,Earthworks,11,MAT-00000998,Democratic effect stuff benefit.,KG,394,1634.22,643882.68,106,26.9,False,,ACTIVE,,True,,2021-08-25
+CTR-2023-000147-BOQ-0532,CTR-2023-000147,9.2.12,Earthworks,12,MAT-00000178,Employee growth newspaper special general in.,SET,758,2388.64,1810589.12,587,77.4,False,,ACTIVE,,True,Test white current office power company.,2023-12-29
+CTR-2023-000147-BOQ-0533,CTR-2023-000147,9.5.13,Earthworks,13,MAT-00000181,High expert place certain.,MONTH,979,277921.44,272085089.76,612,62.5,True,Great pull maintain say.,REVISED,,True,,2019-09-09
+CTR-2023-000093-BOQ-0534,CTR-2023-000093,10.1.1,Concrete Works,1,MAT-00000925,Political up instead partner.,SET,776,13667.83,10606236.08,152,19.6,False,,ACTIVE,,True,,2022-07-20
+CTR-2023-000093-BOQ-0535,CTR-2023-000093,10.10.2,Concrete Works,2,MAT-00000307,Support author class direction first fact.,NOS,814,342418.57,278728715.98,311,38.2,False,,ON_HOLD,,False,,2019-02-03
+CTR-2023-000093-BOQ-0536,CTR-2023-000093,10.9.3,Concrete Works,3,MAT-00000627,Security minute late cold take by.,RM,414,789.0,326646.0,150,36.2,True,Painting house thought sit.,ON_HOLD,,True,,2023-01-11
+CTR-2023-000093-BOQ-0537,CTR-2023-000093,10.5.4,Concrete Works,4,MAT-00000113,Product wait red bag cold.,SET,887,55304.51,49055100.37,442,49.8,False,,ACTIVE,,True,,2021-05-15
+CTR-2019-000679-BOQ-0538,CTR-2019-000679,3.9.1,Piping,1,MAT-00000193,Believe view list approach.,RM,394,314.04,123731.76,184,46.7,False,,ACTIVE,,True,,2019-10-21
+CTR-2019-000679-BOQ-0539,CTR-2019-000679,3.1.2,Piping,2,MAT-00000664,Model you billion peace base use.,MT,148,1648.66,244001.68,124,83.8,False,,ON_HOLD,,True,,2024-02-11
+CTR-2019-000679-BOQ-0540,CTR-2019-000679,3.10.3,Piping,3,MAT-00000916,Finally easy exist phone capital stuff.,JOINT,953,1373.6,1309040.8,184,19.3,False,,ACTIVE,,True,,2023-10-06
+CTR-2020-000620-BOQ-0541,CTR-2020-000620,8.4.1,Insulation,1,MAT-00000868,Along ground trip.,MT,730,743.99,543112.7,420,57.5,False,,ACTIVE,VO-003,True,,2020-04-08
+CTR-2019-000595-BOQ-0542,CTR-2019-000595,2.9.1,Commissioning,1,MAT-00000146,Level that various nature career way much.,MT,880,3333.22,2933233.6,797,90.6,False,,ACTIVE,,True,,2019-11-16
+CTR-2019-000595-BOQ-0543,CTR-2019-000595,2.9.2,Commissioning,2,MAT-00000701,Training loss dinner become film.,NOS,818,5305.05,4339530.9,627,76.7,True,Our piece player nor model police.,ACTIVE,,True,,2024-04-05
+CTR-2019-000595-BOQ-0544,CTR-2019-000595,2.6.3,Commissioning,3,MAT-00000588,Employee field a spring summer gas.,JOINT,432,1211.88,523532.16,408,94.4,False,,ACTIVE,,True,,2021-12-02
+CTR-2019-000595-BOQ-0545,CTR-2019-000595,2.8.4,Commissioning,4,MAT-00000063,Movement reach man sense federal she something.,JOINT,593,762.22,451996.46,52,8.8,False,,ACTIVE,,True,,2020-06-03
+CTR-2019-000595-BOQ-0546,CTR-2019-000595,2.2.5,Commissioning,5,MAT-00000518,Resource position stock determine.,DRUM,872,4505.94,3929179.68,258,29.6,True,Discuss account health in night house.,ACTIVE,,True,,2020-12-16
+CTR-2019-000595-BOQ-0547,CTR-2019-000595,2.10.6,Commissioning,6,MAT-00000932,Instead dream share travel.,LTR,757,2376.33,1798881.81,457,60.4,False,,ACTIVE,,True,,2024-11-30
+CTR-2019-000595-BOQ-0548,CTR-2019-000595,2.1.7,Commissioning,7,MAT-00000883,Expect sea speak include table.,SET,352,61700.18,21718463.36,74,21.0,False,,REVISED,,False,,2023-04-19
+CTR-2019-000595-BOQ-0549,CTR-2019-000595,2.8.8,Commissioning,8,MAT-00000244,Carry book lay laugh.,SET,744,87988.13,65463168.72,215,28.9,False,,REVISED,VO-017,False,,2020-11-17
+CTR-2019-000476-BOQ-0550,CTR-2019-000476,5.9.1,Piping,1,MAT-00000488,Man fly charge wide against win example by.,JOINT,240,2010.55,482532.0,180,75.0,False,,ACTIVE,,True,,2024-01-13
+CTR-2019-000476-BOQ-0551,CTR-2019-000476,5.6.2,Piping,2,MAT-00000392,Size marriage he recent all.,RM,985,35092.77,34566378.45,978,99.3,True,Road do character management game.,ON_HOLD,,False,,2022-01-21
+CTR-2019-000476-BOQ-0552,CTR-2019-000476,5.5.3,Piping,3,MAT-00000344,Such weight argue simply.,NOS,274,5.94,1627.56,130,47.4,False,,ACTIVE,,False,,2021-03-09
+CTR-2019-000476-BOQ-0553,CTR-2019-000476,5.6.4,Piping,4,MAT-00000533,Myself consider time economic.,NOS,694,287779.04,199718653.76,184,26.5,False,,ACTIVE,VO-005,True,Stock business should eat side kitchen.,2020-03-01
+CTR-2019-000476-BOQ-0554,CTR-2019-000476,5.8.5,Piping,5,MAT-00000702,Current same behind.,SET,360,1153.38,415216.8,145,40.3,False,,ACTIVE,,True,,2021-06-07
+CTR-2019-000476-BOQ-0555,CTR-2019-000476,5.10.6,Piping,6,MAT-00000974,Rock seat near business loss federal growth appear.,MT,654,2175.76,1422947.04,122,18.7,True,List race fine follow.,ACTIVE,,False,,2021-01-26
+CTR-2019-000476-BOQ-0556,CTR-2019-000476,5.2.7,Piping,7,MAT-00000918,Wind door its address some.,CUM,713,299.67,213664.71,301,42.2,False,,ON_HOLD,,False,,2023-10-15
+CTR-2020-000709-BOQ-0557,CTR-2020-000709,6.3.1,Civil Works,1,MAT-00000264,Choice side eat matter rather full wide service.,BAG,800,336.36,269088.0,795,99.4,True,Build smile across among situation little.,ACTIVE,,True,,2020-12-29
+CTR-2020-000709-BOQ-0558,CTR-2020-000709,6.2.2,Civil Works,2,MAT-00000452,Art popular red social.,NOS,504,75606.22,38105534.88,102,20.2,False,,ACTIVE,,True,,2021-06-13
+CTR-2020-000709-BOQ-0559,CTR-2020-000709,6.2.3,Civil Works,3,MAT-00000629,South just cover ready group care.,BAG,935,275.35,257452.25,265,28.3,True,Maintain first next.,ACTIVE,,True,,2024-07-31
+CTR-2020-000709-BOQ-0560,CTR-2020-000709,6.1.4,Civil Works,4,MAT-00000153,Magazine join far.,MT,956,765.81,732114.36,399,41.7,False,,ACTIVE,,True,,2024-07-02
+CTR-2020-000709-BOQ-0561,CTR-2020-000709,6.7.5,Civil Works,5,MAT-00000490,Couple cost girl run every story trial.,BAG,414,182.68,75629.52,399,96.4,False,,ACTIVE,,True,,2024-05-28
+CTR-2020-000709-BOQ-0562,CTR-2020-000709,6.10.6,Civil Works,6,MAT-00000125,Civil most last standard must law simply.,MONTH,549,7141.17,3920502.33,367,66.8,False,,ACTIVE,VO-042,True,,2022-10-24
+CTR-2020-000709-BOQ-0563,CTR-2020-000709,6.8.7,Civil Works,7,MAT-00000083,Here control affect task simply draw return.,KG,779,3503.06,2728883.74,663,85.1,False,,ACTIVE,,True,,2023-05-17
+CTR-2020-000709-BOQ-0564,CTR-2020-000709,6.2.8,Civil Works,8,MAT-00000918,Political book model at strong candidate.,CUM,646,389.45,251584.7,498,77.1,True,Standard couple raise she child executive.,ACTIVE,,True,,2021-09-03
+CTR-2020-000709-BOQ-0565,CTR-2020-000709,6.7.9,Civil Works,9,MAT-00000501,Dark magazine better.,SET,65,12269.49,797516.85,39,60.0,False,,ON_HOLD,,False,Politics home majority perhaps opportunity any determine.,2022-10-21
+CTR-2020-000709-BOQ-0566,CTR-2020-000709,6.6.10,Civil Works,10,MAT-00000058,Life police guess sea.,SET,807,29604.32,23890686.24,415,51.4,True,Actually TV pretty.,REVISED,,True,,2020-09-02
+CTR-2020-000709-BOQ-0567,CTR-2020-000709,6.10.11,Civil Works,11,MAT-00000759,State some around pay more same.,SET,239,710756.75,169870863.25,9,3.8,False,,ACTIVE,VO-040,True,,2020-06-18
+CTR-2020-000709-BOQ-0568,CTR-2020-000709,6.3.12,Civil Works,12,MAT-00000015,Back democratic mind big discuss.,MT,648,41.69,27015.12,314,48.5,False,,ACTIVE,,False,Country moment eat personal condition see.,2020-03-11
+CTR-2020-000709-BOQ-0569,CTR-2020-000709,6.8.13,Civil Works,13,MAT-00000117,Third coach Congress husband front citizen.,RM,610,1563.7,953857.0,225,36.9,True,Second short office purpose reflect.,ACTIVE,,False,,2023-07-05
+CTR-2020-000709-BOQ-0570,CTR-2020-000709,6.2.14,Civil Works,14,MAT-00000333,Step food drive nation heart nearly.,BBL,1000,22.42,22420.0,558,55.8,True,Kitchen good firm yard foot he.,REVISED,,False,,2022-10-06
+CTR-2020-000709-BOQ-0571,CTR-2020-000709,6.2.15,Civil Works,15,MAT-00000065,Growth laugh where a alone.,MONTH,281,3182.06,894158.86,212,75.4,False,,ACTIVE,,True,,2020-06-30
+CTR-2023-000103-BOQ-0572,CTR-2023-000103,10.3.1,Civil Works,1,MAT-00000386,Worker Democrat fire sign wall.,RM,17,2621.77,44570.09,2,11.8,True,Other military year few.,ACTIVE,VO-042,True,,2024-05-03
+CTR-2023-000103-BOQ-0573,CTR-2023-000103,10.3.2,Civil Works,2,MAT-00000709,Try memory number occur behind.,BBL,212,160.61,34049.32,69,32.5,False,,ACTIVE,,True,Green catch happen old do specific begin.,2021-01-07
+CTR-2023-000103-BOQ-0574,CTR-2023-000103,10.8.3,Civil Works,3,MAT-00000735,Notice design baby foot lot major.,BOX,627,706.8,443163.6,308,49.1,False,,ACTIVE,,True,,2020-01-27
+CTR-2023-000103-BOQ-0575,CTR-2023-000103,10.6.4,Civil Works,4,MAT-00000634,Standard believe politics also space high sister.,JOINT,884,1461.89,1292310.76,552,62.4,False,,ACTIVE,,True,Girl stage indicate test thank dinner.,2020-04-06
+CTR-2023-000103-BOQ-0576,CTR-2023-000103,10.3.5,Civil Works,5,MAT-00000816,Up plant place approach modern floor north force.,LTR,702,250.86,176103.72,485,69.1,False,,ACTIVE,,True,,2021-05-08
+CTR-2023-000103-BOQ-0577,CTR-2023-000103,10.5.6,Civil Works,6,MAT-00000446,Offer bed it skill challenge from live seat.,NOS,343,1143.49,392217.07,232,67.6,True,Check purpose young wife.,ACTIVE,,True,,2024-06-09
+CTR-2023-000103-BOQ-0578,CTR-2023-000103,10.2.7,Civil Works,7,MAT-00000528,Human be maybe similar candidate care nice.,CUM,73,338.44,24706.12,56,76.7,False,,ACTIVE,,True,,2020-03-27
+CTR-2023-000103-BOQ-0579,CTR-2023-000103,10.4.8,Civil Works,8,MAT-00000334,House number night young modern drug entire.,NOS,101,1127.29,113856.29,52,51.5,False,,ACTIVE,,True,,2023-11-21
+CTR-2023-000103-BOQ-0580,CTR-2023-000103,10.4.9,Civil Works,9,MAT-00000149,Food under become public interest give.,RM,951,150.13,142773.63,182,19.1,False,,ACTIVE,,True,,2021-04-08
+CTR-2023-000103-BOQ-0581,CTR-2023-000103,10.3.10,Civil Works,10,MAT-00000344,General pretty show college glass start.,NOS,33,5.66,186.78,3,9.1,False,,ACTIVE,,True,,2021-06-19
+CTR-2023-000103-BOQ-0582,CTR-2023-000103,10.5.11,Civil Works,11,MAT-00000908,Perhaps key under do rate choose.,SET,619,44885.22,27783951.18,174,28.1,False,,ACTIVE,,True,,2021-06-05
+CTR-2023-000103-BOQ-0583,CTR-2023-000103,10.8.12,Civil Works,12,MAT-00000606,Both approach we unit.,MT,858,854.54,733195.32,14,1.6,False,,ACTIVE,,True,,2020-09-02
+CTR-2023-000103-BOQ-0584,CTR-2023-000103,10.10.13,Civil Works,13,MAT-00000936,Forward science deep.,JOINT,920,1097.41,1009617.2,45,4.9,True,Add really born late.,ACTIVE,,True,,2024-05-17
+CTR-2024-000830-BOQ-0585,CTR-2024-000830,2.8.1,Commissioning,1,MAT-00000464,Heavy town money.,KG,247,1915.77,473195.19,192,77.7,True,Model else low role center recognize.,ACTIVE,,True,,2020-01-07
+CTR-2024-000830-BOQ-0586,CTR-2024-000830,2.8.2,Commissioning,2,MAT-00000017,Color exist smile peace apply.,JOINT,686,458.2,314325.2,470,68.5,False,,ACTIVE,VO-030,True,,2023-07-19
+CTR-2024-000830-BOQ-0587,CTR-2024-000830,2.6.3,Commissioning,3,MAT-00000190,At produce production.,RM,642,102112.74,65556379.08,1,0.2,False,,ACTIVE,,True,Ten affect test power discuss herself.,2023-10-11
+CTR-2024-000830-BOQ-0588,CTR-2024-000830,2.5.4,Commissioning,4,MAT-00000771,Tough machine others because.,JOINT,715,586.86,419604.9,555,77.6,False,,ACTIVE,,True,,2019-08-13
+CTR-2024-000830-BOQ-0589,CTR-2024-000830,2.6.5,Commissioning,5,MAT-00000528,May leader unit again easy.,CUM,910,219.25,199517.5,392,43.1,False,,ACTIVE,,True,,2019-10-02
+CTR-2024-000830-BOQ-0590,CTR-2024-000830,2.4.6,Commissioning,6,MAT-00000575,Figure majority season adult range green few.,SQM,142,152.61,21670.62,61,43.0,False,,ACTIVE,,False,,2021-05-09
+CTR-2024-000830-BOQ-0591,CTR-2024-000830,2.4.7,Commissioning,7,MAT-00000772,Every artist election hit yourself wrong want.,CUM,329,143.66,47264.14,136,41.3,False,,ACTIVE,VO-024,True,,2024-11-27
+CTR-2024-000830-BOQ-0592,CTR-2024-000830,2.2.8,Commissioning,8,MAT-00000850,Difficult game hotel case role.,KG,482,1228.44,592108.08,347,72.0,False,,DELETED,,True,,2019-09-26
+CTR-2024-000830-BOQ-0593,CTR-2024-000830,2.8.9,Commissioning,9,MAT-00000193,Whether partner personal dinner drive check wife.,RM,90,211.77,19059.3,22,24.4,False,,ON_HOLD,,True,,2024-07-25
+CTR-2024-000830-BOQ-0594,CTR-2024-000830,2.4.10,Commissioning,10,MAT-00000155,Forget my deal catch must son television finally.,SET,534,537377.63,286959654.42,23,4.3,False,,ON_HOLD,,True,,2023-12-24
+CTR-2024-000830-BOQ-0595,CTR-2024-000830,2.1.11,Commissioning,11,MAT-00000756,Travel involve training show prevent north citizen.,JOINT,299,254.88,76209.12,11,3.7,False,,ACTIVE,,True,,2022-11-05
+CTR-2024-000830-BOQ-0596,CTR-2024-000830,2.6.12,Commissioning,12,MAT-00000672,Newspaper we brother fish.,KG,498,485.32,241689.36,356,71.5,False,,ACTIVE,,True,,2022-06-09
+CTR-2024-000830-BOQ-0597,CTR-2024-000830,2.5.13,Commissioning,13,MAT-00000176,Risk she they increase.,DAY,233,82.02,19110.66,73,31.3,False,,ACTIVE,,True,,2020-10-20
+CTR-2019-000729-BOQ-0598,CTR-2019-000729,3.3.1,Mechanical Works,1,MAT-00000997,Field seat start PM scene charge.,RM,860,676.57,581850.2,682,79.3,False,,ACTIVE,,False,,2023-12-11
+CTR-2019-000729-BOQ-0599,CTR-2019-000729,3.6.2,Mechanical Works,2,MAT-00000267,Paper partner others discuss ago.,NOS,189,3086.29,583308.81,181,95.8,True,Blood continue several partner.,ACTIVE,,True,,2020-10-27
+CTR-2019-000729-BOQ-0600,CTR-2019-000729,3.5.3,Mechanical Works,3,MAT-00000547,Read live maybe painting.,SET,125,26462.04,3307755.0,51,40.8,False,,REVISED,,False,,2024-09-09
+CTR-2019-000729-BOQ-0601,CTR-2019-000729,3.5.4,Mechanical Works,4,MAT-00000340,Contain hold listen clearly difficult impact.,PKT,486,644.17,313066.62,483,99.4,False,,ON_HOLD,,False,,2023-12-16
+CTR-2019-000729-BOQ-0602,CTR-2019-000729,3.2.5,Mechanical Works,5,MAT-00000347,Serious at until worry term.,SET,750,24975.24,18731430.0,41,5.5,True,Understand wear development.,ACTIVE,,True,,2024-01-01
+CTR-2019-000729-BOQ-0603,CTR-2019-000729,3.2.6,Mechanical Works,6,MAT-00000366,Reach term thought into simply part station.,CUM,335,31.95,10703.25,328,97.9,False,,ACTIVE,,False,,2019-12-09
+CTR-2019-000729-BOQ-0604,CTR-2019-000729,3.8.7,Mechanical Works,7,MAT-00000552,Hour voice occur movie political region.,MT,694,1928.04,1338059.76,89,12.8,False,,ACTIVE,,True,,2019-08-18
+CTR-2019-000729-BOQ-0605,CTR-2019-000729,3.6.8,Mechanical Works,8,MAT-00000931,Minute later still.,DAY,408,291075.29,118758718.32,218,53.4,False,,ACTIVE,,True,,2019-12-25
+CTR-2019-000729-BOQ-0606,CTR-2019-000729,3.8.9,Mechanical Works,9,MAT-00000221,There early Mrs.,JOINT,760,2083.39,1583376.4,453,59.6,False,,REVISED,,True,,2020-07-25
+CTR-2019-000856-BOQ-0607,CTR-2019-000856,2.4.1,Insulation,1,MAT-00000148,Newspaper might piece.,BBL,311,215.59,67048.49,268,86.2,False,,ACTIVE,,False,Couple keep this.,2023-08-05
+CTR-2019-000856-BOQ-0608,CTR-2019-000856,2.5.2,Insulation,2,MAT-00000655,Leave institution party approach might.,SET,425,52196.81,22183644.25,236,55.5,False,,REVISED,,True,,2024-07-02
+CTR-2019-000856-BOQ-0609,CTR-2019-000856,2.5.3,Insulation,3,MAT-00000044,Less position bed may.,SET,855,41508.77,35489998.35,505,59.1,False,,ACTIVE,VO-001,True,,2024-04-19
+CTR-2019-000856-BOQ-0610,CTR-2019-000856,2.5.4,Insulation,4,MAT-00000128,Single visit receive career.,BAG,428,116.87,50020.36,352,82.2,False,,ACTIVE,,True,,2023-01-21
+CTR-2019-000856-BOQ-0611,CTR-2019-000856,2.8.5,Insulation,5,MAT-00000596,Food agent law to time think.,SET,580,18690.57,10840530.6,264,45.5,False,,ACTIVE,,True,,2019-03-13
+CTR-2019-000856-BOQ-0612,CTR-2019-000856,2.5.6,Insulation,6,MAT-00000866,Economic reality trade someone.,CUM,167,591.57,98792.19,37,22.2,False,,DELETED,,True,,2023-09-15
+CTR-2019-000856-BOQ-0613,CTR-2019-000856,2.6.7,Insulation,7,MAT-00000652,Before relationship plant be.,CUM,50,82.11,4105.5,33,66.0,False,,ACTIVE,,True,,2020-11-15
+CTR-2019-000856-BOQ-0614,CTR-2019-000856,2.6.8,Insulation,8,MAT-00000557,Risk window partner civil nearly analysis.,MONTH,894,95774.57,85622465.58,865,96.8,False,,ACTIVE,,True,Treatment not process change.,2022-12-11
+CTR-2019-000856-BOQ-0615,CTR-2019-000856,2.3.9,Insulation,9,MAT-00000844,Condition Republican information finally.,RM,14,1521.02,21294.28,4,28.6,False,,ACTIVE,,False,,2020-09-25
+CTR-2019-000856-BOQ-0616,CTR-2019-000856,2.4.10,Insulation,10,MAT-00000516,Eye Congress together whether about she activity.,RM,852,1151.03,980677.56,572,67.1,False,,REVISED,,True,,2020-04-11
+CTR-2020-000428-BOQ-0617,CTR-2020-000428,2.3.1,Earthworks,1,MAT-00000839,Talk myself accept third down open little.,RM,946,678.36,641728.56,356,37.6,False,,ACTIVE,,False,,2022-11-02
+CTR-2020-000428-BOQ-0618,CTR-2020-000428,2.5.2,Earthworks,2,MAT-00000177,Kind over according think everything pick.,RM,30,1016.23,30486.9,3,10.0,False,,DELETED,,True,,2020-06-17
+CTR-2020-000428-BOQ-0619,CTR-2020-000428,2.7.3,Earthworks,3,MAT-00000081,Project study fear.,BAG,708,144.44,102263.52,114,16.1,True,Any challenge president already.,REVISED,,True,,2024-10-04
+CTR-2020-000428-BOQ-0620,CTR-2020-000428,2.1.4,Earthworks,4,MAT-00000608,Particularly reality organization skin concern.,NOS,481,395034.76,190011719.56,129,26.8,True,Any indicate condition.,ACTIVE,VO-007,False,,2021-04-21
+CTR-2020-000428-BOQ-0621,CTR-2020-000428,2.4.5,Earthworks,5,MAT-00000602,Star serve successful assume likely business.,MONTH,190,488187.54,92755632.6,7,3.7,True,See growth along shoulder follow.,REVISED,,False,,2020-10-19
+CTR-2020-000428-BOQ-0622,CTR-2020-000428,2.9.6,Earthworks,6,MAT-00000876,Forget including decide decade around.,BAG,800,261.36,209088.0,247,30.9,False,,ACTIVE,,False,,2021-02-23
+CTR-2020-000428-BOQ-0623,CTR-2020-000428,2.5.7,Earthworks,7,MAT-00000988,Interview summer employee offer perhaps.,KG,176,2042.22,359430.72,137,77.8,True,Role pick would low read value.,ACTIVE,,False,,2024-04-28
+CTR-2020-000428-BOQ-0624,CTR-2020-000428,2.10.8,Earthworks,8,MAT-00000376,Pass market role marriage.,BAG,190,448.32,85180.8,27,14.2,False,,ACTIVE,,True,,2020-04-07
+CTR-2021-000780-BOQ-0625,CTR-2021-000780,8.9.1,Earthworks,1,MAT-00000113,This discussion fact cover.,SET,140,72086.42,10092098.8,92,65.7,False,,ACTIVE,VO-021,True,,2024-02-15
+CTR-2021-000780-BOQ-0626,CTR-2021-000780,8.5.2,Earthworks,2,MAT-00000615,Agency personal brother summer.,SQM,704,80.21,56467.84,454,64.5,False,,ACTIVE,,True,,2024-05-02
+CTR-2021-000780-BOQ-0627,CTR-2021-000780,8.6.3,Earthworks,3,MAT-00000962,Yourself increase free night point action cut example.,NOS,184,978.55,180053.2,172,93.5,False,,ACTIVE,,True,Film media food accept.,2020-08-10
+CTR-2021-000780-BOQ-0628,CTR-2021-000780,8.7.4,Earthworks,4,MAT-00000405,Game right pattern ahead compare form.,JOINT,712,755.21,537709.52,104,14.6,False,,DELETED,,True,,2021-03-31
+CTR-2021-000780-BOQ-0629,CTR-2021-000780,8.7.5,Earthworks,5,MAT-00000610,Two look listen along career choice.,NOS,126,31936.29,4023972.54,54,42.9,False,,ACTIVE,,True,,2023-06-28
+CTR-2021-000780-BOQ-0630,CTR-2021-000780,8.8.6,Earthworks,6,MAT-00000365,Throughout Mr friend six including sea strong.,NOS,683,2378.62,1624597.46,414,60.6,False,,ACTIVE,,True,,2024-06-27
+CTR-2024-000510-BOQ-0631,CTR-2024-000510,3.2.1,Civil Works,1,MAT-00000031,North question new affect officer.,RM,756,876.53,662656.68,69,9.1,False,,ACTIVE,,True,,2022-05-25
+CTR-2024-000510-BOQ-0632,CTR-2024-000510,3.10.2,Civil Works,2,MAT-00000637,Son thousand government wide exactly all.,SET,99,5325.31,527205.69,84,84.8,False,,REVISED,,True,,2024-07-01
+CTR-2024-000510-BOQ-0633,CTR-2024-000510,3.5.3,Civil Works,3,MAT-00000517,Phone success number hope organization ten.,KG,556,4964.19,2760089.64,553,99.5,False,,ON_HOLD,VO-028,False,,2024-01-18
+CTR-2024-000510-BOQ-0634,CTR-2024-000510,3.7.4,Civil Works,4,MAT-00000323,Relate fire all including market.,CUM,454,437.91,198811.14,16,3.5,False,,ACTIVE,,False,,2023-10-31
+CTR-2019-000138-BOQ-0635,CTR-2019-000138,7.2.1,Commissioning,1,MAT-00000500,He stop few modern company.,NOS,583,2216.67,1292318.61,567,97.3,False,,ACTIVE,,False,,2023-05-23
+CTR-2019-000138-BOQ-0636,CTR-2019-000138,7.8.2,Commissioning,2,MAT-00000270,Size sing tree kitchen agent lot.,JOINT,606,979.0,593274.0,361,59.6,False,,ACTIVE,VO-038,True,,2022-11-29
+CTR-2019-000138-BOQ-0637,CTR-2019-000138,7.10.3,Commissioning,3,MAT-00000829,Child future low them financial force show.,NOS,28,160206.61,4485785.08,20,71.4,False,,ACTIVE,,True,,2021-09-27
+CTR-2019-000138-BOQ-0638,CTR-2019-000138,7.4.4,Commissioning,4,MAT-00000254,State visit quality car.,JOINT,664,1587.04,1053794.56,86,13.0,False,,ACTIVE,,True,Least require mission.,2022-08-28
+CTR-2019-000138-BOQ-0639,CTR-2019-000138,7.8.5,Commissioning,5,MAT-00000039,Financial analysis summer.,SQM,674,112.26,75663.24,581,86.2,False,,ACTIVE,VO-031,True,,2023-03-28
+CTR-2023-000585-BOQ-0640,CTR-2023-000585,10.8.1,Electrical Works,1,MAT-00000101,Four threat billion she.,NOS,103,74297.71,7652664.13,26,25.2,False,,ACTIVE,,True,,2023-01-28
+CTR-2023-000585-BOQ-0641,CTR-2023-000585,10.7.2,Electrical Works,2,MAT-00000993,Court everybody five kid brother.,RM,207,207.94,43043.58,201,97.1,True,Against serve police decide.,DELETED,,True,,2023-07-05
+CTR-2023-000585-BOQ-0642,CTR-2023-000585,10.4.3,Electrical Works,3,MAT-00000824,Church boy when nice.,BBL,640,207.47,132780.8,94,14.7,False,,ACTIVE,,True,,2024-12-15
+CTR-2023-000585-BOQ-0643,CTR-2023-000585,10.7.4,Electrical Works,4,MAT-00000487,Deal go five center.,DAY,215,2706.1,581811.5,19,8.8,False,,ACTIVE,,True,,2021-03-30
+CTR-2023-000585-BOQ-0644,CTR-2023-000585,10.7.5,Electrical Works,5,MAT-00000425,Off commercial find throughout music.,NOS,258,323904.2,83567283.6,232,89.9,False,,ACTIVE,,True,,2021-02-03
+CTR-2023-000585-BOQ-0645,CTR-2023-000585,10.8.6,Electrical Works,6,MAT-00000591,Candidate likely push.,CUM,219,434.3,95111.7,210,95.9,False,,ACTIVE,,True,,2023-11-12
+CTR-2023-000585-BOQ-0646,CTR-2023-000585,10.10.7,Electrical Works,7,MAT-00000958,Himself beat hot relate.,SET,745,2458.91,1831887.95,534,71.7,False,,ACTIVE,,False,,2023-11-19
+CTR-2020-000421-BOQ-0647,CTR-2020-000421,11.7.1,Earthworks,1,MAT-00000209,Picture real knowledge green forward cup serve speak.,NOS,274,112698.65,30879430.1,82,29.9,False,,ACTIVE,,True,,2021-10-02
+CTR-2020-000421-BOQ-0648,CTR-2020-000421,11.5.2,Earthworks,2,MAT-00000817,Wind sense letter capital.,BAG,476,97.94,46619.44,223,46.8,False,,ON_HOLD,,True,Best financial popular short like water century.,2022-02-11
+CTR-2020-000421-BOQ-0649,CTR-2020-000421,11.9.3,Earthworks,3,MAT-00000675,Election guy contain true form team foot maintain.,CUM,181,178.69,32342.89,10,5.5,False,,ACTIVE,VO-006,True,,2019-09-18
+CTR-2020-000421-BOQ-0650,CTR-2020-000421,11.7.4,Earthworks,4,MAT-00000923,Little goal leave color.,NOS,919,186701.35,171578540.65,673,73.2,False,,ACTIVE,,False,,2024-08-11
+CTR-2020-000421-BOQ-0651,CTR-2020-000421,11.2.5,Earthworks,5,MAT-00000956,Page camera bill stage someone for.,KG,535,610.87,326815.45,257,48.0,False,,ACTIVE,,False,,2023-05-17
+CTR-2020-000421-BOQ-0652,CTR-2020-000421,11.4.6,Earthworks,6,MAT-00000826,Draw during city lot at decade.,CUM,958,142.02,136055.16,147,15.3,True,Society mouth husband.,ACTIVE,,True,,2019-08-18
+CTR-2022-000503-BOQ-0653,CTR-2022-000503,12.2.1,Electrical Works,1,MAT-00000972,Issue woman note garden reason community prove school.,BAG,325,131.4,42705.0,243,74.8,False,,ON_HOLD,,False,,2023-02-15
+CTR-2022-000503-BOQ-0654,CTR-2022-000503,12.5.2,Electrical Works,2,MAT-00000842,What attorney board sport side.,SET,22,103156.52,2269443.44,19,86.4,True,Student boy other foot best knowledge.,ACTIVE,,True,,2021-09-08
+CTR-2022-000503-BOQ-0655,CTR-2022-000503,12.9.3,Electrical Works,3,MAT-00000260,Force population article design catch oil.,SET,394,20149.72,7938989.68,358,90.9,False,,REVISED,,False,,2023-05-11
+CTR-2022-000503-BOQ-0656,CTR-2022-000503,12.7.4,Electrical Works,4,MAT-00000009,Serious produce laugh.,BAG,950,448.45,426027.5,261,27.5,False,,ON_HOLD,,True,,2020-10-18
+CTR-2022-000503-BOQ-0657,CTR-2022-000503,12.8.5,Electrical Works,5,MAT-00000938,Hope official crime race first.,MT,647,1856.8,1201349.6,416,64.3,False,,ACTIVE,VO-050,False,,2023-08-19
+CTR-2022-000503-BOQ-0658,CTR-2022-000503,12.6.6,Electrical Works,6,MAT-00000949,Some quickly truth view response trip wrong.,MT,735,1828.09,1343646.15,102,13.9,False,,ACTIVE,,True,,2022-08-31
+CTR-2022-000503-BOQ-0659,CTR-2022-000503,12.1.7,Electrical Works,7,MAT-00000465,Account worry identify camera family hard nature apply.,NOS,781,929.73,726119.13,656,84.0,False,,ACTIVE,,True,,2022-06-05
+CTR-2022-000503-BOQ-0660,CTR-2022-000503,12.10.8,Electrical Works,8,MAT-00000322,Star grow technology tend dog reduce hour.,KG,85,635.74,54037.9,31,36.5,False,,ON_HOLD,,False,,2023-08-08
+CTR-2022-000503-BOQ-0661,CTR-2022-000503,12.6.9,Electrical Works,9,MAT-00000812,Could his under style.,KG,463,2352.92,1089401.96,376,81.2,True,Republican image itself deep community.,ACTIVE,,True,,2019-12-12
+CTR-2020-000425-BOQ-0662,CTR-2020-000425,7.7.1,Concrete Works,1,MAT-00000898,Eye their by activity.,SET,968,13047.6,12630076.8,584,60.3,False,,ON_HOLD,,True,,2019-12-31
+CTR-2020-000425-BOQ-0663,CTR-2020-000425,7.8.2,Concrete Works,2,MAT-00000998,Be politics indeed lay.,KG,204,1838.47,375047.88,43,21.1,True,Century those price.,ACTIVE,,True,,2020-11-27
+CTR-2020-000425-BOQ-0664,CTR-2020-000425,7.10.3,Concrete Works,3,MAT-00000970,Us perhaps lawyer interest star his difficult interesting.,BAG,121,441.5,53421.5,67,55.4,False,,ON_HOLD,,True,,2021-04-12
+CTR-2020-000425-BOQ-0665,CTR-2020-000425,7.5.4,Concrete Works,4,MAT-00000196,Especially unit office almost also low happy.,CUM,295,267.87,79021.65,195,66.1,True,Official suggest door.,DELETED,,False,,2021-02-14
+CTR-2020-000425-BOQ-0666,CTR-2020-000425,7.3.5,Concrete Works,5,MAT-00000429,Loss real center rule worker worker single let.,CUM,419,178.5,74791.5,14,3.3,False,,ACTIVE,,False,,2024-02-20
+CTR-2020-000425-BOQ-0667,CTR-2020-000425,7.1.6,Concrete Works,6,MAT-00000088,Model particular early piece.,NOS,481,360711.36,173502164.16,165,34.3,False,,ACTIVE,,True,,2021-11-15
+CTR-2020-000075-BOQ-0668,CTR-2020-000075,1.6.1,Painting & Coatings,1,MAT-00000054,Range much often party.,MT,954,977.51,932544.54,930,97.5,False,,ACTIVE,,False,,2019-07-06
+CTR-2020-000075-BOQ-0669,CTR-2020-000075,1.5.2,Painting & Coatings,2,MAT-00000006,Movement action law town off former.,NOS,517,15766.11,8151078.87,309,59.8,False,,ACTIVE,,False,Whether sometimes eye along type see.,2021-01-04
+CTR-2021-000267-BOQ-0670,CTR-2021-000267,8.6.1,Painting & Coatings,1,MAT-00000953,Employee picture official of prevent factor say.,CUM,899,126.28,113525.72,91,10.1,False,,ACTIVE,,True,Expert bar measure.,2020-06-07
+CTR-2021-000267-BOQ-0671,CTR-2021-000267,8.5.2,Painting & Coatings,2,MAT-00000512,Edge past every either scientist.,DAY,766,79337.26,60772341.16,440,57.4,False,,DELETED,,False,,2022-07-06
+CTR-2021-000267-BOQ-0672,CTR-2021-000267,8.3.3,Painting & Coatings,3,MAT-00000447,Company option character land space end red machine.,NOS,324,4242.31,1374508.44,251,77.5,False,,ACTIVE,,True,,2019-08-06
+CTR-2022-000194-BOQ-0673,CTR-2022-000194,4.1.1,General Requirements,1,MAT-00000188,Television garden base certain value child many.,SET,482,214284.23,103284998.86,361,74.9,False,,ACTIVE,,True,,2024-06-10
+CTR-2022-000194-BOQ-0674,CTR-2022-000194,4.8.2,General Requirements,2,MAT-00000469,Approach enough standard apply less live.,MT,116,1212.92,140698.72,110,94.8,True,Side draw key point decision.,ACTIVE,,True,,2024-09-14
+CTR-2022-000194-BOQ-0675,CTR-2022-000194,4.5.3,General Requirements,3,MAT-00000843,Second sell mouth here relationship listen certain.,BOX,577,678.71,391615.67,217,37.6,False,,ON_HOLD,,True,,2019-11-11
+CTR-2020-000253-BOQ-0676,CTR-2020-000253,11.6.1,Piping,1,MAT-00000097,Best most government.,LTR,27,2176.34,58761.18,21,77.8,True,Activity until large question which.,ACTIVE,,True,,2019-04-29
+CTR-2020-000253-BOQ-0677,CTR-2020-000253,11.8.2,Piping,2,MAT-00000084,Particular present evening establish sort effort.,BOX,851,25.53,21726.03,491,57.7,False,,ON_HOLD,,True,,2024-01-30
+CTR-2020-000253-BOQ-0678,CTR-2020-000253,11.10.3,Piping,3,MAT-00000333,Hospital significant see same open crime front real.,BBL,133,17.57,2336.81,12,9.0,False,,ACTIVE,,False,,2023-04-12
+CTR-2020-000253-BOQ-0679,CTR-2020-000253,11.7.4,Piping,4,MAT-00000095,Best billion land detail exist cover.,CUM,262,121.48,31827.76,204,77.9,True,Finish action across attack.,DELETED,,False,,2020-09-23
+CTR-2020-000253-BOQ-0680,CTR-2020-000253,11.5.5,Piping,5,MAT-00000124,People arm order.,NOS,503,68360.12,34385140.36,376,74.8,False,,ACTIVE,,True,,2023-02-14
+CTR-2020-000253-BOQ-0681,CTR-2020-000253,11.4.6,Piping,6,MAT-00000525,Wear point remain build task.,MONTH,502,521289.26,261687208.52,198,39.4,False,,ACTIVE,,False,,2021-02-02
+CTR-2020-000253-BOQ-0682,CTR-2020-000253,11.7.7,Piping,7,MAT-00000445,Heavy shake possible sort.,MT,96,2072.07,198918.72,43,44.8,False,,ACTIVE,,False,,2024-11-29
+CTR-2020-000253-BOQ-0683,CTR-2020-000253,11.9.8,Piping,8,MAT-00000645,Police two everybody interview.,BOX,86,1057.3,90927.8,55,64.0,True,To receive education level.,REVISED,,False,,2022-05-15
+CTR-2020-000253-BOQ-0684,CTR-2020-000253,11.4.9,Piping,9,MAT-00000862,Either sit everyone artist home you.,DAY,536,435232.02,233284362.72,48,9.0,False,,ON_HOLD,,True,,2024-03-18
+CTR-2020-000253-BOQ-0685,CTR-2020-000253,11.10.10,Piping,10,MAT-00000677,Western enough key man up.,MONTH,833,380203.1,316709182.3,260,31.2,False,,REVISED,VO-048,True,,2021-01-16
+CTR-2020-000253-BOQ-0686,CTR-2020-000253,11.7.11,Piping,11,MAT-00000864,Hotel population board music issue pass blood kid.,NOS,47,303150.05,14248052.35,45,95.7,False,,ACTIVE,,True,,2021-12-21
+CTR-2020-000253-BOQ-0687,CTR-2020-000253,11.3.12,Piping,12,MAT-00000350,Billion authority number economy knowledge.,JOINT,217,271.14,58837.38,191,88.0,False,,ACTIVE,,True,Chance policy usually professor entire record toward.,2023-06-06
+CTR-2020-000253-BOQ-0688,CTR-2020-000253,11.1.13,Piping,13,MAT-00000120,About remain side long identify road speech.,SET,176,18885.86,3323911.36,117,66.5,False,,DELETED,,True,,2023-01-17
+CTR-2020-000708-BOQ-0689,CTR-2020-000708,11.5.1,Commissioning,1,MAT-00000405,Music about west stand.,JOINT,90,587.06,52835.4,1,1.1,False,,REVISED,,True,Building movement yard four field area young.,2024-05-24
+CTR-2020-000708-BOQ-0690,CTR-2020-000708,11.3.2,Commissioning,2,MAT-00000665,Half table future subject.,DRUM,666,2070.08,1378673.28,641,96.2,False,,ACTIVE,VO-050,True,,2019-03-31
+CTR-2020-000708-BOQ-0691,CTR-2020-000708,11.3.3,Commissioning,3,MAT-00000120,Possible computer always his course.,SET,925,14476.02,13390318.5,719,77.7,False,,ACTIVE,VO-029,True,,2023-05-24
+CTR-2020-000708-BOQ-0692,CTR-2020-000708,11.6.4,Commissioning,4,MAT-00000053,To piece grow be plan same.,PKT,9,400.59,3605.31,6,66.7,False,,REVISED,,True,,2022-04-06
+CTR-2020-000708-BOQ-0693,CTR-2020-000708,11.8.5,Commissioning,5,MAT-00000038,Along agent you draw.,NOS,410,112143.54,45978851.4,302,73.7,False,,ON_HOLD,,False,,2019-09-06
+CTR-2020-000708-BOQ-0694,CTR-2020-000708,11.1.6,Commissioning,6,MAT-00000541,Whom administration fund front return if deep.,JOINT,433,942.47,408089.51,283,65.4,True,As music film move strong.,DELETED,,True,,2022-11-21
+CTR-2020-000708-BOQ-0695,CTR-2020-000708,11.7.7,Commissioning,7,MAT-00000460,Learn question them chance often under already.,LTR,22,2529.82,55656.04,6,27.3,False,,ACTIVE,,True,,2024-04-02
+CTR-2020-000708-BOQ-0696,CTR-2020-000708,11.5.8,Commissioning,8,MAT-00000135,Major affect trade peace.,MT,741,256.49,190059.09,426,57.5,False,,ACTIVE,,False,,2020-10-25
+CTR-2020-000708-BOQ-0697,CTR-2020-000708,11.4.9,Commissioning,9,MAT-00000637,Red candidate common anyone film.,SET,290,5161.62,1496869.8,44,15.2,False,,ACTIVE,,True,,2023-08-31
+CTR-2020-000708-BOQ-0698,CTR-2020-000708,11.8.10,Commissioning,10,MAT-00000966,Box organization past as.,SET,311,2174.16,676163.76,285,91.6,True,Lay color opportunity.,ACTIVE,,True,,2024-08-24
+CTR-2020-000708-BOQ-0699,CTR-2020-000708,11.2.11,Commissioning,11,MAT-00000033,International specific word question food.,KG,346,252.88,87496.48,316,91.3,False,,ACTIVE,,False,,2019-07-11
+CTR-2019-000789-BOQ-0700,CTR-2019-000789,5.3.1,Painting & Coatings,1,MAT-00000918,National focus who degree animal community as.,CUM,874,389.68,340580.32,527,60.3,False,,ACTIVE,VO-029,False,,2020-03-30
+CTR-2019-000789-BOQ-0701,CTR-2019-000789,5.2.2,Painting & Coatings,2,MAT-00000999,Center indeed recent network just.,SET,801,165411.1,132494291.1,800,99.9,False,,ACTIVE,,True,,2020-04-28
+CTR-2019-000789-BOQ-0702,CTR-2019-000789,5.4.3,Painting & Coatings,3,MAT-00000892,American beyond suggest partner sing administration main according.,CUM,933,242.03,225813.99,745,79.8,False,,ACTIVE,,False,Unit religious order exist.,2023-01-29
+CTR-2019-000789-BOQ-0703,CTR-2019-000789,5.3.4,Painting & Coatings,4,MAT-00000343,Realize deal policy mission include visit particular.,NOS,126,23092.42,2909644.92,56,44.4,False,,REVISED,VO-031,True,,2019-12-16
+CTR-2019-000789-BOQ-0704,CTR-2019-000789,5.6.5,Painting & Coatings,5,MAT-00000273,Other response partner.,BBL,733,74.4,54535.2,369,50.3,False,,ACTIVE,,True,,2020-07-19
+CTR-2019-000789-BOQ-0705,CTR-2019-000789,5.7.6,Painting & Coatings,6,MAT-00000822,Physical site girl above.,RM,424,2006.6,850798.4,234,55.2,False,,ACTIVE,,False,,2019-02-10
+CTR-2019-000789-BOQ-0706,CTR-2019-000789,5.9.7,Painting & Coatings,7,MAT-00000735,Court worry with peace television.,BOX,967,452.76,437818.92,346,35.8,False,,ON_HOLD,,True,,2020-09-10
+CTR-2019-000789-BOQ-0707,CTR-2019-000789,5.10.8,Painting & Coatings,8,MAT-00000925,Medical less phone decade apply both chance.,SET,60,20565.19,1233911.4,45,75.0,False,,DELETED,,True,,2022-05-31
+CTR-2019-000789-BOQ-0708,CTR-2019-000789,5.6.9,Painting & Coatings,9,MAT-00000739,Marriage civil two approach hair decide edge.,NOS,932,39417.0,36736644.0,846,90.8,False,,ACTIVE,,False,,2021-04-20
+CTR-2019-000789-BOQ-0709,CTR-2019-000789,5.9.10,Painting & Coatings,10,MAT-00000909,Source serve analysis science understand compare size machine.,DAY,640,3019.54,1932505.6,452,70.6,False,,DELETED,,True,,2022-05-20
+CTR-2019-000789-BOQ-0710,CTR-2019-000789,5.1.11,Painting & Coatings,11,MAT-00000087,Audience dog know often.,RM,551,85693.29,47217002.79,129,23.4,False,,ACTIVE,,True,,2022-10-27
+CTR-2019-000789-BOQ-0711,CTR-2019-000789,5.3.12,Painting & Coatings,12,MAT-00000776,Cup quality for single for better.,CUM,24,440.84,10580.16,17,70.8,False,,ACTIVE,,False,,2020-03-28
+CTR-2019-000789-BOQ-0712,CTR-2019-000789,5.1.13,Painting & Coatings,13,MAT-00000750,Thank heart determine likely machine three.,RM,862,31471.74,27128639.88,642,74.5,False,,ACTIVE,,False,,2019-01-22
+CTR-2019-000789-BOQ-0713,CTR-2019-000789,5.6.14,Painting & Coatings,14,MAT-00000465,Democratic participant concern health.,NOS,242,1380.96,334192.32,148,61.2,False,,DELETED,,True,,2022-12-05
+CTR-2019-000789-BOQ-0714,CTR-2019-000789,5.5.15,Painting & Coatings,15,MAT-00000307,Rest place wish dark camera realize arrive.,NOS,683,324197.28,221426742.24,586,85.8,False,,ACTIVE,,True,,2021-02-27
+CTR-2020-000843-BOQ-0715,CTR-2020-000843,8.3.1,Electrical Works,1,MAT-00000101,Detail far church some well town.,NOS,729,65305.07,47607396.03,421,57.8,True,Book letter industry.,ACTIVE,,True,,2023-02-21
+CTR-2020-000843-BOQ-0716,CTR-2020-000843,8.9.2,Electrical Works,2,MAT-00000694,Wife talk beat tax majority yet option.,LTR,413,4476.44,1848769.72,265,64.2,False,,DELETED,,True,,2024-06-28
+CTR-2020-000843-BOQ-0717,CTR-2020-000843,8.7.3,Electrical Works,3,MAT-00000750,Develop until watch trial together individual analysis yard.,RM,844,27940.82,23582052.08,517,61.3,True,Evidence role save east force.,ACTIVE,,False,,2020-04-28
+CTR-2020-000843-BOQ-0718,CTR-2020-000843,8.4.4,Electrical Works,4,MAT-00000712,Almost most look something start laugh drive.,NOS,467,44545.86,20802916.62,382,81.8,False,,ACTIVE,,True,,2020-03-27
+CTR-2020-000843-BOQ-0719,CTR-2020-000843,8.6.5,Electrical Works,5,MAT-00000124,Send really image design grow dream your.,NOS,586,53164.4,31154338.4,535,91.3,False,,ACTIVE,,True,,2020-08-08
+CTR-2020-000843-BOQ-0720,CTR-2020-000843,8.10.6,Electrical Works,6,MAT-00000146,Look fight reflect.,MT,432,2078.38,897860.16,156,36.1,False,,ACTIVE,,True,,2022-11-29
+CTR-2020-000843-BOQ-0721,CTR-2020-000843,8.1.7,Electrical Works,7,MAT-00000070,Section agency lawyer sign them if smile.,NOS,428,19875.3,8506628.4,158,36.9,False,,ON_HOLD,,True,,2020-06-27
+CTR-2020-000843-BOQ-0722,CTR-2020-000843,8.3.8,Electrical Works,8,MAT-00000781,Phone region ability physical his real.,MT,517,894.93,462678.81,460,89.0,False,,ACTIVE,,True,,2023-08-05
+CTR-2020-000843-BOQ-0723,CTR-2020-000843,8.4.9,Electrical Works,9,MAT-00000397,Per friend usually method.,MT,922,2358.18,2174241.96,553,60.0,True,Allow international especially watch my some.,ACTIVE,,True,Thousand book half people half compare.,2020-11-09
+CTR-2020-000843-BOQ-0724,CTR-2020-000843,8.1.10,Electrical Works,10,MAT-00000725,Relate night similar catch friend much power.,NOS,586,33842.57,19831746.02,316,53.9,False,,ACTIVE,,True,,2019-08-05
+CTR-2020-000843-BOQ-0725,CTR-2020-000843,8.10.11,Electrical Works,11,MAT-00000981,That reflect send set fly today me institution.,SQM,535,153.24,81983.4,487,91.0,False,,ACTIVE,,True,,2022-01-31
+CTR-2020-000843-BOQ-0726,CTR-2020-000843,8.4.12,Electrical Works,12,MAT-00000806,As generation main.,BBL,252,222.43,56052.36,214,84.9,False,,ACTIVE,,True,,2019-07-04
+CTR-2020-000843-BOQ-0727,CTR-2020-000843,8.1.13,Electrical Works,13,MAT-00000504,Son war speak wait assume throughout.,NOS,349,1791.41,625202.09,212,60.7,True,Stop like mother stay tonight later.,ACTIVE,,True,,2020-11-19
+CTR-2020-000293-BOQ-0728,CTR-2020-000293,5.2.1,Concrete Works,1,MAT-00000787,Beautiful hospital condition when baby clearly born.,NOS,158,78070.15,12335083.7,104,65.8,False,,ACTIVE,,True,,2022-05-05
+CTR-2020-000293-BOQ-0729,CTR-2020-000293,5.2.2,Concrete Works,2,MAT-00000400,Many themselves minute physical.,NOS,328,41127.36,13489774.08,165,50.3,False,,ON_HOLD,,True,,2021-08-26
+CTR-2020-000293-BOQ-0730,CTR-2020-000293,5.9.3,Concrete Works,3,MAT-00000505,Indicate radio use listen information.,SET,771,1030.82,794762.22,117,15.2,False,,ACTIVE,,True,Factor as the.,2021-08-15
+CTR-2024-000936-BOQ-0731,CTR-2024-000936,5.10.1,General Requirements,1,MAT-00000568,Strong mind from official pretty.,SET,692,1730.37,1197416.04,568,82.1,False,,ACTIVE,,True,,2024-08-11
+CTR-2024-000936-BOQ-0732,CTR-2024-000936,5.3.2,General Requirements,2,MAT-00000209,Main program morning nature leader note.,NOS,383,98960.17,37901745.11,86,22.5,False,,ACTIVE,,False,,2019-01-05
+CTR-2024-000936-BOQ-0733,CTR-2024-000936,5.8.3,General Requirements,3,MAT-00000833,Commercial employee machine wife show.,SET,985,103094.06,101547649.1,296,30.1,False,,ACTIVE,VO-031,True,,2023-04-07
+CTR-2024-000936-BOQ-0734,CTR-2024-000936,5.4.4,General Requirements,4,MAT-00000360,Under Republican expect win stuff realize project child.,KG,600,3640.71,2184426.0,288,48.0,True,Chance expect what.,ACTIVE,,True,,2020-05-18
+CTR-2024-000936-BOQ-0735,CTR-2024-000936,5.3.5,General Requirements,5,MAT-00000851,Bring year off kid hard.,JOINT,743,2322.82,1725855.26,286,38.5,False,,ACTIVE,,False,,2022-11-04
+CTR-2024-000936-BOQ-0736,CTR-2024-000936,5.5.6,General Requirements,6,MAT-00000651,None alone first gas health.,NOS,771,291187.81,224505801.51,279,36.2,False,,ON_HOLD,,True,,2019-03-07
+CTR-2024-000936-BOQ-0737,CTR-2024-000936,5.3.7,General Requirements,7,MAT-00000936,Wish move building agent use shoulder way.,JOINT,662,1766.16,1169197.92,623,94.1,False,,ON_HOLD,,True,,2024-06-25
+CTR-2024-000936-BOQ-0738,CTR-2024-000936,5.7.8,General Requirements,8,MAT-00000781,Choose wife national medical positive far.,MT,552,662.32,365600.64,79,14.3,False,,DELETED,,True,,2023-03-22
+CTR-2024-000936-BOQ-0739,CTR-2024-000936,5.10.9,General Requirements,9,MAT-00000848,Wide senior yes project son.,KG,367,2121.86,778722.62,356,97.0,False,,ACTIVE,,True,Full both look always question bring.,2019-03-23
+CTR-2024-000936-BOQ-0740,CTR-2024-000936,5.5.10,General Requirements,10,MAT-00000777,Husband subject land.,JOINT,697,642.9,448101.3,366,52.5,False,,REVISED,,False,,2024-07-15
+CTR-2024-000936-BOQ-0741,CTR-2024-000936,5.6.11,General Requirements,11,MAT-00000991,For part crime money.,NOS,38,36317.78,1380075.64,38,100.0,False,,ACTIVE,,True,,2024-08-11
+CTR-2024-000936-BOQ-0742,CTR-2024-000936,5.3.12,General Requirements,12,MAT-00000506,Wish hour make owner.,NOS,566,66605.73,37698843.18,179,31.6,True,Cultural base support quality.,ACTIVE,VO-017,False,,2024-11-12
+CTR-2024-000936-BOQ-0743,CTR-2024-000936,5.5.13,General Requirements,13,MAT-00000747,Want training guess challenge take hard health.,NOS,197,80619.9,15882120.3,5,2.5,False,,ACTIVE,,True,,2024-02-03
+CTR-2024-000936-BOQ-0744,CTR-2024-000936,5.7.14,General Requirements,14,MAT-00000003,General final knowledge night democratic.,SET,657,54093.61,35539501.77,53,8.1,False,,ACTIVE,,True,,2024-10-23
+CTR-2024-000936-BOQ-0745,CTR-2024-000936,5.8.15,General Requirements,15,MAT-00000478,Score indeed kind clearly road today.,NOS,371,66686.69,24740761.99,22,5.9,False,,ACTIVE,,True,,2019-01-22
+CTR-2022-000402-BOQ-0746,CTR-2022-000402,2.10.1,Electrical Works,1,MAT-00000902,Cause onto beat debate listen test.,MT,828,28.85,23887.8,755,91.2,False,,ACTIVE,,False,,2022-09-10
+CTR-2022-000402-BOQ-0747,CTR-2022-000402,2.2.2,Electrical Works,2,MAT-00000319,At whether series because important trial.,KG,642,1590.38,1021023.96,28,4.4,False,,REVISED,,True,,2021-10-22
+CTR-2022-000402-BOQ-0748,CTR-2022-000402,2.2.3,Electrical Works,3,MAT-00000254,Company left nothing trip current strategy.,JOINT,485,1522.46,738393.1,174,35.9,False,,REVISED,,True,Network amount step strong fight.,2023-12-02
+CTR-2022-000402-BOQ-0749,CTR-2022-000402,2.2.4,Electrical Works,4,MAT-00000783,Buy program explain conference trade population agreement.,CUM,641,479.41,307301.81,127,19.8,True,Science different social child feel policy.,ACTIVE,VO-021,False,,2020-06-06
+CTR-2022-000064-BOQ-0750,CTR-2022-000064,1.10.1,Piping,1,MAT-00000309,Manage wife out gun lose.,BAG,642,215.43,138306.06,104,16.2,False,,ACTIVE,,True,Than physical live reason build mention.,2023-08-11
+CTR-2022-000064-BOQ-0751,CTR-2022-000064,1.10.2,Piping,2,MAT-00000239,Adult employee ok certainly leave really group.,SET,807,65784.6,53088172.2,10,1.2,False,,ACTIVE,,True,,2019-04-17
+CTR-2022-000064-BOQ-0752,CTR-2022-000064,1.9.3,Piping,3,MAT-00000465,Any factor police baby create physical.,NOS,337,1250.63,421462.31,55,16.3,True,Evening information treatment.,ACTIVE,VO-013,False,,2024-09-15
+CTR-2022-000064-BOQ-0753,CTR-2022-000064,1.6.4,Piping,4,MAT-00000263,Out cold follow first.,KG,432,895.27,386756.64,317,73.4,False,,ACTIVE,,True,,2023-11-21
+CTR-2022-000064-BOQ-0754,CTR-2022-000064,1.6.5,Piping,5,MAT-00000526,Even recently guy move goal.,NOS,319,350898.22,111936532.18,277,86.8,False,,ACTIVE,,True,,2019-02-03
+CTR-2022-000064-BOQ-0755,CTR-2022-000064,1.10.6,Piping,6,MAT-00000531,Actually million health machine.,BAG,674,108.73,73284.02,58,8.6,False,,REVISED,,True,,2021-03-31
+CTR-2022-000064-BOQ-0756,CTR-2022-000064,1.4.7,Piping,7,MAT-00000656,Tv clear design me story somebody.,MT,805,1551.12,1248651.6,193,24.0,False,,ACTIVE,,True,,2022-10-06
+CTR-2022-000064-BOQ-0757,CTR-2022-000064,1.5.8,Piping,8,MAT-00000631,Party story moment mother necessary series box.,DAY,429,233954.44,100366454.76,53,12.4,False,,REVISED,VO-015,False,,2021-08-01
+CTR-2022-000064-BOQ-0758,CTR-2022-000064,1.10.9,Piping,9,MAT-00000478,Trouble bring capital admit give reality catch.,NOS,219,57488.67,12590018.73,188,85.8,False,,REVISED,,True,,2019-01-28
+CTR-2022-000064-BOQ-0759,CTR-2022-000064,1.1.10,Piping,10,MAT-00000372,Season budget campaign.,NOS,76,2033.38,154536.88,71,93.4,True,Threat our shake garden report.,ACTIVE,,True,,2019-06-29
+CTR-2022-000064-BOQ-0760,CTR-2022-000064,1.1.11,Piping,11,MAT-00000999,Read film decide wonder.,SET,204,133062.99,27144849.96,44,21.6,False,,ACTIVE,,False,,2021-03-13
+CTR-2022-000064-BOQ-0761,CTR-2022-000064,1.3.12,Piping,12,MAT-00000023,Cultural allow process.,CUM,864,357.84,309173.76,103,11.9,True,Real six back simple serious.,ACTIVE,,False,,2021-05-11
+CTR-2022-000064-BOQ-0762,CTR-2022-000064,1.8.13,Piping,13,MAT-00000313,Arrive budget education at property senior site turn.,BOX,246,1323.14,325492.44,95,38.6,False,,ON_HOLD,,False,,2019-09-25
+CTR-2022-000064-BOQ-0763,CTR-2022-000064,1.3.14,Piping,14,MAT-00000122,Onto customer provide ahead certainly.,MONTH,904,1160.1,1048730.4,813,89.9,False,,ACTIVE,,True,,2021-09-28
+CTR-2022-000064-BOQ-0764,CTR-2022-000064,1.1.15,Piping,15,MAT-00000944,We girl civil may rock.,MONTH,782,497.89,389349.98,193,24.7,False,,ACTIVE,,True,,2022-02-21
+CTR-2023-000894-BOQ-0765,CTR-2023-000894,10.8.1,Painting & Coatings,1,MAT-00000908,Measure attention standard shake more.,SET,215,60341.33,12973385.95,200,93.0,False,,ACTIVE,VO-033,True,,2024-09-16
+CTR-2023-000894-BOQ-0766,CTR-2023-000894,10.8.2,Painting & Coatings,2,MAT-00000384,Who commercial senior above rise.,SET,532,3961.2,2107358.4,329,61.8,False,,ACTIVE,,False,,2023-07-01
+CTR-2023-000894-BOQ-0767,CTR-2023-000894,10.10.3,Painting & Coatings,3,MAT-00000654,Turn surface listen recently continue.,JOINT,666,1586.8,1056808.8,224,33.6,False,,ACTIVE,,True,,2023-03-25
+CTR-2020-000586-BOQ-0768,CTR-2020-000586,5.2.1,Electrical Works,1,MAT-00000564,Congress great here Democrat.,NOS,138,80098.88,11053645.44,75,54.3,False,,ACTIVE,,True,,2023-10-12
+CTR-2020-000586-BOQ-0769,CTR-2020-000586,5.8.2,Electrical Works,2,MAT-00000462,Imagine seven fire letter mind.,PKT,443,433.75,192151.25,411,92.8,False,,ACTIVE,VO-029,True,,2023-01-10
+CTR-2020-000586-BOQ-0770,CTR-2020-000586,5.2.3,Electrical Works,3,MAT-00000924,Several relate news American foreign break exist.,CUM,302,204.47,61749.94,262,86.8,False,,ACTIVE,,True,,2023-01-15
+CTR-2022-000040-BOQ-0771,CTR-2022-000040,6.6.1,Steel Structures,1,MAT-00000202,Save reach subject difficult imagine world into task.,SET,257,27891.52,7168120.64,140,54.5,False,,ACTIVE,,False,,2021-12-05
+CTR-2022-000040-BOQ-0772,CTR-2022-000040,6.5.2,Steel Structures,2,MAT-00000009,Voice happen actually purpose public how mission.,BAG,289,420.27,121458.03,206,71.3,False,,REVISED,,True,,2020-09-03
+CTR-2022-000040-BOQ-0773,CTR-2022-000040,6.7.3,Steel Structures,3,MAT-00000887,Budget house reason within.,NOS,234,794.74,185969.16,191,81.6,False,,ACTIVE,,True,,2024-03-04
+CTR-2022-000040-BOQ-0774,CTR-2022-000040,6.2.4,Steel Structures,4,MAT-00000349,Ask window full organization.,MT,321,133.43,42831.03,219,68.2,False,,ACTIVE,,True,,2023-03-15
+CTR-2022-000040-BOQ-0775,CTR-2022-000040,6.10.5,Steel Structures,5,MAT-00000143,Order series song wall green project wear would.,DAY,895,4279.6,3830242.0,755,84.4,True,But study rise everything require.,REVISED,,True,,2023-07-11
+CTR-2022-000040-BOQ-0776,CTR-2022-000040,6.9.6,Steel Structures,6,MAT-00000782,Everything should blue economy market pick care.,SQM,307,105.95,32526.65,11,3.6,False,,ACTIVE,,False,,2023-05-21
+CTR-2022-000040-BOQ-0777,CTR-2022-000040,6.4.7,Steel Structures,7,MAT-00000391,Scene store marriage ago.,MT,972,94.09,91455.48,547,56.3,False,,ACTIVE,,False,,2022-06-01
+CTR-2022-000040-BOQ-0778,CTR-2022-000040,6.3.8,Steel Structures,8,MAT-00000096,Set produce mind man.,SET,107,100925.46,10799024.22,22,20.6,True,Him quickly check perform.,ACTIVE,,True,Dark product make energy gas teacher national.,2023-04-30
+CTR-2022-000040-BOQ-0779,CTR-2022-000040,6.4.9,Steel Structures,9,MAT-00000291,Fire heavy least allow news team field.,SET,239,79780.47,19067532.33,134,56.1,True,Wrong they budget.,ACTIVE,,True,,2023-08-10
+CTR-2024-000401-BOQ-0780,CTR-2024-000401,3.7.1,Earthworks,1,MAT-00000550,Man care resource maintain.,JOINT,490,964.83,472766.7,199,40.6,False,,DELETED,,True,,2024-04-28
+CTR-2024-000401-BOQ-0781,CTR-2024-000401,3.10.2,Earthworks,2,MAT-00000163,Notice make network much.,NOS,589,17682.6,10415051.4,207,35.1,False,,ACTIVE,,True,,2019-09-20
+CTR-2024-000401-BOQ-0782,CTR-2024-000401,3.7.3,Earthworks,3,MAT-00000845,Live take media hot manager wife pay.,KG,620,3864.54,2396014.8,538,86.8,False,,ACTIVE,,True,Short expect article opportunity campaign hand.,2020-01-09
+CTR-2023-000295-BOQ-0783,CTR-2023-000295,6.5.1,Piping,1,MAT-00000718,Agree through game best generation group goal product.,SET,401,42220.99,16930616.99,89,22.2,False,,ACTIVE,,True,,2021-01-21
+CTR-2023-000295-BOQ-0784,CTR-2023-000295,6.10.2,Piping,2,MAT-00000716,Doctor fine be read than.,JOINT,98,2070.35,202894.3,5,5.1,False,,DELETED,,True,,2019-10-01
+CTR-2023-000295-BOQ-0785,CTR-2023-000295,6.4.3,Piping,3,MAT-00000715,Front after for leave.,LTR,931,35.34,32901.54,780,83.8,False,,ON_HOLD,VO-007,True,,2023-08-07
+CTR-2023-000295-BOQ-0786,CTR-2023-000295,6.3.4,Piping,4,MAT-00000462,Nothing top entire receive onto worry.,PKT,259,387.95,100479.05,22,8.5,False,,ACTIVE,,False,,2023-06-24
+CTR-2023-000295-BOQ-0787,CTR-2023-000295,6.4.5,Piping,5,MAT-00000877,From me share fund pass.,SET,407,73385.54,29867914.78,128,31.4,True,Now follow best major real.,ON_HOLD,,False,,2019-10-07
+CTR-2023-000295-BOQ-0788,CTR-2023-000295,6.9.6,Piping,6,MAT-00000085,Degree enter father of source person when.,DRUM,673,1432.45,964038.85,448,66.6,True,Wide cut player wind away.,REVISED,,True,Behind front attack song little decide somebody prepare.,2020-02-16
+CTR-2023-000295-BOQ-0789,CTR-2023-000295,6.5.7,Piping,7,MAT-00000182,Measure feel professional finish increase.,JOINT,128,2000.17,256021.76,100,78.1,False,,ACTIVE,VO-018,True,,2021-06-06
+CTR-2023-000295-BOQ-0790,CTR-2023-000295,6.1.8,Piping,8,MAT-00000732,Person law shake Congress affect.,KG,915,2509.57,2296256.55,221,24.2,False,,ACTIVE,,True,,2020-02-26
+CTR-2023-000295-BOQ-0791,CTR-2023-000295,6.5.9,Piping,9,MAT-00000400,Speak table trade various risk art customer.,NOS,455,38872.61,17687037.55,2,0.4,True,Television officer defense while score level.,ACTIVE,,True,,2021-03-30
+CTR-2023-000295-BOQ-0792,CTR-2023-000295,6.1.10,Piping,10,MAT-00000094,Challenge character rate feel itself five store.,NOS,432,315934.39,136483656.48,7,1.6,False,,ACTIVE,,True,,2020-11-18
+CTR-2023-000295-BOQ-0793,CTR-2023-000295,6.3.11,Piping,11,MAT-00000742,Plant suffer environment expert.,RM,46,1454.23,66894.58,6,13.0,False,,ACTIVE,,True,,2023-06-07
+CTR-2024-000962-BOQ-0794,CTR-2024-000962,4.2.1,Earthworks,1,MAT-00000219,Either over image box.,SQM,366,122.28,44754.48,7,1.9,False,,ACTIVE,,True,Agree someone financial magazine yard.,2022-02-14
+CTR-2024-000962-BOQ-0795,CTR-2024-000962,4.10.2,Earthworks,2,MAT-00000666,Positive already city carry election sound.,KG,378,1829.12,691407.36,111,29.4,False,,REVISED,,False,,2020-12-03
+CTR-2024-000962-BOQ-0796,CTR-2024-000962,4.2.3,Earthworks,3,MAT-00000258,Compare system white magazine after teacher base.,GAL,615,141.5,87022.5,397,64.6,False,,ON_HOLD,,True,,2022-07-26
+CTR-2024-000962-BOQ-0797,CTR-2024-000962,4.8.4,Earthworks,4,MAT-00000872,Fear as western to public though however style.,NOS,70,2139.33,149753.1,57,81.4,False,,ACTIVE,,True,,2021-08-10
+CTR-2024-000962-BOQ-0798,CTR-2024-000962,4.10.5,Earthworks,5,MAT-00000022,Door number matter building.,BBL,778,207.33,161302.74,316,40.6,False,,ACTIVE,,True,,2024-08-04
+CTR-2024-000962-BOQ-0799,CTR-2024-000962,4.4.6,Earthworks,6,MAT-00000304,Wear use edge this draw business southern forget.,NOS,156,37317.78,5821573.68,9,5.8,False,,ACTIVE,,True,,2020-07-03
+CTR-2024-000962-BOQ-0800,CTR-2024-000962,4.6.7,Earthworks,7,MAT-00000285,Say south season very design blood degree ever.,NOS,660,1595.41,1052970.6,40,6.1,False,,ON_HOLD,,True,Effect operation make hear we first.,2022-09-18
+CTR-2024-000351-BOQ-0801,CTR-2024-000351,9.4.1,Steel Structures,1,MAT-00000056,Little east everyone six certain little.,NOS,821,41743.38,34271314.98,736,89.6,False,,DELETED,,True,,2019-09-22
+CTR-2024-000351-BOQ-0802,CTR-2024-000351,9.8.2,Steel Structures,2,MAT-00000891,Start again whom paper success production.,BAG,72,132.75,9558.0,6,8.3,False,,ACTIVE,,True,,2021-04-17
+CTR-2024-000351-BOQ-0803,CTR-2024-000351,9.9.3,Steel Structures,3,MAT-00000242,Real small dream.,RM,81,147.02,11908.62,59,72.8,False,,ACTIVE,,True,,2022-03-14
+CTR-2024-000351-BOQ-0804,CTR-2024-000351,9.8.4,Steel Structures,4,MAT-00000591,His police red total rate movement door.,CUM,991,429.23,425366.93,278,28.1,False,,ACTIVE,,True,,2024-04-12
+CTR-2020-000452-BOQ-0805,CTR-2020-000452,10.7.1,Painting & Coatings,1,MAT-00000753,View series father teacher.,NOS,779,1190.35,927282.65,493,63.3,True,Home travel hotel within eight.,ACTIVE,,False,,2020-09-17
+CTR-2020-000452-BOQ-0806,CTR-2020-000452,10.3.2,Painting & Coatings,2,MAT-00000567,Trouble place these short.,SET,264,26286.47,6939628.08,156,59.1,False,,ACTIVE,,True,,2024-04-06
+CTR-2020-000452-BOQ-0807,CTR-2020-000452,10.3.3,Painting & Coatings,3,MAT-00000201,Smile ever bag single man say.,DRUM,939,2886.03,2709982.17,13,1.4,False,,ACTIVE,,True,,2023-06-05
+CTR-2020-000452-BOQ-0808,CTR-2020-000452,10.6.4,Painting & Coatings,4,MAT-00000994,Response theory star station recognize media.,SET,394,4341.06,1710377.64,328,83.2,False,,ACTIVE,,False,,2020-10-27
+CTR-2020-000452-BOQ-0809,CTR-2020-000452,10.7.5,Painting & Coatings,5,MAT-00000199,Inside role natural force receive seven.,NOS,981,2173.51,2132213.31,935,95.3,False,,ACTIVE,,True,,2019-08-25
+CTR-2020-000452-BOQ-0810,CTR-2020-000452,10.7.6,Painting & Coatings,6,MAT-00000667,Picture social carry husband.,SET,949,1084.36,1029057.64,252,26.6,False,,ACTIVE,,True,,2020-08-28
+CTR-2020-000452-BOQ-0811,CTR-2020-000452,10.10.7,Painting & Coatings,7,MAT-00000268,Figure office book economic require should power candidate.,NOS,467,235146.55,109813438.85,75,16.1,False,,ACTIVE,,False,Rate society floor long same end reach step.,2020-01-14
+CTR-2019-000660-BOQ-0812,CTR-2019-000660,7.10.1,Instrumentation,1,MAT-00000724,Cup increase consider then war.,NOS,998,69267.67,69129134.66,530,53.1,False,,DELETED,,True,,2024-08-12
+CTR-2019-000660-BOQ-0813,CTR-2019-000660,7.9.2,Instrumentation,2,MAT-00000991,Difference way type positive phone trade wind.,NOS,675,48674.75,32855456.25,600,88.9,False,,ACTIVE,,False,Energy system anyone peace outside.,2022-11-11
+CTR-2019-000660-BOQ-0814,CTR-2019-000660,7.3.3,Instrumentation,3,MAT-00000834,Become happy water bring.,SET,276,59370.27,16386194.52,203,73.6,False,,ACTIVE,,True,Itself turn law purpose budget require course.,2023-09-08
+CTR-2019-000660-BOQ-0815,CTR-2019-000660,7.7.4,Instrumentation,4,MAT-00000538,Explain management candidate task outside.,CUM,671,99.13,66516.23,441,65.7,False,,ACTIVE,,True,,2020-03-27
+CTR-2019-000660-BOQ-0816,CTR-2019-000660,7.10.5,Instrumentation,5,MAT-00000462,Face energy pay.,PKT,834,389.13,324534.42,205,24.6,True,Risk country Congress society.,ACTIVE,,True,,2023-08-02
+CTR-2019-000660-BOQ-0817,CTR-2019-000660,7.10.6,Instrumentation,6,MAT-00000452,The window huge defense.,NOS,112,72219.62,8088597.44,21,18.8,True,Hard range leader action.,ACTIVE,,True,Remain save eight believe arrive four.,2021-08-19
+CTR-2019-000660-BOQ-0818,CTR-2019-000660,7.8.7,Instrumentation,7,MAT-00000490,Remember special accept mean herself within provide car.,BAG,689,176.17,121381.13,9,1.3,True,Likely great paper provide.,REVISED,VO-038,False,American conference college manage fund life bed.,2021-05-14
+CTR-2019-000660-BOQ-0819,CTR-2019-000660,7.1.8,Instrumentation,8,MAT-00000535,Item employee finish without material wind exactly.,BOX,385,136.58,52583.3,136,35.3,False,,ACTIVE,,True,,2022-11-06
+CTR-2019-000660-BOQ-0820,CTR-2019-000660,7.4.9,Instrumentation,9,MAT-00000323,Unit executive theory party seven enough.,CUM,964,415.91,400937.24,408,42.3,False,,ACTIVE,,True,,2024-02-15
+CTR-2019-000660-BOQ-0821,CTR-2019-000660,7.7.10,Instrumentation,10,MAT-00000892,Table price sometimes apply chance discover along.,CUM,743,303.62,225589.66,142,19.1,True,Job close say man wear.,ACTIVE,,False,,2021-10-15
+CTR-2019-000660-BOQ-0822,CTR-2019-000660,7.8.11,Instrumentation,11,MAT-00000378,Clear level break time manager.,NOS,634,38126.58,24172251.72,486,76.7,False,,ACTIVE,VO-041,False,,2019-03-10
+CTR-2019-000660-BOQ-0823,CTR-2019-000660,7.6.12,Instrumentation,12,MAT-00000649,Ground remember magazine manage suffer term.,CUM,895,142.45,127492.75,826,92.3,False,,ACTIVE,,True,,2019-11-30
+CTR-2022-000357-BOQ-0824,CTR-2022-000357,11.2.1,Piping,1,MAT-00000878,Glass data exist strong.,DRUM,752,271.04,203822.08,621,82.6,False,,ACTIVE,,True,,2024-08-28
+CTR-2022-000357-BOQ-0825,CTR-2022-000357,11.3.2,Piping,2,MAT-00000033,State none production defense your above short.,KG,510,300.85,153433.5,154,30.2,False,,ON_HOLD,,True,,2020-04-18
+CTR-2022-000357-BOQ-0826,CTR-2022-000357,11.9.3,Piping,3,MAT-00000494,Indicate baby should quality.,RM,247,22.03,5441.41,43,17.4,False,,ACTIVE,VO-028,False,Ago race quite hour opportunity week.,2022-08-30
+CTR-2022-000357-BOQ-0827,CTR-2022-000357,11.7.4,Piping,4,MAT-00000925,Child ball store process law western.,SET,785,14776.98,11599929.3,736,93.8,False,,ACTIVE,,True,,2024-12-29
+CTR-2022-000357-BOQ-0828,CTR-2022-000357,11.8.5,Piping,5,MAT-00000649,Price forget analysis performance laugh water yourself trade.,CUM,93,211.54,19673.22,42,45.2,False,,ON_HOLD,,True,,2023-03-25
+CTR-2022-000357-BOQ-0829,CTR-2022-000357,11.7.6,Piping,6,MAT-00000933,Can tell soon executive sometimes season natural.,SET,670,31266.37,20948467.9,575,85.8,False,,ACTIVE,,True,,2020-04-01
+CTR-2022-000357-BOQ-0830,CTR-2022-000357,11.6.7,Piping,7,MAT-00000092,High human concern whole tend become system clear.,NOS,759,21800.58,16546640.22,192,25.3,False,,ACTIVE,,False,,2019-01-07
+CTR-2023-000319-BOQ-0831,CTR-2023-000319,9.7.1,Insulation,1,MAT-00000195,Expect sell pressure building make it.,KG,434,2428.54,1053986.36,186,42.9,False,,ON_HOLD,,True,,2020-03-12
+CTR-2024-000405-BOQ-0832,CTR-2024-000405,8.3.1,Painting & Coatings,1,MAT-00000324,Tough page grow benefit happen.,KG,836,5104.92,4267713.12,224,26.8,False,,ACTIVE,,True,,2019-05-21
+CTR-2021-000614-BOQ-0833,CTR-2021-000614,9.2.1,Mechanical Works,1,MAT-00000706,Majority those live none institution.,SET,281,24095.27,6770770.87,244,86.8,False,,ACTIVE,,False,Specific pass its international American game.,2022-09-26
+CTR-2021-000614-BOQ-0834,CTR-2021-000614,9.4.2,Mechanical Works,2,MAT-00000157,Put positive require us money positive base.,NOS,869,39573.61,34389467.09,829,95.4,False,,ACTIVE,,False,,2023-05-24
+CTR-2021-000614-BOQ-0835,CTR-2021-000614,9.3.3,Mechanical Works,3,MAT-00000307,Join trade local chance campaign total success.,NOS,23,290590.27,6683576.21,10,43.5,False,,ACTIVE,,True,Into notice necessary true message member including.,2022-03-05
+CTR-2021-000614-BOQ-0836,CTR-2021-000614,9.4.4,Mechanical Works,4,MAT-00000290,Administration scientist leg skill successful and indicate.,SET,718,512447.99,367937656.82,403,56.1,True,Produce nothing effect effort bank.,ACTIVE,,False,Finish right serious last space.,2022-05-30
+CTR-2021-000614-BOQ-0837,CTR-2021-000614,9.3.5,Mechanical Works,5,MAT-00000469,Whom the cost continue section page.,MT,592,846.7,501246.4,494,83.4,False,,ACTIVE,,False,,2019-02-07
+CTR-2021-000614-BOQ-0838,CTR-2021-000614,9.10.6,Mechanical Works,6,MAT-00000371,Its adult house actually.,NOS,105,2394.67,251440.35,18,17.1,False,,ON_HOLD,,True,Least if price season rise field spend.,2022-12-27
+CTR-2020-000998-BOQ-0839,CTR-2020-000998,1.9.1,Concrete Works,1,MAT-00000121,Guess purpose real house few by add born.,JOINT,666,1028.57,685027.62,444,66.7,False,,ACTIVE,,True,,2024-06-24
+CTR-2020-000998-BOQ-0840,CTR-2020-000998,1.10.2,Concrete Works,2,MAT-00000310,Receive could agree.,NOS,978,27655.51,27047088.78,763,78.0,False,,ACTIVE,,True,,2023-04-15
+CTR-2020-000998-BOQ-0841,CTR-2020-000998,1.8.3,Concrete Works,3,MAT-00000282,Show challenge instead bring total.,NOS,377,82266.77,31014572.29,59,15.6,True,Possible power job personal so course.,ACTIVE,,True,White likely teacher one cut notice.,2024-05-18
+CTR-2020-000998-BOQ-0842,CTR-2020-000998,1.2.4,Concrete Works,4,MAT-00000281,Anything account piece require woman support.,SET,814,51970.68,42304133.52,393,48.3,False,,ACTIVE,,True,Other never fact maintain main opportunity particularly question.,2019-09-18
+CTR-2020-000998-BOQ-0843,CTR-2020-000998,1.9.5,Concrete Works,5,MAT-00000731,Threat bring performance position large job.,NOS,190,37470.18,7119334.2,179,94.2,True,Discussion art affect office network environmental.,ACTIVE,,False,,2024-10-26
+CTR-2020-000998-BOQ-0844,CTR-2020-000998,1.10.6,Concrete Works,6,MAT-00000858,Explain court gas discussion.,NOS,552,271.63,149939.76,127,23.0,False,,ACTIVE,,True,,2021-01-07
+CTR-2020-000998-BOQ-0845,CTR-2020-000998,1.9.7,Concrete Works,7,MAT-00000006,Capital fall represent where strategy pull same.,NOS,458,17111.32,7836984.56,62,13.5,True,Onto rate two table.,ACTIVE,,True,,2019-05-24
+CTR-2020-000998-BOQ-0846,CTR-2020-000998,1.2.8,Concrete Works,8,MAT-00000087,Son suddenly perform executive see project can.,RM,519,84015.62,43604106.78,175,33.7,False,,ON_HOLD,VO-020,True,,2022-04-16
+CTR-2020-000675-BOQ-0847,CTR-2020-000675,3.8.1,Piping,1,MAT-00000591,Choose man soldier wall management.,CUM,712,364.38,259438.56,360,50.6,False,,ACTIVE,,True,Decide another adult thing ground.,2019-05-31
+CTR-2020-000675-BOQ-0848,CTR-2020-000675,3.3.2,Piping,2,MAT-00000193,Company teacher me southern.,RM,307,315.75,96935.25,110,35.8,False,,ACTIVE,,True,,2023-09-25
+CTR-2020-000675-BOQ-0849,CTR-2020-000675,3.9.3,Piping,3,MAT-00000077,Issue pay building difference election future.,LTR,262,3824.04,1001898.48,83,31.7,False,,ACTIVE,,True,,2021-04-14
+CTR-2020-000675-BOQ-0850,CTR-2020-000675,3.5.4,Piping,4,MAT-00000073,Show show news to table them.,DRUM,649,4318.83,2802920.67,197,30.4,False,,ACTIVE,,True,,2020-09-20
+CTR-2020-000675-BOQ-0851,CTR-2020-000675,3.7.5,Piping,5,MAT-00000324,Prove relationship unit just lead success book black.,KG,389,3188.7,1240404.3,309,79.4,False,,ACTIVE,,True,,2022-09-11
+CTR-2020-000675-BOQ-0852,CTR-2020-000675,3.2.6,Piping,6,MAT-00000656,That treat church factor.,MT,372,2382.7,886364.4,139,37.4,True,Participant teach big none medical cold.,REVISED,,True,,2021-06-29
+CTR-2020-000675-BOQ-0853,CTR-2020-000675,3.2.7,Piping,7,MAT-00000388,Seven marriage that child hair standard.,MONTH,802,13751.39,11028614.78,179,22.3,False,,DELETED,,False,Summer keep indeed shoulder.,2022-11-30
+CTR-2020-000675-BOQ-0854,CTR-2020-000675,3.10.8,Piping,8,MAT-00000718,Strong list expert commercial entire.,SET,887,35606.57,31583027.59,277,31.2,False,,DELETED,,False,,2022-11-14
+CTR-2020-000675-BOQ-0855,CTR-2020-000675,3.9.9,Piping,9,MAT-00000826,Guess professor charge send instead direction.,CUM,565,154.71,87411.15,412,72.9,False,,ACTIVE,VO-033,False,,2020-08-07
+CTR-2024-000388-BOQ-0856,CTR-2024-000388,5.6.1,Commissioning,1,MAT-00000055,Including important learn system some gun.,MONTH,725,2542.53,1843334.25,694,95.7,False,,ACTIVE,,False,,2024-08-19
+CTR-2024-000388-BOQ-0857,CTR-2024-000388,5.5.2,Commissioning,2,MAT-00000294,Kind show response.,NOS,976,1902.9,1857230.4,964,98.8,False,,ON_HOLD,,True,Want be fire word clearly article service.,2022-06-05
+CTR-2024-000388-BOQ-0858,CTR-2024-000388,5.6.3,Commissioning,3,MAT-00000417,Win information though red them return finish.,NOS,866,4162.28,3604534.48,81,9.4,True,Total around place.,ACTIVE,VO-037,True,,2024-07-11
+CTR-2024-000388-BOQ-0859,CTR-2024-000388,5.1.4,Commissioning,4,MAT-00000828,Account evidence month turn record land.,RM,986,74002.8,72966760.8,693,70.3,False,,ACTIVE,,True,,2024-12-20
+CTR-2024-000388-BOQ-0860,CTR-2024-000388,5.2.5,Commissioning,5,MAT-00000715,Thought person peace kind generation.,LTR,416,26.84,11165.44,97,23.3,False,,ACTIVE,,False,,2021-09-27
+CTR-2024-000388-BOQ-0861,CTR-2024-000388,5.9.6,Commissioning,6,MAT-00000757,Simple thing base Mr hope rest.,NOS,701,1256.57,880855.57,621,88.6,False,,ACTIVE,,False,,2020-12-17
+CTR-2024-000388-BOQ-0862,CTR-2024-000388,5.6.7,Commissioning,7,MAT-00000077,Minute must degree memory.,LTR,860,3547.43,3050789.8,361,42.0,False,,ACTIVE,,True,,2021-10-20
+CTR-2024-000388-BOQ-0863,CTR-2024-000388,5.9.8,Commissioning,8,MAT-00000852,Miss serious civil agreement someone.,NOS,872,2567.37,2238746.64,120,13.8,False,,ACTIVE,,True,,2023-06-01
+CTR-2024-000388-BOQ-0864,CTR-2024-000388,5.5.9,Commissioning,9,MAT-00000223,Else strategy fight institution measure rule success employee.,CUM,952,164.32,156432.64,658,69.1,False,,DELETED,,False,,2019-08-24
+CTR-2024-000388-BOQ-0865,CTR-2024-000388,5.1.10,Commissioning,10,MAT-00000365,Great answer prepare by fear say law.,NOS,631,2217.1,1398990.1,305,48.3,False,,ACTIVE,,True,,2020-02-20
+CTR-2020-000442-BOQ-0866,CTR-2020-000442,2.9.1,Steel Structures,1,MAT-00000542,South writer not thus physical.,KG,921,1919.83,1768163.43,126,13.7,False,,ACTIVE,,True,,2023-03-14
+CTR-2020-000442-BOQ-0867,CTR-2020-000442,2.6.2,Steel Structures,2,MAT-00000307,Suddenly doctor federal project spring of cause.,NOS,439,339437.26,149012957.14,274,62.4,False,,ACTIVE,,False,,2022-12-19
+CTR-2020-000442-BOQ-0868,CTR-2020-000442,2.7.3,Steel Structures,3,MAT-00000766,Mind easy foreign old state guess.,NOS,6,29311.65,175869.9,6,100.0,False,,ACTIVE,,True,,2022-09-18
+CTR-2020-000442-BOQ-0869,CTR-2020-000442,2.1.4,Steel Structures,4,MAT-00000923,Chair international include begin.,NOS,165,217036.57,35811034.05,122,73.9,False,,ON_HOLD,,True,,2020-06-05
+CTR-2020-000442-BOQ-0870,CTR-2020-000442,2.7.5,Steel Structures,5,MAT-00000333,Next single the once PM you ready way.,BBL,514,22.85,11744.9,398,77.4,True,Thousand live land hard moment.,ON_HOLD,,True,,2019-02-25
+CTR-2020-000442-BOQ-0871,CTR-2020-000442,2.4.6,Steel Structures,6,MAT-00000786,Statement certain camera represent can relate.,MT,54,1031.0,55674.0,21,38.9,False,,ACTIVE,VO-031,True,,2023-10-23
+CTR-2020-000442-BOQ-0872,CTR-2020-000442,2.10.7,Steel Structures,7,MAT-00000254,Brother defense list second want hard weight.,JOINT,157,1952.38,306523.66,47,29.9,False,,REVISED,,False,,2023-10-24
+CTR-2020-000442-BOQ-0873,CTR-2020-000442,2.8.8,Steel Structures,8,MAT-00000204,System book hard face mission brother figure hear.,MT,724,2602.82,1884441.68,105,14.5,False,,ACTIVE,,False,,2020-09-01
+CTR-2022-000235-BOQ-0874,CTR-2022-000235,7.5.1,Concrete Works,1,MAT-00000040,View figure exist.,MT,197,2370.21,466931.37,109,55.3,True,Magazine social central operation.,ACTIVE,,True,,2021-08-05
+CTR-2022-000235-BOQ-0875,CTR-2022-000235,7.6.2,Concrete Works,2,MAT-00000228,Standard major business give.,CUM,437,122.88,53698.56,261,59.7,False,,ACTIVE,,True,,2023-09-09
+CTR-2020-000253-BOQ-0876,CTR-2020-000253,3.1.1,General Requirements,1,MAT-00000042,Individual of not.,LTR,54,650.81,35143.74,20,37.0,False,,ACTIVE,,True,,2024-07-05
+CTR-2020-000253-BOQ-0877,CTR-2020-000253,3.6.2,General Requirements,2,MAT-00000373,Sit little result paper seven measure.,CUM,312,102.19,31883.28,6,1.9,False,,REVISED,,True,,2024-12-06
+CTR-2020-000253-BOQ-0878,CTR-2020-000253,3.6.3,General Requirements,3,MAT-00000620,Seven project chance road become person perhaps.,NOS,244,57696.53,14077953.32,53,21.7,False,,ACTIVE,,True,,2019-06-18
+CTR-2020-000253-BOQ-0879,CTR-2020-000253,3.4.4,General Requirements,4,MAT-00000601,Position tend religious occur someone.,RM,198,2512.49,497473.02,25,12.6,True,Do house must when three.,ACTIVE,,False,,2021-04-07
+CTR-2020-000253-BOQ-0880,CTR-2020-000253,3.3.5,General Requirements,5,MAT-00000547,Night buy nice court peace.,SET,45,17796.71,800851.95,26,57.8,False,,ACTIVE,,False,,2022-11-23
+CTR-2020-000253-BOQ-0881,CTR-2020-000253,3.6.6,General Requirements,6,MAT-00000917,Serious whatever miss seek me affect probably.,JOINT,460,488.64,224774.4,60,13.0,False,,ACTIVE,,False,,2019-03-31
+CTR-2020-000171-BOQ-0882,CTR-2020-000171,12.3.1,Mechanical Works,1,MAT-00000991,Be move fly open man value.,NOS,297,31518.71,9361056.87,289,97.3,True,Conference affect skill early relationship thought.,ON_HOLD,,False,,2024-12-20
+CTR-2020-000171-BOQ-0883,CTR-2020-000171,12.9.2,Mechanical Works,2,MAT-00000892,Join increase teacher fish either boy.,CUM,995,204.76,203736.2,448,45.0,False,,ACTIVE,,True,,2021-01-23
+CTR-2020-000171-BOQ-0884,CTR-2020-000171,12.3.3,Mechanical Works,3,MAT-00000004,My experience consumer shoulder.,CUM,586,372.56,218320.16,9,1.5,False,,REVISED,,False,,2022-05-27
+CTR-2020-000171-BOQ-0885,CTR-2020-000171,12.4.4,Mechanical Works,4,MAT-00000873,Which consider require fear better central throw election.,KG,304,3088.76,938983.04,282,92.8,True,Fill imagine college.,ACTIVE,,True,,2022-02-11
+CTR-2020-000171-BOQ-0886,CTR-2020-000171,12.3.5,Mechanical Works,5,MAT-00000950,Appear dream others door.,MT,277,4017.74,1112913.98,26,9.4,False,,ACTIVE,,True,Sell his boy art let imagine machine.,2022-11-24
+CTR-2020-000171-BOQ-0887,CTR-2020-000171,12.10.6,Mechanical Works,6,MAT-00000648,Plant trial affect never only big.,SQM,996,130.38,129858.48,85,8.5,False,,DELETED,,True,,2022-04-22
+CTR-2020-000171-BOQ-0888,CTR-2020-000171,12.1.7,Mechanical Works,7,MAT-00000333,Prepare by nothing land suffer matter situation.,BBL,641,23.78,15242.98,364,56.8,False,,ON_HOLD,,False,,2020-03-11
+CTR-2020-000171-BOQ-0889,CTR-2020-000171,12.7.8,Mechanical Works,8,MAT-00000740,Health world site Mr.,NOS,969,5136.2,4976977.8,890,91.8,False,,ACTIVE,,True,,2021-04-15
+CTR-2020-000171-BOQ-0890,CTR-2020-000171,12.7.9,Mechanical Works,9,MAT-00000596,Which new among spend which per.,SET,160,18786.99,3005918.4,111,69.4,False,,ON_HOLD,VO-012,True,,2020-12-22
+CTR-2020-000171-BOQ-0891,CTR-2020-000171,12.10.10,Mechanical Works,10,MAT-00000194,A value lot our.,NOS,503,167997.66,84502822.98,92,18.3,False,,ACTIVE,,True,,2021-02-08
+CTR-2021-000072-BOQ-0892,CTR-2021-000072,7.8.1,Earthworks,1,MAT-00000252,School none feel house.,NOS,931,2725.39,2537338.09,412,44.3,True,Yourself successful defense subject example.,ACTIVE,,False,,2023-03-28
+CTR-2021-000072-BOQ-0893,CTR-2021-000072,7.1.2,Earthworks,2,MAT-00000394,Store rise your there.,MONTH,113,111288.91,12575646.83,97,85.8,False,,ON_HOLD,,False,,2019-02-25
+CTR-2021-000072-BOQ-0894,CTR-2021-000072,7.1.3,Earthworks,3,MAT-00000812,Particular whatever five radio garden.,KG,981,2725.53,2673744.93,555,56.6,False,,ACTIVE,,True,,2023-12-25
+CTR-2019-000836-BOQ-0895,CTR-2019-000836,6.3.1,Mechanical Works,1,MAT-00000491,Woman remain event production focus.,MT,250,1469.52,367380.0,177,70.8,False,,ACTIVE,VO-003,True,,2024-09-26
+CTR-2019-000836-BOQ-0896,CTR-2019-000836,6.7.2,Mechanical Works,2,MAT-00000908,Participant above act.,SET,146,40670.36,5937872.56,57,39.0,True,Least outside administration reality.,ACTIVE,,True,,2023-04-25
+CTR-2019-000836-BOQ-0897,CTR-2019-000836,6.2.3,Mechanical Works,3,MAT-00000704,Including time reflect several.,SET,504,629.19,317111.76,56,11.1,False,,ON_HOLD,,True,,2023-01-16
+CTR-2020-000946-BOQ-0898,CTR-2020-000946,1.3.1,Earthworks,1,MAT-00000620,Ball theory prepare much throughout staff knowledge.,NOS,183,51749.92,9470235.36,85,46.4,False,,ACTIVE,,True,,2022-03-21
+CTR-2020-000946-BOQ-0899,CTR-2020-000946,1.2.2,Earthworks,2,MAT-00000357,Good spend still group.,HR,278,2818.34,783498.52,188,67.6,False,,REVISED,,True,Stuff speech worker by.,2020-08-31
+CTR-2020-000946-BOQ-0900,CTR-2020-000946,1.3.3,Earthworks,3,MAT-00000797,View know develop after exactly TV.,LTR,328,858.02,281430.56,228,69.5,False,,REVISED,,True,,2022-02-14
+CTR-2020-000946-BOQ-0901,CTR-2020-000946,1.2.4,Earthworks,4,MAT-00000149,Course staff personal space determine woman.,RM,331,177.56,58772.36,93,28.1,False,,ACTIVE,,True,,2022-09-27
+CTR-2020-000946-BOQ-0902,CTR-2020-000946,1.4.5,Earthworks,5,MAT-00000142,Already manage region paper according worker.,MT,393,1059.7,416462.1,254,64.6,False,,ACTIVE,,True,Book everyone matter color create school.,2023-09-24
+CTR-2020-000946-BOQ-0903,CTR-2020-000946,1.10.6,Earthworks,6,MAT-00000540,North assume campaign assume employee now direction mission.,SET,796,11115.42,8847874.32,766,96.2,False,,ACTIVE,,True,,2023-01-24
+CTR-2020-000946-BOQ-0904,CTR-2020-000946,1.8.7,Earthworks,7,MAT-00000572,Pass quite third ability interview pull practice.,CUM,981,158.98,155959.38,112,11.4,True,Court question yeah realize.,ACTIVE,,False,,2022-04-22
+CTR-2020-000946-BOQ-0905,CTR-2020-000946,1.3.8,Earthworks,8,MAT-00000472,Item yet ever quite level guess.,GAL,856,185.35,158659.6,431,50.4,False,,REVISED,VO-009,True,,2020-08-09
+CTR-2020-000946-BOQ-0906,CTR-2020-000946,1.1.9,Earthworks,9,MAT-00000387,Mother first hot free they space.,NOS,713,1235.54,880940.02,380,53.3,True,This different everyone.,ACTIVE,,True,,2020-10-09
+CTR-2020-000946-BOQ-0907,CTR-2020-000946,1.3.10,Earthworks,10,MAT-00000031,Forget as personal agreement.,RM,375,926.44,347415.0,125,33.3,True,Within interest avoid economic.,ACTIVE,,True,,2020-07-27
+CTR-2020-000946-BOQ-0908,CTR-2020-000946,1.9.11,Earthworks,11,MAT-00000767,Space or phone free economy blue.,CUM,716,207.71,148720.36,481,67.2,False,,ACTIVE,,True,,2020-09-30
+CTR-2020-000946-BOQ-0909,CTR-2020-000946,1.1.12,Earthworks,12,MAT-00000062,When strategy start mind door.,PKT,619,342.09,211753.71,515,83.2,False,,ACTIVE,,False,,2021-11-22
+CTR-2020-000946-BOQ-0910,CTR-2020-000946,1.10.13,Earthworks,13,MAT-00000942,Simply people shake personal.,RM,514,87.56,45005.84,232,45.1,False,,ACTIVE,,True,,2020-05-27
+CTR-2020-000946-BOQ-0911,CTR-2020-000946,1.4.14,Earthworks,14,MAT-00000761,By window true help three really site artist.,MT,411,23.48,9650.28,112,27.3,False,,REVISED,,True,Area particularly it big argue appear.,2024-04-02
+CTR-2020-000946-BOQ-0912,CTR-2020-000946,1.6.15,Earthworks,15,MAT-00000489,I pay in ten skin perhaps.,JOINT,669,302.29,202232.01,389,58.1,False,,REVISED,,True,,2019-11-15
+CTR-2021-000372-BOQ-0913,CTR-2021-000372,1.5.1,Electrical Works,1,MAT-00000246,Himself somebody they people fund visit situation.,CUM,167,104.48,17448.16,16,9.6,False,,ACTIVE,,True,,2019-05-13
+CTR-2021-000372-BOQ-0914,CTR-2021-000372,1.5.2,Electrical Works,2,MAT-00000247,Smile cover of PM eight inside right know.,JOINT,88,1270.83,111833.04,72,81.8,True,Military onto blue activity require.,ON_HOLD,,True,Case analysis camera once message.,2022-06-18
+CTR-2021-000372-BOQ-0915,CTR-2021-000372,1.6.3,Electrical Works,3,MAT-00000009,Find those simply challenge final garden.,BAG,770,322.56,248371.2,407,52.9,False,,ACTIVE,,True,,2020-02-03
+CTR-2021-000372-BOQ-0916,CTR-2021-000372,1.7.4,Electrical Works,4,MAT-00000340,Wife military price certain down standard.,PKT,919,602.62,553807.78,103,11.2,False,,REVISED,VO-025,True,,2019-06-03
+CTR-2021-000372-BOQ-0917,CTR-2021-000372,1.3.5,Electrical Works,5,MAT-00000298,Teach instead crime customer training size game.,NOS,156,3054.05,476431.8,20,12.8,False,,ACTIVE,,False,,2020-07-30
+CTR-2021-000372-BOQ-0918,CTR-2021-000372,1.3.6,Electrical Works,6,MAT-00000788,Reason word outside former official white pattern.,JOINT,987,2186.49,2158065.63,746,75.6,False,,ACTIVE,,True,,2022-04-06
+CTR-2021-000372-BOQ-0919,CTR-2021-000372,1.10.7,Electrical Works,7,MAT-00000369,Forget bit then treat many turn.,PKT,877,187.26,164227.02,40,4.6,False,,REVISED,,True,,2019-11-04
+CTR-2021-000372-BOQ-0920,CTR-2021-000372,1.3.8,Electrical Works,8,MAT-00000982,Southern heavy hundred step according act.,KG,581,325.23,188958.63,509,87.6,True,Really level defense lose.,ACTIVE,,True,,2019-12-24
+CTR-2021-000372-BOQ-0921,CTR-2021-000372,1.2.9,Electrical Works,9,MAT-00000511,Air boy fact create one she.,HR,466,1189.6,554353.6,151,32.4,False,,ACTIVE,,True,,2024-03-02
+CTR-2021-000372-BOQ-0922,CTR-2021-000372,1.8.10,Electrical Works,10,MAT-00000265,Wish current exist.,BAG,263,313.94,82566.22,226,85.9,False,,ACTIVE,,True,Those responsibility fund never condition.,2022-03-20
+CTR-2021-000411-BOQ-0923,CTR-2021-000411,11.8.1,Insulation,1,MAT-00000133,Compare energy big.,KG,376,1927.32,724672.32,319,84.8,False,,ACTIVE,,True,,2019-06-24
+CTR-2021-000411-BOQ-0924,CTR-2021-000411,11.1.2,Insulation,2,MAT-00000636,Her skin book very.,MT,759,3448.09,2617100.31,716,94.3,False,,ACTIVE,,True,,2023-06-24
+CTR-2021-000411-BOQ-0925,CTR-2021-000411,11.2.3,Insulation,3,MAT-00000875,Lay hard head commercial money.,MONTH,229,3586.98,821418.42,118,51.5,False,,ACTIVE,,True,,2020-03-22
+CTR-2021-000411-BOQ-0926,CTR-2021-000411,11.3.4,Insulation,4,MAT-00000088,Think there assume certain under some court her.,NOS,750,355221.5,266416125.0,406,54.1,False,,ACTIVE,,True,,2024-06-14
+CTR-2021-000411-BOQ-0927,CTR-2021-000411,11.8.5,Insulation,5,MAT-00000218,Fish involve player TV several onto.,JOINT,118,827.16,97604.88,4,3.4,False,,ON_HOLD,,True,,2023-04-07
+CTR-2021-000411-BOQ-0928,CTR-2021-000411,11.6.6,Insulation,6,MAT-00000064,Family chance easy picture evidence call meet.,BBL,809,13.02,10533.18,484,59.8,False,,ACTIVE,VO-049,True,,2020-12-22
+CTR-2021-000411-BOQ-0929,CTR-2021-000411,11.3.7,Insulation,7,MAT-00000086,Though decide bank likely professional ask meet seem.,RM,71,77360.9,5492623.9,10,14.1,False,,ACTIVE,,True,,2021-11-28
+CTR-2024-000189-BOQ-0930,CTR-2024-000189,2.7.1,General Requirements,1,MAT-00000917,Hear million condition Republican moment low what.,JOINT,351,565.15,198367.65,152,43.3,False,,ACTIVE,,True,,2020-10-20
+CTR-2024-000189-BOQ-0931,CTR-2024-000189,2.7.2,General Requirements,2,MAT-00000989,Environmental husband TV once already detail data.,SET,364,56400.17,20529661.88,292,80.2,False,,ACTIVE,,True,How fill thousand number very.,2020-08-15
+CTR-2024-000189-BOQ-0932,CTR-2024-000189,2.6.3,General Requirements,3,MAT-00000332,Effort be seem far million discover.,KG,15,2659.46,39891.9,14,93.3,False,,ACTIVE,,False,,2021-12-12
+CTR-2024-000189-BOQ-0933,CTR-2024-000189,2.1.4,General Requirements,4,MAT-00000534,It happen marriage event agent kid enter.,KG,462,834.96,385751.52,438,94.8,True,Let perform international.,ACTIVE,,True,,2021-02-07
+CTR-2024-000189-BOQ-0934,CTR-2024-000189,2.9.5,General Requirements,5,MAT-00000431,Grow bar successful mention.,SET,793,46562.89,36924371.77,386,48.7,False,,ACTIVE,,True,,2023-02-25
+CTR-2024-000189-BOQ-0935,CTR-2024-000189,2.6.6,General Requirements,6,MAT-00000834,Skill unit better author.,SET,17,47574.37,808764.29,9,52.9,False,,DELETED,,True,,2023-08-08
+CTR-2024-000189-BOQ-0936,CTR-2024-000189,2.6.7,General Requirements,7,MAT-00000361,National free push.,CUM,849,86.8,73693.2,535,63.0,False,,ACTIVE,,True,,2020-10-28
+CTR-2024-000189-BOQ-0937,CTR-2024-000189,2.7.8,General Requirements,8,MAT-00000556,Few spring raise ever relationship.,SET,391,73396.77,28698137.07,337,86.2,False,,ACTIVE,,True,,2020-02-11
+CTR-2024-000189-BOQ-0938,CTR-2024-000189,2.2.9,General Requirements,9,MAT-00000090,Your sell science treatment.,CUM,92,531.34,48883.28,78,84.8,False,,ACTIVE,,True,,2023-12-25
+CTR-2024-000189-BOQ-0939,CTR-2024-000189,2.10.10,General Requirements,10,MAT-00000516,Show example get.,RM,826,1044.83,863029.58,296,35.8,False,,ACTIVE,,True,,2024-04-07
+CTR-2024-000189-BOQ-0940,CTR-2024-000189,2.2.11,General Requirements,11,MAT-00000974,Watch state serious activity pressure writer.,MT,360,3310.51,1191783.6,237,65.8,False,,REVISED,,False,Tend dinner rich decide.,2023-03-15
+CTR-2024-000189-BOQ-0941,CTR-2024-000189,2.4.12,General Requirements,12,MAT-00000801,Middle skill serious reveal left.,SET,520,3634.44,1889908.8,270,51.9,False,,ON_HOLD,,True,Fine could show recently.,2023-08-26
+CTR-2024-000189-BOQ-0942,CTR-2024-000189,2.1.13,General Requirements,13,MAT-00000034,Just table air catch them.,CUM,27,100.58,2715.66,11,40.7,False,,ACTIVE,,True,,2023-10-28
+CTR-2024-000189-BOQ-0943,CTR-2024-000189,2.9.14,General Requirements,14,MAT-00000248,Wall act special strong fund.,RM,997,14199.68,14157080.96,631,63.3,False,,REVISED,,True,,2023-05-19
+CTR-2022-000746-BOQ-0944,CTR-2022-000746,6.3.1,Instrumentation,1,MAT-00000530,International sell several real federal only.,GAL,448,156.04,69905.92,363,81.0,False,,ACTIVE,,False,,2021-12-01
+CTR-2022-000746-BOQ-0945,CTR-2022-000746,6.9.2,Instrumentation,2,MAT-00000858,Trial off hospital high we as hit little.,NOS,163,300.46,48974.98,52,31.9,True,Size two child well form picture.,ACTIVE,VO-050,True,Notice later thus behavior bit need.,2019-11-19
+CTR-2022-000746-BOQ-0946,CTR-2022-000746,6.7.3,Instrumentation,3,MAT-00000586,Step owner agree.,RM,26,62762.13,1631815.38,4,15.4,False,,ACTIVE,,True,,2021-06-27
+CTR-2024-000305-BOQ-0947,CTR-2024-000305,4.7.1,Painting & Coatings,1,MAT-00000744,Attorney white exist do process.,KG,789,677.39,534460.71,52,6.6,False,,ON_HOLD,,True,,2020-02-28
+CTR-2024-000305-BOQ-0948,CTR-2024-000305,4.8.2,Painting & Coatings,2,MAT-00000114,Teacher improve church book movie long.,JOINT,950,1556.26,1478447.0,109,11.5,True,Lawyer happy action.,ACTIVE,,True,,2021-05-01
+CTR-2024-000305-BOQ-0949,CTR-2024-000305,4.2.3,Painting & Coatings,3,MAT-00000401,Finally stand professor city offer.,MT,503,2847.45,1432267.35,211,41.9,True,Home tough deal.,ON_HOLD,VO-044,True,,2024-01-21
+CTR-2024-000305-BOQ-0950,CTR-2024-000305,4.3.4,Painting & Coatings,4,MAT-00000828,Onto maybe range every account.,RM,185,54367.38,10057965.3,45,24.3,False,,ACTIVE,,True,,2022-11-21
+CTR-2022-000496-BOQ-0951,CTR-2022-000496,9.3.1,Insulation,1,MAT-00000006,Knowledge station painting east.,NOS,535,16673.84,8920504.4,124,23.2,False,,ACTIVE,VO-033,False,,2023-02-03
+CTR-2022-000496-BOQ-0952,CTR-2022-000496,9.4.2,Insulation,2,MAT-00000118,Position try get successful society.,CUM,31,177.54,5503.74,14,45.2,True,Travel these least office say.,ACTIVE,,True,,2020-01-12
+CTR-2022-000496-BOQ-0953,CTR-2022-000496,9.9.3,Insulation,3,MAT-00000357,Party special compare eat tonight run.,HR,668,2092.93,1398077.24,507,75.9,False,,ON_HOLD,,True,,2022-02-25
+CTR-2022-000496-BOQ-0954,CTR-2022-000496,9.7.4,Insulation,4,MAT-00000985,His probably recognize believe recognize analysis those.,NOS,106,15328.05,1624773.3,98,92.5,False,,ACTIVE,,False,,2024-01-02
+CTR-2022-000496-BOQ-0955,CTR-2022-000496,9.10.5,Insulation,5,MAT-00000434,Event physical factor trouble.,BAG,766,417.75,319996.5,326,42.6,False,,ACTIVE,,True,,2019-09-21
+CTR-2022-000496-BOQ-0956,CTR-2022-000496,9.3.6,Insulation,6,MAT-00000461,Training in seven building hard.,SET,911,22372.53,20381374.83,523,57.4,False,,ACTIVE,,False,,2024-12-12
+CTR-2022-000496-BOQ-0957,CTR-2022-000496,9.7.7,Insulation,7,MAT-00000361,Mean single improve close.,CUM,31,68.62,2127.22,20,64.5,False,,ACTIVE,,True,,2020-08-17
+CTR-2022-000496-BOQ-0958,CTR-2022-000496,9.6.8,Insulation,8,MAT-00000799,High second talk however action boy true.,SET,126,29627.26,3733034.76,88,69.8,True,Media left available reason.,ACTIVE,,False,,2019-09-29
+CTR-2022-000496-BOQ-0959,CTR-2022-000496,9.5.9,Insulation,9,MAT-00000395,Cell star success color adult beyond.,SQM,617,139.25,85917.25,222,36.0,True,Prove less leave bar prevent.,ACTIVE,,False,,2019-11-03
+CTR-2022-000496-BOQ-0960,CTR-2022-000496,9.7.10,Insulation,10,MAT-00000588,Buy scientist collection provide action.,JOINT,699,1475.65,1031479.35,325,46.5,False,,ACTIVE,VO-032,True,,2023-09-22
+CTR-2023-000123-BOQ-0961,CTR-2023-000123,3.6.1,Piping,1,MAT-00000616,Democratic recent student specific political respond to.,KG,606,2083.57,1262643.42,590,97.4,True,Child group describe alone.,ACTIVE,,True,Real know our any help cut.,2024-03-06
+CTR-2023-000123-BOQ-0962,CTR-2023-000123,3.3.2,Piping,2,MAT-00000292,Hear draw before instead writer.,DAY,862,4664.17,4020514.54,37,4.3,False,,ON_HOLD,VO-042,True,,2023-08-28
+CTR-2023-000741-BOQ-0963,CTR-2023-000741,6.6.1,Mechanical Works,1,MAT-00000772,Star quite as when benefit structure.,CUM,410,122.49,50220.9,396,96.6,False,,ACTIVE,,True,,2020-05-12
+CTR-2023-000741-BOQ-0964,CTR-2023-000741,6.6.2,Mechanical Works,2,MAT-00000864,Right analysis mention spring.,NOS,961,405525.59,389710091.99,29,3.0,False,,REVISED,,False,,2023-11-20
+CTR-2023-000741-BOQ-0965,CTR-2023-000741,6.3.3,Mechanical Works,3,MAT-00000232,No couple debate must voice building.,MT,91,56.08,5103.28,47,51.6,False,,ACTIVE,VO-045,False,,2019-06-26
+CTR-2023-000741-BOQ-0966,CTR-2023-000741,6.1.4,Mechanical Works,4,MAT-00000114,Black follow address pressure activity.,JOINT,970,1339.74,1299547.8,270,27.8,False,,ACTIVE,,True,,2020-07-18
+CTR-2023-000741-BOQ-0967,CTR-2023-000741,6.8.5,Mechanical Works,5,MAT-00000598,Analysis those in should matter wrong.,CUM,123,456.95,56204.85,110,89.4,True,Learn at spring practice.,ACTIVE,,False,,2020-05-16
+CTR-2023-000535-BOQ-0968,CTR-2023-000535,10.8.1,Steel Structures,1,MAT-00000490,Social two notice edge behind food piece.,BAG,1000,138.76,138760.0,791,79.1,False,,ACTIVE,,True,Question win really forward play this.,2021-09-19
+CTR-2023-000535-BOQ-0969,CTR-2023-000535,10.4.2,Steel Structures,2,MAT-00000676,Him political discussion onto write discussion pattern.,NOS,712,3743.81,2665592.72,506,71.1,True,Within project attack adult treatment.,ACTIVE,,False,,2020-03-04
+CTR-2023-000535-BOQ-0970,CTR-2023-000535,10.4.3,Steel Structures,3,MAT-00000349,Final scene serious people.,MT,834,118.91,99170.94,540,64.7,False,,ACTIVE,,False,,2024-08-28
+CTR-2023-000535-BOQ-0971,CTR-2023-000535,10.3.4,Steel Structures,4,MAT-00000109,Case material dark heart.,BBL,225,265.8,59805.0,98,43.6,False,,DELETED,,False,,2022-02-12
+CTR-2023-000535-BOQ-0972,CTR-2023-000535,10.3.5,Steel Structures,5,MAT-00000434,Draw rise write.,BAG,703,426.11,299555.33,591,84.1,False,,ACTIVE,,False,,2024-03-02
+CTR-2023-000535-BOQ-0973,CTR-2023-000535,10.5.6,Steel Structures,6,MAT-00000192,School forget everything poor set minute.,NOS,30,1459.52,43785.6,16,53.3,False,,ACTIVE,,True,,2020-09-08
+CTR-2023-000535-BOQ-0974,CTR-2023-000535,10.9.7,Steel Structures,7,MAT-00000407,Possible eye agency suggest former drug.,SET,442,205001.22,90610539.24,27,6.1,False,,ACTIVE,VO-025,False,,2022-04-19
+CTR-2023-000535-BOQ-0975,CTR-2023-000535,10.7.8,Steel Structures,8,MAT-00000194,Approach truth write soon recent develop their.,NOS,181,143980.45,26060461.45,135,74.6,False,,ACTIVE,,True,,2020-03-30
+CTR-2023-000535-BOQ-0976,CTR-2023-000535,10.2.9,Steel Structures,9,MAT-00000225,Focus kind accept thank attorney court plant.,BAG,55,398.43,21913.65,36,65.5,False,,ACTIVE,,True,,2023-07-16
+CTR-2022-000402-BOQ-0977,CTR-2022-000402,4.5.1,Earthworks,1,MAT-00000752,Voice by community nature.,MT,508,146.79,74569.32,402,79.1,False,,ACTIVE,,True,Door back right find return.,2021-01-28
+CTR-2022-000402-BOQ-0978,CTR-2022-000402,4.10.2,Earthworks,2,MAT-00000516,Interest paper field office whose.,RM,489,1526.43,746424.27,436,89.2,False,,ACTIVE,,True,,2024-02-08
+CTR-2022-000402-BOQ-0979,CTR-2022-000402,4.1.3,Earthworks,3,MAT-00000146,Help likely institution participant item choose.,MT,683,2650.02,1809963.66,342,50.1,True,Even sit bag win.,ON_HOLD,,True,,2019-02-09
+CTR-2022-000402-BOQ-0980,CTR-2022-000402,4.6.4,Earthworks,4,MAT-00000609,After high take serve TV organization check.,MT,993,104.1,103371.3,1,0.1,False,,ACTIVE,,False,,2022-04-05
+CTR-2022-000402-BOQ-0981,CTR-2022-000402,4.4.5,Earthworks,5,MAT-00000856,Either less law heart.,SQM,538,195.39,105119.82,150,27.9,False,,ACTIVE,,True,,2022-12-07
+CTR-2022-000402-BOQ-0982,CTR-2022-000402,4.5.6,Earthworks,6,MAT-00000559,Lose four resource cultural trouble above technology room.,RM,680,149.37,101571.6,373,54.9,False,,REVISED,,True,,2024-06-06
+CTR-2022-000402-BOQ-0983,CTR-2022-000402,4.5.7,Earthworks,7,MAT-00000116,Film would author those yeah buy usually.,MONTH,703,259141.98,182176811.94,655,93.2,True,Man understand wait wife health.,ON_HOLD,,True,,2024-08-01
+CTR-2022-000032-BOQ-0984,CTR-2022-000032,12.7.1,Insulation,1,MAT-00000713,Create job effort tree.,NOS,369,371357.53,137030928.57,45,12.2,False,,ON_HOLD,,False,,2024-01-15
+CTR-2022-000032-BOQ-0985,CTR-2022-000032,12.9.2,Insulation,2,MAT-00000982,Meeting major read recent prepare unit.,KG,180,269.83,48569.4,173,96.1,False,,ACTIVE,,False,,2021-02-19
+CTR-2022-000032-BOQ-0986,CTR-2022-000032,12.10.3,Insulation,3,MAT-00000043,Drug alone spend piece put.,PKT,533,221.05,117819.65,125,23.5,False,,ACTIVE,,False,,2019-02-04
+CTR-2022-000032-BOQ-0987,CTR-2022-000032,12.3.4,Insulation,4,MAT-00000511,End lay race effect.,HR,478,1430.45,683755.1,267,55.9,False,,ACTIVE,,True,,2022-04-22
+CTR-2020-000016-BOQ-0988,CTR-2020-000016,4.10.1,General Requirements,1,MAT-00000290,Huge only too million country institution.,SET,127,337795.23,42899994.21,78,61.4,True,Official production claim bring begin represent.,ACTIVE,,True,,2022-03-06
+CTR-2020-000016-BOQ-0989,CTR-2020-000016,4.9.2,General Requirements,2,MAT-00000805,Education few whose probably him final.,MONTH,682,667102.89,454964170.98,574,84.2,False,,ACTIVE,,False,,2019-11-27
+CTR-2020-000016-BOQ-0990,CTR-2020-000016,4.4.3,General Requirements,3,MAT-00000298,Sell under thank body of something.,NOS,33,2761.3,91122.9,22,66.7,False,,ACTIVE,,True,,2021-12-06
+CTR-2020-000016-BOQ-0991,CTR-2020-000016,4.5.4,General Requirements,4,MAT-00000943,Especially decide security recognize.,JOINT,612,1559.28,954279.36,577,94.3,False,,DELETED,,True,,2021-10-21
+CTR-2020-000016-BOQ-0992,CTR-2020-000016,4.7.5,General Requirements,5,MAT-00000139,Similar individual indicate explain.,DAY,568,3064.25,1740494.0,312,54.9,True,Would staff ability.,ACTIVE,,True,,2023-11-25
+CTR-2020-000016-BOQ-0993,CTR-2020-000016,4.3.6,General Requirements,6,MAT-00000099,Color hear region cup consider way.,SET,540,27727.02,14972590.8,320,59.3,False,,ACTIVE,,True,,2023-08-08
+CTR-2020-000016-BOQ-0994,CTR-2020-000016,4.1.7,General Requirements,7,MAT-00000473,Note defense cut seek speak court work.,NOS,935,220430.52,206102536.2,785,84.0,False,,REVISED,,True,,2024-09-28
+CTR-2020-000016-BOQ-0995,CTR-2020-000016,4.3.8,General Requirements,8,MAT-00000383,Key tree body player bag beat.,SET,636,678.57,431570.52,579,91.0,False,,ACTIVE,,True,,2024-03-10
+CTR-2021-000827-BOQ-0996,CTR-2021-000827,1.1.1,Piping,1,MAT-00000087,Everybody garden one long.,RM,277,108834.6,30147184.2,54,19.5,False,,ACTIVE,,True,,2019-09-07
+CTR-2021-000827-BOQ-0997,CTR-2021-000827,1.10.2,Piping,2,MAT-00000125,Act entire western program.,MONTH,691,5897.07,4074875.37,54,7.8,False,,ACTIVE,,False,,2020-09-25
+CTR-2021-000827-BOQ-0998,CTR-2021-000827,1.5.3,Piping,3,MAT-00000309,Best mission account.,BAG,737,277.58,204576.46,6,0.8,False,,ACTIVE,,True,,2020-05-10
+CTR-2021-000827-BOQ-0999,CTR-2021-000827,1.2.4,Piping,4,MAT-00000533,He three yourself stage wait professor.,NOS,254,223925.87,56877170.98,121,47.6,True,Mind while entire magazine series page.,ACTIVE,,False,,2024-06-04
+CTR-2021-000827-BOQ-1000,CTR-2021-000827,1.4.5,Piping,5,MAT-00000189,Particularly wish their south able that.,CUM,862,551.04,474996.48,266,30.9,False,,ACTIVE,,True,,2019-03-30

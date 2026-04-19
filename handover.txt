@@ -1,0 +1,26 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 40 items
+
+tests\test_bronze_silver_handover.py ................................... [ 87%]
+..FF.                                                                    [100%]
+
+================================== FAILURES ===================================
+_ TestBronzeSilverRuntimeHandover.test_silver_columns_superset_of_bronze_columns _
+tests\test_bronze_silver_handover.py:140: in test_silver_columns_superset_of_bronze_columns
+    bronze_cols = set(bronze_data[tbl].columns)
+                      ^^^^^^^^^^^^^^^^
+E   KeyError: 'vendors'
+__ TestBronzeSilverRuntimeHandover.test_silver_row_counts_bounded_by_bronze ___
+tests\test_bronze_silver_handover.py:151: in test_silver_row_counts_bounded_by_bronze
+    bronze_n = len(bronze_data[tbl].rows) if hasattr(bronze_data[tbl], "rows") else bronze_data[tbl].count()
+                                                     ^^^^^^^^^^^^^^^^
+E   KeyError: 'vendors'
+=========================== short test summary info ===========================
+FAILED tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_silver_columns_superset_of_bronze_columns
+FAILED tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_silver_row_counts_bounded_by_bronze
+======================== 2 failed, 38 passed in 8.67s =========================

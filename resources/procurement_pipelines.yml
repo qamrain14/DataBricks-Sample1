@@ -1,0 +1,35 @@
+resources:
+  pipelines:
+    procurement_bronze_pipeline:
+      name: procurement_bronze_pipeline
+      catalog: ${var.catalog}
+      target: procurement_bronze
+      serverless: true
+      libraries:
+        - notebook:
+            path: ../databricks/bronze/01_bronze_pipeline.py
+      configuration:
+        catalog: ${var.catalog}
+        raw_data_path: /Volumes/${var.catalog}/default/procurement_raw
+
+    procurement_silver_pipeline:
+      name: procurement_silver_pipeline
+      catalog: ${var.catalog}
+      target: procurement_silver
+      serverless: true
+      libraries:
+        - notebook:
+            path: ../databricks/silver/02_silver_pipeline.py
+      configuration:
+        catalog: ${var.catalog}
+
+    procurement_gold_pipeline:
+      name: procurement_gold_pipeline
+      catalog: ${var.catalog}
+      target: procurement_gold
+      serverless: true
+      libraries:
+        - notebook:
+            path: ../databricks/gold/03_gold_pipeline.py
+      configuration:
+        catalog: ${var.catalog}
