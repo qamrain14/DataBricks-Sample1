@@ -33,7 +33,7 @@ CATALOG = spark.conf.get("catalog", "procurement_lakehouse")
 @dlt.expect("valid_rating", "performance_rating BETWEEN 0 AND 5")
 def silver_vendors():
     return (
-        dlt.read("bronze_vendors")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_vendors")
         .withColumn("vendor_name", trim(col("vendor_name")))
         .withColumn("country", upper(trim(col("country"))))
         .withColumn("state", upper(trim(col("state"))))
@@ -62,7 +62,7 @@ def silver_vendors():
 @dlt.expect("valid_budget", "approved_budget_usd > 0")
 def silver_projects():
     return (
-        dlt.read("bronze_projects")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_projects")
         .withColumn("project_name", trim(col("project_name")))
         .withColumn("country", upper(trim(col("country"))))
         .withColumn("contract_value_usd", col("contract_value_usd").cast(DoubleType()))
@@ -97,7 +97,7 @@ def silver_projects():
 @dlt.expect("valid_price", "unit_price >= 0")
 def silver_materials():
     return (
-        dlt.read("bronze_materials")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_materials")
         .withColumn("material_name", trim(col("material_name")))
         .withColumn("category", upper(trim(col("category"))))
         .withColumn("sub_category", trim(col("sub_category")))
@@ -124,7 +124,7 @@ def silver_materials():
 @dlt.expect_or_drop("valid_employee_id", "employee_id IS NOT NULL")
 def silver_employees():
     return (
-        dlt.read("bronze_employees")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_employees")
         .withColumn("full_name", concat(trim(col("first_name")), lit(" "), trim(col("last_name"))))
         .withColumn("department", upper(trim(col("department"))))
         .withColumn("is_active", col("active").cast("boolean"))
@@ -151,7 +151,7 @@ def silver_employees():
 @dlt.expect("valid_po_value", "po_value >= 0")
 def silver_purchase_orders():
     return (
-        dlt.read("bronze_purchase_orders")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_purchase_orders")
         .withColumn("po_date", to_date(col("po_date")))
         .withColumn("delivery_date", to_date(col("delivery_date")))
         .withColumn("approval_date", to_date(col("approval_date")))
@@ -180,7 +180,7 @@ def silver_purchase_orders():
 @dlt.expect_or_drop("valid_po_ref", "po_id IS NOT NULL")
 def silver_po_line_items():
     return (
-        dlt.read("bronze_po_line_items")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_po_line_items")
         .withColumn("qty_ordered", col("qty_ordered").cast(DoubleType()))
         .withColumn("qty_received", col("qty_received").cast(DoubleType()))
         .withColumn("qty_accepted", col("qty_accepted").cast(DoubleType()))
@@ -216,7 +216,7 @@ def silver_po_line_items():
 @dlt.expect("valid_value", "contract_value > 0")
 def silver_contracts():
     return (
-        dlt.read("bronze_contracts")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_contracts")
         .withColumn("contract_value", col("contract_value").cast(DoubleType()))
         .withColumn("start_date", to_date(col("start_date")))
         .withColumn("end_date", to_date(col("end_date")))
@@ -244,7 +244,7 @@ def silver_contracts():
 @dlt.expect_or_drop("valid_contract_ref", "contract_id IS NOT NULL")
 def silver_contract_items():
     return (
-        dlt.read("bronze_contract_items")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_contract_items")
         .withColumn("quantity", col("quantity").cast(DoubleType()))
         .withColumn("unit_price", col("unit_price").cast(DoubleType()))
         .withColumn("line_value", col("line_value").cast(DoubleType()))
@@ -268,7 +268,7 @@ def silver_contract_items():
 @dlt.expect("valid_amount", "invoice_amount > 0")
 def silver_invoices():
     return (
-        dlt.read("bronze_invoices")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_invoices")
         .withColumn("invoice_date", to_date(col("invoice_date")))
         .withColumn("due_date", to_date(col("due_date")))
         .withColumn("payment_date", to_date(col("payment_date")))
@@ -305,7 +305,7 @@ def silver_invoices():
 @dlt.expect_or_drop("valid_po_ref", "po_id IS NOT NULL")
 def silver_goods_receipts():
     return (
-        dlt.read("bronze_goods_receipts")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_goods_receipts")
         .withColumn("receipt_date", to_date(col("receipt_date")))
         .withColumn("qty_received", col("qty_delivered").cast(DoubleType()))
         .withColumn("qty_accepted", col("qty_accepted").cast(DoubleType()))
@@ -336,7 +336,7 @@ def silver_goods_receipts():
 @dlt.expect("valid_budget_amount", "revised_amount >= 0")
 def silver_project_budgets():
     return (
-        dlt.read("bronze_project_budgets")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_project_budgets")
         .withColumn("budget_amount", col("revised_amount").cast(DoubleType()))
         .withColumn("original_budget", col("original_amount").cast(DoubleType()))
         .withColumn("committed_amount", col("committed_amount").cast(DoubleType()))
@@ -372,7 +372,7 @@ def silver_project_budgets():
 @dlt.expect("valid_amount", "actual_amount > 0")
 def silver_project_actuals():
     return (
-        dlt.read("bronze_project_actuals")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_project_actuals")
         .withColumn("transaction_date", to_date(col("transaction_date")))
         .withColumn("posting_date", to_date(col("posting_date")))
         .withColumn("amount", col("actual_amount").cast(DoubleType()))
@@ -404,7 +404,7 @@ def silver_project_actuals():
 @dlt.expect("valid_order_value", "revenue > 0")
 def silver_sales_orders():
     return (
-        dlt.read("bronze_sales_orders")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_sales_orders")
         .withColumn("order_date", to_date(col("order_date")))
         .withColumn("delivery_date", to_date(col("delivery_date")))
         .withColumn("order_value", col("revenue").cast(DoubleType()))
@@ -440,7 +440,7 @@ def silver_sales_orders():
 @dlt.expect_or_drop("valid_movement_id", "movement_id IS NOT NULL")
 def silver_inventory():
     return (
-        dlt.read("bronze_inventory")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_inventory")
         .withColumn("movement_date", to_date(col("movement_date")))
         .withColumn("quantity", col("quantity").cast(DoubleType()))
         .withColumn("unit_cost", col("unit_cost").cast(DoubleType()))
@@ -470,7 +470,7 @@ def silver_inventory():
 @dlt.expect_or_drop("valid_vendor_ref", "vendor_id IS NOT NULL")
 def silver_vendor_performance():
     return (
-        dlt.read("bronze_vendor_performance")
+        spark.read.table(f"{CATALOG}.procurement_bronze.bronze_vendor_performance")
         .withColumn("evaluation_date", to_date(col("evaluation_date")))
         .withColumn("delivery_score", col("delivery_score").cast(DoubleType()))
         .withColumn("quality_score", col("quality_score").cast(DoubleType()))

@@ -17,6 +17,7 @@ from pyspark.sql.functions import (
     sum as spark_sum, count as spark_count, max as spark_max
 )
 from pyspark.sql.types import BooleanType
+CATALOG = spark.conf.get("catalog", "procurement_lakehouse")
 
 # COMMAND ----------
 
@@ -67,7 +68,7 @@ def gold_dim_date():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_vendor():
-    df = dlt.read("silver_vendors")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_vendors")
     return df.select(
         col("vendor_id"),
         col("vendor_code"),
@@ -115,7 +116,7 @@ def gold_dim_vendor():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_project():
-    df = dlt.read("silver_projects")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_projects")
     return df.select(
         col("project_id"),
         col("project_code"),
@@ -157,7 +158,7 @@ def gold_dim_project():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_material():
-    df = dlt.read("silver_materials")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_materials")
     return df.select(
         col("material_id"),
         col("material_code"),
@@ -181,7 +182,7 @@ def gold_dim_material():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_employee():
-    df = dlt.read("silver_employees")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_employees")
     return df.select(
         col("employee_id"),
         col("employee_code"),
@@ -206,8 +207,8 @@ def gold_dim_employee():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_geography():
-    projects = dlt.read("silver_projects").select("country", "state", "city")
-    vendors = dlt.read("silver_vendors").select("country", "state", "city")
+    projects = spark.read.table(f"{CATALOG}.procurement_silver.silver_projects").select("country", "state", "city")
+    vendors = spark.read.table(f"{CATALOG}.procurement_silver.silver_vendors").select("country", "state", "city")
     geo = projects.union(vendors).distinct()
     return geo.select(
         sha2(concat(col("country"), lit("|"), col("state"), lit("|"), col("city")), 256).alias("geography_key"),
@@ -231,7 +232,7 @@ def gold_dim_geography():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_contract():
-    df = dlt.read("silver_contracts")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_contracts")
     return df.select(
         col("contract_id"),
         col("vendor_id"),
@@ -268,7 +269,7 @@ def gold_dim_contract():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_cost_center():
-    df = dlt.read("silver_employees")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_employees")
     return df.select("cost_center", "department").distinct().select(
         col("cost_center").alias("cost_center_key"),
         col("cost_center").alias("cost_center_code"),
@@ -285,10 +286,10 @@ def gold_dim_cost_center():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_dim_sector():
-    v_sec = dlt.read("silver_vendors").select(
+    v_sec = spark.read.table(f"{CATALOG}.procurement_silver.silver_vendors").select(
         upper(trim(col("sector_specialization"))).alias("sector_name")
     )
-    p_sec = dlt.read("silver_projects").select(
+    p_sec = spark.read.table(f"{CATALOG}.procurement_silver.silver_projects").select(
         upper(trim(col("sector"))).alias("sector_name")
     )
     return v_sec.union(p_sec).distinct().where(col("sector_name").isNotNull()).select(
@@ -311,9 +312,9 @@ def gold_dim_sector():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_purchase_orders():
-    po = dlt.read("silver_purchase_orders")
+    po = spark.read.table(f"{CATALOG}.procurement_silver.silver_purchase_orders")
     poli_agg = (
-        dlt.read("silver_po_line_items")
+        spark.read.table(f"{CATALOG}.procurement_silver.silver_po_line_items")
         .groupBy("po_id")
         .agg(
             spark_sum("line_value").alias("line_total"),
@@ -351,7 +352,7 @@ def gold_fact_purchase_orders():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_invoices():
-    df = dlt.read("silver_invoices")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_invoices")
     return df.select(
         col("invoice_id"),
         col("vendor_id"),
@@ -398,11 +399,11 @@ def gold_fact_invoices():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_goods_receipts():
-    gr = dlt.read("silver_goods_receipts")
-    po = dlt.read("silver_purchase_orders").select(
+    gr = spark.read.table(f"{CATALOG}.procurement_silver.silver_goods_receipts")
+    po = spark.read.table(f"{CATALOG}.procurement_silver.silver_purchase_orders").select(
         col("po_id").alias("_po_id"), col("project_id")
     )
-    poli = dlt.read("silver_po_line_items").select(
+    poli = spark.read.table(f"{CATALOG}.procurement_silver.silver_po_line_items").select(
         col("line_id").alias("_poli_line_id"),
         col("unit_price").alias("_poli_unit_price")
     )
@@ -442,9 +443,9 @@ def gold_fact_goods_receipts():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_project_costs():
-    budgets = dlt.read("silver_project_budgets")
+    budgets = spark.read.table(f"{CATALOG}.procurement_silver.silver_project_budgets")
     actuals_agg = (
-        dlt.read("silver_project_actuals")
+        spark.read.table(f"{CATALOG}.procurement_silver.silver_project_actuals")
         .groupBy("project_id", "wbs_code", "cost_type")
         .agg(
             spark_sum("actual_amount").alias("_act_total"),
@@ -496,7 +497,7 @@ def gold_fact_project_costs():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_project_actuals():
-    df = dlt.read("silver_project_actuals")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_project_actuals")
     return df.select(
         col("transaction_id"),
         col("project_id"),
@@ -526,7 +527,7 @@ def gold_fact_project_actuals():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_vendor_performance():
-    df = dlt.read("silver_vendor_performance")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_vendor_performance")
     return df.select(
         col("performance_id"),
         col("vendor_id"),
@@ -554,7 +555,7 @@ def gold_fact_vendor_performance():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_inventory():
-    df = dlt.read("silver_inventory")
+    df = spark.read.table(f"{CATALOG}.procurement_silver.silver_inventory")
     return df.select(
         col("movement_id"),
         col("material_id"),
@@ -585,9 +586,9 @@ def gold_fact_inventory():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_contracts():
-    contracts = dlt.read("silver_contracts")
+    contracts = spark.read.table(f"{CATALOG}.procurement_silver.silver_contracts")
     items_agg = (
-        dlt.read("silver_contract_items")
+        spark.read.table(f"{CATALOG}.procurement_silver.silver_contract_items")
         .groupBy("contract_id")
         .agg(
             spark_sum("line_value").alias("items_total"),
@@ -628,8 +629,8 @@ def gold_fact_contracts():
     table_properties={"quality": "gold", "layer": "gold"}
 )
 def gold_fact_sales():
-    sales = dlt.read("silver_sales_orders")
-    materials = dlt.read("silver_materials").select(
+    sales = spark.read.table(f"{CATALOG}.procurement_silver.silver_sales_orders")
+    materials = spark.read.table(f"{CATALOG}.procurement_silver.silver_materials").select(
         col("material_id").alias("_mat_id"),
         col("material_name").alias("product_name")
     )

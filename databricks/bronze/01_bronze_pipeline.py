@@ -31,18 +31,16 @@ def create_bronze_table(table_name):
     @dlt.table(
         name=f"bronze_{table_name}",
         comment=f"Raw {table_name} data ingested from Excel",
-        table_properties={"quality": "bronze", "pipelines.autoOptimize.managed": "true"},
-        path=f"{RAW_PATH}/bronze/{table_name}"
+        table_properties={"quality": "bronze", "pipelines.autoOptimize.managed": "true"}
     )
     def bronze_table():
         return (
-            spark.read.format("com.crealytics.spark.excel")
+                        spark.read.format("csv")
             .option("header", "true")
             .option("inferSchema", "true")
-            .option("dataAddress", f"'{table_name}'!A1")
-            .load(f"{RAW_PATH}/{table_name}.xlsx")
+            .load(f"{RAW_PATH}/{table_name}.csv")
             .withColumn("_ingest_timestamp", current_timestamp())
-            .withColumn("_source_file", lit(f"{table_name}.xlsx"))
+            .withColumn("_source_file", lit(f"{table_name}.csv"))
         )
     return bronze_table
 
