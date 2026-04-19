@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 03: Contract Status
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_contracts, dim_contract, dim_vendor, dim_project
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_contract_status
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_contract_status
 COMMENT 'Contract portfolio overview with risk flags and utilisation'
 AS
 SELECT
@@ -39,7 +39,7 @@ SELECT
     END                                     AS schedule_risk_flag,
     -- Remaining value
     ROUND(dc.revised_value - COALESCE(fc.items_total, 0), 2) AS remaining_value
-FROM procurement_dev.gold.fact_contracts    fc
-JOIN procurement_dev.gold.dim_contract      dc ON fc.contract_id = dc.contract_id AND dc._is_current = TRUE
-JOIN procurement_dev.gold.dim_vendor        dv ON fc.vendor_id = dv.vendor_id AND dv._is_current = TRUE
-JOIN procurement_dev.gold.dim_project       dp ON fc.project_id = dp.project_id AND dp._is_current = TRUE;
+FROM workspace.procurement_gold.fact_contracts    fc
+JOIN workspace.procurement_gold.dim_contract      dc ON fc.contract_id = dc.contract_id AND dc._is_current = TRUE
+JOIN workspace.procurement_gold.dim_vendor        dv ON fc.vendor_id = dv.vendor_id AND dv._is_current = TRUE
+JOIN workspace.procurement_gold.dim_project       dp ON fc.project_id = dp.project_id AND dp._is_current = TRUE;

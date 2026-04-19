@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 14: Project Timeline
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold dim_project, fact_project_costs, fact_contracts
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_project_timeline
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_project_timeline
 COMMENT 'Schedule performance index and milestone tracking by project'
 AS
 WITH project_spend AS (
@@ -16,7 +16,7 @@ WITH project_spend AS (
         SUM(budget_amount)                  AS total_budget,
         COUNT(DISTINCT wbs_element)         AS active_wbs_count,
         COUNT(DISTINCT cost_type)           AS cost_type_count
-    FROM procurement_dev.gold.fact_project_costs
+    FROM workspace.procurement_gold.fact_project_costs
     GROUP BY project_id
 ),
 project_contracts AS (
@@ -26,7 +26,7 @@ project_contracts AS (
         SUM(CASE WHEN status = 'ACTIVE' THEN 1 ELSE 0 END) AS active_contracts,
         SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS completed_contracts,
         SUM(revised_value)                  AS total_contract_value
-    FROM procurement_dev.gold.dim_contract
+    FROM workspace.procurement_gold.dim_contract
     WHERE _is_current = TRUE
     GROUP BY project_id
 )
@@ -74,7 +74,7 @@ SELECT
     pc.active_contracts,
     pc.completed_contracts,
     pc.total_contract_value
-FROM procurement_dev.gold.dim_project       dp
+FROM workspace.procurement_gold.dim_project       dp
 LEFT JOIN project_spend                     ps ON dp.project_id = ps.project_id
 LEFT JOIN project_contracts                 pc ON dp.project_id = pc.project_id
 WHERE dp._is_current = TRUE;

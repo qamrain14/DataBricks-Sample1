@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 02: Vendor Performance
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold dim_vendor, gold fact_vendor_performance
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_vendor_performance
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_vendor_performance
 COMMENT 'Aggregated vendor scores with rankings and trend'
 AS
 SELECT
@@ -32,8 +32,8 @@ SELECT
     ROUND(AVG(vp.overall_score) - LAG(AVG(vp.overall_score), 1) OVER (
         PARTITION BY dv.vendor_id ORDER BY vp.evaluation_period
     ), 2)                                 AS score_trend
-FROM procurement_dev.gold.dim_vendor                dv
-JOIN procurement_dev.gold.fact_vendor_performance     vp ON dv.vendor_id = vp.vendor_id AND dv._is_current = TRUE
+FROM workspace.procurement_gold.dim_vendor                dv
+JOIN workspace.procurement_gold.fact_vendor_performance     vp ON dv.vendor_id = vp.vendor_id AND dv._is_current = TRUE
 GROUP BY
     dv.vendor_id, dv.vendor_name, dv.sector, dv.tier, dv.country,
     vp.evaluation_period;

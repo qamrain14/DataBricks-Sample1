@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 09: Inventory Movement Analysis
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_inventory, dim_material, dim_date
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_inventory_status
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_inventory_status
 COMMENT 'Inventory movement analysis — receipts, issues, returns, and net flow by material and period'
 AS
 WITH movement_summary AS (
@@ -18,8 +18,8 @@ WITH movement_summary AS (
         SUM(fi.quantity)                                AS total_quantity,
         SUM(fi.total_value)                             AS total_value,
         AVG(fi.unit_cost)                               AS avg_unit_cost
-    FROM procurement_dev.gold.fact_inventory     fi
-    JOIN procurement_dev.gold.dim_date           dd ON fi.movement_date = dd.full_date
+    FROM workspace.procurement_gold.fact_inventory     fi
+    JOIN workspace.procurement_gold.dim_date           dd ON fi.movement_date = dd.date
     GROUP BY fi.material_id, fi.movement_type, dd.year, dd.quarter, dd.year_month
 )
 SELECT
@@ -54,7 +54,7 @@ SELECT
         / NULLIF(SUM(CASE WHEN ms.movement_type = 'RECEIPT' THEN ms.total_quantity ELSE 0 END), 0)
     , 2)                                                AS issue_to_receipt_ratio
 FROM movement_summary                       ms
-JOIN procurement_dev.gold.dim_material      dm ON ms.material_id = dm.material_id AND dm._is_current = TRUE
+JOIN workspace.procurement_gold.dim_material      dm ON ms.material_id = dm.material_id AND dm._is_current = TRUE
 GROUP BY
     dm.material_id, dm.material_name, dm.category,
     ms.year, ms.quarter, ms.year_month;

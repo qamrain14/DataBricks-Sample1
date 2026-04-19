@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 11: Delivery Performance
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_purchase_orders, fact_goods_receipts, dim_vendor, dim_date
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_delivery_performance
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_delivery_performance
 COMMENT 'On-time delivery trends by vendor and period'
 AS
 WITH po_delivery AS (
@@ -22,8 +22,8 @@ WITH po_delivery AS (
             ELSE 'LATE_OVER_MONTH'
         END                                 AS delivery_class,
         fp.total_amount
-    FROM procurement_dev.gold.fact_purchase_orders  fp
-    JOIN procurement_dev.gold.fact_goods_receipts   fg ON fp.po_id = fg.po_id
+    FROM workspace.procurement_gold.fact_purchase_orders  fp
+    JOIN workspace.procurement_gold.fact_goods_receipts   fg ON fp.po_id = fg.po_id
 )
 SELECT
     pd.vendor_id,
@@ -57,8 +57,8 @@ SELECT
         ORDER BY dd.year, dd.quarter
     )                                       AS prev_quarter_on_time_pct
 FROM po_delivery                            pd
-JOIN procurement_dev.gold.dim_vendor        dv ON pd.vendor_id = dv.vendor_id AND dv._is_current = TRUE
-JOIN procurement_dev.gold.dim_date          dd ON pd.po_date = dd.full_date
+JOIN workspace.procurement_gold.dim_vendor        dv ON pd.vendor_id = dv.vendor_id AND dv._is_current = TRUE
+JOIN workspace.procurement_gold.dim_date          dd ON pd.po_date = dd.date
 GROUP BY
     pd.vendor_id, dv.vendor_name, dv.vendor_sector,
     dd.year, dd.quarter, dd.year_month;

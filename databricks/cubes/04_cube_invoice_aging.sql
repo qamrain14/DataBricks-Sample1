@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 04: Invoice Aging
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_invoices, dim_vendor, dim_project, dim_date
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_invoice_aging
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_invoice_aging
 COMMENT 'Invoice aging analysis by bucket, vendor, and period'
 AS
 SELECT
@@ -31,10 +31,10 @@ SELECT
         SUM(CASE WHEN fi.payment_status = 'OVERDUE' THEN fi.gross_amount ELSE 0 END)
         / NULLIF(SUM(fi.gross_amount), 0) * 100, 2
     )                                       AS overdue_pct
-FROM procurement_dev.gold.fact_invoices     fi
-JOIN procurement_dev.gold.dim_vendor        dv ON fi.vendor_id = dv.vendor_id AND dv._is_current = TRUE
-JOIN procurement_dev.gold.dim_project       dp ON fi.project_id = dp.project_id AND dp._is_current = TRUE
-JOIN procurement_dev.gold.dim_date          dd ON fi.invoice_date = dd.full_date
+FROM workspace.procurement_gold.fact_invoices     fi
+JOIN workspace.procurement_gold.dim_vendor        dv ON fi.vendor_id = dv.vendor_id AND dv._is_current = TRUE
+JOIN workspace.procurement_gold.dim_project       dp ON fi.project_id = dp.project_id AND dp._is_current = TRUE
+JOIN workspace.procurement_gold.dim_date          dd ON fi.invoice_date = dd.date
 GROUP BY
     fi.vendor_id, dv.vendor_name, dv.vendor_sector,
     fi.project_id, dp.project_name,

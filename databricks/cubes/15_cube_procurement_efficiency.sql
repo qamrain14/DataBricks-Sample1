@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 15: Procurement Efficiency
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_purchase_orders, fact_goods_receipts, fact_invoices, dim_vendor, dim_date
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_procurement_efficiency
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_procurement_efficiency
 COMMENT 'Process cycle time analysis across procure-to-pay lifecycle'
 AS
 WITH p2p_cycle AS (
@@ -21,9 +21,9 @@ WITH p2p_cycle AS (
         DATEDIFF(fi.payment_date, fi.invoice_date)      AS invoice_to_payment_days,
         DATEDIFF(fi.payment_date, fp.po_date)           AS total_p2p_days,
         fp.total_amount
-    FROM procurement_dev.gold.fact_purchase_orders  fp
-    LEFT JOIN procurement_dev.gold.fact_goods_receipts  fg ON fp.po_id = fg.po_id
-    LEFT JOIN procurement_dev.gold.fact_invoices         fi ON fp.po_id = fi.po_id
+    FROM workspace.procurement_gold.fact_purchase_orders  fp
+    LEFT JOIN workspace.procurement_gold.fact_goods_receipts  fg ON fp.po_id = fg.po_id
+    LEFT JOIN workspace.procurement_gold.fact_invoices         fi ON fp.po_id = fi.po_id
 )
 SELECT
     p.vendor_id,
@@ -59,8 +59,8 @@ SELECT
         / NULLIF(COUNT(*), 0) * 100, 2
     )                                               AS complete_p2p_pct
 FROM p2p_cycle                              p
-JOIN procurement_dev.gold.dim_vendor        dv ON p.vendor_id = dv.vendor_id AND dv._is_current = TRUE
-JOIN procurement_dev.gold.dim_date          dd ON p.po_date = dd.full_date
+JOIN workspace.procurement_gold.dim_vendor        dv ON p.vendor_id = dv.vendor_id AND dv._is_current = TRUE
+JOIN workspace.procurement_gold.dim_date          dd ON p.po_date = dd.date
 GROUP BY
     p.vendor_id, dv.vendor_name, dv.vendor_sector,
     dd.year, dd.quarter, dd.year_month;

@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 10: Spend by Sector
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_purchase_orders, dim_vendor, dim_sector, dim_date
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_spend_by_sector
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_spend_by_sector
 COMMENT 'Cross-sector procurement spend analysis with market share'
 AS
 SELECT
@@ -45,10 +45,10 @@ SELECT
             ORDER BY dd.year
         ), 0) * 100, 2
     )                                       AS yoy_growth_pct
-FROM procurement_dev.gold.fact_purchase_orders fp
-JOIN procurement_dev.gold.dim_vendor        dv ON fp.vendor_id = dv.vendor_id AND dv._is_current = TRUE
-JOIN procurement_dev.gold.dim_sector        ds ON dv.sector = ds.sector_key
-JOIN procurement_dev.gold.dim_date          dd ON fp.po_date = dd.full_date
+FROM workspace.procurement_gold.fact_purchase_orders fp
+JOIN workspace.procurement_gold.dim_vendor        dv ON fp.vendor_id = dv.vendor_id AND dv._is_current = TRUE
+JOIN workspace.procurement_gold.dim_sector        ds ON dv.sector = ds.sector_key
+JOIN workspace.procurement_gold.dim_date          dd ON fp.po_date = dd.date
 GROUP BY
     ds.sector_key, ds.sector_name,
     dv.vendor_id, dv.vendor_name, dv.country,

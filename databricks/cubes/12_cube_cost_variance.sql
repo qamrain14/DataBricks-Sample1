@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 12: Cost Variance
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_project_costs, dim_project
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_cost_variance
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_cost_variance
 COMMENT 'Cost overrun identification and trend analysis by project and cost type'
 AS
 SELECT
@@ -46,8 +46,8 @@ SELECT
         PARTITION BY dp.project_id
         ORDER BY SUM(fc.actual_amount + fc.committed_amount) - SUM(fc.budget_amount) DESC
     )                                       AS overrun_rank
-FROM procurement_dev.gold.fact_project_costs fc
-JOIN procurement_dev.gold.dim_project       dp ON fc.project_id = dp.project_id AND dp._is_current = TRUE
+FROM workspace.procurement_gold.fact_project_costs fc
+JOIN workspace.procurement_gold.dim_project       dp ON fc.project_id = dp.project_id AND dp._is_current = TRUE
 GROUP BY
     dp.project_id, dp.project_name, dp.status,
     dp.sector, dp.region,

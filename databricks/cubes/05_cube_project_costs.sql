@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 05: Project Costs
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_project_costs, dim_project
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_project_costs
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_project_costs
 COMMENT 'Project cost performance with CPI and variance analysis'
 AS
 SELECT
@@ -37,8 +37,8 @@ SELECT
     )                                       AS budget_utilisation_pct,
     COUNT(DISTINCT fc.wbs_element)          AS wbs_count,
     COUNT(DISTINCT fc.cost_type)            AS cost_type_count
-FROM procurement_dev.gold.fact_project_costs fc
-JOIN procurement_dev.gold.dim_project        dp ON fc.project_id = dp.project_id AND dp._is_current = TRUE
+FROM workspace.procurement_gold.fact_project_costs fc
+JOIN workspace.procurement_gold.dim_project        dp ON fc.project_id = dp.project_id AND dp._is_current = TRUE
 GROUP BY
     dp.project_id, dp.project_name, dp.status,
     dp.sector, dp.region, dp.priority,

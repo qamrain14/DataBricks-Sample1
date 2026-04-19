@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 08: Sales Analysis
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_sales, dim_sector, dim_date
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_sales_analysis
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_sales_analysis
 COMMENT 'Revenue and margin analysis by product, sector, region, and period'
 AS
 SELECT
@@ -40,9 +40,9 @@ SELECT
             ORDER BY dd.year
         ), 0) * 100, 2
     )                                       AS revenue_yoy_growth_pct
-FROM procurement_dev.gold.fact_sales        fs
-JOIN procurement_dev.gold.dim_sector        ds ON fs.sector = ds.sector_key
-JOIN procurement_dev.gold.dim_date          dd ON fs.sale_date = dd.full_date
+FROM workspace.procurement_gold.fact_sales        fs
+JOIN workspace.procurement_gold.dim_sector        ds ON fs.sector = ds.sector_key
+JOIN workspace.procurement_gold.dim_date          dd ON fs.sale_date = dd.date
 GROUP BY
     fs.product_id, fs.product_name, fs.customer_id,
     ds.sector_key, ds.sector_name,

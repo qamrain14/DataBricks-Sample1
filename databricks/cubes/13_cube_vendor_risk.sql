@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 13: Vendor Risk
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold dim_vendor, gold fact_vendor_performance, gold fact_invoices, gold fact_goods_receipts
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_vendor_risk
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_vendor_risk
 COMMENT 'Composite vendor risk scoring combining performance, financial, and quality signals'
 AS
 WITH perf_agg AS (
@@ -17,7 +17,7 @@ WITH perf_agg AS (
         AVG(hse_score)                      AS avg_hse_score,
         MIN(overall_score)                  AS min_overall_score,
         COUNT(*)                            AS evaluation_count
-    FROM procurement_dev.gold.fact_vendor_performance
+    FROM workspace.procurement_gold.fact_vendor_performance
     GROUP BY vendor_id
 ),
 invoice_agg AS (
@@ -27,7 +27,7 @@ invoice_agg AS (
         SUM(CASE WHEN payment_status = 'OVERDUE' THEN 1 ELSE 0 END) AS overdue_invoices,
         AVG(days_outstanding)               AS avg_days_outstanding,
         SUM(gross_amount)                   AS total_invoiced
-    FROM procurement_dev.gold.fact_invoices
+    FROM workspace.procurement_gold.fact_invoices
     GROUP BY vendor_id
 ),
 quality_agg AS (
@@ -35,7 +35,7 @@ quality_agg AS (
         vendor_id,
         AVG(acceptance_rate)                AS avg_acceptance_rate,
         SUM(quantity_rejected)              AS total_rejected
-    FROM procurement_dev.gold.fact_goods_receipts
+    FROM workspace.procurement_gold.fact_goods_receipts
     GROUP BY vendor_id
 )
 SELECT
@@ -92,7 +92,7 @@ SELECT
         + GREATEST(0, 100 - COALESCE(ia.overdue_invoices / NULLIF(ia.invoice_count, 0) * 100, 0)) * 0.20
         DESC
     )                                       AS risk_rank
-FROM procurement_dev.gold.dim_vendor        dv
+FROM workspace.procurement_gold.dim_vendor        dv
 LEFT JOIN perf_agg                          pa ON dv.vendor_id = pa.vendor_id
 LEFT JOIN invoice_agg                       ia ON dv.vendor_id = ia.vendor_id
 LEFT JOIN quality_agg                       qa ON dv.vendor_id = qa.vendor_id

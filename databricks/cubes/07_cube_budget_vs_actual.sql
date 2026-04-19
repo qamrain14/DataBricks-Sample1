@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 07: Budget vs Actual
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_project_costs, dim_project
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_budget_vs_actual
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_budget_vs_actual
 COMMENT 'Detailed budget vs actual variance analysis by WBS and cost type'
 AS
 SELECT
@@ -37,8 +37,8 @@ SELECT
         SUM(fc.actual_amount)
         / NULLIF(SUM(fc.budget_amount), 0) * 100, 2
     )                                       AS budget_consumed_pct
-FROM procurement_dev.gold.fact_project_costs fc
-JOIN procurement_dev.gold.dim_project       dp  ON fc.project_id = dp.project_id AND dp._is_current = TRUE
+FROM workspace.procurement_gold.fact_project_costs fc
+JOIN workspace.procurement_gold.dim_project       dp  ON fc.project_id = dp.project_id AND dp._is_current = TRUE
 GROUP BY
     dp.project_id, dp.project_name, dp.sector, dp.region,
     fc.wbs_element, fc.cost_type;

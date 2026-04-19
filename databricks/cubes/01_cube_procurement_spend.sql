@@ -1,10 +1,10 @@
 -- ═══════════════════════════════════════════════════════════════
 -- Cube 01: Procurement Spend Analysis
--- Schema: procurement_dev.semantic
+-- Schema: workspace.procurement_semantic
 -- Source: gold fact_purchase_orders, dim_vendor, dim_project, dim_date
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE OR REPLACE MATERIALIZED VIEW procurement_dev.semantic.cube_procurement_spend
+CREATE OR REPLACE VIEW workspace.procurement_semantic.cube_procurement_spend
 COMMENT 'Total procurement spend by vendor, project, period with YoY comparison'
 AS
 SELECT
@@ -37,10 +37,10 @@ SELECT
                 PARTITION BY dv.vendor_id, dd.quarter ORDER BY dd.year) * 100, 2)
         ELSE NULL
     END                                 AS yoy_growth_pct
-FROM procurement_dev.gold.fact_purchase_orders  fpo
-JOIN procurement_dev.gold.dim_vendor            dv  ON fpo.vendor_id = dv.vendor_id AND dv._is_current = TRUE
-JOIN procurement_dev.gold.dim_project           dp  ON fpo.project_id = dp.project_id AND dp._is_current = TRUE
-JOIN procurement_dev.gold.dim_date              dd  ON fpo.po_date = dd.full_date
+FROM workspace.procurement_gold.fact_purchase_orders  fpo
+JOIN workspace.procurement_gold.dim_vendor            dv  ON fpo.vendor_id = dv.vendor_id AND dv._is_current = TRUE
+JOIN workspace.procurement_gold.dim_project           dp  ON fpo.project_id = dp.project_id AND dp._is_current = TRUE
+JOIN workspace.procurement_gold.dim_date              dd  ON fpo.po_date = dd.date
 GROUP BY
     dv.vendor_id, dv.vendor_name, dv.sector,
     dp.project_id, dp.project_name,
