@@ -1,0 +1,13 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: c:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 152 items
+
+tests\test_semantic_cubes.py ........................................... [ 28%]
+........................................................................ [ 75%]
+.....................................                                    [100%]
+
+============================= 152 passed in 2.58s =============================

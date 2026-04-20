@@ -1,0 +1,63 @@
+{
+  "creator_user_name":"mohd.qamrain@gmail.com",
+  "effective_publishing_mode":"DEFAULT_PUBLISHING_MODE",
+  "last_modified":1776628096187,
+  "latest_updates": [
+    {
+      "creation_time":"2026-04-20T00:36:04.596Z",
+      "state":"COMPLETED",
+      "update_id":"65c22b5b-5fc4-46a1-b17b-761ff4a419c2"
+    },
+    {
+      "creation_time":"2026-04-19T20:22:48.954Z",
+      "state":"FAILED",
+      "update_id":"cf46f15c-8711-4432-8f80-dfe9b2a4920a"
+    },
+    {
+      "creation_time":"2026-04-19T20:20:26.926Z",
+      "state":"FAILED",
+      "update_id":"c0119b4f-1830-45d8-a728-6ab9b9228317"
+    },
+    {
+      "creation_time":"2026-04-19T20:11:39.803Z",
+      "state":"FAILED",
+      "update_id":"794761f8-4bcc-49ab-90a0-261428fdfa06"
+    },
+    {
+      "creation_time":"2026-04-19T19:51:31.826Z",
+      "state":"FAILED",
+      "update_id":"ae184edb-10f0-48df-964f-36b19678b08b"
+    }
+  ],
+  "name":"[dev mohd_qamrain] procurement_silver_pipeline",
+  "pipeline_id":"b9207b48-1feb-460f-afe3-d904d0fb1381",
+  "run_as_user_name":"mohd.qamrain@gmail.com",
+  "spec": {
+    "catalog":"workspace",
+    "channel":"CURRENT",
+    "configuration": {
+      "catalog":"workspace"
+    },
+    "deployment": {
+      "kind":"BUNDLE",
+      "metadata_file_path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/state/metadata.json"
+    },
+    "development":true,
+    "edition":"ADVANCED",
+    "id":"b9207b48-1feb-460f-afe3-d904d0fb1381",
+    "libraries": [
+      {
+        "notebook": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/silver/02_silver_pipeline"
+        }
+      }
+    ],
+    "name":"[dev mohd_qamrain] procurement_silver_pipeline",
+    "serverless":true,
+    "tags": {
+      "dev":"mohd_qamrain"
+    },
+    "target":"procurement_silver"
+  },
+  "state":"IDLE"
+}

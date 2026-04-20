@@ -1,0 +1,712 @@
+{
+  "cleanup_duration":0,
+  "creator_user_name":"mohd.qamrain@gmail.com",
+  "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+  "end_time":1776650910049,
+  "execution_duration":0,
+  "job_id":945319848056279,
+  "job_run_id":811202619791599,
+  "number_in_job":811202619791599,
+  "original_attempt_run_id":811202619791599,
+  "queue_duration":169741,
+  "run_duration":306905,
+  "run_id":811202619791599,
+  "run_name":"[dev mohd_qamrain] procurement_end_to_end_job",
+  "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/811202619791599",
+  "run_type":"JOB_RUN",
+  "setup_duration":0,
+  "start_time":1776650603144,
+  "state": {
+    "life_cycle_state":"INTERNAL_ERROR",
+    "result_state":"FAILED",
+    "state_message":"Task run_gold_pipeline failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.",
+    "user_cancelled_or_timedout":false
+  },
+  "status": {
+    "state":"TERMINATED",
+    "termination_details": {
+      "code":"RUN_EXECUTION_ERROR",
+      "message":"Task run_gold_pipeline failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.",
+      "type":"CLIENT_ERROR"
+    }
+  },
+  "tasks": [
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909697,
+      "execution_duration":0,
+      "run_id":1070048490858194,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/1070048490858194",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/08_cube_sales_analysis.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909697,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_sales_analysis"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909463,
+      "execution_duration":0,
+      "run_id":1017437449681180,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/1017437449681180",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/01_cube_procurement_spend.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909463,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_procurement_spend"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909225,
+      "execution_duration":0,
+      "run_id":732823973593486,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/732823973593486",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/09_cube_inventory_status.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909225,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_inventory_status"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909772,
+      "execution_duration":0,
+      "run_id":585145621369522,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/585145621369522",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/10_cube_spend_by_sector.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909772,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_spend_by_sector"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_bronze_pipeline"
+        }
+      ],
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":1776650896730,
+      "execution_duration":71000,
+      "pipeline_task": {
+        "pipeline_id":"b9207b48-1feb-460f-afe3-d904d0fb1381"
+      },
+      "run_id":1054312878607746,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/1054312878607746",
+      "setup_duration":0,
+      "start_time":1776650825025,
+      "state": {
+        "life_cycle_state":"TERMINATED",
+        "result_state":"SUCCESS",
+        "state_message":"",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SUCCESS",
+          "message":"",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_silver_pipeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_silver_pipeline"
+        }
+      ],
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":1776650908545,
+      "execution_duration":11000,
+      "pipeline_task": {
+        "pipeline_id":"7788297f-603e-4786-8046-14bf773e787b"
+      },
+      "run_id":162349822120326,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/162349822120326",
+      "setup_duration":0,
+      "start_time":1776650897006,
+      "state": {
+        "life_cycle_state":"TERMINATED",
+        "result_state":"FAILED",
+        "state_message":"Workload failed, see run output for details",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"RUN_EXECUTION_ERROR",
+          "message":"Workload failed, see run output for details",
+          "type":"CLIENT_ERROR"
+        }
+      },
+      "task_key":"run_gold_pipeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909544,
+      "execution_duration":0,
+      "run_id":98650252285855,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/98650252285855",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/05_cube_project_costs.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909544,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_project_costs"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909303,
+      "execution_duration":0,
+      "run_id":378303196061592,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/378303196061592",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/04_cube_invoice_aging.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909303,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_invoice_aging"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909142,
+      "execution_duration":0,
+      "run_id":464838696748094,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/464838696748094",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/06_cube_goods_receipt_quality.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909142,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_goods_receipt_quality"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650908904,
+      "execution_duration":0,
+      "run_id":718548791518096,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/718548791518096",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/03_cube_contract_status.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650908904,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_contract_status"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909063,
+      "execution_duration":0,
+      "run_id":960637205614493,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/960637205614493",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/11_cube_delivery_performance.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909063,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_delivery_performance"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "effective_performance_target":"PERFORMANCE_OPTIMIZED",
+      "end_time":1776650824746,
+      "execution_duration":221000,
+      "pipeline_task": {
+        "pipeline_id":"28973439-4c46-4ee4-952c-375e8e6dfa91"
+      },
+      "queue_duration":169437,
+      "run_id":388662742646855,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/388662742646855",
+      "setup_duration":0,
+      "start_time":1776650603162,
+      "state": {
+        "life_cycle_state":"TERMINATED",
+        "queue_reason":"Queued due to reaching maximum concurrent runs of 1.",
+        "result_state":"SUCCESS",
+        "state_message":"",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "queue_details": {
+          "code":"MAX_CONCURRENT_RUNS_REACHED",
+          "message":"Queued due to reaching maximum concurrent runs of 1."
+        },
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SUCCESS",
+          "message":"",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_bronze_pipeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909848,
+      "execution_duration":0,
+      "run_id":424440332144983,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/424440332144983",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/02_cube_vendor_performance.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909848,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_vendor_performance"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650908987,
+      "execution_duration":0,
+      "run_id":828396804456178,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/828396804456178",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/12_cube_cost_variance.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650908987,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_cost_variance"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650908822,
+      "execution_duration":0,
+      "run_id":617924160219788,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/617924160219788",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/07_cube_budget_vs_actual.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650908822,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_budget_vs_actual"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909929,
+      "execution_duration":0,
+      "run_id":128920626083749,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/128920626083749",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/13_cube_vendor_risk.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909929,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_vendor_risk"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909620,
+      "execution_duration":0,
+      "run_id":377936694276078,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/377936694276078",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/14_cube_project_timeline.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909620,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_project_timeline"
+    },
+    {
+      "attempt_number":0,
+      "cleanup_duration":0,
+      "depends_on": [
+        {
+          "task_key":"run_gold_pipeline"
+        }
+      ],
+      "end_time":1776650909382,
+      "execution_duration":0,
+      "run_id":522487883846363,
+      "run_if":"ALL_SUCCESS",
+      "run_page_url":"https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/522487883846363",
+      "setup_duration":0,
+      "sql_task": {
+        "file": {
+          "path":"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/cubes/15_cube_procurement_efficiency.sql",
+          "source":"WORKSPACE"
+        },
+        "warehouse_id":"7655fa24e271f9d1"
+      },
+      "start_time":1776650909382,
+      "state": {
+        "life_cycle_state":"SKIPPED",
+        "result_state":"UPSTREAM_FAILED",
+        "state_message":"An upstream task failed.",
+        "user_cancelled_or_timedout":false
+      },
+      "status": {
+        "state":"TERMINATED",
+        "termination_details": {
+          "code":"SKIPPED",
+          "message":"An upstream task failed.",
+          "type":"SUCCESS"
+        }
+      },
+      "task_key":"run_cube_procurement_efficiency"
+    }
+  ],
+  "trigger":"ONE_TIME"
+}

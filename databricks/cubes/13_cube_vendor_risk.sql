@@ -42,8 +42,8 @@ SELECT
     dv.vendor_id,
     dv.vendor_name,
     dv.vendor_sector,
-    dv.country,
-    dv.city,
+    dv.vendor_country,
+    dv.vendor_city,
     dv.tier,
     dv.status                               AS vendor_status,
     -- Performance scores

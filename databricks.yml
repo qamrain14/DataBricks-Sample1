@@ -16,6 +16,9 @@ variables:
   schema:
     description: The schema to use
     default: default
+  warehouse_id:
+    description: SQL warehouse ID for cube sql_tasks
+    default: 7655fa24e271f9d1
 
 # Workspace configuration - update these when you have Azure Databricks access
 workspace:
@@ -35,17 +38,17 @@ targets:
   dev:
     mode: development
     workspace:
-      # Update with your workspace URL
-      host: ${var.DATABRICKS_HOST}
+      host: https://dbc-760a206e-c226.cloud.databricks.com
+      profile: cli-auth
     variables:
-      catalog: dev
+      catalog: workspace
       schema: ${bundle.name}
 
   # Production target - requires Azure Databricks workspace  
   prod:
     mode: production
     workspace:
-      host: ${var.DATABRICKS_HOST}
+      host: https://dbc-760a206e-c226.cloud.databricks.com
       root_path: /Shared/.bundle/prod/${bundle.name}
     variables:
       catalog: prod

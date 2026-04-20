@@ -1,0 +1,14 @@
+Run URL: https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/1024700495131142
+
+2026-04-19 21:18:30 "[dev mohd_qamrain] procurement_end_to_end_job" RUNNING
+2026-04-19 21:25:00 "[dev mohd_qamrain] procurement_end_to_end_job" INTERNAL_ERROR FAILED Task run_gold_pipeline failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.
+Task run_gold_pipeline FAILED:
+Please refer to the logs for this pipeline in the pipelines page.
+
+
+Error: Task run_gold_pipeline failed!
+Error:
+Please refer to the logs for this pipeline in the pipelines page.
+Trace:
+
+Error: failed to reach TERMINATED or SKIPPED, got INTERNAL_ERROR: Task run_gold_pipeline failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.

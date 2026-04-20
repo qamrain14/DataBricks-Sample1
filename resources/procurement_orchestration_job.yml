@@ -30,6 +30,127 @@ resources:
             pipeline_id: ${resources.pipelines.procurement_gold_pipeline.id}
             full_refresh: false
 
+        # ── Stage 4: Semantic Cubes (depend on Gold) ─────────────
+        - task_key: run_cube_procurement_spend
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/01_cube_procurement_spend.sql
+
+        - task_key: run_cube_vendor_performance
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/02_cube_vendor_performance.sql
+
+        - task_key: run_cube_contract_status
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/03_cube_contract_status.sql
+
+        - task_key: run_cube_invoice_aging
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/04_cube_invoice_aging.sql
+
+        - task_key: run_cube_project_costs
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/05_cube_project_costs.sql
+
+        - task_key: run_cube_goods_receipt_quality
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/06_cube_goods_receipt_quality.sql
+
+        - task_key: run_cube_budget_vs_actual
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/07_cube_budget_vs_actual.sql
+
+        - task_key: run_cube_sales_analysis
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/08_cube_sales_analysis.sql
+
+        - task_key: run_cube_inventory_status
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/09_cube_inventory_status.sql
+
+        - task_key: run_cube_spend_by_sector
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/10_cube_spend_by_sector.sql
+
+        - task_key: run_cube_delivery_performance
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/11_cube_delivery_performance.sql
+
+        - task_key: run_cube_cost_variance
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/12_cube_cost_variance.sql
+
+        - task_key: run_cube_vendor_risk
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/13_cube_vendor_risk.sql
+
+        - task_key: run_cube_project_timeline
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/14_cube_project_timeline.sql
+
+        - task_key: run_cube_procurement_efficiency
+          depends_on:
+            - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/15_cube_procurement_efficiency.sql
+
       # Schedule daily at 02:00 UTC
       schedule:
         quartz_cron_expression: "0 0 2 * * ?"

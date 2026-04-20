@@ -1,0 +1,160 @@
+[
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "SyntaxError",
+          "message": "  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/gold/03_gold_pipeline\", cell 12, line 18\n    )\n    ^\n\nSyntaxError: unmatched ')'"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "5c552ee0-3c51-11f1-bde8-32725be20d2b",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 is FAILED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-003827-31k0l2kz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645558036001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776645535254014
+      }
+    },
+    "timestamp": "2026-04-20T00:39:16.430Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "5046a2a0-3c51-11f1-bde8-32725be20d2b",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-003827-31k0l2kz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645541757001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776645535254001
+      }
+    },
+    "timestamp": "2026-04-20T00:38:56.202Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "438df3b0-3c51-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 158139.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645514860001
+    },
+    "timestamp": "2026-04-20T00:38:34.859Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "3f697750-3c51-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-003827-31k0l2kz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645507909001
+    },
+    "timestamp": "2026-04-20T00:38:27.909Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "3edaa4d1-3c51-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645506975001
+    },
+    "timestamp": "2026-04-20T00:38:26.963Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "3ed7e5b0-3c51-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645506955001
+    },
+    "timestamp": "2026-04-20T00:38:26.955Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "b53342f0-3c28-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com created pipeline.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776628096170001
+    },
+    "timestamp": "2026-04-19T19:48:16.159Z"
+  }
+]

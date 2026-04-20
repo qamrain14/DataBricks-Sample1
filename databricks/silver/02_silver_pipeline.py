@@ -1,4 +1,6 @@
 # Databricks notebook source
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC # Silver Layer - Cleansed & Enriched Data
 # MAGIC Construction & Oil/Gas Procurement Lakehouse
@@ -213,11 +215,11 @@ def silver_po_line_items():
     table_properties={"quality": "silver"}
 )
 @dlt.expect_or_drop("valid_contract_id", "contract_id IS NOT NULL")
-@dlt.expect("valid_value", "contract_value > 0")
+@dlt.expect("valid_value", "original_value > 0")
 def silver_contracts():
     return (
         spark.read.table(f"{CATALOG}.procurement_bronze.bronze_contracts")
-        .withColumn("contract_value", col("contract_value").cast(DoubleType()))
+        .withColumn("contract_value", col("original_value").cast(DoubleType()))
         .withColumn("start_date", to_date(col("start_date")))
         .withColumn("end_date", to_date(col("end_date")))
         .withColumn("contract_status", upper(trim(col("contract_status"))))
@@ -246,8 +248,8 @@ def silver_contract_items():
     return (
         spark.read.table(f"{CATALOG}.procurement_bronze.bronze_contract_items")
         .withColumn("quantity", col("quantity").cast(DoubleType()))
-        .withColumn("unit_price", col("unit_price").cast(DoubleType()))
-        .withColumn("line_value", col("line_value").cast(DoubleType()))
+        .withColumn("unit_price", col("unit_rate").cast(DoubleType()))
+        .withColumn("line_value", col("amount").cast(DoubleType()))
         .withColumn("_silver_timestamp", current_timestamp())
         .drop("_ingest_timestamp", "_source_file")
     )
@@ -265,16 +267,16 @@ def silver_contract_items():
     table_properties={"quality": "silver"}
 )
 @dlt.expect_or_drop("valid_invoice_id", "invoice_id IS NOT NULL")
-@dlt.expect("valid_amount", "invoice_amount > 0")
+@dlt.expect("valid_amount", "gross_amount > 0")
 def silver_invoices():
     return (
         spark.read.table(f"{CATALOG}.procurement_bronze.bronze_invoices")
         .withColumn("invoice_date", to_date(col("invoice_date")))
         .withColumn("due_date", to_date(col("due_date")))
-        .withColumn("payment_date", to_date(col("payment_date")))
-        .withColumn("invoice_amount", col("invoice_amount").cast(DoubleType()))
+        .withColumn("payment_date", to_date(col("paid_date")))
+        .withColumn("invoice_amount", col("gross_amount").cast(DoubleType()))
         .withColumn("tax_amount", col("tax_amount").cast(DoubleType()))
-        .withColumn("total_amount", col("total_amount").cast(DoubleType()))
+        .withColumn("total_amount", col("net_amount").cast(DoubleType()))
         .withColumn("paid_amount", col("paid_amount").cast(DoubleType()))
         .withColumn("invoice_status", upper(trim(col("invoice_status"))))
         .withColumn("days_to_pay",
@@ -476,7 +478,7 @@ def silver_vendor_performance():
         .withColumn("quality_score", col("quality_score").cast(DoubleType()))
         .withColumn("commercial_score", col("commercial_score").cast(DoubleType()))
         .withColumn("hse_score", col("hse_score").cast(DoubleType()))
-        .withColumn("compliance_score", col("compliance_score").cast(DoubleType()))
+        .withColumn("compliance_score", ((col("delivery_score") + col("quality_score") + col("commercial_score") + col("hse_score")) / lit(4)).cast(DoubleType()))
         .withColumn("overall_score", col("composite_score").cast(DoubleType()))
         .withColumn("recommendation", trim(col("recommendation")))
         .withColumn("evaluation_period", upper(trim(col("evaluation_period"))))

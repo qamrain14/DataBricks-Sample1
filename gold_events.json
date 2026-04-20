@@ -1,0 +1,2083 @@
+[
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "SyntaxError",
+          "message": "  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/gold/03_gold_pipeline\", cell 22, line 32\n    col(\"currency\"),\n                    ^\n\nSyntaxError: incomplete input"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "cf6cb8b0-3c5d-11f1-8846-6ed6fe077c35",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update 70e8a4 is FAILED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-020503-12nuovo3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9",
+      "update_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650905609001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776650718805023
+      }
+    },
+    "timestamp": "2026-04-20T02:08:23.483Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "cce2b270-3c5d-11f1-8846-6ed6fe077c35",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 70e8a4 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-020503-12nuovo3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9",
+      "update_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650902404001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776650718805017
+      }
+    },
+    "timestamp": "2026-04-20T02:08:19.223Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "cca70900-3c5d-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 70e8a4.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9",
+      "update_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650898833001
+    },
+    "timestamp": "2026-04-20T02:08:18.832Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "cc36bb00-3c5d-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 70e8a4 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9",
+      "update_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650898097001
+    },
+    "timestamp": "2026-04-20T02:08:18.084Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "cc322720-3c5d-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9",
+      "update_id": "70e8a4ad-55f0-4e8e-99ff-8a3e7b4967e9"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650898067001
+    },
+    "timestamp": "2026-04-20T02:08:18.066Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "SyntaxError",
+          "message": "  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/gold/03_gold_pipeline\", cell 22, line 32\n    col(\"currency\"),\n                    ^\n\nSyntaxError: incomplete input"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "79f090f0-3c5d-11f1-8846-6ed6fe077c35",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update 97e522 is FAILED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-020503-12nuovo3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e",
+      "update_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650760721001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776650718805013
+      }
+    },
+    "timestamp": "2026-04-20T02:06:00.063Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "688d6cc0-3c5d-11f1-8846-6ed6fe077c35",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 97e522 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-020503-12nuovo3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e",
+      "update_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650736054001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776650718805001
+      }
+    },
+    "timestamp": "2026-04-20T02:05:30.892Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "5cd082f0-3c5d-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 97e522.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e",
+      "update_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650711200001
+    },
+    "timestamp": "2026-04-20T02:05:11.199Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "5852ea10-3c5d-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 97e522 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-020503-12nuovo3-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e",
+      "update_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650703666001
+    },
+    "timestamp": "2026-04-20T02:05:03.665Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "57916ed0-3c5d-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 97e522 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e",
+      "update_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650702399001
+    },
+    "timestamp": "2026-04-20T02:05:02.386Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "578dec60-3c5d-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e",
+      "update_id": "97e522cf-d409-45f6-a4ab-140f57e6aa8e"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776650702375001
+    },
+    "timestamp": "2026-04-20T02:05:02.374Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "com.databricks.pipelines.common.errors.DLTAnalysisException",
+          "message": "[NO_TABLES_IN_PIPELINE] Pipelines are expected to have at least one table defined but no tables were found in your pipeline.\nPlease verify that you have included, and shared in case Run As is configured, the expected source files and/or directories, and that your source code includes table definitions (e.g., CREATE MATERIALIZED VIEW in SQL code, @dlt.table in python code).\n\nNote that only tables are counted towards this check. You may also encounter this error if you only include views or flows in your pipeline.",
+          "stack": [
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.PipelineGraphLoader",
+              "file_name": "PipelineGraphLoader.scala",
+              "line_number": 746,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.PipelineGraphLoader",
+              "file_name": "PipelineGraphLoader.scala",
+              "line_number": 251,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.extensions.workspace.WorkspacePipelineExecutionExtension$",
+              "file_name": "WorkspacePipelineExecutionExtension.scala",
+              "line_number": 31,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.DLTComputeRunnableContext",
+              "file_name": "DLTComputeRunnableContext.scala",
+              "line_number": 201,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.DLTComputeUpdateContext",
+              "file_name": "DLTComputeUpdateContext.scala",
+              "line_number": 173,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1064,
+              "method_name": "$anonfun$initializeForExecuteUpdate$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 114,
+              "method_name": "$anonfun$record$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfilerExporter$",
+              "file_name": "FrameProfilerExporter.scala",
+              "line_number": 200,
+              "method_name": "maybeExportFrameProfiler"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 105,
+              "method_name": "record"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 977,
+              "method_name": "initializeForExecuteUpdate"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1666,
+              "method_name": "initializationForUpdates"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1458,
+              "method_name": "$anonfun$executeUpdate$2"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 626,
+              "method_name": "$anonfun$executeStage$1"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 131,
+              "method_name": "$anonfun$recordPipelinesOperation$3"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.common.monitoring.OperationStatusReporter",
+              "file_name": "OperationStatusReporter.scala",
+              "line_number": 129,
+              "method_name": "executeWithPeriodicReporting"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.common.monitoring.OperationStatusReporter$",
+              "file_name": "OperationStatusReporter.scala",
+              "line_number": 169,
+              "method_name": "executeWithPeriodicReporting"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 153,
+              "method_name": "$anonfun$recordPipelinesOperation$6"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 510,
+              "method_name": "$anonfun$recordOperation$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 616,
+              "method_name": "executeThunkAndCaptureResultTags$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 643,
+              "method_name": "$anonfun$recordOperationWithResultTags$4"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 80,
+              "method_name": "$anonfun$withAttributionContext$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 348,
+              "method_name": "$anonfun$withValue$1"
+            },
+            {
+              "declaring_class": "scala.util.DynamicVariable",
+              "file_name": "DynamicVariable.scala",
+              "line_number": 59,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 344,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 78,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 75,
+              "method_name": "withAttributionContext$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 127,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 108,
+              "method_name": "withAttributionTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 611,
+              "method_name": "recordOperationWithResultTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 519,
+              "method_name": "recordOperationWithResultTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "recordOperationWithResultTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 511,
+              "method_name": "recordOperation"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 475,
+              "method_name": "recordOperation$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "recordOperation"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 73,
+              "method_name": "recordOperation0"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 145,
+              "method_name": "$anonfun$recordPipelinesOperation$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 114,
+              "method_name": "$anonfun$record$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfilerExporter$",
+              "file_name": "FrameProfilerExporter.scala",
+              "line_number": 200,
+              "method_name": "maybeExportFrameProfiler"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 105,
+              "method_name": "record"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 120,
+              "method_name": "recordPipelinesOperation"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 115,
+              "method_name": "recordPipelinesOperation$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 157,
+              "method_name": "recordPipelinesOperation"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 625,
+              "method_name": "executeStage"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1448,
+              "method_name": "$anonfun$executeUpdate$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 114,
+              "method_name": "$anonfun$record$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfilerExporter$",
+              "file_name": "FrameProfilerExporter.scala",
+              "line_number": 200,
+              "method_name": "maybeExportFrameProfiler"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 105,
+              "method_name": "record"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1448,
+              "method_name": "executeUpdate"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 429,
+              "method_name": "$anonfun$start$17"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.util.LexicalThreadLocal$Handle",
+              "file_name": "LexicalThreadLocal.scala",
+              "line_number": 63,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 429,
+              "method_name": "$anonfun$start$16"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 426,
+              "method_name": "$anonfun$start$16$adapted"
+            },
+            {
+              "declaring_class": "scala.Option",
+              "file_name": "Option.scala",
+              "line_number": 437,
+              "method_name": "foreach"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 426,
+              "method_name": "$anonfun$start$15"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.util.SparkSessionUtils$",
+              "file_name": "SparkSessionUtils.scala",
+              "line_number": 21,
+              "method_name": "withSQLConf"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UCCacheAcrossQueries$",
+              "file_name": "UCCacheAcrossQueries_DBR_15_4_Plus.scala",
+              "line_number": 14,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 426,
+              "method_name": "$anonfun$start$4"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 80,
+              "method_name": "$anonfun$withAttributionContext$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 348,
+              "method_name": "$anonfun$withValue$1"
+            },
+            {
+              "declaring_class": "scala.util.DynamicVariable",
+              "file_name": "DynamicVariable.scala",
+              "line_number": 59,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 344,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 78,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 75,
+              "method_name": "withAttributionContext$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 127,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 108,
+              "method_name": "withAttributionTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging$$anon$1",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 91,
+              "method_name": "runWithAttributionTags"
+            },
+            {
+              "declaring_class": "jdk.internal.reflect.NativeMethodAccessorImpl",
+              "file_name": "NativeMethodAccessorImpl.java",
+              "line_number": -2,
+              "method_name": "invoke0"
+            },
+            {
+              "declaring_class": "jdk.internal.reflect.NativeMethodAccessorImpl",
+              "file_name": "NativeMethodAccessorImpl.java",
+              "line_number": 77,
+              "method_name": "invoke"
+            },
+            {
+              "declaring_class": "jdk.internal.reflect.DelegatingMethodAccessorImpl",
+              "file_name": "DelegatingMethodAccessorImpl.java",
+              "line_number": 43,
+              "method_name": "invoke"
+            },
+            {
+              "declaring_class": "java.lang.reflect.Method",
+              "file_name": "Method.java",
+              "line_number": 569,
+              "method_name": "invoke"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 98,
+              "method_name": "withDbAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 97,
+              "method_name": "withDbAttributionTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 157,
+              "method_name": "withDbAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 338,
+              "method_name": "$anonfun$start$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.BaseUCContext",
+              "file_name": "BaseUCContext.scala",
+              "line_number": 1685,
+              "method_name": "$anonfun$runWithNewUCS$1"
+            },
+            {
+              "declaring_class": "com.databricks.unity.UCSEphemeralState$Handle",
+              "file_name": "UCSEphemeralState.scala",
+              "line_number": 51,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.unity.HandleImpl",
+              "file_name": "UCSHandle.scala",
+              "line_number": 104,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.unity.HandleImpl",
+              "file_name": "UCSHandle.scala",
+              "line_number": 109,
+              "method_name": "$anonfun$runWithAndClose$1"
+            },
+            {
+              "declaring_class": "scala.util.Using$",
+              "file_name": "Using.scala",
+              "line_number": 296,
+              "method_name": "resource"
+            },
+            {
+              "declaring_class": "com.databricks.unity.HandleImpl",
+              "file_name": "UCSHandle.scala",
+              "line_number": 108,
+              "method_name": "runWithAndClose"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.BaseUCContext",
+              "file_name": "BaseUCContext.scala",
+              "line_number": 1682,
+              "method_name": "runWithNewUCS"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UCContextCompanion$OptionUCContextHelper",
+              "file_name": "BaseUCContext.scala",
+              "line_number": 3845,
+              "method_name": "runWithNewUCSIfAvailable"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 314,
+              "method_name": "start"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.ExecutionBackend$$anon$2",
+              "file_name": "ExecutionBackend.scala",
+              "line_number": 944,
+              "method_name": "$anonfun$run$2"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.CommandContextUtils$",
+              "file_name": "CommandContextUtils.scala",
+              "line_number": 229,
+              "method_name": "withCommandContext"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.ExecutionBackend$$anon$2",
+              "file_name": "ExecutionBackend.scala",
+              "line_number": 937,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "java.util.concurrent.Executors$RunnableAdapter",
+              "file_name": "Executors.java",
+              "line_number": 539,
+              "method_name": "call"
+            },
+            {
+              "declaring_class": "java.util.concurrent.FutureTask",
+              "file_name": "FutureTask.java",
+              "line_number": 264,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingRunnable",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 165,
+              "method_name": "$anonfun$run$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.util.LexicalThreadLocal$Handle",
+              "file_name": "LexicalThreadLocal.scala",
+              "line_number": 63,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 119,
+              "method_name": "$anonfun$runWithCaptured$6"
+            },
+            {
+              "declaring_class": "com.databricks.sql.transaction.tahoe.mst.MSTThreadHelper$",
+              "file_name": "MSTThreadHelper.scala",
+              "line_number": 57,
+              "method_name": "runWithMstTxnId"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 118,
+              "method_name": "$anonfun$runWithCaptured$5"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.IdentityClaim$",
+              "file_name": "IdentityClaim.scala",
+              "line_number": 48,
+              "method_name": "withClaim"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 117,
+              "method_name": "$anonfun$runWithCaptured$4"
+            },
+            {
+              "declaring_class": "com.databricks.unity.UCSEphemeralState$Handle",
+              "file_name": "UCSEphemeralState.scala",
+              "line_number": 51,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 116,
+              "method_name": "runWithCaptured"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 93,
+              "method_name": "runWithCaptured$"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingRunnable",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 162,
+              "method_name": "runWithCaptured"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingRunnable",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 165,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "java.util.concurrent.ThreadPoolExecutor",
+              "file_name": "ThreadPoolExecutor.java",
+              "line_number": 1136,
+              "method_name": "runWorker"
+            },
+            {
+              "declaring_class": "java.util.concurrent.ThreadPoolExecutor$Worker",
+              "file_name": "ThreadPoolExecutor.java",
+              "line_number": 635,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "java.lang.Thread",
+              "file_name": "Thread.java",
+              "line_number": 840,
+              "method_name": "run"
+            }
+          ]
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "dcf3df60-3c56-11f1-8970-c2f66f3c36e2",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update 2ec5d5 is FAILED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-011745-a7q57t5r-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f",
+      "update_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647922118001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776647884655013
+      }
+    },
+    "timestamp": "2026-04-20T01:18:39.702Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "d0b89dd0-3c56-11f1-8970-c2f66f3c36e2",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 2ec5d5 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-011745-a7q57t5r-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f",
+      "update_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647903759001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776647884655001
+      }
+    },
+    "timestamp": "2026-04-20T01:18:19.181Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "c1b69b20-3c56-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 2ec5d5.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f",
+      "update_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647874003001
+    },
+    "timestamp": "2026-04-20T01:17:54.002Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "bcec8ff0-3c56-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 2ec5d5 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-011745-a7q57t5r-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f",
+      "update_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647865968001
+    },
+    "timestamp": "2026-04-20T01:17:45.967Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "bc89af70-3c56-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 2ec5d5 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f",
+      "update_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647865321001
+    },
+    "timestamp": "2026-04-20T01:17:45.307Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "bc85dee0-3c56-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f",
+      "update_id": "2ec5d5cf-e64a-477e-92cd-113d089e501f"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647865295001
+    },
+    "timestamp": "2026-04-20T01:17:45.294Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "com.databricks.pipelines.common.errors.DLTAnalysisException",
+          "message": "[NO_TABLES_IN_PIPELINE] Pipelines are expected to have at least one table defined but no tables were found in your pipeline.\nPlease verify that you have included, and shared in case Run As is configured, the expected source files and/or directories, and that your source code includes table definitions (e.g., CREATE MATERIALIZED VIEW in SQL code, @dlt.table in python code).\n\nNote that only tables are counted towards this check. You may also encounter this error if you only include views or flows in your pipeline.",
+          "stack": [
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.PipelineGraphLoader",
+              "file_name": "PipelineGraphLoader.scala",
+              "line_number": 746,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.PipelineGraphLoader",
+              "file_name": "PipelineGraphLoader.scala",
+              "line_number": 251,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.extensions.workspace.WorkspacePipelineExecutionExtension$",
+              "file_name": "WorkspacePipelineExecutionExtension.scala",
+              "line_number": 31,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.DLTComputeRunnableContext",
+              "file_name": "DLTComputeRunnableContext.scala",
+              "line_number": 201,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.DLTComputeUpdateContext",
+              "file_name": "DLTComputeUpdateContext.scala",
+              "line_number": 173,
+              "method_name": "loadGraph"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1064,
+              "method_name": "$anonfun$initializeForExecuteUpdate$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 114,
+              "method_name": "$anonfun$record$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfilerExporter$",
+              "file_name": "FrameProfilerExporter.scala",
+              "line_number": 200,
+              "method_name": "maybeExportFrameProfiler"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 105,
+              "method_name": "record"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 977,
+              "method_name": "initializeForExecuteUpdate"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1666,
+              "method_name": "initializationForUpdates"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1458,
+              "method_name": "$anonfun$executeUpdate$2"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 626,
+              "method_name": "$anonfun$executeStage$1"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 131,
+              "method_name": "$anonfun$recordPipelinesOperation$3"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.common.monitoring.OperationStatusReporter",
+              "file_name": "OperationStatusReporter.scala",
+              "line_number": 129,
+              "method_name": "executeWithPeriodicReporting"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.common.monitoring.OperationStatusReporter$",
+              "file_name": "OperationStatusReporter.scala",
+              "line_number": 169,
+              "method_name": "executeWithPeriodicReporting"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 153,
+              "method_name": "$anonfun$recordPipelinesOperation$6"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 510,
+              "method_name": "$anonfun$recordOperation$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 616,
+              "method_name": "executeThunkAndCaptureResultTags$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 643,
+              "method_name": "$anonfun$recordOperationWithResultTags$4"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 80,
+              "method_name": "$anonfun$withAttributionContext$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 348,
+              "method_name": "$anonfun$withValue$1"
+            },
+            {
+              "declaring_class": "scala.util.DynamicVariable",
+              "file_name": "DynamicVariable.scala",
+              "line_number": 59,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 344,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 78,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 75,
+              "method_name": "withAttributionContext$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 127,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 108,
+              "method_name": "withAttributionTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 611,
+              "method_name": "recordOperationWithResultTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 519,
+              "method_name": "recordOperationWithResultTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "recordOperationWithResultTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 511,
+              "method_name": "recordOperation"
+            },
+            {
+              "declaring_class": "com.databricks.logging.UsageLogging",
+              "file_name": "UsageLogging.scala",
+              "line_number": 475,
+              "method_name": "recordOperation$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "recordOperation"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 73,
+              "method_name": "recordOperation0"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 145,
+              "method_name": "$anonfun$recordPipelinesOperation$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 114,
+              "method_name": "$anonfun$record$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfilerExporter$",
+              "file_name": "FrameProfilerExporter.scala",
+              "line_number": 200,
+              "method_name": "maybeExportFrameProfiler"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 105,
+              "method_name": "record"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 120,
+              "method_name": "recordPipelinesOperation"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 115,
+              "method_name": "recordPipelinesOperation$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 157,
+              "method_name": "recordPipelinesOperation"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 625,
+              "method_name": "executeStage"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1448,
+              "method_name": "$anonfun$executeUpdate$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 114,
+              "method_name": "$anonfun$record$1"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfilerExporter$",
+              "file_name": "FrameProfilerExporter.scala",
+              "line_number": 200,
+              "method_name": "maybeExportFrameProfiler"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.FrameProfiler$",
+              "file_name": "FrameProfiler.scala",
+              "line_number": 105,
+              "method_name": "record"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 1448,
+              "method_name": "executeUpdate"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 429,
+              "method_name": "$anonfun$start$17"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.util.LexicalThreadLocal$Handle",
+              "file_name": "LexicalThreadLocal.scala",
+              "line_number": 63,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 429,
+              "method_name": "$anonfun$start$16"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 426,
+              "method_name": "$anonfun$start$16$adapted"
+            },
+            {
+              "declaring_class": "scala.Option",
+              "file_name": "Option.scala",
+              "line_number": 437,
+              "method_name": "foreach"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 426,
+              "method_name": "$anonfun$start$15"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.util.SparkSessionUtils$",
+              "file_name": "SparkSessionUtils.scala",
+              "line_number": 21,
+              "method_name": "withSQLConf"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UCCacheAcrossQueries$",
+              "file_name": "UCCacheAcrossQueries_DBR_15_4_Plus.scala",
+              "line_number": 14,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 426,
+              "method_name": "$anonfun$start$4"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 80,
+              "method_name": "$anonfun$withAttributionContext$1"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 348,
+              "method_name": "$anonfun$withValue$1"
+            },
+            {
+              "declaring_class": "scala.util.DynamicVariable",
+              "file_name": "DynamicVariable.scala",
+              "line_number": 59,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContext$",
+              "file_name": "AttributionContext.scala",
+              "line_number": 344,
+              "method_name": "withValue"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 78,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 75,
+              "method_name": "withAttributionContext$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionContext"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 127,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.logging.AttributionContextTracing",
+              "file_name": "AttributionContextTracing.scala",
+              "line_number": 108,
+              "method_name": "withAttributionTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.PublicLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 23,
+              "method_name": "withAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging$$anon$1",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 91,
+              "method_name": "runWithAttributionTags"
+            },
+            {
+              "declaring_class": "jdk.internal.reflect.NativeMethodAccessorImpl",
+              "file_name": "NativeMethodAccessorImpl.java",
+              "line_number": -2,
+              "method_name": "invoke0"
+            },
+            {
+              "declaring_class": "jdk.internal.reflect.NativeMethodAccessorImpl",
+              "file_name": "NativeMethodAccessorImpl.java",
+              "line_number": 77,
+              "method_name": "invoke"
+            },
+            {
+              "declaring_class": "jdk.internal.reflect.DelegatingMethodAccessorImpl",
+              "file_name": "DelegatingMethodAccessorImpl.java",
+              "line_number": 43,
+              "method_name": "invoke"
+            },
+            {
+              "declaring_class": "java.lang.reflect.Method",
+              "file_name": "Method.java",
+              "line_number": 569,
+              "method_name": "invoke"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 98,
+              "method_name": "withDbAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.monitoring.DeltaPipelinesUsageLogging",
+              "file_name": "DeltaPipelinesUsageLogging.scala",
+              "line_number": 97,
+              "method_name": "withDbAttributionTags$"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 157,
+              "method_name": "withDbAttributionTags"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 338,
+              "method_name": "$anonfun$start$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.BaseUCContext",
+              "file_name": "BaseUCContext.scala",
+              "line_number": 1685,
+              "method_name": "$anonfun$runWithNewUCS$1"
+            },
+            {
+              "declaring_class": "com.databricks.unity.UCSEphemeralState$Handle",
+              "file_name": "UCSEphemeralState.scala",
+              "line_number": 51,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.unity.HandleImpl",
+              "file_name": "UCSHandle.scala",
+              "line_number": 104,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "com.databricks.unity.HandleImpl",
+              "file_name": "UCSHandle.scala",
+              "line_number": 109,
+              "method_name": "$anonfun$runWithAndClose$1"
+            },
+            {
+              "declaring_class": "scala.util.Using$",
+              "file_name": "Using.scala",
+              "line_number": 296,
+              "method_name": "resource"
+            },
+            {
+              "declaring_class": "com.databricks.unity.HandleImpl",
+              "file_name": "UCSHandle.scala",
+              "line_number": 108,
+              "method_name": "runWithAndClose"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.BaseUCContext",
+              "file_name": "BaseUCContext.scala",
+              "line_number": 1682,
+              "method_name": "runWithNewUCS"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UCContextCompanion$OptionUCContextHelper",
+              "file_name": "BaseUCContext.scala",
+              "line_number": 3845,
+              "method_name": "runWithNewUCSIfAvailable"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.UpdateExecution",
+              "file_name": "UpdateExecution.scala",
+              "line_number": 314,
+              "method_name": "start"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.ExecutionBackend$$anon$2",
+              "file_name": "ExecutionBackend.scala",
+              "line_number": 944,
+              "method_name": "$anonfun$run$2"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.core.CommandContextUtils$",
+              "file_name": "CommandContextUtils.scala",
+              "line_number": 229,
+              "method_name": "withCommandContext"
+            },
+            {
+              "declaring_class": "com.databricks.pipelines.execution.service.ExecutionBackend$$anon$2",
+              "file_name": "ExecutionBackend.scala",
+              "line_number": 937,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "java.util.concurrent.Executors$RunnableAdapter",
+              "file_name": "Executors.java",
+              "line_number": 539,
+              "method_name": "call"
+            },
+            {
+              "declaring_class": "java.util.concurrent.FutureTask",
+              "file_name": "FutureTask.java",
+              "line_number": 264,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingRunnable",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 165,
+              "method_name": "$anonfun$run$1"
+            },
+            {
+              "declaring_class": "scala.runtime.java8.JFunction0$mcV$sp",
+              "file_name": "JFunction0$mcV$sp.scala",
+              "line_number": 18,
+              "method_name": "apply"
+            },
+            {
+              "declaring_class": "com.databricks.util.LexicalThreadLocal$Handle",
+              "file_name": "LexicalThreadLocal.scala",
+              "line_number": 63,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 119,
+              "method_name": "$anonfun$runWithCaptured$6"
+            },
+            {
+              "declaring_class": "com.databricks.sql.transaction.tahoe.mst.MSTThreadHelper$",
+              "file_name": "MSTThreadHelper.scala",
+              "line_number": 57,
+              "method_name": "runWithMstTxnId"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 118,
+              "method_name": "$anonfun$runWithCaptured$5"
+            },
+            {
+              "declaring_class": "com.databricks.spark.util.IdentityClaim$",
+              "file_name": "IdentityClaim.scala",
+              "line_number": 48,
+              "method_name": "withClaim"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 117,
+              "method_name": "$anonfun$runWithCaptured$4"
+            },
+            {
+              "declaring_class": "com.databricks.unity.UCSEphemeralState$Handle",
+              "file_name": "UCSEphemeralState.scala",
+              "line_number": 51,
+              "method_name": "runWith"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 116,
+              "method_name": "runWithCaptured"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingHelper",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 93,
+              "method_name": "runWithCaptured$"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingRunnable",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 162,
+              "method_name": "runWithCaptured"
+            },
+            {
+              "declaring_class": "org.apache.spark.util.threads.SparkThreadLocalCapturingRunnable",
+              "file_name": "SparkThreadLocalForwardingThreadPoolExecutor.scala",
+              "line_number": 165,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "java.util.concurrent.ThreadPoolExecutor",
+              "file_name": "ThreadPoolExecutor.java",
+              "line_number": 1136,
+              "method_name": "runWorker"
+            },
+            {
+              "declaring_class": "java.util.concurrent.ThreadPoolExecutor$Worker",
+              "file_name": "ThreadPoolExecutor.java",
+              "line_number": 635,
+              "method_name": "run"
+            },
+            {
+              "declaring_class": "java.lang.Thread",
+              "file_name": "Thread.java",
+              "line_number": 840,
+              "method_name": "run"
+            }
+          ]
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "59499fc0-3c55-11f1-8b6f-ee6806b09cff",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update 8913a8 is FAILED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-010658-3o287sad-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc",
+      "update_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647269623001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776647236180013
+      }
+    },
+    "timestamp": "2026-04-20T01:07:49.308Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "4ddd9510-3c55-11f1-8b6f-ee6806b09cff",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 8913a8 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-010658-3o287sad-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc",
+      "update_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647254307001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776647236180001
+      }
+    },
+    "timestamp": "2026-04-20T01:07:30.145Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "3f731770-3c55-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 8913a8.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc",
+      "update_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647225961001
+    },
+    "timestamp": "2026-04-20T01:07:05.959Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "3af88bd0-3c55-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 8913a8 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-010658-3o287sad-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc",
+      "update_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647218446001
+    },
+    "timestamp": "2026-04-20T01:06:58.445Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "3a5e2090-3c55-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 8913a8 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc",
+      "update_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647217434001
+    },
+    "timestamp": "2026-04-20T01:06:57.420Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "3a5a28f0-3c55-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc",
+      "update_id": "8913a8a5-1be3-416c-843e-77dc6c88c9cc"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776647217408001
+    },
+    "timestamp": "2026-04-20T01:06:57.407Z"
+  },
+  {
+    "error": {
+      "exceptions": [
+        {
+          "class_name": "SyntaxError",
+          "message": "  File \"/Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev/files/databricks/gold/03_gold_pipeline\", cell 12, line 18\n    )\n    ^\n\nSyntaxError: unmatched ')'"
+        }
+      ],
+      "fatal": true
+    },
+    "event_type": "update_progress",
+    "id": "5c552ee0-3c51-11f1-bde8-32725be20d2b",
+    "level": "ERROR",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 is FAILED.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-003827-31k0l2kz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645558036001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776645535254014
+      }
+    },
+    "timestamp": "2026-04-20T00:39:16.430Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "5046a2a0-3c51-11f1-bde8-32725be20d2b",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 is INITIALIZING.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-003827-31k0l2kz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645541757001,
+      "data_plane_id": {
+        "instance": "execution",
+        "seq_no": 1776645535254001
+      }
+    },
+    "timestamp": "2026-04-20T00:38:56.202Z"
+  },
+  {
+    "event_type": "runtime_details",
+    "id": "438df3b0-3c51-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "EVOLVING",
+    "message": "Resolved runtime environment details for update 158139.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645514860001
+    },
+    "timestamp": "2026-04-20T00:38:34.859Z"
+  },
+  {
+    "event_type": "update_progress",
+    "id": "3f697750-3c51-11f1-8176-32f15d8cd2f6",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 is WAITING_FOR_RESOURCES.",
+    "origin": {
+      "cloud": "AWS",
+      "cluster_id": "0420-003827-31k0l2kz-v2n",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645507909001
+    },
+    "timestamp": "2026-04-20T00:38:27.909Z"
+  },
+  {
+    "event_type": "create_update",
+    "id": "3edaa4d1-3c51-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "Update 158139 started by JOB_TASK.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645506975001
+    },
+    "timestamp": "2026-04-20T00:38:26.963Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "3ed7e5b0-3c51-11f1-ac63-ea1ec96532f4",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com started an update.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2",
+      "request_id": "158139e7-16e2-48b2-8f7f-96bed37cf907",
+      "update_id": "158139e7-16e2-48b2-8f7f-96bed37cf907"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776645506955001
+    },
+    "timestamp": "2026-04-20T00:38:26.955Z"
+  },
+  {
+    "event_type": "user_action",
+    "id": "b53342f0-3c28-11f1-a880-32f5193eaabc",
+    "level": "INFO",
+    "maturity_level": "STABLE",
+    "message": "User mohd.qamrain@gmail.com created pipeline.",
+    "origin": {
+      "cloud": "AWS",
+      "org_id": 7474657440616913,
+      "pipeline_id": "7788297f-603e-4786-8046-14bf773e787b",
+      "pipeline_name": "[dev mohd_qamrain] procurement_gold_pipeline",
+      "region": "us-east-2"
+    },
+    "sequence": {
+      "control_plane_seq_no": 1776628096170001
+    },
+    "timestamp": "2026-04-19T19:48:16.159Z"
+  }
+]

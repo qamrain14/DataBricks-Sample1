@@ -1,2 +1,14 @@
-Run URL: https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/487504729785962/run/1031881669407595
+Run URL: https://dbc-760a206e-c226.cloud.databricks.com/?o=7474657440616913#job/945319848056279/run/663100105957830
 
+2026-04-19 23:08:43 "[dev mohd_qamrain] procurement_end_to_end_job" RUNNING
+2026-04-19 23:19:14 "[dev mohd_qamrain] procurement_end_to_end_job" INTERNAL_ERROR FAILED Task run_cube_contract_status failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.
+Task run_cube_contract_status FAILED:
+[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `dc`.`end_date` cannot be resolved. Did you mean one of the following? [`dp`.`end_date`, `dc`.`start_date`, `dp`.`state`, `fc`.`start_date`, `dp`.`start_date`]. SQLSTATE: 42703; line 19 pos 4
+
+
+Error: Task run_cube_contract_status failed!
+Error:
+[UNRESOLVED_COLUMN.WITH_SUGGESTION] A column, variable, or function parameter with name `dc`.`end_date` cannot be resolved. Did you mean one of the following? [`dp`.`end_date`, `dc`.`start_date`, `dp`.`state`, `fc`.`start_date`, `dp`.`start_date`]. SQLSTATE: 42703; line 19 pos 4
+Trace:
+
+Error: failed to reach TERMINATED or SKIPPED, got INTERNAL_ERROR: Task run_cube_contract_status failed with message: Workload failed, see run output for details. This caused all downstream tasks to get skipped.

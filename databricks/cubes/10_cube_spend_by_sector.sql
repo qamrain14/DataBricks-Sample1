@@ -12,7 +12,7 @@ SELECT
     ds.sector_name,
     dv.vendor_id,
     dv.vendor_name,
-    dv.country,
+    dv.vendor_country                     AS country,
     dd.year,
     dd.quarter,
     COUNT(*)                                AS po_count,
@@ -51,5 +51,5 @@ JOIN workspace.procurement_gold.dim_sector        ds ON dv.sector = ds.sector_ke
 JOIN workspace.procurement_gold.dim_date          dd ON fp.po_date = dd.date
 GROUP BY
     ds.sector_key, ds.sector_name,
-    dv.vendor_id, dv.vendor_name, dv.country,
+    dv.vendor_id, dv.vendor_name, dv.vendor_country,
     dd.year, dd.quarter;

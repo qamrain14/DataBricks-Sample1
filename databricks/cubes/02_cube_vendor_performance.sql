@@ -12,7 +12,7 @@ SELECT
     dv.vendor_name,
     dv.sector,
     dv.tier,
-    dv.country,
+    dv.vendor_country                     AS country,
     vp.evaluation_period,
     -- Average scores
     ROUND(AVG(vp.delivery_score), 2)      AS avg_delivery_score,
@@ -35,5 +35,5 @@ SELECT
 FROM workspace.procurement_gold.dim_vendor                dv
 JOIN workspace.procurement_gold.fact_vendor_performance     vp ON dv.vendor_id = vp.vendor_id AND dv._is_current = TRUE
 GROUP BY
-    dv.vendor_id, dv.vendor_name, dv.sector, dv.tier, dv.country,
+    dv.vendor_id, dv.vendor_name, dv.sector, dv.tier, dv.vendor_country,
     vp.evaluation_period;

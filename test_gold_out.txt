@@ -1,0 +1,409 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: c:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 33 items
+
+tests\test_gold_pipeline.py EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE            [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_dimensions __
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 46
+      def test_gold_creates_9_dimensions(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestGoldPipelineExecution::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+____ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_facts ____
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 50
+      def test_gold_creates_9_facts(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestGoldPipelineExecution::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_ ERROR at setup of TestGoldPipelineExecution.test_all_18_gold_tables_not_empty _
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 54
+      def test_all_18_gold_tables_not_empty(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestGoldPipelineExecution::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_________ ERROR at setup of TestDimDate.test_date_range_2020_to_2030 __________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 64
+      def test_date_range_2020_to_2030(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimDate::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_____________ ERROR at setup of TestDimDate.test_date_key_format ______________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 71
+      def test_date_key_format(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimDate::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+___________ ERROR at setup of TestDimDate.test_date_columns_present ___________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 76
+      def test_date_columns_present(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimDate::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+______ ERROR at setup of TestDimDate.test_total_rows_approximately_4018 _______
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 86
+      def test_total_rows_approximately_4018(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimDate::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+____________ ERROR at setup of TestDimVendor.test_tier_derivation _____________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 94
+      def test_tier_derivation(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimVendor::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+___________ ERROR at setup of TestDimVendor.test_status_derivation ____________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 100
+      def test_status_derivation(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimVendor::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_____________ ERROR at setup of TestDimVendor.test_gold_timestamp _____________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 106
+      def test_gold_timestamp(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimVendor::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+___________ ERROR at setup of TestDimProject.test_region_derivation ___________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 113
+      def test_region_derivation(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimProject::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_________ ERROR at setup of TestDimProject.test_project_duration_days _________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 118
+      def test_project_duration_days(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimProject::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+___________ ERROR at setup of TestDimMaterial.test_material_columns ___________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 126
+      def test_material_columns(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimMaterial::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+___________ ERROR at setup of TestDimEmployee.test_employee_columns ___________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 134
+      def test_employee_columns(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimEmployee::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+________ ERROR at setup of TestDimGeography.test_geography_key_is_sha2 ________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 141
+      def test_geography_key_is_sha2(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimGeography::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+__________ ERROR at setup of TestDimGeography.test_region_derivation __________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 147
+      def test_region_derivation(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimGeography::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+___________ ERROR at setup of TestDimContract.test_cost_growth_pct ____________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 155
+      def test_cost_growth_pct(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimContract::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+________ ERROR at setup of TestDimCostCenter.test_cost_center_distinct ________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 163
+      def test_cost_center_distinct(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimCostCenter::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+______________ ERROR at setup of TestDimSector.test_sector_union ______________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 169
+      def test_sector_union(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestDimSector::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_____ ERROR at setup of TestFactPurchaseOrders.test_line_total_aggregated _____
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 179
+      def test_line_total_aggregated(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactPurchaseOrders::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+___ ERROR at setup of TestFactPurchaseOrders.test_total_quantity_aggregated ___
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 185
+      def test_total_quantity_aggregated(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactPurchaseOrders::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_current _________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 194
+      def test_aging_bucket_current(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactInvoices::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_overdue _________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 200
+      def test_aging_bucket_overdue(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactInvoices::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+____ ERROR at setup of TestFactGoodsReceipts.test_receipt_value_calculated ____
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 209
+      def test_receipt_value_calculated(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactGoodsReceipts::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+____ ERROR at setup of TestFactGoodsReceipts.test_acceptance_rate_derived _____
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 213
+      def test_acceptance_rate_derived(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactGoodsReceipts::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+________ ERROR at setup of TestFactProjectCosts.test_budget_vs_actual _________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 220
+      def test_budget_vs_actual(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactProjectCosts::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+____ ERROR at setup of TestFactProjectActuals.test_project_actuals_columns ____
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 230
+      def test_project_actuals_columns(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactProjectActuals::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_______ ERROR at setup of TestFactVendorPerformance.test_score_columns ________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 239
+      def test_score_columns(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactVendorPerformance::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_________ ERROR at setup of TestFactInventory.test_inventory_columns __________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 247
+      def test_inventory_columns(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactInventory::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_______ ERROR at setup of TestFactContracts.test_items_total_aggregated _______
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 255
+      def test_items_total_aggregated(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactContracts::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+_____________ ERROR at setup of TestFactContracts.test_item_count _____________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 261
+      def test_item_count(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactContracts::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+__________ ERROR at setup of TestFactSales.test_customer_id_is_sha2 ___________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 269
+      def test_customer_id_is_sha2(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactSales::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+__________ ERROR at setup of TestFactSales.test_product_name_joined ___________
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 274
+      def test_product_name_joined(self, gold_tables):
+file c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py, line 20
+  @pytest.fixture
+  def gold_tables(spark, register_all_bronze):
+E       fixture 'spark' not found
+>       available fixtures: _session_event_loop, _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, event_loop, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, gold_tables, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tests/test_gold_pipeline.py::<event_loop>, tests/test_gold_pipeline.py::TestFactSales::<event_loop>, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+c:\Users\mohdq\src\DataBricks-Sample1\tests\test_gold_pipeline.py:20
+=========================== short test summary info ===========================
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_dimensions
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_facts
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_all_18_gold_tables_not_empty
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_range_2020_to_2030
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_key_format
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_columns_present
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_total_rows_approximately_4018
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_tier_derivation
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_status_derivation
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_gold_timestamp
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_region_derivation
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_project_duration_days
+ERROR tests/test_gold_pipeline.py::TestDimMaterial::test_material_columns
+ERROR tests/test_gold_pipeline.py::TestDimEmployee::test_employee_columns
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_geography_key_is_sha2
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_region_derivation
+ERROR tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct
+ERROR tests/test_gold_pipeline.py::TestDimCostCenter::test_cost_center_distinct
+ERROR tests/test_gold_pipeline.py::TestDimSector::test_sector_union
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_line_total_aggregated
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_total_quantity_aggregated
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_overdue
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_receipt_value_calculated
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_acceptance_rate_derived
+ERROR tests/test_gold_pipeline.py::TestFactProjectCosts::test_budget_vs_actual
+ERROR tests/test_gold_pipeline.py::TestFactProjectActuals::test_project_actuals_columns
+ERROR tests/test_gold_pipeline.py::TestFactVendorPerformance::test_score_columns
+ERROR tests/test_gold_pipeline.py::TestFactInventory::test_inventory_columns
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_item_count
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_customer_id_is_sha2
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_product_name_joined
+============================= 33 errors in 1.63s ==============================
