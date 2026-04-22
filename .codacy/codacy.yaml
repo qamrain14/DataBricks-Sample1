@@ -1,6 +1,6 @@
 runtimes:
-    - dart@3.7.2
+    - python@3.11.11
 tools:
-    - dartanalyzer@3.7.2
     - opengrep@1.16.4
+    - pylint@3.3.6
     - trivy@0.69.3

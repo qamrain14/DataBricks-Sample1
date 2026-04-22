@@ -1,0 +1,45 @@
+import json
+
+BIM_PATH = 'powerbi/model/procurement_model.bim'
+
+with open(BIM_PATH, encoding='utf-8') as f:
+    bim = json.load(f)
+
+fixes = 0
+
+for table in bim['model']['tables']:
+    for part in table.get('partitions', []):
+        src = part.get('source', {})
+        if src.get('type') != 'm':
+            continue
+
+        expr = src.get('expression', [])
+
+        if isinstance(expr, list):
+            new_expr = []
+            for i, line in enumerate(expr):
+                out = line
+                if 'Renamed = Table.RenameColumns(' in line:
+                    nxt = expr[i + 1] if i + 1 < len(expr) else ''
+                    if 'Typed = Table.TransformColumnTypes' in nxt and not line.rstrip().endswith(','):
+                        out = line + ','
+                        fixes += 1
+                new_expr.append(out)
+            src['expression'] = new_expr
+        else:
+            lines = str(expr).splitlines()
+            changed = False
+            for i, line in enumerate(lines):
+                if 'Renamed = Table.RenameColumns(' in line:
+                    nxt = lines[i + 1] if i + 1 < len(lines) else ''
+                    if 'Typed = Table.TransformColumnTypes' in nxt and not line.rstrip().endswith(','):
+                        lines[i] = line + ','
+                        fixes += 1
+                        changed = True
+            if changed:
+                src['expression'] = '\n'.join(lines)
+
+with open(BIM_PATH, 'w', encoding='utf-8') as f:
+    json.dump(bim, f, indent=2, ensure_ascii=False)
+
+print(f'Applied {fixes} comma fix(es).')

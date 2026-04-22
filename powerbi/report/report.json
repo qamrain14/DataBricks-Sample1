@@ -1,0 +1,710 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "procurement_analytics",
+      "reportVersionAtImport": "5.53",
+      "type": "SharedResources"
+    }
+  },
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "name": "SharedResources",
+        "type": 2,
+        "items": [
+          {
+            "type": 202,
+            "path": "BaseThemes/procurement_analytics.json"
+          }
+        ],
+        "disabled": false
+      }
+    }
+  ],
+  "publicCustomVisuals": [],
+  "modelExtensions": [],
+  "settings": {
+    "useStaleDataOnRefreshFailure": true,
+    "isPersistentUserStateDisabled": false
+  },
+  "pages": [
+    {
+      "name": "pg_executive_summary",
+      "displayName": "Executive Summary",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "objects": {},
+      "visuals": [
+        {
+          "name": "card_total_spend",
+          "visualType": "card",
+          "x": 20, "y": 20, "width": 230, "height": 100,
+          "config": {
+            "singleVisual": {
+              "visualType": "card",
+              "projections": { "Values": [{ "queryRef": "FactPurchaseOrders.Total Spend" }] },
+              "objects": {
+                "labels": [{ "properties": { "color": { "solid": { "color": "#1B3A5C" } }, "fontSize": { "value": 28 } } }],
+                "categoryLabels": [{ "properties": { "show": { "value": true }, "color": { "solid": { "color": "#6C757D" } } } }]
+              }
+            }
+          }
+        },
+        {
+          "name": "card_total_revenue",
+          "visualType": "card",
+          "x": 270, "y": 20, "width": 230, "height": 100,
+          "config": {
+            "singleVisual": {
+              "visualType": "card",
+              "projections": { "Values": [{ "queryRef": "FactSales.Total Revenue" }] }
+            }
+          }
+        },
+        {
+          "name": "card_active_contracts",
+          "visualType": "card",
+          "x": 520, "y": 20, "width": 230, "height": 100,
+          "config": {
+            "singleVisual": {
+              "visualType": "card",
+              "projections": { "Values": [{ "queryRef": "FactContracts.Active Contracts" }] }
+            }
+          }
+        },
+        {
+          "name": "card_vendor_count",
+          "visualType": "card",
+          "x": 770, "y": 20, "width": 230, "height": 100,
+          "config": {
+            "singleVisual": {
+              "visualType": "card",
+              "projections": { "Values": [{ "queryRef": "DimVendor.Vendor Count" }] }
+            }
+          }
+        },
+        {
+          "name": "card_project_count",
+          "visualType": "card",
+          "x": 1020, "y": 20, "width": 230, "height": 100,
+          "config": {
+            "singleVisual": {
+              "visualType": "card",
+              "projections": { "Values": [{ "queryRef": "DimProject.Project Count" }] }
+            }
+          }
+        },
+        {
+          "name": "chart_spend_trend",
+          "visualType": "lineChart",
+          "x": 20, "y": 140, "width": 750, "height": 280,
+          "config": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProcurementSpend.YearMonth" }],
+                "Y": [{ "queryRef": "Sum(CubeProcurementSpend.TotalSpend)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "chart_budget_vs_actual",
+          "visualType": "donutChart",
+          "x": 790, "y": 140, "width": 460, "height": 280,
+          "config": {
+            "singleVisual": {
+              "visualType": "donutChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeBudgetVsActual.VarianceClass" }],
+                "Y": [{ "queryRef": "Sum(CubeBudgetVsActual.ActualAmount)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "chart_top_vendors",
+          "visualType": "barChart",
+          "x": 20, "y": 440, "width": 1230, "height": 260,
+          "config": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProcurementSpend.VendorName" }],
+                "Y": [{ "queryRef": "Sum(CubeProcurementSpend.TotalSpend)" }]
+              },
+              "objects": {
+                "general": [{ "properties": { "topN": { "value": 10 } } }]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_procurement_spend",
+      "displayName": "Procurement Spend",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "treemap_sector_spend",
+          "visualType": "treemap",
+          "x": 20, "y": 60, "width": 600, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "treemap",
+              "projections": {
+                "Group": [{ "queryRef": "CubeSpendBySector.SectorName" }],
+                "Values": [{ "queryRef": "Sum(CubeSpendBySector.TotalSpend)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "bar_spend_by_project",
+          "visualType": "stackedBarChart",
+          "x": 640, "y": 60, "width": 620, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "stackedBarChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProcurementSpend.ProjectName" }],
+                "Y": [{ "queryRef": "Sum(CubeProcurementSpend.TotalSpend)" }],
+                "Series": [{ "queryRef": "CubeProcurementSpend.VendorSector" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "table_yoy_growth",
+          "visualType": "tableEx",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "tableEx",
+              "projections": {
+                "Values": [
+                  { "queryRef": "CubeProcurementSpend.VendorName" },
+                  { "queryRef": "Sum(CubeProcurementSpend.TotalSpend)" },
+                  { "queryRef": "Sum(CubeProcurementSpend.PrevYearSpend)" },
+                  { "queryRef": "Average(CubeProcurementSpend.YoyGrowthPct)" }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "slicer_year",
+          "visualType": "slicer",
+          "x": 20, "y": 10, "width": 200, "height": 40,
+          "config": { "singleVisual": { "visualType": "slicer", "projections": { "Values": [{ "queryRef": "CubeProcurementSpend.Year" }] } } }
+        },
+        {
+          "name": "slicer_quarter",
+          "visualType": "slicer",
+          "x": 240, "y": 10, "width": 200, "height": 40,
+          "config": { "singleVisual": { "visualType": "slicer", "projections": { "Values": [{ "queryRef": "CubeProcurementSpend.Quarter" }] } } }
+        },
+        {
+          "name": "slicer_vendor_sector",
+          "visualType": "slicer",
+          "x": 460, "y": 10, "width": 200, "height": 40,
+          "config": { "singleVisual": { "visualType": "slicer", "projections": { "Values": [{ "queryRef": "CubeProcurementSpend.VendorSector" }] } } }
+        }
+      ]
+    },
+    {
+      "name": "pg_vendor_performance",
+      "displayName": "Vendor Performance",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "matrix_scorecard",
+          "visualType": "pivotTable",
+          "x": 20, "y": 60, "width": 760, "height": 360,
+          "config": {
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "projections": {
+                "Rows": [{ "queryRef": "CubeVendorPerformance.VendorName" }],
+                "Values": [
+                  { "queryRef": "Average(CubeVendorPerformance.AvgDeliveryScore)" },
+                  { "queryRef": "Average(CubeVendorPerformance.AvgQualityScore)" },
+                  { "queryRef": "Average(CubeVendorPerformance.AvgCommercialScore)" },
+                  { "queryRef": "Average(CubeVendorPerformance.AvgHseScore)" },
+                  { "queryRef": "Average(CubeVendorPerformance.AvgOverallScore)" }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "pie_risk_tier",
+          "visualType": "pieChart",
+          "x": 800, "y": 60, "width": 460, "height": 320,
+          "config": {
+            "singleVisual": {
+              "visualType": "pieChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeVendorRisk.RiskTier" }],
+                "Y": [{ "queryRef": "Count(CubeVendorRisk.VendorId)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "scatter_risk",
+          "visualType": "scatterChart",
+          "x": 20, "y": 440, "width": 1240, "height": 260,
+          "config": {
+            "singleVisual": {
+              "visualType": "scatterChart",
+              "projections": {
+                "X": [{ "queryRef": "CubeVendorRisk.AvgOverallScore" }],
+                "Y": [{ "queryRef": "CubeVendorRisk.CompositeRiskScore" }],
+                "Size": [{ "queryRef": "Sum(CubeVendorRisk.TotalInvoiced)" }],
+                "Details": [{ "queryRef": "CubeVendorRisk.VendorName" }]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_invoice_payment",
+      "displayName": "Invoice & Payment",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "stacked_aging",
+          "visualType": "stackedColumnChart",
+          "x": 20, "y": 60, "width": 760, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "stackedColumnChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeInvoiceAging.YearMonth" }],
+                "Y": [{ "queryRef": "Sum(CubeInvoiceAging.TotalNetAmount)" }],
+                "Series": [{ "queryRef": "CubeInvoiceAging.AgingBucket" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "bar_overdue_vendor",
+          "visualType": "barChart",
+          "x": 800, "y": 60, "width": 460, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeInvoiceAging.VendorName" }],
+                "Y": [{ "queryRef": "Sum(CubeInvoiceAging.OverdueAmount)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "line_days_outstanding",
+          "visualType": "lineChart",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeInvoiceAging.YearMonth" }],
+                "Y": [{ "queryRef": "Average(CubeInvoiceAging.AvgDaysOutstanding)" }]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_project_costs",
+      "displayName": "Project Costs & Budget",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "gauge_utilization",
+          "visualType": "gauge",
+          "x": 20, "y": 60, "width": 400, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "gauge",
+              "projections": {
+                "Y": [{ "queryRef": "FactProjectCosts.Budget Utilization %" }]
+              },
+              "objects": {
+                "axis": [{ "properties": { "max": { "value": 1 } } }]
+              }
+            }
+          }
+        },
+        {
+          "name": "bar_cpi",
+          "visualType": "barChart",
+          "x": 440, "y": 60, "width": 820, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProjectCosts.ProjectName" }],
+                "Y": [{ "queryRef": "Average(CubeProjectCosts.Cpi)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "matrix_overrun",
+          "visualType": "pivotTable",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "projections": {
+                "Rows": [{ "queryRef": "CubeCostVariance.ProjectName" }],
+                "Columns": [{ "queryRef": "CubeCostVariance.CostType" }],
+                "Values": [{ "queryRef": "Sum(CubeCostVariance.OverrunAmount)" }]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_delivery_quality",
+      "displayName": "Delivery & Quality",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "line_on_time",
+          "visualType": "lineChart",
+          "x": 20, "y": 60, "width": 760, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeDeliveryPerformance.YearMonth" }],
+                "Y": [{ "queryRef": "Average(CubeDeliveryPerformance.OnTimeRatePct)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "pie_quality_tier",
+          "visualType": "pieChart",
+          "x": 800, "y": 60, "width": 460, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "pieChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeGoodsReceiptQuality.QualityTier" }],
+                "Y": [{ "queryRef": "Count(CubeGoodsReceiptQuality.VendorId)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "bar_defect_rate",
+          "visualType": "barChart",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeGoodsReceiptQuality.MaterialCategory" }],
+                "Y": [{ "queryRef": "Average(CubeGoodsReceiptQuality.DefectRatePct)" }]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_contracts",
+      "displayName": "Contract Management",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "donut_contract_status",
+          "visualType": "donutChart",
+          "x": 20, "y": 60, "width": 400, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "donutChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeContractStatus.Status" }],
+                "Y": [{ "queryRef": "Sum(CubeContractStatus.RevisedValue)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "bar_cost_growth",
+          "visualType": "barChart",
+          "x": 440, "y": 60, "width": 820, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeContractStatus.ContractId" }],
+                "Y": [{ "queryRef": "Average(CubeContractStatus.CostGrowthPct)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "table_risk_flags",
+          "visualType": "tableEx",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "tableEx",
+              "projections": {
+                "Values": [
+                  { "queryRef": "CubeContractStatus.ContractId" },
+                  { "queryRef": "CubeContractStatus.VendorName" },
+                  { "queryRef": "CubeContractStatus.ProjectName" },
+                  { "queryRef": "CubeContractStatus.CostRiskFlag" },
+                  { "queryRef": "CubeContractStatus.ScheduleRiskFlag" },
+                  { "queryRef": "CubeContractStatus.RemainingValue" }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_sales",
+      "displayName": "Sales Analysis",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "bar_revenue_product",
+          "visualType": "barChart",
+          "x": 20, "y": 60, "width": 600, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeSalesAnalysis.ProductName" }],
+                "Y": [{ "queryRef": "Sum(CubeSalesAnalysis.TotalRevenue)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "col_margin_customer",
+          "visualType": "columnChart",
+          "x": 640, "y": 60, "width": 620, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "columnChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeSalesAnalysis.CustomerType" }],
+                "Y": [{ "queryRef": "Average(CubeSalesAnalysis.MarginPct)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "line_revenue_trend",
+          "visualType": "lineChart",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeSalesAnalysis.YearMonth" }],
+                "Y": [{ "queryRef": "Sum(CubeSalesAnalysis.TotalRevenue)" }]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_inventory",
+      "displayName": "Inventory",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "waterfall_net_flow",
+          "visualType": "waterfallChart",
+          "x": 20, "y": 60, "width": 760, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "waterfallChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeInventoryStatus.MaterialName" }],
+                "Y": [{ "queryRef": "Sum(CubeInventoryStatus.NetQuantityFlow)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "line_issue_receipt_ratio",
+          "visualType": "lineChart",
+          "x": 800, "y": 60, "width": 460, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeInventoryStatus.YearMonth" }],
+                "Y": [{ "queryRef": "Average(CubeInventoryStatus.IssueToReceiptRatio)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "area_movement_value",
+          "visualType": "areaChart",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "areaChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeInventoryStatus.YearMonth" }],
+                "Y": [{ "queryRef": "Sum(CubeInventoryStatus.TotalMovementValue)" }],
+                "Series": [{ "queryRef": "CubeInventoryStatus.MaterialCategory" }]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_p2p_efficiency",
+      "displayName": "P2P Efficiency",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "line_p2p_trend",
+          "visualType": "lineChart",
+          "x": 20, "y": 60, "width": 760, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "lineChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProcurementEfficiency.YearMonth" }],
+                "Y": [{ "queryRef": "Average(CubeProcurementEfficiency.AvgTotalP2pDays)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "stacked_cycle_breakdown",
+          "visualType": "stackedBarChart",
+          "x": 800, "y": 60, "width": 460, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "stackedBarChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProcurementEfficiency.VendorName" }],
+                "Y": [
+                  { "queryRef": "Average(CubeProcurementEfficiency.AvgOrderToReceiptDays)" },
+                  { "queryRef": "Average(CubeProcurementEfficiency.AvgReceiptToInvoiceDays)" },
+                  { "queryRef": "Average(CubeProcurementEfficiency.AvgInvoiceToPaymentDays)" }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "table_vendor_p2p",
+          "visualType": "tableEx",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "tableEx",
+              "projections": {
+                "Values": [
+                  { "queryRef": "CubeProcurementEfficiency.VendorName" },
+                  { "queryRef": "Average(CubeProcurementEfficiency.AvgTotalP2pDays)" },
+                  { "queryRef": "Average(CubeProcurementEfficiency.MedianTotalP2p)" },
+                  { "queryRef": "Sum(CubeProcurementEfficiency.TotalSpend)" }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "pg_project_timeline",
+      "displayName": "Project Timeline",
+      "displayOption": 1,
+      "height": 720,
+      "width": 1280,
+      "visuals": [
+        {
+          "name": "donut_schedule_status",
+          "visualType": "donutChart",
+          "x": 20, "y": 60, "width": 400, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "donutChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProjectTimeline.ScheduleStatus" }],
+                "Y": [{ "queryRef": "Count(CubeProjectTimeline.ProjectId)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "bar_schedule_variance",
+          "visualType": "barChart",
+          "x": 440, "y": 60, "width": 820, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "barChart",
+              "projections": {
+                "Category": [{ "queryRef": "CubeProjectTimeline.ProjectName" }],
+                "Y": [{ "queryRef": "Sum(CubeProjectTimeline.ScheduleVarianceDays)" }]
+              }
+            }
+          }
+        },
+        {
+          "name": "scatter_cost_vs_plan",
+          "visualType": "scatterChart",
+          "x": 20, "y": 380, "width": 1240, "height": 300,
+          "config": {
+            "singleVisual": {
+              "visualType": "scatterChart",
+              "projections": {
+                "X": [{ "queryRef": "CubeProjectTimeline.PlannedPctComplete" }],
+                "Y": [{ "queryRef": "CubeProjectTimeline.CostPctComplete" }],
+                "Size": [{ "queryRef": "Sum(CubeProjectTimeline.TotalBudget)" }],
+                "Details": [{ "queryRef": "CubeProjectTimeline.ProjectName" }]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

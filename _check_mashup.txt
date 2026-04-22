@@ -1,0 +1,34 @@
+import json
+
+p = 'powerbi/model/procurement_model.bim'
+b = json.load(open(p, encoding='utf-8'))
+
+issues = []
+
+for t in b['model']['tables']:
+    for part in t.get('partitions', []):
+        s = part.get('source', {})
+        if s.get('type') != 'm':
+            continue
+        e = s.get('expression', [])
+        lines = e if isinstance(e, list) else str(e).splitlines()
+        # Basic checks around injected Typed step
+        for i, line in enumerate(lines):
+            if 'Typed = Table.TransformColumnTypes' in line:
+                prev = lines[i - 1].rstrip() if i > 0 else ''
+                if not prev.endswith(','):
+                    issues.append((t['name'], part.get('name', ''), 'Missing comma before Typed', prev))
+            if line.strip() == 'in':
+                nxt = lines[i + 1].strip() if i + 1 < len(lines) else ''
+                if nxt not in ('Typed', 'Renamed'):
+                    issues.append((t['name'], part.get('name', ''), 'Unexpected token after in', nxt))
+        # Verify there is exactly one in token line
+        in_count = sum(1 for ln in lines if ln.strip() == 'in')
+        if in_count != 1:
+            issues.append((t['name'], part.get('name', ''), 'Unexpected in count', str(in_count)))
+
+if not issues:
+    print('OK')
+else:
+    for item in issues:
+        print(' | '.join(item))

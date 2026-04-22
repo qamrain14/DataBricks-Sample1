@@ -1,0 +1,108 @@
+// =============================================================================
+// Procurement Analytics — DAX Measures Reference
+// Generated for Power BI Desktop
+// Paste these into Tabular Editor 2 or Power BI Model view
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// FactPurchaseOrders Measures
+// ---------------------------------------------------------------------------
+
+Total Spend = SUM(FactPurchaseOrders[TotalValue])
+
+Total PO Count = COUNTROWS(FactPurchaseOrders)
+
+Avg PO Value = DIVIDE([Total Spend], [Total PO Count], 0)
+
+// ---------------------------------------------------------------------------
+// FactInvoices Measures
+// ---------------------------------------------------------------------------
+
+Total Invoiced = SUM(FactInvoices[GrossAmount])
+
+Total Paid = SUM(FactInvoices[PaidAmount])
+
+Overdue Amount = CALCULATE(
+    SUM(FactInvoices[GrossAmount]),
+    FactInvoices[PaymentStatus] = "Overdue"
+)
+
+Avg Days to Pay = AVERAGE(FactInvoices[DaysToPay])
+
+// ---------------------------------------------------------------------------
+// FactProjectCosts Measures
+// ---------------------------------------------------------------------------
+
+Total Budget = SUM(FactProjectCosts[BudgetAmount])
+
+Total Actual Cost = SUM(FactProjectCosts[ActualAmount])
+
+Budget Variance = [Total Budget] - [Total Actual Cost]
+
+Budget Utilization % = DIVIDE([Total Actual Cost], [Total Budget], 0)
+
+// ---------------------------------------------------------------------------
+// FactVendorPerformance Measures
+// ---------------------------------------------------------------------------
+
+Avg Vendor Score = AVERAGE(FactVendorPerformance[OverallScore])
+
+// ---------------------------------------------------------------------------
+// DimVendor Measures
+// ---------------------------------------------------------------------------
+
+Vendor Count = DISTINCTCOUNT(DimVendor[VendorId])
+
+// ---------------------------------------------------------------------------
+// FactGoodsReceipts Measures
+// ---------------------------------------------------------------------------
+
+Total Received Qty = SUM(FactGoodsReceipts[QuantityReceived])
+
+Avg Acceptance Rate = AVERAGE(FactGoodsReceipts[AcceptanceRate])
+
+// ---------------------------------------------------------------------------
+// FactContracts Measures
+// ---------------------------------------------------------------------------
+
+Total Contract Value = SUM(FactContracts[ContractValue])
+
+Active Contracts = CALCULATE(
+    COUNTROWS(FactContracts),
+    FactContracts[ContractStatus] = "Active"
+)
+
+// ---------------------------------------------------------------------------
+// FactSales Measures
+// ---------------------------------------------------------------------------
+
+Total Revenue = SUM(FactSales[Revenue])
+
+Total COGS = SUM(FactSales[Cogs])
+
+Gross Margin = [Total Revenue] - [Total COGS]
+
+Margin % = DIVIDE([Gross Margin], [Total Revenue], 0)
+
+// ---------------------------------------------------------------------------
+// FactInventory Measures
+// ---------------------------------------------------------------------------
+
+Net Inventory Flow = SUM(FactInventory[Quantity])
+
+Inventory Value = SUM(FactInventory[TotalValue])
+
+// ---------------------------------------------------------------------------
+// DimProject Measures
+// ---------------------------------------------------------------------------
+
+Project Count = DISTINCTCOUNT(DimProject[ProjectId])
+
+// ---------------------------------------------------------------------------
+// CubeProjectCosts Measures
+// ---------------------------------------------------------------------------
+
+Over Budget Projects = CALCULATE(
+    DISTINCTCOUNT(CubeProjectCosts[ProjectId]),
+    CubeProjectCosts[IsOverBudget] = TRUE()
+)

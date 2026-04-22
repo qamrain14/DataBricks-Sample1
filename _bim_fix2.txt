@@ -1,0 +1,54 @@
+import json
+
+BIM_PATH = 'powerbi/model/procurement_model.bim'
+
+# Corrections: columns that were wrongly mapped to dateTime by the End$ regex
+# "TotalSpend"/"PrevYearSpend" ends with "spend" which contains "end" (case-insensitive)
+# "ScoreTrend" ends with "trend" which ends in "end"
+CORRECTIONS = {
+    'TotalSpend': 'decimal',
+    'PrevYearSpend': 'decimal',
+    'ScoreTrend': 'double',
+}
+
+M_TYPE = {
+    'decimal': 'type number',
+    'double': 'type number',
+    'dateTime': 'type date',
+    'int64': 'Int64.Type',
+}
+
+with open(BIM_PATH, encoding='utf-8') as fh:
+    bim = json.load(fh)
+
+for table in bim['model']['tables']:
+    for col in table.get('columns', []):
+        name = col.get('name', '')
+        if name in CORRECTIONS and col.get('dataType') == 'dateTime':
+            old = col['dataType']
+            col['dataType'] = CORRECTIONS[name]
+            print(f'  [{table["name"]}] {name}: {old} -> {col["dataType"]}')
+            # Also fix the M expression TransformColumnTypes step
+            for part in table.get('partitions', []):
+                src = part.get('source', {})
+                if src.get('type') != 'm':
+                    continue
+                expr = src.get('expression', [])
+                if isinstance(expr, list):
+                    new_expr = []
+                    for line in expr:
+                        if '{"' + name + '", type date}' in line:
+                            line = line.replace(
+                                '{"' + name + '", type date}',
+                                '{"' + name + '", ' + M_TYPE[CORRECTIONS[name]] + '}'
+                            )
+                        new_expr.append(line)
+                    src['expression'] = new_expr
+                else:
+                    old_token = '{"' + name + '", type date}'
+                    new_token = '{"' + name + '", ' + M_TYPE[CORRECTIONS[name]] + '}'
+                    src['expression'] = src['expression'].replace(old_token, new_token)
+
+with open(BIM_PATH, 'w', encoding='utf-8') as fh:
+    json.dump(bim, fh, indent=2, ensure_ascii=False)
+print('Corrections saved.')

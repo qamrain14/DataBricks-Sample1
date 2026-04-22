@@ -1,0 +1,94 @@
+import json
+import re
+
+BIM_PATH = 'powerbi/model/procurement_model.bim'
+
+DEC = re.compile(r'(Amount|Budget|Cost|Remaining|Committed|Actual|Original|TotalExposure|OverrunAmount|RemainingBudget|Variance)$', re.IGNORECASE)
+DBL = re.compile(r'(Pct|Rate|Utilization|Cpi|BurnRate|AvgVariance|BudgetConsumed)$', re.IGNORECASE)
+DTM = re.compile(r'(Date|Start|End|PeriodStart|PeriodEnd|PostingDate|TransactionDate)$', re.IGNORECASE)
+INT = re.compile(r'(Rank|Count|Year|Month|Quarter|Week|Day)$', re.IGNORECASE)
+
+FORCE_STRING = {
+    'FiscalPeriod', 'WbsCode', 'WbsElement', 'FiscalYear', 'FiscalMonth',
+    'BudgetStatus', 'CostCategory', 'CostStatus', 'CostType'
+}
+
+M_TYPE = {
+    'decimal': 'type number',
+    'double': 'type number',
+    'dateTime': 'type date',
+    'int64': 'Int64.Type',
+}
+
+
+def infer_type(name):
+    if name in FORCE_STRING:
+        return None
+    if DEC.search(name):
+        return 'decimal'
+    if DBL.search(name):
+        return 'double'
+    if DTM.search(name):
+        return 'dateTime'
+    if INT.search(name):
+        return 'int64'
+    return None
+
+
+with open(BIM_PATH, encoding='utf-8') as fh:
+    bim = json.load(fh)
+
+tables = bim['model']['tables']
+print(f'Loaded {len(tables)} tables')
+total_col = 0
+total_tbl = 0
+
+for table in tables:
+    fixes = {}
+    for col in table.get('columns', []):
+        if col.get('type') == 'calculated':
+            continue
+        name = col.get('name', '')
+        if col.get('dataType', 'string') != 'string':
+            continue
+        new_type = infer_type(name)
+        if new_type:
+            col['dataType'] = new_type
+            fixes[name] = new_type
+            total_col += 1
+            print(f'  [{table["name"]}] {name}: string -> {new_type}')
+
+    if fixes:
+        total_tbl += 1
+        for part in table.get('partitions', []):
+            src = part.get('source', {})
+            if src.get('type') != 'm':
+                continue
+            expr = src.get('expression', [])
+            transforms = ', '.join(
+                '{"' + col + '", ' + M_TYPE[tp] + '}'
+                for col, tp in sorted(fixes.items())
+            )
+            typed_step = '    Typed = Table.TransformColumnTypes(Renamed, {' + transforms + '})'
+            if isinstance(expr, list):
+                new_expr = []
+                for i, line in enumerate(expr):
+                    if line.strip() == 'Renamed' and i > 0 and expr[i - 1].strip() == 'in':
+                        new_expr.pop()
+                        new_expr.append(typed_step)
+                        new_expr.append('in')
+                        new_expr.append('    Typed')
+                    else:
+                        new_expr.append(line)
+                src['expression'] = new_expr
+            else:
+                src['expression'] = re.sub(
+                    r'in\s*\n\s*Renamed\s*$',
+                    typed_step + '\nin\n    Typed',
+                    expr.rstrip()
+                )
+
+print(f'Done: {total_col} cols fixed in {total_tbl} tables')
+with open(BIM_PATH, 'w', encoding='utf-8') as fh:
+    json.dump(bim, fh, indent=2, ensure_ascii=False)
+print('BIM saved.')

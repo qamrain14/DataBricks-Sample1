@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": null,
+    "byConnection": {
+      "connectionString": "Data Source=dbc-760a206e-c226.cloud.databricks.com;Initial Catalog=workspace",
+      "ppiConnectionDetails": null
+    }
+  }
+}
