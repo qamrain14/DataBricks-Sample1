@@ -153,13 +153,13 @@ class TestPowerQueryFiles:
 class TestBimModel:
     @pytest.fixture(scope="class")
     def bim(self):
-        return json.loads(BIM_PATH.read_text(encoding="utf-8"))
+        return json.loads(BIM_PATH.read_text(encoding="utf-8-sig"))
 
     def test_bim_exists(self):
         assert BIM_PATH.exists()
 
     def test_compatibility(self, bim):
-        assert bim["compatibilityLevel"] == 1550
+        assert bim["compatibilityLevel"] == 1600
 
     def test_table_count(self, bim):
         tables = bim["model"]["tables"]
@@ -180,7 +180,7 @@ class TestBimModel:
         measures = []
         for t in bim["model"]["tables"]:
             measures.extend(t.get("measures", []))
-        assert len(measures) == 25
+        assert len(measures) == 28
 
     def test_measure_has_dax(self, bim):
         for t in bim["model"]["tables"]:

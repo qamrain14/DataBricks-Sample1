@@ -1,0 +1,8 @@
+Name: DataBricks-Sample1
+Target: dev
+Workspace:
+  Host: https://dbc-760a206e-c226.cloud.databricks.com
+  User: mohd.qamrain@gmail.com
+  Path: /Workspace/Users/mohd.qamrain@gmail.com/.bundle/DataBricks-Sample1/dev
+
+Validation OK!

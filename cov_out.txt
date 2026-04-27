@@ -1,26 +1,133 @@
 ============================= test session starts =============================
-platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+platform win32 -- Python 3.13.7, pytest-9.0.3, pluggy-1.6.0
 rootdir: C:\Users\mohdq\src\DataBricks-Sample1
 configfile: pyproject.toml
-plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
-asyncio: mode=Mode.STRICT, default_loop_scope=None
-collected 141 items
+collected 184 items
 
-tests\test_bronze_pipeline.py ........                                   [  5%]
-tests\test_e2e_pipeline.py ............................                  [ 25%]
-tests\test_gold_pipeline.py .................................            [ 48%]
-tests\test_silver_pipeline.py .......................................... [ 78%]
-..............................WARNING: Failed to generate report: No data to report.
+tests\test_bronze_pipeline.py EEEEEEEE                                   [  4%]
+tests\test_silver_pipeline.py EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE [ 27%]
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEE                                           [ 43%]
+tests\test_pipeline_integrity.py ...........................             [ 58%]
+tests\test_silver_gold_handover.py ......................s.............. [ 78%]
+..EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE                                 [100%]
 
-                                                                         [100%]
-
-============================== warnings summary ===============================
-..\..\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:475
-  C:\Users\mohdq\AppData\Roaming\Python\Python313\site-packages\_pytest\cacheprovider.py:475: PytestCacheWarning: could not create cache path C:\Users\mohdq\src\DataBricks-Sample1\.pytest_cache\v\cache\nodeids: [WinError 5] Access is denied: 'C:\\Users\\mohdq\\src\\DataBricks-Sample1\\.pytest_cache\\v\\cache'
-    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-
----------- coverage: platform win32, python 3.13.7-final-0 -----------
-
-================== 141 passed, 1 warning in 88.58s (0:01:28) ==================
+=========================== short test summary info ===========================
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_registers_table_via_dlt_mock
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_creates_all_15_tables
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_bronze_table_has_metadata_columns
+ERROR tests/test_bronze_pipeline.py::TestBronzeAudit::test_audit_records_table_counts
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_each_bronze_table_has_3_rows
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_tables_have_metadata
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_vendors_schema
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_has_null_pk_rows
+ERROR tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_pipeline_creates_15_tables
+ERROR tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_tables_not_empty
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendors_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_projects_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_materials_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_employees_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_purchase_orders_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_po_line_items_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_contracts_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_contract_items_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_invoices_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_goods_receipts_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_budgets_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_actuals_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_sales_orders_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_inventory_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendor_performance_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendors]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_projects]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_materials]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_employees]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_purchase_orders]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_po_line_items]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contracts]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contract_items]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_invoices]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_goods_receipts]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_budgets]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_actuals]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_sales_orders]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_inventory]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendor_performance]
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_vendor_name_trimmed
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_country_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_performance_rating_is_double
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_payment_terms_is_integer
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_metadata_columns_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_silver_timestamp_added
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_project_name_trimmed
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_dates_cast_to_date_type
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_planned_duration_days_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_budget_variance_pct_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_category_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_active_to_is_active_boolean
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_concatenated
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_trimmed_parts
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_department_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_po_status_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_dates_cast
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_order_date_alias
+ERROR tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_fulfillment_rate_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_acceptance_rate_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_contract_duration_days
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_status_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_type_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverContractItemTransforms::test_quantity_cast_to_double
+ERROR tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_to_pay_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_overdue_for_unpaid
+ERROR tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_qty_delivered_renamed_to_qty_received
+ERROR tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_rejection_rate_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_column_renames
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_remaining_amount_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_utilization_pct_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_cost_category_derived
+ERROR tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_trimmed_cost_type
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_order_value_from_revenue
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_total_value_from_total_amount
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_customer_name_trimmed
+ERROR tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_total_cost_from_total_value
+ERROR tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_movement_type_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_from_composite
+ERROR tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_value
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_all_gold_tables_materialise
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_date]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_vendor]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_project]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_material]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_employee]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_geography]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_contract]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_cost_center]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_sector]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_purchase_orders]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_invoices]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_goods_receipts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_costs]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_actuals]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_vendor_performance]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_inventory]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_contracts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_sales]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_date]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_vendor]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_project]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_material]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_employee]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_geography]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_contract]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_cost_center]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_sector]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_purchase_orders]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_invoices]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_goods_receipts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_costs]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_actuals]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_vendor_performance]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_inventory]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_contracts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_sales]
+ERROR tests/test_silver_gold_handover.py::TestSilverMissingFailsGold::test_gold_fails_when_silver_unregistered
+================== 65 passed, 1 skipped, 118 errors in 7.95s ==================

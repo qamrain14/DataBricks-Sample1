@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "ProcurementAnalytics",
   "compatibilityLevel": 1600,
   "model": {
@@ -3872,6 +3872,23 @@
                 "value": "None"
               }
             ]
+          }
+        ],
+        "measures": [
+          {
+            "name": "Spend by Sector",
+            "expression": "SUM(CubeProcurementSpend[TotalSpend])",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "Vendor Count",
+            "expression": "DISTINCTCOUNT(CubeProcurementSpend[VendorId])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "YoY Growth",
+            "expression": "AVERAGE(CubeProcurementSpend[YoyGrowthPct])",
+            "formatString": "0.00%"
           }
         ],
         "partitions": [

@@ -114,7 +114,7 @@ class TestSilverGoldContract:
         withColumn / withColumnRenamed / agg-alias / df-alias)."""
         block = GOLD_BLOCKS[gold_fn]
         reads = re.findall(
-            r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
+            r'spark\.(?:read|readStream)\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
         if not reads:
             pytest.skip("no silver reads in this gold function")
         avail = set()
@@ -149,7 +149,7 @@ class TestSilverGoldContract:
         offenders = {}
         for fn, block in GOLD_BLOCKS.items():
             reads = re.findall(
-                r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
+                r'spark\.(?:read|readStream)\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
             if not reads:
                 continue
             avail = set()

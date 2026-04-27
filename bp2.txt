@@ -1,0 +1,21 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\mohdq\src\DataBricks-Sample1\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+collecting ... collected 1 item
+
+tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_registers_table_via_dlt_mock ERROR [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestBronzeFactory.test_factory_registers_table_via_dlt_mock _
+file C:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py, line 19
+      def test_factory_registers_table_via_dlt_mock(self, spark):
+E       fixture 'spark' not found
+>       available fixtures: cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, doctest_namespace, monkeypatch, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+C:\Users\mohdq\src\DataBricks-Sample1\tests\test_bronze_pipeline.py:19
+=========================== short test summary info ===========================
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_registers_table_via_dlt_mock
+============================== 1 error in 0.67s ===============================

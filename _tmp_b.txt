@@ -1,0 +1,40 @@
+============================= test session starts =============================
+collected 8 items
+
+tests\test_bronze_pipeline.py EEEEEEEE                                   [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestBronzeFactory.test_factory_registers_table_via_dlt_mock _
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestBronzeFactory.test_factory_creates_all_15_tables ____
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeFactory.test_bronze_table_has_metadata_columns __
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestBronzeAudit.test_audit_records_table_counts ______
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestBronzeDataQuality.test_each_bronze_table_has_3_rows __
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestBronzeDataQuality.test_bronze_tables_have_metadata ___
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestBronzeDataQuality.test_bronze_vendors_schema ______
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestBronzeDataQuality.test_bronze_has_null_pk_rows _____
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+    Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+=========================== short test summary info ===========================
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_registers_table_via_dlt_mock
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_creates_all_15_tables
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_bronze_table_has_metadata_columns
+ERROR tests/test_bronze_pipeline.py::TestBronzeAudit::test_audit_records_table_counts
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_each_bronze_table_has_3_rows
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_tables_have_metadata
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_vendors_schema
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_has_null_pk_rows
+============================== 8 errors in 1.02s ==============================

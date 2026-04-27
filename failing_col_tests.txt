@@ -1,0 +1,287 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
+rootdir: c:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, Faker-40.13.0, asyncio-0.24.0, cov-5.0.0, langsmith-0.7.22
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collected 19 items
+
+tests\test_silver_gold_handover.py ..s..ss.sFF.s..FFsF                   [100%]
+
+================================== FAILURES ===================================
+_ TestSilverGoldContract.test_gold_silver_columns_exist[gold_fact_contracts] __
+
+self = <test_silver_gold_handover.TestSilverGoldContract object at 0x000002B5C8E814A0>
+gold_fn = 'gold_fact_contracts'
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_silver_columns_exist(self, gold_fn):
+        """Every col() referenced in a gold function must exist in the union of
+        silver output columns it reads from, OR be created locally (alias /
+        withColumn / withColumnRenamed / agg-alias / df-alias)."""
+        block = GOLD_BLOCKS[gold_fn]
+        reads = re.findall(
+            r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
+        if not reads:
+            pytest.skip("no silver reads in this gold function")
+        avail = set()
+        for r in reads:
+            avail.update(SILVER_SCHEMA.get(r, []))
+        avail.update(re.findall(r'\.alias\("([^"]+)"\)', block))
+        avail.update(re.findall(r'withColumn\("([^"]+)"', block))
+        avail.update(re.findall(r'withColumnRenamed\("[^"]+",\s*"([^"]+)"\)', block))
+        # df-aliases like "a.column" / "b.column" - allow if the prefix is a known df alias
+        df_alias_pat = re.compile(r'\b([a-zA-Z_]\w*)\s*=\s*\w+\.alias\("([^"]+)"\)')
+        df_aliases = {m.group(2) for m in df_alias_pat.finditer(block)}
+        # Also support `.alias("a")` chained on a read
+        df_aliases.update(re.findall(r'\.alias\("([a-z])"\)', block))
+        refs = re.findall(r'col\("([^"]+)"\)', block)
+        bad = []
+        for c in refs:
+            if c in avail:
+                continue
+            # df-alias form: "a.colname"
+            if "." in c:
+                prefix, sub = c.split(".", 1)
+                if prefix in df_aliases:
+                    continue
+            bad.append(c)
+>       assert not bad, (
+            f"{gold_fn} references unknown column(s) {sorted(set(bad))} "
+            f"(reads from: {reads}). Sample available cols: {sorted(avail)[:15]}"
+        )
+E       AssertionError: gold_fact_contracts references unknown column(s) ['contract_status', 'contract_type', 'contract_value', 'currency', 'liquidated_damages_pct', 'payment_terms', 'performance_bond_pct', 'project_id', 'retention_pct', 'revised_value', 'start_date', 'variation_orders', 'vendor_id'] (reads from: ['silver_contract_items']). Sample available cols: ['_gold_timestamp', '_silver_timestamp', 'amount', 'boq_reference', 'boq_section', 'change_order_count', 'change_order_value', 'contract_id', 'created_date', 'description', 'executed_pct', 'item_count', 'item_id', 'item_status', 'items_total']
+E       assert not ['vendor_id', 'project_id', 'contract_type', 'contract_status', 'contract_value', 'revised_value', ...]
+
+tests\test_silver_gold_handover.py:142: AssertionError
+_ TestSilverGoldContract.test_gold_silver_columns_exist[gold_fact_goods_receipts] _
+
+self = <test_silver_gold_handover.TestSilverGoldContract object at 0x000002B5C8E814F0>
+gold_fn = 'gold_fact_goods_receipts'
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_silver_columns_exist(self, gold_fn):
+        """Every col() referenced in a gold function must exist in the union of
+        silver output columns it reads from, OR be created locally (alias /
+        withColumn / withColumnRenamed / agg-alias / df-alias)."""
+        block = GOLD_BLOCKS[gold_fn]
+        reads = re.findall(
+            r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
+        if not reads:
+            pytest.skip("no silver reads in this gold function")
+        avail = set()
+        for r in reads:
+            avail.update(SILVER_SCHEMA.get(r, []))
+        avail.update(re.findall(r'\.alias\("([^"]+)"\)', block))
+        avail.update(re.findall(r'withColumn\("([^"]+)"', block))
+        avail.update(re.findall(r'withColumnRenamed\("[^"]+",\s*"([^"]+)"\)', block))
+        # df-aliases like "a.column" / "b.column" - allow if the prefix is a known df alias
+        df_alias_pat = re.compile(r'\b([a-zA-Z_]\w*)\s*=\s*\w+\.alias\("([^"]+)"\)')
+        df_aliases = {m.group(2) for m in df_alias_pat.finditer(block)}
+        # Also support `.alias("a")` chained on a read
+        df_aliases.update(re.findall(r'\.alias\("([a-z])"\)', block))
+        refs = re.findall(r'col\("([^"]+)"\)', block)
+        bad = []
+        for c in refs:
+            if c in avail:
+                continue
+            # df-alias form: "a.colname"
+            if "." in c:
+                prefix, sub = c.split(".", 1)
+                if prefix in df_aliases:
+                    continue
+            bad.append(c)
+>       assert not bad, (
+            f"{gold_fn} references unknown column(s) {sorted(set(bad))} "
+            f"(reads from: {reads}). Sample available cols: {sorted(avail)[:15]}"
+        )
+E       AssertionError: gold_fact_goods_receipts references unknown column(s) ['grn_status', 'qty_rejected', 'received_by', 'rejection_rate', 'storage_location'] (reads from: ['silver_purchase_orders', 'silver_po_line_items']). Sample available cols: ['_gold_timestamp', '_po_id', '_poli_line_id', '_poli_unit_price', '_silver_timestamp', 'acceptance_rate', 'actual_delivery_date', 'approval_date', 'buyer_name', 'created_date', 'currency', 'delivery_date', 'delivery_terms', 'description', 'discount_pct']
+E       assert not ['qty_rejected', 'rejection_rate', 'rejection_rate', 'grn_status', 'storage_location', 'received_by']
+
+tests\test_silver_gold_handover.py:142: AssertionError
+_ TestSilverGoldContract.test_gold_silver_columns_exist[gold_fact_purchase_orders] _
+
+self = <test_silver_gold_handover.TestSilverGoldContract object at 0x000002B5C8E81680>
+gold_fn = 'gold_fact_purchase_orders'
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_silver_columns_exist(self, gold_fn):
+        """Every col() referenced in a gold function must exist in the union of
+        silver output columns it reads from, OR be created locally (alias /
+        withColumn / withColumnRenamed / agg-alias / df-alias)."""
+        block = GOLD_BLOCKS[gold_fn]
+        reads = re.findall(
+            r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
+        if not reads:
+            pytest.skip("no silver reads in this gold function")
+        avail = set()
+        for r in reads:
+            avail.update(SILVER_SCHEMA.get(r, []))
+        avail.update(re.findall(r'\.alias\("([^"]+)"\)', block))
+        avail.update(re.findall(r'withColumn\("([^"]+)"', block))
+        avail.update(re.findall(r'withColumnRenamed\("[^"]+",\s*"([^"]+)"\)', block))
+        # df-aliases like "a.column" / "b.column" - allow if the prefix is a known df alias
+        df_alias_pat = re.compile(r'\b([a-zA-Z_]\w*)\s*=\s*\w+\.alias\("([^"]+)"\)')
+        df_aliases = {m.group(2) for m in df_alias_pat.finditer(block)}
+        # Also support `.alias("a")` chained on a read
+        df_aliases.update(re.findall(r'\.alias\("([a-z])"\)', block))
+        refs = re.findall(r'col\("([^"]+)"\)', block)
+        bad = []
+        for c in refs:
+            if c in avail:
+                continue
+            # df-alias form: "a.colname"
+            if "." in c:
+                prefix, sub = c.split(".", 1)
+                if prefix in df_aliases:
+                    continue
+            bad.append(c)
+>       assert not bad, (
+            f"{gold_fn} references unknown column(s) {sorted(set(bad))} "
+            f"(reads from: {reads}). Sample available cols: {sorted(avail)[:15]}"
+        )
+E       AssertionError: gold_fact_purchase_orders references unknown column(s) ['approval_date', 'currency', 'payment_terms', 'po_date', 'po_status', 'po_type', 'po_value', 'priority', 'project_id', 'tax_amount', 'total_value', 'vendor_id'] (reads from: ['silver_po_line_items']). Sample available cols: ['_gold_timestamp', '_silver_timestamp', 'acceptance_rate', 'actual_delivery_date', 'created_date', 'delivery_date', 'description', 'discount_pct', 'expected_delivery_date', 'fulfillment_rate', 'inspection_passed', 'line_id', 'line_number', 'line_total', 'line_value']
+E       assert not ['vendor_id', 'project_id', 'po_date', 'approval_date', 'po_value', 'tax_amount', ...]
+
+tests\test_silver_gold_handover.py:142: AssertionError
+___ TestSilverGoldContract.test_gold_silver_columns_exist[gold_fact_sales] ____
+
+self = <test_silver_gold_handover.TestSilverGoldContract object at 0x000002B5C8E816D0>
+gold_fn = 'gold_fact_sales'
+
+    @pytest.mark.parametrize("gold_fn", sorted(GOLD_BLOCKS.keys()))
+    def test_gold_silver_columns_exist(self, gold_fn):
+        """Every col() referenced in a gold function must exist in the union of
+        silver output columns it reads from, OR be created locally (alias /
+        withColumn / withColumnRenamed / agg-alias / df-alias)."""
+        block = GOLD_BLOCKS[gold_fn]
+        reads = re.findall(
+            r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
+        if not reads:
+            pytest.skip("no silver reads in this gold function")
+        avail = set()
+        for r in reads:
+            avail.update(SILVER_SCHEMA.get(r, []))
+        avail.update(re.findall(r'\.alias\("([^"]+)"\)', block))
+        avail.update(re.findall(r'withColumn\("([^"]+)"', block))
+        avail.update(re.findall(r'withColumnRenamed\("[^"]+",\s*"([^"]+)"\)', block))
+        # df-aliases like "a.column" / "b.column" - allow if the prefix is a known df alias
+        df_alias_pat = re.compile(r'\b([a-zA-Z_]\w*)\s*=\s*\w+\.alias\("([^"]+)"\)')
+        df_aliases = {m.group(2) for m in df_alias_pat.finditer(block)}
+        # Also support `.alias("a")` chained on a read
+        df_aliases.update(re.findall(r'\.alias\("([a-z])"\)', block))
+        refs = re.findall(r'col\("([^"]+)"\)', block)
+        bad = []
+        for c in refs:
+            if c in avail:
+                continue
+            # df-alias form: "a.colname"
+            if "." in c:
+                prefix, sub = c.split(".", 1)
+                if prefix in df_aliases:
+                    continue
+            bad.append(c)
+>       assert not bad, (
+            f"{gold_fn} references unknown column(s) {sorted(set(bad))} "
+            f"(reads from: {reads}). Sample available cols: {sorted(avail)[:15]}"
+        )
+E       AssertionError: gold_fact_sales references unknown column(s) ['cogs', 'customer_name', 'customer_type', 'delivery_date', 'delivery_terms', 'gross_margin', 'margin_pct', 'order_date', 'order_status', 'order_type', 'payment_status', 'quantity', 'revenue', 'sales_order_id', 'tax_amount', 'total_amount'] (reads from: ['silver_materials']). Sample available cols: ['_mat_id', '_silver_timestamp', 'brand', 'category', 'country_of_origin', 'created_date', 'currency', 'customer_id', 'hazardous', 'is_active', 'lead_time_days', 'load_timestamp', 'local_content', 'manufacturer', 'material_code']
+E       assert not ['sales_order_id', 'customer_name', 'customer_name', 'customer_type', 'order_type', 'order_status', ...]
+
+tests\test_silver_gold_handover.py:142: AssertionError
+___________ TestSilverGoldContract.test_no_orphan_column_references ___________
+
+self = <test_silver_gold_handover.TestSilverGoldContract object at 0x000002B5C8E81770>
+
+    def test_no_orphan_column_references(self):
+        """Catch-all: aggregate every gold col() ref vs known silver schemas."""
+        offenders = {}
+        for fn, block in GOLD_BLOCKS.items():
+            reads = re.findall(
+                r'spark\.read\.table\(f"\{CATALOG\}\.procurement_silver\.(silver_\w+)"\)', block)
+            if not reads:
+                continue
+            avail = set()
+            for r in reads:
+                avail.update(SILVER_SCHEMA.get(r, []))
+            avail.update(re.findall(r'\.alias\("([^"]+)"\)', block))
+            avail.update(re.findall(r'withColumn\("([^"]+)"', block))
+            avail.update(re.findall(r'withColumnRenamed\("[^"]+",\s*"([^"]+)"\)', block))
+            for c in re.findall(r'col\("([^"]+)"\)', block):
+                if c in avail or "." in c:
+                    continue
+                offenders.setdefault(fn, []).append(c)
+>       assert not offenders, json.dumps(offenders, indent=2)
+E       AssertionError: {
+E           "gold_fact_purchase_orders": [
+E             "vendor_id",
+E             "project_id",
+E             "po_date",
+E             "approval_date",
+E             "po_value",
+E             "tax_amount",
+E             "total_value",
+E             "total_value",
+E             "po_status",
+E             "po_type",
+E             "priority",
+E             "currency",
+E             "payment_terms"
+E           ],
+E           "gold_fact_goods_receipts": [
+E             "qty_rejected",
+E             "rejection_rate",
+E             "rejection_rate",
+E             "grn_status",
+E             "storage_location",
+E             "received_by"
+E           ],
+E           "gold_fact_contracts": [
+E             "vendor_id",
+E             "project_id",
+E             "contract_type",
+E             "contract_status",
+E             "contract_value",
+E             "revised_value",
+E             "start_date",
+E             "variation_orders",
+E             "revised_value",
+E             "contract_value",
+E             "contract_value",
+E             "contract_value",
+E             "payment_terms",
+E             "retention_pct",
+E             "liquidated_damages_pct",
+E             "performance_bond_pct",
+E             "currency"
+E           ],
+E           "gold_fact_sales": [
+E             "sales_order_id",
+E             "customer_name",
+E             "customer_name",
+E             "customer_type",
+E             "order_type",
+E             "order_status",
+E             "payment_status",
+E             "order_date",
+E             "delivery_date",
+E             "quantity",
+E             "revenue",
+E             "cogs",
+E             "gross_margin",
+E             "margin_pct",
+E             "tax_amount",
+E             "total_amount",
+E             "delivery_terms"
+E           ]
+E         }
+E       assert not {'gold_fact_contracts': ['vendor_id', 'project_id', 'contract_type', 'contract_status', 'contract_value', 'revised_val..._fact_sales': ['sales_order_id', 'customer_name', 'customer_name', 'customer_type', 'order_type', 'order_status', ...]}
+
+tests\test_silver_gold_handover.py:165: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_contracts]
+FAILED tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_goods_receipts]
+FAILED tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_purchase_orders]
+FAILED tests/test_silver_gold_handover.py::TestSilverGoldContract::test_gold_silver_columns_exist[gold_fact_sales]
+FAILED tests/test_silver_gold_handover.py::TestSilverGoldContract::test_no_orphan_column_references
+=================== 5 failed, 8 passed, 6 skipped in 7.57s ====================

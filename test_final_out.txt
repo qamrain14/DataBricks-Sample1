@@ -1,0 +1,1806 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.0.3, pluggy-1.6.0
+rootdir: C:\Users\mohdq\src\DataBricks-Sample1
+configfile: pyproject.toml
+collected 471 items
+
+tests\test_bronze_pipeline.py EEEEEEEE                                   [  1%]
+tests\test_bronze_silver_handover.py .....................EEEEEEEEEEEEEE [  9%]
+EEEEE                                                                    [ 10%]
+tests\test_e2e_pipeline.py EEEEEEEEEEEEEEEEEEEEEEEEEEEE                  [ 16%]
+tests\test_gold_pipeline.py EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE....        [ 23%]
+tests\test_pipeline_integrity.py ...........................             [ 29%]
+tests\test_powerbi.py ..............................                     [ 36%]
+tests\test_semantic_cubes.py ........................................... [ 45%]
+........................................................................ [ 60%]
+.....................................                                    [ 68%]
+tests\test_silver_gold_handover.py ......................s.............. [ 76%]
+..EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE                                 [ 84%]
+tests\test_silver_pipeline.py EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE [ 93%]
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEE                                           [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestBronzeFactory.test_factory_registers_table_via_dlt_mock _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestBronzeFactory.test_factory_creates_all_15_tables ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeFactory.test_bronze_table_has_metadata_columns __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestBronzeAudit.test_audit_records_table_counts ______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestBronzeDataQuality.test_each_bronze_table_has_3_rows __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestBronzeDataQuality.test_bronze_tables_have_metadata ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestBronzeDataQuality.test_bronze_vendors_schema ______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestBronzeDataQuality.test_bronze_has_null_pk_rows _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_all_15_silver_tables_materialised _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[vendors] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[projects] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[materials] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[employees] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[purchase_orders] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[po_line_items] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[contracts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[contract_items] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[invoices] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[goods_receipts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[project_budgets] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[project_actuals] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[sales_orders] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[inventory] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_each_silver_table_non_empty[vendor_performance] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_silver_columns_superset_of_bronze_columns _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeSilverRuntimeHandover.test_silver_row_counts_bounded_by_bronze _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestBronzeMissingFailsSilver.test_silver_raises_when_bronze_unregistered _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSequentialDependency.test_silver_fails_without_bronze _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestSequentialDependency.test_gold_fails_without_silver __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestEndToEndDataPropagation.test_bronze_tables_present ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestEndToEndDataPropagation.test_silver_tables_present ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestEndToEndDataPropagation.test_gold_dimensions_present __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestEndToEndDataPropagation.test_gold_facts_present ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestEndToEndDataPropagation.test_total_table_count _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestVendorDataPropagation.test_vendor_in_bronze ______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestVendorDataPropagation.test_vendor_in_silver ______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestVendorDataPropagation.test_vendor_in_gold_dim _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestVendorDataPropagation.test_vendor_in_gold_fact_performance _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestVendorDataPropagation.test_null_vendor_dropped_in_silver _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestVendorDataPropagation.test_null_vendor_absent_in_gold _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestPurchaseOrderPropagation.test_po_in_bronze _______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestPurchaseOrderPropagation.test_po_in_silver _______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestPurchaseOrderPropagation.test_po_in_gold_fact _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestPurchaseOrderPropagation.test_po_line_items_aggregated_in_gold _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestContractPropagation.test_contract_in_bronze ______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestContractPropagation.test_contract_in_silver ______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestContractPropagation.test_contract_in_gold_dim _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestContractPropagation.test_contract_in_gold_fact _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestContractPropagation.test_contract_items_aggregated ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestDataQualityPropagation.test_null_pks_removed_at_silver _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestDataQualityPropagation.test_gold_row_counts_consistent _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestDataQualityPropagation.test_expectations_recorded ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestTransformPersistence.test_trimmed_names_in_gold ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestTransformPersistence.test_type_casting_persists ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestTransformPersistence.test_derived_columns_in_gold ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_dimensions __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestGoldPipelineExecution.test_gold_creates_9_facts ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestGoldPipelineExecution.test_all_18_gold_tables_not_empty _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_________ ERROR at setup of TestDimDate.test_date_range_2020_to_2030 __________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____________ ERROR at setup of TestDimDate.test_date_key_format ______________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___________ ERROR at setup of TestDimDate.test_date_columns_present ___________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______ ERROR at setup of TestDimDate.test_total_rows_approximately_4018 _______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____________ ERROR at setup of TestDimVendor.test_tier_derivation _____________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___________ ERROR at setup of TestDimVendor.test_status_derivation ____________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____________ ERROR at setup of TestDimVendor.test_gold_timestamp _____________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___________ ERROR at setup of TestDimProject.test_region_derivation ___________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_________ ERROR at setup of TestDimProject.test_project_duration_days _________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___________ ERROR at setup of TestDimMaterial.test_material_columns ___________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___________ ERROR at setup of TestDimEmployee.test_employee_columns ___________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+________ ERROR at setup of TestDimGeography.test_geography_key_is_sha2 ________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__________ ERROR at setup of TestDimGeography.test_region_derivation __________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___________ ERROR at setup of TestDimContract.test_cost_growth_pct ____________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+________ ERROR at setup of TestDimCostCenter.test_cost_center_distinct ________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+______________ ERROR at setup of TestDimSector.test_sector_union ______________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestFactPurchaseOrders.test_line_total_aggregated _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestFactPurchaseOrders.test_total_quantity_aggregated ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_current _________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+________ ERROR at setup of TestFactInvoices.test_aging_bucket_overdue _________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestFactGoodsReceipts.test_receipt_value_calculated ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestFactGoodsReceipts.test_acceptance_rate_derived _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+________ ERROR at setup of TestFactProjectCosts.test_budget_vs_actual _________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestFactProjectActuals.test_project_actuals_columns ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_______ ERROR at setup of TestFactVendorPerformance.test_score_columns ________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_________ ERROR at setup of TestFactInventory.test_inventory_columns __________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_______ ERROR at setup of TestFactContracts.test_items_total_aggregated _______
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____________ ERROR at setup of TestFactContracts.test_item_count _____________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__________ ERROR at setup of TestFactSales.test_customer_id_is_sha2 ___________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__________ ERROR at setup of TestFactSales.test_product_name_joined ___________
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_all_gold_tables_materialise _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_date] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_vendor] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_project] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_material] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_employee] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_geography] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_contract] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_cost_center] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[dim_sector] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_purchase_orders] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_invoices] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_goods_receipts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_project_costs] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_project_actuals] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_vendor_performance] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_inventory] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_contracts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_rows[fact_sales] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_date] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_vendor] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_project] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_material] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_employee] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_geography] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_contract] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_cost_center] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[dim_sector] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_purchase_orders] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_invoices] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_goods_receipts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_project_costs] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_project_actuals] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_vendor_performance] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_inventory] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_contracts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoldRuntimeHandover.test_gold_table_has_gold_timestamp[fact_sales] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverMissingFailsGold.test_gold_fails_when_silver_unregistered _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverPipelineExecution.test_silver_pipeline_creates_15_tables _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverPipelineExecution.test_silver_tables_not_empty __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestSilverDataQuality.test_vendors_null_pk_dropped _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestSilverDataQuality.test_projects_null_pk_dropped ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestSilverDataQuality.test_materials_null_pk_dropped ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestSilverDataQuality.test_employees_null_pk_dropped ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverDataQuality.test_purchase_orders_null_pk_dropped _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverDataQuality.test_po_line_items_null_pk_dropped __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestSilverDataQuality.test_contracts_null_pk_dropped ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverDataQuality.test_contract_items_null_pk_dropped _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestSilverDataQuality.test_invoices_null_pk_dropped ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverDataQuality.test_goods_receipts_null_pk_dropped _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverDataQuality.test_project_budgets_null_pk_dropped _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverDataQuality.test_project_actuals_null_pk_dropped _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestSilverDataQuality.test_sales_orders_null_pk_dropped __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestSilverDataQuality.test_inventory_null_pk_dropped ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverDataQuality.test_vendor_performance_null_pk_dropped _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_vendors] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_projects] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_materials] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_employees] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_purchase_orders] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_po_line_items] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_contracts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_contract_items] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_invoices] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_goods_receipts] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_project_budgets] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_project_actuals] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_sales_orders] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_inventory] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverRowCounts.test_silver_table_has_2_rows[silver_vendor_performance] _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestSilverVendorTransforms.test_vendor_name_trimmed ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestSilverVendorTransforms.test_country_uppercased _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverVendorTransforms.test_performance_rating_is_double _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverVendorTransforms.test_payment_terms_is_integer __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverVendorTransforms.test_metadata_columns_dropped __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestSilverVendorTransforms.test_silver_timestamp_added ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestSilverProjectTransforms.test_project_name_trimmed ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverProjectTransforms.test_dates_cast_to_date_type __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverProjectTransforms.test_planned_duration_days_calculated _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverProjectTransforms.test_budget_variance_pct_calculated _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestSilverMaterialTransforms.test_category_uppercased ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverMaterialTransforms.test_active_to_is_active_boolean _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverEmployeeTransforms.test_full_name_concatenated __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverEmployeeTransforms.test_full_name_trimmed_parts _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestSilverEmployeeTransforms.test_department_uppercased __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverPurchaseOrderTransforms.test_po_status_uppercased _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestSilverPurchaseOrderTransforms.test_dates_cast _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestSilverPurchaseOrderTransforms.test_order_date_alias __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverPoLineItemTransforms.test_fulfillment_rate_calculated _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverPoLineItemTransforms.test_acceptance_rate_calculated _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverContractTransforms.test_contract_duration_days __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+____ ERROR at setup of TestSilverContractTransforms.test_status_uppercased ____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_____ ERROR at setup of TestSilverContractTransforms.test_type_uppercased _____
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverContractItemTransforms.test_quantity_cast_to_double _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+__ ERROR at setup of TestSilverInvoiceTransforms.test_days_to_pay_calculated __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverInvoiceTransforms.test_days_overdue_for_unpaid __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoodsReceiptTransforms.test_qty_delivered_renamed_to_qty_received _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverGoodsReceiptTransforms.test_rejection_rate_calculated _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+___ ERROR at setup of TestSilverProjectBudgetTransforms.test_column_renames ___
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverProjectBudgetTransforms.test_remaining_amount_calculated _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverProjectBudgetTransforms.test_utilization_pct_calculated _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverProjectActualTransforms.test_cost_category_derived _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverProjectActualTransforms.test_trimmed_cost_type __
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverSalesOrderTransforms.test_order_value_from_revenue _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverSalesOrderTransforms.test_total_value_from_total_amount _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverSalesOrderTransforms.test_customer_name_trimmed _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverInventoryTransforms.test_total_cost_from_total_value _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverInventoryTransforms.test_movement_type_uppercased _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverVendorPerformanceTransforms.test_overall_score_from_composite _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+_ ERROR at setup of TestSilverVendorPerformanceTransforms.test_overall_score_value _
+tests\conftest.py:11: in spark
+    .getOrCreate()
+    ^^^^^^^^^^^^^
+.venv\Lib\site-packages\pyspark\sql\session.py:534: in getOrCreate
+    raise RuntimeError(
+E   RuntimeError: Only remote Spark sessions using Databricks Connect are supported. Use DatabricksSession.builder to create a remote Spark session instead.
+E   Refer to https://docs.databricks.com/dev-tools/databricks-connect.html on how to configure Databricks Connect.
+=========================== short test summary info ===========================
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_registers_table_via_dlt_mock
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_factory_creates_all_15_tables
+ERROR tests/test_bronze_pipeline.py::TestBronzeFactory::test_bronze_table_has_metadata_columns
+ERROR tests/test_bronze_pipeline.py::TestBronzeAudit::test_audit_records_table_counts
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_each_bronze_table_has_3_rows
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_tables_have_metadata
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_vendors_schema
+ERROR tests/test_bronze_pipeline.py::TestBronzeDataQuality::test_bronze_has_null_pk_rows
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_all_15_silver_tables_materialised
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[vendors]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[projects]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[materials]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[employees]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[purchase_orders]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[po_line_items]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[contracts]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[contract_items]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[invoices]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[goods_receipts]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[project_budgets]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[project_actuals]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[sales_orders]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[inventory]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_each_silver_table_non_empty[vendor_performance]
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_silver_columns_superset_of_bronze_columns
+ERROR tests/test_bronze_silver_handover.py::TestBronzeSilverRuntimeHandover::test_silver_row_counts_bounded_by_bronze
+ERROR tests/test_bronze_silver_handover.py::TestBronzeMissingFailsSilver::test_silver_raises_when_bronze_unregistered
+ERROR tests/test_e2e_pipeline.py::TestSequentialDependency::test_silver_fails_without_bronze
+ERROR tests/test_e2e_pipeline.py::TestSequentialDependency::test_gold_fails_without_silver
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_bronze_tables_present
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_silver_tables_present
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_gold_dimensions_present
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_gold_facts_present
+ERROR tests/test_e2e_pipeline.py::TestEndToEndDataPropagation::test_total_table_count
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_bronze
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_silver
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_gold_dim
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_vendor_in_gold_fact_performance
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_null_vendor_dropped_in_silver
+ERROR tests/test_e2e_pipeline.py::TestVendorDataPropagation::test_null_vendor_absent_in_gold
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_bronze
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_silver
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_in_gold_fact
+ERROR tests/test_e2e_pipeline.py::TestPurchaseOrderPropagation::test_po_line_items_aggregated_in_gold
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_bronze
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_silver
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_gold_dim
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_in_gold_fact
+ERROR tests/test_e2e_pipeline.py::TestContractPropagation::test_contract_items_aggregated
+ERROR tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_null_pks_removed_at_silver
+ERROR tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_gold_row_counts_consistent
+ERROR tests/test_e2e_pipeline.py::TestDataQualityPropagation::test_expectations_recorded
+ERROR tests/test_e2e_pipeline.py::TestTransformPersistence::test_trimmed_names_in_gold
+ERROR tests/test_e2e_pipeline.py::TestTransformPersistence::test_type_casting_persists
+ERROR tests/test_e2e_pipeline.py::TestTransformPersistence::test_derived_columns_in_gold
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_dimensions
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_gold_creates_9_facts
+ERROR tests/test_gold_pipeline.py::TestGoldPipelineExecution::test_all_18_gold_tables_not_empty
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_range_2020_to_2030
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_key_format - Runtim...
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_date_columns_present - R...
+ERROR tests/test_gold_pipeline.py::TestDimDate::test_total_rows_approximately_4018
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_tier_derivation - Runt...
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_status_derivation - Ru...
+ERROR tests/test_gold_pipeline.py::TestDimVendor::test_gold_timestamp - Runti...
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_region_derivation - R...
+ERROR tests/test_gold_pipeline.py::TestDimProject::test_project_duration_days
+ERROR tests/test_gold_pipeline.py::TestDimMaterial::test_material_columns - R...
+ERROR tests/test_gold_pipeline.py::TestDimEmployee::test_employee_columns - R...
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_geography_key_is_sha2
+ERROR tests/test_gold_pipeline.py::TestDimGeography::test_region_derivation
+ERROR tests/test_gold_pipeline.py::TestDimContract::test_cost_growth_pct - Ru...
+ERROR tests/test_gold_pipeline.py::TestDimCostCenter::test_cost_center_distinct
+ERROR tests/test_gold_pipeline.py::TestDimSector::test_sector_union - Runtime...
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_line_total_aggregated
+ERROR tests/test_gold_pipeline.py::TestFactPurchaseOrders::test_total_quantity_aggregated
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_current
+ERROR tests/test_gold_pipeline.py::TestFactInvoices::test_aging_bucket_overdue
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_receipt_value_calculated
+ERROR tests/test_gold_pipeline.py::TestFactGoodsReceipts::test_acceptance_rate_derived
+ERROR tests/test_gold_pipeline.py::TestFactProjectCosts::test_budget_vs_actual
+ERROR tests/test_gold_pipeline.py::TestFactProjectActuals::test_project_actuals_columns
+ERROR tests/test_gold_pipeline.py::TestFactVendorPerformance::test_score_columns
+ERROR tests/test_gold_pipeline.py::TestFactInventory::test_inventory_columns
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_items_total_aggregated
+ERROR tests/test_gold_pipeline.py::TestFactContracts::test_item_count - Runti...
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_customer_id_is_sha2 - ...
+ERROR tests/test_gold_pipeline.py::TestFactSales::test_product_name_joined - ...
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_all_gold_tables_materialise
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_date]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_vendor]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_project]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_material]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_employee]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_geography]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_contract]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_cost_center]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[dim_sector]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_purchase_orders]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_invoices]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_goods_receipts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_costs]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_project_actuals]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_vendor_performance]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_inventory]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_contracts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_rows[fact_sales]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_date]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_vendor]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_project]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_material]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_employee]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_geography]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_contract]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_cost_center]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[dim_sector]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_purchase_orders]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_invoices]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_goods_receipts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_costs]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_project_actuals]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_vendor_performance]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_inventory]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_contracts]
+ERROR tests/test_silver_gold_handover.py::TestSilverGoldRuntimeHandover::test_gold_table_has_gold_timestamp[fact_sales]
+ERROR tests/test_silver_gold_handover.py::TestSilverMissingFailsGold::test_gold_fails_when_silver_unregistered
+ERROR tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_pipeline_creates_15_tables
+ERROR tests/test_silver_pipeline.py::TestSilverPipelineExecution::test_silver_tables_not_empty
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendors_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_projects_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_materials_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_employees_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_purchase_orders_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_po_line_items_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_contracts_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_contract_items_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_invoices_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_goods_receipts_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_budgets_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_project_actuals_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_sales_orders_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_inventory_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverDataQuality::test_vendor_performance_null_pk_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendors]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_projects]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_materials]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_employees]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_purchase_orders]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_po_line_items]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contracts]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_contract_items]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_invoices]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_goods_receipts]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_budgets]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_project_actuals]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_sales_orders]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_inventory]
+ERROR tests/test_silver_pipeline.py::TestSilverRowCounts::test_silver_table_has_2_rows[silver_vendor_performance]
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_vendor_name_trimmed
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_country_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_performance_rating_is_double
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_payment_terms_is_integer
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_metadata_columns_dropped
+ERROR tests/test_silver_pipeline.py::TestSilverVendorTransforms::test_silver_timestamp_added
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_project_name_trimmed
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_dates_cast_to_date_type
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_planned_duration_days_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectTransforms::test_budget_variance_pct_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_category_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverMaterialTransforms::test_active_to_is_active_boolean
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_concatenated
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_full_name_trimmed_parts
+ERROR tests/test_silver_pipeline.py::TestSilverEmployeeTransforms::test_department_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_po_status_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_dates_cast
+ERROR tests/test_silver_pipeline.py::TestSilverPurchaseOrderTransforms::test_order_date_alias
+ERROR tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_fulfillment_rate_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverPoLineItemTransforms::test_acceptance_rate_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_contract_duration_days
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_status_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverContractTransforms::test_type_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverContractItemTransforms::test_quantity_cast_to_double
+ERROR tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_to_pay_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverInvoiceTransforms::test_days_overdue_for_unpaid
+ERROR tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_qty_delivered_renamed_to_qty_received
+ERROR tests/test_silver_pipeline.py::TestSilverGoodsReceiptTransforms::test_rejection_rate_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_column_renames
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_remaining_amount_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectBudgetTransforms::test_utilization_pct_calculated
+ERROR tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_cost_category_derived
+ERROR tests/test_silver_pipeline.py::TestSilverProjectActualTransforms::test_trimmed_cost_type
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_order_value_from_revenue
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_total_value_from_total_amount
+ERROR tests/test_silver_pipeline.py::TestSilverSalesOrderTransforms::test_customer_name_trimmed
+ERROR tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_total_cost_from_total_value
+ERROR tests/test_silver_pipeline.py::TestSilverInventoryTransforms::test_movement_type_uppercased
+ERROR tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_from_composite
+ERROR tests/test_silver_pipeline.py::TestSilverVendorPerformanceTransforms::test_overall_score_value
+================= 272 passed, 1 skipped, 198 errors in 23.67s =================

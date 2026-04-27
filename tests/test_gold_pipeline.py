@@ -1,7 +1,8 @@
-"""Tests for Gold Layer (03_gold_pipeline.py)."""
+﻿"""Tests for Gold Layer (03_gold_pipeline.py)."""
 import os
 import sys
 import pytest
+import re
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dlt_mock
@@ -274,3 +275,51 @@ class TestFactSales:
     def test_product_name_joined(self, gold_tables):
         df = gold_tables["fact_sales"]
         assert "product_name" in df.columns
+
+
+class TestStreamingTableConversions:
+    """Verify 10 gold DLT functions use readStream (-> Streaming Table) and
+       the remaining keep batch reads (-> Materialized View)."""
+
+    STREAMING_TABLES = [
+        "gold_dim_vendor", "gold_dim_project", "gold_dim_material",
+        "gold_fact_purchase_orders", "gold_fact_invoices",
+        "gold_fact_goods_receipts", "gold_fact_project_costs",
+        "gold_fact_vendor_performance", "gold_fact_contracts",
+        "gold_fact_sales",
+    ]
+    BATCH_TABLES = [
+        "gold_dim_employee", "gold_dim_geography", "gold_dim_contract",
+        "gold_dim_cost_center", "gold_dim_sector",
+        "gold_fact_project_actuals", "gold_fact_inventory",
+    ]
+
+    @pytest.fixture(scope="class")
+    def source_text(self):
+        with open(GOLD_PATH, "r", encoding="utf-8") as f:
+            return f.read()
+
+    def test_streaming_tables_use_readstream(self, source_text):
+        for fn in self.STREAMING_TABLES:
+            pattern = rf"def {fn}\(\):(.*?)(?=def |\# COMMAND|\Z)"
+            match = re.search(pattern, source_text, re.DOTALL)
+            assert match, f"{fn} function body not found in source"
+            assert "readStream.table" in match.group(1), \
+                f"{fn} should use readStream.table but uses batch read"
+
+    def test_batch_tables_do_not_use_readstream(self, source_text):
+        for fn in self.BATCH_TABLES:
+            pattern = rf"def {fn}\(\):(.*?)(?=def |\# COMMAND|\Z)"
+            match = re.search(pattern, source_text, re.DOTALL)
+            if match:
+                assert "readStream.table" not in match.group(1), \
+                    f"{fn} should NOT use readStream.table"
+
+    def test_stream_static_lookup_reads_preserved(self, source_text):
+        assert 'spark.read.table(f"{CATALOG}.procurement_silver.silver_po_line_items")' in source_text
+        assert 'spark.read.table(f"{CATALOG}.procurement_silver.silver_purchase_orders").select(' in source_text
+        assert 'spark.read.table(f"{CATALOG}.procurement_silver.silver_materials").select(' in source_text
+
+    def test_dlt_table_decorator_count(self, source_text):
+        count = source_text.count("@dlt.table(")
+        assert count == 18, f"Expected 18 @dlt.table decorators, found {count}"
