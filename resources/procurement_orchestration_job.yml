@@ -30,10 +30,19 @@ resources:
             pipeline_id: ${resources.pipelines.procurement_gold_pipeline.id}
             full_refresh: false
 
-        # ── Stage 4: Semantic Cubes (depend on Gold) ─────────────
-        - task_key: run_cube_procurement_spend
+        # ── Stage 4a: Ensure semantic schema exists ───────────────
+        - task_key: setup_semantic_schema
           depends_on:
             - task_key: run_gold_pipeline
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../databricks/cubes/00_setup_semantic_schema.sql
+
+        # ── Stage 4b: Semantic Cubes (depend on schema setup) ────
+        - task_key: run_cube_procurement_spend
+          depends_on:
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -41,7 +50,7 @@ resources:
 
         - task_key: run_cube_vendor_performance
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -49,7 +58,7 @@ resources:
 
         - task_key: run_cube_contract_status
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -57,7 +66,7 @@ resources:
 
         - task_key: run_cube_invoice_aging
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -65,7 +74,7 @@ resources:
 
         - task_key: run_cube_project_costs
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -73,7 +82,7 @@ resources:
 
         - task_key: run_cube_goods_receipt_quality
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -81,7 +90,7 @@ resources:
 
         - task_key: run_cube_budget_vs_actual
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -89,7 +98,7 @@ resources:
 
         - task_key: run_cube_sales_analysis
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -97,7 +106,7 @@ resources:
 
         - task_key: run_cube_inventory_status
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -105,7 +114,7 @@ resources:
 
         - task_key: run_cube_spend_by_sector
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -113,7 +122,7 @@ resources:
 
         - task_key: run_cube_delivery_performance
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -121,7 +130,7 @@ resources:
 
         - task_key: run_cube_cost_variance
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -129,7 +138,7 @@ resources:
 
         - task_key: run_cube_vendor_risk
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -137,7 +146,7 @@ resources:
 
         - task_key: run_cube_project_timeline
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:
@@ -145,7 +154,7 @@ resources:
 
         - task_key: run_cube_procurement_efficiency
           depends_on:
-            - task_key: run_gold_pipeline
+            - task_key: setup_semantic_schema
           sql_task:
             warehouse_id: ${var.warehouse_id}
             file:

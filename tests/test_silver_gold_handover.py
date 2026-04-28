@@ -71,7 +71,8 @@ SILVER_SCHEMA = _silver_output_columns()
 
 
 def _gold_blocks():
-    blocks = re.split(r"^@dlt\.table", GOLD_SRC, flags=re.MULTILINE)
+    # Gold pipeline uses Databricks notebook magic-command format: "# MAGIC @dlt.table"
+    blocks = re.split(r"^(?:# MAGIC )?@dlt\.table", GOLD_SRC, flags=re.MULTILINE)
     out = {}
     for block in blocks[1:]:
         fn_m = re.search(r"def (gold_\w+)\(\)", block)
